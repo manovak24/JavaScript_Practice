@@ -13,6 +13,7 @@ setInterval(function() {
 }, 2000)
 
 //Create HTML element and append to HTML body
+//Also add a class with javascrip to element
 const myButton = document.createElement('button');
 document.body.appendChild(myButton);
 myButton.textContent = 'Click Me';
