@@ -41,3 +41,23 @@ for(let i = 0; i < response.body.length; i++) {
     myParagraph.textContent = response.body[i];  
     containerTwo.appendChild(myParagraph);
 }
+
+//Coding problem from Freemote
+
+const container = document.createElement('div');
+container.classList.add('container');
+document.body.appendChild(container);
+
+const copy = ["Yesterday was good", "Today is great", "Tomorrow will be better"];
+
+copy.forEach(text => {
+  const newP = document.createElement('p');
+  newP.textContent = text;
+  container.appendChild(newP);
+})
+
+copy.forEach(function(copyItem) {
+  const newP = document.createElement('p');
+  newP.textContent = copyItem;
+  container.appendChild(newP)
+})
