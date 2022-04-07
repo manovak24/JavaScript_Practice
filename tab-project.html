@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Project</title>
+    <style>
+        .container {
+            width: 80%;
+            height: 50%;
+            border: 1px solid grey;
+            margin: 0 auto;
+        }
+        .selector {
+            display: flex;
+            border-bottom: 1px solid grey;
+            background-color: #f1f1f1;
+        }
+        .tab {
+            padding: 10px;
+        }
+        .tab:hover {
+            cursor: pointer;
+            background-color: darkgrey;
+        }
+        .content {
+            padding: 10px;
+        }
+        .content-body {
+            display: none;
+        }
+        .show-active {
+            display: block;
+        }
+        .tab-active {
+            background-color: darkgrey;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="selector">
+            <div class="tab tab-active">
+                Shirts
+            </div>
+            <div class="tab">
+                Pants
+            </div>
+            <div class="tab">
+                Shoes
+            </div>
+        </div>
+        <div class="content">
+            <div id="Shirts" class="content-body show-active">
+                <h4>Shirts</h4>
+                <p>Our shirts are all of the highest quality</p>
+            </div>
+            <div id="Pants" class="content-body">
+                <h4>Pants</h4>
+                <p>Pants can be custom tailored upon request</p>
+            </div>
+            <div id="Shoes" class="content-body">
+                <h4>Shoes</h4>
+                <p>Shoes all US sized unless indicated otherwise</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        //Google Javascript Tab Selector
+        //function to remove show active class and add to clicked
+        //the el is the element that is from the click event. This will be used to get the text content within the element and then match the the element ID to add the active class
+        function activeClass(el) {
+            //Select all content bobdy
+            const contentBodies = document.getElementsByClassName('content-body');
+            //remove show-active
+            for (const contentBody of contentBodies) {
+                contentBody.classList.remove('show-active')
+            }
+            //add show active back to clicked
+            console.log(el.textContent)
+            document.getElementById(el.textContent.trim()).classList.add('show-active'); //use trim to reduce white spaces within div tags. Otherwise there will be an error
+            //repeat for active tab
+            const tabs = document.getElementsByClassName('tab');
+            for (const tab of tabs) {
+                tab.classList.remove('tab-active');
+            }
+            el.classList.add('tab-active');
+
+        }
+            
+
+        //select tab class and loop through
+        const tabs = document.getElementsByClassName('tab');
+
+        for (const tab of tabs) {
+            //add click listener to each tab
+            tab.addEventListener('click', function(event) {
+                console.log(event.currentTarget)
+                activeClass(event.currentTarget);
+                
+            })
+        }
+            
+
+    </script>
+</body>
+</html>
