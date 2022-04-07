@@ -32,9 +32,18 @@
         }
         .show-active {
             display: block;
+            animation: fade 2s;
         }
         .tab-active {
             background-color: darkgrey;
+        }
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            } 
         }
     </style>
 </head>
