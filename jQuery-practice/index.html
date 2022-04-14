@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Libraries</title>
+
+    <!-- import the jQuery script -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        .vanilla-p {
+            color: purple;
+        }
+
+        .jq-p {
+            color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <h1>Libraries are really amazing</h1>
+    <ol class="container">
+        <p>Let's write some jQuery</p>
+    </ol>
+    <button id="dom">Click me</button>
+    <button id="jq">Click me</button>
+    <button id="jqTwo">Click me</button>
+    <script>
+        // dom selector and css attribute
+        const btnOne = document.querySelector('#dom');
+        btnOne.style.backgroundColor = 'blue';
+
+        // using dom to hide and show paragaph element
+        const p = document.querySelector('p');
+        btnOne.addEventListener('click', function() {
+            if(p.style.display === 'none') {
+                p.style.display = 'block';
+            } else {
+                p.style.display = 'none';
+            }
+        })
+
+        // create new element using dom
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = 'This is vanilla content';
+        newParagraph.classList.add('vanilla-p');
+        document.querySelector('.container').appendChild(newParagraph);
+
+
+        // jQuery selector and css attribute
+        const btnTwo = $('#jq');
+        btnTwo.css('backgroundColor', 'green');
+        //can also using chaining to do this (this is same as above, but for the second jQuery button)
+        $('#jqTwo').css('backgroundColor', 'orange');
+
+        // jQuery to hide, show, toggle paragraph element
+        $('#jq').on('click', function() {
+            $('p').toggle();
+        })
+
+        // create new element using jQuery
+        $(`<p>This is a jQuery paragraph</p>`).addClass('jq-p').appendTo($('.container'))
+
+        // below is identical to above jQuery using appendTo()
+        $(`<p>This is a another jQuery paragraph</p>`)
+        .addClass('jq-p')
+        .appendTo($('.container'))
+
+        // another way to do the same thing as above using append()
+        $('.container')
+        .append(
+            $(`<p>This is a third jQuery paragraph</p>`)
+            .addClass('jq-p')
+        )
+
+        // fourth way to do the same as above
+        const newP =  $(`<p>This is a fourth jQuery paragraph</p>`)
+            .addClass('jq-p')
+            .css('backgroundColor', 'purple');
+        $('.container').append(newP)
+    </script>
+</body>
+</html>
