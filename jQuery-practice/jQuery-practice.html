@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="main">
+        <p>First</p>
+        <p>Second</p>
+        <p>Third</p>
+    </div>
+    <script>
+        //Question Set 1
+        $('#main').css({border: '1px solid grey'}).append($('<p>Fourth</p>'));
+        
+        //Question Set 2 - ways to select child elements or direct index
+        $('<span>item</span>').appendTo($('p').css('color', 'red'))
+        // $('p').children().eq(1).css('color', 'orange')
+        $('p').first().next().css('color', 'orange')
+        $('p')[2].style.color = 'blue'
+        
+        //Question Set 3 - click event that logs the target value
+        $('p').click(function(e){
+          console.log('clicked ', e.currentTarget.textContent)
+        })
+        
+        //Question Set 4
+        $('<button>Hide Text</button>').css({color: 'white', backgroundColor: 'red'}).click(function(){$('p').hide()}).appendTo($('#main'));
+        
+        //My practice Set
+        $('<button>Show Text</button>').css({color: 'white', backgroundColor: 'blue'}).click(function(){$('p').show()}).appendTo($('#main'));
+      </script>
+</body>
+</html>
