@@ -44,9 +44,9 @@ for(let i = 0; i < response.body.length; i++) {
 
 //Coding problem from Freemote
 
-const container = document.createElement('div');
-container.classList.add('container');
-document.body.appendChild(container);
+// const container = document.createElement('div');
+// container.classList.add('container');
+// document.body.appendChild(container);
 
 const copy = ["Yesterday was good", "Today is great", "Tomorrow will be better"];
 

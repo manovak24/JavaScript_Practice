@@ -53,12 +53,12 @@ for (let tweet of tweets) {
 }
 console.log(tweetsByDay);
 
-const tweetsMap = {};
-    for(let tweet of tweets) {
-      if (tweetsMap[tweet.timestamp]) {
-        tweetsMap[tweet.timestamp].push(tweet.content)
-      } else {
-        tweetsMap[tweet.timestamp] = [tweet.content]
-      }
-    }
-      console.log(tweetsMap)
+// const tweetsMap = {};
+//     for(let tweet of tweets) {
+//       if (tweetsMap[tweet.timestamp]) {
+//         tweetsMap[tweet.timestamp].push(tweet.content)
+//       } else {
+//         tweetsMap[tweet.timestamp] = [tweet.content]
+//       }
+//     }
+//       console.log(tweetsMap)
