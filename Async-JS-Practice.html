@@ -24,7 +24,6 @@
 
                 // Step Two
                 userOutput(xhttp.responseText);
-                console.log(xhttp.responseText)
             }
         };
         xhttp.open("GET", url, true);
@@ -38,9 +37,9 @@
 
             for(let data of dataSet) {
                 if(dataByUserId[data.userId]) {
-                    dataByUserId[data.userId].push(data.title);
+                    dataByUserId[data.userId].push(data);
                 } else {
-                    dataByUserId[data.userId] = [data.title]
+                    dataByUserId[data.userId] = [data]
                 }
             }
 
@@ -51,7 +50,19 @@
                 container.appendChild(newH2);
                 container.id = key;
                 newH2.textContent = `User ${key}`
+                
+                // Step 3
+                // Create loop to iterate through dataByUserId to push title to p element and append to container
+                for(let i = 0; i < dataByUserId[key].length; i++) {
+                    if(dataByUserId[key][i].userId == key) {
+                        const newP = document.createElement('p');
+                        container.appendChild(newP);
+                        newP.textContent = dataByUserId[key][i].title;
+                    }
+                }
             }
+            console.log(dataByUserId)
+            console.log(dataSet)
         }        
 
     </script>
