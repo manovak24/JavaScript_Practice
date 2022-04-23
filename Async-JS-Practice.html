@@ -24,6 +24,7 @@
 
                 // Step Two
                 userOutput(xhttp.responseText);
+                console.log(xhttp.responseText)
             }
         };
         xhttp.open("GET", url, true);
@@ -32,14 +33,26 @@
         // Step #2
         // Create a function that will loop through and print the userID to h2 element
         function userOutput(arr) {
-            let data = JSON.parse(arr);
-            data.forEach(item => {
-                let p = document.createElement('p');
-                p.textContent = item.userId;
-                document.body.appendChild(p)
-            })
+            const dataSet = JSON.parse(arr);
+            const dataByUserId = {};
+
+            for(let data of dataSet) {
+                if(dataByUserId[data.userId]) {
+                    dataByUserId[data.userId].push(data.title);
+                } else {
+                    dataByUserId[data.userId] = [data.title]
+                }
+            }
+
+            for(let key in dataByUserId) {
+                const container = document.createElement('div');
+                const newH2 = document.createElement('h2');
+                document.body.appendChild(container);
+                container.appendChild(newH2);
+                container.id = key;
+                newH2.textContent = `User ${key}`
+            }
         }        
-        
 
     </script>
 </body>
