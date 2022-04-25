@@ -23,13 +23,29 @@
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
         }
+        .hero-container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px 5px 50px 5px;
+            background-color: lightgreen;
+            border: 2px solid gray;
+        }
+        .hero-container h1 {
+            margin-bottom: 15px;
+        }
+        .hero-container h4:first-of-type{
+            margin-right: 3px;
+        }
         .content-container {
             width: 90%;
             margin: 20px auto;
         }
+        .date-time-container {
+            display: flex;
+        }
         .user-container {
             margin: 35px auto;
-            border: 1px solid gray;
+            border: 2px solid gray;
             border-radius: 15px;
         }
         .todo-item {
@@ -38,7 +54,7 @@
             padding-left: 5px;
             padding-right: 5px;
             padding-bottom: 7px;
-            border-bottom: 1px solid gray;
+            border-bottom: .5px solid gray;
         }
         .todo-item p:first-child{
             margin-right: 10px;
@@ -68,6 +84,36 @@
         };
         xhttp.open("GET", url, true);
         xhttp.send();
+
+        // Adding Hero section
+        const hero = document.createElement('div');
+        hero.classList.add('hero-container')
+        document.body.appendChild(hero);
+
+        const today = new Date();
+        const currentDate = today.toLocaleDateString();
+        const currentTime = today.toLocaleTimeString('en-us', { hour12: true, hour: 'numeric', minute: 'numeric'});
+        const currentHour = today.getHours();
+        console.log(currentHour)
+
+        if(currentHour < 12) {
+            
+        }
+
+        const heroTitle = document.createElement('h1');
+        if(currentHour < 12) {
+            heroTitle.innerText = 'Good Morning!'
+        } else if(currentHour < 18) {
+            heroTitle.innerText = 'Good Afternoon!'
+        } else (
+            heroTitle.innerText = 'Good Evening!'
+        )
+        hero.appendChild(heroTitle);
+
+        const dateTimeContainer = document.createElement('div');
+        dateTimeContainer.classList.add('date-time-container');
+        dateTimeContainer.innerHTML = `<h4>It is currently ${currentTime}</h4><h4>on ${currentDate}</h4>`
+        hero.appendChild(dateTimeContainer);
 
         // Adding content container with JS to append div elements to for CSS Styling.
         const contentContainer = document.createElement('div');
