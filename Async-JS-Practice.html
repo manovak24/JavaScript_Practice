@@ -17,6 +17,36 @@
             min-height: 100vh;
             background-color: #f1f1f1;
         }
+        h2 {
+            padding: 20px 5px;
+            background-color: lightblue;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .content-container {
+            width: 90%;
+            margin: 20px auto;
+        }
+        .user-container {
+            margin: 35px auto;
+            border: 1px solid gray;
+            border-radius: 15px;
+        }
+        .todo-item {
+            display: flex;
+            margin: 10px auto;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-bottom: 7px;
+            border-bottom: 1px solid gray;
+        }
+        .todo-item p:first-child{
+            margin-right: 10px;
+        }
+        .todo-item:last-child {
+            border: none;
+            padding-bottom: 0px;
+        }
     </style>
 </head>
 <body>
@@ -39,6 +69,11 @@
         xhttp.open("GET", url, true);
         xhttp.send();
 
+        // Adding content container with JS to append div elements to for CSS Styling.
+        const contentContainer = document.createElement('div');
+        contentContainer.classList.add('content-container')
+        document.body.appendChild(contentContainer);
+
         // Step #2
         // Create a function that will loop through and print the userID to h2 element
         function userOutput(arr) {
@@ -54,23 +89,25 @@
             }
 
             for(let key in dataByUserId) {
-                const container = document.createElement('div');
+                const userContainer = document.createElement('div');
+                userContainer.classList.add('user-container');
                 const newH2 = document.createElement('h2');
-                document.body.appendChild(container);
-                container.appendChild(newH2);
-                container.id = key;
+                contentContainer.appendChild(userContainer);
+                userContainer.appendChild(newH2);
+                userContainer.id = key;
                 newH2.textContent = `User ${key}`
                 
                 // Step 3
                 // Create loop to iterate through dataByUserId to push title to p element and append to container
                 for(let i = 0; i < dataByUserId[key].length; i++) {
                     if(dataByUserId[key][i].userId == key) {
-                        const newP = document.createElement('p');
-                        container.appendChild(newP);
+                        const newP = document.createElement('div');
+                        newP.classList.add('todo-item')
+                        userContainer.appendChild(newP);
                         if(dataByUserId[key][i].completed === true) {
-                            newP.innerHTML =`<span>✔</span> ${dataByUserId[key][i].title}`;
+                            newP.innerHTML =`<p>✔</p> <p>${dataByUserId[key][i].title}</p>`;
                         } else if (dataByUserId[key][i].completed === false) {
-                            newP.innerHTML =`<span>☐</span> ${dataByUserId[key][i].title}`;
+                            newP.innerHTML =`<p>☐</p> <p>${dataByUserId[key][i].title}</p>`;
                         }
                     }
                 }
