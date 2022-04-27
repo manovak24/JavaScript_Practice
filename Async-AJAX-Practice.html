@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Async JavaScript Practice Problem</title>
+    <title>Async jQuery AJAX Practice Problem</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <style>
         * {
@@ -96,7 +96,8 @@
         $.ajax({
             url: url,
             success: function(data) {
-                console.log(data)
+                console.log(data);
+                userOutput(data);
             }
         })
 
@@ -106,74 +107,69 @@
         const heroContent = $('<div>', {'class': 'hero-content'})
         $(heroContainer).append(heroContent);
 
-
-
+        // below if for finding current date and conditional to determine what is to be said based on time
         const today = new Date();
         let currentDate = today.toLocaleDateString('en-us', { weekday:"short", year:"numeric", month:"short", day:"numeric"}).slice(0, -6);
         const currentHour = today.getHours();
 
-        const heroTitle = $('<h1>hello world</h1>');
+        const heroTitle = $('<h1>');
         if(currentHour < 12) {
-            heroTitle.innerText = 'Good Morning!'
+            heroTitle.text('Good Morning!')
         } else if(currentHour < 18) {
-            heroTitle.innerText = 'Good Afternoon!'
+            heroTitle.text('Good Afternoon!')
         } else (
-            heroTitle.innerText = 'Good Evening!'
+            heroTitle.text('Good Evening!')
         )
-        $(heroContent).append(heroTitle);
 
-        // const date = document.createElement('h4');
-        // date.textContent = currentDate;
-        // heroContent.appendChild(date);
+        // appending title and date to hero content
+        $(heroContent).append(heroTitle).append(`<h4>${currentDate}</h4>`);
+
 
         // // Adding content container with JS to append div elements to for CSS Styling.
-        // const contentContainer = document.createElement('div');
-        // contentContainer.classList.add('content-container')
-        // document.body.appendChild(contentContainer);
+        const contentContainer = $('<div>', {'class': 'content-container'});
+        $('body').append(contentContainer);
 
         // // Step #2
         // // Create a function that will loop through and print the userID to h2 element
-        // function userOutput(arr) {
-        //     const dataSet = JSON.parse(arr);
-        //     const dataByUserId = {};
+        function userOutput(arr) {
+            const dataByUserId = {};
 
-        //     for(let data of dataSet) {
-        //         if(dataByUserId[data.userId]) {
-        //             dataByUserId[data.userId].push(data);
-        //         } else {
-        //             dataByUserId[data.userId] = [data]
-        //         }
-        //     }
+            for(let data of arr) {
+                if(dataByUserId[data.userId]) {
+                    dataByUserId[data.userId].push(data);
+                } else {
+                    dataByUserId[data.userId] = [data]
+                }
+            }
 
-        //     for(let key in dataByUserId) {
-        //         const userContainer = document.createElement('div');
-        //         userContainer.classList.add('user-container');
-        //         const newH2 = document.createElement('h2');
-        //         contentContainer.appendChild(userContainer);
-        //         userContainer.appendChild(newH2);
-        //         userContainer.id = key;
-        //         newH2.textContent = `User ${key}`
-                
-        //         // Step 3
-        //         // Create loop to iterate through dataByUserId to push title to p element and append to container
-        //         for(let i = 0; i < dataByUserId[key].length; i++) {
-        //             if(dataByUserId[key][i].userId == key) {
-        //                 const newP = document.createElement('div');
-        //                 newP.classList.add('todo-item')
-        //                 userContainer.appendChild(newP);
-        //                 if(dataByUserId[key][i].completed === true) {
-        //                     newP.classList.add('green-mark')
-        //                     newP.innerHTML =`<p><p class='status'>✔</p> <p>${dataByUserId[key][i].title}</p>`;
-        //                 } else if (dataByUserId[key][i].completed === false) {
-        //                     newP.classList.add('red-mark')
-        //                     newP.innerHTML =`<p class='status'>☐</p> <p>${dataByUserId[key][i].title}</p>`;
-        //                 }
-        //             }
-        //         }
-        //     }
-        //     console.log(dataByUserId)
-        //     console.log(dataSet)
-        // }        
+            for(let key in dataByUserId) {
+                const userContainer = $('<div>', {
+                    id: key,
+                    'class': 'user-container'
+                }).append(`<h2>User ${key}`);
+                contentContainer.append(userContainer);
+
+                // Step 3
+                // Create loop to iterate through dataByUserId to push title to p element and append to container
+                for(let i = 0; i < dataByUserId[key].length; i++) {
+                    if(dataByUserId[key][i].userId == key) {
+                        const newP = $('<div>', {
+                            'class': 'todo-item'
+                        }).appendTo(userContainer);
+                        if(dataByUserId[key][i].completed === true) {
+                            newP.addClass('green-mark')
+                            newP.html(`<p><p class='status'>✔</p> <p>${dataByUserId[key][i].title}</p>`);
+                        } else if (dataByUserId[key][i].completed === false) {
+                            newP.addClass('red-mark')
+                            newP.html(`<p class='status'>☐</p> <p>${dataByUserId[key][i].title}</p>`);
+                        }
+                    }
+                }
+            }
+            console.log(dataByUserId)
+            console.log(arr)
+             
+        } 
 
     </script>
 </body>
