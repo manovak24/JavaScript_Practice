@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JavaScript Practice Problem</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            min-width: 100%;
+            min-height: 100vh;
+            background-color: #F2F2F2;
+        }
+        h2 {
+            padding: 20px 10px;
+            background-color: #578661;
+            color: #fff;
+            border-radius: 15px;
+        }
+        .hero-container {
+            width: 100%;
+            height: 250px;
+            margin: auto;
+            color: white;
+            background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1483347756197-71ef80e95f73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 100% 95%;
+            background-color: rgba(0,0,0,0.5)
+        }
+        .hero-content {
+            display: flex;
+            width: 90%;
+            height: 225px;
+            margin: auto;
+            padding-right: 10px;
+            padding-left: 5px;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .content-container {
+            width: 90%;
+            margin: 20px auto;
+        }
+        .user-container {
+            margin: 35px auto;
+            border-radius: 10px;
+        }   
+        .todo-item {
+            display: flex;
+            margin: 15px auto;
+            padding: 15px 5px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .status {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        .green-mark {
+            border-left: 2px solid green;
+        }
+        .red-mark {
+            border-left: 2px solid red;
+        }
+        @media only screen and (min-width: 750px) {
+            .hero-content {
+                width: 75%;
+            }
+        .content-container {
+                width: 75%;
+            }
+        }
+        @media only screen and (min-width: 1000px) {
+            .hero-content {
+                width: 50%;
+            }
+        .content-container {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <script>
+        // jQuery AJAX
+        const url = 'https://jsonplaceholder.typicode.com/todos';
+        $.ajax({
+            url: url,
+            success: function(data) {
+                console.log(data)
+            }
+        })
+
+        // Adding Hero section
+        const heroContainer = $('<div>', {'class': 'hero-container'})
+        $('body').append(heroContainer);
+        const heroContent = $('<div>', {'class': 'hero-content'})
+        $(heroContainer).append(heroContent);
+
+
+
+        const today = new Date();
+        let currentDate = today.toLocaleDateString('en-us', { weekday:"short", year:"numeric", month:"short", day:"numeric"}).slice(0, -6);
+        const currentHour = today.getHours();
+
+        const heroTitle = $('<h1>hello world</h1>');
+        if(currentHour < 12) {
+            heroTitle.innerText = 'Good Morning!'
+        } else if(currentHour < 18) {
+            heroTitle.innerText = 'Good Afternoon!'
+        } else (
+            heroTitle.innerText = 'Good Evening!'
+        )
+        $(heroContent).append(heroTitle);
+
+        // const date = document.createElement('h4');
+        // date.textContent = currentDate;
+        // heroContent.appendChild(date);
+
+        // // Adding content container with JS to append div elements to for CSS Styling.
+        // const contentContainer = document.createElement('div');
+        // contentContainer.classList.add('content-container')
+        // document.body.appendChild(contentContainer);
+
+        // // Step #2
+        // // Create a function that will loop through and print the userID to h2 element
+        // function userOutput(arr) {
+        //     const dataSet = JSON.parse(arr);
+        //     const dataByUserId = {};
+
+        //     for(let data of dataSet) {
+        //         if(dataByUserId[data.userId]) {
+        //             dataByUserId[data.userId].push(data);
+        //         } else {
+        //             dataByUserId[data.userId] = [data]
+        //         }
+        //     }
+
+        //     for(let key in dataByUserId) {
+        //         const userContainer = document.createElement('div');
+        //         userContainer.classList.add('user-container');
+        //         const newH2 = document.createElement('h2');
+        //         contentContainer.appendChild(userContainer);
+        //         userContainer.appendChild(newH2);
+        //         userContainer.id = key;
+        //         newH2.textContent = `User ${key}`
+                
+        //         // Step 3
+        //         // Create loop to iterate through dataByUserId to push title to p element and append to container
+        //         for(let i = 0; i < dataByUserId[key].length; i++) {
+        //             if(dataByUserId[key][i].userId == key) {
+        //                 const newP = document.createElement('div');
+        //                 newP.classList.add('todo-item')
+        //                 userContainer.appendChild(newP);
+        //                 if(dataByUserId[key][i].completed === true) {
+        //                     newP.classList.add('green-mark')
+        //                     newP.innerHTML =`<p><p class='status'>✔</p> <p>${dataByUserId[key][i].title}</p>`;
+        //                 } else if (dataByUserId[key][i].completed === false) {
+        //                     newP.classList.add('red-mark')
+        //                     newP.innerHTML =`<p class='status'>☐</p> <p>${dataByUserId[key][i].title}</p>`;
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     console.log(dataByUserId)
+        //     console.log(dataSet)
+        // }        
+
+    </script>
+</body>
+</html>
