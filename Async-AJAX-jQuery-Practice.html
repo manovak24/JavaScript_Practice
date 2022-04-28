@@ -91,16 +91,6 @@
     
 
     <script>
-        // jQuery AJAX
-        const url = 'https://jsonplaceholder.typicode.com/todos';
-        $.ajax({
-            url: url,
-            success: function(data) {
-                console.log(data);
-                userOutput(data);
-            }
-        })
-
         // Adding Hero section
         const heroContainer = $('<div>', {'class': 'hero-container'})
         $('body').append(heroContainer);
@@ -124,53 +114,58 @@
         // appending title and date to hero content
         $(heroContent).append(heroTitle).append(`<h4>${currentDate}</h4>`);
 
-
-        // // Adding content container with JS to append div elements to for CSS Styling.
+        // Adding content container with JS to append div elements to for CSS Styling.
         const contentContainer = $('<div>', {'class': 'content-container'});
         $('body').append(contentContainer);
 
-        // // Step #2
-        // // Create a function that will loop through and print the userID to h2 element
-        function userOutput(arr) {
-            const dataByUserId = {};
-
-            for(let data of arr) {
-                if(dataByUserId[data.userId]) {
-                    dataByUserId[data.userId].push(data);
-                } else {
-                    dataByUserId[data.userId] = [data]
+        // jQuery AJAX
+        const url = 'https://jsonplaceholder.typicode.com/todos';
+        $.ajax({
+            url: url,
+            success: function(data) {
+                console.log(data);
+                
+                // using below for loop and const variable to create object with key of userId and value containing array with 
+                const dataByUserId = {};
+                for(let item of data) {
+                    if(dataByUserId[item.userId]) {
+                        dataByUserId[item.userId].push(item);
+                    } else {
+                        dataByUserId[item.userId] = [item]
+                    }
                 }
-            }
 
-            for(let key in dataByUserId) {
-                const userContainer = $('<div>', {
-                    id: key,
-                    'class': 'user-container'
-                }).append(`<h2>User ${key}`);
-                contentContainer.append(userContainer);
+                // Step #2
+                // Create a function that will loop through and print the userID to h2 element
+                for(let key in dataByUserId) {
+                    const userContainer = $('<div>', {
+                        id: key,
+                        'class': 'user-container'
+                    }).append(`<h2>User ${key}</h2>`);
+                    contentContainer.append(userContainer);
 
-                // Step 3
-                // Create loop to iterate through dataByUserId to push title to p element and append to container
-                for(let i = 0; i < dataByUserId[key].length; i++) {
-                    if(dataByUserId[key][i].userId == key) {
-                        const newP = $('<div>', {
-                            'class': 'todo-item'
-                        }).appendTo(userContainer);
-                        if(dataByUserId[key][i].completed === true) {
-                            newP.addClass('green-mark')
-                            newP.html(`<p><p class='status'>✔</p> <p>${dataByUserId[key][i].title}</p>`);
-                        } else if (dataByUserId[key][i].completed === false) {
-                            newP.addClass('red-mark')
-                            newP.html(`<p class='status'>☐</p> <p>${dataByUserId[key][i].title}</p>`);
+                    // Step 3
+                    // Create loop to iterate through dataByUserId to push title to p element and append to container
+                    for(let i = 0; i < dataByUserId[key].length; i++) {
+                        if(dataByUserId[key][i].userId == key) {
+                            const todoDiv = $('<div>', {
+                                'class': 'todo-item'
+                            }).appendTo(userContainer);
+                            if(dataByUserId[key][i].completed === true) {
+                                todoDiv.addClass('green-mark')
+                                todoDiv.html(`<p><p class='status'>✔</p> <p>${dataByUserId[key][i].title}</p>`);
+                            } else if (dataByUserId[key][i].completed === false) {
+                                todoDiv.addClass('red-mark')
+                                todoDiv.html(`<p class='status'>☐</p> <p>${dataByUserId[key][i].title}</p>`);
+                            }
                         }
                     }
                 }
+                console.log(dataByUserId)                    
             }
-            console.log(dataByUserId)
-            console.log(arr)
-             
-        } 
+        })
 
+        
     </script>
 </body>
 </html>
