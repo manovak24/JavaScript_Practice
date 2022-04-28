@@ -91,21 +91,6 @@
 
     <script>
         // Vanilla JavaScript Async Practice Problem
-        const url = 'https://jsonplaceholder.typicode.com/todos';
-        const xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-            // Typical action to be performed when the document is ready:
-                // Step One
-                console.log(xhttp.responseText);
-
-                // Step Two
-                userOutput(xhttp.responseText);
-            }
-        };
-        xhttp.open("GET", url, true);
-        xhttp.send();
-
         // Adding Hero section
         const hero = document.createElement('div');
         hero.classList.add('hero-container')
@@ -138,49 +123,66 @@
         contentContainer.classList.add('content-container')
         document.body.appendChild(contentContainer);
 
-        // Step #2
-        // Create a function that will loop through and print the userID to h2 element
-        function userOutput(arr) {
-            const dataSet = JSON.parse(arr);
-            const dataByUserId = {};
+        // vanilla JS XMLHTTPRequest
+        const url = 'https://jsonplaceholder.typicode.com/todos';
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            // Typical action to be performed when the document is ready:
+                // Step One
+                console.log(xhttp.responseText);
+                console.log(typeof xhttp.responseText);
 
-            for(let data of dataSet) {
-                if(dataByUserId[data.userId]) {
-                    dataByUserId[data.userId].push(data);
-                } else {
-                    dataByUserId[data.userId] = [data]
+
+                // Step #2
+                // Create a function that will loop through and print the userID to h2 element
+                const dataSet = JSON.parse(xhttp.responseText);
+                const dataByUserId = {};
+
+                for(let data of dataSet) {
+                    if(dataByUserId[data.userId]) {
+                        dataByUserId[data.userId].push(data);
+                    } else {
+                        dataByUserId[data.userId] = [data]
+                    }
                 }
-            }
 
-            for(let key in dataByUserId) {
-                const userContainer = document.createElement('div');
-                userContainer.classList.add('user-container');
-                const newH2 = document.createElement('h2');
-                contentContainer.appendChild(userContainer);
-                userContainer.appendChild(newH2);
-                userContainer.id = key;
-                newH2.textContent = `User ${key}`
-                
-                // Step 3
-                // Create loop to iterate through dataByUserId to push title to p element and append to container
-                for(let i = 0; i < dataByUserId[key].length; i++) {
-                    if(dataByUserId[key][i].userId == key) {
-                        const newP = document.createElement('div');
-                        newP.classList.add('todo-item')
-                        userContainer.appendChild(newP);
-                        if(dataByUserId[key][i].completed === true) {
-                            newP.classList.add('green-mark')
-                            newP.innerHTML =`<p><p class='status'>✔</p> <p>${dataByUserId[key][i].title}</p>`;
-                        } else if (dataByUserId[key][i].completed === false) {
-                            newP.classList.add('red-mark')
-                            newP.innerHTML =`<p class='status'>☐</p> <p>${dataByUserId[key][i].title}</p>`;
+                for(let key in dataByUserId) {
+                    const userContainer = document.createElement('div');
+                    userContainer.classList.add('user-container');
+                    const newH2 = document.createElement('h2');
+                    contentContainer.appendChild(userContainer);
+                    userContainer.appendChild(newH2);
+                    userContainer.id = key;
+                    newH2.textContent = `User ${key}`
+                    
+                    // Step 3
+                    // Create loop to iterate through dataByUserId to push title to p element and append to container
+                    for(let i = 0; i < dataByUserId[key].length; i++) {
+                        if(dataByUserId[key][i].userId == key) {
+                            const newP = document.createElement('div');
+                            newP.classList.add('todo-item')
+                            userContainer.appendChild(newP);
+                            if(dataByUserId[key][i].completed === true) {
+                                newP.classList.add('green-mark')
+                                newP.innerHTML =`<p><p class='status'>✔</p> <p>${dataByUserId[key][i].title}</p>`;
+                            } else if (dataByUserId[key][i].completed === false) {
+                                newP.classList.add('red-mark')
+                                newP.innerHTML =`<p class='status'>☐</p> <p>${dataByUserId[key][i].title}</p>`;
+                            }
                         }
                     }
                 }
+                console.log(dataByUserId)
+                console.log(dataSet)   
             }
-            console.log(dataByUserId)
-            console.log(dataSet)
-        }        
+        };
+        xhttp.open("GET", url, true);
+        xhttp.send();
+
+       
+
+        
 
     </script>
 </body>
