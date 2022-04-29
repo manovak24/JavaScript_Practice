@@ -17,24 +17,22 @@
             success: function(data) {
                 console.log(typeof data)
 
-                const todos = data;
-                
                 for(let i = 1; i <= 10; i++) {
                     const container = $('<div>', {id: i});
                     $('body').append(container)
                     container.html(`<h2>User ${i}</h2>`);
                 }
 
-                for(let todo of todos){
+                for(let item of data){
                     const newP = $('<p>');
-                    if(todo.completed) {
-                        newP.text('✔' + todo.title)
+                    if(item.completed) {
+                        newP.text('✔' + item.title)
                     } else {
-                        newP.text('☐' + todo.title)
+                        newP.text('☐' + item.title)
 
                     }
-                    // below is the same as adding the newP to each div by id like document.getElementById(todo.userId).appendChild(newP)
-                    $(`#${todo.userId}`).append(newP)
+                    // below is the same as adding the newP to each div by id like document.getElementById(item.userId).appendChild(newP)
+                    $(`#${item.userId}`).append(newP)
                 }
                 
             }
@@ -42,7 +40,7 @@
 
         // XMLHTTPRequest 
 
-        // const url = 'https://jsonplaceholder.typicode.com/todos';
+        // const url = 'https://jsonplaceholder.typicode.com/data';
         // const xhttp = new XMLHttpRequest();
         // xhttp.onreadystatechange = function() {
         //     if (this.readyState == 4 && this.status == 200) {
