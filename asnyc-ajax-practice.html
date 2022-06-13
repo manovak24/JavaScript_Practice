@@ -14,28 +14,28 @@
     <script>
 
         // Vanilla JavaScript XMLHttp Request
-        // var xhttp = new XMLHttpRequest();
-        // xhttp.onreadystatechange = function() {
-        //     console.log('ran inner function')
-        //     if (this.readyState == 4 && this.status == 200) {
-        //     // Typical action to be performed when the document is ready:
-        //     document.getElementById("demo").innerHTML = xhttp.responseText;
-        //     }
-        // };
-        // xhttp.open("GET", "https://remoteok.com/api", true);
-        // xhttp.send();
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            console.log('ran inner function')
+            if (this.readyState == 4 && this.status == 200) {
+            // Typical action to be performed when the document is ready:
+            document.getElementById("demo").innerHTML = xhttp.responseText;
+            }
+        };
+        xhttp.open("GET", "https://remoteok.com/api", true);
+        xhttp.send();
 
         // jQuery XMLHttp Request
-        $.ajax({
-            url: 'https://remoteok.com/api',
-            success: function(data) {
-                console.log(data);
-                // $('#demo').html(JSON.stringify(data));
-                for(const job of data) {
-                    $(`<li>${job.company}</li>`).appendTo('#demo-list');
-                }
-            }
-        })
+        // $.ajax({
+        //     url: 'https://remoteok.com/api',
+        //     success: function(data) {
+        //         console.log(data);
+        //         // $('#demo').html(JSON.stringify(data));
+        //         for(const job of data) {
+        //             $(`<li>${job.company}</li>`).appendTo('#demo-list');
+        //         }
+        //     }
+        // })
     </script>
 </body>
 </html>
