@@ -2,7 +2,7 @@ anime({
     // Lots of css styling can be use. See the examples that have been commented out. NOTE THEY NEED TO BE IN CAMEL CASE
     targets: 'div.box',
     translateY: [
-        { value: 200, duration: 500 },
+        { value: -200, duration: 1000 },
         { value: 0, duration: 800}
     ],
     rotate: {
