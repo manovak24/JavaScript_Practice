@@ -16,25 +16,66 @@
 </style>
 <body>
     <div class="full-card">
-        <a href="#" id="showphoto">
+        <a href="#" class="showphoto image-1">
             <div class="pp-content-grid-post-text">
-                <h3 class="pp-content-grid-post-title">POST TITLE</h3>
+                <h3 class="pp-content-grid-post-title">POST TITLE 1</h3>
             </div>
             Click to see image
         </a>
-        <div id="myImage" class="pp-content-image">
+        <div id="image-1" class="pp-content-image">
             IMAGE (should start hidden)
-            <a href="[wpbb post:url]">
+            <a href="#">
+                <div>Click to read more (should start hidden)</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="full-card">
+        <a href="#" class="showphoto image-2">
+            <div class="pp-content-grid-post-text">
+                <h3 class="pp-content-grid-post-title">POST TITLE 2</h3>
+            </div>
+            Click to see image
+        </a>
+        <div id="image-2" class="pp-content-image">
+            IMAGE (should start hidden)
+            <a href="#">
+                <div>Click to read more (should start hidden)</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="full-card">
+        <a href="#" class="showphoto image-3">
+            <div class="pp-content-grid-post-text">
+                <h3 class="pp-content-grid-post-title">POST TITLE 3</h3>
+            </div>
+            Click to see image
+        </a>
+        <div id="image-3" class="pp-content-image">
+            IMAGE (should start hidden)
+            <a href="#">
                 <div>Click to read more (should start hidden)</div>
             </a>
         </div>
     </div>
 
     <script>
-        document.getElementById("showphoto").onclick = function() {myfunction()};
+        const showPhotos = document.querySelectorAll('.showphoto');
+        const myImages = document.querySelectorAll('.pp-content-image');
 
-        function myfunction() {
-            document.getElementById("myImage").classList.toggle("show");
+        function myfunction(e) {
+            for(const myImage of myImages) {
+                if(e.classList[1] === myImage.id) {
+                    myImage.classList.toggle("show");
+                }
+            }
+        }
+        
+        for(const showPhoto of showPhotos) {
+            showPhoto.addEventListener('click', function(event) {
+                myfunction(event.currentTarget);
+            })
         }
     </script>
 </body>

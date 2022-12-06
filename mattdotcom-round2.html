@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .pp-content-image {
+        display: none;
+    }
+
+    .show {
+    display: block;
+    }
+</style>
+
+<body>
+    <div class="full-card">
+        <a href="#" id="showphoto">
+          <div class="pp-content-grid-post-text">
+            <h3 class="pp-content-grid-post-title">Post Title</h3>
+        </div>
+        Click to see image
+      </a>
+        <div id="myImage" class="pp-content-image">
+            [wpbb post:featured_image size="medium" display="tag" linked="no"]
+       
+        <a href="[wpbb post:url]"><div>Click to read more about [wpbb post:title]</div></a>
+    </div>
+      
+      <div class="full-card">
+        <a href="#" id="showphoto">
+          <div class="pp-content-grid-post-text">
+            <h3 class="pp-content-grid-post-title">Post Title</h3>
+        </div>
+        Click to see image
+      </a>
+        <div id="myImage" class="pp-content-image">
+            [wpbb post:featured_image size="medium" display="tag" linked="no"]
+       
+        <a href="[wpbb post:url]"><div>Click to read more about [wpbb post:title]</div></a>
+    </div>
+        
+        <div class="full-card">
+        <a href="#" id="showphoto">
+          <div class="pp-content-grid-post-text">
+            <h3 class="pp-content-grid-post-title">Post Title</h3>
+        </div>
+        Click to see image
+      </a>
+        <div id="myImage" class="pp-content-image">
+            [wpbb post:featured_image size="medium" display="tag" linked="no"]
+       
+        <a href="[wpbb post:url]"><div>Click to read more about [wpbb post:title]</div></a>
+    </div>
+    
+    <script>
+        const test = document.querySelectorAll("#myImage:nth-child(n)");
+        console.log(test);
+
+        const testTwo = document.querySelectorAll("#showphoto:nth-child(n)");
+        console.log(testTwo)
+
+        for(const testT of testTwo) {
+        console.log(testT.id)
+        }
+
+        function myFunction() {
+        test[1].classList.toggle("show");
+        }
+    </script>
+</body>
+</html>
