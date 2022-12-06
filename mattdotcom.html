@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .pp-content-image {
+        opacity: 0;
+    }
+    .show {
+        opacity: 1;
+    }
+</style>
+<body>
+    <div class="full-card">
+        <a href="#" id="showphoto">
+            <div class="pp-content-grid-post-text">
+                <h3 class="pp-content-grid-post-title">POST TITLE</h3>
+            </div>
+            Click to see image
+        </a>
+        <div id="myImage" class="pp-content-image">
+            IMAGE (should start hidden)
+            <a href="[wpbb post:url]">
+                <div>Click to read more (should start hidden)</div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("showphoto").onclick = function() {myfunction()};
+
+        function myfunction() {
+            document.getElementById("myImage").classList.toggle("show");
+        }
+    </script>
+</body>
+</html>
