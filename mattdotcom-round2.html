@@ -18,58 +18,80 @@
 
 <body>
     <div class="full-card">
-        <a href="#" id="showphoto">
-          <div class="pp-content-grid-post-text">
-            <h3 class="pp-content-grid-post-title">Post Title</h3>
+      <a href="#" id="showphoto">
+        <div class="pp-content-grid-post-text">
+          <h3 class="pp-content-grid-post-title">Post Title 1</h3>
         </div>
         Click to see image
       </a>
-        <div id="myImage" class="pp-content-image">
-            [wpbb post:featured_image size="medium" display="tag" linked="no"]
-       
-        <a href="[wpbb post:url]"><div>Click to read more about [wpbb post:title]</div></a>
+      <div id="myImage" class="pp-content-image">
+        [wpbb post:featured_image size="medium" display="tag" linked="no"]
+
+        <a href="#">
+          <div>Click to read more about [wpbb post:title]</div>
+        </a>
+      </div>
     </div>
-      
+
       <div class="full-card">
         <a href="#" id="showphoto">
           <div class="pp-content-grid-post-text">
-            <h3 class="pp-content-grid-post-title">Post Title</h3>
-        </div>
-        Click to see image
-      </a>
+            <h3 class="pp-content-grid-post-title">Post Title 2</h3>
+          </div>
+          Click to see image
+        </a>
         <div id="myImage" class="pp-content-image">
-            [wpbb post:featured_image size="medium" display="tag" linked="no"]
-       
-        <a href="[wpbb post:url]"><div>Click to read more about [wpbb post:title]</div></a>
-    </div>
-        
+          [wpbb post:featured_image size="medium" display="tag" linked="no"]
+
+          <a href="#">
+            <div>Click to read more about [wpbb post:title]</div>
+          </a>
+        </div>
+      </div>
+
         <div class="full-card">
-        <a href="#" id="showphoto">
-          <div class="pp-content-grid-post-text">
-            <h3 class="pp-content-grid-post-title">Post Title</h3>
-        </div>
-        Click to see image
-      </a>
-        <div id="myImage" class="pp-content-image">
+          <a href="#" id="showphoto">
+            <div class="pp-content-grid-post-text">
+              <h3 class="pp-content-grid-post-title">Post Title 3</h3>
+            </div>
+            Click to see image
+          </a>
+          <div id="myImage" class="pp-content-image">
             [wpbb post:featured_image size="medium" display="tag" linked="no"]
-       
-        <a href="[wpbb post:url]"><div>Click to read more about [wpbb post:title]</div></a>
-    </div>
+
+            <a href="#">
+              <div>Click to read more about [wpbb post:title]</div>
+            </a>
+          </div>
+        </div>
     
     <script>
-        const test = document.querySelectorAll("#myImage:nth-child(n)");
-        console.log(test);
+        const image = document.querySelectorAll("#myImage:nth-child(n)");
 
-        const testTwo = document.querySelectorAll("#showphoto:nth-child(n)");
-        console.log(testTwo)
+        const showPhotos = document.querySelectorAll("#showphoto:nth-child(n)");
 
-        for(const testT of testTwo) {
-        console.log(testT.id)
+        const divArr = [];
+        for(let showPhoto of showPhotos) {
+          const divObj = {};
+          divObj['divCtr'] = showPhoto;
+          divArr.push(divObj);
         }
 
-        function myFunction() {
-        test[1].classList.toggle("show");
+        console.log(divArr);
+
+        for(let div of divArr) {
+          
+          console.log(div)
         }
+
+        for(div in divArr) {
+          console.log(divArr[div])
+        }
+        
+
+        // function myFunction() {
+        // test[1].classList.toggle("show");
+        // }
     </script>
 </body>
 </html>
