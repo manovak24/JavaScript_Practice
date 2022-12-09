@@ -17,75 +17,104 @@
 </style>
 
 <body>
-    <div class="full-card">
-      <a href="#" id="showphoto">
-        <div class="pp-content-grid-post-text">
-          <h3 class="pp-content-grid-post-title">Post Title 1</h3>
-        </div>
-        Click to see image
-      </a>
-      <div id="myImage" class="pp-content-image">
-        [wpbb post:featured_image size="medium" display="tag" linked="no"]
-
-        <a href="#">
-          <div>Click to read more about [wpbb post:title]</div>
-        </a>
-      </div>
+  <div class="full-card">
+    <a href="#" id="showphoto">
+      <div class="pp-content-grid-post-text">
+        <h3 class="pp-content-grid-post-title">[wpbb post:title]</h3>
     </div>
-
-      <div class="full-card">
-        <a href="#" id="showphoto">
-          <div class="pp-content-grid-post-text">
-            <h3 class="pp-content-grid-post-title">Post Title 2</h3>
-          </div>
-          Click to see image
-        </a>
+    Click to see image
+      </a>
         <div id="myImage" class="pp-content-image">
           [wpbb post:featured_image size="medium" display="tag" linked="no"]
+      
+        <a href="[wpbb post:url]"><div>Click to read more about [wpbb post:title]</div></a>
+    </div>
+  </div>
 
-          <a href="#">
-            <div>Click to read more about [wpbb post:title]</div>
-          </a>
-        </div>
-      </div>
+  <div class="full-card">
+    <a href="#" id="showphoto">
+      <div class="pp-content-grid-post-text">
+        <h3 class="pp-content-grid-post-title">[wpbb post:title]</h3>
+    </div>
+    Click to see image
+      </a>
+        <div id="myImage" class="pp-content-image">
+          [wpbb post:featured_image size="medium" display="tag" linked="no"]
+      
+        <a href="[wpbb post:url]"><div>Click to read more about [wpbb post:title]</div></a>
+    </div>
+  </div>
 
-        <div class="full-card">
-          <a href="#" id="showphoto">
-            <div class="pp-content-grid-post-text">
-              <h3 class="pp-content-grid-post-title">Post Title 3</h3>
-            </div>
-            Click to see image
-          </a>
-          <div id="myImage" class="pp-content-image">
-            [wpbb post:featured_image size="medium" display="tag" linked="no"]
+  <div class="full-card">
+    <a href="#" id="showphoto">
+      <div class="pp-content-grid-post-text">
+        <h3 class="pp-content-grid-post-title">[wpbb post:title]</h3>
+    </div>
+    Click to see image
+      </a>
+        <div id="myImage" class="pp-content-image">
+          [wpbb post:featured_image size="medium" display="tag" linked="no"]
+      
+        <a href="[wpbb post:url]"><div>Click to read more about [wpbb post:title]</div></a>
+    </div>
+  </div>
 
-            <a href="#">
-              <div>Click to read more about [wpbb post:title]</div>
-            </a>
-          </div>
-        </div>
-    
+
+      
     <script>
-        const image = document.querySelectorAll("#myImage:nth-child(n)");
+      const fullCardCtrs = document.querySelectorAll('.full-card:nth-child(n)');
+      const myImageCtrs = document.querySelectorAll('#myImage:nth-child(n)');
 
-        const showPhotos = document.querySelectorAll("#showphoto:nth-child(n)");
-
-        const divArr = [];
-        for(let showPhoto of showPhotos) {
-          const divObj = {};
-          divObj['divCtr'] = showPhoto;
-          divArr.push(divObj);
+      const fullCardArr = [
+        {
+          fullCardOne: fullCardCtrs[0],
+          myImageOne: myImageCtrs[0]
+        },
+        {
+          fullCardTwo: fullCardCtrs[1],
+          myImageTwo: myImageCtrs[1]
+        },
+        {
+          fullCardThree: fullCardCtrs[2],
+          myImageThree: myImageCtrs[2]
         }
+      ];
 
-        console.log(divArr);
 
-        for(let div of divArr) {
-          console.log(div)
-        }
+      fullCardArr[0].fullCardOne.addEventListener('click', function() {
+        fullCardArr[0].myImageOne.classList.toggle("show");
+      })
 
-        for(div in divArr) {
-          console.log(divArr[div])
-        }
+      fullCardArr[1].fullCardTwo.addEventListener('click', function() {
+        fullCardArr[1].myImageTwo.classList.toggle("show");
+      })
+
+      fullCardArr[2].fullCardThree.addEventListener('click', function() {
+        fullCardArr[2].myImageThree.classList.toggle("show");
+      })
+
+
+
+        // const image = document.querySelectorAll("#myImage:nth-child(n)");
+
+        // const showPhotos = document.querySelectorAll("#showphoto:nth-child(n)");
+
+        // const divArr = [];
+        // for(let showPhoto of showPhotos) {
+        //   const divObj = {};
+        //   divObj['divCtr'] = showPhoto;
+        //   divArr.push(divObj);
+        // }
+
+        // console.log(divArr);
+
+        // for(let div of divArr) {
+        //   console.log(div)
+        // }
+
+        // for(div in divArr) {
+        //   console.log(divArr[div])
+        // }
         
 
         // function myFunction() {
