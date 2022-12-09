@@ -80,18 +80,24 @@
         }
       ];
 
-
-      fullCardArr[0].fullCardOne.addEventListener('click', function() {
-        fullCardArr[0].myImageOne.classList.toggle("show");
+      for(let i = 0; i < fullCardArr.length; i++) {
+        fullCardArr[i].fullCardOne.addEventListener('click', function() {
+        fullCardArr[i].myImageOne.classList.toggle("show");
       })
+      }
 
-      fullCardArr[1].fullCardTwo.addEventListener('click', function() {
-        fullCardArr[1].myImageTwo.classList.toggle("show");
-      })
 
-      fullCardArr[2].fullCardThree.addEventListener('click', function() {
-        fullCardArr[2].myImageThree.classList.toggle("show");
-      })
+      // fullCardArr[0].fullCardOne.addEventListener('click', function() {
+      //   fullCardArr[0].myImageOne.classList.toggle("show");
+      // })
+
+      // fullCardArr[1].fullCardTwo.addEventListener('click', function() {
+      //   fullCardArr[1].myImageTwo.classList.toggle("show");
+      // })
+
+      // fullCardArr[2].fullCardThree.addEventListener('click', function() {
+      //   fullCardArr[2].myImageThree.classList.toggle("show");
+      // })
 
 
 
