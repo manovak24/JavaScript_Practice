@@ -67,22 +67,22 @@
 
       const fullCardArr = [
         {
-          fullCardOne: fullCardCtrs[0],
-          myImageOne: myImageCtrs[0]
+          fullCard: fullCardCtrs[0],
+          myImage: myImageCtrs[0]
         },
         {
-          fullCardTwo: fullCardCtrs[1],
-          myImageTwo: myImageCtrs[1]
+          fullCard: fullCardCtrs[1],
+          myImage: myImageCtrs[1]
         },
         {
-          fullCardThree: fullCardCtrs[2],
-          myImageThree: myImageCtrs[2]
+          fullCard: fullCardCtrs[2],
+          myImage: myImageCtrs[2]
         }
       ];
 
       for(let i = 0; i < fullCardArr.length; i++) {
-        fullCardArr[i].fullCardOne.addEventListener('click', function() {
-        fullCardArr[i].myImageOne.classList.toggle("show");
+        fullCardArr[i].fullCard.addEventListener('click', function() {
+        fullCardArr[i].myImage.classList.toggle("show");
       })
       }
 
