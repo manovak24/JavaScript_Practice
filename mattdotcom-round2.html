@@ -66,23 +66,35 @@
       const myImageCtrs = document.querySelectorAll('#myImage:nth-child(n)');
 
       const fullCardArr = [
-        {
-          fullCard: fullCardCtrs[0],
-          myImage: myImageCtrs[0]
-        },
-        {
-          fullCard: fullCardCtrs[1],
-          myImage: myImageCtrs[1]
-        },
-        {
-          fullCard: fullCardCtrs[2],
-          myImage: myImageCtrs[2]
-        }
+        // {
+        //   fullCard: fullCardCtrs[0],
+        //   myImage: myImageCtrs[0]
+        // },
+        // {
+        //   fullCard: fullCardCtrs[1],
+        //   myImage: myImageCtrs[1]
+        // },
+        // {
+        //   fullCard: fullCardCtrs[2],
+        //   myImage: myImageCtrs[2]
+        // }
       ];
+
+      for(let fullCardCtr of fullCardCtrs) {
+        
+        let fullCardObj = {};
+        fullCardObj['fullCard'] = fullCardCtr;
+        fullCardObj['myImage'] = fullCardCtr.children[1];
+        // console.log(fullCardCtrs[fullCardCtr])
+        fullCardArr.push(fullCardObj);
+        console.log(fullCardObj);
+      }
+
+      console.log(fullCardArr)
 
       for(let i = 0; i < fullCardArr.length; i++) {
         fullCardArr[i].fullCard.addEventListener('click', function() {
-        fullCardArr[i].myImage.classList.toggle("show");
+          fullCardArr[i].myImage.classList.toggle("show");
       })
       }
 
