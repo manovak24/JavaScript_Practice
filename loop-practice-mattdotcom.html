@@ -62,42 +62,73 @@
 
       
     <script>
-      const fullCardCtrs = document.querySelectorAll('.full-card:nth-child(n)');
-      const myImageCtrs = document.querySelectorAll('#myImage:nth-child(n)');
+      // dynamic solution
 
-      const fullCardArr = [
-        // {
-        //   fullCard: fullCardCtrs[0],
-        //   myImage: myImageCtrs[0]
-        // },
-        // {
-        //   fullCard: fullCardCtrs[1],
-        //   myImage: myImageCtrs[1]
-        // },
-        // {
-        //   fullCard: fullCardCtrs[2],
-        //   myImage: myImageCtrs[2]
-        // }
-      ];
+      const fullCardCtrs = document.querySelectorAll('.full-card:nth-child(n)');
+
+      const fullCardArr = [];
 
       for(let fullCardCtr of fullCardCtrs) {
-        
         let fullCardObj = {};
         fullCardObj['fullCard'] = fullCardCtr;
         fullCardObj['myImage'] = fullCardCtr.children[1];
-        // console.log(fullCardCtrs[fullCardCtr])
         fullCardArr.push(fullCardObj);
-        console.log(fullCardObj);
       }
-
-      console.log(fullCardArr)
 
       for(let i = 0; i < fullCardArr.length; i++) {
         fullCardArr[i].fullCard.addEventListener('click', function() {
           fullCardArr[i].myImage.classList.toggle("show");
-      })
+        })
       }
 
+
+
+      // dynamic loop for event listener
+
+      // const fullCardCtrs = document.querySelectorAll('.full-card:nth-child(n)');
+      // const myImageCtrs = document.querySelectorAll('#myImage:nth-child(n)');
+
+      // const fullCardArr = [
+      //   {
+      //     fullCard: fullCardCtrs[0],
+      //     myImage: myImageCtrs[0]
+      //   },
+      //   {
+      //     fullCard: fullCardCtrs[1],
+      //     myImage: myImageCtrs[1]
+      //   },
+      //   {
+      //     fullCard: fullCardCtrs[2],
+      //     myImage: myImageCtrs[2]
+      //   }
+      // ];
+
+      // for(let i = 0; i < fullCardArr.length; i++) {
+      //   fullCardArr[i].fullCard.addEventListener('click', function() {
+      //     fullCardArr[i].myImage.classList.toggle("show");
+      //   })
+      // }
+
+
+      // original non-dynamic solution
+
+      // const fullCardCtrs = document.querySelectorAll('.full-card:nth-child(n)');
+      // const myImageCtrs = document.querySelectorAll('#myImage:nth-child(n)');
+
+      // const fullCardArr = [
+      //   {
+      //     fullCardOne: fullCardCtrs[0],
+      //     myImageOne: myImageCtrs[0]
+      //   },
+      //   {
+      //     fullCardTwo: fullCardCtrs[1],
+      //     myImageTwo: myImageCtrs[1]
+      //   },
+      //   {
+      //     fullCardThree: fullCardCtrs[2],
+      //     myImageThree: myImageCtrs[2]
+      //   }
+      // ];
 
       // fullCardArr[0].fullCardOne.addEventListener('click', function() {
       //   fullCardArr[0].myImageOne.classList.toggle("show");
@@ -110,34 +141,6 @@
       // fullCardArr[2].fullCardThree.addEventListener('click', function() {
       //   fullCardArr[2].myImageThree.classList.toggle("show");
       // })
-
-
-
-        // const image = document.querySelectorAll("#myImage:nth-child(n)");
-
-        // const showPhotos = document.querySelectorAll("#showphoto:nth-child(n)");
-
-        // const divArr = [];
-        // for(let showPhoto of showPhotos) {
-        //   const divObj = {};
-        //   divObj['divCtr'] = showPhoto;
-        //   divArr.push(divObj);
-        // }
-
-        // console.log(divArr);
-
-        // for(let div of divArr) {
-        //   console.log(div)
-        // }
-
-        // for(div in divArr) {
-        //   console.log(divArr[div])
-        // }
-        
-
-        // function myFunction() {
-        // test[1].classList.toggle("show");
-        // }
     </script>
 </body>
 </html>
