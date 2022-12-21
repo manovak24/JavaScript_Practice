@@ -23,6 +23,10 @@
         ) fixed;
     }
 
+    mark {
+        background-color: #ffdd4b;
+    }
+
     .container {
         width: 90vmin;
         background-color: #ffffff;
@@ -58,6 +62,25 @@
         border-radius: 3px;
     }
 
+    .clear-search-ctr {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .clear-btn {
+        border: none;
+        background-color: #ffffff;
+        width: 30%;
+        padding-top: 10px;
+        text-align: right;
+    }
+
+    .clear-btn:hover{
+        cursor: pointer;
+        opacity: .7;
+    }
+
     .container p {
         line-height: 35px;
         text-align: justify;
@@ -69,13 +92,56 @@
 
 <body>
     <div class="container">
-        <div class="wrapper">
+        <form class="wrapper" id="search-ctr">
             <input type="text" id="text-to-search" placeholder="Enter text to search..">
-            <button onclick="search()">Search</button>
+            <button type="button" id="search-btn">Search</button>
+        </form>
+        <div class="clear-search-ctr">
+            <button type="button" id="clear-btn" class="clear-btn">Clear Search</button>
         </div>
         <p id="paragraph">
-            This is a test. I will write random things. Hello World! How are you today? This is a test. I will write random things. Hello World! How are you today?This is a test. I will write random things. Hello World! How are you today? This is a test. I will write random things. Hello World! How are you today?This is a test. I will write random things. Hello World! How are you today? This is a test. I will write random things. Hello World! How are you today?
+            This is a test. I will write random things. Hello World! How are you today? This is a test. I will write random things. Hello World! How are you today? This is a test. I will write random things. Hello World! How are you today? This is a test. I will write random things. Hello World! How are you today? This is a test. I will write random things. Hello World! How are you today? This is a test. I will write random things. Hello World! How are you today?
         </p>
     </div>
 </body>
+
+<script>
+    const submitCtr = document.getElementById('search-ctr');
+    const submitBtn = document.getElementById('search-btn');
+    const clearBtn = document.getElementById('clear-btn');
+    const searchTerm = document.getElementById('text-to-search');
+    const paragraph = document.getElementById('paragraph');
+
+    let paragraphObj = {};
+
+    const search = (e) => {
+        e.preventDefault();
+
+        paragraphObj['originalText'] = paragraph.innerText;
+
+        let textToSearch = searchTerm.value; 
+        textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+        let pattern = new RegExp(`${textToSearch}`, "gi");
+        paragraph.innerHTML = paragraph.textContent.replace(pattern, match => `<mark>${match}</mark>`);
+    }
+
+    const clearSearch = () => {
+        paragraph.innerText = paragraphObj.originalText;
+        searchTerm.value = '';
+    }
+
+    submitCtr.addEventListener('submit', (event) => {
+        search(event);
+    })
+
+    submitBtn.addEventListener('click', (event) => {
+        search(event);
+    })
+
+    clearBtn.addEventListener('click', () => {
+        clearSearch();
+    })
+
+</script>
+
 </html>
