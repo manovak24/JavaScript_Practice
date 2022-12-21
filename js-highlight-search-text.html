@@ -113,13 +113,14 @@
     const paragraph = document.getElementById('paragraph');
 
     let paragraphObj = {
-        name: 'Original Text'
+        name: 'Original Text',
+        text: ''
     };
 
     const search = (e) => {
         e.preventDefault();
 
-        paragraphObj['text'] = paragraph.innerText;
+        paragraphObj.text = paragraph.innerText;
 
         let textToSearch = searchTerm.value; 
         textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
@@ -128,7 +129,7 @@
     }
 
     const clearSearch = () => {
-        paragraph.innerText = paragraphObj.originalText;
+        paragraph.innerText = paragraphObj.text;
         searchTerm.value = '';
     }
 
@@ -138,7 +139,9 @@
 
     submitBtn.addEventListener('click', (event) => {
         search(event);
-        console.log(paragraphObj)
+        // console.log(paragraphObj, "object");
+        // console.log(`THIS IS THE TEXT ${paragraphObj.text}`);
+
     })
 
     clearBtn.addEventListener('click', () => {
