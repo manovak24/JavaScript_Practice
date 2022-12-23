@@ -115,14 +115,15 @@
     </div>
 
     <script>
+        const btnCtrs = document.querySelectorAll('.btn-ctr');
         const btns = document.querySelectorAll('.btn');
         const buttonToggle = (el) => {
-            el.classList.toggle('highlight');
+            el.children[0].classList.toggle('highlight');
         }
 
-        for (const btn of btns) {
-            btn.addEventListener('click', function(event) {
-                console.log(event.currentTarget.classList);
+        for (const btnCtr of btnCtrs) {
+            btnCtr.addEventListener('click', function(event) {
+                console.log(event.currentTarget);
                 buttonToggle(event.currentTarget);
             })
         }
