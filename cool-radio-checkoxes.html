@@ -48,7 +48,7 @@
         background-color: transparent;
         color: white;
         border-radius: 35px;
-        width: 250px;
+       
         border: 5px solid transparent;
     }
 
@@ -61,6 +61,7 @@
     }
 
     .inner-btn-ctr {
+        width: 100%;
         border: 4px solid #FF0094;
         padding: 10px 20px;
         border-radius: 25px;
@@ -117,6 +118,8 @@
     <script>
         const btnCtrs = document.querySelectorAll('.btn-ctr');
         const btns = document.querySelectorAll('.btn');
+
+        // Styling event lisenters
         const buttonToggle = (el) => {
             el.children[0].classList.toggle('highlight');
         }
