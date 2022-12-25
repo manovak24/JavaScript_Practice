@@ -86,7 +86,7 @@
                 <div class="btn">
                     <div class="inner-btn-ctr">
                         <input type="checkbox" id="b">
-                        <label for="b">Option A</label>
+                        <label for="b">Option B</label>
                     </div>
                 </div>
             </div>
@@ -116,19 +116,29 @@
     </div>
 
     <div class="submit-ctr">
-
+        <button class="submit-btn">Submit</button>
     </div>
     <script>
         const btnCtrs = document.querySelectorAll('.btn-ctr');
         const btns = document.querySelectorAll('.btn');
+        const submitBtn = document.querySelector('.submit-btn');
 
-
-        let checkedBoxesArr = [];
         const logCheckedBoxes = () => {
-            let answer = document.querySelectorAll('input[type=radio]:checked');
-
-            console.log(answer)
+            let answerObj = {};
+            const answerOptions = document.querySelectorAll('input[type=checkbox]:checked');
+            
+            answerOptions.forEach(answerOption => {
+                if(answerOption.checked) {
+                    answerObj[answerOption.nextElementSibling.innerText] = answerOption.id
+                    // console.log(answerOption.nextElementSibling.innerText)
+                }
+            })
+            console.log(answerObj)
         }
+
+        submitBtn.addEventListener('click', function() {
+            logCheckedBoxes();
+        })
 
         const checkBoxes = (el) => {
             const eventCheckBox = el.childNodes[1].children[0].children[0];
@@ -150,7 +160,7 @@
             btnCtr.addEventListener('click', function(event) {
                 checkBoxes(event.currentTarget)
                 buttonToggle(event.currentTarget);
-                logCheckedBoxes();
+                // console.log(event.currentTarget.childNodes)
             })
         }
     </script>
