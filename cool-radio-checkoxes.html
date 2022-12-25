@@ -119,12 +119,15 @@
         const btnCtrs = document.querySelectorAll('.btn-ctr');
         const btns = document.querySelectorAll('.btn');
 
-        let test = document.querySelectorAll('input[type=checkbox]')
-
-        console.log(test)
-
         const checkBoxes = (el) => {
-            el.childNodes[1].children[0].children[0].checked = true;
+            const eventCheckBox = el.childNodes[1].children[0].children[0];
+            // console.log(eventCheckBox);
+
+            if (eventCheckBox.checked === true) {
+                eventCheckBox.checked = false;
+            } else if (eventCheckBox.checked === false) {
+                eventCheckBox.checked = true;
+            }
         }
 
         // Styling event lisenters
@@ -134,7 +137,6 @@
 
         for (const btnCtr of btnCtrs) {
             btnCtr.addEventListener('click', function(event) {
-                console.log(event.currentTarget.childNodes[1].children[0].children[0].checked);
                 checkBoxes(event.currentTarget)
                 buttonToggle(event.currentTarget);
             })
