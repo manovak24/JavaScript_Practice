@@ -115,9 +115,20 @@
         </div>
     </div>
 
+    <div class="submit-ctr">
+
+    </div>
     <script>
         const btnCtrs = document.querySelectorAll('.btn-ctr');
         const btns = document.querySelectorAll('.btn');
+
+
+        let checkedBoxesArr = [];
+        const logCheckedBoxes = () => {
+            let answer = document.querySelectorAll('input[type=radio]:checked');
+
+            console.log(answer)
+        }
 
         const checkBoxes = (el) => {
             const eventCheckBox = el.childNodes[1].children[0].children[0];
@@ -139,6 +150,7 @@
             btnCtr.addEventListener('click', function(event) {
                 checkBoxes(event.currentTarget)
                 buttonToggle(event.currentTarget);
+                logCheckedBoxes();
             })
         }
     </script>
