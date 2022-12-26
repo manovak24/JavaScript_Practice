@@ -93,7 +93,7 @@
             <div class="btn-ctr">
                 <div class="btn">
                     <div class="inner-btn-ctr">
-                        <input type="checkbox" id="a">
+                        <input type="checkbox" id="a" class="option">
                         <label for="a">Option A</label>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
             <div class="btn-ctr">
                 <div class="btn">
                     <div class="inner-btn-ctr">
-                        <input type="checkbox" id="b">
+                        <input type="checkbox" id="b" class="option">
                         <label for="b">Option B</label>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
             <div class="btn-ctr">
                 <div class="btn">
                     <div class="inner-btn-ctr">
-                        <input type="checkbox" id="c">
+                        <input type="checkbox" id="c" class="option">
                         <label for="c">Option C</label>
                     </div>
                 </div>
@@ -126,7 +126,7 @@
             <div class="btn-ctr">
                 <div class="btn">
                     <div class="inner-btn-ctr">
-                        <input type="checkbox" id="d">
+                        <input type="checkbox" id="d" class="option">
                         <label for="d">Option D</label>
                     </div>
                 </div>
@@ -142,18 +142,30 @@
         const btnCtrs = document.querySelectorAll('.btn-ctr');
         const btns = document.querySelectorAll('.btn');
         const submitBtn = document.querySelector('.submit-btn');
+        const answerOptions = document.querySelectorAll('.option');
+
+        const checkForAnswer = () => {
+            if(!document.querySelector('input[type=checkbox]:checked')) {
+                alert("Please select an option");
+                return false;
+            } else {
+                return true;
+            }
+        }
 
         const logCheckedBoxes = () => {
-            let answerObj = {};
-            const answerOptions = document.querySelectorAll('input[type=checkbox]:checked');
-            
-            answerOptions.forEach(answerOption => {
-                if(answerOption.checked) {
-                    answerObj[answerOption.nextElementSibling.innerText] = answerOption.id
-                    // console.log(answerOption.nextElementSibling.innerText)
-                }
-            })
-            console.log(answerObj)
+            // const answerOptions = document.querySelectorAll('input[type=checkbox]:checked');
+
+            if(checkForAnswer()) {
+                let answerObj = {};            
+                answerOptions.forEach(answerOption => {
+                    if(answerOption.checked) {
+                        answerObj[answerOption.nextElementSibling.innerText] = answerOption.id
+                        // console.log(answerOption.nextElementSibling.innerText)
+                    }
+                })
+                console.log(answerObj);
+            }
         }
 
         submitBtn.addEventListener('click', function() {
