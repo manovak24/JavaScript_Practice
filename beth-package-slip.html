@@ -1,0 +1,123 @@
+<B>Order {{ order_name }}</b><br>
+    {{ created_at: | date: "%B %-d, 20%y"}} at {{ created_at: | date: "%-I:%M%p"}}<br>
+   <br>
+  
+    <strong>{{ shop_name }}</strong><br>
+    {{ shop.address }}<br/>
+    {{ shop.city }} {{ shop.province_code }} {{ shop.zip | upcase }}  <br>
+    {{ shop.country }}<br/>
+    {{ shop.phone }}<br/>
+    {{ shop.domain }}<br/><br>
+  
+  <!--START TABLE item details-->
+  <table class="table-tabular" style="margin: 0 0 1.5em 0;">
+    <thead>
+      <tr>
+        <th>Quantity</th>
+        <th>Item</th>
+        <th>SKU</th>
+  
+      </tr>
+    </thead>
+    <tbody>
+      {% for line_item in line_items %}
+      {% if line_item.quantity > 0 %}
+        <tr>
+          <td>{{ line_item.quantity }} X</td>
+          <td>{{ line_item.title }} {% for property in line_item.properties %}
+          {% if property.first contains '_io_' %}{% continue %}{% endif %}
+          {% if property.last == blank  %}{% continue %}{% endif %}
+          <br>{{ property.first }}: {{ property.last }} {{line_item._io_Add Engraving Text}}
+      {% endfor %}</td>
+          <td>#{{ line_item.sku }}<br>
+          </td>
+          
+      
+        </tr>
+      {% endif %}  
+      {% endfor %}
+    </tbody>
+  </table>
+  <!--END TABLE item details-->
+  <!--START TABLE notes-->
+  {% if note %}
+  <table class="table-tabular" style="margin: 0 0 1.5em 0;" width="80%">
+    <thead>
+      <tr>
+        <th>Customer Note:</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>{{ note }}</td>
+        </tr>
+      {% endif %}
+    </tbody>
+  </table>
+  <!--END TABLE notes-->
+  
+  
+  <!--START TABLE Shipping Address & Billing Address-->
+  <table class="table-tabular" style="margin: 0 0 1.5em 0;">
+    <thead>
+      <tr>
+        <th>Shipping Address</th>
+        <th>Billing Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if shipping_address %}
+        <tr>
+      <td>
+      <strong>{{ shipping_address.name }}</strong><br/>
+      {% if shipping_address.company %}
+        {{ shipping_address.company }}<br/>
+      {% endif %}
+      {{ shipping_address.street }}<br/>
+      {{ shipping_address.city }}
+      {{ shipping_address.province_code }}
+      {{ shipping_address.zip | upcase }}<br/>
+      {{ shipping_address.country }}</br>
+      {{ customer.email }}<br>
+      {{ shipping_address.phone }}
+      </td>
+      
+      {% endif %}
+      
+      {% if billing_address %}
+      <td><strong>{{ billing_address.name }}</strong><br/>
+      {% if billing_address.company %}
+        {{ billing_address.company }}<br/>
+      {% endif %}
+      {{ billing_address.street }}<br/>
+      {{ billing_address.city }}
+      {{ billing_address.province_code }}
+      {{ billing_address.zip | upcase }}<br/>
+      {{ billing_address.country }}</br>
+      {{ customer.email }}<br>
+      {{ billing_address.phone }}</td>
+      <tr>
+      <td>{% for discount in discounts %}<br>
+  Coupon Code Applied:<br><b> {{ discount.code }} </b><br><br>
+    {% endfor %}
+    
+    <td> {{ shipping_method.title }}{% if shipping_method.title == 'I will pick up my item from the shop in Marquette, Michigan (Local pick up only)' %}
+    <br> Special Instructions:<br><b>LOCAL PICK UP</b> <br><br></td>{% endif %}
+    
+      
+  </td>
+          
+          
+      
+        </tr>
+      {% endif %}
+    </tbody>
+  </table>
+  <!--END TABLE Shipping Address & Billing Address-->
+  
+  <p>If you have any questions, please send an email to: <u>info@bethmillner.com</u></p>
+  <p>For information on returns and exchanges visit: <u>https://www.bethmillner.com/pages/returns-exchanges
+  </p></u>
+  
+  
+  
