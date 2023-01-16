@@ -23,13 +23,25 @@
       {% for line_item in line_items %}
       {% if line_item.quantity > 0 %}
         <tr>
-          <td>{{ line_item.quantity }} X</td>
-          <td>{{ line_item.title }} {% for property in line_item.properties %}
-          {% if property.first contains '_io_' %}{% continue %}{% endif %}
-          {% if property.last == blank  %}{% continue %}{% endif %}
-          <br>{{ property.first }}: {{ property.last }} {{line_item._io_Add Engraving Text}}
-      {% endfor %}</td>
-          <td>#{{ line_item.sku }}<br>
+          <td>
+            {{ line_item.quantity }} X
+          </td>
+          <td>
+            {{ line_item.title }} 
+            {% for property in line_item.properties %}
+              {% if property.first contains '_io_' %}
+                {% continue %}
+              {% endif %}
+              {% if property.last == blank  %}
+                {% continue %}
+              {% endif %}
+              <br>
+              {{ property.first }}: {{ property.last }} {{line_item._io_Add Engraving Text}}
+            {% endfor %}
+          </td>
+          <td>
+            #{{ line_item.sku }}
+            <br>
           </td>
           
       
