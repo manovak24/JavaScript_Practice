@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./rotating-marquee.css">
+    <title>Rotating Marquee</title>
+</head>
+<body>
+    <section>
+      <input id="enable-animation-1" type="checkbox" />
+      <label for="enable-animation-1">Enable animation</label>
+    
+      <div class="marquee marquee--hover-pause">
+        <ul class="marquee__content">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+        </ul>
+    
+        <ul aria-hidden="true" class="marquee__content">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+        </ul>
+      </div>
+    </section>
+
+    <script src="./rotating-marquee.js" type="text/javascript"></script>
+</body>
+</html>
