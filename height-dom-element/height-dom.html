@@ -5,14 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Height DOM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            min-width: 100%;
+            min-height: 100vh;
+        }
+
+        .ctr-one {
+            background-color: cornflowerblue;
+            height: 250px;
+            width: 500px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ctr-one>p {
+            font-size: 24px;
+            color: white;
+        }
+
+        .height-display-ctr {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container-one">
+    <div class="ctr-one">
         <p>This is container 1</p>
     </div>
 
-    <div>
-        <p>Container 1 has a height of <span id="container-height">____</span> pixels</p>
+    <div class="height-display-ctr">
+        <p>Container 1 has a height of <span id="height">____</span> pixels</p>
     </div>
 </body>
 </html>
