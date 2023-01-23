@@ -18,15 +18,17 @@
 
         .ctr-one {
             background-color: cornflowerblue;
-            height: 250px;
-            width: 500px;
+            padding: 75px 25px;
+            width: 75%;
             margin: auto;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .ctr-one>p {
+            padding: 10px;
             font-size: 24px;
             color: white;
         }
@@ -58,10 +60,16 @@
 <body>
     <div class="ctr-one">
         <p>This is container 1</p>
+        <p>This is container 1</p>
+        <p>This is container 1</p>
     </div>
 
     <div class="height-display-ctr">
-        <p>Container 1 has a height of <span data-height>____</span> pixels</p>
+        <p>Container 1 has a height of <span data-changing-height>___</span> pixels</p>
+    </div>
+
+    <div class="height-display-ctr">
+        <p>Container 1 has a height of <span data-height>___</span> pixels</p>
     </div>
 
     <div class="btn-ctr">
