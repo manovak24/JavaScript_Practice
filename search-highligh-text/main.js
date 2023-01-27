@@ -2,7 +2,7 @@ const submitCtr = document.getElementById('search-ctr');
 const submitBtn = document.getElementById('search-btn');
 const clearBtn = document.getElementById('clear-btn');
 const searchTerm = document.getElementById('text-to-search');
-const paragraph = document.getElementById('paragraph');
+const paragraph = document.querySelectorAll('.paragraph');
 
 let paragraphObj = {
     name: 'Original Text',
@@ -12,12 +12,19 @@ let paragraphObj = {
 const search = (e) => {
     e.preventDefault();
 
-    paragraphObj.text = paragraph.innerText;
+    paragraph.forEach(p => {
+        paragraphObj.text = p.innerText;
+    })
 
     let textToSearch = searchTerm.value; 
     textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
     let pattern = new RegExp(`${textToSearch}`, "gi");
-    paragraph.innerHTML = paragraph.textContent.replace(pattern, match => `<mark>${match}</mark>`);
+
+    paragraph.forEach(p => {
+        p.innerHTML = p.textContent.replace(pattern, match => `<mark>${match}</mark>`);
+    })
+
+    console.log(paragraphObj)
 }
 
 const clearSearch = () => {
