@@ -5,16 +5,16 @@ const searchTerm = document.getElementById('text-to-search');
 const paragraph = document.querySelectorAll('.paragraph');
 
 let paragraphObj = {
-    name: 'Original Text',
-    text: ''
+    // text: ''
 };
 
 const search = (e) => {
     e.preventDefault();
+    // paragraphObj.text = paragraph.innerText;
 
-    paragraph.forEach(p => {
-        paragraphObj.text = p.innerText;
-    })
+    for(let i = 0; i < paragraph.length; i++) {
+        paragraphObj[`text${[i]}`] = paragraph[i].innerText;
+    }
 
     let textToSearch = searchTerm.value; 
     textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
@@ -28,8 +28,14 @@ const search = (e) => {
 }
 
 const clearSearch = () => {
-    paragraph.innerText = paragraphObj.text;
-    searchTerm.value = '';
+    for(let i = 0; i < paragraph.length; i++) {
+        paragraph[i].innerText = paragraphObj.text[i]
+    }
+    
+    // paragraph.forEach(p => {
+    //     p.innerText = paragraphObj.text;
+    // })
+    // paragraph.innerText = paragraphObj.text;
 }
 
 submitCtr.addEventListener('submit', (event) => {
@@ -46,3 +52,5 @@ submitBtn.addEventListener('click', (event) => {
 clearBtn.addEventListener('click', () => {
     clearSearch();
 })
+
+console.log(paragraph)
