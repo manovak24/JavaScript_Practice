@@ -4,17 +4,19 @@ const clearBtn = document.getElementById('clear-btn');
 const searchTerm = document.getElementById('text-to-search');
 const paragraph = document.querySelectorAll('.paragraph');
 
-let paragraphObj = {
-    // text: ''
-};
+// let paragraphObj = {
+//     // text: ''
+// };
+
+let paragraphArr = [];
 
 const search = (e) => {
     e.preventDefault();
     // paragraphObj.text = paragraph.innerText;
 
-    for(let i = 0; i < paragraph.length; i++) {
-        paragraphObj[`text${[i]}`] = paragraph[i].innerText;
-    }
+    paragraph.forEach(p => {
+        paragraphArr.push(p.innerText);
+    })
 
     let textToSearch = searchTerm.value; 
     textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
@@ -24,18 +26,21 @@ const search = (e) => {
         p.innerHTML = p.textContent.replace(pattern, match => `<mark>${match}</mark>`);
     })
 
-    console.log(paragraphObj)
+    clearBtn.disabled = false;
+
+    // console.log(paragraphObj)
+    console.log(paragraphArr)
 }
 
 const clearSearch = () => {
     for(let i = 0; i < paragraph.length; i++) {
-        paragraph[i].innerText = paragraphObj.text[i]
+        paragraph[i].innerText = paragraphArr[i]
     }
-    
-    // paragraph.forEach(p => {
-    //     p.innerText = paragraphObj.text;
-    // })
+
+    paragraphArr = [];
+    searchTerm.value = '';
     // paragraph.innerText = paragraphObj.text;
+    clearBtn.disabled = true;
 }
 
 submitCtr.addEventListener('submit', (event) => {
