@@ -1,9 +1,5 @@
-const sections = document.querySelectorAll("section");
-
-[...sections].forEach((section) => {
-  const checkbox = section.querySelector("input");
-
-  checkbox.addEventListener("change", () => {
-    section.classList.toggle("enable-animation");
-  });
+const checkbox = document.querySelector("#toggle-animation");
+const marquee = document.querySelector(".marquee");
+checkbox.addEventListener("change", () => {
+  marquee.classList.toggle("enable-animation");
 });
