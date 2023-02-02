@@ -18,7 +18,10 @@ const myFunction = () => {
             arr.splice(arrIndexMultiple, obj[key], obj[key] )
         }
 
-        
+        if (obj[key] === 1) {
+            let arrIndexSingle = arr.indexOf(parseInt(key));
+            arr.splice(arrIndexSingle, obj[key], obj[key]);
+        }
     }
 
 
