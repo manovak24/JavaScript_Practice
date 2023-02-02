@@ -9,12 +9,19 @@ const myFunction = () => {
             obj[arr[i]] = 1;
         }
     }
-    for (let prop in obj) {
-        if (obj[prop] >= 2) {
-            console.log(prop + " counted " + obj[prop]) + " times.";
+    for (let key in obj) {
+        if (obj[key] >= 2) {
+            // console.log(key + " counted " + obj[key]) + " times.";
+            let arrIndex = arr.indexOf(parseInt(key));
+            // console.log(arrIndex)
+
+            arr.splice(arrIndex, obj[key], obj[key] )
         }
     }
+
+
     console.log(obj);
+    console.log(arr)
 }
 
 myFunction();
