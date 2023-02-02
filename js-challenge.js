@@ -12,11 +12,13 @@ const myFunction = () => {
     for (let key in obj) {
         if (obj[key] >= 2) {
             // console.log(key + " counted " + obj[key]) + " times.";
-            let arrIndex = arr.indexOf(parseInt(key));
+            let arrIndexMultiple = arr.indexOf(parseInt(key));
             // console.log(arrIndex)
 
-            arr.splice(arrIndex, obj[key], obj[key] )
+            arr.splice(arrIndexMultiple, obj[key], obj[key] )
         }
+
+        
     }
 
 
