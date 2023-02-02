@@ -1,5 +1,7 @@
-const arr = [0, 4, 6, 8, 8, 8, 5, 5, 7];
+const arr = [0, 4, 6, 8, 2, 9, 8, 4, 6];
+// [0, 4, 6, 8, 8, 8, 5, 5, 7];
 let obj = {};
+let answer;
 
 const myFunction = () => {
     for (i = 0; i < arr.length; i++) {
@@ -23,10 +25,15 @@ const myFunction = () => {
             arr.splice(arrIndexSingle, obj[key], obj[key]);
         }
     }
-
-
-    console.log(obj);
     console.log(arr)
+
+    if(arr.length === 1) {
+        answer = arr[0]
+        console.log(answer)
+    }
+    
 }
 
+myFunction();
+myFunction();
 myFunction();
