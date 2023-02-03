@@ -4,6 +4,7 @@ let obj = {};
 let answer;
 
 const myFunction = () => {
+    // need to use something like a for when(?) loop for this to run as long as the arr.lenght is greater than 1
     for (i = 0; i < arr.length; i++) {
         if (obj[arr[i]]) {
             obj[arr[i]] += 1;
