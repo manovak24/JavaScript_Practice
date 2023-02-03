@@ -35,5 +35,3 @@ const myFunction = () => {
 }
 
 myFunction();
-myFunction();
-myFunction();
