@@ -69,5 +69,17 @@ function greet() {
     let newStr = str.split(' ');
     return newStr.join(' ')
 }
-
 console.log(greet());
+
+function makeNegative(num) {
+    // if(num !== 0) {
+    //     return Math.abs(num) * -1;
+    // } else {
+    //     return 0
+    // }
+
+    return -Math.abs(num)
+}
+console.log(makeNegative(42))
+console.log(makeNegative(0))
+console.log(makeNegative(-5))
