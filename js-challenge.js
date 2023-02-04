@@ -53,10 +53,21 @@ console.log(countSheep(4))
 
 
 function solution(str) {
-    let newStr = "";
-    for (let i = str.length; i >= 0; i--) {
-        newStr += str.charAt(i)
-    }
-    return newStr
+    // let newStr = "";
+    // for (let i = str.length; i >= 0; i--) {
+    //     newStr += str.charAt(i)
+    // }
+    // return newStr
+
+    return str.split('').reverse().join('');  
 }
 console.log(solution('world'))
+
+
+function greet() {
+    let str = 'Hello World!';
+    let newStr = str.split(' ');
+    return newStr.join(' ')
+}
+
+console.log(greet());
