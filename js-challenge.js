@@ -46,7 +46,17 @@ const countSheep = function (num) {
     // return arr.join('');
 
     let str = "";
-    for(let i = 1; i <= num; i++) { str += `${i} sheep...` ; }
+    for(let i = 1; i <= num; i++) { str += `${i} sheep...`; }
     return str;
 }
 console.log(countSheep(4))
+
+
+function solution(str) {
+    let newStr = "";
+    for (let i = str.length; i >= 0; i--) {
+        newStr += str.charAt(i)
+    }
+    return newStr
+}
+console.log(solution('world'))
