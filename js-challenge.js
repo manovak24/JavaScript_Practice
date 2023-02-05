@@ -83,3 +83,23 @@ function makeNegative(num) {
 console.log(makeNegative(42))
 console.log(makeNegative(0))
 console.log(makeNegative(-5))
+
+
+function findNeedle(haystack) {
+  return 'found the needle at position ' + haystack.indexOf('needle');
+}
+const arrFindNeedleHaystack = ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"];
+console.log(findNeedle(arrFindNeedleHaystack));
+
+
+function rentalCarCost(d) {
+  // let totalCost = 40 * d;
+  // d >= 3 && d < 7 ? totalCost -= 20 : totalCost;
+  // d >= 7 ? totalCost -= 50 : totalCost;
+
+  // return totalCost
+
+  return d * 40 - ((d > 6) ? 50 : ((d > 2) ? 20 : 0));
+}
+console.log(rentalCarCost(4))
+console.log(rentalCarCost(7))
