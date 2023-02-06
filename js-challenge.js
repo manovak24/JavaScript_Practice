@@ -130,3 +130,10 @@ function check(a, x) {
   return a.includes(x);
 }
 console.log(check([0, 45, 75, 105, 99, 107], 0));
+
+
+function litres(time) {
+  return Math.floor(time * .5);;
+}
+
+console.log(litres(6.7));
