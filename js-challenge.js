@@ -1,13 +1,13 @@
 function numberToString(num) {
     return num.toString()
 }
-console.log(numberToString(854))
+// console.log(numberToString(854))
 
 
 function removeChar(str) {
     return str.slice(1, -1)
 }
-console.log(removeChar('eloquent'))
+// console.log(removeChar('eloquent'))
 
 
 function bmi(weight, height) {
@@ -35,7 +35,7 @@ function bmi(weight, height) {
     }
     
 }
-console.log(bmi(80, 1.80))
+// console.log(bmi(80, 1.80))
 
 
 const countSheep = function (num) {
@@ -49,7 +49,7 @@ const countSheep = function (num) {
     for(let i = 1; i <= num; i++) { str += `${i} sheep...`; }
     return str;
 }
-console.log(countSheep(4))
+// console.log(countSheep(4))
 
 
 function solution(str) {
@@ -61,7 +61,7 @@ function solution(str) {
 
     return str.split('').reverse().join('');  
 }
-console.log(solution('world'))
+// console.log(solution('world'))
 
 
 function greet() {
@@ -69,7 +69,7 @@ function greet() {
     let newStr = str.split(' ');
     return newStr.join(' ')
 }
-console.log(greet());
+// console.log(greet());
 
 function makeNegative(num) {
     // if(num !== 0) {
@@ -80,16 +80,16 @@ function makeNegative(num) {
 
     return -Math.abs(num)
 }
-console.log(makeNegative(42))
-console.log(makeNegative(0))
-console.log(makeNegative(-5))
+// console.log(makeNegative(42))
+// console.log(makeNegative(0))
+// console.log(makeNegative(-5))
 
 
 function findNeedle(haystack) {
   return 'found the needle at position ' + haystack.indexOf('needle');
 }
 const arrFindNeedleHaystack = ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"];
-console.log(findNeedle(arrFindNeedleHaystack));
+// console.log(findNeedle(arrFindNeedleHaystack));
 
 
 function rentalCarCost(d) {
@@ -99,7 +99,27 @@ function rentalCarCost(d) {
 
   // return totalCost
 
-  return d * 40 - ((d > 6) ? 50 : ((d > 2) ? 20 : 0));
+  return d * 40 - ((d > 6) ? 50 : (d > 2) ? 20 : 0);
 }
-console.log(rentalCarCost(4))
-console.log(rentalCarCost(7))
+// console.log(rentalCarCost(4))
+// console.log(rentalCarCost(7))
+
+function countPostivesSumNegatives(input) {
+  if (input == null || input.length == 0)
+    return [];
+
+  let positive = 0;
+  let negative = 0;
+
+  for (let i=0, l=input.length; i<l; ++i)
+  {
+    if (input[i] > 0)
+      ++ positive;
+    else
+      negative += input[i];
+  }
+
+  return [positive, negative];
+
+}
+console.log(countPostivesSumNegatives([]))
