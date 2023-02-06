@@ -104,6 +104,7 @@ function rentalCarCost(d) {
 // console.log(rentalCarCost(4))
 // console.log(rentalCarCost(7))
 
+
 function countPostivesSumNegatives(input) {
   if (input == null || input.length == 0)
     return [];
@@ -122,4 +123,10 @@ function countPostivesSumNegatives(input) {
   return [positive, negative];
 
 }
-console.log(countPostivesSumNegatives([]))
+// console.log(countPostivesSumNegatives([]))
+
+
+function check(a, x) {
+  return a.includes(x);
+}
+console.log(check([0, 45, 75, 105, 99, 107], 0));
