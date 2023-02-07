@@ -129,16 +129,23 @@ function countPostivesSumNegatives(input) {
 function check(a, x) {
   return a.includes(x);
 }
-console.log(check([0, 45, 75, 105, 99, 107], 0));
+// console.log(check([0, 45, 75, 105, 99, 107], 0));
 
 
 function litres(time) {
   return Math.floor(time * 0.5);
 }
-console.log(litres(6.7));
+// console.log(litres(6.7));
 
 
 function invert(array) {
   return array.map(num => -num)
 }
-console.log(invert([1,-2,3,-4,5]))
+// console.log(invert([1,-2,3,-4,5]));
+
+
+function solution(str, ending) {
+  // return str.slice(str.length - ending.length) === ending ? true : false;
+  return str.endsWith(ending);
+}
+console.log(solution('avcde', 'cde'));
