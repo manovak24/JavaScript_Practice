@@ -187,6 +187,7 @@ console.log(reverseWords("This is an example!"));
 
 
 function validatePIN(pin) {
-  return /^\d+$/.test(pin) && parseInt(pin) >= 0 ? pin.length === 4 || pin.length === 6 ? true : false : false;
+  // return /^\d+$/.test(pin) && parseInt(pin) >= 0 ? pin.length === 4 || pin.length === 6 ? true : false : false;
+  return /^(\d{4}|\d{6})$/.test(pin)
 }
-console.log(validatePIN('123.45'));
+console.log(validatePIN('1235'));
