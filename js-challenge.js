@@ -149,3 +149,32 @@ function solution(str, ending) {
   return str.endsWith(ending);
 }
 console.log(solution('avcde', 'cde'));
+
+
+function smash(words) {
+  return words.join(' ');
+}
+console.log(smash(['hello', 'world', 'this', 'is', 'great']));
+
+
+const stringToNumber = function(str) {
+  return parseInt(str);
+}
+console.log(stringToNumber("1234"))
+
+
+function countSheeps(arrayOfSheep) {
+  return arrayOfSheep.filter(num => num === true).length;
+}
+console.log(countSheeps([true,  true,  true,  false,
+  true,  true,  true,  true ,
+  true,  false, true,  false,
+  true,  false, false, true ,
+  true,  true,  true,  true ,
+  false, false, true,  true]));
+
+
+function grow(x) {
+  return x.reduce((a, b) => a * b);
+}
+console.log(grow([1, 2, 3, 4]));
