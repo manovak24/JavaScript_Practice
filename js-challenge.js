@@ -184,3 +184,9 @@ function reverseWords(str) {
   return str.split(' ').map(word => word.split('').reverse().join('')).join(' ');
 }
 console.log(reverseWords("This is an example!"));
+
+
+function validatePIN(pin) {
+  return /^\d+$/.test(pin) && parseInt(pin) >= 0 ? pin.length === 4 || pin.length === 6 ? true : false : false;
+}
+console.log(validatePIN('123.45'));
