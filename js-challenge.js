@@ -52,7 +52,7 @@ const countSheep = function (num) {
 // console.log(countSheep(4))
 
 
-function solution(str) {
+function solutionToReverse(str) {
     // let newStr = "";
     // for (let i = str.length; i >= 0; i--) {
     //     newStr += str.charAt(i)
@@ -61,7 +61,7 @@ function solution(str) {
 
     return str.split('').reverse().join('');  
 }
-// console.log(solution('world'))
+// console.log(solutionToReverse('world'))
 
 
 function greet() {
@@ -144,11 +144,11 @@ function invert(array) {
 // console.log(invert([1,-2,3,-4,5]));
 
 
-function solution(str, ending) {
-  // return str.slice(str.length - ending.length) === ending ? true : false;
-  return str.endsWith(ending);
+function solutionToTestStrEnd(str, ending) {
+  return str.slice(str.length - ending.length) === ending ? true : false;
+  // return str.endsWith(ending);
 }
-console.log(solution('avcde', 'cde'));
+console.log(solutionToTestStrEnd('avcde', 'cde'));
 
 
 function smash(words) {
@@ -178,3 +178,9 @@ function grow(x) {
   return x.reduce((a, b) => a * b);
 }
 console.log(grow([1, 2, 3, 4]));
+
+
+function reverseWords(str) {
+  return str.split(' ').map(word => word.split('').reverse().join('')).join(' ');
+}
+console.log(reverseWords("This is an example!"));
