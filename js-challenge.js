@@ -191,3 +191,24 @@ function validatePIN(pin) {
   return /^(\d{4}|\d{6})$/.test(pin)
 }
 console.log(validatePIN('1235'));
+
+
+function DNAStrand(dna) {
+  const dnaSplit = dna.split('')
+  let dnaNew = [];
+  dnaSplit.forEach(letter => {
+    if(letter === 'A') {
+      dnaNew.push('T')
+    } else if (letter === 'T') {
+      dnaNew.push('A')
+    }
+    else if (letter === 'G') {
+      dnaNew.push('C')
+    }
+    else if (letter === 'C') {
+      dnaNew.push('G')
+    }
+  })
+  return dnaNew.join('')
+}
+console.log(DNAStrand('ATTGC'))
