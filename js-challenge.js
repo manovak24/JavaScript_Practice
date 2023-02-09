@@ -194,21 +194,23 @@ console.log(validatePIN('1235'));
 
 
 function DNAStrand(dna) {
-  const dnaSplit = dna.split('')
-  let dnaNew = [];
-  dnaSplit.forEach(letter => {
-    if(letter === 'A') {
-      dnaNew.push('T')
-    } else if (letter === 'T') {
-      dnaNew.push('A')
-    }
-    else if (letter === 'G') {
-      dnaNew.push('C')
-    }
-    else if (letter === 'C') {
-      dnaNew.push('G')
-    }
-  })
-  return dnaNew.join('')
+  // const dnaSplit = dna.split('')
+  // let dnaNew = [];
+  // dnaSplit.forEach(letter => {
+  //   if(letter === 'A') {
+  //     dnaNew.push('T')
+  //   } else if (letter === 'T') {
+  //     dnaNew.push('A')
+  //   }
+  //   else if (letter === 'G') {
+  //     dnaNew.push('C')
+  //   }
+  //   else if (letter === 'C') {
+  //     dnaNew.push('G')
+  //   }
+  // })
+  // return dnaNew.join('')
+  const pairs = {'A':'T','T':'A','C':'G','G':'C'};
+  return dna.split('').map(function(v){ return pairs[v] }).join('');
 }
 console.log(DNAStrand('ATTGC'))
