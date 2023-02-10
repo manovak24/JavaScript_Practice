@@ -3,6 +3,7 @@ const heightDisplay = document.querySelector(`[data-height]`);
 const widthtDisplay = document.querySelector(`[data-width]`);
 const changingHeightDisplay = document.querySelector(`[data-changing-height]`);
 const changingWidthDisplay = document.querySelector(`[data-changing-width]`);
+const autoAdjustCtr = document.querySelector('.auto-adjust-ctr');
 const findBtn = document.querySelector('.find');
 const clearBtn = document.querySelector('.clear');
 
@@ -26,7 +27,14 @@ function findWidth() {
 }
 findWidth();
 
+function setPaddingTop() {
+    autoAdjustCtr.style.paddingTop = `${ctrOne.offsetWidth  / 10}px`;
+    autoAdjustCtr.style.paddingBottom = `${ctrOne.offsetWidth  / 10}px`;
+
+}
+
 new ResizeObserver(() => {
     findHeight();
     findWidth();
+    setPaddingTop();
 }).observe(ctrOne)
