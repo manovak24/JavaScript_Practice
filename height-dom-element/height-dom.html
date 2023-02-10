@@ -39,6 +39,14 @@
             font-size: 24px;
         }
 
+        .auto-adjust-ctr {
+            display: flex;
+            justify-content: center;
+            background-color: bisque;
+            margin: 50px 0 0;
+            text-align: center;
+        }
+
         .btn-ctr {
             display: flex;
             justify-content: center;
@@ -111,6 +119,10 @@
 
     <div class="display-ctr">
         <p>Container 1 has a height of <span data-width>___</span> pixels</p>
+    </div>
+
+    <div class="auto-adjust-ctr">
+        <p>This container should automatically adjust its properties based on container 1 dimensions</p>
     </div>
 
     <div class="btn-ctr">
