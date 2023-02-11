@@ -38,3 +38,11 @@ new ResizeObserver(() => {
     findWidth();
     setPaddingTop();
 }).observe(ctrOne)
+
+document.addEventListener("scroll", () => {
+    if(scrollY > 150) {
+        autoAdjustCtr.style.marginTop = '100px'
+    } else {
+        autoAdjustCtr.style.marginTop = '50px'
+    }
+})
