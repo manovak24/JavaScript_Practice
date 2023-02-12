@@ -148,49 +148,49 @@ function solutionToTestStrEnd(str, ending) {
   return str.slice(str.length - ending.length) === ending ? true : false;
   // return str.endsWith(ending);
 }
-console.log(solutionToTestStrEnd('avcde', 'cde'));
+// console.log(solutionToTestStrEnd('avcde', 'cde'));
 
 
 function smash(words) {
   return words.join(' ');
 }
-console.log(smash(['hello', 'world', 'this', 'is', 'great']));
+// console.log(smash(['hello', 'world', 'this', 'is', 'great']));
 
 
 const stringToNumber = function(str) {
   return parseInt(str);
 }
-console.log(stringToNumber("1234"))
+// console.log(stringToNumber("1234"))
 
 
 function countSheeps(arrayOfSheep) {
   return arrayOfSheep.filter(num => num === true).length;
 }
-console.log(countSheeps([true,  true,  true,  false,
-  true,  true,  true,  true ,
-  true,  false, true,  false,
-  true,  false, false, true ,
-  true,  true,  true,  true ,
-  false, false, true,  true]));
+// console.log(countSheeps([true,  true,  true,  false,
+//   true,  true,  true,  true ,
+//   true,  false, true,  false,
+//   true,  false, false, true ,
+//   true,  true,  true,  true ,
+//   false, false, true,  true]));
 
 
 function grow(x) {
   return x.reduce((a, b) => a * b);
 }
-console.log(grow([1, 2, 3, 4]));
+// console.log(grow([1, 2, 3, 4]));
 
 
 function reverseWords(str) {
   return str.split(' ').map(word => word.split('').reverse().join('')).join(' ');
 }
-console.log(reverseWords("This is an example!"));
+// console.log(reverseWords("This is an example!"));
 
 
 function validatePIN(pin) {
   // return /^\d+$/.test(pin) && parseInt(pin) >= 0 ? pin.length === 4 || pin.length === 6 ? true : false : false;
   return /^(\d{4}|\d{6})$/.test(pin)
 }
-console.log(validatePIN('1235'));
+// console.log(validatePIN('1235'));
 
 
 function DNAStrand(dna) {
@@ -213,4 +213,11 @@ function DNAStrand(dna) {
   const pairs = {'A':'T','T':'A','C':'G','G':'C'};
   return dna.split('').map(function(v){ return pairs[v] }).join('');
 }
-console.log(DNAStrand('ATTGC'))
+// console.log(DNAStrand('ATTGC'))
+
+
+function areYouPlayingBanjo(name) {
+  return name.toLowerCase().startsWith('r') ? `${name} plays banjo` : `${name} does not play banjo`;
+}
+console.log(areYouPlayingBanjo('rark'))
+console.log(areYouPlayingBanjo('Rark'))
