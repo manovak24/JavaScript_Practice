@@ -217,7 +217,10 @@ function DNAStrand(dna) {
 
 
 function areYouPlayingBanjo(name) {
-  return name.toLowerCase().startsWith('r') ? `${name} plays banjo` : `${name} does not play banjo`;
+  // return name.toLowerCase().startsWith('r') ? `${name} plays banjo` : `${name} does not play banjo`;
+  return name + (name[0].toLowerCase() == 'r' ? ' plays' : ' does not play') + " banjo";
 }
-console.log(areYouPlayingBanjo('rark'))
-console.log(areYouPlayingBanjo('Rark'))
+console.log(areYouPlayingBanjo('rark'));
+console.log(areYouPlayingBanjo('Rark'));
+
+
