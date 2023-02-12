@@ -225,10 +225,12 @@ console.log(areYouPlayingBanjo('Rark'));
 
 
 function filter_list(l) {
-  return l.filter(function(item) {
-    if(typeof item === 'number') {
-      return l
-    }
-  })
+  // return l.filter(function(item) {
+  //   if(typeof item === 'number') {
+  //     return l
+  //   }
+  // })
+
+  return l.filter(function(v) {return typeof v == 'number'})
 }
 console.log(filter_list([1,2,'a','b']))
