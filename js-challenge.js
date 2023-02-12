@@ -224,3 +224,11 @@ console.log(areYouPlayingBanjo('rark'));
 console.log(areYouPlayingBanjo('Rark'));
 
 
+function filter_list(l) {
+  return l.filter(function(item) {
+    if(typeof item === 'number') {
+      return l
+    }
+  })
+}
+console.log(filter_list([1,2,'a','b']))
