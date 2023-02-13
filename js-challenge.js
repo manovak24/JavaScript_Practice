@@ -220,8 +220,8 @@ function areYouPlayingBanjo(name) {
   // return name.toLowerCase().startsWith('r') ? `${name} plays banjo` : `${name} does not play banjo`;
   return name + (name[0].toLowerCase() == 'r' ? ' plays' : ' does not play') + " banjo";
 }
-console.log(areYouPlayingBanjo('rark'));
-console.log(areYouPlayingBanjo('Rark'));
+// console.log(areYouPlayingBanjo('rark'));
+// console.log(areYouPlayingBanjo('Rark'));
 
 
 function filter_list(l) {
@@ -233,4 +233,22 @@ function filter_list(l) {
 
   return l.filter(function(v) {return typeof v == 'number'})
 }
-console.log(filter_list([1,2,'a','b']))
+// console.log(filter_list([1,2,'a','b']))
+
+function isIsogram(str) {
+  // const strArr = str.toLowerCase().split('')
+  // if(str.length === 0) {
+  //   return true;
+  // } else {
+  //   return strArr.filter((item, index) => strArr.indexOf(item) !== index).length > 0 ? false : true;
+  // }
+
+  return new Set(str.toUpperCase()).size == str.length;
+}
+// console.log(isIsogram('Dermatoglyphics'))
+// console.log(isIsogram('isogram'))
+// console.log(isIsogram('aba'))
+// console.log(isIsogram('moOse'))
+// console.log(isIsogram('isIsogram'))
+// console.log(isIsogram(''))
+
