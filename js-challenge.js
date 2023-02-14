@@ -269,5 +269,16 @@ const summation = function(num) {
 
   return result;
 }
-console.log(summation(8))
+// console.log(summation(8))
 
+
+function nbYear(p0, percent, aug, p) {
+  let years = 0;
+  let pop = p0;
+  for(let i = 0; pop <= p; i++) {
+    
+  }
+
+  return years
+}
+console.log(nbYear(1500, 5, 100, 5000))
