@@ -280,7 +280,6 @@ function nbYear(p0, percent, aug, p) {
   p0 += counter;
 
   for (let i = p0; i <= p; i += counter) {
-    
     years++
   }
   
@@ -291,4 +290,12 @@ function nbYear(p0, percent, aug, p) {
 
   return years
 }
-console.log(nbYear(1500, 10, 100, 5000))
+// console.log(nbYear(1500, 10, 100, 5000))
+
+
+function getMiddle(s) {
+  // return s.length % 2 == 0 ? `${s.charAt(s.indexOf('', Math.floor(s.length / 2) - 1))}${s.charAt(s.indexOf('', Math.floor(s.length / 2)))}` : s.charAt(Math.floor(s.length / 2));
+
+  return s.substr(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 ? 2 : 1);
+}
+console.log(getMiddle("testss"));
