@@ -274,10 +274,15 @@ const summation = function(num) {
 
 function nbYear(p0, percent, aug, p) {
   let years = 0;
-  let pop = p0;
-  for(let i = 0; pop <= p; i++) {
-    
-  }
+  let decPerc = percent / 100;
+  let counter = p0 * decPerc + aug;
+  
+  p0 += counter;
+  
+  console.log(decPerc)
+  console.log(counter)
+  console.log(p0)
+
 
   return years
 }
