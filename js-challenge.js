@@ -278,6 +278,11 @@ function nbYear(p0, percent, aug, p) {
   let counter = p0 * decPerc + aug;
   
   p0 += counter;
+
+  for (let i = p0; i <= p; i += counter) {
+    
+    years++
+  }
   
   console.log(decPerc)
   console.log(counter)
@@ -286,4 +291,4 @@ function nbYear(p0, percent, aug, p) {
 
   return years
 }
-console.log(nbYear(1500, 5, 100, 5000))
+console.log(nbYear(1500, 10, 100, 5000))
