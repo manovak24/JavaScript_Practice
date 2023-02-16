@@ -298,4 +298,14 @@ function getMiddle(s) {
 
   return s.substr(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 ? 2 : 1);
 }
-console.log(getMiddle("testss"));
+// console.log(getMiddle("testss"));
+
+
+function setAlarm(employed, vacation) {
+  // return employed && !vacation ? true : false;
+  return employed && !vacation;
+}
+console.log(setAlarm(true, true));
+console.log(setAlarm(false, true));
+console.log(setAlarm(false, false));
+console.log(setAlarm(true, false));
