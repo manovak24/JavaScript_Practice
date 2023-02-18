@@ -322,4 +322,16 @@ function DNAtoRNA(dna) {
   return dna.replace(/T/g, 'U');
 }
 
-console.log(DNAtoRNA('GCAT'))
+// console.log(DNAtoRNA('GCAT'))
+
+
+function SeriesSum(n) {
+  let demNum = 4;
+  let arr = [];
+  for(let i = 0; i < n; i++) {
+    demNum += 3;
+    arr.push(demNum);
+  }
+  return arr;
+}
+console.log(SeriesSum(2));
