@@ -326,19 +326,21 @@ function DNAtoRNA(dna) {
 
 
 function getGrade(s1, s2, s3) {
-  let average = (s1 + s2 + s3)/3
-  let grade;
-  if(average >= 90) {
-    grade = 'A';
-  } else if (average < 90 && average >= 80) {
-    grade = 'B';
-  } else if (average < 80 && average >= 70) {
-    grade = 'C';
-  } else if (average < 70 && average >= 60) {
-    grade = 'D';
-  } else {
-    grade = 'F'
-  }
-  return grade;
+  // let average = (s1 + s2 + s3)/3
+  // let grade;
+  // if(average >= 90) {
+  //   grade = 'A';
+  // } else if (average < 90 && average >= 80) {
+  //   grade = 'B';
+  // } else if (average < 80 && average >= 70) {
+  //   grade = 'C';
+  // } else if (average < 70 && average >= 60) {
+  //   grade = 'D';
+  // } else {
+  //   grade = 'F'
+  // }
+  // return grade;
+  var s = (s1 + s2 + s3) / 3
+  return s >= 90 ? "A" : s >= 80 ? "B" : s >= 70 ? "C" : s >= 60 ? "D" : "F"
 }
 console.log(getGrade(95, 50, 98))
