@@ -343,4 +343,11 @@ function getGrade(s1, s2, s3) {
   var s = (s1 + s2 + s3) / 3
   return s >= 90 ? "A" : s >= 80 ? "B" : s >= 70 ? "C" : s >= 60 ? "D" : "F"
 }
-console.log(getGrade(95, 50, 98))
+// console.log(getGrade(95, 50, 98));
+
+
+function removeSmallest(numbers) {
+  let index = numbers.indexOf(Math.min(...numbers));
+  return [...numbers.slice(0, index), ...numbers.slice(index + 1)]
+}
+console.log(removeSmallest([3,2,3,4,5,1,2,3,1]))
