@@ -350,4 +350,10 @@ function removeSmallest(numbers) {
   let index = numbers.indexOf(Math.min(...numbers));
   return [...numbers.slice(0, index), ...numbers.slice(index + 1)]
 }
-console.log(removeSmallest([3,2,3,4,5,1,2,3,1]))
+// console.log(removeSmallest([3,2,3,4,5,1,2,3,1]))
+
+
+function getVolumeOfCuboid(length, width, height) {
+  return length * width * height;
+}
+console.log(getVolumeOfCuboid(2, 3, 5));
