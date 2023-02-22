@@ -1,4 +1,5 @@
 function convertText(str) {
     return str.toUpperCase();
 }
-console.log(convertText('create space root down find balance inhale deeply cleanse the mind calm your body heal naturally'));
+let text = 'create space root down find balance inhale deeply cleanse the mind calm your body heal naturally';
+console.log(convertText(text));
