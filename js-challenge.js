@@ -356,4 +356,10 @@ function removeSmallest(numbers) {
 function getVolumeOfCuboid(length, width, height) {
   return length * width * height;
 }
-console.log(getVolumeOfCuboid(2, 3, 5));
+// console.log(getVolumeOfCuboid(2, 3, 5));
+
+
+function squareDigits(num) {
+  return parseInt(num.toString().split('').map(item => item * item).join(''))
+}
+console.log(squareDigits(5681))
