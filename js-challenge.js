@@ -54,7 +54,7 @@ const countSheep = function (num) {
 
 function solutionToReverse(str) {
     // let newStr = "";
-    // for (let i = str.length; i >= 0; i--) {
+    // for (let i = str.length; i > 0; i--) {
     //     newStr += str.charAt(i)
     // }
     // return newStr
@@ -362,4 +362,11 @@ function getVolumeOfCuboid(length, width, height) {
 function squareDigits(num) {
   return parseInt(num.toString().split('').map(item => item * item).join(''))
 }
-console.log(squareDigits(5681))
+// console.log(squareDigits(5681))
+
+
+function betterThanAverage(classPoints, yourPoints) {
+  classPoints.push(yourPoints);
+  return classPoints.reduce((a, b) => a + b, 0) / classPoints.length < yourPoints ? true : false;
+}
+console.log(betterThanAverage([2, 3, 4, 1], 5));
