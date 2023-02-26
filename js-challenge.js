@@ -389,4 +389,10 @@ function getCount(str) {
   // return count;
   return (str.match(/[aeiou]/ig)||[]).length;
 }
-console.log(getCount('abracadabra'))
+// console.log(getCount('abracadabra'));
+
+
+const findSmallestInt = (args) => {
+  return Math.min(...args);
+}
+console.log(findSmallestInt([34, 15, 2, -59]))
