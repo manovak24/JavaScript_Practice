@@ -379,13 +379,14 @@ const doubleInteger = (num) => {
 
 
 function getCount(str) {
-  let count = 0;
-  str.split('').forEach(letter => ['a', 'e', 'i', 'o', 'u'].forEach(vowel => {
-      if(vowel === letter) {
-        count++
-      }
-    })
-  )
-  return count;
+  // let count = 0;
+  // str.split('').forEach(letter => ['a', 'e', 'i', 'o', 'u'].forEach(vowel => {
+  //     if(vowel === letter) {
+  //       count++
+  //     }
+  //   })
+  // )
+  // return count;
+  return (str.match(/[aeiou]/ig)||[]).length;
 }
 console.log(getCount('abracadabra'))
