@@ -375,4 +375,17 @@ function betterThanAverage(classPoints, yourPoints) {
 const doubleInteger = (num) => {
   return num ** 2;
 }
-console.log(doubleInteger(2))
+// console.log(doubleInteger(2));
+
+
+function getCount(str) {
+  let count = 0;
+  str.split('').forEach(letter => ['a', 'e', 'i', 'o', 'u'].forEach(vowel => {
+      if(vowel === letter) {
+        count++
+      }
+    })
+  )
+  return count;
+}
+console.log(getCount('abracadabra'))
