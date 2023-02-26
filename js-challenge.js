@@ -369,4 +369,10 @@ function betterThanAverage(classPoints, yourPoints) {
   classPoints.push(yourPoints);
   return classPoints.reduce((a, b) => a + b, 0) / classPoints.length < yourPoints ? true : false;
 }
-console.log(betterThanAverage([2, 3, 4, 1], 5));
+// console.log(betterThanAverage([2, 3, 4, 1], 5));
+
+
+const doubleInteger = (num) => {
+  return num ** 2;
+}
+console.log(doubleInteger(2))
