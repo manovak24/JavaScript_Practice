@@ -401,4 +401,11 @@ const findSmallestInt = (args) => {
 const maps = (x) => {
   return x.map(num => num * 2)
 }
-console.log(maps([1, 2, 3, 4, 5]));
+// console.log(maps([1, 2, 3, 4, 5]));
+
+
+const sumTwoSmallestNumbers = (numbers) => {
+  let sortedArr = numbers.sort((a, b) => a - b);
+  return sortedArr[0] + sortedArr[1];
+}
+console.log(sumTwoSmallestNumbers([3, 4, 5, 12, 1, 45, 68, 72, 91]));
