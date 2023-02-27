@@ -412,3 +412,18 @@ const sumTwoSmallestNumbers = (numbers) => {
   return numbers[0] + numbers[1];
 }
 console.log(sumTwoSmallestNumbers([3, 4, 5, 12, 1, 45, 68, 72, 91]));
+
+
+const basicOp = (operation, value1, value2) => {
+  if(operation === '+') {
+    return value1 + value2;
+  } else if (operation === '-') {
+    return value1 - value2;
+  } else if (operation === '*') {
+    return value1 * value2;
+  } else if (operation === '/') {
+    return value1 / value2;
+  }
+  
+}
+console.log(basicOp('+', 4, 7));
