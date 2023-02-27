@@ -395,4 +395,10 @@ function getCount(str) {
 const findSmallestInt = (args) => {
   return Math.min(...args);
 }
-console.log(findSmallestInt([34, 15, 2, -59]))
+// console.log(findSmallestInt([34, 15, 2, -59]))
+
+
+const maps = (x) => {
+  return x.map(num => num * 2)
+}
+console.log(maps([1, 2, 3, 4, 5]));
