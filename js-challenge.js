@@ -405,7 +405,10 @@ const maps = (x) => {
 
 
 const sumTwoSmallestNumbers = (numbers) => {
-  let sortedArr = numbers.sort((a, b) => a - b);
-  return sortedArr[0] + sortedArr[1];
+  // let sortedArr = numbers.sort((a, b) => a - b);
+  // return sortedArr[0] + sortedArr[1];
+
+  numbers = numbers.sort(function(a, b){return a - b; });
+  return numbers[0] + numbers[1];
 }
 console.log(sumTwoSmallestNumbers([3, 4, 5, 12, 1, 45, 68, 72, 91]));
