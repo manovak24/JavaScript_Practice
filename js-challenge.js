@@ -415,15 +415,27 @@ console.log(sumTwoSmallestNumbers([3, 4, 5, 12, 1, 45, 68, 72, 91]));
 
 
 const basicOp = (operation, value1, value2) => {
-  if(operation === '+') {
-    return value1 + value2;
-  } else if (operation === '-') {
-    return value1 - value2;
-  } else if (operation === '*') {
-    return value1 * value2;
-  } else if (operation === '/') {
-    return value1 / value2;
-  }
+  // if(operation === '+') {
+  //   return value1 + value2;
+  // } else if (operation === '-') {
+  //   return value1 - value2;
+  // } else if (operation === '*') {
+  //   return value1 * value2;
+  // } else if (operation === '/') {
+  //   return value1 / value2;
+  // }
   
+  switch (operation) {
+    case '+':
+        return value1 + value2;
+    case '-':
+        return value1 - value2;
+    case '*':
+        return value1 * value2;
+    case '/':
+        return value1 / value2;
+    default:
+        return 0;
+  }
 }
 console.log(basicOp('+', 4, 7));
