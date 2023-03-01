@@ -411,7 +411,7 @@ const sumTwoSmallestNumbers = (numbers) => {
   numbers = numbers.sort(function(a, b){return a - b; });
   return numbers[0] + numbers[1];
 }
-console.log(sumTwoSmallestNumbers([3, 4, 5, 12, 1, 45, 68, 72, 91]));
+// console.log(sumTwoSmallestNumbers([3, 4, 5, 12, 1, 45, 68, 72, 91]));
 
 
 const basicOp = (operation, value1, value2) => {
@@ -442,6 +442,16 @@ const basicOp = (operation, value1, value2) => {
 
 
 function points(games) {
-  return 
+  let testArr = []
+  let newArr = games.map(item => item.split(''));
+  for(let i = 0; i < newArr.length; i++) {
+    let obj = {};
+    obj['scoreOne'] = parseInt(newArr[i][0]);
+    obj['scoreTwo'] = parseInt(newArr[i][2]);
+    testArr.push(obj);
+  }
+  
+
+  return testArr
 }
 console.log(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"]))
