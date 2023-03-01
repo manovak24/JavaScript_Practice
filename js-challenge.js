@@ -442,16 +442,18 @@ const basicOp = (operation, value1, value2) => {
 
 
 function points(games) {
-  let testArr = []
+  let testArr = [];
   let newArr = games.map(item => item.split(''));
   for(let i = 0; i < newArr.length; i++) {
-    let obj = {};
-    obj['scoreOne'] = parseInt(newArr[i][0]);
-    obj['scoreTwo'] = parseInt(newArr[i][2]);
-    testArr.push(obj);
+    if(parseInt(newArr[i][0]) > parseInt(newArr[i][2])) {
+      testArr.push('win');
+    } else if(parseInt(newArr[i][0]) < parseInt(newArr[i][2])) {
+      testArr.push('loss');
+    } else {
+      testArr.push('tie');
+    }
   }
-  
 
   return testArr
 }
-console.log(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"]))
+console.log(points(["1:0","2:0","3:0","4:0","1:1","3:1","4:1","0:2","4:2","4:3"]))
