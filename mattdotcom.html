@@ -7,6 +7,34 @@
     <title>Document</title>
 </head>
 <style>
+    body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 150px;
+        margin-top: 50px;
+    }
+
+    button:hover {
+        cursor: pointer;
+        opacity: .7;
+    }
+
+    .card-ctr {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+    }
+
+    .full-card:not(:nth-child(3)) {
+        margin-right: 40px;
+    }
+
     .pp-content-image {
         opacity: 0;
     }
@@ -15,50 +43,54 @@
     }
 </style>
 <body>
-    <div class="full-card">
-        <a href="#" class="showphoto image-1">
-            <div class="pp-content-grid-post-text">
-                <h3 class="pp-content-grid-post-title">POST TITLE 1</h3>
-            </div>
-            Click to see image
-        </a>
-        <div id="image-1" class="pp-content-image show">
-            IMAGE (should start hidden)
-            <a href="#">
-                <div>Click to read more (should start hidden)</div>
+    <div class="card-ctr">
+        <div class="full-card">
+            <a href="#" class="showphoto image-1">
+                <div class="pp-content-grid-post-text">
+                    <h3 class="pp-content-grid-post-title">POST TITLE 1</h3>
+                </div>
+                Click to see image
             </a>
+            <div id="image-1" class="pp-content-image show">
+                IMAGE
+                <a href="#">
+                    <div>Click to read more</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="full-card">
+            <a href="#" class="showphoto image-2">
+                <div class="pp-content-grid-post-text">
+                    <h3 class="pp-content-grid-post-title">POST TITLE 2</h3>
+                </div>
+                Click to see image
+            </a>
+            <div id="image-2" class="pp-content-image show">
+                IMAGE
+                <a href="#">
+                    <div>Click to read more</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="full-card">
+            <a href="#" class="showphoto image-3">
+                <div class="pp-content-grid-post-text">
+                    <h3 class="pp-content-grid-post-title">POST TITLE 3</h3>
+                </div>
+                Click to see image
+            </a>
+            <div id="image-3" class="pp-content-image show">
+                IMAGE
+                <a href="#">
+                    <div>Click to read more</div>
+                </a>
+            </div>
         </div>
     </div>
 
-    <div class="full-card">
-        <a href="#" class="showphoto image-2">
-            <div class="pp-content-grid-post-text">
-                <h3 class="pp-content-grid-post-title">POST TITLE 2</h3>
-            </div>
-            Click to see image
-        </a>
-        <div id="image-2" class="pp-content-image show">
-            IMAGE (should start hidden)
-            <a href="#">
-                <div>Click to read more (should start hidden)</div>
-            </a>
-        </div>
-    </div>
-
-    <div class="full-card">
-        <a href="#" class="showphoto image-3">
-            <div class="pp-content-grid-post-text">
-                <h3 class="pp-content-grid-post-title">POST TITLE 3</h3>
-            </div>
-            Click to see image
-        </a>
-        <div id="image-3" class="pp-content-image show">
-            IMAGE (should start hidden)
-            <a href="#">
-                <div>Click to read more (should start hidden)</div>
-            </a>
-        </div>
-    </div>
+    <button>Blur Images</button>
 
     <script>
         const showPhotos = document.querySelectorAll('.showphoto');
