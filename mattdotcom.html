@@ -17,7 +17,7 @@
 
     button {
         width: 150px;
-        margin-top: 50px;
+        margin: 50px 10px 0;
     }
 
     button:hover {
@@ -33,6 +33,12 @@
 
     .full-card:not(:nth-child(3)) {
         margin-right: 40px;
+    }
+
+    .btn-ctr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .pp-content-image {
@@ -90,11 +96,16 @@
         </div>
     </div>
 
-    <button>Blur Images</button>
+    <div class="btn-ctr">
+        <button class="hide-btn">hide Images</button>
+        <button class="show-btn">Show Images</button>
+    </div>
 
     <script>
         const showPhotos = document.querySelectorAll('.showphoto');
         const myImages = document.querySelectorAll('.pp-content-image');
+        const hideBtn = document.querySelector('.hide-btn');
+        const showBtn = document.querySelector('.show-btn');
 
         function myfunction(e) {
             for(const myImage of myImages) {
@@ -109,6 +120,19 @@
                 myfunction(event.currentTarget);
             })
         }
+
+        hideBtn.addEventListener('click', () => {
+            myImages.forEach(image => {
+                image.classList.remove('show');
+            })
+        })
+
+        showBtn.addEventListener('click', () => {
+            myImages.forEach(image => {
+                image.classList.add('show');
+            })
+        })
+
     </script>
 </body>
 </html>
