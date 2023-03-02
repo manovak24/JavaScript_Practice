@@ -456,4 +456,10 @@ function points(games) {
 
   return testArr
 }
-console.log(points(["1:0","2:0","3:0","4:0","1:1","3:1","4:1","0:2","4:2","4:3"]))
+// console.log(points(["1:0","2:0","3:0","4:0","1:1","3:1","4:1","0:2","4:2","4:3"]));
+
+
+function repeatStr(n, s) {
+  return s.repeat(n);
+}
+console.log(repeatStr(8, '$'));
