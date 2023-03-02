@@ -104,6 +104,7 @@
     <script>
         const showPhotos = document.querySelectorAll('.showphoto');
         const myImages = document.querySelectorAll('.pp-content-image');
+        // two new query selectors to pick up the toggle buttons
         const hideBtn = document.querySelector('.hide-btn');
         const showBtn = document.querySelector('.show-btn');
 
@@ -121,6 +122,7 @@
             })
         }
 
+        // Event Listeners that will handle the blue toggle for all images at same time
         hideBtn.addEventListener('click', () => {
             myImages.forEach(image => {
                 image.classList.remove('show');
