@@ -462,4 +462,10 @@ function points(games) {
 function repeatStr(n, s) {
   return s.repeat(n);
 }
-console.log(repeatStr(8, '$'));
+// console.log(repeatStr(8, '$'));
+
+
+function hoopCount(n) {
+  return n >= 10 ? 'Great, now move on to tricks' : 'Keep at it until you get it';
+}
+console.log(hoopCount(10));
