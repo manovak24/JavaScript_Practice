@@ -468,4 +468,10 @@ function repeatStr(n, s) {
 function hoopCount(n) {
   return n >= 10 ? 'Great, now move on to tricks' : 'Keep at it until you get it';
 }
-console.log(hoopCount(10));
+// console.log(hoopCount(10));
+
+
+function stray(numbers) {
+  return numbers.reduce((a, b) => a ^ b)
+}
+console.log(stray([2, 1, 1]))
