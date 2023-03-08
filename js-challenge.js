@@ -488,7 +488,7 @@ function findOdd(A) {
   for(let key in obj) {
     // console.log(obj[key])
     if(obj[key] % 2 !== 0) {
-      return key;
+      return parseInt(key);
     }
   }
 }
