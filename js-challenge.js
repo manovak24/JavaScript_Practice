@@ -474,4 +474,22 @@ function hoopCount(n) {
 function stray(numbers) {
   return numbers.reduce((a, b) => a ^ b)
 }
-console.log(stray([2, 1, 1]))
+// console.log(stray([2, 1, 1]))
+
+
+// Counting number of time element appears in array
+// counting occurances of each element in array
+function findOdd(A) {
+  let obj = A.reduce((a, b) => {
+    a[b] = (a[b] || 0) + 1;
+    return a;
+  }, {});
+
+  for(let key in obj) {
+    // console.log(obj[key])
+    if(obj[key] % 2 !== 0) {
+      return key;
+    }
+  }
+}
+console.log(findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]))
