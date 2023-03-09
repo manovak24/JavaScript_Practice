@@ -509,4 +509,16 @@ function fakeBin(x) {
 
   return x.split('').map(item => item < 5 ? 0 : 1).join('');
 }
-console.log(fakeBin('45385593107843568'))
+// console.log(fakeBin('45385593107843568'));
+
+
+function minMax(arr) {
+  let newArr = [];
+  let max = Math.max(...arr)
+  let min = Math.min(...arr)
+
+  arr.map(item => item === max || item === min ? newArr.push(item) : null)
+
+  return newArr;
+}
+console.log(minMax([1,2,3,6,5]))
