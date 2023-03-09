@@ -513,12 +513,13 @@ function fakeBin(x) {
 
 
 function minMax(arr) {
-  let newArr = arr.filter(n => n === Math.max(...arr) || n === Math.min(...arr)).sort((a, b) => a - b);
-  if(newArr.length < 2) {
-    newArr.push(newArr[0]);
-  }
+  // let newArr = arr.filter(n => n === Math.max(...arr) || n === Math.min(...arr)).sort((a, b) => a - b);
+  // if(newArr.length < 2) {
+  //   newArr.push(newArr[0]);
+  // }
   
-  return newArr;
+  // return newArr;
+  return [Math.min(...arr), Math.max(...arr)];
 }
 console.log(minMax([4]));
 console.log(minMax([4, 5, 2, 1, 6, 8]));
