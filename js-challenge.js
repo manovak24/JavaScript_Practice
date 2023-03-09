@@ -492,4 +492,19 @@ function findOdd(A) {
     }
   }
 }
-console.log(findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]))
+// console.log(findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]));
+
+function fakeBin(x) {
+  let arr = x.split('').map(item => parseInt(item));
+
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] < 5) {
+      arr[i] = 0;
+    } else if(arr[i] >= 5) {
+      arr[i] = 1;
+    }
+  }
+
+  return arr.map(item => item.toString()).join('');
+}
+console.log(fakeBin('45385593107843568'))
