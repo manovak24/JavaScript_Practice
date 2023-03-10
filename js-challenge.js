@@ -521,12 +521,32 @@ function minMax(arr) {
   // return newArr;
   return [Math.min(...arr), Math.max(...arr)];
 }
-console.log(minMax([4]));
-console.log(minMax([4, 5, 2, 1, 6, 8]));
+// console.log(minMax([4]));
+// console.log(minMax([4, 5, 2, 1, 6, 8]));
 
 
 // const makeUpperCase = (str) => {
 //   return str.toUpperCase();
 // }
 const makeUpperCase = str => str.toUpperCase();
-console.log(makeUpperCase('hello world'));
+// console.log(makeUpperCase('hello world'));
+
+
+const high = (x) => {
+  const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  let arr = x.split(' ');
+  let countArr = [];
+
+  for(let i = 0; i < arr.length; i++) {
+    let newArr = arr[i].split('');
+    let wordArr = [];
+    for(let j = 0; j < newArr.length; j++) {
+      wordArr.push(alpha.indexOf(newArr[j]));
+    }
+
+    countArr.push(wordArr.reduce((a, b) => a + b));
+  }
+  
+  return countArr;
+}
+console.log(high('man it'));
