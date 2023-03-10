@@ -534,19 +534,16 @@ const makeUpperCase = str => str.toUpperCase();
 
 const high = (x) => {
   const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  let arr = x.split(' ');
   let countArr = [];
 
-  for(let i = 0; i < arr.length; i++) {
-    let newArr = arr[i].split('');
+  for(let i = 0; i < x.split(' ').length; i++) {
     let wordArr = [];
-    for(let j = 0; j < newArr.length; j++) {
-      wordArr.push(alpha.indexOf(newArr[j]));
+    for(let j = 0; j < x.split(' ')[i].split('').length; j++) {
+      wordArr.push(alpha.indexOf(x.split(' ')[i].split('')[j]) + 1);
     }
-
     countArr.push(wordArr.reduce((a, b) => a + b));
   }
-  
-  return countArr;
+
+  return x.split(' ')[countArr.indexOf(Math.max(...countArr))];
 }
-console.log(high('man it'));
+console.log(high('aa b'));
