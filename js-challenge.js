@@ -523,3 +523,10 @@ function minMax(arr) {
 }
 console.log(minMax([4]));
 console.log(minMax([4, 5, 2, 1, 6, 8]));
+
+
+// const makeUpperCase = (str) => {
+//   return str.toUpperCase();
+// }
+const makeUpperCase = str => str.toUpperCase();
+console.log(makeUpperCase('hello world'));
