@@ -533,17 +533,19 @@ const makeUpperCase = str => str.toUpperCase();
 
 
 const high = (x) => {
-  const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  let countArr = [];
+  // const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  // let countArr = [];
+  // for(let i = 0; i < x.split(' ').length; i++) {
+  //   let wordArr = [];
+  //   for(let j = 0; j < x.split(' ')[i].split('').length; j++) {
+  //     wordArr.push(alpha.indexOf(x.split(' ')[i].split('')[j]) + 1);
+  //   }
+  //   countArr.push(wordArr.reduce((a, b) => a + b));
+  // }
+  // return x.split(' ')[countArr.indexOf(Math.max(...countArr))];
 
-  for(let i = 0; i < x.split(' ').length; i++) {
-    let wordArr = [];
-    for(let j = 0; j < x.split(' ')[i].split('').length; j++) {
-      wordArr.push(alpha.indexOf(x.split(' ')[i].split('')[j]) + 1);
-    }
-    countArr.push(wordArr.reduce((a, b) => a + b));
-  }
-
-  return x.split(' ')[countArr.indexOf(Math.max(...countArr))];
+  // Optimized below
+  let ax = x.split(' ').map(x=>[...x].reduce((a,b)=>a+b.charCodeAt(0)-96,0));
+  return x.split(' ')[ax.indexOf(Math.max(...ax))];
 }
 console.log(high('aa b'));
