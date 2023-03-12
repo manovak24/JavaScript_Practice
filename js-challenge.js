@@ -548,4 +548,11 @@ const high = (x) => {
   let ax = x.split(' ').map(x=>[...x].reduce((a,b)=>a+b.charCodeAt(0)-96,0));
   return x.split(' ')[ax.indexOf(Math.max(...ax))];
 }
-console.log(high('aa b'));
+// console.log(high('aa b'));
+
+
+const quarterOf = (month) => {
+  return month > 9 ? 4 : month > 6 ? 3 : month > 3 ? 2 : 1;
+  // Math.ceil(month / 3);
+}
+console.log(quarterOf(3))
