@@ -555,4 +555,10 @@ const quarterOf = (month) => {
   return month > 9 ? 4 : month > 6 ? 3 : month > 3 ? 2 : 1;
   // Math.ceil(month / 3);
 }
-console.log(quarterOf(3))
+// console.log(quarterOf(3));
+
+
+function friend(friends) {
+  return friends.filter(name => name.length === 4);
+}
+console.log(friend(["Ryan", "Kieran", "Mark"]));
