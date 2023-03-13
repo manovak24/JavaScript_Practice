@@ -561,12 +561,14 @@ const quarterOf = (month) => {
 function friend(friends) {
   return friends.filter(name => name.length === 4);
 }
-console.log(friend(["Ryan", "Kieran", "Mark"]));
+// console.log(friend(["Ryan", "Kieran", "Mark"]));
 
 
 function likes(names) {
-  let str = '';
-  names.forEach(name => )
-  return names.length == 0 ? "no one likes this" : names
+  if(names.length != 0) {
+    names.splice(-1, 0, 'and')
+  }
+  return names.length == 0 ? 'no one liked this post' : `${names.join(' ')} liked this post`;
+
 }
-console.log(likes(['mark', 'mike', 'randi', 'will']));
+console.log(likes(['mark', 'mike', 'randi']));
