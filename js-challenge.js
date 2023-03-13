@@ -562,3 +562,11 @@ function friend(friends) {
   return friends.filter(name => name.length === 4);
 }
 console.log(friend(["Ryan", "Kieran", "Mark"]));
+
+
+function likes(names) {
+  let str = '';
+  names.forEach(name => )
+  return names.length == 0 ? "no one likes this" : names
+}
+console.log(likes(['mark', 'mike', 'randi', 'will']));
