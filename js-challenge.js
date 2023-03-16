@@ -572,3 +572,9 @@ function likes(names) {
 
 }
 console.log(likes(['mark', 'mike', 'randi']));
+
+
+const positiveSum = (arr) => {
+  
+}
+console.log(positiveSum([1,-4,7,12]));
