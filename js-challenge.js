@@ -571,10 +571,12 @@ function likes(names) {
   return names.length == 0 ? 'no one liked this post' : `${names.join(' ')} liked this post`;
 
 }
-console.log(likes(['mark', 'mike', 'randi']));
+// console.log(likes(['mark', 'mike', 'randi']));
 
 
 const positiveSum = (arr) => {
-  
+  // let newArr = arr.filter(num => num > 0);
+  // return newArr.length === 0 ? 0 : newArr.reduce((a, b) => a + b);
+  return arr.reduce((a,b)=> a + (b > 0 ? b : 0),0);
 }
-console.log(positiveSum([1,-4,7,12]));
+console.log(positiveSum([-1,2]));
