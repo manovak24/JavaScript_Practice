@@ -588,4 +588,10 @@ const reverseSeq = (n) => {
   }
   return arr;
 }
-console.log(reverseSeq(5));
+// console.log(reverseSeq(5));
+
+
+const century = (year) => {
+  return Math.ceil(year/100);
+}
+console.log(century(1935));
