@@ -1,0 +1,11 @@
+var base_url = "https://api.zenoti.com/"; //Don't Change This Base URL
+var username = "apiusername";
+var password = "apipassword";
+var clientId = "yourclientid";
+var centerId = "yourcenterid";
+var opp_title = "Opportunity Title";
+var opp_desc = "Opportunity Description";
+var status_id = "Status ID";
+var opportunity_owner_id = "Opportunity Owner ID";
+var priority_type_id = "Priority Type ID";
+var expected_close_date = date("Y-m-d", strtotime(date("Y-m-d", time()) + " + 1 days"));

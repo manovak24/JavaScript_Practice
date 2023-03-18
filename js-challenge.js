@@ -579,4 +579,13 @@ const positiveSum = (arr) => {
   // return newArr.length === 0 ? 0 : newArr.reduce((a, b) => a + b);
   return arr.reduce((a,b)=> a + (b > 0 ? b : 0),0);
 }
-console.log(positiveSum([-1,2]));
+// console.log(positiveSum([-1,2]));
+
+const reverseSeq = (n) => {
+  let arr = [];
+  for(let i = n; i > 0; i--) {
+    arr.push(i)
+  }
+  return arr;
+}
+console.log(reverseSeq(5));
