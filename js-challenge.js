@@ -598,6 +598,9 @@ const century = (year) => {
 
 
 function squareSum(numbers) {
-  return numbers.length == 0 ? 0 : numbers.map(number => number * number).reduce((a, b) => a + b );
+  // return numbers.length == 0 ? 0 : numbers.map(number => number * number).reduce((a, b) => a + b );
+  return numbers.reduce(function(sum, n){
+    return (n*n) + sum;
+  }, 0)
 }
 console.log(squareSum([1, 4]));
