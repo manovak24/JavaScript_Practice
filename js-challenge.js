@@ -603,4 +603,15 @@ function squareSum(numbers) {
     return (n*n) + sum;
   }, 0)
 }
-console.log(squareSum([1, 4]));
+// console.log(squareSum([1, 4]));
+
+
+function correct(string) {
+  const chars = {
+    '5':'s',
+    '0':'O',
+    '1':'I'
+  }
+  return string.replace(/[501]/g, m => chars[m]);
+}
+console.log(correct('L0ND0N'));
