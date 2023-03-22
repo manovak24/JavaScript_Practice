@@ -607,11 +607,12 @@ function squareSum(numbers) {
 
 
 function correct(string) {
-  const chars = {
-    '5':'s',
-    '0':'O',
-    '1':'I'
-  }
-  return string.replace(/[501]/g, m => chars[m]);
+  // const chars = {
+  //   '5':'s',
+  //   '0':'O',
+  //   '1':'I'
+  // }
+  // return string.replace(/[501]/g, m => chars[m]);
+  return string.replace(/0/g,'O').replace(/1/g,'I').replace(/5/g,'S')
 }
 console.log(correct('L0ND0N'));
