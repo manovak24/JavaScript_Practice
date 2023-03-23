@@ -615,4 +615,10 @@ function correct(string) {
   // return string.replace(/[501]/g, m => chars[m]);
   return string.replace(/0/g,'O').replace(/1/g,'I').replace(/5/g,'S')
 }
-console.log(correct('L0ND0N'));
+// console.log(correct('L0ND0N'));
+
+
+function stringToArray(string) {
+  return string.split(' ');
+}
+console.log(stringToArray('Hello World'));
