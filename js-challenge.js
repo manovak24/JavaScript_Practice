@@ -621,4 +621,10 @@ function correct(string) {
 function stringToArray(string) {
   return string.split(' ');
 }
-console.log(stringToArray('Hello World'));
+// console.log(stringToArray('Hello World'));
+
+
+const countTrue = (arr) => {
+  return arr.filter(value => value === true).length;
+}
+console.log(countTrue([true, false, false, true, false]));
