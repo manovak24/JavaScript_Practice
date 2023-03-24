@@ -8,6 +8,7 @@ let paragraphArr = [];
 
 const search = (e) => {
     e.preventDefault();
+    
     let textToSearch = searchTerm.value.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
     let pattern = new RegExp(`${textToSearch}`, "gi");
     paragraph.forEach(p => {
@@ -32,11 +33,11 @@ const clearSearch = () => {
 };
 
 submitCtr.addEventListener('submit', (event) => {
-    search(event);
+    !searchTerm.value ? window.alert('Please enter a search term') : search(event);
 });
 
 submitBtn.addEventListener('click', (event) => {
-    search(event);
+    !searchTerm.value ? window.alert('Please enter a search term') : search(event);
 });
 
 clearBtn.addEventListener('click', () => {
