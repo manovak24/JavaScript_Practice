@@ -32,12 +32,16 @@ const clearSearch = () => {
     return;
 };
 
+const alert = () => {
+    return window.alert('Please enter a search term');
+}
+
 submitCtr.addEventListener('submit', (event) => {
-    !searchTerm.value ? window.alert('Please enter a search term') : search(event);
+    !searchTerm.value ? alert() : search(event);
 });
 
 submitBtn.addEventListener('click', (event) => {
-    !searchTerm.value ? window.alert('Please enter a search term') : search(event);
+    !searchTerm.value ? alert() : search(event);
 });
 
 clearBtn.addEventListener('click', () => {
