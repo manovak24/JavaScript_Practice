@@ -646,3 +646,8 @@ function disemvowel(str) {
   return str.replace(/[aeiou]/gi, '');
 }
 console.log(disemvowel('This website is for losers LOL!'));
+
+function boolToWord(bool) {
+  return bool ? 'Yes' : 'No';
+}
+console.log(boolToWord(false));
