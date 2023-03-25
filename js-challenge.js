@@ -630,18 +630,19 @@ const countTrue = (arr) => {
 console.log(countTrue([true, false, false, true, false]));
 
 function disemvowel(str) {
-  const chars = {
-    'A':'',
-    'E':'',
-    'I':'',
-    'O':'',
-    'U':'',
-    'a':'',
-    'e':'',
-    'i':'',
-    'o':'',
-    'u':''
-  }
-  return str.replace(/[AEIOUaeiou]/g, m => chars[m]);
+  // const chars = {
+  //   'A':'',
+  //   'E':'',
+  //   'I':'',
+  //   'O':'',
+  //   'U':'',
+  //   'a':'',
+  //   'e':'',
+  //   'i':'',
+  //   'o':'',
+  //   'u':''
+  // }
+  // return str.replace(/[AEIOUaeiou]/g, m => chars[m]);
+  return str.replace(/[aeiou]/gi, '');
 }
 console.log(disemvowel('This website is for losers LOL!'));
