@@ -627,7 +627,7 @@ function stringToArray(string) {
 const countTrue = (arr) => {
   return arr.length === 0 ? 0 : arr.filter(value => value === true).length;
 }
-console.log(countTrue([true, false, false, true, false]));
+// console.log(countTrue([true, false, false, true, false]));
 
 function disemvowel(str) {
   // const chars = {
@@ -645,9 +645,14 @@ function disemvowel(str) {
   // return str.replace(/[AEIOUaeiou]/g, m => chars[m]);
   return str.replace(/[aeiou]/gi, '');
 }
-console.log(disemvowel('This website is for losers LOL!'));
+// console.log(disemvowel('This website is for losers LOL!'));
 
 function boolToWord(bool) {
   return bool ? 'Yes' : 'No';
 }
-console.log(boolToWord(false));
+// console.log(boolToWord(false));
+
+function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+  return laLigaGoals + copaDelReyGoals + championsLeagueGoals;
+}
+console.log(goals(9, 1, 2))
