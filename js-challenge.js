@@ -625,6 +625,25 @@ function stringToArray(string) {
 
 
 const countTrue = (arr) => {
-  return arr.filter(value => value === true).length;
+  return arr.length === 0 ? 0 : arr.filter(value => value === true).length;
 }
 console.log(countTrue([true, false, false, true, false]));
+
+function disemvowel(str) {
+  const chars = {
+    'A':'',
+    'E':'',
+    'I':'',
+    'O':'',
+    'U':'',
+    'Y':'',
+    'a':'',
+    'e':'',
+    'i':'',
+    'o':'',
+    'u':'',
+    'y':''
+  }
+  return str.replace(/[AEIOUyaeiouy]/g, m => chars[m]);
+}
+console.log(disemvowel('Hello World!'));
