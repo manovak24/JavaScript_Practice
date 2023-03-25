@@ -636,14 +636,12 @@ function disemvowel(str) {
     'I':'',
     'O':'',
     'U':'',
-    'Y':'',
     'a':'',
     'e':'',
     'i':'',
     'o':'',
-    'u':'',
-    'y':''
+    'u':''
   }
-  return str.replace(/[AEIOUyaeiouy]/g, m => chars[m]);
+  return str.replace(/[AEIOUaeiou]/g, m => chars[m]);
 }
-console.log(disemvowel('Hello World!'));
+console.log(disemvowel('This website is for losers LOL!'));
