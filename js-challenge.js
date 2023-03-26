@@ -655,4 +655,5 @@ function boolToWord(bool) {
 function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
   return laLigaGoals + copaDelReyGoals + championsLeagueGoals;
 }
-console.log(goals(9, 1, 2))
+// console.log(goals(9, 1, 2));
+
