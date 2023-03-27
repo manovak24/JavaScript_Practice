@@ -657,3 +657,8 @@ function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
 }
 // console.log(goals(9, 1, 2));
 
+
+function longest(s1, s2) {
+  return s1.split('').sort().join('');
+}
+console.log(longest("xyaabbbccccdefww", "xxxxyyyyabklmopq"))
