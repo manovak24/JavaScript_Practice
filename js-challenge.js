@@ -659,6 +659,6 @@ function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
 
 
 function longest(s1, s2) {
-  return s1.split('').sort().join('');
+  return [...new Set(s1+s2)].sort().join('')
 }
 console.log(longest("xyaabbbccccdefww", "xxxxyyyyabklmopq"))
