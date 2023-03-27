@@ -661,4 +661,13 @@ function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
 function longest(s1, s2) {
   return [...new Set(s1+s2)].sort().join('')
 }
-console.log(longest("xyaabbbccccdefww", "xxxxyyyyabklmopq"))
+// console.log(longest("xyaabbbccccdefww", "xxxxyyyyabklmopq"));
+
+
+function abbrevName(name) {
+  let arrIn = [];
+  name.split(' ').forEach(word => arrIn.push(word[0]));
+  arrIn.splice(1, 0, '.');
+  return arrIn.join('').toUpperCase();
+}
+console.log(abbrevName('mark novak'));
