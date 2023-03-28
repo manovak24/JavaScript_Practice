@@ -670,4 +670,15 @@ function abbrevName(name) {
   arrIn.splice(1, 0, '.');
   return arrIn.join('').toUpperCase();
 }
-console.log(abbrevName('mark novak'));
+// console.log(abbrevName('mark novak'));
+
+
+const wave = (str) => {
+  let arr = [];
+  for(let i = 0; i < str.length; i++) {
+    arr.push(str.slice(0, i) + str.charAt(i).toUpperCase() + str.slice(i+1));
+  }
+
+  return arr;
+}
+console.log(wave('hello'));
