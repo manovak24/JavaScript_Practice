@@ -674,14 +674,23 @@ function abbrevName(name) {
 
 
 const wave = (str) => {
-  let arr = [];
-  for(let i = 0; i < str.length; i++) {
-    if(str.charAt(i) !== ' '){
-      arr.push(str.slice(0, i) + str.charAt(i).toUpperCase() + str.slice(i+1));
+  // let arr = [];
+  // for(let i = 0; i < str.length; i++) {
+  //   if(str.charAt(i) !== ' '){
+  //     arr.push(str.slice(0, i) + str.charAt(i).toUpperCase() + str.slice(i+1));
+  //   }
+  // }
 
-    }
-  }
+  // return arr;
 
-  return arr;
+  let result = [];
+    
+    str.split("").forEach((char, index) => {
+        if (/[a-z]/.test(char)) {
+            result.push(str.slice(0, index) + char.toUpperCase() + str.slice(index + 1));
+        }
+    });
+    
+  return result;
 }
 console.log(wave('two words'));
