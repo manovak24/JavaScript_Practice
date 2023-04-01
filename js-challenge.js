@@ -704,4 +704,10 @@ console.log(roundToNext5(-1));
 const isStringUpperCase = (str) => {
   return str === str.toUpperCase();
 }
-console.log(isStringUpperCase('TeST'));
+// console.log(isStringUpperCase('TeST'));
+
+function twoSort(s) {
+  let arr = s.sort()[0].split('')
+  return arr.map(letter => arr.indexOf(letter) !== arr.length - 1 ? letter + '***' : letter).join('');
+}
+console.log(twoSort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"]));
