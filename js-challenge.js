@@ -698,7 +698,7 @@ const wave = (str) => {
 function roundToNext5(n) {
   return Math.ceil(n/5)*5;
 }
-console.log(roundToNext5(-1));
+// console.log(roundToNext5(-1));
 
 
 const isStringUpperCase = (str) => {
@@ -713,3 +713,11 @@ function twoSort(s) {
   return s.sort()[0].split('').join('***');
 }
 // console.log(twoSort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"]));
+
+const solution = (nums) => {
+  // return nums === null ? [] : nums.length === 0 ? [] : nums.sort((a,b) => a - b);
+  return (nums || []).sort(function(a, b){
+    return a - b
+  });
+}
+console.log(solution([2, 20, 10]))
