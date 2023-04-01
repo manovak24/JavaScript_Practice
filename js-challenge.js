@@ -707,7 +707,9 @@ const isStringUpperCase = (str) => {
 // console.log(isStringUpperCase('TeST'));
 
 function twoSort(s) {
-  let arr = s.sort()[0].split('')
-  return arr.map(letter => arr.indexOf(letter) !== arr.length - 1 ? letter + '***' : letter).join('');
+  // let arr = s.sort()[0].split('')
+  // return arr.map(letter => arr.indexOf(letter) !== arr.length - 1 ? letter + '***' : letter).join('');
+
+  return s.sort()[0].split('').join('***');
 }
-console.log(twoSort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"]));
+// console.log(twoSort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"]));
