@@ -724,6 +724,9 @@ const solution = (nums) => {
 
 
 const isAnagram = (test, original) => {
-  return test.length === original.length ? test.toLowerCase().split('').sort().every((val, i) => val === original.toLowerCase().split('').sort()[i]) : false;
+  // return test.length === original.length ? test.toLowerCase().split('').sort().every((val, i) => val === original.toLowerCase().split('').sort()[i]) : false;
+  const t = test.toLowerCase().split('').sort().join('');
+  const o = original.toLowerCase().split('').sort().join('');
+  return (t==o)?true:false;
 }
 console.log(isAnagram('SrLSoGsgt', 'gLrSStYGos'));
