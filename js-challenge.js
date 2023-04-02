@@ -720,4 +720,10 @@ const solution = (nums) => {
     return a - b
   });
 }
-console.log(solution([2, 20, 10]))
+// console.log(solution([2, 20, 10]))
+
+
+const isAnagram = (test, original) => {
+  return test.length === original.length ? test.toLowerCase().split('').sort().every((val, i) => val === original.toLowerCase().split('').sort()[i]) : false;
+}
+console.log(isAnagram('SrLSoGsgt', 'gLrSStYGos'));
