@@ -729,4 +729,10 @@ const isAnagram = (test, original) => {
   const o = original.toLowerCase().split('').sort().join('');
   return (t==o)?true:false;
 }
-console.log(isAnagram('SrLSoGsgt', 'gLrSStYGos'));
+// console.log(isAnagram('SrLSoGsgt', 'gLrSStYGos'));
+
+
+function booleanToString(b) {
+  return b ? 'true' : 'false';
+}
+console.log(true);
