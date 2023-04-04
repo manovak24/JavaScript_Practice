@@ -735,4 +735,10 @@ const isAnagram = (test, original) => {
 function booleanToString(b) {
   return b ? 'true' : 'false';
 }
-console.log(true);
+// console.log(true);
+
+
+const findShort = (s) => {
+  return Math.min(...s.split(' ').map(x => x.length));
+}
+console.log(findShort('bitcoin take over the world maybe who knows perhaps'));
