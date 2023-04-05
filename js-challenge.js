@@ -741,4 +741,10 @@ function booleanToString(b) {
 const findShort = (s) => {
   return Math.min(...s.split(' ').map(x => x.length));
 }
-console.log(findShort('bitcoin take over the world maybe who knows perhaps'));
+// console.log(findShort('bitcoin take over the world maybe who knows perhaps'));
+
+
+const testEven = (n) => {
+  return n % 2 === 0 ? true : false;
+}
+console.log(testEven(2));
