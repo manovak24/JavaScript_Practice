@@ -758,5 +758,9 @@ function getSum(a, b) {
     newArr.push(i);
   }
   return newArr.reduce((a,b) => a + b);
+
+  // let min = Math.min(a, b),
+  //     max = Math.max(a, b);
+  // return (max - min + 1) * (min + max) / 2;
 }
 console.log(getSum(8, 4))
