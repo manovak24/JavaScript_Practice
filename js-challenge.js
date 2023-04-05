@@ -747,4 +747,16 @@ const findShort = (s) => {
 const testEven = (n) => {
   return n % 2 === 0 ? true : false;
 }
-console.log(testEven(2));
+// console.log(testEven(2));
+
+
+function getSum(a, b) {
+  let arr = [a, b];
+  let newArr = [];
+  arr.sort((a,b) => a - b)
+  for(let i = arr[0]; i <= arr[1]; i++) {
+    newArr.push(i);
+  }
+  return newArr.reduce((a,b) => a + b);
+}
+console.log(getSum(8, 4))
