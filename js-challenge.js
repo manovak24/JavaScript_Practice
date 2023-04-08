@@ -767,32 +767,45 @@ function getSum(a, b) {
 
 
 const isValidWalk = (walk) => {
-  let x = 0;
-  let y = 0;
-  if(walk.length === 10) {
-    walk.forEach(direction => {
-      switch(direction) {
-        case 'n':
-          x++;
-          break;
-        case 's':
-          x--;
-          break;
-        case 'w':
-          y++;
-          break;
-        case 'e':
-          y--;
-          break;
-      }
-    })
-  } else {
-    return false;
+  // let x = 0;
+  // let y = 0;
+  // if(walk.length === 10) {
+  //   walk.forEach(direction => {
+  //     switch(direction) {
+  //       case 'n':
+  //         x++;
+  //         break;
+  //       case 's':
+  //         x--;
+  //         break;
+  //       case 'w':
+  //         y++;
+  //         break;
+  //       case 'e':
+  //         y--;
+  //         break;
+  //     }
+  //   })
+  // } else {
+  //   return false;
+  // }
+  // if(x === 0 && y === 0) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+  var dx = 0
+  var dy = 0
+  var dt = walk.length
+  
+  for (var i = 0; i < walk.length; i++) {
+    switch (walk[i]) {
+      case 'n': dy--; break
+      case 's': dy++; break
+      case 'w': dx--; break
+      case 'e': dx++; break
+    }
   }
-  if(x === 0 && y === 0) {
-    return true;
-  } else {
-    return false;
-  }
+  return dt === 10 && dx === 0 && dy === 0
 }
 console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']));
