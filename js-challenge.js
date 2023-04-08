@@ -763,4 +763,36 @@ function getSum(a, b) {
   //     max = Math.max(a, b);
   // return (max - min + 1) * (min + max) / 2;
 }
-console.log(getSum(8, 4))
+// console.log(getSum(8, 4));
+
+
+const isValidWalk = (walk) => {
+  let x = 0;
+  let y = 0;
+  if(walk.length === 10) {
+    walk.forEach(direction => {
+      switch(direction) {
+        case 'n':
+          x++;
+          break;
+        case 's':
+          x--;
+          break;
+        case 'w':
+          y++;
+          break;
+        case 'e':
+          y--;
+          break;
+      }
+    })
+  } else {
+    return false;
+  }
+  if(x === 0 && y === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']));
