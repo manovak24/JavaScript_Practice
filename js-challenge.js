@@ -814,4 +814,10 @@ const isValidWalk = (walk) => {
 function greet (name, owner) {
   return name === owner ? 'Hello boss' : 'Hello guest';
 }
-console.log(greet('Greg', 'Daniel'));
+// console.log(greet('Greg', 'Daniel'));
+
+
+function sortByLength (array) {
+  return array.sort((a,b) => a.length - b.length);
+}
+// console.log(sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"]));
