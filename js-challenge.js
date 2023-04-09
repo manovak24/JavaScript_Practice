@@ -808,4 +808,10 @@ const isValidWalk = (walk) => {
   }
   return dt === 10 && dx === 0 && dy === 0
 }
-console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']));
+// console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']));
+
+
+function greet (name, owner) {
+  return name === owner ? 'Hello boss' : 'Hello guest';
+}
+console.log(greet('Greg', 'Daniel'));
