@@ -839,4 +839,31 @@ const switchItUp = (number) => {
   }
   return num;
 }
-console.log(switchItUp(1))
+console.log(switchItUp(1));
+
+
+const persistence = (num) => {
+  let arr = num.toString().split('');
+  arr.map(x => parseInt(x));
+  // let counter;
+  
+  
+
+  // for(let i = 0; counter > 2; i++) {
+  //   counter = arr.reduce((a,b) => a * b).toString().length;
+  // }
+  
+  // return counter;
+
+  let result = '';
+  let i = 0;
+
+  do {
+    i = arr.reduce((a,b) => a * b).toString().length;
+    result = result + i;
+  } while (i < 1);
+
+  return result;
+  
+}
+console.log(persistence(25))
