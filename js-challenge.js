@@ -878,5 +878,6 @@ const number = (busStops) => {
     off += busStops[i][1]; 
   }
   return on - off;
+  // busStops.reduce((rem, [on, off]) => rem + on - off, 0)
 }
 console.log(number([[10,0],[3,5],[5,8]]))
