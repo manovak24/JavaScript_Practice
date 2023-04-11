@@ -866,4 +866,17 @@ const persistence = (num) => {
   return result;
   
 }
-console.log(persistence(25))
+// console.log(persistence(25));
+
+
+const number = (busStops) => {
+  let on = 0;
+  let off = 0;
+
+  for (let i = 0; i < busStops.length; i++) {
+    on += busStops[i][0];
+    off += busStops[i][1]; 
+  }
+  return on - off;
+}
+console.log(number([[10,0],[3,5],[5,8]]))
