@@ -839,7 +839,7 @@ const switchItUp = (number) => {
   }
   return num;
 }
-console.log(switchItUp(1));
+// console.log(switchItUp(1));
 
 
 const persistence = (num) => {
@@ -880,4 +880,10 @@ const number = (busStops) => {
   return on - off;
   // busStops.reduce((rem, [on, off]) => rem + on - off, 0)
 }
-console.log(number([[10,0],[3,5],[5,8]]))
+// console.log(number([[10,0],[3,5],[5,8]]));
+
+
+const problem = (x) => {
+  return typeof x === "number" ? (x * 50) + 6 : 'Error';
+}
+console.log(problem(10))
