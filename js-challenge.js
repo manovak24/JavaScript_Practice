@@ -886,4 +886,9 @@ const number = (busStops) => {
 const problem = (x) => {
   return typeof x === "number" ? (x * 50) + 6 : 'Error';
 }
-console.log(problem(10))
+// console.log(problem(10));
+
+function checkForBase(base, factor) {
+  return base % factor == 0;
+}
+console.log(checkForBase(10, 2));
