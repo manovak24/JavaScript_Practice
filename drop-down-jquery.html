@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Using jQuery</title>
+    <style>
+        .location-drop-down ul { 
+            width: 150px;
+            border: 1px #000 solid;
+        }
+        .location-drop-down ul li { padding: 5px 10px; z-index: 2; }
+        .location-drop-down ul li:not(.init) { float: left; width: 150px; display: none; background: #ddd; }
+        
+        .location-drop-down li.init { cursor: pointer; }
+
+        a#submit { z-index: 1; }
+    </style>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <div class="location-drop-down">
+        <ul id='ddlDemoDropdown' class="list-unstyled" style="list-style: none;">
+            <li class="init" data-value="-1">Select Location</li>
+            <li data-value="value 1">Option 1</li>
+            <li data-value="value 2">Option 2</li>
+            <li data-value="value 3">Option 3</li>
+        </ul>
+    </div>
+    <script>
+        $("ul").on("click", ".init", function() {
+            $(this).closest("ul").children('li:not(.init)').toggle();
+        });
+
+        var allOptions = $("ul").children('li:not(.init)');
+        $("ul").on("click", "li:not(.init)", function() {
+            allOptions.removeClass('selected');
+            $(this).addClass('selected');
+            $("ul").children('.init').html($(this).html());
+            allOptions.toggle();
+        });
+        // Check this click evnet - 
+        $("body").on("click", "#ddlDemoDropdown li", function() {
+            var selectedValue = $(this).attr('data-value')
+        });
+    </script>
+</body>
+</html>
