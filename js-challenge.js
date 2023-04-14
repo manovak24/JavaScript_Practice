@@ -892,3 +892,9 @@ function checkForBase(base, factor) {
   return base % factor == 0;
 }
 // console.log(checkForBase(10, 2));
+
+
+function shortcut (string) {
+  return string.replace(/[aeiou]/gi, '');
+}
+console.log(shortcut('test'));
