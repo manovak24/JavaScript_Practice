@@ -891,4 +891,4 @@ const problem = (x) => {
 function checkForBase(base, factor) {
   return base % factor == 0;
 }
-console.log(checkForBase(10, 2));
+// console.log(checkForBase(10, 2));
