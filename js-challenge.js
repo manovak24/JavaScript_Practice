@@ -913,4 +913,4 @@ function seriesSum(n) {
   }
   return result.toFixed(2);
 };
-console.log(seriesSum(4))
+// console.log(seriesSum(4));
