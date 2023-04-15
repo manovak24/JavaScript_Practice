@@ -903,8 +903,8 @@ function shortcut (string) {
 function seriesSum(n) {
   let result = 0;
   let reverage = 1;
-  for (let i = 0; i < n; i += 1) {
-    if (i === 0) {
+  for (let i = 0; i < n; i++) {
+    if(i === 0) {
       result = 1;
     } else {
       reverage += 3;
