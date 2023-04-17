@@ -931,4 +931,19 @@ function removeExlamationMarks(s) {
 function updateLight(current) {
   return current === 'green' ? 'yellow' : current === 'yellow' ? 'red' : 'green';
 }
-console.log(updateLight('red'));
+// console.log(updateLight('red'));
+
+
+function expandedForm(num) {
+  let arr = num.toString().split('');
+  let count = [];
+  for(let i = num.toString().length; i > 0; i--) {
+      count.push(i - 1)
+  }
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++){
+    newArr.push(arr[i].padEnd(count[i] + 1, '0'))
+  }
+  return newArr.map(item => parseInt(item)).filter(item => item > 0).map(item => item.toString()).join(' + ');
+}
+console.log(expandedForm(420370022));
