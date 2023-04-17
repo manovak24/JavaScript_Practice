@@ -925,4 +925,10 @@ function past(h, m, s) {
 function removeExlamationMarks(s) {
   return s.replace(/[!]/gi, '');
 }
-console.log(removeExlamationMarks("Hello World!"));
+// console.log(removeExlamationMarks("Hello World!"));
+
+
+function updateLight(current) {
+  return current === 'green' ? 'yellow' : current === 'yellow' ? 'red' : 'green';
+}
+console.log(updateLight('red'));
