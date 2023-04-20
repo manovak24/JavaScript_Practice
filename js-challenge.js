@@ -949,3 +949,10 @@ function expandedForm(num) {
   return num.toString().split("").reverse().map( (a, i) => a * Math.pow(10, i)).filter(a => a > 0).reverse().join(" + ");
 }
 // console.log(expandedForm(420370022));
+
+
+const accum = (s) => {
+  let arr = s.split('');
+  return arr.map(letter => letter.toUpperCase() + letter.toLowerCase().repeat(arr.indexOf(letter))).join('-');
+}
+console.log(accum('RqaEzty'));
