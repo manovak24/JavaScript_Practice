@@ -956,3 +956,12 @@ const accum = (s) => {
   return arr.map(letter => letter.toUpperCase() + letter.toLowerCase().repeat(arr.indexOf(letter))).join('-');
 }
 console.log(accum('RqaEzty'));
+
+
+const sortNumbers = (num) => {
+  return num.sort(function(a, b) {
+    return a - b; 
+  });
+
+}
+console.log(sortNumbers([1, 100000, 21, 30, 4])); // [ 1, 4, 21, 30, 100000 ]
