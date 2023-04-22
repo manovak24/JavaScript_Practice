@@ -955,7 +955,7 @@ const accum = (s) => {
   let arr = s.split('');
   return arr.map(letter => letter.toUpperCase() + letter.toLowerCase().repeat(arr.indexOf(letter))).join('-');
 }
-console.log(accum('RqaEzty'));
+// console.log(accum('RqaEzty'));
 
 
 const sortNumbers = (num) => {
@@ -964,4 +964,12 @@ const sortNumbers = (num) => {
   });
 
 }
-console.log(sortNumbers([1, 100000, 21, 30, 4])); // [ 1, 4, 21, 30, 100000 ]
+// console.log(sortNumbers([1, 100000, 21, 30, 4])); // [ 1, 4, 21, 30, 100000 ]
+
+
+const enough = (cap, on, wait) => {
+  // let space = cap - on;
+  // return space >= wait ? 0 : wait - space;
+  return Math.max(wait + on - cap, 0);
+}
+// console.log(enough(100, 60, 50));
