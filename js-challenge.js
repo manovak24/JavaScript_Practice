@@ -973,3 +973,18 @@ const enough = (cap, on, wait) => {
   return Math.max(wait + on - cap, 0);
 }
 // console.log(enough(100, 60, 50));
+
+function duplicateCount(text) {
+  let count = [];
+  for(let i = 0; i < [...new Set(text.toLowerCase().split(''))].length; i++) {
+    count.push(text.toLowerCase().split('').filter(letter => letter === [...new Set(text.toLowerCase().split(''))][i]).length)
+  }
+  let answer = 0;
+  count.forEach(num => {
+    if(num > 1) {
+      answer++;
+    }
+  })
+  return answer;
+}
+console.log(duplicateCount('aabBcdfddde'));
