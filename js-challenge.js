@@ -992,6 +992,13 @@ function duplicateCount(text) {
 
 
 function printerErrors(s) {
-  return s.match(/[n-z]/g) === null ? 0 + '/' + s.length : s.match(/[n-z]/g).length + '/' + s.length;
+  // return s.match(/[n-z]/g) === null ? 0 + '/' + s.length : s.match(/[n-z]/g).length + '/' + s.length;
+  let count = 0;
+  for (let i = 0; i < s.length; i++) {
+    if(s[i] > 'm') {
+      count++;
+    }
+  }
+  return `${count}/${s.length}`
 }
 console.log(printerErrors('aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz'));
