@@ -989,3 +989,9 @@ function duplicateCount(text) {
   return (text.toLowerCase().split('').sort().join('').match(/([^])\1+/g) || []).length;
 }
 // console.log(duplicateCount('aabBcdfddde'));
+
+
+function printerErrors(s) {
+  return s.match(/[n-z]/g) === null ? 0 + '/' + s.length : s.match(/[n-z]/g).length + '/' + s.length;
+}
+console.log(printerErrors('aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz'));
