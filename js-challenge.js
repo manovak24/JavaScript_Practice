@@ -1001,4 +1001,21 @@ function printerErrors(s) {
   }
   return `${count}/${s.length}`
 }
-console.log(printerErrors('aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz'));
+// console.log(printerErrors('aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz'));
+
+
+const toAlternatingCase = (string) => {
+  let arr = string.split('');
+  let newArr = [];
+  for(let i = 0; i < string.length; i++) {
+    if(arr[i] === 'number') {
+      newArr.push(arr[i]);
+    } else if (arr[i].match(/[A-Z]/)) {
+      newArr.push(arr[i].toLowerCase());
+    } else {
+      newArr.push(arr[i].toUpperCase());
+    }
+  }
+  return newArr.join('');
+}
+console.log(toAlternatingCase('1D2KabdC'));
