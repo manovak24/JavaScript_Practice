@@ -1018,4 +1018,8 @@ const toAlternatingCase = (string) => {
   }
   return newArr.join('');
 }
-console.log(toAlternatingCase('1D2KabdC'));
+// console.log(toAlternatingCase('1D2KabdC'));
+
+String.prototype.toAlternatingCase = function () {
+  return this.split("").map(a => a === a.toUpperCase()? a.toLowerCase(): a.toUpperCase()).join('')
+}
