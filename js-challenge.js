@@ -1043,43 +1043,53 @@ function strCount(str, letter) {
 
 
 function topThreeWords(text) {
-  let arr = text.replace(/\s+/g,' ').trim().split(' ').map(word => word.replace(/[.,\/#!$%\^&\*;:{}=\-_~()]/g, "").toLowerCase());
-  let minArr = [... new Set(arr)];
-  let count = [];
+  // let arr = text.replace(/\s+/g,' ').trim().split(' ').map(word => word.replace(/[.,\/#!$%\^&\*;:{}=\-_~()]/g, "").toLowerCase());
+  // let minArr = [... new Set(arr)];
+  // let count = [];
 
-  for(let i = 0; i < minArr.length; i++) {
-    let counter = 0;
-    for(word of arr) {
-      if(word === minArr[i]) {
-        counter ++;
-      }
-    }
-    let obj = {};
-    obj["word"] = minArr[i];
-    obj["tally"] = counter;
-    count.push(obj);
-  }
+  // for(let i = 0; i < minArr.length; i++) {
+  //   let counter = 0;
+  //   for(word of arr) {
+  //     if(word === minArr[i]) {
+  //       counter ++;
+  //     }
+  //   }
+  //   let obj = {};
+  //   obj["word"] = minArr[i];
+  //   obj["tally"] = counter;
+  //   count.push(obj);
+  // }
 
-  let sortedArr = count.sort((a,b) => {
-    return b.tally - a.tally;
+  // let sortedArr = count.sort((a,b) => {
+  //   return b.tally - a.tally;
+  // })
+
+  // let finalArr = sortedArr.slice(0, 3)
+
+  // let lastArr = finalArr.map(obj => {
+  //     return obj.word
+  // })
+
+  // let answerArr = [];
+
+  // for(let i = 0; i < lastArr.length; i++) {
+  //   if(lastArr[i].length === 1 && !lastArr[i].includes('\'')) {
+  //     answerArr.push(lastArr[i])
+  //   } else if (lastArr[i].length > 1) {
+  //     answerArr.push(lastArr[i])
+  //   }
+  // }
+
+  // return answerArr;
+
+  let words = {}
+  text.toLowerCase().replace(/([A-Za-z][A-Za-z']*)/g, match => {
+    let c = words[match] || 0
+    words[match] = ++c
   })
-
-  let finalArr = sortedArr.slice(0, 3)
-
-  let lastArr = finalArr.map(obj => {
-      return obj.word
-  })
-
-  let answerArr = [];
-
-  for(let i = 0; i < lastArr.length; i++) {
-    if(lastArr[i].length === 1 && !lastArr[i].includes('\'')) {
-      answerArr.push(lastArr[i])
-    } else if (lastArr[i].length > 1) {
-      answerArr.push(lastArr[i])
-    }
-  }
-
-  return answerArr;
+  return Object
+          .keys(words)
+          .sort(function(a,b){return words[b]-words[a]})
+          .slice(0,3)
 }
 console.log(topThreeWords("  , e   .. "));
