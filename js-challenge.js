@@ -1092,4 +1092,10 @@ function topThreeWords(text) {
           .sort(function(a,b){return words[b]-words[a]})
           .slice(0,3)
 }
-console.log(topThreeWords("  , e   .. "));
+// console.log(topThreeWords("  , e   .. "));
+
+
+const digitize = (n) => {
+  return n.toString().split('').map(num => parseInt(num)).reverse();
+}
+// console.log(digitize(1234567890));
