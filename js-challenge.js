@@ -1021,5 +1021,65 @@ const toAlternatingCase = (string) => {
 // console.log(toAlternatingCase('1D2KabdC'));
 
 String.prototype.toAlternatingCase = function () {
-  return this.split("").map(a => a === a.toUpperCase()? a.toLowerCase(): a.toUpperCase()).join('')
+  return this.split("").map(item => item === item.toUpperCase() ? item.toLowerCase() : item.toUpperCase()).join('')
 }
+// console.log(toAlternatingCase('testD12'));
+
+
+function strCount(str, letter) {
+  let count = 0;
+  for(let i = 0; i < str.length; i++) {
+    if(str[i] === letter) {
+      count++;
+    }
+  }
+  return count;
+
+  // below is optimized, but not sure if it would be real world practical
+  // return (str.match(/[letter]/ig)||[]).length;
+
+}
+// console.log(strCount('Hollo', 'o'));
+
+
+function topThreeWords(text) {
+  let arr = text.replace(/\s+/g,' ').trim().split(' ').map(word => word.replace(/[.,\/#!$%\^&\*;:{}=\-_~()]/g, "").toLowerCase());
+  let minArr = [... new Set(arr)];
+  let count = [];
+
+  for(let i = 0; i < minArr.length; i++) {
+    let counter = 0;
+    for(word of arr) {
+      if(word === minArr[i]) {
+        counter ++;
+      }
+    }
+    let obj = {};
+    obj["word"] = minArr[i];
+    obj["tally"] = counter;
+    count.push(obj);
+  }
+
+  let sortedArr = count.sort((a,b) => {
+    return b.tally - a.tally;
+  })
+
+  let finalArr = sortedArr.slice(0, 3)
+
+  let lastArr = finalArr.map(obj => {
+      return obj.word
+  })
+
+  let answerArr = [];
+
+  for(let i = 0; i < lastArr.length; i++) {
+    if(lastArr[i].length === 1 && !lastArr[i].includes('\'')) {
+      answerArr.push(lastArr[i])
+    } else if (lastArr[i].length > 1) {
+      answerArr.push(lastArr[i])
+    }
+  }
+
+  return answerArr;
+}
+console.log(topThreeWords("  , e   .. "));
