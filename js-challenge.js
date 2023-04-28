@@ -1105,3 +1105,10 @@ const order = (words) => {
   return words.split(' ').sort((a,b) => a.match(/\d+/g) - b.match(/\d+/g)).join(' ');
 }
 // console.log(order('is2 Thi1s T4est 3a'));
+
+
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  let calc = dadYearsOld - (sonYearsOld * 2);
+  return  calc < 0 ? calc * -1 : calc;
+}
+console.log(twiceAsOld(55,30));
