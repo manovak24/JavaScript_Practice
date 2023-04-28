@@ -1108,7 +1108,9 @@ const order = (words) => {
 
 
 function twiceAsOld(dadYearsOld, sonYearsOld) {
-  let calc = dadYearsOld - (sonYearsOld * 2);
-  return  calc < 0 ? calc * -1 : calc;
+  // let calc = dadYearsOld - (sonYearsOld * 2);
+  // return  calc < 0 ? calc * -1 : calc;
+
+  return Math.abs(dadYearsOld - (sonYearsOld * 2));
 }
 console.log(twiceAsOld(55,30));
