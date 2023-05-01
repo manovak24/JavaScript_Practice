@@ -1113,4 +1113,10 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
 
   return Math.abs(dadYearsOld - (sonYearsOld * 2));
 }
-console.log(twiceAsOld(55,30));
+// console.log(twiceAsOld(55,30));
+
+
+function getAge(inputString) {
+  return parseInt(inputString.charAt(0));
+}
+console.log(getAge('4 years old'));
