@@ -1,5 +1,5 @@
 header {
-    background-color: gray;
+    background-color: #C5D3D7;
     height: 64px;
     width: 400px;
     position: fixed;
@@ -10,10 +10,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-top-right-radius: 13.44px;
+    border-top-left-radius: 13.44px;
+    border-bottom-right-radius: 13.44px;
+    border-bottom-left-radius: 13.44px;
 }
 
 .header-brand {
     margin-left: 15px;
+    font-size: 55px;
+    text-decoration: none;
 }
 
 #nav-icon {
@@ -51,7 +57,7 @@ header {
 }
 
 #nav-icon span:nth-child(1) {
-    top: 0px;
+    top: 1px;
     -webkit-transform-origin: left center;
     -moz-transform-origin: left center;
     -o-transform-origin: left center;
@@ -59,7 +65,7 @@ header {
 }
 
 #nav-icon span:nth-child(2) {
-    top: 8px;
+    top: 9.5px;
     -webkit-transform-origin: left center;
     -moz-transform-origin: left center;
     -o-transform-origin: left center;
@@ -67,7 +73,7 @@ header {
 }
 
 #nav-icon span:nth-child(3) {
-    top: 16px;
+    top: 18px;
     -webkit-transform-origin: left center;
     -moz-transform-origin: left center;
     -o-transform-origin: left center;
@@ -99,16 +105,15 @@ header {
 
 .menu {
     z-index: 1000000;
-    font-weight: bold;
-    font-size: 0.8em;
-    width: 100%;
-    background: #131313;
     width: 400px;
     margin-left: -200px;
     text-align: center;
     position: absolute;
     left: 50%;
-    top: 96px;
+    top: 64px;
+    background-color: #C5D3D7;
+    border-bottom-right-radius: 13.44px;
+    border-bottom-left-radius: 13.44px;
 }
 
 .menu ul {
@@ -120,27 +125,25 @@ header {
 
 .menu li {
     display: block;
-    padding: 15px 0 15px 0;
-    border-bottom: #1d1f20 1px solid;
+    /* padding: 15px 0 15px 0; */
 }
 
-.menu li:hover {
+/* .menu li:hover {
     display: block;
     background: #181818;
     padding: 15px 0 15px 0;
     border-bottom: #1d1f20 1px solid;
-}
+} */
 
 .menu ul li a {
     text-decoration: none;
     margin: 0px;
-    color: #fff;
 }
 
-.menu ul li a:hover {
+/* .menu ul li a:hover {
     color: #fff;
     text-decoration: none;
-}
+} */
 
 .menu a {
     text-decoration: none;
@@ -157,4 +160,39 @@ header {
     font-size: 1.5em;
     margin-top: 5px;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 425px) {
+    header,
+    .menu {
+        width: 348px;
+        margin-left: -174px;
+    }
+    #nav-icon {
+        height: 28px;
+    }
+    #nav-icon span {
+        height: 5px;
+    }
+    
+    #nav-icon span:nth-child(2) {
+        top: 11.5px;
+    }
+    #nav-icon span:nth-child(3) {
+        top: 22px;
+    }
+    #nav-icon.open span:nth-child(1) {
+        top: 0;
+    }
+    #nav-icon.open span:nth-child(3) {
+        top: 21px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    header,
+    .menu {
+        width: 338px;
+        margin-left: -169px;
+    }
 }
