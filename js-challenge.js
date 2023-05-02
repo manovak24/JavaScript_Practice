@@ -1119,4 +1119,10 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
 function getAge(inputString) {
   return parseInt(inputString.charAt(0));
 }
-console.log(getAge('4 years old'));
+// console.log(getAge('4 years old'));
+
+
+const gimme = (triplet) => {
+  return triplet.indexOf([...triplet].sort((a,b) => a -b)[1]);
+}
+console.log(gimme([2, 3, 1]));
