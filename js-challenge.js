@@ -1145,4 +1145,4 @@ const numberTest = (array) => {
     return (index + 1) + ": " + letter;
   })
 }
-console.log(numberTest(["", "", ""]));
+// console.log(numberTest(["a", "b", "c"]));
