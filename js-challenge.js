@@ -1125,4 +1125,20 @@ function getAge(inputString) {
 const gimme = (triplet) => {
   return triplet.indexOf([...triplet].sort((a,b) => a -b)[1]);
 }
-console.log(gimme([2, 3, 1]));
+// console.log(gimme([2, 3, 1]));
+
+
+const numberTest = (array) => {
+  let count = [];
+  let newArr = [];
+  for(let i = 1; i <= array.length; i++) {
+    count.push(i)
+  }
+
+  for(let i = 0; i < array.length; i++) {
+    newArr.push(`${count[i]}: ${array[i]}`)
+  }
+
+  return newArr;
+}
+console.log(numberTest(["", "", ""]));
