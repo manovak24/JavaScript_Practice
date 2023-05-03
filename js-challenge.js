@@ -1129,16 +1129,20 @@ const gimme = (triplet) => {
 
 
 const numberTest = (array) => {
-  let count = [];
-  let newArr = [];
-  for(let i = 1; i <= array.length; i++) {
-    count.push(i)
-  }
+  // let count = [];
+  // let newArr = [];
+  // for(let i = 1; i <= array.length; i++) {
+  //   count.push(i)
+  // }
 
-  for(let i = 0; i < array.length; i++) {
-    newArr.push(`${count[i]}: ${array[i]}`)
-  }
+  // for(let i = 0; i < array.length; i++) {
+  //   newArr.push(`${count[i]}: ${array[i]}`)
+  // }
 
-  return newArr;
+  // return newArr;
+
+  return array.map(function(letter, index) {
+    return (index + 1) + ": " + letter;
+  })
 }
 console.log(numberTest(["", "", ""]));
