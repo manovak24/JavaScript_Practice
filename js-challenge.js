@@ -1146,3 +1146,11 @@ const numberTest = (array) => {
   })
 }
 // console.log(numberTest(["a", "b", "c"]));
+
+
+function noSpace(x) {
+  // return x.replace(/[' ']/g, '');
+  // return x.split(' ').join('');
+  return x.replace(/\s/g, '');
+}
+// console.log(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B'));
