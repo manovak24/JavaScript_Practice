@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .pp-content-image {
+            padding: 0px 20px 20px;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .pp-content-image img {
+            aspect-ratio: 1.5 / 1 ;
+            object-fit: contain;
+        }
+
+        .pp-content-grid-post-text {
+            padding:0px;
+            margin: 0px;
+        }
+
+        .pp-content-grid-post-title {
+            font-family: 'avenir-black';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 30px;
+            padding: 20px 30px 0px;
+            display: block;
+        }
+
+        .pp-content-image {
+            filter: blur(10px);
+        }
+
+        .show {
+            filter: blur(0px);
+        }
+
+        a:focus {   
+            color: #000;
+            outline: thin dotted;
+        }
+
+        a.more-link {
+            padding: 0px 20px;
+            display: inline-block;
+        }
+
+        .full-card {
+            width: 20%;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="full-card" id="fullcard">
+        <!-- Created new div below that is clickable to open link -->
+        <div id="full-card-inner-ctr">
+            <div class="pp-content-grid-post-text">
+                <h3 class="pp-content-grid-post-title" style="text-align: center;">[wpbb post:title]</h3>
+            </div>
+            <a href="https://www.apple.com/" class="more-link">
+                <button>
+                    <div style="text-align: center; margin-bottom: 10px; font-size: 18px; text-decoration: underline;">
+                        Learn More
+                    </div>
+                </button>
+            </a>
+            <div id="myImage" class="pp-content-image">
+                [wpbb post:featured_image size="thumbnail" display="tag" linked="no"]
+            </div>
+        </div>
+        <!-- end new div -->
+        <a href="#fullcard" id="showphoto" onclick="return false">
+            <div style="text-align: center; margin-bottom: 10px; font-size: 18px; text-decoration: underline;">Show
+                Image
+            </div>
+        </a>
+    </div>
+
+    <div class="full-card" id="fullcard">
+        <!-- Created new div below that is clickable to open link -->
+        <div id="full-card-inner-ctr">
+            <div class="pp-content-grid-post-text">
+                <h3 class="pp-content-grid-post-title" style="text-align: center;">[wpbb post:title]</h3>
+            </div>
+            <a href="https://www.apple.com/" class="more-link">
+                <button>
+                    <div style="text-align: center; margin-bottom: 10px; font-size: 18px; text-decoration: underline;">
+                        Learn More
+                    </div>
+                </button>
+            </a>
+            <div id="myImage" class="pp-content-image">
+                [wpbb post:featured_image size="thumbnail" display="tag" linked="no"]
+            </div>
+        </div>
+        <!-- end new div -->
+        <a href="#fullcard" id="showphoto" onclick="return false">
+            <div style="text-align: center; margin-bottom: 10px; font-size: 18px; text-decoration: underline;">Show
+                Image
+            </div>
+        </a>
+    </div>
+
+    <div class="full-card" id="fullcard">
+        <!-- Created new div below that is clickable to open link -->
+        <div id="full-card-inner-ctr">
+            <div class="pp-content-grid-post-text">
+                <h3 class="pp-content-grid-post-title" style="text-align: center;">[wpbb post:title]</h3>
+            </div>
+            <a href="https://www.apple.com/" class="more-link">
+                <button>
+                    <div style="text-align: center; margin-bottom: 10px; font-size: 18px; text-decoration: underline;">
+                        Learn More
+                    </div>
+                </button>
+            </a>
+            <div id="myImage" class="pp-content-image">
+                [wpbb post:featured_image size="thumbnail" display="tag" linked="no"]
+            </div>
+        </div>
+        <!-- end new div -->
+        <a href="#fullcard" id="showphoto" onclick="return false">
+            <div style="text-align: center; margin-bottom: 10px; font-size: 18px; text-decoration: underline;">Show
+                Image
+            </div>
+        </a>
+    </div>
+
+   
+
+      <script>
+        const fullCardCtrs = document.querySelectorAll('#full-card-inner-ctr:nth-child(n)');
+        const showPhotoBtns = document.querySelectorAll('#showphoto:nth-child(n)');
+        const myImageCtrs = document.querySelectorAll('#myImage:nth-child(n)');
+        const moreCardLinks = document.querySelectorAll('.more-link:nth-child(n)');
+
+        const fullCardArr = [
+        {
+            fullCardOne: fullCardCtrs[0],
+            showPhotoOne: showPhotoBtns[0],
+            myImageOne: myImageCtrs[0],
+            moreLinkOne: moreCardLinks[0]
+        },
+        {
+            fullCardTwo: fullCardCtrs[1],
+            showPhotoTwo: showPhotoBtns[1],
+            myImageTwo: myImageCtrs[1],
+            moreLinkTwo: moreCardLinks[1]
+        },
+        {
+            fullCardThree: fullCardCtrs[2],
+            showPhotoThree: showPhotoBtns[2],
+            myImageThree: myImageCtrs[2],
+            moreLinkThree: moreCardLinks[2]
+        }
+        ];
+
+        fullCardArr[0].fullCardOne.addEventListener('click', function() {
+            window.location.assign(fullCardArr[0].moreLinkOne.href);
+        })
+
+        fullCardArr[1].fullCardTwo.addEventListener('click', function() {
+            window.location.assign(fullCardArr[1].moreLinkTwo.href);
+        })
+
+        fullCardArr[2].fullCardThree.addEventListener('click', function() {
+            window.location.assign(fullCardArr[2].moreLinkThree.href);
+        })
+
+        fullCardArr[0].showPhotoOne.addEventListener('click', function() {
+            fullCardArr[0].myImageOne.classList.toggle("show");
+        })
+
+        fullCardArr[1].showPhotoTwo.addEventListener('click', function() {
+            fullCardArr[1].myImageTwo.classList.toggle("show");
+        })
+
+        fullCardArr[2].showPhotoThree.addEventListener('click', function() {
+            fullCardArr[2].myImageThree.classList.toggle("show");
+        })
+      </script>
+</body>
+</html>
