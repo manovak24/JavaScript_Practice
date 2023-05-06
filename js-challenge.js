@@ -1161,3 +1161,9 @@ function mouthSize(animal) {
 }
 // console.log(mouthSize('ALLIGATOR'));
 // console.log(mouthSize('toucan'));
+
+
+const areaOrPerimeter = (l , w) => {
+  return l === w ? l * w : 2 * (l + w);
+}
+// console.log(areaOrPerimeter(6, 10));
