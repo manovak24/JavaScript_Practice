@@ -1167,3 +1167,21 @@ const areaOrPerimeter = (l , w) => {
   return l === w ? l * w : 2 * (l + w);
 }
 // console.log(areaOrPerimeter(6, 10));
+
+
+function capitals(word) {
+  let capIndexes = [];
+  // for(let i = 0; i < word.length; i++) {
+  //   if(word.split('')[i] === word.split('')[i].toUpperCase()) {
+  //     capIndexes.push(word.split('').indexOf(word.split('')[i]))
+  //   }
+  // }
+
+  for(let i = 0; i < word.length; i++) {
+    if(word[i] === word[i].toUpperCase()) {
+      capIndexes.push(i)
+    }
+  }
+  return capIndexes;
+}
+console.log(capitals('CodEWaRs'));
