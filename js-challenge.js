@@ -1184,4 +1184,47 @@ function capitals(word) {
   }
   return capIndexes;
 }
-console.log(capitals('CodEWaRs'));
+// console.log(capitals('CodEWaRs'));
+
+
+function nextBigger (n) {
+  let arr = n.toString().split('').reverse();
+  let lowest;
+  let i = 0;
+  do {
+    i = i + 1;
+    lowest = arr[i + 1];
+  } while (arr[i] < arr[i + 1]);
+
+  let index = arr.indexOf(lowest);
+  let sliceArr = arr.reverse().slice(-index);
+
+  let nextLowest;
+  let j = 0;
+  do {
+    j = j + 1;
+    nextLowest = sliceArr[j + 1];
+  } while (sliceArr[j] < sliceArr[j + 1])
+
+
+  // let newArr = sliceArr.filter(num => num !== nextLowest);
+  // newArr.push(lowest)
+  // newArr.sort((a,b) => a - b);
+  
+
+  // newArr.push(nextLowest)
+  // let updatedArr = sliceArr.filter(num => num > nextLowest)
+  
+  // let nextArr = arr.slice(0, index)
+  // console.log(updatedArr)
+  // updatedArr.push(lowest)
+  // updatedArr.sort((a,b) => a - b);
+  // updatedArr.forEach(num => newArr.push(num))
+  return lowest;
+}
+// console.log(nextBigger(21432));
+
+const findDifference = (a, b) => {
+  return Math.abs((a.reduce((x,y) => x * y)) - b.reduce((x,y) => x * y));
+}
+console.log(findDifference([3, 2, 5], [1, 4, 4]));
