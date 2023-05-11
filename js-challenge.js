@@ -1233,4 +1233,11 @@ const findDifference = (a, b) => {
 const index = (array, n) => {
   return array[n] ? Math.pow(array[n], n) : -1;
 }
-console.log(index([1, 2, 3, 4], 2));
+// console.log(index([1, 2, 3, 4], 2));
+
+
+function sumStr(a, b) {
+  // return ((a.length !== 0 ? parseInt(a) : 0) + (b.length !== 0 ? parseInt(b) : 0)).toString();
+  return String(Number(a)+Number(b));
+}
+console.log(sumStr('', '4'));
