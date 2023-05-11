@@ -1227,4 +1227,10 @@ function nextBigger (n) {
 const findDifference = (a, b) => {
   return Math.abs((a.reduce((x,y) => x * y)) - b.reduce((x,y) => x * y));
 }
-console.log(findDifference([3, 2, 5], [1, 4, 4]));
+// console.log(findDifference([3, 2, 5], [1, 4, 4]));q
+
+
+const index = (array, n) => {
+  return array[n] ? Math.pow(array[n], n) : -1;
+}
+console.log(index([1, 2, 3, 4], 2));
