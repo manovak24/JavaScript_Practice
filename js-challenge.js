@@ -1240,4 +1240,10 @@ function sumStr(a, b) {
   // return ((a.length !== 0 ? parseInt(a) : 0) + (b.length !== 0 ? parseInt(b) : 0)).toString();
   return String(Number(a)+Number(b));
 }
-console.log(sumStr('', '4'));
+// console.log(sumStr('', '4'));
+
+
+function solutionCamelCase(string) {
+  return string.replace(/([A-Z])/g, ' $1');
+}
+// console.log(solutionCamelCase('camelCasingTest'));
