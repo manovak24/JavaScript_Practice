@@ -1252,4 +1252,12 @@ function solutionCamelCase(string) {
 function simpleMutipleication(number) {
   return number % 2 === 0 ? number * 8 : number * 9;
 }
-console.log(simpleMutipleication(8));
+// console.log(simpleMutipleication(8));
+
+
+const oddOrEven = (array) => {
+  return array.reduce((a,b) => a + b, 0) % 2 ? 'odd' : 'even';
+}
+console.log(oddOrEven([2]));
+console.log(oddOrEven([1]));
+console.log(oddOrEven([]));
