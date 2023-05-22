@@ -1285,15 +1285,18 @@ function finalGrade(exam, projects) {
 
 
 function warnTheSheep(queue) {
-  let answer;
-  queue.reverse().forEach((animal, index) => {
-    if(animal === 'wolf' && index === 0){
-      answer = "Pls go away and stop eating my sheep";
-    } else if(animal === 'wolf') {
-      answer = `Oi! Sheep number ${index}! You are about to be eaten by a wolf!`;
-    }
-  })
-  return answer
+  // let answer;
+  // queue.reverse().forEach((animal, index) => {
+  //   if(animal === 'wolf' && index === 0){
+  //     answer = "Pls go away and stop eating my sheep";
+  //   } else if(animal === 'wolf') {
+  //     answer = `Oi! Sheep number ${index}! You are about to be eaten by a wolf!`;
+  //   }
+  // })
+  // return answer
+
+  const position = queue.reverse().indexOf('wolf');
+  return position === 0 ? 'Pls go away and stop eating my sheep' : `Oi! Sheep number ${position}! You are about to be eaten by a wolf!`;
   
 }
-console.log(warnTheSheep(["sheep", "wolf", "sheep"]))
+console.log(warnTheSheep(["sheep", "wolf", "sheep", "sheep", "sheep"]))
