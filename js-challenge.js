@@ -1282,3 +1282,18 @@ function finalGrade(exam, projects) {
 // console.log(finalGrade(100, 12));
 // console.log(finalGrade(99, 0));
 // console.log(finalGrade(85, 5));
+
+
+function warnTheSheep(queue) {
+  let answer;
+  queue.reverse().forEach((animal, index) => {
+    if(animal === 'wolf' && index === 0){
+      answer = "Pls go away and stop eating my sheep";
+    } else if(animal === 'wolf') {
+      answer = `Oi! Sheep number ${index}! You are about to be eaten by a wolf!`;
+    }
+  })
+  return answer
+  
+}
+console.log(warnTheSheep(["sheep", "wolf", "sheep"]))
