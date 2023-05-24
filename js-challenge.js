@@ -1335,4 +1335,21 @@ const pipeFix = (numbers) => {
 function findAverage(array) {
   return array.length > 0 ? array.reduce((x,y) => (x + y)) / array.length : 0;
 }
-console.log(findAverage([1, 2, 3]));
+// console.log(findAverage([1, 2, 3]));
+
+
+function arithmetic(a, b, operator) {
+  switch(operator) {
+    case 'add':
+      return a + b;
+    case 'subtract':
+      return a - b;
+    case 'multiply':
+      return a * b;
+    case 'divide':
+      return a / b;
+    default:
+      return 0
+  }
+}
+console.log(arithmetic(1, 3, 'add'));
