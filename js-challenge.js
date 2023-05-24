@@ -1352,4 +1352,16 @@ function arithmetic(a, b, operator) {
       return 0
   }
 }
-console.log(arithmetic(1, 3, 'add'));
+// console.log(arithmetic(1, 3, 'add'));
+
+
+function highAndLow(numbers) {
+  // let arr = numbers.split(' ').map(number => parseInt(number)).sort((a,b) => a - b)
+  // let max = arr[arr.length - 1].toString();
+  // let min = arr[0].toString()
+  // return `${max} ${min}`;
+
+  numbers = numbers.split(' ');
+  return `${Math.max(...numbers)} ${Math.min(...numbers)}`;
+}
+console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"))
