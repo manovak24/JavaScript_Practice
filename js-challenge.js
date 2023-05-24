@@ -1329,4 +1329,10 @@ const pipeFix = (numbers) => {
   }
   return arr;
 }
-console.log(pipeFix([-1, 5]));
+// console.log(pipeFix([-1, 5]));
+
+
+function findAverage(array) {
+  return array.length > 0 ? array.reduce((x,y) => (x + y)) / array.length : 0;
+}
+console.log(findAverage([1, 2, 3]));
