@@ -1316,4 +1316,17 @@ const likesCount = (names) => {
   }
 
 }
-console.log(likesCount(['Mark', 'Randi']));
+// console.log(likesCount(['Mark', 'Randi']));
+
+
+const pipeFix = (numbers) => {
+  let arr = [];
+  let lower = numbers[0];
+  // let upper = numbers.reverse()[0];
+  let upper = numbers[numbers.length - 1];
+  for (let i = lower; i <= upper; i++) {
+    arr.push(i)
+  }
+  return arr;
+}
+console.log(pipeFix([-1, 5]));
