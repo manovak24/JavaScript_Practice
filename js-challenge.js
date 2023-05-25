@@ -1371,3 +1371,11 @@ const hero = (bullets, dragons) => {
   return bullets / dragons >= 2
 }
 // console.log(hero(100, 40));
+
+const minAndMax = (list) => {
+  let max = Math.max(...list);
+  let min = Math.min(...list);
+
+  return `${max} and ${min}`
+}
+console.log(minAndMax([4,6,2,1,9,63,-134,566]));
