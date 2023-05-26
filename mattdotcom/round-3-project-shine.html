@@ -63,7 +63,26 @@
     </style>
 </head>
 <body>
-
+    <div class="full-card" id="fullcard">
+        <!-- Created new div below that is clickable to open link -->
+     <div id=“full-card-inner-ctr”>
+       <div class=“pp-content-grid-post-text”>
+           <h3 class=“pp-content-grid-post-title”>[wpbb post:title]</h3>
+            </div>
+       <a href=“[wpbb post:url]” class=“more-link”>
+               <button>Learn More</button>
+           </a>
+           [wpbb-if post:featured_image]
+       <div id=“myImage” class=“pp-content-image”>
+           [wpbb post:featured_image size=“thumbnail” display=“tag” linked=“no”]
+       </div>
+           <a href=“#fullcard” id=“showphoto”>
+           <div >BLUR/UNBLUR IMAGE
+           </div>
+           [/wpbb-if]
+       </a>
+   </div>
+   </div>
    
 
       <script>
