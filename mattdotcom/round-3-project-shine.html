@@ -102,16 +102,9 @@
                     </div>
                 </button>
             </a>
-            <div id="myImage" class="pp-content-image">
-                [wpbb post:featured_image size="thumbnail" display="tag" linked="no"]
-            </div>
+            
         </div>
-        <!-- end new div -->
-        <a href="#fullcard" id="showphoto" onclick="return false">
-            <div style="text-align: center; margin-bottom: 10px; font-size: 18px; text-decoration: underline;">Show
-                Image
-            </div>
-        </a>
+       
     </div>
 
     <div class="full-card" id="fullcard">
@@ -317,16 +310,17 @@
    
 
       <script>
+        const fullCards = document.querySelectorAll('#fullcard:nth-child(n)');
         const fullCardCtrs = document.querySelectorAll('#full-card-inner-ctr:nth-child(n)');
-        const showPhotoBtns = document.querySelectorAll('#showphoto:nth-child(n)');
 
         const fullCardArr = [];
 
-        for(let fullCardCtr of fullCardCtrs) {
+        for(let i = 0; i < fullCards.length; i++) {
             let fullCardObj = {};
-            fullCardObj['fullCard'] = fullCardCtr;
-            fullCardObj['myImage'] = fullCardCtr.children[2];
-            fullCardObj['fullCardLink'] = fullCardCtr.children[1].href;
+            fullCardObj['fullCard'] = fullCardCtrs[i];
+            fullCardObj['myImage'] = fullCardCtrs[i].children[2];
+            fullCardObj['fullCardLink'] = fullCardCtrs[i].children[1].href;
+            fullCardObj['show'] = fullCards[i].children[1];
             fullCardArr.push(fullCardObj);
         }
 
@@ -334,25 +328,13 @@
             fullCardArr[i].fullCard.addEventListener('click', function() {
                 window.location.assign(fullCardArr[i].fullCardLink);
             })
+            if(fullCardArr[i].show) {
+                fullCardArr[i].show.addEventListener('click', function() {
+                    fullCardArr[i].myImage.classList.toggle("show");
+                })
+            }
         }
 
-        // Toggle blur/unblur
-        const showBtnArr = [];
-
-        for(let showPhotoBtn of showPhotoBtns) {
-            let showBtnObj = {}
-            showBtnObj['show'] = showPhotoBtn;
-            showBtnArr.push(showBtnObj);
-        }
-
-        for(let i = 0; i < showBtnArr.length; i++) {
-            showBtnArr[i].show.addEventListener('click', function() {
-                fullCardArr[i].myImage.classList.toggle("show");
-            })
-        }
-
-        console.log(fullCardArr);
-        console.log(showBtnArr);
       </script>
 </body>
 </html>
