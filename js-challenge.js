@@ -1378,4 +1378,10 @@ const minAndMax = (list) => {
 
   return `${max} and ${min}`
 }
-console.log(minAndMax([4,6,2,1,9,63,-134,566]));
+// console.log(minAndMax([4,6,2,1,9,63,-134,566]));
+
+
+const square = (num) => {
+  return num * num;
+}
+console.log(square(8));
