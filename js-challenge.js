@@ -1384,4 +1384,10 @@ const minAndMax = (list) => {
 const square = (num) => {
   return num * num;
 }
-console.log(square(8));
+// console.log(square(8));
+
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  return mpg * fuelLeft >= distanceToPump;
+}
+// console.log(zeroFuel(50, 25, 2));
