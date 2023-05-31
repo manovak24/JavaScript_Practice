@@ -1391,3 +1391,16 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
   return mpg * fuelLeft >= distanceToPump;
 }
 // console.log(zeroFuel(50, 25, 2));
+
+
+function minValue(values) {
+  return parseInt([...new Set(values)].sort().join(''));
+}
+// console.log(minValue([3, 1, 1, 1, 3]));
+
+
+function descendingOrder(n) {
+  // return parseInt(String(n).split('').map(Number).sort((a, b) => b - a).join(''));
+  return parseInt(String(n).split('').sort().reverse().join(''));
+}
+console.log(descendingOrder(1021));
