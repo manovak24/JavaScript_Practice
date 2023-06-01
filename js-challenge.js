@@ -1409,4 +1409,4 @@ function descendingOrder(n) {
 const paperwork = (n, m) => {
   return n > 0 && m > 0 ? n * m : 0;
 }
-console.log(paperwork(10, 20));
+// console.log(paperwork(10, 20));
