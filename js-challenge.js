@@ -1410,3 +1410,15 @@ const paperwork = (n, m) => {
   return n > 0 && m > 0 ? n * m : 0;
 }
 // console.log(paperwork(10, 20));
+
+
+const take = (arr, n) => {
+  return arr.slice(0, n);
+}
+// console.log(take([0, 1, 2, 3, 5, 8, 13], 3));
+
+
+function addBinary(a,b) {
+  return (a + b).toString(2);
+}
+console.log(addBinary(5,9));
