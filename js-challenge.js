@@ -1421,4 +1421,36 @@ const take = (arr, n) => {
 function addBinary(a,b) {
   return (a + b).toString(2);
 }
-console.log(addBinary(5,9));
+// console.log(addBinary(5,9));
+
+
+const sortArray = (array) => {
+  // let arr = [];
+  // for(let i = 0; i < array.length; i++) {
+  //   if(array[i] % 2 === 0) {
+  //     let obj = {};
+  //     obj['index'] = i;
+  //     obj['number'] = array[i];
+  //     arr.push(obj);
+  //   }
+  // }
+
+  // let oddArr = [];
+  // for(let i = 0; i < array.length; i++) {
+  //   if(array[i] % 2 !== 0) {
+  //     oddArr.push(array[i]);
+  //   }
+  // }
+
+  // let finalArr = oddArr.sort((a,b) => a - b);
+  // for(let i = 0; i < arr.length; i++) {
+  //   finalArr.splice(arr[i].index, 0, arr[i].number)
+  // }
+
+  // return finalArr;
+
+
+  const odd = array.filter((x) => x % 2).sort((a,b) => a - b);
+  return array.map((number) => number % 2 ? odd.shift() : number);
+}
+console.log(sortArray([ 1, 11, 2, 8, 3, 4, 5 ]))
