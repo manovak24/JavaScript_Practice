@@ -1459,4 +1459,47 @@ const sortArray = (array) => {
 function howManyLightsabersDoYouOwn(name) {
   return name === 'Zach' ? 18 : 0;
 }
-console.log(howManyLightsabersDoYouOwn('Mark'));
+// console.log(howManyLightsabersDoYouOwn('Mark'));
+
+
+function isPrime(num) {
+  if(num <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if(num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+// console.log(isPrime(36));
+
+
+function otherAngle(a, b) {
+  return 180 - (a + b);
+}
+// console.log(otherAngle(30, 60));
+
+
+function solve(s) {
+  let upperCaseCount = 0;
+  let lowerCaseCount = 0;
+
+  s.split('').forEach(letter => {
+    if(letter === letter.toUpperCase()) {
+      upperCaseCount++;
+    } else {
+      lowerCaseCount++;
+    }
+  })
+
+  if(upperCaseCount === lowerCaseCount) {
+    return s.toLowerCase();
+  } else if (upperCaseCount > lowerCaseCount) {
+    return s.toUpperCase();
+  } else {
+    return s.toLowerCase();
+  }
+}
+console.log(solve('CODe'));
