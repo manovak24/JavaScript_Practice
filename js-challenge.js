@@ -272,27 +272,6 @@ const summation = function(num) {
 // console.log(summation(8))
 
 
-function nbYear(p0, percent, aug, p) {
-  let years = 0;
-  let decPerc = percent / 100;
-  let counter = p0 * decPerc + aug;
-  
-  p0 += counter;
-
-  for (let i = p0; i <= p; i += counter) {
-    years++
-  }
-  
-  console.log(decPerc)
-  console.log(counter)
-  console.log(p0)
-
-
-  return years
-}
-// console.log(nbYear(1500, 10, 100, 5000))
-
-
 function getMiddle(s) {
   // return s.length % 2 == 0 ? `${s.charAt(s.indexOf('', Math.floor(s.length / 2) - 1))}${s.charAt(s.indexOf('', Math.floor(s.length / 2)))}` : s.charAt(Math.floor(s.length / 2));
 
@@ -1502,4 +1481,10 @@ function solve(s) {
     return s.toLowerCase();
   }
 }
-console.log(solve('CODe'));
+// console.log(solve('CODe'));
+
+
+const replace = (s) => {
+  return s.replace(/[aeiou]/ig, '!');
+}
+console.log(replace('Hi!'));
