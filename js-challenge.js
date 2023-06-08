@@ -1503,27 +1503,42 @@ const reverseList = (list) => {
 
 
 const longestConsec = (strarr, k) => {
-  let arr = [];
-  if(k > 2){
-    for(let i = 0; i < strarr.length - (k - 1); i++) {
-      let combinedElement = '';
-      for(let j = 0; j < k; j++) {
-        combinedElement += strarr[i + j];
-      }
-      arr.push(combinedElement)
-    }
-  } else if(k === 2) {
-    for(let i = 0; i < strarr.length - 1; i++) {
-      arr.push(strarr[i] + strarr[i + (k - 1)]);
-    }
-  } else if (k === 1) {
-    for(let i = 0; i < strarr.length; i++) {
-      arr.push(strarr[i])
+  // let arr = [];
+  // if(k > 2){
+  //   for(let i = 0; i < strarr.length - (k - 1); i++) {
+  //     let combinedElement = '';
+  //     for(let j = 0; j < k; j++) {
+  //       combinedElement += strarr[i + j];
+  //     }
+  //     arr.push(combinedElement)
+  //   }
+  // } else if(k === 2) {
+  //   for(let i = 0; i < strarr.length - 1; i++) {
+  //     arr.push(strarr[i] + strarr[i + (k - 1)]);
+  //   }
+  // } else if (k === 1) {
+  //   for(let i = 0; i < strarr.length; i++) {
+  //     arr.push(strarr[i])
+  //   }
+  // }
+
+  // let longest = arr.sort((a,b) => b.length - a.length)
+
+  // return strarr.length === 0 || k > strarr.length || k <=0 ? "" : longest[0];
+
+  let longest = '';
+
+  for (let i = 0; k > 0 && i <= strarr.length - k; i++) {
+    let tempArray = strarr.slice(i, i + k);
+    let tempStr = tempArray.join('');
+
+    console.log(tempArray);
+    console.log(tempStr);
+    if(tempStr.length > longest.length) {
+      longest = tempStr;
     }
   }
 
-  let longest = arr.sort((a,b) => b.length - a.length)
-
-  return strarr.length === 0 || k > strarr.length || k <=0 ? "" : longest[0];
+  return longest;
 }
 console.log(longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 3));
