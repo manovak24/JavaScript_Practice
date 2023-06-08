@@ -1500,3 +1500,30 @@ const reverseList = (list) => {
   return list.reverse();
 }
 // console.log(reverseList([1,2,3,4]));
+
+
+const longestConsec = (strarr, k) => {
+  let arr = [];
+  if(k > 2){
+    for(let i = 0; i < strarr.length - (k - 1); i++) {
+      let combinedElement = '';
+      for(let j = 0; j < k; j++) {
+        combinedElement += strarr[i + j];
+      }
+      arr.push(combinedElement)
+    }
+  } else if(k === 2) {
+    for(let i = 0; i < strarr.length - 1; i++) {
+      arr.push(strarr[i] + strarr[i + (k - 1)]);
+    }
+  } else if (k === 1) {
+    for(let i = 0; i < strarr.length; i++) {
+      arr.push(strarr[i])
+    }
+  }
+
+  let longest = arr.sort((a,b) => b.length - a.length)
+
+  return strarr.length === 0 || k > strarr.length || k <=0 ? "" : longest[0];
+}
+console.log(longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 3));
