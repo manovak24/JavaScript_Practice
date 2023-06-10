@@ -1541,4 +1541,72 @@ const longestConsec = (strarr, k) => {
 
   return longest;
 }
-console.log(longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 3));
+// console.log(longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 3));
+
+
+function saleHotdogs(n) {
+  return n < 5 ? n * 100 : n >=5 && n < 10 ? n * 95 : n * 90;
+}
+// console.log(saleHotdogs(4));
+
+
+
+function parseIntTest(string) {
+  const numberMap = {
+    zero: 0,
+    one: 1,
+    two: 2,
+    three: 3,
+    four: 4,
+    five: 5,
+    six: 6,
+    seven: 7,
+    eight: 8,
+    nine: 9,
+    ten: 10,
+    eleven: 11,
+    twelve: 12,
+    thirteen: 13,
+    fourteen: 14,
+    fifteen: 15,
+    sixteen: 16,
+    seventeen: 17,
+    eighteen: 18,
+    nineteen: 19,
+    twenty: 20,
+    thirty: 30,
+    forty: 40,
+    fifty: 50,
+    sixty: 60,
+    seventy: 70,
+    eighty: 80,
+    ninety: 90,
+    hundred: 100,
+    thousand: 1000,
+    million: 1000000
+  };
+
+
+  let firstArr = string.replace(/[-]/g, ' ').split(' ');
+  let arr = firstArr.filter(word => word !== 'and')
+  console.log(arr)
+  let numberDigit = 0;
+  let currentNumber = 0;
+
+  for(let word of arr) {
+    let number = numberMap[word];
+
+    if (number >= 1000) {
+      numberDigit += currentNumber * number;
+      currentNumber = 0;
+      
+    } else if (number >= 100) {
+      currentNumber *= number;
+    } else {
+      currentNumber += number;
+    }
+  }
+
+  return numberDigit + currentNumber;
+}
+console.log(parseIntTest('two thousand and forty-six'))
