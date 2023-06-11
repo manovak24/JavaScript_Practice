@@ -1609,4 +1609,10 @@ function parseIntTest(string) {
 
   return numberDigit + currentNumber;
 }
-console.log(parseIntTest('two thousand and forty-six'))
+// console.log(parseIntTest('two thousand and forty-six'))
+
+
+function setReducer(input) {
+
+}
+console.log(setReducer([0, 4, 6, 8, 8, 8, 5, 5, 7]))
