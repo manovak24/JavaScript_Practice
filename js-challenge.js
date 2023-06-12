@@ -1612,7 +1612,13 @@ function parseIntTest(string) {
 // console.log(parseIntTest('two thousand and forty-six'))
 
 
-function setReducer(input) {
-
+function greet(name) {
+  return `Hello, ${name} how are you doing today?`;
 }
-console.log(setReducer([0, 4, 6, 8, 8, 8, 5, 5, 7]))
+// console.log(greet('mark'));
+
+
+function getChar(c) {
+  return String.fromCharCode(c);
+}
+console.log(getChar(97))
