@@ -1,99 +1,86 @@
-body{
-    margin-top: 100px;
-    font-family: 'Trebuchet MS', serif;
-    line-height: 1.6
-}
-.container{
-    width: 800px;
-    margin: 0 auto;
+body {
+  margin-top: 100px;
+  line-height: 1.6
 }
 
-
-
-ul.tabs{
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-}
-ul.tabs li{
-    background: none;
-    color: #222;
-    display: inline-block;
-    padding: 10px 15px;
-    cursor: pointer;
+.container {
+  width: 800px;
+  margin: 0 auto;
 }
 
-ul.tabs li.current{
-    background: #ededed;
-    color: #222;
+.tabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
 }
 
-.tab-content{
-    display: none;
-    background: #ededed;
-    padding: 15px;
-    min-height: 100px;
+.tabs .tab-link {
+  background: none;
+  color: #222;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
 }
 
-.tab-content.current{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.tabs .tab-link.show-tab {
+  background: #ededed;
+  color: #222;
+}
+
+.tab-content {
+  display: none;
+  background: #ededed;
+  padding: 15px;
+  min-height: 100px;
+}
+
+.tab-content.show-tab {
+  display: block;
+}
+
+/* Horizontal Carousel Tabs */
+.uberAccordion {
+  padding: 0;
+}
+
+.uberAccordion>li {
+  list-style: none;
+  margin: 0;
+}
+
+.uberAccordion>li>h4 {
+  background-color: #e3e3e3;
+  margin: 0;
+  font-size: 16px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.uberAccordion>li>div {
+  background-color: #aaa;
+  padding: 15px;
 }
 
 
-  /*The left drawer*/ 
-  #drawer-left{/*set a container with the total width of both the container and the trigger*/
-    position: relative;
-    height: 100%; width: 205px;
-    overflow: hidden;
-    transition: all .35s ease-in-out;
-  }
-  #drawer-left:after{/*this will the right border, when the content will be pushed out*/
-    content: '';
-    position: absolute;
-    right: 0; top: 0;  bottom: 0;
-    border-right: 1px solid #000;
-  }
-  .drawer-left-trigger{
-    /*set the triggers width here, borders etc.*/
-    position: absolute;
-    top: 0; bottom: 0; right: 100%;
-    margin-right: -25px;/*bring it back inside the wrapper*/
-    width: 25px;  
-    background:yellow;
-    /*some styling stuff*/
-    cursor: pointer;
-    text-align: center;
-    font-size: 24px;
-    line-height: 100%;
-  }
-  .drawer-left-trigger > span{
-    transform: rotate(180deg);
-    transition: all .35s ease-in-out;  
-  }
-  #drawer-left.closed .drawer-left-trigger > span{
-    transform: rotate(0);
-  }
-  #drawer-left.closed .drawer-left-trigger{
-    /*this will push the trigger on the right side*/
-    left: auto;
-    right: 25px;
-  }
-  .drawer-left-content{
-    /*this is the container for the header and content*/
-    position: absolute;
-    top: 0; bottom: 0; right: 0; left: 24px;/*the triggers width(+-1px from the border)*/
-  }
-  #drawer-left.closed .drawer-left-content{
-    /*this will push the content out*/
-    left: 100%;
-    right: -100%;
-  }
-  .drawer-left-trigger,
-  .drawer-left-content{
-    border-left: 1px solid #000;
-    border-bottom: 1px solid #000;
-    border-top: 1px solid #000;
-    transition: all .35s ease-in-out;
-  }
+/* Default CSS for sub-accordion */
+
+.uberAccordion .uberAccordion>li>h4 {
+  font-size: 12px;
+  padding: 5px;
+}
+
+.uberAccordion .uberAccordion>li>div {
+  background-color: #666666;
+  color: #FFF;
+}
+
+
+/* Default CSS for vertical orientation */
+
+.uberAccordion.accordion-vertical {
+  height: 300px;
+}
+
+.uberAccordion .uberAccordion.accordion-vertical {
+  height: 260px;
+}
