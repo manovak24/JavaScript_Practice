@@ -1621,4 +1621,16 @@ function greet(name) {
 function getChar(c) {
   return String.fromCharCode(c);
 }
-console.log(getChar(97))
+// console.log(getChar(97));
+
+const setReducer = (arr) => {
+  while(arr.length-1) {
+    arr = arr.reduce((a,v,i)=>{
+      if(v!=arr[i-1]) a.push(1)
+      else a[a.length-1]++
+      return a
+    }, [])
+  }
+  return arr.pop()
+}
+console.log(setReducer([0, 4, 6, 8, 8, 8, 5, 5, 7]))
