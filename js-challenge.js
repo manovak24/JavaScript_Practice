@@ -1633,4 +1633,23 @@ const setReducer = (arr) => {
   }
   return arr.pop()
 }
-console.log(setReducer([0, 4, 6, 8, 8, 8, 5, 5, 7]))
+// console.log(setReducer([0, 4, 6, 8, 8, 8, 5, 5, 7]))
+
+
+function capitalize(s) {
+  let evenString = '';
+  let oddString = '';
+
+  for(let i = 0; i < s.length; i++) {
+    if(i % 2 === 0) {
+      evenString += s.charAt(i).toUpperCase();
+      oddString += s.charAt(i);
+    } else {
+      evenString += s.charAt(i);
+      oddString += s.charAt(i).toUpperCase();
+    }
+  }
+
+  return [evenString, oddString];
+}
+console.log(capitalize("abracadabra"));
