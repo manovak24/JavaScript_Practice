@@ -1637,19 +1637,24 @@ const setReducer = (arr) => {
 
 
 function capitalize(s) {
-  let evenString = '';
-  let oddString = '';
+  // let evenString = '';
+  // let oddString = '';
 
-  for(let i = 0; i < s.length; i++) {
-    if(i % 2 === 0) {
-      evenString += s.charAt(i).toUpperCase();
-      oddString += s.charAt(i);
-    } else {
-      evenString += s.charAt(i);
-      oddString += s.charAt(i).toUpperCase();
-    }
-  }
+  // for(let i = 0; i < s.length; i++) {
+  //   if(i % 2 === 0) {
+  //     evenString += s.charAt(i).toUpperCase();
+  //     oddString += s.charAt(i);
+  //   } else {
+  //     evenString += s.charAt(i);
+  //     oddString += s.charAt(i).toUpperCase();
+  //   }
+  // }
 
-  return [evenString, oddString];
+  // return [evenString, oddString];
+
+  let even = s.split('').map((letter, index) => index % 2 === 0 ? letter.toUpperCase() : letter).join('');
+  let odd = s.split('').map((letter, index) => index % 2 !== 0 ? letter.toUpperCase() : letter).join('');
+
+  return [even, odd];
 }
 console.log(capitalize("abracadabra"));
