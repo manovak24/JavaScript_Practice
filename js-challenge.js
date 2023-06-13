@@ -1462,8 +1462,8 @@ function otherAngle(a, b) {
 
 
 function solve(s) {
-  let upperCaseCount = 0;
   let lowerCaseCount = 0;
+  let upperCaseCount = 0;
 
   s.split('').forEach(letter => {
     if(letter === letter.toUpperCase()) {
@@ -1657,4 +1657,39 @@ function capitalize(s) {
 
   return [even, odd];
 }
-console.log(capitalize("abracadabra"));
+// console.log(capitalize("abracadabra"));
+
+
+const mxdiflg = (a1, a2) => {
+//  let a1Sorted = a1.sort((a,b) => a.length - b.length);
+//  let a2Sorted = a2.sort((a,b) => a.length - b.length);
+
+//  let test1 = a1Sorted[a1Sorted.length - 1].length - a2Sorted[0].length; 
+//  let test2 = a2Sorted[a2Sorted.length - 1].length - a1Sorted[0].length;
+
+//  return a1Sorted[a1Sorted.length - 1].length - a2Sorted[0].length;
+  let arr = [];
+  if(a1.length === 0) {
+    arr.push(-1)
+  } else {
+    for(let i = 0; i < a1.length; i++) {
+      for(let j = 0; j < a2.length; j++) {
+        arr.push(Math.abs(a1[i].length - a2[j].length))
+      }
+    }
+  }
+
+  if(a2.length === 0) {
+    arr.push(-1)
+  } else {
+    for(let i = 0; i < a2.length; i++) {
+      for(let j = 0; j < a1.length; j++) {
+        arr.push(Math.abs(a2[i].length - a1[j].length));
+      }
+    }
+  }
+ 
+
+  return Math.max(...arr);
+}
+console.log(mxdiflg(["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"], ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]))
