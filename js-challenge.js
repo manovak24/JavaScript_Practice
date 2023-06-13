@@ -1661,35 +1661,37 @@ function capitalize(s) {
 
 
 const mxdiflg = (a1, a2) => {
-//  let a1Sorted = a1.sort((a,b) => a.length - b.length);
-//  let a2Sorted = a2.sort((a,b) => a.length - b.length);
+  // let arr = [];
 
-//  let test1 = a1Sorted[a1Sorted.length - 1].length - a2Sorted[0].length; 
-//  let test2 = a2Sorted[a2Sorted.length - 1].length - a1Sorted[0].length;
+  // if(a1.length === 0) {
+  //   arr.push(-1)
+  // } else {
+  //   for(let i = 0; i < a1.length; i++) {
+  //     for(let j = 0; j < a2.length; j++) {
+  //       arr.push(Math.abs(a1[i].length - a2[j].length))
+  //     }
+  //   }
+  // }
 
-//  return a1Sorted[a1Sorted.length - 1].length - a2Sorted[0].length;
-  let arr = [];
-  if(a1.length === 0) {
-    arr.push(-1)
-  } else {
-    for(let i = 0; i < a1.length; i++) {
-      for(let j = 0; j < a2.length; j++) {
-        arr.push(Math.abs(a1[i].length - a2[j].length))
-      }
-    }
-  }
-
-  if(a2.length === 0) {
-    arr.push(-1)
-  } else {
-    for(let i = 0; i < a2.length; i++) {
-      for(let j = 0; j < a1.length; j++) {
-        arr.push(Math.abs(a2[i].length - a1[j].length));
-      }
-    }
-  }
+  // if(a2.length === 0) {
+  //   arr.push(-1)
+  // } else {
+  //   for(let i = 0; i < a2.length; i++) {
+  //     for(let j = 0; j < a1.length; j++) {
+  //       arr.push(Math.abs(a2[i].length - a1[j].length));
+  //     }
+  //   }
+  // }
  
+  // return Math.max(...arr);
 
-  return Math.max(...arr);
+  if(a1.length === 0 || a2.length === 0) {
+    return -1;
+  }
+
+  let l1 = a1.map(string => string.length);
+  let l2 = a2.map(string => string.length);
+
+  return Math.max(Math.max(...l1) - Math.min(...l2), Math.max(...l2) - Math.min(...l1));
 }
 console.log(mxdiflg(["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"], ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]))
