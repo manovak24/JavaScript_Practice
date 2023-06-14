@@ -1694,4 +1694,15 @@ const mxdiflg = (a1, a2) => {
 
   return Math.max(Math.max(...l1) - Math.min(...l2), Math.max(...l2) - Math.min(...l1));
 }
-console.log(mxdiflg(["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"], ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]))
+// console.log(mxdiflg(["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"], ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]));
+
+
+const sequenceSum = (begin, end, step) => {
+  let answer = 0;
+  for(let i = begin; i <= end; i += step) {
+    answer += i;
+  }
+  
+  return begin > end ? 0 : answer;
+}
+// console.log(sequenceSum(1, 5, 1));
