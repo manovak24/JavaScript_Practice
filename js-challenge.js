@@ -1706,3 +1706,32 @@ const sequenceSum = (begin, end, step) => {
   return begin > end ? 0 : answer;
 }
 // console.log(sequenceSum(1, 5, 1));
+
+
+function titleCase(title, minorWords) {
+  let titleArr = title.split(' ');
+  let updatedTitle = [];
+  let minorArr = minorWords.toLowerCase().split(' ');
+  
+  for(let i = 0; i < titleArr.length; i++) {
+    updatedTitle.push(titleArr[i].charAt(0).toUpperCase() + titleArr[i].slice(1).toLowerCase());
+  }
+
+  let firstWord = updatedTitle[0]
+  updatedTitle.shift();
+  let answerArr = [];
+  
+
+  for(let word of updatedTitle) {
+    if(minorWords && minorWords.toLowerCase().includes(word.toLowerCase())) {
+      answerArr.push(word.toLowerCase());
+    } else {
+      answerArr.push(word);
+    }
+  }
+
+
+  answerArr.unshift(firstWord);
+  return answerArr.join(' ');
+}
+console.log(titleCase("First a of in", "an often into"));
