@@ -1709,33 +1709,43 @@ const sequenceSum = (begin, end, step) => {
 
 
 function titleCase(title, minorWords) {
-  let titleArr = title.split(' ');
-  let updatedTitle = [];
-  let minorArr = [];
+  // let titleArr = title.split(' ');
+  // let updatedTitle = [];
+  // let minorArr = [];
 
-  if(minorWords) {
-    minorArr = minorWords.toLowerCase().split(' ');
-  }
+  // if(minorWords) {
+  //   minorArr = minorWords.toLowerCase().split(' ');
+  // }
   
-  for(let i = 0; i < titleArr.length; i++) {
-    updatedTitle.push(titleArr[i].charAt(0).toUpperCase() + titleArr[i].slice(1).toLowerCase());
-  }
+  // for(let i = 0; i < titleArr.length; i++) {
+  //   updatedTitle.push(titleArr[i].charAt(0).toUpperCase() + titleArr[i].slice(1).toLowerCase());
+  // }
 
-  let firstWord = updatedTitle[0]
-  updatedTitle.shift();
-  let answerArr = [];
+  // let firstWord = updatedTitle[0]
+  // updatedTitle.shift();
+  // let answerArr = [];
 
 
-  for(let word in updatedTitle) {
-    if(minorArr.indexOf(updatedTitle[word].toLowerCase()) !== -1) {
-      answerArr.push(updatedTitle[word].toLowerCase())
-    } else {
-      answerArr.push(updatedTitle[word])
+  // for(let word in updatedTitle) {
+  //   if(minorArr.indexOf(updatedTitle[word].toLowerCase()) !== -1) {
+  //     answerArr.push(updatedTitle[word].toLowerCase())
+  //   } else {
+  //     answerArr.push(updatedTitle[word])
+  //   }
+  // }
+
+
+  // answerArr.unshift(firstWord);
+  // return answerArr.join(' ');
+
+  var minorWords = typeof minorWords !== "undefined" ? minorWords.toLowerCase().split(' ') : [];
+  return title.toLowerCase().split(' ').map(function(v, i) {
+    if(v != "" && ( (minorWords.indexOf(v) === -1) || i == 0)) {
+      v = v.split('');
+      v[0] = v[0].toUpperCase();
+      v = v.join('');
     }
-  }
-
-
-  answerArr.unshift(firstWord);
-  return answerArr.join(' ');
+    return v;
+  }).join(' ');
 }
 console.log(titleCase("First a of in"));
