@@ -1752,15 +1752,22 @@ function titleCase(title, minorWords) {
 
 
 const calculateYears = (principal, interest, tax, desired) => {
-  let reinvest = 0;
+  // let reinvest = 0;
+  // let years = 0;
+  // for(let i = principal; i <= desired; i = reinvest) {
+  //   let interestGain = i * interest;
+  //   let amountReinvest = (interestGain - (interestGain * tax)) + i;
+  //   reinvest = amountReinvest;
+  //   console.log(reinvest)
+  //   years++;
+  // }
+  // return principal === desired ? 0 : years;
+
   let years = 0;
-  for(let i = principal; i <= desired; i = reinvest) {
-    let interestGain = i * interest;
-    let amountReinvest = (interestGain - (interestGain * tax)) + i;
-    reinvest = amountReinvest;
-    console.log(reinvest)
-    years++;
+  while(principal < desired) {
+    principal += (principal * interest) * (1 - tax);
+    years++
   }
-  return principal === desired ? 0 : years;
+  return years;
 }
 console.log(calculateYears(1000,0.05,0.18,1000));
