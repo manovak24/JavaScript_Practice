@@ -1770,4 +1770,10 @@ const calculateYears = (principal, interest, tax, desired) => {
   }
   return years;
 }
-console.log(calculateYears(1000,0.05,0.18,1000));
+// console.log(calculateYears(1000,0.05,0.18,1000));
+
+
+function cockroachSpeed(s) {
+  return Math.floor(s * 27.778);
+}
+console.log(cockroachSpeed(1.09))
