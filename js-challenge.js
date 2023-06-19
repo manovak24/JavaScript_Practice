@@ -1776,4 +1776,12 @@ const calculateYears = (principal, interest, tax, desired) => {
 function cockroachSpeed(s) {
   return Math.floor(s * 27.778);
 }
-console.log(cockroachSpeed(1.09))
+// console.log(cockroachSpeed(1.09));
+
+
+function howMuchILoveYou(nbPetals) {
+  let arr = ["I love you", "a little", "a lot", "passionately", "madly", "not at all"];
+
+  return arr[(nbPetals - 1) % arr.length];
+}
+// console.log(howMuchILoveYou(2));
