@@ -1794,4 +1794,10 @@ const findMultiples = (integer, limit) => {
   }
   return arr;
 }
-console.log(findMultiples(4, 27));
+// console.log(findMultiples(4, 27));
+
+
+const plural = (n) => {
+  return n !== 1;
+}
+// console.log(plural(1));
