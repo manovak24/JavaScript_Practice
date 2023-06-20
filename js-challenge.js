@@ -1785,3 +1785,13 @@ function howMuchILoveYou(nbPetals) {
   return arr[(nbPetals - 1) % arr.length];
 }
 // console.log(howMuchILoveYou(2));
+
+
+const findMultiples = (integer, limit) => {
+  let arr = [];
+  for(let i = integer; i <= limit; i += integer) {
+    arr.push(i);
+  }
+  return arr;
+}
+console.log(findMultiples(4, 27));
