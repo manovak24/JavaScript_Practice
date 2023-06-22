@@ -1801,3 +1801,9 @@ const plural = (n) => {
   return n !== 1;
 }
 // console.log(plural(1));
+
+
+function evenOrOdd(number) {
+  return number % 2 === 0 ? 'Even' : 'Odd';
+}
+// console.log(evenOrOdd(2));
