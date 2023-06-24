@@ -1810,9 +1810,15 @@ function evenOrOdd(number) {
 
 
 function countBy(x, n) {
+  // let arr = [];
+  // for(let i = x; arr.length < n; i += x) {
+  //   arr.push(i);
+  // }
+  // return arr;
+
   let arr = [];
-  for(let i = x; arr.length < n; i += x) {
-    arr.push(i);
+  for(let i = 1; i <= n; i++) {
+    arr.push(x * i);
   }
   return arr;
 }
