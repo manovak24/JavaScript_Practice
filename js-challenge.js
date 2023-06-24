@@ -1807,3 +1807,13 @@ function evenOrOdd(number) {
   return number % 2 === 0 ? 'Even' : 'Odd';
 }
 // console.log(evenOrOdd(2));
+
+
+function countBy(x, n) {
+  let arr = [];
+  for(let i = x; arr.length < n; i += x) {
+    arr.push(i);
+  }
+  return arr;
+}
+console.log(countBy(2, 5));
