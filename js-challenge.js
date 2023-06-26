@@ -1822,4 +1822,14 @@ function countBy(x, n) {
   }
   return arr;
 }
-console.log(countBy(2, 5));
+// console.log(countBy(2, 5));
+
+
+// Filter array based on another array
+function gooseFilter(birds) {
+  let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+  return birds.filter(function(bird) {
+    return !geese.includes(bird);
+  });
+}
+console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]));
