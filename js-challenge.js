@@ -1838,13 +1838,16 @@ function gooseFilter(birds) {
 
 
 function expressionMatter(a, b, c) {
-  let arr = [];
-  arr.push(a * (b + c));
-  arr.push(a * b * c);
-  arr.push(a + b * c);
-  arr.push(a + b + c);
-  arr.push((a + b) * c);
+  // let arr = [];
+  // arr.push(a * (b + c));
+  // arr.push(a * b * c);
+  // arr.push(a + b * c);
+  // arr.push(a + b + c);
+  // arr.push((a + b) * c);
 
-  return Math.max(...arr);
+  // return Math.max(...arr);
+
+
+  return Math.max(a + b + c, a * b * c, (a + b) * c, a * (b + c));
 }
-console.log(expressionMatter(1, 1, 1));
+// console.log(expressionMatter(1, 1, 1));
