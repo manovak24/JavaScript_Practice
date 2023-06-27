@@ -1,3 +1,5 @@
+const { expression } = require("@babel/template");
+
 function numberToString(num) {
     return num.toString()
 }
@@ -1832,4 +1834,17 @@ function gooseFilter(birds) {
     return !geese.includes(bird);
   });
 }
-console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]));
+// console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]));
+
+
+function expressionMatter(a, b, c) {
+  let arr = [];
+  arr.push(a * (b + c));
+  arr.push(a * b * c);
+  arr.push(a + b * c);
+  arr.push(a + b + c);
+  arr.push((a + b) * c);
+
+  return Math.max(...arr);
+}
+console.log(expressionMatter(1, 1, 1));
