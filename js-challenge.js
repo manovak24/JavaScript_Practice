@@ -1851,3 +1851,30 @@ function expressionMatter(a, b, c) {
   return Math.max(a + b + c, a * b * c, (a + b) * c, a * (b + c));
 }
 // console.log(expressionMatter(1, 1, 1));
+
+
+// parsing url to get domain name
+function domainName(url) {
+  // let testUrl;
+  
+  // if(!url.includes('http')) {
+  //   testUrl = "http://" + url;
+  // } else {
+  //   testUrl = url
+  // }
+  
+  // let host = new URL(testUrl).host;
+
+  // if(host.includes('www')) {
+  //   let first = host.split("www.").pop();
+  //   return first.split('.')[0];
+  // } else {
+  //   return host.split('.')[0];
+  // }
+
+  url = url.replace("https://", '');
+  url = url.replace("http://", '');
+  url = url.replace("www.", '');
+  return url.split('.')[0];
+}
+console.log(domainName("www.xakep.ru"));
