@@ -1853,7 +1853,7 @@ function expressionMatter(a, b, c) {
 // console.log(expressionMatter(1, 1, 1));
 
 
-// parsing url to get domain name
+// parsing url to get domain name / accessing 
 function domainName(url) {
   // let testUrl;
   
@@ -1877,4 +1877,22 @@ function domainName(url) {
   url = url.replace("www.", '');
   return url.split('.')[0];
 }
-console.log(domainName("www.xakep.ru"));
+// console.log(domainName("www.xakep.ru"));
+
+
+function isSquare(n) {
+  return Number.isInteger(Math.sqrt(n));
+}
+// console.log(isSquare(25));
+
+
+function multiTable(number) {
+  let table = '';
+  
+  for(let i = 1; i <= 10; i++) {
+    table += `${i} * ${number} = ${i * number}${i < 10 ? '\n' : ''}`; 
+  }
+
+  return table;
+}
+console.log(multiTable(5));
