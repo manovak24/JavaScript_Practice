@@ -1895,4 +1895,19 @@ function multiTable(number) {
 
   return table;
 }
-console.log(multiTable(5));
+// console.log(multiTable(5));
+
+
+// use .filter() to filter with index out elements from array
+function multipleOfIndex(array) {
+  // let answerArr = [];
+  // for(let i = 0; i <= array.length; i++) {
+  //   if(array[i] % i === 0 || array[i] === 0) {
+  //     answerArr.push(array[i]);
+  //   }
+  // }
+  // return answerArr;
+
+  return array.filter((n, i) => n % i === 0 || n === 0)
+}
+console.log(multipleOfIndex([0, 2, 3, 6, 9]));
