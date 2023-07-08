@@ -1913,7 +1913,27 @@ function multipleOfIndex(array) {
 // console.log(multipleOfIndex([0, 2, 3, 6, 9]));
 
 
+// Using % (remainder) divides number by another number and provides the remainder left over - 17 % 5 - where 5 goes into 17 3x(15) and 2 left over
 const remainder = (n, m) => {;
   return Math.max(n, m) % Math.min(n, m);
 }
-console.log(remainder(17, 5));
+// console.log(remainder(17, 5));
+
+
+// rock, paper, scissors using object with winning combinations
+const rps = (p1, p2) => {
+  if (p1 === p2) return "Draw!";
+
+  const rules = {
+    rock: "scissors",
+    paper: "rock",
+    scissors: "paper"
+  };
+
+  if (p2 === rules[p1]) {
+    return "Player 1 won!";
+  } else {
+    return "Player 2 won!";
+  }
+}
+console.log(rps('paper', 'scissors'));
