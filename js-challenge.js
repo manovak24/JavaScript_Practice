@@ -1910,4 +1910,10 @@ function multipleOfIndex(array) {
 
   return array.filter((n, i) => n % i === 0 || n === 0)
 }
-console.log(multipleOfIndex([0, 2, 3, 6, 9]));
+// console.log(multipleOfIndex([0, 2, 3, 6, 9]));
+
+
+const remainder = (n, m) => {;
+  return Math.max(n, m) % Math.min(n, m);
+}
+console.log(remainder(17, 5));
