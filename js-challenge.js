@@ -1943,4 +1943,23 @@ const rps = (p1, p2) => {
 function feast(beast, dish) {
   return beast[0] === dish[0] && beast[beast.length - 1] === dish[dish.length - 1];
 }
-console.log(feast('chickadee', 'chocolate cake'));
+// console.log(feast('chickadee', 'chocolate cake'));
+
+
+// Area of triangle
+function isTriangle(a, b, c) {
+  // let semi = (a + b + c) / 2;
+
+  // let area = Math.sqrt(semi*(semi - a)*(semi - b)*(semi - c));
+
+  // if (a < 0 || b < 0 || c < 0) {
+  //   return false
+  // } else if (area > 0) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+
+  return a + b > c && a + c > b && c + b > a;
+}
+console.log(isTriangle(1, 2, 2));
