@@ -1962,4 +1962,15 @@ function isTriangle(a, b, c) {
 
   return a + b > c && a + c > b && c + b > a;
 }
-console.log(isTriangle(1, 2, 2));
+// console.log(isTriangle(1, 2, 2));
+
+
+// Using Math.pow and Math.sqrt to find perfect square
+function findNextSquare(sq) {
+  if(Math.sqrt(sq) % 1 !== 0) {
+    return -1;
+  } else {
+    return Math.pow(Math.sqrt(sq) + 1, 2);
+  }
+}
+// console.log(findNextSquare(121));
