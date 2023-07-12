@@ -1974,3 +1974,16 @@ function findNextSquare(sq) {
   }
 }
 // console.log(findNextSquare(121));
+
+
+const animal = (obj) => {
+  return `This ${obj.color} ${obj.name} has ${obj.legs} legs.`;
+}
+// console.log(animal({name:"dog",legs:4,color:"white"}));
+
+
+// using parseInt with radix (second value)
+const hexToDex = (hexString) => {
+  return parseInt(hexString, 16);
+}
+// console.log(hexToDex('FF'));
