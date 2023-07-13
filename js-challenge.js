@@ -1987,3 +1987,9 @@ const hexToDex = (hexString) => {
   return parseInt(hexString, 16);
 }
 // console.log(hexToDex('FF'));
+
+
+function angle(n) {
+  return (n - 2) * 180;
+}
+console.log(angle(4));
