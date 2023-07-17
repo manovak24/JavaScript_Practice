@@ -1993,3 +1993,9 @@ function angle(n) {
   return (n - 2) * 180;
 }
 console.log(angle(4));
+
+
+function sumDigits(number) {
+  return Math.abs(number).toString().split('').map(num => parseInt(num)).reduce((a, b) => a + b);
+}
+console.log(sumDigits(-99))
