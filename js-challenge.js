@@ -1992,10 +1992,26 @@ const hexToDex = (hexString) => {
 function angle(n) {
   return (n - 2) * 180;
 }
-console.log(angle(4));
+// console.log(angle(4));
 
 
 function sumDigits(number) {
   return Math.abs(number).toString().split('').map(num => parseInt(num)).reduce((a, b) => a + b);
 }
-console.log(sumDigits(-99))
+// console.log(sumDigits(-99));
+
+
+function checkExam(array1, array2) {
+  let score = 0;
+  for(let i = 0; i < array1.length; i++) {
+    if (array1[i].length === 0 || array2[i].length === 0) {
+      score += 0;
+    } else if (array1[i] === array2[i]) {
+      score += 4;
+    } else if (array1[i] !== array2[i]){
+      score--;
+    }
+  }
+  return score < 0 ? 0 : score;
+}
+console.log(checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]));
