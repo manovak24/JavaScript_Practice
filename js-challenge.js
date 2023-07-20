@@ -2014,4 +2014,20 @@ function checkExam(array1, array2) {
   }
   return score < 0 ? 0 : score;
 }
-console.log(checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]));
+// console.log(checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]));
+
+
+// looping through array of strings and indexing string
+const pointsGame = (games) => {
+  let score = 0;
+  for(let i = 0; i < games.length; i++) {
+    if(games[i][0] > games[i][2]) {
+      score += 3;
+    }
+    if(games[i][0] === games[i][2]) {
+      score++
+    }
+  }
+  return score;
+}
+console.log(pointsGame(["1:0","2:0","3:0","4:0","2:1","1:3","1:4","2:3","2:4","3:4"]));
