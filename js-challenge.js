@@ -2030,4 +2030,11 @@ const pointsGame = (games) => {
   }
   return score;
 }
-console.log(pointsGame(["1:0","2:0","3:0","4:0","2:1","1:3","1:4","2:3","2:4","3:4"]));
+// console.log(pointsGame(["1:0","2:0","3:0","4:0","2:1","1:3","1:4","2:3","2:4","3:4"]));
+
+
+// Checking array for value using .includes() and not using a loop
+function check(a,x) {
+  return a.includes(x);
+}
+console.log(check([80, 117, 115, 104, 45, 85, 112, 115], 45));
