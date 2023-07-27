@@ -2037,4 +2037,25 @@ const pointsGame = (games) => {
 function check(a,x) {
   return a.includes(x);
 }
-console.log(check([80, 117, 115, 104, 45, 85, 112, 115], 45));
+// console.log(check([80, 117, 115, 104, 45, 85, 112, 115], 45));
+
+
+// Search string using .includes() to see if it contains a specific word
+function spEng(sentence) {
+  return sentence.toLowerCase().includes('english');
+}
+// console.log(spEng("abcEnglishdef"));
+
+
+const sumMul = (n,m) => {
+  if(m <= 0 || n <= 0 ) {
+    return "INVALID";
+  }
+  
+  let res = 0;
+  for(let i = 0; i < m; i+= n){
+    res += i;
+  }
+  return res;
+}
+console.log(sumMul(89,16020))
