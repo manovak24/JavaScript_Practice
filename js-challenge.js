@@ -2061,28 +2061,18 @@ const sumMul = (n,m) => {
 // console.log(sumMul(89,16020));
 
 
-const calculateAge = (born, year) => {
-  if(born < year) {
-    let years = year - born;
-    if(years === 1) {
-      return `You are ${years} year old.`;
-    } else {
-      return `You are ${years} years old.`;
-    }
-  }
-
-  if(born > year) {
-    let years = born - year;
-    if(years === 1) {
-      return `You will be born in ${years} year.`;
-    } else {
-      return `You will be born in ${years} years.`;
-    }
-  }
-
-  if(born === year) {
+const calculateAge = (born, date) => {
+  if(born === date) {
     return 'You were born this very year!';
   }
 
+  let years = Math.abs(born - date) == 1 ? 'year' : 'years';
+  if(born < date) {
+    return `You are ${date - born} ${years} old.`;
+  }
+  if(born > date) {
+    return `You will be born in ${born - date} ${years}.`;
+  }
+
 }
-console.log(calculateAge(1597,1055))
+console.log(calculateAge(2002,2000))
