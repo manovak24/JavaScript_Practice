@@ -2058,4 +2058,31 @@ const sumMul = (n,m) => {
   }
   return res;
 }
-console.log(sumMul(89,16020))
+// console.log(sumMul(89,16020));
+
+
+const calculateAge = (born, year) => {
+  if(born < year) {
+    let years = year - born;
+    if(years === 1) {
+      return `You are ${years} year old.`;
+    } else {
+      return `You are ${years} years old.`;
+    }
+  }
+
+  if(born > year) {
+    let years = born - year;
+    if(years === 1) {
+      return `You will be born in ${years} year.`;
+    } else {
+      return `You will be born in ${years} years.`;
+    }
+  }
+
+  if(born === year) {
+    return 'You were born this very year!';
+  }
+
+}
+console.log(calculateAge(1597,1055))
