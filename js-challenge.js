@@ -2078,6 +2078,13 @@ const calculateAge = (born, date) => {
 // console.log(calculateAge(2002,2000));
 
 
+// using .filter()
+const getEvenNumbers = (numbersArray) => {
+  return numbersArray.filter(number => number % 2 === 0);
+}
+console.log(getEvenNumbers([1,2,3,6,8,10]))
+
+
 const twoSum = (numbers, target) => {
   let map = {};
   let answer = [];
@@ -2093,4 +2100,4 @@ const twoSum = (numbers, target) => {
   console.log(map)
   return answer;
 }
-console.log(twoSum([2,2,3],4));
+// console.log(twoSum([2,2,3],4));
