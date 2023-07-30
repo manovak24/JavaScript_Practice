@@ -2075,4 +2075,22 @@ const calculateAge = (born, date) => {
   }
 
 }
-console.log(calculateAge(2002,2000))
+// console.log(calculateAge(2002,2000));
+
+
+const twoSum = (numbers, target) => {
+  let map = {};
+  let answer = [];
+  for(let i = 0; i < numbers.length; i++) {
+    if(map[numbers[i]] && numbers.indexOf(map[numbers[i]]) !== numbers.indexOf(numbers[i])) {
+      answer.push([numbers.indexOf(map[numbers[i]]), numbers.indexOf(numbers[i])]);
+    } else {
+      map[target - numbers[i]] = numbers[i];
+    }
+    console.log(map[numbers[i]])
+
+  }
+  console.log(map)
+  return answer;
+}
+console.log(twoSum([2,2,3],4));
