@@ -2104,13 +2104,16 @@ const twoSum = (numbers, target) => {
 
 
 function largestPairSum(numbers) {
-  let arr = [];
-  for(let i = 0; i < numbers.length; i++) {
-    for(let j = i + 1; j < numbers.length; j++) {
-      let sum = numbers[i] + numbers[j];
-      arr.push(sum);
-    }
-  }
-  return Math.max(...arr);
+  // let arr = [];
+  // for(let i = 0; i < numbers.length; i++) {
+  //   for(let j = i + 1; j < numbers.length; j++) {
+  //     let sum = numbers[i] + numbers[j];
+  //     arr.push(sum);
+  //   }
+  // }
+  // return Math.max(...arr);
+
+  numbers.sort(function(a, b){ return b - a });
+  return numbers[0] + numbers[1];
 }
 console.log(largestPairSum([10,14,2,23,19]));
