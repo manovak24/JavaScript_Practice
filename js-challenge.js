@@ -2101,3 +2101,16 @@ const twoSum = (numbers, target) => {
   return answer;
 }
 // console.log(twoSum([2,2,3],4));
+
+
+function largestPairSum(numbers) {
+  let arr = [];
+  for(let i = 0; i < numbers.length; i++) {
+    for(let j = i + 1; j < numbers.length; j++) {
+      let sum = numbers[i] + numbers[j];
+      arr.push(sum);
+    }
+  }
+  return Math.max(...arr);
+}
+console.log(largestPairSum([10,14,2,23,19]));
