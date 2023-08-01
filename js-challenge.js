@@ -2082,27 +2082,23 @@ const calculateAge = (born, date) => {
 const getEvenNumbers = (numbersArray) => {
   return numbersArray.filter(number => number % 2 === 0);
 }
-console.log(getEvenNumbers([1,2,3,6,8,10]))
+// console.log(getEvenNumbers([1,2,3,6,8,10]));
 
 
+// Finding all possible pair sums in array and returning their index
 const twoSum = (numbers, target) => {
-  let map = {};
-  let answer = [];
-  for(let i = 0; i < numbers.length; i++) {
-    if(map[numbers[i]] && numbers.indexOf(map[numbers[i]]) !== numbers.indexOf(numbers[i])) {
-      answer.push([numbers.indexOf(map[numbers[i]]), numbers.indexOf(numbers[i])]);
-    } else {
-      map[target - numbers[i]] = numbers[i];
-    }
-    console.log(map[numbers[i]])
-
+  for (let i = 0; i < numbers.length-1; i++) {
+      for (let j = i+1; j < numbers.length; j++) {
+          if (numbers[i] + numbers[j] === target) {
+            return [i, j];
+          };
+      }
   }
-  console.log(map)
-  return answer;
 }
 // console.log(twoSum([2,2,3],4));
 
 
+// Find largest pair sum in array
 function largestPairSum(numbers) {
   // let arr = [];
   // for(let i = 0; i < numbers.length; i++) {
@@ -2116,4 +2112,4 @@ function largestPairSum(numbers) {
   numbers.sort(function(a, b){ return b - a });
   return numbers[0] + numbers[1];
 }
-console.log(largestPairSum([10,14,2,23,19]));
+// console.log(largestPairSum([10,14,2,23,19]));
