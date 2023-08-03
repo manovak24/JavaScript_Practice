@@ -2118,4 +2118,16 @@ function largestPairSum(numbers) {
 function opposite(number) {
   return -number
 }
-console.log(opposite(8));
+// console.log(opposite(8));
+
+
+function printArray(array) {
+  return array.join();
+}
+// console.log(printArray(["h","o","l","a"]));
+
+
+const noOdds = (values) => {
+  return values.filter(num => num % 2 === 0);
+}
+// console.log(noOdds([0,1,2,3]));
