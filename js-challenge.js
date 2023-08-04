@@ -2131,3 +2131,16 @@ const noOdds = (values) => {
   return values.filter(num => num % 2 === 0);
 }
 // console.log(noOdds([0,1,2,3]));
+
+
+// Find the number of divisors of a number
+const getDivisorsCnt = (n) => {
+  let count = 0;
+  for(let i = 0; i <= n; i++) {
+    if(n % i === 0) {
+      count++;
+    }
+  }
+  return count;
+}
+// console.log(getDivisorsCnt(10));
