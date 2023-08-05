@@ -2150,4 +2150,10 @@ const getDivisorsCnt = (n) => {
   }
   return num;
 }
-console.log(getDivisorsCnt(10));
+// console.log(getDivisorsCnt(10));
+
+
+const isPalidrome = (x) => {
+  return x.toLowerCase().split('').reverse().join('') === x.toLowerCase();
+}
+console.log(isPalidrome('Abba'));
