@@ -2156,4 +2156,16 @@ const getDivisorsCnt = (n) => {
 const isPalidrome = (x) => {
   return x.toLowerCase().split('').reverse().join('') === x.toLowerCase();
 }
-console.log(isPalidrome('Abba'));
+// console.log(isPalidrome('Abba'));
+
+
+const sumMix = (x) => {
+  // let arr = [];
+  // x.forEach(num => {
+  //   arr.push(parseInt(num));
+  // })
+  // return arr.reduce((x,y) => x + y);
+
+  return x.map(num => parseInt(num)).reduce((x,y) => x + y);
+}
+// console.log(sumMix([9, 3, '7', '3']));
