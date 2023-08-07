@@ -2169,3 +2169,9 @@ const sumMix = (x) => {
   return x.map(num => parseInt(num)).reduce((x,y) => x + y);
 }
 // console.log(sumMix([9, 3, '7', '3']));
+
+
+function predictAge(age1, age2, age3, age4, age5, age6, age7, age8) {
+  return Math.floor(Math.sqrt([age1, age2, age3, age4, age5, age6, age7, age8].map(age => age * age).reduce((x,y) => x + y)) / 2);
+}
+// console.log(predictAge(65,60,75,55,60,63,64,45));
