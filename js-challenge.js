@@ -2180,4 +2180,17 @@ function predictAge(age1, age2, age3, age4, age5, age6, age7, age8) {
 function nearestSq(n) {
   return Math.pow(Math.round(Math.sqrt(n)), 2);
 }
-console.log(nearestSq(10));
+// console.log(nearestSq(10));
+
+
+function race(v1, v2, g) {
+  if (v2 < v1) { return null; }
+  
+  const seconds = Math.floor(g / (v2 - v1) * 3600);
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds - h * 3600) / 60);
+  const s = seconds - h * 3600 - m * 60;
+  
+  return [h, m, s];
+}
+console.log(race(720, 850, 37));
