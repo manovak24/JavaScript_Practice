@@ -2193,4 +2193,10 @@ function race(v1, v2, g) {
   
   return [h, m, s];
 }
-console.log(race(720, 850, 37));
+// console.log(race(720, 850, 37));
+
+
+function addLength(str) {
+  return str.split(' ').map(word => `${word} ${word.length}`);
+}
+// console.log(addLength("apple ban"));
