@@ -2200,3 +2200,10 @@ function addLength(str) {
   return str.split(' ').map(word => `${word} ${word.length}`);
 }
 // console.log(addLength("apple ban"));
+
+
+// find the alphabet numberical value of letter/character
+function position(letter) {
+  return `Position of alphabet: ${letter.charCodeAt(0) - 96}`;
+}
+console.log(position('a'));
