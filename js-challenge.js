@@ -2206,4 +2206,11 @@ function addLength(str) {
 function position(letter) {
   return `Position of alphabet: ${letter.charCodeAt(0) - 96}`;
 }
-console.log(position('a'));
+// console.log(position('a'));
+
+
+// turn number to binary
+const toBinary = (n) => {
+  return parseInt(n.toString(2));
+}
+console.log(toBinary(1));
