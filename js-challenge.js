@@ -2239,4 +2239,11 @@ const humanYearsCatYearsDogYears = function(humanYears) {
 function peopleWithAgeDrink(old) {
  return old < 14 ? 'drink toddy' : old < 18 ? 'drink coke' : old < 21 ? 'drink beer' : 'drink whisky';
 }
-console.log(peopleWithAgeDrink(21));
+// console.log(peopleWithAgeDrink(21));
+
+
+// reverse string and remove all non-alphabetic characters
+const reverseLetter = (str) => {
+  return str.replace(/[^a-z]/gi, '').split('').reverse().join('');
+}
+console.log(reverseLetter('ultr53o?n'));
