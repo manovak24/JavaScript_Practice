@@ -2246,4 +2246,15 @@ function peopleWithAgeDrink(old) {
 const reverseLetter = (str) => {
   return str.replace(/[^a-z]/gi, '').split('').reverse().join('');
 }
-console.log(reverseLetter('ultr53o?n'));
+// console.log(reverseLetter('ultr53o?n'));
+
+
+// Classic for loop
+const between = (a, b) => {
+  let arr = [];
+  for(let i = a; i <= b; i++) {
+    arr.push(i);
+  }
+  return arr;
+}
+console.log(between(1, 4));
