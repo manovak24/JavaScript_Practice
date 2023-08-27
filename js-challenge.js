@@ -2268,3 +2268,22 @@ const removeEveryOther = (arr) => {
   return arr;
 }
 // console.log(removeEveryOther(['Hello', 'Goodbye', 'Hello Again']));
+
+
+// finding unique value in array (not the same as the others);
+const findUniq = (arr) => {
+  arr.sort((a,b) => b - a)
+
+  if(arr[0] !== arr[1]) {
+    return arr[0];
+  }
+
+  if(arr[0] === arr[1]) {
+    for(let i = 0; i < arr.length; i++) {
+      if(arr[i] !== arr[i + 1]) {
+        return arr[i + 1];
+      }
+    }
+  }
+}
+console.log(findUniq([1, 1, 1, 2, 1]));
