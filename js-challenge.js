@@ -2297,4 +2297,10 @@ function defineSuit(card) {
     case '♠' : return 'spades';
   }
 }
-console.log(defineSuit('3♣'));
+// console.log(defineSuit('3♣'));
+
+
+function greet(name) {
+  return 'Hello ' + name.charAt(0).toUpperCase() + name.slice(1).toLowerCase() + '!';
+}
+console.log(greet('riley'));
