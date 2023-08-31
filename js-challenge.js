@@ -2303,4 +2303,11 @@ function defineSuit(card) {
 function greet(name) {
   return 'Hello ' + name.charAt(0).toUpperCase() + name.slice(1).toLowerCase() + '!';
 }
-console.log(greet('riley'));
+// console.log(greet('riley'));
+
+
+function digPow(n, p) {
+  let nTest = (n.toString().split('').map(num => Math.pow(parseInt(num), p++)).reduce((a,b) => a + b)) / n;
+  return nTest >= 1 && nTest % 1 === 0 ? nTest : -1;
+}
+// console.log(digPow(46288, 3));
