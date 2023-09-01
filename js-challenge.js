@@ -2311,3 +2311,9 @@ function digPow(n, p) {
   return nTest >= 1 && nTest % 1 === 0 ? nTest : -1;
 }
 // console.log(digPow(46288, 3));
+
+
+function moveGame(position, roll) {
+  return position + (roll * 2);
+}
+// console.log(moveGame(3, 6));
