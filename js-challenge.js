@@ -2317,3 +2317,27 @@ function moveGame(position, roll) {
   return position + (roll * 2);
 }
 // console.log(moveGame(3, 6));
+
+
+function dataReverse(data) {
+  // let byteArr = [];
+  // for(let i = 0; i < data.length; i += 8) {
+  //   const byte = data.slice(i, i + 8);
+  //   byteArr.push(byte);
+  // }
+  // byteArr.reverse();
+  
+  // let reversedArr = [];
+  // for(let i = 0; i < byteArr.length; i++) {
+  //   reversedArr.push(...byteArr[i]);
+  // }
+
+  // return reversedArr;
+
+  const bytes = [];
+  for (let i = 0; i < data.length; i += 8) {
+    bytes.unshift(...data.slice(i, i + 8));
+  }
+  return bytes;
+}
+console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]));
