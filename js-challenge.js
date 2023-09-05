@@ -2340,4 +2340,10 @@ function dataReverse(data) {
   }
   return bytes;
 }
-console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]));
+// console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]));
+
+
+function bump(x) {
+  return x.replace(/[_]/gi,'').length <= 15 ? 'Woohoo!' : "Car Dead";
+}
+// console.log(bump("__nn_nnnn__n_n___n____nn__nnn"));
