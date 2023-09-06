@@ -2347,3 +2347,13 @@ function bump(x) {
   return x.replace(/[_]/gi,'').length <= 15 ? 'Woohoo!' : "Car Dead";
 }
 // console.log(bump("__nn_nnnn__n_n___n____nn__nnn"));
+
+
+function adjacentElementsProduct(array) {
+  let newArr = [];
+  for(let i = 0; i < array.length - 1; i++) {
+    newArr.push(array[i] * array[i + 1]);
+  }
+  return Math.max(...newArr);
+}
+// console.log(adjacentElementsProduct([4, 12, 3, 1, 5]));
