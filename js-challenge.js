@@ -2357,3 +2357,10 @@ function adjacentElementsProduct(array) {
   return Math.max(...newArr);
 }
 // console.log(adjacentElementsProduct([4, 12, 3, 1, 5]));
+
+
+// remove everything after character in string
+const removeUrlAnchor = (url) => {
+  return url.split('#')[0];
+}
+console.log(removeUrlAnchor('www.codewars.com/katas/?page=1#about'));
