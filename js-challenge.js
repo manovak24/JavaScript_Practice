@@ -2363,4 +2363,10 @@ function adjacentElementsProduct(array) {
 const removeUrlAnchor = (url) => {
   return url.split('#')[0];
 }
-console.log(removeUrlAnchor('www.codewars.com/katas/?page=1#about'));
+// console.log(removeUrlAnchor('www.codewars.com/katas/?page=1#about'));
+
+
+const isPowerOfTwo = (n) => {
+  return Math.log2(n) % 1 === 0;
+}
+console.log(isPowerOfTwo(4096));
