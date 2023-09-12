@@ -2369,4 +2369,26 @@ const removeUrlAnchor = (url) => {
 const isPowerOfTwo = (n) => {
   return Math.log2(n) % 1 === 0;
 }
-console.log(isPowerOfTwo(4096));
+// console.log(isPowerOfTwo(4096));
+
+
+const sumArray = (numbers) => {
+  return numbers.length === 0 ? 0 : numbers.reduce((a,b) => a + b);
+}
+// console.log(sumArray([]));
+
+
+// Remove duplicates from string or array using .filter()
+const uniqueInOrder = (iterable) => {
+  let newIterable;
+  if(Array.isArray(iterable)) {
+    newIterable = iterable;
+  } else {
+    newIterable = iterable.split('')
+  }
+  return newIterable.filter(function(item, position, arr) {
+    return position === 0 || item !== arr[position - 1];
+  })
+
+}
+console.log(uniqueInOrder([ 'A', 'B', 'B', 'C', 'D', 'A', 'B' ]));
