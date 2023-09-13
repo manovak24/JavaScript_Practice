@@ -2391,4 +2391,12 @@ const uniqueInOrder = (iterable) => {
   })
 
 }
-console.log(uniqueInOrder([ 'A', 'B', 'B', 'C', 'D', 'A', 'B' ]));
+// console.log(uniqueInOrder([ 'A', 'B', 'B', 'C', 'D', 'A', 'B' ]));
+
+
+// Round to two decimal places
+const twoDecimalPlaces = (n) => {
+  // return Math.round(n * 100) / 100;
+  return Number(n.toFixed(2));
+}
+console.log(twoDecimalPlaces(4.655555));
