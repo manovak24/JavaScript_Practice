@@ -2399,4 +2399,23 @@ const twoDecimalPlaces = (n) => {
   // return Math.round(n * 100) / 100;
   return Number(n.toFixed(2));
 }
-console.log(twoDecimalPlaces(4.655555));
+// console.log(twoDecimalPlaces(4.655555));
+
+
+const sumSequence = (count) => {
+  if(count < 0) {
+    return `${count}<0`
+  }
+
+  if(count === 0) {
+    return '0=0';
+  }
+  
+  let answer = [];
+  for(let i = 0; i <= count; i ++) {
+    answer.push(i)
+  }
+  let sum = answer.reduce((a,b) => a + b);
+  return `${answer.join('+')} = ${sum}`;
+}
+console.log(sumSequence(6))
