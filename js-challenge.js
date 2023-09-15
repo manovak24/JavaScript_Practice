@@ -2418,4 +2418,10 @@ const sumSequence = (count) => {
   let sum = answer.reduce((a,b) => a + b);
   return `${answer.join('+')} = ${sum}`;
 }
-console.log(sumSequence(6))
+// console.log(sumSequence(6))
+
+
+const unusualFive = () => {
+  return 'string'.indexOf('g');
+}
+// console.log(unusualFive());
