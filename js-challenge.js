@@ -2425,3 +2425,20 @@ const unusualFive = () => {
   return 'string'.indexOf('g');
 }
 // console.log(unusualFive());
+
+// Search array within array for matching arrays and return index of first match using .find();
+const searchArray = (arrayToSearch, query) => {
+  for(let i = 0; i < arrayToSearch.length; i++) {
+    if(arrayToSearch[i].length !== 2 || !Array.isArray(arrayToSearch[i])) {
+      throw new Error('Error');
+    }
+  }
+
+  if(query.length !== 2) {
+    throw new Error('Error');
+  }
+
+  return arrayToSearch.indexOf(arrayToSearch.find((subArr) => subArr[0] === query[0] && subArr[1] === query[1]));
+
+}
+console.log(searchArray([[2,3],[7,2],[9,20],[1,2],[7,2],[45,4],[7,87],[4,5],[2,7],[6,32]], [2,2]));
