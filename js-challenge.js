@@ -2441,4 +2441,21 @@ const searchArray = (arrayToSearch, query) => {
   return arrayToSearch.indexOf(arrayToSearch.find((subArr) => subArr[0] === query[0] && subArr[1] === query[1]));
 
 }
-console.log(searchArray([[2,3],[7,2],[9,20],[1,2],[7,2],[45,4],[7,87],[4,5],[2,7],[6,32]], [2,2]));
+// console.log(searchArray([[2,3],[7,2],[9,20],[1,2],[7,2],[45,4],[7,87],[4,5],[2,7],[6,32]], [2,2]));
+
+
+function persistenceTwo(num) {
+  // let strArr = num.toString().split('').map(item => parseInt(item));
+
+  // let counter = 0;
+  // let i = 0;
+
+  // do {
+  //   i = strArr.reduce((a,b) => a *b).toString().length;
+  //   counter++;
+  // } while (i > 1)
+  // return counter
+
+  return num % 9 || 9;
+}
+console.log(persistenceTwo(25));
