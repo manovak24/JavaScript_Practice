@@ -2445,17 +2445,17 @@ const searchArray = (arrayToSearch, query) => {
 
 
 function persistenceTwo(num) {
-  // let strArr = num.toString().split('').map(item => parseInt(item));
+  let strArr = num.toString().split('').map(item => parseInt(item));
 
-  // let counter = 0;
-  // let i = 0;
+  let counter = 0;
+  let total;
 
-  // do {
-  //   i = strArr.reduce((a,b) => a *b).toString().length;
-  //   counter++;
-  // } while (i > 1)
-  // return counter
+  while (strArr.length > 1) {
+    total = strArr.reduce((a,b) => a * b);
+    counter++;
+    strArr = total.toString().split('');
+  }
 
-  return num % 9 || 9;
+  return counter;
 }
-console.log(persistenceTwo(25));
+console.log(persistenceTwo(4));
