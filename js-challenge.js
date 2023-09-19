@@ -2444,6 +2444,7 @@ const searchArray = (arrayToSearch, query) => {
 // console.log(searchArray([[2,3],[7,2],[9,20],[1,2],[7,2],[45,4],[7,87],[4,5],[2,7],[6,32]], [2,2]));
 
 
+// using while loop
 function persistenceTwo(num) {
   let strArr = num.toString().split('').map(item => parseInt(item));
 
@@ -2458,4 +2459,17 @@ function persistenceTwo(num) {
 
   return counter;
 }
-console.log(persistenceTwo(4));
+// console.log(persistenceTwo(4));
+
+
+// Combine array using concat
+function flattenAndSort(array) {
+  // let flatArr = [];
+  // for(let i = 0; i < array.length; i++) {
+  //   flatArr = flatArr.concat(array[i])
+  // }
+  // return flatArr.sort((a,b) => a - b);
+
+  return [].concat(...array).sort((a,b) => a - b);
+}
+console.log(flattenAndSort([[1, 3, 5], [100], [2, 4, 6]]));
