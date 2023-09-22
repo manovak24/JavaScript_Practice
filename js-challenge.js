@@ -2475,22 +2475,36 @@ function flattenAndSort(array) {
 // console.log(flattenAndSort([[1, 3, 5], [100], [2, 4, 6]]));
 
 
+// sum pairs in array
+// find last index of item in array with lastIndexOf
 function sumPairs(ints, s) {
+  // let arr = [];
+  // for(let i = 0; i < ints.length; i++) {
+  //   for(let j = i + 1; j < ints.length; j++) {
+  //     if(ints[i] + ints[j] === s) {
+  //       arr.push([ints[i], ints[j], ints.lastIndexOf(ints[j])]);
+  //     }
+  //   }
+  // }
+  
+
+  // if(arr.length > 1) {
+  //   arr.sort((a,b) => a[2] - b[2])
+  // } 
+
+  // return arr[0].slice(0, -1);
   let arr = [];
   for(let i = 0; i < ints.length; i++) {
-    for(let j = i + 1; j < ints.length; j++) {
-      if(ints[i] + ints[j] === s) {
-        arr.push([ints[i], ints[j]]);
-      }
+    let diff = s - ints[i];
+    if(diff < ints[i] && ints.includes(diff)) {
+      arr.push([ints[i], diff, ints.lastIndexOf(ints[i])])
     }
   }
 
   if(arr.length > 1) {
-    for(let i = 0; i < arr.length; i++) {
-      arr[i].push(ints.indexOf(arr[i][1]));
-    }
+    arr.sort((a,b) => a[2] - b[2])
   }
 
-  return arr
+  return arr[0].slice(0, -1);
 }
-console.log(sumPairs([10, 5, 2, 3, 7, 5], 10))
+console.log(sumPairs([1, 4, 8, 7, 3, 15], 8))
