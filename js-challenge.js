@@ -2475,8 +2475,8 @@ function flattenAndSort(array) {
 // console.log(flattenAndSort([[1, 3, 5], [100], [2, 4, 6]]));
 
 
-// sum pairs in array
-// find last index of item in array with lastIndexOf
+// find pairs in array that equal sum
+// find last index of item in array with lastIndexOf but not used in final solution
 function sumPairs(ints, s) {
   // let arr = [];
   // let hashMap = {};
