@@ -2478,33 +2478,20 @@ function flattenAndSort(array) {
 // sum pairs in array
 // find last index of item in array with lastIndexOf
 function sumPairs(ints, s) {
-  // let arr = [];
-  // for(let i = 0; i < ints.length; i++) {
-  //   for(let j = i + 1; j < ints.length; j++) {
-  //     if(ints[i] + ints[j] === s) {
-  //       arr.push([ints[i], ints[j], ints.lastIndexOf(ints[j])]);
-  //     }
-  //   }
-  // }
-  
-
-  // if(arr.length > 1) {
-  //   arr.sort((a,b) => a[2] - b[2])
-  // } 
-
-  // return arr[0].slice(0, -1);
   let arr = [];
+  let hashMap = {};
+
   for(let i = 0; i < ints.length; i++) {
-    let diff = s - ints[i];
-    if(diff < ints[i] && ints.includes(diff)) {
-      arr.push([ints[i], diff, ints.lastIndexOf(ints[i])])
+    if(hashMap[s - ints[i]] !== undefined) {
+      arr.push([ints[hashMap[s - ints[i]]], ints[i], ints.lastIndexOf(ints[i])]);
     }
+    hashMap[ints[i]] = i;
   }
 
   if(arr.length > 1) {
-    arr.sort((a,b) => a[2] - b[2])
+    arr.sort((a,b) => a[2] - b[2]);
   }
 
-  return arr[0].slice(0, -1);
+  return arr.length === 0 ? undefined : arr[0].slice(0, -1);
 }
-console.log(sumPairs([1, 4, 8, 7, 3, 15], 8))
+console.log(sumPairs([20, -13, 40], -7));
