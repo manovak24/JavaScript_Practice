@@ -2502,4 +2502,11 @@ function sumPairs(ints, s) {
     seen[ints[i]] = true;
   };
 }
-console.log(sumPairs([10, 5, 2, 3, 7, 5], 10));
+// console.log(sumPairs([10, 5, 2, 3, 7, 5], 10));
+
+
+// numerical alphabet number
+const wordsToMarks = (string) => {
+  return string.split('').map(letter => letter.charCodeAt(0) - 96).reduce((a,b) => a + b);
+}
+console.log(wordsToMarks('attitude'));
