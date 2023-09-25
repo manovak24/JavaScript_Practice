@@ -2509,4 +2509,11 @@ function sumPairs(ints, s) {
 const wordsToMarks = (string) => {
   return string.split('').map(letter => letter.charCodeAt(0) - 96).reduce((a,b) => a + b);
 }
-console.log(wordsToMarks('attitude'));
+// console.log(wordsToMarks('attitude'));
+
+
+// test if string contains every letter from alphabet
+const isPangram = (string) => {
+  return new Set(string.toLowerCase().replace(/[^a-z]/gi, "")).size === 26;
+}
+console.log(isPangram('The quick brown fox jumps over the lazy dog.'));
