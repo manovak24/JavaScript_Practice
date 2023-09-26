@@ -2516,4 +2516,10 @@ const wordsToMarks = (string) => {
 const isPangram = (string) => {
   return new Set(string.toLowerCase().replace(/[^a-z]/gi, "")).size === 26;
 }
-console.log(isPangram('The quick brown fox jumps over the lazy dog.'));
+// console.log(isPangram('The quick brown fox jumps over the lazy dog.'));
+
+
+const XO = (str) => {
+  return str.toLowerCase().split('x').length === str.toLowerCase().split('o').length;
+}
+console.log(XO('xxooXoo'));
