@@ -2530,4 +2530,11 @@ function findLongest(array) {
   let longest = strArr.sort((a,b) => b.length - a.length);
   return parseInt(longest[0]);
 }
-console.log(findLongest([1, 10, 100]));
+// console.log(findLongest([1, 10, 100]));
+
+
+
+const rowSumOddNumbers = (n) => {
+
+}
+console.log(rowSumOddNumbers(42));
