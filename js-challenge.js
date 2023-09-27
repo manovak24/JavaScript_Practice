@@ -2522,4 +2522,12 @@ const isPangram = (string) => {
 const XO = (str) => {
   return str.toLowerCase().split('x').length === str.toLowerCase().split('o').length;
 }
-console.log(XO('xxooXoo'));
+// console.log(XO('xxooXoo'));
+
+
+function findLongest(array) {
+  let strArr = array.map(num => num.toString());
+  let longest = strArr.sort((a,b) => b.length - a.length);
+  return parseInt(longest[0]);
+}
+console.log(findLongest([1, 10, 100]));
