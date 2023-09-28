@@ -2535,12 +2535,14 @@ function findLongest(array) {
 
 
 const rowSumOddNumbers = (n) => {
-  let counter = n * (n - 1) + 1;
-  let stop = n * n + (n - 1);
-  let arr = [];
-  for(let i = counter; i <= stop; i += 2) {
-    arr.push(i)
-  }
-  return arr.reduce((a,b) => a + b);
+  // let counter = n * (n - 1) + 1;
+  // let stop = n * n + (n - 1);
+  // let arr = [];
+  // for(let i = counter; i <= stop; i += 2) {
+  //   arr.push(i)
+  // }
+  // return arr.reduce((a,b) => a + b);
+
+  return Math.pow(n, 3);
 }
 console.log(rowSumOddNumbers(42));
