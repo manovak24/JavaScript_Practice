@@ -2545,4 +2545,14 @@ const rowSumOddNumbers = (n) => {
 
   return Math.pow(n, 3);
 }
-console.log(rowSumOddNumbers(42));
+// console.log(rowSumOddNumbers(42));
+
+
+const billboard = (name, price) => {
+  let arr = [];
+  for(let i = 0; i < name.split('').length; i++) {
+    arr.push(price);
+  }
+  return arr.reduce((a,b) => a + b);
+}
+console.log(billboard("Jeong-Ho Aristotelis", 30));
