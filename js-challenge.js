@@ -2549,10 +2549,16 @@ const rowSumOddNumbers = (n) => {
 
 
 const billboard = (name, price) => {
-  let arr = [];
-  for(let i = 0; i < name.split('').length; i++) {
-    arr.push(price);
+  // let arr = [];
+  // for(let i = 0; i < name.split('').length; i++) {
+  //   arr.push(price);
+  // }
+  // return arr.reduce((a,b) => a + b);
+
+  let counter = 0;
+  for(let i = 0; i < name.length; i++) {
+    counter += price;
   }
-  return arr.reduce((a,b) => a + b);
+  return counter;
 }
 console.log(billboard("Jeong-Ho Aristotelis", 30));
