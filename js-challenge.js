@@ -2608,4 +2608,16 @@ const whatDay = (num) => {
 
   return dayOfWeek[num] || 'Wrong, please enter a number between 1 and 7';
 }
-console.log(whatDay(1));
+// console.log(whatDay(1));
+
+
+const minSum = (arr) => {
+  arr.sort((a,b) => a - b);
+  let answer = [];
+  for(let i = 0; i < arr.length; i++) {
+    let product = arr[i] * arr[arr.length - i];
+    answer.push(product)
+  }
+  return answer;
+}
+console.log(minSum([12,6,10,26,3,24]));
