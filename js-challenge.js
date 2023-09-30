@@ -2565,23 +2565,31 @@ const billboard = (name, price) => {
 
 
 const towerBuilder = (nFloors) => {
+  // let building = [];
+  // for(let i = 0; i < nFloors; i++) {
+  //   building.push('*'.repeat(nFloors * 2 - 1))
+  // }
+
+  // for(let i = building.length - 1; i > 0; i--) {
+  //   building[i] = building[i].slice(i, -i);
+  // }
+
+  // for(let i = 0; i < building.length; i++) {
+  //   if(i > 0) {
+  //     let spaces = ' '.repeat(i);
+  //     building[i] = spaces + building[i];
+  //     building[i] =  building[i] + spaces;
+  //   }
+  // }
+
+  // return building.reverse();
+
   let building = [];
-  for(let i = 0; i < nFloors; i++) {
-    building.push('*'.repeat(nFloors * 2 - 1))
+  for(let i = 1; i <= nFloors; i++) {
+    let spaces = ' '.repeat(nFloors - i);
+    let blocks = '*'.repeat((i * 2) - 1);
+    building.push(`${spaces}${blocks}${spaces}`)
   }
-
-  for(let i = building.length - 1; i > 0; i--) {
-    building[i] = building[i].slice(i, -i);
-  }
-
-  for(let i = 0; i < building.length; i++) {
-    if(i > 0) {
-      let spaces = ' '.repeat(i);
-      building[i] = spaces + building[i];
-      building[i] =  building[i] + spaces;
-    }
-  }
-
-  return building.reverse();
+  return building;
 }
-console.log(towerBuilder(3));
+console.log(towerBuilder(5));
