@@ -2613,11 +2613,13 @@ const whatDay = (num) => {
 
 const minSum = (arr) => {
   arr.sort((a,b) => a - b);
-  let answer = [];
-  for(let i = 0; i < arr.length; i++) {
-    let product = arr[i] * arr[arr.length - i];
-    answer.push(product)
+  let newArr = [];
+  for(let i = 0; i < arr.length + 2; i++) {
+    newArr.push([arr.pop(), arr.shift()]);
   }
-  return answer;
+  console.log(newArr)
+  return newArr.map((pair) => pair.reduce((a,b) => a * b)).reduce((a,b) => a + b);
 }
-console.log(minSum([12,6,10,26,3,24]));
+console.log(minSum([12,6,10,26,3,24,26,24]));
+
+
