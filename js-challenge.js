@@ -2610,10 +2610,18 @@ const whatDay = (num) => {
 }
 // console.log(whatDay(1));
 
-
+// multiply pairs in array and find min sum
 const minSum = (arr) => {
   return arr.sort((a,b) => a - b).reduce((a,b) => a + b * arr.pop(), 0);
 }
-console.log(minSum([12,6,10,26,3,24,26,24]));
+// console.log(minSum([12,6,10,26,3,24,26,24]));
 
 
+const hello = (name) => {
+  if(!name) {
+    return 'Hello, World!';
+  } else {
+    return `Hello, ${name.toLowerCase().charAt(0).toUpperCase() + name.slice(1).toLowerCase()}!`;
+  }
+}
+console.log(hello('john'));
