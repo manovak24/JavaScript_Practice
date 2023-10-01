@@ -2618,10 +2618,6 @@ const minSum = (arr) => {
 
 
 const hello = (name) => {
-  if(!name) {
-    return 'Hello, World!';
-  } else {
-    return `Hello, ${name.toLowerCase().charAt(0).toUpperCase() + name.slice(1).toLowerCase()}!`;
-  }
+  return !name ? 'Hello, World!' : `Hello, ${name.toLowerCase().charAt(0).toUpperCase() + name.slice(1).toLowerCase()}!`;
 }
 console.log(hello('john'));
