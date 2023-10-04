@@ -2620,4 +2620,10 @@ const minSum = (arr) => {
 const hello = (name) => {
   return !name ? 'Hello, World!' : `Hello, ${name.toLowerCase().charAt(0).toUpperCase() + name.slice(1).toLowerCase()}!`;
 }
-console.log(hello('john'));
+// console.log(hello('john'));
+
+
+const include = (arr, item) => {
+  return arr.includes(item);
+}
+// console.log(include([1,2,3,4], 4));
