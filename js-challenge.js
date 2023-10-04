@@ -2627,3 +2627,9 @@ const include = (arr, item) => {
   return arr.includes(item);
 }
 // console.log(include([1,2,3,4], 4));
+
+
+const maxProduct = (numbers, size) => {
+  return numbers.sort((a,b) => b - a).splice(0, size).reduce((a,b) => a * b);
+}
+console.log(maxProduct([10, 8, 7, 9], 3));
