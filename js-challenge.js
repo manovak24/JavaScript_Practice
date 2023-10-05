@@ -2632,4 +2632,23 @@ const include = (arr, item) => {
 const maxProduct = (numbers, size) => {
   return numbers.sort((a,b) => b - a).splice(0, size).reduce((a,b) => a * b);
 }
-console.log(maxProduct([10, 8, 7, 9], 3));
+// console.log(maxProduct([10, 8, 7, 9], 3));
+
+
+const arrayLeaders = (numbers) => {
+  let answerArr = [];
+  for(let i = 0; i < numbers.length - 1; i++) {
+    let counter = numbers.indexOf(numbers[i]) + 1;
+    let test = numbers.slice(counter).reduce((a,b) => a + b);
+    if(numbers[i] > test) {
+      answerArr.push(numbers[i]);
+    }
+  }
+
+  if(numbers.slice(-1) > 0) {
+    let last = numbers.pop();
+    answerArr.push(last);
+  }
+  return answerArr;
+}
+console.log(arrayLeaders([79,-197,-6,-493,642,-747,120,332,-363,-483,258,-438,70,206,-641,-732,-121,354,696,-296,-88,528,-701,-366,592,75,40,485,-80,-128,-276,189,638,777,148,-52,340,59,303,-76,-463,70,148,-709,-530,-81,525,-206,-754,-276,342,534,-520,469,-112,-805,-144,-5,-508,-357,-506,-37,-567,-774,305,-20,-152,58,-109,841,-160,-45,453,-42,-366,-369,203,-51,21,-617,96,-273,-159,-350,-146,390,322,946,-15,270,-28,501,-34,168,194,-240,480,-249,72,-158,400,-52,641,-855,8,612,387,-18,339,27,49,26,42,707,61,-448,-260,136,216,-260,-540,-473,-81,-377,-758,-513,-110,-10,803,580,-115,163,522,441,180,111,13,-498,30,-378,12,165,-464,346,692,-294,604,46,-88,-581]));
