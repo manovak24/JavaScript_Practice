@@ -2663,18 +2663,9 @@ const stockList = (listOfArt, listOfCat) => {
     obj[listOfCat[i]] = counter;
   }
 
-  let letters = Object.keys(obj)
-  let answerStr = '';
-  for(const key in obj) {
-    if(letters.indexOf(key) !== letters.length - 1) {
-      answerStr += `(${key} : ${obj[key]}) - `
-    } else {
-      answerStr += `(${key} : ${obj[key]})`
-    }
-  }
+  return Object.values(obj).every((value) => value === 0) ? '' : listOfCat.map(function(cat) {
+    return `(${cat} : ${obj[cat]})`
+  }).join(' - ');
 
-
-  
-  return answerStr;
 }
-console.log(stockList(["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"], ["A", "B", "C", "D"]));
+console.log(stockList(["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"], ["W", "Z", "T", "X"]));
