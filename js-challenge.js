@@ -2649,3 +2649,32 @@ const arrayLeaders = (numbers) => {
   return answerArr;
 }
 // console.log(arrayLeaders([498,-600,614,115,226,757,-38,-66,-453,427,134,-9,61,335,244,-184,136,78,-206,734,-665,434,651,-201,281,-830,-209,298,-33,350,80,-46,-262,143,174,-490,757,-536,-22,441,-230,965,-285,137,-322,-87,326,-556,200,-285,-16,-172,467,422,142,160,-326,-853,-651,-107,492,619,87,506,-145,698,292,-802,260,632,30,-423,-568]));
+
+
+const stockList = (listOfArt, listOfCat) => {
+  let obj = {};
+  for(let i = 0; i < listOfCat.length; i++) {
+    let counter = 0;
+    for(let j = 0; j < listOfArt.length; j++) {
+      if(listOfCat[i] === listOfArt[j].charAt(0)) {
+        counter += parseInt(listOfArt[j].split(' ').pop());
+      }
+    }
+    obj[listOfCat[i]] = counter;
+  }
+
+  let letters = Object.keys(obj)
+  let answerStr = '';
+  for(const key in obj) {
+    if(letters.indexOf(key) !== letters.length - 1) {
+      answerStr += `(${key} : ${obj[key]}) - `
+    } else {
+      answerStr += `(${key} : ${obj[key]})`
+    }
+  }
+
+
+  
+  return answerStr;
+}
+console.log(stockList(["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"], ["A", "B", "C", "D"]));
