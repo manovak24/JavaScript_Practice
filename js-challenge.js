@@ -2668,4 +2668,10 @@ const stockList = (listOfArt, listOfCat) => {
   }).join(' - ');
 
 }
-console.log(stockList(["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"], ["W", "Z", "T", "X"]));
+// console.log(stockList(["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"], ["A", "B", "C", "D"]));
+
+// Remove special character from string and remove 1st & last character
+function arrayKata(string) {
+  return string.split(',').slice(1,-1).join(' ') || null;
+}
+// console.log(arrayKata('A1,B2,C3,D4'));
