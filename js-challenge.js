@@ -2675,3 +2675,9 @@ function arrayKata(string) {
   return string.split(',').slice(1,-1).join(' ') || null;
 }
 // console.log(arrayKata('A1,B2,C3,D4'));
+
+
+function digits(n) {
+  return n.toString().length;
+}
+console.log(digits(128685));
