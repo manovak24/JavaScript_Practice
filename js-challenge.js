@@ -2680,4 +2680,10 @@ function arrayKata(string) {
 function digits(n) {
   return n.toString().length;
 }
-console.log(digits(128685));
+// console.log(digits(128685));
+
+
+function shortenToDate(longDate) {
+  return longDate.substring(0, longDate.indexOf(','));
+}
+// console.log(shortenToDate("Friday May 2, 9am"));
