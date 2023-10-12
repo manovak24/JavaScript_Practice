@@ -2687,3 +2687,15 @@ function shortenToDate(longDate) {
   return longDate.substring(0, longDate.indexOf(','));
 }
 // console.log(shortenToDate("Friday May 2, 9am"));
+
+
+const maxGap = (numbers) => {
+  let arr = [];
+  numbers.sort((a,b) => b - a);
+  for(let i = 0; i < numbers.length - 1; i++) {
+    arr.push(numbers[i] - numbers[i + 1])
+  }
+
+  return Math.max(...arr);
+}
+console.log(maxGap([13,10,2,9,5]));
