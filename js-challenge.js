@@ -2698,4 +2698,10 @@ const maxGap = (numbers) => {
 
   return Math.max(...arr);
 }
-console.log(maxGap([13,10,2,9,5]));
+// console.log(maxGap([13,10,2,9,5]));
+
+
+const smallEnough = (a, limit) => {
+  return a.every(number => number <= limit);
+}
+console.log(smallEnough([78, 117, 110, 99, 104, 117, 107, 115], 100));
