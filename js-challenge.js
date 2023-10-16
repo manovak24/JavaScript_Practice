@@ -2704,4 +2704,14 @@ const maxGap = (numbers) => {
 const smallEnough = (a, limit) => {
   return a.every(number => number <= limit);
 }
-console.log(smallEnough([78, 117, 110, 99, 104, 117, 107, 115], 100));
+// console.log(smallEnough([78, 117, 110, 99, 104, 117, 107, 115], 100));
+
+
+const shark = (pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) => {
+  if(dolphin) {
+    sharkSpeed /= 2;
+  }
+
+  return pontoonDistance / youSpeed < sharkDistance / sharkSpeed ? "Alive!" : "Shark Bait!";
+}
+console.log(shark(12, 50, 4, 8, true));
