@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .stonerglam-rotate {
+            animation-name: rotate;
+            animation-duration: 60s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            width: 155px;
+            position: absolute;
+            background: transparent;
+        }
+
+        .black-stonerglam-ctr .stonerglam-rotate {
+            left: 7.5%;
+            margin-top: 10px;
+        }
+
+        .stonerglam-rotate img {
+            width: 100%;
+        }
+
+        @keyframes rotate{
+            from{ transform: rotate(-360deg); }
+            to{ transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="black-stonerglam-ctr">
+        <div class="stonerglam-rotate"><img src="https://cdn.shopify.com/s/files/1/0822/9653/7405/files/stonerglam_black.png?v=1697553244" alt="Stonerglam Forever" /></div>
+    </a>
+</body>
+</html>
