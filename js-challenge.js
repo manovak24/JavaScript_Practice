@@ -2714,4 +2714,20 @@ const shark = (pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) =>
 
   return pontoonDistance / youSpeed < sharkDistance / sharkSpeed ? "Alive!" : "Shark Bait!";
 }
-console.log(shark(12, 50, 4, 8, true));
+// console.log(shark(12, 50, 4, 8, true));
+
+
+const isSortedAndHow = (array) => {
+  let ascending = [...array].sort((a,b) => a - b);
+  let descending = [...array].sort((a,b) => b - a);
+  
+  if(array.every((v,i) => v === ascending[i])) {
+    return 'yes, ascending'
+  } else if(array.every((v,i) => v === descending[i])) {
+    return 'yes, descending'
+  } else {
+    return 'no'
+  }
+
+}
+console.log(isSortedAndHow([5,4,3]));
