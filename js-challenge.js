@@ -2730,4 +2730,16 @@ const isSortedAndHow = (array) => {
   }
 
 }
-console.log(isSortedAndHow([5,4,3]));
+// console.log(isSortedAndHow([5,4,3]));
+
+
+function productArray(numbers) {
+  let arr = [];
+  for(let i = 0; i < numbers.length; i++) {
+    let tempArr = numbers.filter((num) => num !== numbers[i]);
+    console.log(tempArr)
+    arr.push(tempArr.reduce((a,b) => a * b));
+  }
+  return arr;
+}
+console.log(productArray([4, 3, 10, 3, 93, 79]));
