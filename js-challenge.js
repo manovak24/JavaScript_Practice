@@ -2733,13 +2733,16 @@ const isSortedAndHow = (array) => {
 // console.log(isSortedAndHow([5,4,3]));
 
 
+// loop through array and skip one element at index each loop
+// second solution uses map and reduce instead
 function productArray(numbers) {
-  let arr = [];
-  for(let i = 0; i < numbers.length; i++) {
-    let tempArr = numbers.filter((num) => num !== numbers[i]);
-    console.log(tempArr)
-    arr.push(tempArr.reduce((a,b) => a * b));
-  }
-  return arr;
+  // let arr = [];
+  // for(let i = 0; i < numbers.length; i++) {
+  //   let tempArr = numbers.filter((_, index) => index !== i)
+  //   arr.push(tempArr.reduce((a,b) => a * b));
+  // }
+  // return arr;
+
+  return numbers.map(x => numbers.reduce((a,b) => a * b) / x)
 }
-console.log(productArray([4, 3, 10, 3, 93, 79]));
+// console.log(productArray([4, 3, 10, 3, 93, 79]));
