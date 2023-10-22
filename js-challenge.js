@@ -2753,4 +2753,28 @@ function maxTriSum(numbers) {
 
   return ([...new Set(numbers)]).sort((a,b) => a-b).slice(-3).reduce((a,b) => a + b);
 }
-console.log(maxTriSum([3,2,6,8,2,3]));
+// console.log(maxTriSum([3,2,6,8,2,3]));
+
+
+function reverse(string) {
+  return string.split(' ').reverse().join(' ');
+}
+// console.log(reverse('I am an expert at this'));
+
+
+const queueTime = (customers, n) => {
+  if(!customers) {
+    return 0;
+  }
+
+  if(n === 1 && customers) {
+      return customers.reduce((a,b) => a + b);
+  }
+
+  if(customers.length < n) {
+    return Math.max(...customers);
+  }
+
+  
+}
+console.log(queueTime([10,2,3,3], 2));
