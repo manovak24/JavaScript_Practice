@@ -2762,19 +2762,13 @@ function reverse(string) {
 // console.log(reverse('I am an expert at this'));
 
 
+// queue time and optimal load
 const queueTime = (customers, n) => {
-  if(!customers) {
-    return 0;
+  let arr = new Array(n).fill(0);
+  for(let i = 0; i < customers.length; i++) {
+    let index = arr.indexOf(Math.min(...arr));
+    arr[index] += customers[i];
   }
-
-  if(n === 1 && customers) {
-      return customers.reduce((a,b) => a + b);
-  }
-
-  if(customers.length < n) {
-    return Math.max(...customers);
-  }
-
-  
+  return Math.max(...arr);
 }
 console.log(queueTime([10,2,3,3], 2));
