@@ -2771,4 +2771,28 @@ const queueTime = (customers, n) => {
   }
   return Math.max(...arr);
 }
-console.log(queueTime([10,2,3,3], 2));
+// console.log(queueTime([10,2,3,3], 2));
+
+
+// Counting elements in string / array
+function count(string) {
+  // let answer = {};
+  // let arr = string.split('');
+  // for(let i = 0; i < arr.length; i++) {
+  //   let counter = 0;
+  //   if(!answer[arr[i]]) {
+  //     counter++;
+  //     answer[arr[i]] = counter;
+  //   } else {
+  //     answer[arr[i]]++;
+  //   }
+  // }
+  // return answer;
+
+  let answer = {};
+  string.split('').forEach(letter => {
+    answer[letter] ? answer[letter]++ : answer[letter] = 1;
+  })
+  return answer;
+}
+// console.log(count('ababac'));
