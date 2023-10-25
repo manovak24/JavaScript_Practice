@@ -2796,3 +2796,9 @@ function count(string) {
   return answer;
 }
 // console.log(count('ababac'));
+
+
+function toNumberArray(stringarray) {
+  return stringarray.map(str => parseFloat(str));
+}
+console.log(toNumberArray(["1.1","2.2","3.3"]));
