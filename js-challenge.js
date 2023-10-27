@@ -2801,4 +2801,16 @@ function count(string) {
 function toNumberArray(stringarray) {
   return stringarray.map(str => parseFloat(str));
 }
-console.log(toNumberArray(["1.1","2.2","3.3"]));
+// console.log(toNumberArray(["1.1","2.2","3.3"]));
+
+
+const meeting = (s) => {
+  let list = s.toUpperCase().split(';')
+          .map(name => name.split(':')
+          .reverse().join(', '))
+          .sort().map(name => '(' + name + ')')
+          .join('');
+
+  return list;
+}
+console.log(meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"));
