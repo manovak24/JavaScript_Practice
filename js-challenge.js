@@ -2774,7 +2774,7 @@ const queueTime = (customers, n) => {
 // console.log(queueTime([10,2,3,3], 2));
 
 
-// Counting elements in string / array
+// Counting occurances of  elements in string / array
 function count(string) {
   // let answer = {};
   // let arr = string.split('');
@@ -2813,4 +2813,15 @@ const meeting = (s) => {
 
   return list;
 }
-console.log(meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"));
+// console.log(meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"));
+
+const deleteNth = (arr, n) => {
+  let obj = {};
+  arr.forEach(number => {
+    obj[number] ? obj[number]++ : obj[number] = 1;
+  })
+  arr.map(number => number.toString());
+
+  return arr.filter(num => obj[num] > n)
+}
+console.log(deleteNth([20,37,20,21], 1));
