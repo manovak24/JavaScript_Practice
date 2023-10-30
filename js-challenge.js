@@ -2815,13 +2815,23 @@ const meeting = (s) => {
 }
 // console.log(meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"));
 
-const deleteNth = (arr, n) => {
-  let obj = {};
-  arr.forEach(number => {
-    obj[number] ? obj[number]++ : obj[number] = 1;
-  })
-  arr.map(number => number.toString());
 
-  return arr.filter(num => obj[num] > n)
+// Remove multiple occurance from array based on count
+const deleteNth = (arr, n) => {
+  // let obj = {};
+  // let answerArr = [];
+  // for(let i = 0; i < arr.length; i++) {
+  //   obj[arr[i]] ? obj[arr[i]]++ : obj[arr[i]] = 1;
+  //   if(obj[arr[i]] <= n) {
+  //     answerArr.push(arr[i])
+  //   } 
+  // }
+  // return answerArr;
+
+  let obj = {};
+  return arr.filter(function(x) {
+    obj[x] = (obj[x] || 0) + 1;
+    return obj[x] <= n;
+  })
 }
-console.log(deleteNth([20,37,20,21], 1));
+console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3));
