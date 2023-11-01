@@ -2834,4 +2834,10 @@ const deleteNth = (arr, n) => {
     return obj[x] <= n;
   })
 }
-console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3));
+// console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3));
+
+
+const lowercaseCount = (str) => {
+  return str.replace(/[^a-z]/g, '').length;
+}
+console.log(lowercaseCount('abcABC123'));
