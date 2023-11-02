@@ -2840,4 +2840,10 @@ const deleteNth = (arr, n) => {
 const lowercaseCount = (str) => {
   return str.replace(/[^a-z]/g, '').length;
 }
-console.log(lowercaseCount('abcABC123'));
+// console.log(lowercaseCount('abcABC123'));
+
+
+function getNumberFromString(s) {
+  return parseInt(s.replace(/[^0-9]/g, ''));
+}
+console.log(getNumberFromString("this is number: 7"));
