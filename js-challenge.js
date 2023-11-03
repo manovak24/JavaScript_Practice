@@ -2846,4 +2846,10 @@ const lowercaseCount = (str) => {
 function getNumberFromString(s) {
   return parseInt(s.replace(/[^0-9]/g, ''));
 }
-console.log(getNumberFromString("this is number: 7"));
+// console.log(getNumberFromString("this is number: 7"));
+
+
+function nthSmallest(arr,pos) {
+  return arr.sort((a,b) => a - b)[pos - 1];
+}
+console.log(nthSmallest([2,169,13,-5,0,-1], 4));
