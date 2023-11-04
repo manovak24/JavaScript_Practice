@@ -2852,4 +2852,22 @@ function getNumberFromString(s) {
 function nthSmallest(arr,pos) {
   return arr.sort((a,b) => a - b)[pos - 1];
 }
-console.log(nthSmallest([2,169,13,-5,0,-1], 4));
+// console.log(nthSmallest([2,169,13,-5,0,-1], 4));
+
+
+function rowWeights(array) {
+  // let teamOne = 0;
+  // let teamTwo = 0;
+
+  // for(let i = 0; i < array.length; i++) {
+  //   i % 2 === 0 ? teamOne += array[i] : teamTwo += array[i];
+  // }
+
+  // return [teamOne, teamTwo];
+
+  let teamOne = array.filter((x, i) => i % 2 === 0).reduce((a,b) => a + b, 0);
+  let teamTwo = array.filter((x, i) => i % 2 !== 0).reduce((a,b) => a + b, 0);
+
+  return [teamOne, teamTwo];
+}
+console.log(rowWeights([29,83,67,53,19,28,96]));
