@@ -2870,4 +2870,8 @@ function rowWeights(array) {
 
   return [teamOne, teamTwo];
 }
-console.log(rowWeights([29,83,67,53,19,28,96]));
+// console.log(rowWeights([29,83,67,53,19,28,96]));
+
+
+const reverseThreeKu=a=>a.map();
+console.log(reverseThreeKu([1, 2, 3]));
