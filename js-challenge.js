@@ -2874,4 +2874,10 @@ function rowWeights(array) {
 
 
 const reverseThreeKu=a=>a.map();
-console.log(reverseThreeKu([1, 2, 3]));
+// console.log(reverseThreeKu([1, 2, 3]));
+
+
+function cookie(x) {
+  return typeof x === 'number' ? 'Who ate the last cookie? It was Monica!' : typeof x === 'string' ? 'Who ate the last cookie? It was Zach!' : 'Who ate the last cookie? It was the dog!';
+}
+console.log(cookie(true));
