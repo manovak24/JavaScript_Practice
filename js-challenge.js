@@ -2880,4 +2880,27 @@ const reverseThreeKu=a=>a.map();
 function cookie(x) {
   return typeof x === 'number' ? 'Who ate the last cookie? It was Monica!' : typeof x === 'string' ? 'Who ate the last cookie? It was Zach!' : 'Who ate the last cookie? It was the dog!';
 }
-console.log(cookie(true));
+// console.log(cookie(true));
+
+
+// Capitalize first letter of each word in string
+function getDrinkByProfesion(param) {
+  let test = param.toLowerCase().split(' ').map(word => word[0].toUpperCase() + word.substr(1)).join(' ');
+  switch(test) {
+    case 'Jabroni':
+      return 'Patron Tequila';
+    case 'School Counselor':
+      return 'Anything with Alcohol';
+    case 'Programmer':
+      return 'Hipster Craft Beer';
+    case 'Bike Gang Member':
+      return 'Moonshine';
+    case 'Politician':
+      return 'Your tax dollars';
+    case 'Rapper':
+      return 'Cristal';
+    default:
+      return 'Beer';
+  }
+}
+console.log(getDrinkByProfesion('jabrOni'));
