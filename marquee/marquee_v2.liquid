@@ -1,0 +1,224 @@
+{{ 'section-ticker.css' | asset_url | stylesheet_tag }}
+{% comment %} section-brand.css required for ticker image {% endcomment %}
+{{ 'section-brand.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'ticker.js' | asset_url }}" defer="defer"></script>
+
+{% style %}
+	{% render 'spaced-section' %}
+
+	#section-{{ section.id }} .ticker__title {
+		font-size: 30px;
+	}
+
+	#section-{{ section.id }} .ticker__svg {
+		width: 10px;
+		height: 10px;
+	}
+
+	@media screen and (min-width: 576px) {
+		#section-{{ section.id }} .ticker__title {
+			font-size: 60px;
+		}
+
+		#section-{{ section.id }} .ticker__svg {
+			width: 30px;
+			height: 30px;
+		}
+	}
+
+	@media screen and (min-width: 990px) {
+		#section-{{ section.id }} .ticker__title {
+			font-size: {{ section.settings.ticker_font | times: 0.8 | round: 0 }}px;
+		}
+	}
+
+	@media screen and (min-width: 1360px) {
+		#section-{{ section.id }} .ticker__title {
+			font-size: {{ section.settings.ticker_font }}px;
+		}
+	}
+{% endstyle %}
+
+<div
+	class="ticker"
+	data-date="{{ section.settings.date_picker }}"
+	data-ticker-speed="{{ section.settings.ticker_speed }}"
+	data-ticker-id="{{ section.id }}"
+	id="section-{{ section.id }}"
+>
+	<div class="swiper ticker-js-{{ section.id }}" id="js-carousel">
+		<div class="swiper-wrapper">
+			{%- if section.settings.heading != blank -%}
+				{%- liquid
+					assign fontSize = section.settings.ticker_font
+					if fontSize >= 0 and fontSize <= 30
+						assign SvgFontSize = '1rem'
+					elsif fontSize >= 30 and fontSize <= 60
+						assign SvgFontSize = '2rem'
+					elsif fontSize >= 60 and fontSize <= 90
+						assign SvgFontSize = '3rem'
+					elsif fontSize >= 90 and fontSize <= 120
+						assign SvgFontSize = '4.3rem'
+					else
+						assign SvgFontSize = '5rem'
+					endif
+				-%}
+				{% style %}
+					@media screen and (min-width: 1360px) {
+						#section-{{ section.id }} .ticker__svg {
+							width:  {{ SvgFontSize }};
+							height: {{ SvgFontSize }};
+						}
+					}
+				{% endstyle %}
+
+				{% for i in (1..15) %}
+					<div class="swiper-slide">
+						<h2 class="ticker__title title--section">
+							{{ section.settings.heading }}
+							<span class="ticker__svg">
+								{% render 'ticker-svg' %}
+							</span>
+						</h2>
+					</div>
+				{% endfor %}
+			{%- endif -%}
+
+
+            
+
+            {%- if section.settings.heading == blank -%}
+				{% for i in (1..15) %}
+					{%- for block in section.blocks -%}
+						{%- if block.settings.image -%}
+							{%- assign height = block.settings.image.height -%}
+							{%- assign width = block.settings.image_width -%}
+							{%- assign sizes = '(min-width: 1100px) 750, (min-width: 750px) 550, 275' -%}
+							<div class="swiper-slide">
+								<a href="{{ block.settings.brand_link }}">
+
+									<div class="ticker-image-ctr" style="color:#FFF">
+										{{
+												block.settings.image
+												| image_url: width: 1024
+												| image_tag:
+													loading: 'lazy',
+													sizes: sizes,
+													widths: '1024',
+													height: height,
+													width: width,
+													class: 'brands__image brands__image--light'
+											}}
+									</div>
+								</a>
+
+							</div>
+						{%- endif -%}
+					{% endfor %}
+				{% endfor %}
+			{%- endif -%}
+		</div>
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "t:sections.ticker.presets.name",
+	"tag": "section",
+	"class": "ticker",
+	
+	"settings": [
+		{
+			"type": "richtext",
+			"id": "heading",
+			"default": "<p>Write any text here for the ticker</p>",
+			"label": "t:sections.ticker.settings.heading.label",
+			"info": "Leave blank to display ticker image"
+		},
+		{
+			"type": "range",
+			"id": "ticker_speed",
+			"min": 1,
+			"max": 50,
+			"step": 1,
+			"default": 20,
+			"unit": "s",
+			"label": "t:sections.ticker.settings.ticker_speed.label"
+		},
+		{
+			"type": "range",
+			"id": "ticker_font",
+			"min": 10,
+			"max": 200,
+			"step": 10,
+			"unit": "px",
+			"label": "t:sections.ticker.settings.ticker_font.label",
+			"default": 120
+		},
+		{
+			"type": "header",
+			"content": "t:sections.all.section-margin.header.content"
+		},
+		{
+			"type": "range",
+			"id": "margin_top",
+			"min": 0,
+			"max": 200,
+			"step": 10,
+			"default": 170,
+			"unit": "px",
+			"label": "t:sections.all.section-margin.margin_top.label"
+		},
+		{
+			"type": "range",
+			"id": "margin_bottom",
+			"min": 0,
+			"max": 200,
+			"step": 10,
+			"default": 0,
+			"unit": "px",
+			"label": "t:sections.all.section-margin.margin_bottom.label"
+		}
+	],
+    "blocks": [
+		{
+			"type": "column",
+			"name": "Ticker Image",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "image",
+					"label": "t:sections.brand-image.blocks.column.settings.image.label",
+					"info": "Ticker section setting 'Text' must be blank for image to display"
+				},
+				{
+					"type": "range",
+					"id": "image_width",
+					"min": 40,
+					"max": 700,
+					"step": 10,
+					"unit": "px",
+					"label": "t:sections.brand-image.blocks.column.settings.image_width.label",
+					"default": 140
+				},
+				{
+					"type": "url",
+					"id": "brand_link",
+					"label": "t:sections.brand-image.blocks.column.settings.brand_link.label"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "t:sections.brand-image.presets.name",
+			"blocks": [
+				{
+					"type": "column"
+				}
+			]
+		}
+	]
+}
+{% endschema %}
