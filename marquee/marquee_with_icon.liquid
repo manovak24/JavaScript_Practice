@@ -1,0 +1,184 @@
+<style>
+    .custom-marquee-ctr {
+        display: flex;
+        align-items: center;
+    }
+
+    .custom-marquee-track {
+        z-index: 99999;
+        white-space: nowrap;
+        will-change: transform;
+        animation: custom-marquee {{ section.settings.custom_marquee_speed }}0s linear infinite;
+    }
+
+    .custom-marquee-content {
+        display: flex;
+        align-items: center;
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+        background-color: {{ section.settings.background_color }};
+    }
+
+    .custom-marquee-content .custom-marquee__title {
+        padding: 0 30px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .custom-marquee-content .custom-marquee__title p {
+        font-size: {{ section.settings.custom-marquee_font }}px;
+        color: {{ section.settings.text_color }};
+        margin-bottom: 0;
+        font-family: BR Candor !important;
+        font-size: 15px !important;
+        font-style: normal;
+        font-weight: normal !important;
+        line-height: 141.5%;
+    }
+
+    @keyframes custom-marquee {
+        0% {
+            transform: translate3d(0, 0, 0);
+        }
+
+        100% {
+            transform: translate3d(-50%, 0, 0);
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .hide-mobile {
+            display: none;
+        }
+    }
+
+</style>
+
+{% if section.settings.show_marquee == true %}
+<div class="custom-section__marquee {% if section.settings.hide_mobile %}hide-mobile{% endif %}" >
+	<div class="custom-marquee-ctr">
+		<div class="custom-marquee-track">
+            <div class="custom-marquee-content">
+                {% for i in (1..15) %}
+                    {%- for block in section.blocks -%}
+
+                        {% if block.settings.custom_marquee_icon != blank %}
+                            {{ block.settings.custom_marquee_icon | image_url: width: 21 | image_tag }}
+                        {% endif %}
+                        {% if block.settings.heading != blank %}
+                        
+                            <h2 class="custom-marquee__title custom-marquee__title-{{ block.settings.heading_font }}">
+                                {{ block.settings.heading }}
+                            </h2>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </div>
+		</div>
+	</div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+	"name": "Marquee",
+	"tag": "section",
+	"class": "custom-marquee",
+	
+	"settings": [
+        {
+            "type": "checkbox",
+            "id": "show_marquee",
+            "label": "Show marquee",
+            "default": false
+        },
+		{
+			"type": "range",
+			"id": "custom_marquee_speed",
+			"min": 5,
+			"max": 200,
+			"step": 5,
+			"default": 20,
+			"unit": "s",
+			"label": "Marquee speed"
+		},
+		{
+			"type": "range",
+			"id": "custom-marquee_font",
+			"min": 10,
+			"max": 100,
+			"step": 1,
+			"unit": "px",
+			"label": "Marquee font size",
+			"default": 42
+		},
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background color",
+            "default": "#000000"
+        },
+        {
+            "type": "checkbox",
+            "id": "hide_mobile",
+            "label": "Hide marquee on mobile screen sizes",
+            "default": false
+        },
+		{
+			"type": "range",
+			"id": "padding_top",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"default": 0,
+			"unit": "px",
+			"label": "Padding top"
+		},
+		{
+			"type": "range",
+			"id": "padding_bottom",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"default": 0,
+			"unit": "px",
+			"label": "Padding bottom"
+		}
+	],
+    "blocks": [
+		{
+            "type": "text",
+            "name": "Marquee text",
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id": "heading",
+                    "default": "<p>Write any text here</p>",
+                    "label": "Marquee text"
+                },
+                {
+                  "type": "image_picker",
+                  "id": "custom_marquee_icon",
+                  "label": "Marquee icon"
+                }
+            ]
+        }
+	],
+	"presets": [
+		{
+			"name": "Marquee",
+			"blocks": [
+				{
+					"type": "text"
+				}
+			]
+		}
+	]
+}
+{% endschema %}
