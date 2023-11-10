@@ -2903,4 +2903,35 @@ function getDrinkByProfesion(param) {
       return 'Beer';
   }
 }
-console.log(getDrinkByProfesion('jabrOni'));
+// console.log(getDrinkByProfesion('jabrOni'));
+
+
+const nbMonths = (startPriceOld, startPriceNew, savingperMonth, percentLossByMonth) => {
+  let diffRequired = startPriceNew - startPriceOld;
+
+  let savings = 0;
+  let months = 0;
+  let counter = 0
+  // let percentage = percentLossByMonth / 100;
+
+  if(diffRequired < 0) {
+    return [months, diffRequired * -1]
+  }
+
+  while(savings + startPriceOld < startPriceNew) {
+    counter++;
+    months++;
+    if(counter % 2 === 0) {
+      percentLossByMonth *= 1.5;
+    }
+    savings += savingperMonth;
+
+    startPriceOld *= 1 - (percentLossByMonth / 100);
+    startPriceNew *= 1 - (percentLossByMonth / 100);
+    console.log([startPriceNew, savings + startPriceOld])
+
+  }
+
+  return [months, (savings + startPriceOld) - startPriceNew];
+}
+// console.log(nbMonths(2000, 8000, 1000, 1.5));
