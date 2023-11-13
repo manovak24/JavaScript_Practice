@@ -73,7 +73,7 @@
 					}
 				{% endstyle %}
 
-				{% for i in (1..25) %}
+				{% for i in (1..100) %}
 					<div class="swiper-slide">
 						<h2 class="ticker__title title--section">
 							{{ section.settings.heading }}
@@ -89,7 +89,7 @@
             
 
             {%- if section.settings.heading == blank -%}
-				{% for i in (1..15) %}
+				{% for i in (1..100) %}
 					{%- for block in section.blocks -%}
 						{%- if block.settings.image -%}
 							{%- assign height = block.settings.image.height -%}
