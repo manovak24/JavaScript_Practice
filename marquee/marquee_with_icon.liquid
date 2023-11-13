@@ -37,7 +37,7 @@
         color: {{ section.settings.text_color }};
         margin-bottom: 0;
         font-family: BR Candor !important;
-        font-size: 15px !important;
+        /* font-size: 15px !important; */
         font-style: normal;
         font-weight: normal !important;
         line-height: 141.5%;
@@ -68,9 +68,9 @@
             <div class="custom-marquee-content">
                 {% for i in (1..100) %}
                     {%- for block in section.blocks -%}
-
+                        {% assign img_width = block.settings.custom-marquee_img_width %}
                         {% if block.settings.custom_marquee_icon != blank %}
-                            {{ block.settings.custom_marquee_icon | image_url: width: 21 | image_tag }}
+                            {{ block.settings.custom_marquee_icon | image_url: width: img_width | image_tag }}
                         {% endif %}
                         {% if block.settings.heading != blank %}
                         
@@ -171,19 +171,29 @@
     "blocks": [
 		{
             "type": "text",
-            "name": "Marquee text",
+            "name": "Marquee block",
             "settings": [
                 {
                     "type": "richtext",
                     "id": "heading",
-                    "default": "<p>Write any text here</p>",
+                    "default": "<p>Write any text here or add image/icon</p>",
                     "label": "Marquee text"
                 },
                 {
                   "type": "image_picker",
                   "id": "custom_marquee_icon",
                   "label": "Marquee icon"
-                }
+                },
+                {
+        			"type": "range",
+        			"id": "custom-marquee_img_width",
+        			"min": 5,
+        			"max": 100,
+        			"step": 1,
+        			"unit": "px",
+        			"label": "Image width",
+        			"default": 21
+        		}
             ]
         }
 	],
