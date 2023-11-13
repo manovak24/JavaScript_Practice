@@ -2907,26 +2907,26 @@ function getDrinkByProfesion(param) {
 
 
 const nbMonths = (startPriceOld, startPriceNew, savingperMonth, percentLossByMonth) => {
-  let savings = 0;
-  let counter = 0;
-  let newVal = startPriceNew;
-  let oldVal = startPriceOld;
-
-  let loss = percentLossByMonth / 100;
-
-
-  for (let i = savings; savings < newVal; i++) {
-    counter++;
-    if(i % 2 === 0) {
-      loss += .005;
-    }
-    savings += savingperMonth + oldVal;
-    console.log(oldVal * (1 - loss))
+  if(startPriceNew <= startPriceOld) {
+    return [0, startPriceOld - startPriceNew]
   }
 
-  return [counter]
-}
-// console.log(nbMonths(2000, 8000, 1000, 1.5));
+  let savings = 0;
+  let counter = 0;
+
+  while(savings + startPriceOld < startPriceNew) {
+    counter++;
+    if(counter % 2 === 0) {
+      percentLossByMonth += .5;
+    }
+    savings += savingperMonth;
+    startPriceOld *= 1 - (percentLossByMonth / 100);
+    startPriceNew *= 1 - (percentLossByMonth / 100);
+  }
+
+  return [counter, Math.round((savings + startPriceOld) - startPriceNew, 2)];
+}  
+console.log(nbMonths(2000, 8000, 1000, 1.5));
 
 
 function divCon(x) {
