@@ -1,6 +1,6 @@
 <style>
     .custom-section__marquee {
-        overflow: hidden;
+      overflow: hidden;
     }
     .custom-marquee-ctr {
         display: flex;
@@ -11,7 +11,7 @@
         z-index: 99999;
         white-space: nowrap;
         will-change: transform;
-        animation: custom-marquee {{ section.settings.custom_marquee_speed }}0s linear infinite;
+        animation: custom-marquee {{ section.settings.custom_marquee_speed }}00s linear infinite;
     }
 
     .custom-marquee-content {
@@ -23,9 +23,13 @@
     }
 
     .custom-marquee-content .custom-marquee__title {
-        padding: 0 30px;
-        margin-top: auto;
-        margin-bottom: auto;
+        padding: 0;
+        margin: auto calc({{ section.settings.custom-marquee_spacing }}px / 2);
+    }
+
+    .custom-marquee-content img  {
+        padding: 0;
+        margin: auto calc({{ section.settings.custom-marquee_spacing }}px / 2);
     }
 
     .custom-marquee-content .custom-marquee__title p {
@@ -62,7 +66,7 @@
 	<div class="custom-marquee-ctr">
 		<div class="custom-marquee-track">
             <div class="custom-marquee-content">
-                {% for i in (1..25) %}
+                {% for i in (1..100) %}
                     {%- for block in section.blocks -%}
 
                         {% if block.settings.custom_marquee_icon != blank %}
@@ -98,12 +102,22 @@
 		{
 			"type": "range",
 			"id": "custom_marquee_speed",
-			"min": 5,
-			"max": 200,
-			"step": 5,
-			"default": 20,
+			"min": 1,
+			"max": 20,
+			"step": 1,
+			"default": 5,
 			"unit": "s",
 			"label": "Marquee speed"
+		},
+        {
+			"type": "range",
+			"id": "custom-marquee_spacing",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"unit": "px",
+			"label": "Item spacing",
+			"default": 20
 		},
 		{
 			"type": "range",
