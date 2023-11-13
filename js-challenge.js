@@ -2932,4 +2932,15 @@ const nbMonths = (startPriceOld, startPriceNew, savingperMonth, percentLossByMon
 
   return [months, (savings + startPriceOld) - startPriceNew];
 }
-console.log(nbMonths(2000, 8000, 1000, 1.5));
+// console.log(nbMonths(2000, 8000, 1000, 1.5));
+
+
+function divCon(x) {
+  let intNum = 0;
+  let strNum = 0;
+  x.forEach(item => {
+    typeof item === 'number' ? intNum += item : strNum += parseInt(item);
+  })
+  return intNum - strNum;
+}
+// console.log(divCon([9, 3, '7', '3']));
