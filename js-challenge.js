@@ -2926,7 +2926,7 @@ const nbMonths = (startPriceOld, startPriceNew, savingperMonth, percentLossByMon
 
   return [counter, Math.round((savings + startPriceOld) - startPriceNew, 2)];
 }  
-console.log(nbMonths(2000, 8000, 1000, 1.5));
+// console.log(nbMonths(2000, 8000, 1000, 1.5));
 
 
 function divCon(x) {
@@ -2938,3 +2938,46 @@ function divCon(x) {
   return intNum - strNum;
 }
 // console.log(divCon([9, 3, '7', '3']));
+
+
+const alphabetWar = (fight) => {
+  // let right = 0;
+  // let left = 0;
+  // fight.split('').forEach(letter => {
+  //   switch(letter) {
+  //     case 'w':
+  //       return left += 4;
+  //     case 'p':
+  //       return left += 3;
+  //     case 'b':
+  //       return left += 2;
+  //     case 's':
+  //       return left += 1;
+  //     case 'm':
+  //       return right += 4;
+  //     case 'q':
+  //       return right += 3;
+  //     case 'd':
+  //       return right += 2;
+  //     case 'z':
+  //       return right += 1;
+  //     default:
+  //       return;
+  //   }
+  // })
+  // return right > left ? 'Right side wins!' : left > right ? 'Left side wins!' : "Let's fight again!";
+
+  let map = {
+    w: -4, 
+    p: -3,
+    b: -2, 
+    s: -1, 
+    m: 4, 
+    q: 3, 
+    d: 2, 
+    z: 1 
+  };
+  let result = fight.split('').reduce((a, b) => a + (map[b] || 0), 0);
+  return result ? (result < 0 ? "Left" : "Right") + " side wins!" : "Let's fight again!";
+}
+console.log(alphabetWar('zdqmwpbs'));
