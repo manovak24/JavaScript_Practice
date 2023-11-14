@@ -1,0 +1,54 @@
+<div class="stonerglam-img-collage-ctr">
+    <div class="stonerglam-img-side-by-side">
+        {%- if section.settings.left_side_by_side_img -%}
+            <img src="{{ section.settings.left_side_by_side_img | img_url: 'master' }}" alt="{{ section.settings.left_side_by_side_img.alt | default: shop.name | escape }}"/>
+        {%- else -%}
+            {{ 'image'| placeholder_svg_tag: 'placeholder-svg-inst color-background-1' }}
+        {%- endif -%}
+        {%- if section.settings.right_side_by_side_img -%}
+            <img src="{{ section.settings.right_side_by_side_img | img_url: 'master' }}" alt="{{ section.settings.right_side_by_side_img.alt | default: shop.name | escape }}"/>
+        {%- else -%}
+            {{ 'image'| placeholder_svg_tag: 'placeholder-svg-inst color-background-1' }}
+        {%- endif -%}
+    </div>
+    <div class="stonerglam-full-width-img">
+        {%- if section.settings.bottom_full_width_img -%}
+            <img src="{{ section.settings.bottom_full_width_img | img_url: 'master' }}" alt="{{ section.settings.bottom_full_width_img.alt | default: shop.name | escape }}"/>
+        {%- else -%}
+            {{ 'image'| placeholder_svg_tag: 'placeholder-svg-inst color-background-1' }}
+        {%- endif -%}
+    </div>
+</div>
+
+{% schema %}
+{
+	"name": "t:sections.stonerglam-collage.name",
+	"tag": "section",
+	"class": "stonerglam-collage-section spaced-section",
+	"enabled_on": {
+		"templates": ["*"]
+	},
+	"settings": [
+		{
+			"type": "image_picker",
+			"id": "left_side_by_side_img",
+			"label": "Left Image (1280x1280)"
+		},
+        {
+			"type": "image_picker",
+			"id": "right_side_by_side_img",
+			"label": "Right Image (1280x1280)"
+		},
+        {
+			"type": "image_picker",
+			"id": "bottom_full_width_img",
+			"label": "Full Width (2560x1536)"
+		}
+	],
+	"presets": [
+		{
+			"name": "t:sections.stonerglam-collage.presets.name"
+		}
+	]
+}
+{% endschema %}

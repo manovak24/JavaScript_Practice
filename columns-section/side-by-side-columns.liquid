@@ -1,0 +1,95 @@
+{% style %}
+	.section-{{ section.id }}-padding {
+	    padding-top: {{ section.settings.padding_top }}px;
+	    padding-bottom: {{ section.settings.padding_bottom }}px;
+	}
+{% endstyle %}
+
+<div class="text-columns-section section-{{ section.id }}-padding">
+    <div class="container">
+		{% for block in section.blocks %}
+			{%- if block.settings.column_heading != blank or block.settings.column_text != blank -%}
+				<div class="text-columns-block__ctr">
+					{%- if block.settings.column_heading != blank -%}
+						<div class="text-columns-block__ctr-title">
+							<h2>
+								{{ block.settings.column_heading }}
+							</h2>
+						</div>
+					{%- endif -%}
+
+					{%- if block.settings.column_text != blank -%}
+						<div class="text-columns-block__ctr-content">
+							<p>{{ block.settings.column_text }}</p>
+						</div>
+					{%- endif -%}
+				</div>
+			{%- endif -%}
+		{% endfor %}
+    </div>
+</div>
+
+{% schema %}
+{
+	"name": "Text Columns",
+	"enabled_on": {
+		"templates": ["*"]
+	},
+	"settings": [
+		{
+			"type": "range",
+			"id": "padding_top",
+			"min": 0,
+			"max": 200,
+			"step": 10,
+			"default": 80,
+			"unit": "px",
+			"label": "Padding top"
+		},
+		{
+			"type": "range",
+			"id": "padding_bottom",
+			"min": 0,
+			"max": 200,
+			"step": 10,
+			"default": 80,
+			"unit": "px",
+			"label": "Padding bottom"
+		}
+	],
+	"blocks": [
+		{
+			"type": "text_columns_blocks",
+			"name": "Text block",
+            "limit": 2,
+			"settings": [
+				{
+					"type": "text",
+					"id": "column_heading",
+					"label": "Column heading"
+				},
+				{
+					"type": "richtext",
+					"id": "column_text",
+                    "default": "<p>Some text</p>",
+					"label": "Column text"
+				}
+				
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Text Columns",
+			"blocks": [
+				{
+					"type": "text_columns_blocks"
+				},
+				{
+					"type": "text_columns_blocks"
+				}
+			]
+		}
+	]
+}
+{% endschema %}
