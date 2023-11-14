@@ -1,0 +1,87 @@
+{% if section.settings.isCookieBannerEnabled %}
+  <div id="cookie-message-container">
+    <div id="cookie-message" style="background:{{ section.settings.background_color }}">
+        <div class="cookie-text" style="color:{{ section.settings.text_color }}">
+            {{ section.settings.message }}
+            <a href="{{ section.settings.link.url }}" class="cookie-learn-more" style="color:{{ section.settings.text_color }}">{{ section.settings.info }}</a>
+        </div>
+        <a href="javascript:SE_CloseCookiesWindow();" id="accept-cookie-checkbox">{{ section.settings.button }}</a>
+    </div>
+  </div>
+{% endif %}
+<script>
+  function SE_setCookie (name, value, days) {
+    var expires = "";
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days*24*60*60*1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+  }
+  function SE_getCookie (name) {
+    var pair = document.cookie.match(new RegExp(name + '=([^;]+)'));
+    return !!pair ? pair[1] : null;
+  }
+  var cookiesName = 'cookies_accepted';
+  function SE_CheckCookies () {
+    if(!SE_getCookie(cookiesName)) {
+      var cookies_message = document.getElementById("cookie-message");
+      if(cookies_message) {
+        cookies_message.className += " cookie-message-open";
+      }
+    }
+  }
+  function SE_CloseCookiesWindow () {
+    SE_setCookie(cookiesName, true, 9999);
+    document.getElementById("cookie-message-container").removeChild(document.getElementById("cookie-message"));
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    SE_CheckCookies();
+  });
+</script>
+
+{% schema %}
+    {
+        "name":"Cookie Banner",
+        "settings":[
+            {
+              "type": "checkbox",
+              "id": "isCookieBannerEnabled",
+              "label": "enable cookie banner"
+            },
+            {
+                "type":"textarea",
+                "label":"Cookie Banner Message",
+                "id":"message"
+            },
+            {
+                "type":"page",
+                "label":"Learn More Page",
+                "id":"link"
+            },
+            {
+                "type":"text",
+                "label":"More Info Message",
+                "id":"info"
+            },
+            {
+              "type":"text",
+              "label":"Button Text",
+              "id":"button"
+            },  
+            {
+              "type": "color",
+              "label": "Section Background Color",
+              "id": "background_color",
+              "default": "#ffffff"
+            },
+            {
+              "type": "color",
+              "label": "Text Color",
+              "id": "text_color",
+              "default": "#ffffff"
+            }
+        ]
+    }
+{% endschema %}
