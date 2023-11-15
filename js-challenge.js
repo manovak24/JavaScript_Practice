@@ -2980,4 +2980,17 @@ const alphabetWar = (fight) => {
   let result = fight.split('').reduce((a, b) => a + (map[b] || 0), 0);
   return result ? (result < 0 ? "Left" : "Right") + " side wins!" : "Let's fight again!";
 }
-console.log(alphabetWar('zdqmwpbs'));
+// console.log(alphabetWar('zdqmwpbs'));
+
+
+function bouncingBall(h, bounce, window) {
+  let nTimes = -1;
+  if(bounce > 0 && bounce < 1) {
+    while(h > window) {
+      nTimes += 2;
+      h *= bounce;
+    }
+  }
+  return nTimes;
+}
+console.log(bouncingBall(40, 1.0, 10));
