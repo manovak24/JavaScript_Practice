@@ -2993,4 +2993,31 @@ function bouncingBall(h, bounce, window) {
   }
   return nTimes;
 }
-console.log(bouncingBall(40, 1.0, 10));
+// console.log(bouncingBall(40, 1.0, 10));
+
+
+function calculator(a,b, sign) {
+  if(typeof a !== 'number' || typeof b !== 'number') {
+    return 'unknown value';
+  }
+
+  switch (sign) {
+    case '+':
+        return a + b;
+    case '-':
+        return a - b;
+    case '*':
+        return a * b;
+    case '/':
+        return a / b;
+    default:
+        return 'unknown value';
+  }
+}
+// console.log(calculator(1,2, "+"));
+
+
+function derive(coefficient, exponent) {
+  return `${coefficient * exponent}x^${+ exponent - 1}`;
+}
+console.log(derive(7, 8));
