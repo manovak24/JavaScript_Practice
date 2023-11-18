@@ -3023,3 +3023,7 @@ function derive(coefficient, exponent) {
 // console.log(derive(7, 8));
 
 
+const arrayDiff = (a,b) => {
+  return a.filter(number => !b.includes(number));
+}
+console.log(arrayDiff([1,2,3], [1,2]));
