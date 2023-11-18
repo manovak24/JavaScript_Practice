@@ -2872,8 +2872,8 @@ function rowWeights(array) {
 }
 // console.log(rowWeights([29,83,67,53,19,28,96]));
 
-
-const reverseThreeKu=a=>a.map();
+// 
+const reverseThreeKu=a=>a.map(a.pop,[...a]);
 // console.log(reverseThreeKu([1, 2, 3]));
 
 
@@ -3020,4 +3020,6 @@ function calculator(a,b, sign) {
 function derive(coefficient, exponent) {
   return `${coefficient * exponent}x^${+ exponent - 1}`;
 }
-console.log(derive(7, 8));
+// console.log(derive(7, 8));
+
+
