@@ -3026,4 +3026,33 @@ function derive(coefficient, exponent) {
 const arrayDiff = (a,b) => {
   return a.filter(number => !b.includes(number));
 }
-console.log(arrayDiff([1,2,3], [1,2]));
+// console.log(arrayDiff([1,2,3], [1,2]));
+
+
+const upsideDown = (x, y) => {
+  let counter = 0;
+  let xNum = Number(x);
+  let yNum = Number(y);
+
+  for(let i = xNum; i < yNum; i++) {
+    if(i === 0 || i === 1 || i === 8) {
+      counter++;
+    }
+    if(i >= 10) {
+      let iTest = i.toString().split('').reverse().join('');
+
+
+      if(i === Number(iTest)) {
+        let iStr = i.toString();
+        if(!iStr.includes('2') || !iStr.includes('4') || !iStr.includes('5') || !iStr.includes('7')) {
+          counter++;
+          console.log(i)
+        }
+      }
+    }
+  }
+
+
+  return counter;
+}
+console.log(upsideDown('0', '25'));
