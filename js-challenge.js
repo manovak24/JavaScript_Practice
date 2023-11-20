@@ -3055,4 +3055,19 @@ const upsideDown = (x, y) => {
 
   return counter;
 }
-console.log(upsideDown('0', '25'));
+// console.log(upsideDown('0', '25'));
+
+
+const multiplicationTable = (size) => {
+  let arr = [];
+
+  for(let i = 0; i < size; i++) {
+    arr[i] = [];
+    for(let j = 0; j < size; j++) {
+      arr[i][j] = (i + 1) * (j + 1);
+    }
+  }
+  
+  return arr;
+}
+console.log(multiplicationTable(3));
