@@ -3030,30 +3030,24 @@ const arrayDiff = (a,b) => {
 
 
 const upsideDown = (x, y) => {
-  let counter = 0;
-  let xNum = Number(x);
-  let yNum = Number(y);
-
-  for(let i = xNum; i < yNum; i++) {
-    if(i === 0 || i === 1 || i === 8) {
-      counter++;
-    }
-    if(i >= 10) {
-      let iTest = i.toString().split('').reverse().join('');
-
-
-      if(i === Number(iTest)) {
-        let iStr = i.toString();
-        if(!iStr.includes('2') || !iStr.includes('4') || !iStr.includes('5') || !iStr.includes('7')) {
-          counter++;
-          console.log(i)
-        }
-      }
-    }
+  // let opposite = {
+  //   '2':'2',
+  //   '3':'3',
+  //   '4':'4',
+  //   '5':'5',
+  //   '7':'7'
+  // }
+  let opposite = [2,3,4,5,7];
+  let arr = [];
+  for(let i = Number(x); i <= Number(y); i++) {
+    arr.push(i.toString())
+  }
+  let testArr = [];
+  for(let i = 0; i < arr.length; i++) {
+    
   }
 
-
-  return counter;
+  return arr;
 }
 // console.log(upsideDown('0', '25'));
 
@@ -3070,4 +3064,4 @@ const multiplicationTable = (size) => {
   
   return arr;
 }
-console.log(multiplicationTable(3));
+// console.log(multiplicationTable(3));
