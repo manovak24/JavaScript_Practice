@@ -3030,26 +3030,40 @@ const arrayDiff = (a,b) => {
 
 
 const upsideDown = (x, y) => {
-  // let opposite = {
-  //   '2':'2',
-  //   '3':'3',
-  //   '4':'4',
-  //   '5':'5',
-  //   '7':'7'
-  // }
-  let opposite = [2,3,4,5,7];
-  let arr = [];
+  const opposite = {
+    '0':'0',
+    '1':'1',
+    '6':'9',
+    '8':'8',
+    '9':'6'
+  }
+  
+  const arr = [];
   for(let i = Number(x); i <= Number(y); i++) {
     arr.push(i.toString())
   }
-  let testArr = [];
-  for(let i = 0; i < arr.length; i++) {
-    
+  
+  const oppositeArr = ['2','3','4','5','7'];
+  const results = arr.filter(str => {
+    return !oppositeArr.some(letter => str.includes(letter));
+  })
+
+  const oppositeResults = results.map(str => {
+    return str.split('').map(char => {
+      return opposite[char]
+    }).reverse().join('')
+  })
+
+  let counter = 0;
+  for(let i = 0; i < results.length; i++) {
+    if(results[i] === oppositeResults[i]) {
+      counter++;
+    }
   }
 
-  return arr;
+  return counter;
 }
-// console.log(upsideDown('0', '25'));
+console.log(upsideDown('100000', '100012345678900000000'));
 
 
 const multiplicationTable = (size) => {
