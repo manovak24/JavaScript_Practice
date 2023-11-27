@@ -3029,6 +3029,21 @@ const arrayDiff = (a,b) => {
 // console.log(arrayDiff([1,2,3], [1,2]));
 
 
+const multiplicationTable = (size) => {
+  let arr = [];
+
+  for(let i = 0; i < size; i++) {
+    arr[i] = [];
+    for(let j = 0; j < size; j++) {
+      arr[i][j] = (i + 1) * (j + 1);
+    }
+  }
+  
+  return arr;
+}
+// console.log(multiplicationTable(3));
+
+
 const upsideDown = (x, y) => {
   const opposite = {
     '0':'0',
@@ -3064,18 +3079,3 @@ const upsideDown = (x, y) => {
   return counter;
 }
 console.log(upsideDown('100000', '100012345678900000000'));
-
-
-const multiplicationTable = (size) => {
-  let arr = [];
-
-  for(let i = 0; i < size; i++) {
-    arr[i] = [];
-    for(let j = 0; j < size; j++) {
-      arr[i][j] = (i + 1) * (j + 1);
-    }
-  }
-  
-  return arr;
-}
-// console.log(multiplicationTable(3));
