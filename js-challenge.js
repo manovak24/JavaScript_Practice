@@ -3044,6 +3044,22 @@ const multiplicationTable = (size) => {
 // console.log(multiplicationTable(3));
 
 
+function pillars(numPill, dist, width) {
+  if(numPill <= 1) {
+    return 0;
+  }
+
+  if(numPill === 2) {
+    return dist * 100;
+  }
+
+  if(numPill > 2) {
+    return ((dist * 100) * (numPill - 1)) + ((numPill - 2) * width);
+  }
+}
+console.log(pillars(11, 15, 30));
+
+
 const upsideDown = (x, y) => {
   const opposite = {
     '0':'0',
@@ -3078,4 +3094,4 @@ const upsideDown = (x, y) => {
 
   return counter;
 }
-console.log(upsideDown('100000', '100012345678900000000'));
+// console.log(upsideDown('100000', '100012345678900000000'));
