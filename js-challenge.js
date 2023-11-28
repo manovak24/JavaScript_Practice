@@ -3063,8 +3063,13 @@ function pillars(numPill, dist, width) {
 function sayHello(name, city, state) {
   return `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`;
 }
-console.log(sayHello(['John', 'Smith'], 'Phoenix', 'Arizona'));
+// console.log(sayHello(['John', 'Smith'], 'Phoenix', 'Arizona'));
 
+
+const remove = (string) => {
+  return string.endsWith('!') ? string.slice(0, -1) : string;
+}
+console.log(remove('Hi!!!'));
 
 const upsideDown = (x, y) => {
   const opposite = {
