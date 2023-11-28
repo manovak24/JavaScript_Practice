@@ -3057,7 +3057,13 @@ function pillars(numPill, dist, width) {
     return ((dist * 100) * (numPill - 1)) + ((numPill - 2) * width);
   }
 }
-console.log(pillars(11, 15, 30));
+// console.log(pillars(11, 15, 30));
+
+
+function sayHello(name, city, state) {
+  return `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`;
+}
+console.log(sayHello(['John', 'Smith'], 'Phoenix', 'Arizona'));
 
 
 const upsideDown = (x, y) => {
