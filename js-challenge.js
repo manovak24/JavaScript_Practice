@@ -3120,7 +3120,17 @@ const starsIn20 = (s) => {
     return day.reduce((a,b) => a + b);
   }).reduce((a,b) => a + b) * 20;
 }
-console.log(starsIn20(stairs))
+// console.log(starsIn20(stairs));
+
+// binary arr to number
+const binaryArrayToNumber = (arr) => {
+  // return arr.reverse().map((number, index) => {
+  //   return number * Math.pow(2, index);
+  // }).reduce((a,b) => a + b);
+  return parseInt(arr.join(''), 2);
+}
+console.log(binaryArrayToNumber([1,0,1,1]));
+
 
 const upsideDown = (x, y) => {
   const opposite = {
