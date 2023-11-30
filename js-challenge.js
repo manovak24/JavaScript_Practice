@@ -3129,7 +3129,13 @@ const binaryArrayToNumber = (arr) => {
   // }).reduce((a,b) => a + b);
   return parseInt(arr.join(''), 2);
 }
-console.log(binaryArrayToNumber([1,0,1,1]));
+// console.log(binaryArrayToNumber([1,0,1,1]));
+
+
+const dutyFree = (normPrice, discount, hol) => {
+  return Math.floor(hol / (normPrice * (discount / 100)));
+}
+console.log(dutyFree(12, 50, 1000));
 
 
 const upsideDown = (x, y) => {
