@@ -3137,6 +3137,7 @@ const dutyFree = (normPrice, discount, hol) => {
 }
 // console.log(dutyFree(12, 50, 1000));
 
+
 class Player {
   constructor(name) {
   	this.name = name;
@@ -3148,7 +3149,7 @@ const duckDuckGoose = (players, goose) => {
   const index = goose % players.length;
   return index === 0 ? players[players.length - 1].name : players[index - 1].name;
 }
-console.log(duckDuckGoose(players, 30))
+// console.log(duckDuckGoose(players, 30));
 
 
 const upsideDown = (x, y) => {
@@ -3185,4 +3186,4 @@ const upsideDown = (x, y) => {
 
   return counter;
 }
-// console.log(upsideDown('100000', '100012345678900000000'));
+// console.log(upsideDown('100000','12345678900000000'));
