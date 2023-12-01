@@ -3135,7 +3135,20 @@ const binaryArrayToNumber = (arr) => {
 const dutyFree = (normPrice, discount, hol) => {
   return Math.floor(hol / (normPrice * (discount / 100)));
 }
-console.log(dutyFree(12, 50, 1000));
+// console.log(dutyFree(12, 50, 1000));
+
+class Player {
+  constructor(name) {
+  	this.name = name;
+  }
+}
+let ex_names = ["a", "b", "c", "d", "c", "e", "f", "g", "h", "z"];
+let players = ex_names.map((n) => new Player(n));
+const duckDuckGoose = (players, goose) => {
+  const index = goose % players.length;
+  return index === 0 ? players[players.length - 1].name : players[index - 1].name;
+}
+console.log(duckDuckGoose(players, 30))
 
 
 const upsideDown = (x, y) => {
