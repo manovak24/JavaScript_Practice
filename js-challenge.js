@@ -3072,7 +3072,6 @@ const remove = (string) => {
 // console.log(remove('Hi!!!'));
 
 
-
 const sunday = [6737, 7244, 5776, 9826, 7057, 9247, 5842, 5484, 6543, 5153, 6832, 8274,
   7148, 6152, 5940, 8040, 9174, 7555, 7682, 5252, 8793, 8837, 7320, 8478, 6063,
   5751, 9716, 5085, 7315, 7859, 6628, 5425, 6331, 7097, 6249, 8381, 5936, 8496,
@@ -3122,6 +3121,7 @@ const starsIn20 = (s) => {
 }
 // console.log(starsIn20(stairs));
 
+
 // binary arr to number
 const binaryArrayToNumber = (arr) => {
   // return arr.reverse().map((number, index) => {
@@ -3150,6 +3150,24 @@ const duckDuckGoose = (players, goose) => {
   return index === 0 ? players[players.length - 1].name : players[index - 1].name;
 }
 // console.log(duckDuckGoose(players, 30));
+
+
+const evenNumbers = (array, number) => {
+  return array.filter(number => number % 2 === 0).slice(-number);
+}
+// console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+
+
+const highestRank = (arr) => {
+  let obj = {};
+  arr.forEach(number => {
+    obj[number] ? obj[number]++ : obj[number] = 1;
+  })
+  
+  let objArr = Object.values(obj).sort((a,b) => a - b);
+  return Object.keys(obj).filter(key => obj[key] === Math.max(...objArr)).map(item => Number(item)).slice(-1)[0];
+}
+console.log(highestRank([12, 10, 7, 12, 7, 6, 7, 10, 12, 10, 13]));
 
 
 const upsideDown = (x, y) => {
