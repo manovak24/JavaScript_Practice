@@ -3159,7 +3159,7 @@ const evenNumbers = (array, number) => {
 
 
 const highestRank = (arr) => {
-  let obj = {};
+  let obj = new Map();
   arr.forEach(number => {
     obj[number] ? obj[number]++ : obj[number] = 1;
   })
@@ -3167,7 +3167,19 @@ const highestRank = (arr) => {
   let objArr = Object.values(obj).sort((a,b) => a - b);
   return Object.keys(obj).filter(key => obj[key] === Math.max(...objArr)).map(item => Number(item)).slice(-1)[0];
 }
-console.log(highestRank([12, 10, 7, 12, 7, 6, 7, 10, 12, 10, 13]));
+// console.log(highestRank([12, 10, 7, 12, 7, 6, 7, 10, 12, 10, 13]));
+
+
+const duplicateEncode = (word) => {
+  const charCount = new Map();
+  word.toLowerCase().split('').forEach(letter => {
+    charCount.set(letter, (charCount.get(letter) || 0) + 1);
+  })
+  return word.toLowerCase().split('').map(letter => {
+    return charCount.get(letter) > 1 ? ')' : '(';
+  }).join('');
+}
+console.log(duplicateEncode('Success'));
 
 
 const upsideDown = (x, y) => {
