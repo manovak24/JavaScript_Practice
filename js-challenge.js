@@ -3179,7 +3179,20 @@ const duplicateEncode = (word) => {
     return charCount.get(letter) > 1 ? ')' : '(';
   }).join('');
 }
-console.log(duplicateEncode('Success'));
+// console.log(duplicateEncode('Success'));
+
+
+function isVow(a) {
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  return a.map(number => {
+    if(vowels.includes(String.fromCharCode(number))) {
+      return number = String.fromCharCode(number);
+    } else {
+      return number;
+    }
+  })
+}
+// console.log(isVow([101,121,110,113,113,103,121,121,101,107,103]));
 
 
 const upsideDown = (x, y) => {
