@@ -3195,6 +3195,23 @@ function isVow(a) {
 // console.log(isVow([101,121,110,113,113,103,121,121,101,107,103]));
 
 
+function sayHello(name) {
+  return `Hello, ${name}`;
+}
+// console.log(sayHello('Captain Kirk'));
+
+
+const firstNonConsecutive = (arr) => {
+  for(let i = 0; i < arr.length; i++) {
+    if((arr[i] + 1) !== arr[i + 1]) {
+      return arr[i + 1];
+    } 
+  }
+  return null
+}
+console.log(firstNonConsecutive([1,2,3,4]));
+
+
 const upsideDown = (x, y) => {
   const opposite = {
     '0':'0',
