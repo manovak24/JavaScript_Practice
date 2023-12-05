@@ -3202,14 +3202,14 @@ function sayHello(name) {
 
 
 const firstNonConsecutive = (arr) => {
-  for(let i = 0; i < arr.length; i++) {
+  for(let i = 0; i < arr.length - 1; i++) {
     if((arr[i] + 1) !== arr[i + 1]) {
       return arr[i + 1];
     } 
   }
-  return null
+  return null;
 }
-console.log(firstNonConsecutive([1,2,3,4]));
+// console.log(firstNonConsecutive([1,2,3,4]));
 
 
 const upsideDown = (x, y) => {
