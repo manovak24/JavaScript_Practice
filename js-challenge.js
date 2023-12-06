@@ -3212,6 +3212,17 @@ const firstNonConsecutive = (arr) => {
 // console.log(firstNonConsecutive([1,2,3,4]));
 
 
+const isUpperCase = (str) => {
+  return str.split('').every((letter) => letter === letter.toUpperCase());
+}
+// console.log(isUpperCase('CaEF'));
+
+
+String.prototype.isUpperCase = function () {
+  return this.split('').every((letter) => letter === letter.toUpperCase());
+}
+console.log(isUpperCase('CAEF'));
+
 const upsideDown = (x, y) => {
   const opposite = {
     '0':'0',
