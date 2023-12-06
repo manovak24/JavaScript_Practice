@@ -3221,7 +3221,7 @@ const isUpperCase = (str) => {
 String.prototype.isUpperCase = function () {
   return this.split('').every((letter) => letter === letter.toUpperCase());
 }
-console.log(isUpperCase('CAEF'));
+// console.log(isUpperCase('CAEF'));
 
 const upsideDown = (x, y) => {
   const opposite = {
