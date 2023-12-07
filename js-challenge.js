@@ -3223,6 +3223,13 @@ String.prototype.isUpperCase = function () {
 }
 // console.log(isUpperCase('CAEF'));
 
+
+const removeCharacter = (string) => {
+  return string.replace(/[!]/gi, '') + '!';
+}
+console.log(removeCharacter('!Hi!!'));
+
+
 const upsideDown = (x, y) => {
   const opposite = {
     '0':'0',
