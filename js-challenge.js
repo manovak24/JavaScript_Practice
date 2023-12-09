@@ -3227,7 +3227,28 @@ String.prototype.isUpperCase = function () {
 const removeCharacter = (string) => {
   return string.replace(/[!]/gi, '') + '!';
 }
-console.log(removeCharacter('!Hi!!'));
+// console.log(removeCharacter('!Hi!!'));
+
+
+const comp = (array1, array2) => {
+  // if(array1 === null || array2 === null) {
+  //   return false;
+  // };
+
+  // let arrOneMap = array1.sort((a,b) => a - b).map(number => number * number);
+  // return JSON.stringify(arrOneMap) === JSON.stringify(array2.sort((a,b) => a - b));
+
+  if(array1 == null || array2 == null) {
+    return false;
+  }
+
+  array1.sort((a, b) => a - b); 
+  array2.sort((a, b) => a - b);
+  
+  return array1.map(number => number * number).every((number, index) => number == array2[index]);
+
+}
+console.log(comp([121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361]));
 
 
 const upsideDown = (x, y) => {
