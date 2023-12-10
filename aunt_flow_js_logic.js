@@ -1,3 +1,23 @@
+const numberBathrooms = 10;
+const role = 'Operations%2FFacilities';
+// const role = 'Distributor';
+const citronState = 'Maine';
+const taxExempt = false;
+
+const url = `https://goauntflow.com/results/?how_many_bathrooms_does_your_organization_have_=${numberBathrooms}&how_many_people_with_periods_does_your_organization_have_=10&firstname=Ashli&lastname=Nixon&email=ashli%40meetbasis.co&phone=6146206266&which_title_best_describes_your_role_=${role}&0-2%2Fname=Test&country_region___citron_leads=United%20States&state___citron_leads=${citronState}`;
+
+if(taxExempt) {
+    console.log(url + '&are_you_tax_exempt_=true');
+} else {
+    console.log(url);
+}
+
+
+const test = 'https://goauntflow.com/results/?how_many_bathrooms_does_your_organization_have_=10&how_many_people_with_periods_does_your_organization_have_=2&firstname=TWJ%20TEST&lastname=TWJ%20TEST&email=mark%40novaknorth.com&phone=1234567890&which_title_best_describes_your_role_=Patron&0-2%2Fname=TWJ%20TEST&country_region___citron_leads=United%20States&state___citron_leads=Michigan';
+
+
+
+
 const job = '';
 const state = 'Massachusetts';
 const bathrooms = 5;
@@ -6,13 +26,13 @@ const tax = '';
 // show sales buttons based on bathroom customize
 if (bathrooms > 9 || job == 'Distributor') {
     // $(".qualified-above-10").show();
-    console.log("meet with sales (10+ bathrooms OR distributor)")
+    // console.log("meet with sales (10+ bathrooms OR distributor)")
 }
 
 if (bathrooms <= 9 && tax == 'true' && job != 'Distributor') {
     // $(".unqualified-under-10").show();
     // $(".need-help").show();
-    console.log("meet with sales (Less than 10 bathrooms AND tax exempt)")
+    // console.log("meet with sales (Less than 10 bathrooms AND tax exempt)")
 }
 
 
@@ -21,7 +41,7 @@ if (bathrooms <= 9 && tax == null && job != 'Distributor') {
     // $(".unqualified-under-10").hide();
     // $(".qualified-above-10").hide();
     // $(".fl-node-qk726h1gwzoa .fl-separator").hide();
-    console.log('Hide meet with sales')
+    // console.log('Hide meet with sales')
 }
 
 
@@ -30,7 +50,7 @@ if (job == 'Student') {
     //   $(".qualified-above-10").hide();
     //   $(".need-help").hide();
     //   $(".unqualified-student").show();
-    console.log('Advocate');
+    // console.log('Advocate');
 }
 
 
@@ -38,13 +58,13 @@ if (job == 'Patron') {
     //   $(".unqualified-under-10").hide();
     //   $(".qualified-above-10").hide();
     //   $(".unqualified-student").show();
-    console.log('Advocate');
+    // console.log('Advocate');
 }
 
 
 if (job == 'Parent') {
     //   $(".need-help").hide();
-    console.log('Advocate');
+    // console.log('Advocate');
 }
 
 // Massachusetts
@@ -52,13 +72,13 @@ if (job == 'Parent') {
 if (state == 'Massachusetts' && bathrooms <= 9 && job != 'Distributor') {
     // $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
     // $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
-    console.log('10 or fewer Citron popup');
+    // console.log('10 or fewer Citron popup');
 }
 
 if (state == 'Massachusetts' && bathrooms > 9 && job != 'Distributor') {
     // $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
     // $('#for_over_10_bathrooms a').attr('href', '');
-    console.log('10 or more Citron popup');
+    // console.log('10 or more Citron popup');
 }
 
 // New Hampshire
