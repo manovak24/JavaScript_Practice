@@ -3248,7 +3248,26 @@ const comp = (array1, array2) => {
   return array1.map(number => number * number).every((number, index) => number == array2[index]);
 
 }
-console.log(comp([121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361]));
+// console.log(comp([121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361]));
+
+
+const factorial = (n) => {
+  // let arr = [];
+  // for(let i = n; i > 0; i--) {
+  //   arr.push(i);
+  // }
+
+  // if (n > 12 || n < 0) {
+  //   throw new Error ('RangeError')
+  // }
+
+  // return n === 0 ? 1 : Array.from({length: n}, (v,k) => k + 1).reduce((a,b) => a * b);
+
+
+  if(n > 12 || n < 0) throw new Error ('RangeError');
+  return n === 0 ? 1 : n * factorial(n - 1);
+}
+console.log(factorial(5));
 
 
 const upsideDown = (x, y) => {
