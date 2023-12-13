@@ -3267,7 +3267,17 @@ const factorial = (n) => {
   if(n > 12 || n < 0) throw new Error ('RangeError');
   return n === 0 ? 1 : n * factorial(n - 1);
 }
-console.log(factorial(5));
+// console.log(factorial(5));
+
+// l = width
+// h = height
+// w = depth
+
+
+const getSize = (width, height, depth) => {
+  return [(2 * width * depth) + (2 * width * height) + (2 * depth * height), width * height * depth];
+}
+console.log(getSize(4, 2, 6));
 
 
 const upsideDown = (x, y) => {
