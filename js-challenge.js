@@ -3277,8 +3277,12 @@ const factorial = (n) => {
 const getSize = (width, height, depth) => {
   return [(2 * width * depth) + (2 * width * height) + (2 * depth * height), width * height * depth];
 }
-console.log(getSize(4, 2, 6));
+// console.log(getSize(4, 2, 6));
 
+String.prototype.toJadenCase = function () {
+  // return this.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+console.log(("How can mirrors be real if our eyes aren't real").toJadenCase());
 
 const upsideDown = (x, y) => {
   const opposite = {
