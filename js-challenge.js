@@ -3280,9 +3280,32 @@ const getSize = (width, height, depth) => {
 // console.log(getSize(4, 2, 6));
 
 String.prototype.toJadenCase = function () {
-  // return this.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  return this.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
-console.log(("How can mirrors be real if our eyes aren't real").toJadenCase());
+// console.log(("How can mirrors be real if our eyes aren't real").toJadenCase());
+
+
+// const doubleChar = (str) => {
+//   return str.split('').map(letter => {
+//     return letter = `${letter}${letter}`;
+//   }).join('');
+// }
+
+const doubleChar = (str) => str.split('').map(letter => letter + letter).join('');
+// console.log(doubleChar('String'));
+
+
+// class Ship {
+//   constructor(draft, crew) {
+//     this.draft = draft;
+//     this.crew = crew;
+//   }
+
+//   isWorthIt() {
+//     return 
+//   }
+// }
+
 
 const upsideDown = (x, y) => {
   const opposite = {
