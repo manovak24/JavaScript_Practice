@@ -3295,16 +3295,19 @@ const doubleChar = (str) => str.split('').map(letter => letter + letter).join(''
 // console.log(doubleChar('String'));
 
 
-// class Ship {
-//   constructor(draft, crew) {
-//     this.draft = draft;
-//     this.crew = crew;
-//   }
+class Ship {
+  constructor(draft, crew) {
+    this.draft = draft;
+    this.crew = crew;
+  }
 
-//   isWorthIt() {
-//     return 
-//   }
-// }
+  isWorthIt() {
+    return this.draft - (this.crew * 1.5) > 20;
+  }
+}
+
+// const titanic = new Ship(15, 10);
+// console.log(titanic.isWorthIt());
 
 
 const upsideDown = (x, y) => {
