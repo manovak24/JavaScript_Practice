@@ -3310,6 +3310,12 @@ class Ship {
 // console.log(titanic.isWorthIt());
 
 
+const filterString = (value) => {
+  return parseInt(value.replace(/[^\d]/g, ''));
+}
+console.log(filterString('a1b2c3'));
+
+
 const upsideDown = (x, y) => {
   const opposite = {
     '0':'0',
