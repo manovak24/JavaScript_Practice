@@ -3313,7 +3313,17 @@ class Ship {
 const filterString = (value) => {
   return parseInt(value.replace(/[^\d]/g, ''));
 }
-console.log(filterString('a1b2c3'));
+// console.log(filterString('a1b2c3'));
+
+
+const powerOfTwo = (n) => {
+  let arr = [];
+  for ( let i = 0; i <= n; i++) {
+    arr.push(Math.pow(2, i));
+  }
+  return arr;
+}
+// console.log(powerOfTwo(1));
 
 
 const upsideDown = (x, y) => {
