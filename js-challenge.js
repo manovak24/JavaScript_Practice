@@ -3326,6 +3326,12 @@ const powerOfTwo = (n) => {
 // console.log(powerOfTwo(1));
 
 
+const sumTriangularNumbers = (n) => {
+  return n > 0 ? n*(n+1)*(n+2)/6 : 0;
+}
+// console.log(sumTriangularNumbers(34));
+
+
 const upsideDown = (x, y) => {
   const opposite = {
     '0':'0',
