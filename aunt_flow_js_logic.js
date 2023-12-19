@@ -1,3 +1,5 @@
+history.pushState(null, "", location.href.split("hs_context")[0]);
+
 const numberBathrooms = 9;
 // const role = 'Operations%2FFacilities';
 const role = 'Distributor';
