@@ -1,10 +1,11 @@
-history.pushState(null, "", location.href.split("hs_context")[0]);
+// history.pushState(null, "", location.href.split("hs_context")[0]);
 
 const numberBathrooms = 9;
-// const role = 'Operations%2FFacilities';
-const role = 'Distributor';
-const citronState = 'Massachusetts';
-const taxExempt = false;
+const role = 'Operations%2FFacilities';
+// const role = 'Distributor';
+// const citronState = 'Connecticut';
+const citronState = 'New%20York';
+const taxExempt = true;
 
 const url = `https://goauntflow.com/results/?how_many_bathrooms_does_your_organization_have_=${numberBathrooms}&how_many_people_with_periods_does_your_organization_have_=10&firstname=Ashli&lastname=Nixon&email=ashli%40meetbasis.co&phone=6146206266&which_title_best_describes_your_role_=${role}&0-2%2Fname=Test&country_region___citron_leads=United%20States&state___citron_leads=${citronState}`;
 
@@ -1043,6 +1044,8 @@ if(job === "Distributor" && bathrooms <= 9) {
 
 
 
+
+
 // backup 12/20/23
 
 
@@ -1401,3 +1404,96 @@ if(job === "Distributor" && bathrooms <= 9) {
 //     });
 
 // });
+
+
+// new citron state code
+
+    //   // Massachusetts
+
+    //   if (state == 'Massachusetts' && bathrooms <=9 && job != 'Distributor') {
+    //       $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   if (state == 'Massachusetts' && bathrooms >9 && job != 'Distributor') {
+    //       $('#for_over_10_bathrooms a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   // New Hampshire
+
+    //   if (state == 'New Hampshire' && bathrooms <=9 && job != 'Distributor') {
+    //       $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   if (state == 'New Hampshire' && bathrooms >9 && job != 'Distributor') {
+    //       $('#for_over_10_bathrooms a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   // Maine
+
+    //   if (state == 'Maine' && bathrooms <=9 && job != 'Distributor') {
+    //       $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   if (state == 'Maine' && bathrooms >9 && job != 'Distributor') {
+    //       $('#for_over_10_bathrooms a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   // Connecticut
+
+    //   if (state == 'Connecticut' && bathrooms <=9 && job != 'Distributor') {
+    //       $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   if (state == 'Connecticut' && bathrooms >9 && job != 'Distributor') {
+    //       $('#for_over_10_bathrooms a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   // New Jersey
+
+    //   if (state == 'New Jersey' && bathrooms <=9 && job != 'Distributor') {
+    //       $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   if (state == 'New Jersey' && bathrooms >9 && job != 'Distributor') {
+    //       $('#for_over_10_bathrooms a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   // New York
+
+    //   if (state == 'New York' && bathrooms <=9 && job != 'Distributor') {
+    //       $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   if (state == 'New York' && bathrooms >9 && job != 'Distributor') {
+    //       $('#for_over_10_bathrooms a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   // DC
+
+    //   if (state == 'District of Columbia' && bathrooms <=9 && job != 'Distributor') {
+    //       $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   if (state == 'District of Columbia' && bathrooms >9 && job != 'Distributor') {
+    //       $('#for_over_10_bathrooms a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   // Maryland
+
+    //   if (state == 'Maryland' && bathrooms <=9 && job != 'Distributor') {
+    //       $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   if (state == 'Maryland' && bathrooms >9 && job != 'Distributor') {
+    //       $('#for_over_10_bathrooms a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   // Virginia
+
+    //   if (state == 'Virginia' && bathrooms <=9 && job != 'Distributor') {
+    //       $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
+
+    //   if (state == 'Virginia' && bathrooms >9 && job != 'Distributor') {
+    //       $('#for_over_10_bathrooms a').attr('href','https://meetings.hubspot.com/katie-bryant/distributor-round-robin-');
+    //   }
