@@ -3332,6 +3332,33 @@ const sumTriangularNumbers = (n) => {
 // console.log(sumTriangularNumbers(34));
 
 
+const power = (base, exponent) => {
+  let counter = 1;
+  let arr = [];
+
+  if(typeof base !== 'number') {
+    return 1;
+  }
+
+  if(exponent > 0) {
+    while(counter <= exponent) {
+      counter++;
+      arr.push(base)
+    }
+    return arr.reduce((a,b) => a * b);
+  }
+
+  if(exponent < 0) {
+    while(counter <= exponent * -1) {
+      counter++;
+      arr.push(base);
+    }
+    return 1/ arr.reduce((a,b) => a * b);
+  }
+}
+console.log(power(x, 1));
+
+
 const upsideDown = (x, y) => {
   const opposite = {
     '0':'0',
