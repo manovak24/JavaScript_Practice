@@ -3356,7 +3356,25 @@ const power = (base, exponent) => {
     return 1/ arr.reduce((a,b) => a * b);
   }
 }
-console.log(power(x, 1));
+// console.log(power(x, 1));
+
+
+const combat = (health, damage) => {
+  return health < damage ? 0 : health - damage;
+}
+// console.log(combat(100, 5));
+
+
+reverse = function(array) {
+  return array.map(array.pop,[...array]);
+
+  // let reverseArr = [];
+  // for(let i = array.length - 1; i >= 0; i--) {
+  //   reverseArr.push(array[i]);
+  // }
+  // return reverseArr;
+}
+console.log(reverse([1,2,3]));
 
 
 const upsideDown = (x, y) => {
