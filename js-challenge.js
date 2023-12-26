@@ -3374,7 +3374,13 @@ reverse = function(array) {
   // }
   // return reverseArr;
 }
-console.log(reverse([1,2,3]));
+// console.log(reverse([1,2,3]));
+
+
+const sortGiftCode = (code) => {
+  return code.split('').sort().join('');
+}
+console.log(sortGiftCode('zyxwvutsrqponmlkjihgfedcba'));
 
 
 const upsideDown = (x, y) => {
