@@ -3389,6 +3389,24 @@ const closeCompare = (a, b, margin) => {
 // console.log(closeCompare(8.1, 5, 3));
 
 
+const solveStr = (arr) => {
+  let answerArr = [];
+  for(let i = 0; i < arr.length; i++) {
+    let counter = 0;
+    arr[i].split('').map(item => item.toLowerCase()).forEach(letter => {
+      if(arr[i].split('').map(item => item.toLowerCase()).join('').indexOf(letter) + 1 === letter.charCodeAt(0) - 96) {
+        counter++;
+      }
+      // THIS WON'T WORK BECAUSE INDEXOF WILL SHOW THE FIRST OF INDEXOF FOR SAME LETTER MULTIPLE TIMES
+    })
+    console.log(arr[i])
+    answerArr.push(counter);
+  }
+  return answerArr;
+}
+console.log(solveStr(["IAMDEFANDJKL","thedefgh","xyzDEFghijabc"]));
+
+
 const upsideDown = (x, y) => {
   const opposite = {
     '0':'0',
