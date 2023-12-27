@@ -3380,7 +3380,13 @@ reverse = function(array) {
 const sortGiftCode = (code) => {
   return code.split('').sort().join('');
 }
-console.log(sortGiftCode('zyxwvutsrqponmlkjihgfedcba'));
+// console.log(sortGiftCode('zyxwvutsrqponmlkjihgfedcba'));
+
+
+const closeCompare = (a, b, margin) => {
+  return Math.abs(a - b) <= margin ? 0 : a < b ? -1 : 1;
+}
+// console.log(closeCompare(8.1, 5, 3));
 
 
 const upsideDown = (x, y) => {
