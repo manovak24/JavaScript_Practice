@@ -3390,16 +3390,17 @@ const closeCompare = (a, b, margin) => {
 
 
 const solveStr = (arr) => {
+  let newArr = arr.map(str => str.toLowerCase());
+
   let answerArr = [];
-  for(let i = 0; i < arr.length; i++) {
+  for(let i = 0; i < newArr.length; i++) {
     let counter = 0;
-    arr[i].split('').map(item => item.toLowerCase()).forEach(letter => {
-      if(arr[i].split('').map(item => item.toLowerCase()).join('').indexOf(letter) + 1 === letter.charCodeAt(0) - 96) {
+    newArr[i].split('').forEach(letter => {
+      if(newArr[i].indexOf(letter) + 1 === letter.charCodeAt(0) - 96) {
         counter++;
       }
       // THIS WON'T WORK BECAUSE INDEXOF WILL SHOW THE FIRST OF INDEXOF FOR SAME LETTER MULTIPLE TIMES
     })
-    console.log(arr[i])
     answerArr.push(counter);
   }
   return answerArr;
