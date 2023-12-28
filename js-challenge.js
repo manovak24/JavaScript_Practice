@@ -3390,22 +3390,22 @@ const closeCompare = (a, b, margin) => {
 
 
 const solveStr = (arr) => {
-  let newArr = arr.map(str => str.toLowerCase());
+  // let answerArr = [];
+  // for(let i = 0; i < arr.length; i++) {
+  //   let counter = 0;
+  //   arr.map(str => str.toLowerCase())[i].split('').forEach((letter, i) => {
+  //     if(i + 1 === letter.charCodeAt(0) - 96) {
+  //       counter++;
+  //     }
+  //   })
+  //   answerArr.push(counter);
+  // }
+  // return answerArr;
 
-  let answerArr = [];
-  for(let i = 0; i < newArr.length; i++) {
-    let counter = 0;
-    newArr[i].split('').forEach(letter => {
-      if(newArr[i].indexOf(letter) + 1 === letter.charCodeAt(0) - 96) {
-        counter++;
-      }
-      // THIS WON'T WORK BECAUSE INDEXOF WILL SHOW THE FIRST OF INDEXOF FOR SAME LETTER MULTIPLE TIMES
-    })
-    answerArr.push(counter);
-  }
-  return answerArr;
+  const alphabeth = "abcdefghijklmnopqrstuvwxyz";
+  return arr.map(str => str.toLowerCase().split('').filter((letter, index) => index === alphabeth.indexOf(letter)).length);
 }
-console.log(solveStr(["IAMDEFANDJKL","thedefgh","xyzDEFghijabc"]));
+console.log(solveStr(["encode","abc","xyzD","ABmD"]));
 
 
 const upsideDown = (x, y) => {
