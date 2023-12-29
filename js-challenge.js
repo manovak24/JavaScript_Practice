@@ -3405,7 +3405,13 @@ const solveStr = (arr) => {
   const alphabeth = "abcdefghijklmnopqrstuvwxyz";
   return arr.map(str => str.toLowerCase().split('').filter((letter, index) => index === alphabeth.indexOf(letter)).length);
 }
-console.log(solveStr(["encode","abc","xyzD","ABmD"]));
+// console.log(solveStr(["encode","abc","xyzD","ABmD"]));
+
+
+const alphabetPosition = (text) => {
+  return text.replace(/[^a-z]/gi, '').toLowerCase().split('').map(letter => letter = letter.charCodeAt(0) - 96).join(' ');
+}
+console.log(alphabetPosition("The sunset sets at twelve o' clock."))
 
 
 const upsideDown = (x, y) => {
