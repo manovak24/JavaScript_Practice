@@ -3426,7 +3426,19 @@ const removeRangeArray = (array, start, end) => {
 const odds = (values) => {
   return values.filter(num => num % 2 !== 0);
 }
-console.log(odds([1, 2, 3, 4, 5, 6]));
+// console.log(odds([1, 2, 3, 4, 5, 6]));
+
+
+const vowelIndicies = (word) => {
+  let answer = [];
+  for(let i = 0; i < word.length; i++) {
+    if(/[aeiouy]/i.test(word[i])) {
+      answer.push(i+1);
+    }
+  }
+  return answer;
+}
+console.log(vowelIndicies('apple'));
 
 
 const checkRange = (a, x, y) => {
