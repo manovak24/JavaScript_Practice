@@ -2872,7 +2872,8 @@ function rowWeights(array) {
 }
 // console.log(rowWeights([29,83,67,53,19,28,96]));
 
-// 
+
+// Shortest way to reverse array
 const reverseThreeKu=a=>a.map(a.pop,[...a]);
 // console.log(reverseThreeKu([1, 2, 3]));
 
@@ -3411,7 +3412,27 @@ const solveStr = (arr) => {
 const alphabetPosition = (text) => {
   return text.replace(/[^a-z]/gi, '').toLowerCase().split('').map(letter => letter = letter.charCodeAt(0) - 96).join(' ');
 }
-console.log(alphabetPosition("The sunset sets at twelve o' clock."))
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+
+
+// remove range of elements from array javascript
+const removeRangeArray = (array, start, end) => {
+  let deleteCount = end - start + 1;
+  return array.splice(start, deleteCount);
+}
+// console.log(removeRangeArray([1,2,3,4,5,6,7,8,9,0], 2, 5));
+
+
+const odds = (values) => {
+  return values.filter(num => num % 2 !== 0);
+}
+console.log(odds([1, 2, 3, 4, 5, 6]));
+
+
+const checkRange = (a, x, y) => {
+  return a.filter(n=>n>=x&n<=y);
+} 
+// console.log(checkRange([2, 5, 6, 7, 1, 3, 4, 11, 56, 49],1,7));
 
 
 const upsideDown = (x, y) => {
