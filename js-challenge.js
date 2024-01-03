@@ -3438,7 +3438,13 @@ const vowelIndicies = (word) => {
   }
   return answer;
 }
-console.log(vowelIndicies('apple'));
+// console.log(vowelIndicies('apple'));
+
+
+const all = (arr, fun) => {
+  return arr.every(fun);
+}
+// console.log(all([1,2,3,4,5], function(v){return v<9}));
 
 
 const checkRange = (a, x, y) => {
