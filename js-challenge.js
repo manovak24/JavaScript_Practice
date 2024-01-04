@@ -3447,6 +3447,16 @@ const all = (arr, fun) => {
 // console.log(all([1,2,3,4,5], function(v){return v<9}));
 
 
+const gps = (s, x) => {
+  let arr = [];
+  for(let i = 0; i < x.length - 1; i++) {
+    arr.push(3600 * (Math.round((x[i + 1] - x[i]) * 100) / 100) / s);
+  }
+  return x.length <= 1 ? 0 : Math.round(Math.max(...arr));
+}
+console.log(gps(20, [0.0, 0.23, 0.46, 0.69, 0.92, 1.15, 1.38, 1.61]))
+
+
 const checkRange = (a, x, y) => {
   return a.filter(n=>n>=x&n<=y);
 } 
