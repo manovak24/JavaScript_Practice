@@ -3454,7 +3454,13 @@ const gps = (s, x) => {
   }
   return x.length <= 1 ? 0 : Math.round(Math.max(...arr));
 }
-console.log(gps(20, [0.0, 0.23, 0.46, 0.69, 0.92, 1.15, 1.38, 1.61]))
+// console.log(gps(20, [0.0, 0.23, 0.46, 0.69, 0.92, 1.15, 1.38, 1.61]));
+
+
+const getRealFloor = (n) => {
+  return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
+}
+console.log(getRealFloor(15));
 
 
 const checkRange = (a, x, y) => {
