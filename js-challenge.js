@@ -3460,7 +3460,41 @@ const gps = (s, x) => {
 const getRealFloor = (n) => {
   return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
 }
-console.log(getRealFloor(15));
+// console.log(getRealFloor(15));
+
+
+const dashatize = (num) => {
+  // if(num < 0) {
+  //   num *= -1;
+  // }
+
+  // let str = '';
+  // for(let i = 0; i < num.toString().length; i++) {
+  //   if(parseInt(num.toString()[i]) % 2 !== 0) {
+  //     str +=  '-'+num.toString()[i]+'-';
+  //   } else {
+  //     str += num.toString()[i];
+  //   }
+  // }
+
+  // let arr = str.split('');
+  // for(let i = 0; i < arr.length; i++) {
+  //   if(arr[i] === '-' && arr[i] === arr[i + 1]) {
+  //     arr.splice(i, 1);
+  //   }
+  //   if(arr[i] === '-' && i === 0) {
+  //     arr.splice(i, 1);
+  //   }
+  //   if(arr[i] === '-' && i === arr.length - 1) {
+  //     arr.splice(i, 1);
+  //   }
+  // }
+
+  // return arr.join('');
+
+  return String(num).replace(/([13579])/g, "-$1-").replace(/--+/g, "-").replace(/(^-|-$)/g, "");
+}
+console.log(dashatize(-1));
 
 
 const checkRange = (a, x, y) => {
