@@ -3500,7 +3500,26 @@ const dashatize = (num) => {
 const main = (verb, noun) => {
   return verb + noun;
 }
-console.log(main('take ', 'item'));
+// console.log(main('take ', 'item'));
+
+
+// test if string contains multiple items
+const countSmileys = (arr) => {
+  // let counter = 0;
+  // let filteredArr = arr.filter(item => /[)|D]/.test(item));
+  // filteredArr.forEach(item => {
+  //   if(item.length === 2 && /:|;/.test(item)) {
+  //     counter++;
+  //   }
+  //   if(item.length === 3 && /-|~/.test(item)) {
+  //       counter++;
+  //   }
+  // })
+  // return counter;
+
+  return arr.filter(item => /^[:;][-~]?[)D]$/.test(item)).length;
+}
+console.log(countSmileys([';]', ':[', ';*', ':$', ';-D']));
 
 
 const checkRange = (a, x, y) => {
