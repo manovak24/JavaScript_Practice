@@ -3494,7 +3494,13 @@ const dashatize = (num) => {
 
   return String(num).replace(/([13579])/g, "-$1-").replace(/--+/g, "-").replace(/(^-|-$)/g, "");
 }
-console.log(dashatize(-1));
+// console.log(dashatize(-1));
+
+
+const main = (verb, noun) => {
+  return verb + noun;
+}
+console.log(main('take ', 'item'));
 
 
 const checkRange = (a, x, y) => {
