@@ -3519,7 +3519,13 @@ const countSmileys = (arr) => {
 
   return arr.filter(item => /^[:;][-~]?[)D]$/.test(item)).length;
 }
-console.log(countSmileys([';]', ':[', ';*', ':$', ';-D']));
+// console.log(countSmileys([';]', ':[', ';*', ':$', ';-D']));
+
+
+const integrate = (coefficient, exponent) => {
+  return `${coefficient / (exponent + 1)}x^${exponent + 1}`;
+}
+console.log(integrate(12, 5));
 
 
 const checkRange = (a, x, y) => {
