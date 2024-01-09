@@ -1,10 +1,11 @@
 // history.pushState(null, "", location.href.split("hs_context")[0]);
 
 const numberBathrooms = 9;
-const role = 'Operations%2FFacilities';
-// const role = 'Distributor';
+// const role = 'Operations%2FFacilities';
+const role = 'Distributor';
+// const role = 'Student';
 // const citronState = 'Connecticut';
-const citronState = 'New%20York';
+const citronState = 'Alaska';
 const taxExempt = true;
 
 const url = `https://goauntflow.com/results/?how_many_bathrooms_does_your_organization_have_=${numberBathrooms}&how_many_people_with_periods_does_your_organization_have_=10&firstname=Ashli&lastname=Nixon&email=ashli%40meetbasis.co&phone=6146206266&which_title_best_describes_your_role_=${role}&0-2%2Fname=Test&country_region___citron_leads=United%20States&state___citron_leads=${citronState}`;
@@ -16,174 +17,174 @@ if(taxExempt) {
 }
 
 
-const job = 'Distributor';
-const state = 'Michigan';
-const bathrooms = 10;
-const tax = null;
+// const job = 'Distributor';
+// const state = 'Michigan';
+// const bathrooms = 10;
+// const tax = null;
 
-// show sales buttons based on bathroom customize
-if (bathrooms > 9 && job != 'Distributor') {
-    // $(".qualified-above-10").show();
-    // console.log("meet with sales (10+ bathrooms OR distributor)")
-}
+// // show sales buttons based on bathroom customize
+// if (bathrooms > 9 && job != 'Distributor') {
+//     // $(".qualified-above-10").show();
+//     // console.log("meet with sales (10+ bathrooms OR distributor)")
+// }
 
-if (bathrooms <= 9 && tax == 'true' && job != 'Distributor') {
-    // $(".unqualified-under-10").show();
-    // $(".need-help").show();
-    // console.log("meet with sales (Less than 10 bathrooms AND tax exempt)")
-}
-
-
-if (bathrooms <= 9 && tax == null && job != 'Distributor') {
-    // $(".need-help").hide();
-    // $(".unqualified-under-10").hide();
-    // $(".qualified-above-10").hide();
-    // $(".fl-node-qk726h1gwzoa .fl-separator").hide();
-    // console.log('Hide meet with sales')
-}
+// if (bathrooms <= 9 && tax == 'true' && job != 'Distributor') {
+//     // $(".unqualified-under-10").show();
+//     // $(".need-help").show();
+//     // console.log("meet with sales (Less than 10 bathrooms AND tax exempt)")
+// }
 
 
-if (job == 'Student') {
-    //   $(".unqualified-under-10").hide();
-    //   $(".qualified-above-10").hide();
-    //   $(".need-help").hide();
-    //   $(".unqualified-student").show();
-    // console.log('Advocate');
-}
+// if (bathrooms <= 9 && tax == null && job != 'Distributor') {
+//     // $(".need-help").hide();
+//     // $(".unqualified-under-10").hide();
+//     // $(".qualified-above-10").hide();
+//     // $(".fl-node-qk726h1gwzoa .fl-separator").hide();
+//     // console.log('Hide meet with sales')
+// }
 
 
-if (job == 'Patron') {
-    //   $(".unqualified-under-10").hide();
-    //   $(".qualified-above-10").hide();
-    //   $(".unqualified-student").show();
-    // console.log('Advocate');
-}
+// if (job == 'Student') {
+//     //   $(".unqualified-under-10").hide();
+//     //   $(".qualified-above-10").hide();
+//     //   $(".need-help").hide();
+//     //   $(".unqualified-student").show();
+//     // console.log('Advocate');
+// }
 
 
-if (job == 'Parent') {
-    //   $(".need-help").hide();
-    // console.log('Advocate');
-}
+// if (job == 'Patron') {
+//     //   $(".unqualified-under-10").hide();
+//     //   $(".qualified-above-10").hide();
+//     //   $(".unqualified-student").show();
+//     // console.log('Advocate');
+// }
 
-// Massachusetts
 
-if (state == 'Massachusetts' && bathrooms <= 9 && job != 'Distributor') {
-    // $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
-    // $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
-    // console.log('10 or fewer Citron popup');
-}
+// if (job == 'Parent') {
+//     //   $(".need-help").hide();
+//     // console.log('Advocate');
+// }
 
-if (state == 'Massachusetts' && bathrooms > 9 && job != 'Distributor') {
-    // $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
-    // $('#for_over_10_bathrooms a').attr('href', '');
-    // console.log('10 or more Citron popup');
-}
+// // Massachusetts
 
-// New Hampshire
+// if (state == 'Massachusetts' && bathrooms <= 9 && job != 'Distributor') {
+//     // $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
+//     // $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
+//     // console.log('10 or fewer Citron popup');
+// }
 
-if (state == 'New Hampshire' && bathrooms <= 9) {
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
-}
+// if (state == 'Massachusetts' && bathrooms > 9 && job != 'Distributor') {
+//     // $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
+//     // $('#for_over_10_bathrooms a').attr('href', '');
+//     // console.log('10 or more Citron popup');
+// }
 
-if (state == 'New Hampshire' && bathrooms > 9) {
-    $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
-    $('#for_over_10_bathrooms a').attr('href', '');
-}
+// // New Hampshire
 
-// Maine
+// if (state == 'New Hampshire' && bathrooms <= 9) {
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
+// }
 
-if (state == 'Maine' && bathrooms <= 9) {
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
-}
+// if (state == 'New Hampshire' && bathrooms > 9) {
+//     $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
+//     $('#for_over_10_bathrooms a').attr('href', '');
+// }
 
-if (state == 'Maine' && bathrooms > 9) {
-    $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
-    $('#for_over_10_bathrooms a').attr('href', '');
-}
+// // Maine
 
-// Connecticut
+// if (state == 'Maine' && bathrooms <= 9) {
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
+// }
 
-if (state == 'Connecticut' && bathrooms <= 9) {
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
-}
+// if (state == 'Maine' && bathrooms > 9) {
+//     $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
+//     $('#for_over_10_bathrooms a').attr('href', '');
+// }
 
-if (state == 'Connecticut' && bathrooms > 9) {
-    $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
-    $('#for_over_10_bathrooms a').attr('href', '');
-}
+// // Connecticut
 
-// New Jersey
+// if (state == 'Connecticut' && bathrooms <= 9) {
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
+// }
 
-if (state == 'New Jersey' && bathrooms <= 9) {
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
-}
+// if (state == 'Connecticut' && bathrooms > 9) {
+//     $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
+//     $('#for_over_10_bathrooms a').attr('href', '');
+// }
 
-if (state == 'New Jersey' && bathrooms > 9) {
-    $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
-    $('#for_over_10_bathrooms a').attr('href', '');
-}
+// // New Jersey
 
-// New York
+// if (state == 'New Jersey' && bathrooms <= 9) {
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
+// }
 
-if (state == 'New York' && bathrooms <= 9) {
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
-}
+// if (state == 'New Jersey' && bathrooms > 9) {
+//     $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
+//     $('#for_over_10_bathrooms a').attr('href', '');
+// }
 
-if (state == 'New York' && bathrooms > 9) {
-    $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
-    $('#for_over_10_bathrooms a').attr('href', '');
-}
+// // New York
 
-// DC
+// if (state == 'New York' && bathrooms <= 9) {
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
+// }
 
-if (state == 'District of Columbia' && bathrooms <= 9) {
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
-}
+// if (state == 'New York' && bathrooms > 9) {
+//     $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
+//     $('#for_over_10_bathrooms a').attr('href', '');
+// }
 
-if (state == 'District of Columbia' && bathrooms > 9) {
-    $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
-    $('#for_over_10_bathrooms a').attr('href', '');
-}
+// // DC
 
-// Maryland
+// if (state == 'District of Columbia' && bathrooms <= 9) {
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
+// }
 
-if (state == 'Maryland' && bathrooms <= 9) {
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
-}
+// if (state == 'District of Columbia' && bathrooms > 9) {
+//     $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
+//     $('#for_over_10_bathrooms a').attr('href', '');
+// }
 
-if (state == 'Maryland' && bathrooms > 9) {
-    $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
-    $('#for_over_10_bathrooms a').attr('href', '');
-}
+// // Maryland
 
-// Virginia
+// if (state == 'Maryland' && bathrooms <= 9) {
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
+// }
 
-if (state == 'Virginia' && bathrooms <= 9) {
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
-    $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
-}
+// if (state == 'Maryland' && bathrooms > 9) {
+//     $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
+//     $('#for_over_10_bathrooms a').attr('href', '');
+// }
 
-if (state == 'Virginia' && bathrooms > 9) {
-    $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
-    $('#for_over_10_bathrooms a').attr('href', '');
-}
+// // Virginia
 
-if(job === "Distributor" && bathrooms > 9) {
-    // console.log("DIST - meet with sales (10+ bathrooms OR distributor)")
-    // console.log("change meeting link")
-}
+// if (state == 'Virginia' && bathrooms <= 9) {
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('id', 'citronPopup');
+//     $('#For_10_or_fewer_bathrooms_that_are_tax_exempt a').attr('href', '');
+// }
 
-if(job === "Distributor" && bathrooms <= 9) {
-    // console.log("DIST - meet with sales (Less than 10 bathrooms AND tax exempt)")
-    // console.log("change meeting link")
-}
+// if (state == 'Virginia' && bathrooms > 9) {
+//     $('#for_over_10_bathrooms a').attr('id', 'citronPopup');
+//     $('#for_over_10_bathrooms a').attr('href', '');
+// }
+
+// if(job === "Distributor" && bathrooms > 9) {
+//     // console.log("DIST - meet with sales (10+ bathrooms OR distributor)")
+//     // console.log("change meeting link")
+// }
+
+// if(job === "Distributor" && bathrooms <= 9) {
+//     // console.log("DIST - meet with sales (Less than 10 bathrooms AND tax exempt)")
+//     // console.log("change meeting link")
+// }
 
 
 
