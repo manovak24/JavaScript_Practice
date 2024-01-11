@@ -3525,7 +3525,14 @@ const countSmileys = (arr) => {
 const integrate = (coefficient, exponent) => {
   return `${coefficient / (exponent + 1)}x^${exponent + 1}`;
 }
-console.log(integrate(12, 5));
+// console.log(integrate(12, 5));
+
+
+const isPythagoreanTriple = (integers) => { 
+ let [a, b, c] = integers.sort((a,b) => a - b);
+ return Math.pow(a, 2) + Math.pow(b, 2) === Math.pow(c, 2);
+}
+console.log(isPythagoreanTriple([3, 4, 5]));
 
 
 const checkRange = (a, x, y) => {
