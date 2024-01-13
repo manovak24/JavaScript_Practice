@@ -3532,7 +3532,14 @@ const isPythagoreanTriple = (integers) => {
  let [a, b, c] = integers.sort((a,b) => a - b);
  return Math.pow(a, 2) + Math.pow(b, 2) === Math.pow(c, 2);
 }
-console.log(isPythagoreanTriple([3, 4, 5]));
+// console.log(isPythagoreanTriple([3, 4, 5]));
+
+
+// remove duplicates from array
+const distinct = (a) => {
+  return [... new Set(a)];
+}
+console.log(distinct([1,1,2]));
 
 
 const checkRange = (a, x, y) => {
