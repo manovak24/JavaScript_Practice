@@ -3539,7 +3539,15 @@ const isPythagoreanTriple = (integers) => {
 const distinct = (a) => {
   return [... new Set(a)];
 }
-console.log(distinct([1,1,2]));
+// console.log(distinct([1,1,2]));
+
+
+const spacify = (str) => {
+  // return str.split('').map(item => item + ' ').join('').slice(0, -1);
+
+  return str.split('').join(' ');
+}
+console.log(spacify('hello world'));
 
 
 const checkRange = (a, x, y) => {
