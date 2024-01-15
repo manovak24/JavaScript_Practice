@@ -3547,7 +3547,13 @@ const spacify = (str) => {
 
   return str.split('').join(' ');
 }
-console.log(spacify('hello world'));
+// console.log(spacify('hello world'));
+
+
+const joinStrings = (string1, string2) => {
+   return `${string1} ${string2}`
+}
+console.log(joinStrings(134, 'testing'));
 
 
 const checkRange = (a, x, y) => {
