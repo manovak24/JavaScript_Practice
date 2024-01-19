@@ -3553,7 +3553,19 @@ const spacify = (str) => {
 const joinStrings = (string1, string2) => {
    return `${string1} ${string2}`
 }
-console.log(joinStrings(134, 'testing'));
+// console.log(joinStrings(134, 'testing'));
+
+
+const stringClean = (s) => {
+  return s.replace(/[0-9]/gi, '');
+}
+// console.log(stringClean('E3at m2e2!!'));
+
+
+const automorphic = (n) => {
+  return String(n * n).endsWith(String(n)) ? 'Automorphic' : 'Not!!';
+}
+console.log(automorphic(5));
 
 
 const checkRange = (a, x, y) => {
