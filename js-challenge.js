@@ -3565,7 +3565,26 @@ const stringClean = (s) => {
 const automorphic = (n) => {
   return String(n * n).endsWith(String(n)) ? 'Automorphic' : 'Not!!';
 }
-console.log(automorphic(5));
+// console.log(automorphic(5));
+
+
+const isPP = (n) => {
+  for (let base = 2; base <= Math.sqrt(number); base++) {
+    let exponent = 2;
+    let result = Math.pow(base, exponent);
+
+    while (result <= number) {
+      if (result === number) {
+        return true; // The number is a perfect power
+      }
+      exponent++;
+      result = Math.pow(base, exponent);
+    }
+  }
+
+  return false;
+}
+// console.log(isPP(81));
 
 
 const checkRange = (a, x, y) => {
