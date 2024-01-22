@@ -3568,21 +3568,22 @@ const automorphic = (n) => {
 // console.log(automorphic(5));
 
 
-const isPP = (n) => {
-  for (let base = 2; base <= Math.sqrt(number); base++) {
-    let exponent = 2;
-    let result = Math.pow(base, exponent);
-
-    while (result <= number) {
-      if (result === number) {
-        return true; // The number is a perfect power
-      }
-      exponent++;
-      result = Math.pow(base, exponent);
-    }
+const factorialTest = (n) => {
+  if(n === 0) {
+    return 1;
   }
+  
+  let products = [];
+  for(let i = n; i > 0; i--) {
+    products.push(i)
+  }
+  return products.reduce((a,b) => a * b);
+}
+// console.log(factorialTest(1));
 
-  return false;
+
+const isPP = (n) => {
+  
 }
 // console.log(isPP(81));
 
