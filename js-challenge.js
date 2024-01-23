@@ -3582,6 +3582,13 @@ const factorialTest = (n) => {
 // console.log(factorialTest(1));
 
 
+function contamination(text, char) {
+  // return text.length > 0 ? new Array(text.length + 1).join(char) : '';
+  return char.repeat(text.length);
+}
+console.log(contamination('asfasdf', '&'));
+
+
 const isPP = (n) => {
   
 }
