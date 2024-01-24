@@ -3586,7 +3586,13 @@ function contamination(text, char) {
   // return text.length > 0 ? new Array(text.length + 1).join(char) : '';
   return char.repeat(text.length);
 }
-console.log(contamination('asfasdf', '&'));
+// console.log(contamination('asfasdf', '&'));
+
+
+function nameShuffler(str) {
+  return str.split(' ').reverse().join(' ');
+}
+console.log(nameShuffler('john McClane'));
 
 
 const isPP = (n) => {
