@@ -3592,7 +3592,13 @@ function contamination(text, char) {
 function nameShuffler(str) {
   return str.split(' ').reverse().join(' ');
 }
-console.log(nameShuffler('john McClane'));
+// console.log(nameShuffler('john McClane'));
+
+
+const maxDiff = (list) => {
+  return list.length > 0 ? Math.max(...list) - Math.min(...list) : 0;
+}
+// console.log(maxDiff([]));
 
 
 const isPP = (n) => {
