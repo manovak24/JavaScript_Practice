@@ -3601,6 +3601,12 @@ const maxDiff = (list) => {
 // console.log(maxDiff([]));
 
 
+const minArrVal = (arr, toReturn) => {
+  return toReturn === 'value' ? Math.min(...arr) : arr.indexOf(Math.min(...arr));
+}
+// console.log(minArrVal([1,2,3,4,5], 'value'));
+
+
 const isPP = (n) => {
   
 }
