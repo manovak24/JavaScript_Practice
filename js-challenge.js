@@ -3607,6 +3607,34 @@ const minArrVal = (arr, toReturn) => {
 // console.log(minArrVal([1,2,3,4,5], 'value'));
 
 
+function revrot(str, sz) {
+  if(sz <= 0 || str.length === 0 || sz > str.length) {
+    return "";
+  }
+  let arr = str.match(new RegExp('.{1,' + sz + '}', 'g'));
+  let updatedArr = arr.map(item => {
+    if(item.length === sz) {
+      let testArr = [];
+      for(let i = 0; i < item.length; i++) {
+        testArr.push(Math.pow(parseInt(item[i]), 3));
+      }
+      if(testArr.reduce((a,b) => a + b) % 2 === 0) {
+        return item.split('').reverse().join('');
+      } else {
+        return item.substring(1)+item[0];
+      }
+    }
+  })
+  return updatedArr.join('');
+}
+console.log(revrot("563000655734469485", 4));
+
+
+
+
+
+
+
 const isPP = (n) => {
   
 }
