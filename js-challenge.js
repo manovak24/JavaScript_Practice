@@ -3627,7 +3627,23 @@ function revrot(str, sz) {
   })
   return updatedArr.join('');
 }
-console.log(revrot("563000655734469485", 4));
+// console.log(revrot("563000655734469485", 4));
+
+
+const validateCode = (code) => {
+  return /^[1-3]/.test(code);
+}
+// console.log(validateCode(223));
+
+
+const kebabize = (str) => {
+  return str.split('').map((letter, index) => {
+    if(/^[A-Z]/.test(letter) && index === 0) {return letter.toLowerCase();} 
+    else if (/^[A-Z]/.test(letter) && index !== 0) {return '-' + letter.toLowerCase();} 
+    else {return letter}
+  }).join('').replace(/\d+/g, '');
+}
+console.log(kebabize('MyCamelCased3String'));
 
 
 
