@@ -3643,10 +3643,21 @@ const kebabize = (str) => {
     else {return letter}
   }).join('').replace(/\d+/g, '');
 }
-console.log(kebabize('MyCamelCased3String'));
+// console.log(kebabize('MyCamelCased3String'));
 
 
-
+function strong(n) {
+  let arr = n.toString().split('');
+  let mapArr = arr.map(num => {
+    let rval = 1;
+    for(let i = 1; i <= num; i ++) {
+      rval = rval * i;
+    }
+    return rval
+  })
+  return mapArr.reduce((a,b) => a + b) === n ? 'STRONG!!!!' : 'Not Strong !!';
+}
+// console.log(strong(145));
 
 
 
