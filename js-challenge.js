@@ -3681,7 +3681,13 @@ const reverseEveryOther = (str) => {
     }
   }).join(' ').trim();
 }
-console.log(reverseEveryOther("'  '"));
+// console.log(reverseEveryOther("'  '"));
+
+
+function tidyNumber(n) {
+    return [...n + ''].sort().join('') == n;
+}
+console.log(tidyNumber(2789));
 
 
 
