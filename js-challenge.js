@@ -3687,7 +3687,35 @@ const reverseEveryOther = (str) => {
 function tidyNumber(n) {
     return [...n + ''].sort().join('') == n;
 }
-console.log(tidyNumber(2789));
+// console.log(tidyNumber(2789));
+
+
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  get info() {
+    return `${this.name}s age is ${this.age}`;
+  }
+}
+const john = new Person('john', 34);
+console.log(john.info);
+
+
+// class Ship {
+//   constructor(draft, crew) {
+//     this.draft = draft;
+//     this.crew = crew;
+//   }
+
+//   isWorthIt() {
+//     return this.draft - (this.crew * 1.5) > 20;
+//   }
+// }
+
+// const titanic = new Ship(15, 10);
+// console.log(titanic.isWorthIt());
 
 
 
