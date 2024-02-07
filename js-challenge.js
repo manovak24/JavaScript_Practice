@@ -3699,23 +3699,25 @@ class Person {
     return `${this.name}s age is ${this.age}`;
   }
 }
-const john = new Person('john', 34);
-console.log(john.info);
+// const john = new Person('john', 34);
+// console.log(john.info);
+
+const calcNumerical = (x) => {
+  let totalOne = x.split('').map(letter => letter.charCodeAt(0));
+  let totalTwo = totalOne.map(num => num.toString())
+                          .map(str => str.replace(/[7]/, '1'))
+                          .map(str => parseInt(str));
+  
 
 
-// class Ship {
-//   constructor(draft, crew) {
-//     this.draft = draft;
-//     this.crew = crew;
-//   }
+  let sumOne = totalOne.map(num => num.toString().split('').map(letter => parseInt(letter)).reduce((a,b) => a + b)).reduce((a,b) => a + b);
+  let sumTwo = totalTwo.map(num => num.toString().split('').map(letter => parseInt(letter)).reduce((a,b) => a + b)).reduce((a,b) => a + b);
 
-//   isWorthIt() {
-//     return this.draft - (this.crew * 1.5) > 20;
-//   }
-// }
+  return sumOne - sumTwo;
+}
+console.log(calcNumerical('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'));
 
-// const titanic = new Ship(15, 10);
-// console.log(titanic.isWorthIt());
+
 
 
 
