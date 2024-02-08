@@ -3715,7 +3715,14 @@ const calcNumerical = (x) => {
 
   return sumOne - sumTwo;
 }
-console.log(calcNumerical('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'));
+// console.log(calcNumerical('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'));
+
+
+function typeOfSum(a, b) {
+  let sum = a + b;
+  return typeof sum;
+}
+console.log(typeOfSum(true, 1));
 
 
 
