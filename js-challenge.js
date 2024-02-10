@@ -3722,7 +3722,31 @@ function typeOfSum(a, b) {
   let sum = a + b;
   return typeof sum;
 }
-console.log(typeOfSum(true, 1));
+// console.log(typeOfSum(true, 1));
+
+
+Array.prototype.square = function() {
+  return [...this].map(num => num * num)
+}
+Array.prototype.cube = function() {
+  return [...this].map(num => num * num * num);
+}
+Array.prototype.average = function() {
+  if(this.length === 0) return NaN;
+  return [...this].reduce((a,b) => a + b) / this.length;
+}
+Array.prototype.sum = function() {
+  if(this.length === 0) return NaN;
+  return [...this].reduce((a,b) => a + b);
+}
+Array.prototype.even = function() {
+  return [...this].filter(num => num % 2 === 0);
+}
+Array.prototype.odd = function() {
+  return [...this].filter(num => num % 2 !== 0);
+}
+// const numbers = [1, 2, 3];
+// console.log(numbers.even());
 
 
 
