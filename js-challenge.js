@@ -3755,11 +3755,27 @@ const maxRot = (n) => {
   let arr = [str];
   for(let i = 0; i <= str.length - 1; i++) {
     str = str.slice(0, i) + str.slice(i + 1) + str[i];
+    console.log
     arr.push(str.split().join());
   }
   return Math.max(...arr);
 }
-console.log(maxRot(56789));
+// console.log(maxRot(56789));
+
+
+const minimumSteps = (numbers, value) => {
+  let sorted = numbers.sort((a,b) => a - b);
+  let sum = sorted[0];
+  let counter = 0;
+  for(let i = 1; i < sorted.length; i ++) {
+    if(sum < value) {
+      sum += sorted[i];
+      counter++
+    }
+  }
+  return counter;
+}
+console.log(minimumSteps([19,98,69,28,75,45,17,98,67], 464));
 
 
 
