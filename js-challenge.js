@@ -3775,7 +3775,14 @@ const minimumSteps = (numbers, value) => {
   }
   return counter;
 }
-console.log(minimumSteps([19,98,69,28,75,45,17,98,67], 464));
+// console.log(minimumSteps([19,98,69,28,75,45,17,98,67], 464));
+
+
+function cubeOdd(arr) {
+  let allNumbers = arr.every(item => !isNaN(item));
+  return allNumbers ? arr.filter(num => num % 2).reduce((a,b) => a + (Math.pow(b, 3)),0) : undefined;
+}
+console.log(cubeOdd([1, 2, 3, 4]));
 
 
 
