@@ -3782,7 +3782,19 @@ function cubeOdd(arr) {
   let allNumbers = arr.every(item => !isNaN(item));
   return allNumbers ? arr.filter(num => num % 2).reduce((a,b) => a + (Math.pow(b, 3)),0) : undefined;
 }
-console.log(cubeOdd([1, 2, 3, 4]));
+// console.log(cubeOdd([1, 2, 3, 4]));
+
+
+const capitalizeIndex = (s, arr) => {
+  let sArr = s.split('');
+  for(let i = 0; i < arr.length; i++) {
+    if(sArr[arr[i]]) {
+      sArr[arr[i]] = sArr[arr[i]].toUpperCase();
+    }
+  }
+  return sArr.join('');
+}
+// console.log(capitalizeIndex("abcdef",[1,2,5]));
 
 
 
