@@ -3797,6 +3797,12 @@ const capitalizeIndex = (s, arr) => {
 // console.log(capitalizeIndex("abcdef",[1,2,5]));
 
 
+function overTheRoad(address, n) {
+  return n * 2 - (address - 1);
+}
+// console.log(overTheRoad(3,3));
+
+
 
 
 const isPP = (n) => {
