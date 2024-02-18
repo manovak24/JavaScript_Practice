@@ -3821,7 +3821,31 @@ const vaporcode = (string) => {
 
   return string.toUpperCase().split(' ').join('').split('').join('  ');
 }
-console.log(vaporcode("Lets go to the movies"));
+// console.log(vaporcode("Lets go to the movies"));
+
+
+function avgArray(arr) {
+  // for(let i = 1; i < arr.length; i++) {
+  //   let holderArr = arr[0];
+  //   for(let j = 0; j < arr[i].length; j++) {
+  //     holderArr[j] += arr[i][j]
+  //   }
+  //   return holderArr;
+  // }
+
+  const result = [];
+  for(let i = 0; i < arr[0].length; i++) {
+    let sum = 0;
+    for(let j = 0; j < arr.length; j++) {
+      sum += arr[j][i];
+    }
+    result.push(sum / arr.length);
+  }
+  return result;
+}
+console.log(avgArray([[1, 2, 3, 4], [5, 6, 7, 8]]));
+
+
 
 
 
