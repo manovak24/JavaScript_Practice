@@ -3812,7 +3812,19 @@ const findNb = (m) => {
   }
   return v != m ? -1 : n;
 }
-console.log(findNb(1071225));
+// console.log(findNb(1071225));
+
+
+const vaporcode = (string) => {
+  // let arr = string.split('').filter(letter => letter !== ' ');
+  // return arr.map(letter => letter.toUpperCase() + '  ').join('').slice(0, -2);
+
+  return string.toUpperCase().split(' ').join('').split('').join('  ');
+}
+console.log(vaporcode("Lets go to the movies"));
+
+
+
 
 
 const isPP = (n) => {
