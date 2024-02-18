@@ -3803,6 +3803,16 @@ function overTheRoad(address, n) {
 // console.log(overTheRoad(3,3));
 
 
+const findNb = (m) => {
+  let n = 0;
+  let v = 0;
+  while(v < m) {
+    n++;
+    v += n*n*n;
+  }
+  return v != m ? -1 : n;
+}
+console.log(findNb(1071225));
 
 
 const isPP = (n) => {
