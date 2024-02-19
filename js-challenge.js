@@ -3843,7 +3843,13 @@ function avgArray(arr) {
   }
   return result;
 }
-console.log(avgArray([[1, 2, 3, 4], [5, 6, 7, 8]]));
+// console.log(avgArray([[1, 2, 3, 4], [5, 6, 7, 8]]));
+
+
+function removeRotten(bagOfFruits) {
+  return bagOfFruits ? bagOfFruits.map(fruit => fruit.replace(/rotten/, '').toLowerCase()) : [];
+}
+// console.log(removeRotten([]))
 
 
 
