@@ -3852,6 +3852,10 @@ function removeRotten(bagOfFruits) {
 // console.log(removeRotten([]))
 
 
+const numberToPower = (number, power) => {
+  return power < 1 ? 1 : new Array(power).fill(number).reduce((a,b) => a * b);
+}
+// console.log(numberToPower(4, 1));
 
 
 
