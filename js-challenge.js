@@ -3857,6 +3857,25 @@ const numberToPower = (number, power) => {
 }
 // console.log(numberToPower(4, 1));
 
+const nbDig = (n, d) => {
+  let arr = [];
+  for(let i = 0; i <= n; i++) {
+    arr.push((i*i).toString())
+  }
+
+  let counter = 0;
+  let newArr = arr.join('').split('');
+  newArr.forEach(letter => {
+    if(letter == d.toString()) {
+      counter++
+    }
+  })
+
+
+  return counter;
+}
+console.log(nbDig(5750, 0));
+
 
 
 
