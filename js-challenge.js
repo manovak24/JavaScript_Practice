@@ -3874,7 +3874,24 @@ const nbDig = (n, d) => {
 
   return counter;
 }
-console.log(nbDig(5750, 0));
+// console.log(nbDig(5750, 0));
+
+
+function switcheroo(x) {
+  // return x.split('').map(letter => {
+  //   if (letter === 'a') {
+  //     return letter = 'b';
+  //   } else if (letter === 'b') {
+  //     return letter = 'a';
+  //   } else {
+  //     return letter;
+  //   }
+  // }).join('');
+
+
+  return x.replace(/[ab]/g, letter => letter === 'a' ? 'b' : 'a');
+}
+console.log(switcheroo('aaabcccbaaa'));
 
 
 
