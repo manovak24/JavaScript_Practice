@@ -3891,7 +3891,16 @@ function switcheroo(x) {
 
   return x.replace(/[ab]/g, letter => letter === 'a' ? 'b' : 'a');
 }
-console.log(switcheroo('aaabcccbaaa'));
+// console.log(switcheroo('aaabcccbaaa'));
+
+// remove n occurrences of character from string left to right
+const removeExlamation = (s, n) => {
+  for(let i = 0; i < n; i++) {
+    s = s.replace('!', '');
+  }
+  return s;
+}
+console.log(removeExlamation( "!!!Hi !!hi!!! !hi",5));
 
 
 
