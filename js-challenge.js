@@ -3925,6 +3925,21 @@ const decompose = (n) => {
 // console.log(decompose(121));
 
 
+function multiplyAll(arr) {
+  // return solve = (n) => {
+  //   let answer = [];
+  //   for(let i = 0; i < arr.length; i++) {
+  //     answer.push(arr[i] * n);
+  //   }
+  //   return answer;
+  // }
+
+  return function(n) {
+    return arr.map(num => num * n);
+  }
+}
+// console.log(multiplyAll([1,2,3])(2));
+
 
 
 
