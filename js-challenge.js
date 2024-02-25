@@ -3900,7 +3900,30 @@ const removeExlamation = (s, n) => {
   }
   return s;
 }
-console.log(removeExlamation( "!!!Hi !!hi!!! !hi",5));
+// console.log(removeExlamation( "!!!Hi !!hi!!! !hi",5));
+
+
+const decompose = (n) => {
+  let nSquared = n*n
+  let arr = [];
+  for(let i = n - 1; i > 0; i--) {
+    let squared = i * i;
+    arr.push(squared);
+  }
+
+  let answer = [];
+  arr = arr.slice();
+  while(arr.length) {
+    let value = arr.shift();
+    let s = nSquared - value;
+    if(s) return answer.push(s);
+  }
+
+  return answer
+}
+// console.log(decompose(50));
+
+
 
 
 
