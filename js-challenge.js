@@ -3904,24 +3904,25 @@ const removeExlamation = (s, n) => {
 
 
 const decompose = (n) => {
-  let nSquared = n*n
   let arr = [];
   for(let i = n - 1; i > 0; i--) {
-    let squared = i * i;
-    arr.push(squared);
+    arr.push(i);
   }
 
   let answer = [];
-  arr = arr.slice();
-  while(arr.length) {
-    let value = arr.shift();
-    let s = nSquared - value;
-    if(s) return answer.push(s);
+  const solution = (number, a) => {
+    a = a.slice();
+    while(a.length) {
+      let value = a.shift();
+      let s = solution(n - value, arr);
+      if(s) return answer.push(s);
+    }
   }
+  
+  return answer;
 
-  return answer
 }
-// console.log(decompose(50));
+// console.log(decompose(121));
 
 
 
