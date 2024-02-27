@@ -3903,6 +3903,30 @@ const removeExlamation = (s, n) => {
 // console.log(removeExlamation( "!!!Hi !!hi!!! !hi",5));
 
 
+function multiplyAll(arr) {
+  // return solve = (n) => {
+  //   let answer = [];
+  //   for(let i = 0; i < arr.length; i++) {
+  //     answer.push(arr[i] * n);
+  //   }
+  //   return answer;
+  // }
+
+  return function(n) {
+    return arr.map(num => num * n);
+  }
+}
+// console.log(multiplyAll([1,2,3])(2));
+
+
+function isDigit(s) {
+  return s==parseFloat(s);
+}
+console.log(isDigit("3-4"));
+
+
+
+
 const decompose = (n) => {
   let arr = [];
   for(let i = n - 1; i > 0; i--) {
@@ -3923,26 +3947,6 @@ const decompose = (n) => {
 
 }
 // console.log(decompose(121));
-
-
-function multiplyAll(arr) {
-  // return solve = (n) => {
-  //   let answer = [];
-  //   for(let i = 0; i < arr.length; i++) {
-  //     answer.push(arr[i] * n);
-  //   }
-  //   return answer;
-  // }
-
-  return function(n) {
-    return arr.map(num => num * n);
-  }
-}
-// console.log(multiplyAll([1,2,3])(2));
-
-
-
-
 
 
 const isPP = (n) => {
