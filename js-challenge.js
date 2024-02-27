@@ -3919,6 +3919,7 @@ function multiplyAll(arr) {
 // console.log(multiplyAll([1,2,3])(2));
 
 
+// Test if string contains only numbers and is less than 10
 function isDigit(s) {
   return s==parseFloat(s);
 }
