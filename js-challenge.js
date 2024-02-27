@@ -3923,7 +3923,17 @@ function multiplyAll(arr) {
 function isDigit(s) {
   return s==parseFloat(s);
 }
-console.log(isDigit("3-4"));
+// console.log(isDigit("3-4"));
+
+
+function sumCubes(n) {
+  let arr = [];
+  for(let i = 1; i <= n; i++) {
+    arr.push(i);
+  }
+  return arr.map(num => num*num*num).reduce((a,b) => a + b);
+}
+console.log(sumCubes(3));
 
 
 
