@@ -3933,8 +3933,20 @@ function sumCubes(n) {
   }
   return arr.map(num => num*num*num).reduce((a,b) => a + b);
 }
-console.log(sumCubes(3));
+// console.log(sumCubes(3));
 
+
+const parseF = (s) => {
+  return s==parseFloat(s) ? parseFloat(s) : null;
+}
+// console.log(parseF('NaN'));
+
+
+const excludingVatPrice = (price) => {
+  if(price === null) return -1;
+  return Math.round(((price / 1.15) + Number.EPSILON)* 100) / 100;
+}
+// console.log(excludingVatPrice(230));
 
 
 
