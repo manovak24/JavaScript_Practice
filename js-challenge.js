@@ -3949,6 +3949,17 @@ const excludingVatPrice = (price) => {
 // console.log(excludingVatPrice(230));
 
 
+const findDigit = function(num, nth) {
+  if(nth <= 0) return -1;
+  let str = Math.abs(num).toString().split('');
+  let index = nth - 1;
+  return str.length > index ? str[nth - 1] : 0;
+
+}
+console.log(findDigit(65, 0));
+
+
+
 
 const decompose = (n) => {
   let arr = [];
