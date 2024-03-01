@@ -3956,7 +3956,16 @@ const findDigit = function(num, nth) {
   return str.length > index ? str[nth - 1] : 0;
 
 }
-console.log(findDigit(65, 0));
+// console.log(findDigit(65, 0));
+
+
+const explodeLetter = (s) => {
+  return s.split('').map(num => {
+    return num.repeat(parseInt(num));
+  }).join('');
+}
+// console.log(explodeLetter('312'));
+
 
 
 
