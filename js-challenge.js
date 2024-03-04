@@ -3967,6 +3967,16 @@ const explodeLetter = (s) => {
 // console.log(explodeLetter('312'));
 
 
+const binToDec = (bin) => {
+  // return bin.split('').map(item => parseInt(item)).reverse().map((num, index) => {
+  //   return num * Math.pow(2, index);
+  // }).reduce((a,b) => a + b);
+
+  return parseInt(bin, 2);
+}
+console.log(binToDec('1001001'));
+
+
 
 
 
