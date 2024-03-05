@@ -3974,11 +3974,22 @@ const binToDec = (bin) => {
 
   return parseInt(bin, 2);
 }
-console.log(binToDec('1001001'));
+// console.log(binToDec('1001001'));
+
+
+
+// Given a string of words (x), you need to return an array of the words, sorted alphabetically by the final character in each.
+// If two words have the same last letter, the returned array should show them in the order they appeared in the given string.
+const last = (x) => {
+  return x.split(' ').sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
+}
+console.log(last('x v q v'));
 
 
 
 
+
+ 
 
 const decompose = (n) => {
   let arr = [];
