@@ -3983,8 +3983,13 @@ const binToDec = (bin) => {
 const last = (x) => {
   return x.split(' ').sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
 }
-console.log(last('x v q v'));
+// console.log(last('x v q v'));
 
+
+const evil = (n) => {
+  return (n).toString(2).replace(/[0]/g, '').length % 2 === 0 ? "It's Evil!" : "It's Odious!";
+}
+console.log(evil(42));
 
 
 
