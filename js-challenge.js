@@ -3989,7 +3989,18 @@ const last = (x) => {
 const evil = (n) => {
   return (n).toString(2).replace(/[0]/g, '').length % 2 === 0 ? "It's Evil!" : "It's Odious!";
 }
-console.log(evil(42));
+// console.log(evil(42));
+
+
+const slope = (points) => {
+  let y = (points[3] - points[1]);
+  let x = (points[2] - points[0]);
+
+  if(x === 0) return 'undefined';
+
+  return (y / x).toString();
+}
+console.log(slope([-10,6,-10,3]));
 
 
 
