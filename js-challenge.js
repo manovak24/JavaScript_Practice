@@ -4000,9 +4000,18 @@ const slope = (points) => {
 
   return (y / x).toString();
 }
-console.log(slope([-10,6,-10,3]));
+// console.log(slope([-10,6,-10,3]));
 
 
+const seven = (m) => {
+  let counter = 0;
+  while(m > 99) {
+    m = Math.floor(m / 100) - 2 * (m % 10);
+    counter++;
+  }
+  return [m, counter];
+}
+console.log(seven(1603));
 
 
  
