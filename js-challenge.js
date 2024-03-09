@@ -4011,7 +4011,19 @@ const seven = (m) => {
   }
   return [m, counter];
 }
-console.log(seven(1603));
+// console.log(seven(1603));
+
+
+const sumOfMinimums = (arr) => {
+  // let holder = [];
+  // arr.forEach(array => {
+  //   holder.push(Math.min(...array))
+  // })
+  // return holder.reduce((a,b) => a + b);
+
+  return arr.reduce((a,b) => a + Math.min(...b), 0);
+}
+console.log(sumOfMinimums([[11, 12, 14, 54], [67, 89, 90, 56], [7, 9, 4, 3], [9, 8, 6, 7]]));
 
 
  
