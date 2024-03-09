@@ -4023,7 +4023,22 @@ const sumOfMinimums = (arr) => {
 
   return arr.reduce((a,b) => a + Math.min(...b), 0);
 }
-console.log(sumOfMinimums([[11, 12, 14, 54], [67, 89, 90, 56], [7, 9, 4, 3], [9, 8, 6, 7]]));
+// console.log(sumOfMinimums([[11, 12, 14, 54], [67, 89, 90, 56], [7, 9, 4, 3], [9, 8, 6, 7]]));
+
+
+// Complete the function that returns an array of length n, starting with the given number x and the squares of the previous number. If n is negative or zero, return an empty array/list.
+const squares = (x, n) => {
+  let arr = [];
+  for(let i = 0; i < n; i++) {
+    arr.push(x);
+    x *= x;
+  }
+  return arr;
+}
+console.log(squares(2,5));
+
+
+
 
 
  
