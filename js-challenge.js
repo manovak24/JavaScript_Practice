@@ -4007,6 +4007,7 @@ const seven = (m) => {
   let counter = 0;
   while(m > 99) {
     m = Math.floor(m / 100) - 2 * (m % 10);
+    console.log(m);
     counter++;
   }
   return [m, counter];
@@ -4035,7 +4036,15 @@ const squares = (x, n) => {
   }
   return arr;
 }
-console.log(squares(2,5));
+// console.log(squares(2,5));
+
+const outed = (meet, boss) => {
+  meet[boss] = meet[boss] * 2;
+  let sum = Object.values(meet).reduce((a,b) => a + b);
+  let average = sum / Object.keys(meet).length;
+  return average <= 5 ? 'Get Out Now!' : 'Nice Work Champ!';
+}
+console.log(outed({'tim':0, 'jim':2, 'randy':0, 'sandy':7, 'andy':0, 'katie':5, 'laura':1, 'saajid':2, 'alex':3, 'john':2, 'mr':0}, 'laura'));
 
 
 
