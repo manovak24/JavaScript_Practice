@@ -4044,7 +4044,18 @@ const outed = (meet, boss) => {
   let average = sum / Object.keys(meet).length;
   return average <= 5 ? 'Get Out Now!' : 'Nice Work Champ!';
 }
-console.log(outed({'tim':0, 'jim':2, 'randy':0, 'sandy':7, 'andy':0, 'katie':5, 'laura':1, 'saajid':2, 'alex':3, 'john':2, 'mr':0}, 'laura'));
+// console.log(outed({'tim':0, 'jim':2, 'randy':0, 'sandy':7, 'andy':0, 'katie':5, 'laura':1, 'saajid':2, 'alex':3, 'john':2, 'mr':0}, 'laura'));
+
+
+const balancedNumber = (number) => {
+  const nStr = number.toString();
+  // if(nStr.length < 3) return 'Balanced';
+  if(nStr.length % 2 !== 0) {
+    let middleIndex = Math.round(nStr.length / 2);
+    console.log(middleIndex)
+  }
+}
+console.log(balancedNumber(711));
 
 
 
