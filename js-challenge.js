@@ -4047,48 +4047,22 @@ const outed = (meet, boss) => {
 // console.log(outed({'tim':0, 'jim':2, 'randy':0, 'sandy':7, 'andy':0, 'katie':5, 'laura':1, 'saajid':2, 'alex':3, 'john':2, 'mr':0}, 'laura'));
 
 
+// Find left and right half of arr or str by looping
+// Loop througha array backwards without i--
 const balancedNumber = (number) => {
-  // const arr = number.toString().split('');
-  // if(arr.length < 3) return 'Balanced';
-
-  // let test = null;
-
-  // if(arr.length % 2 !== 0) {
-  //   let mIdx = Math.round(arr.length / 2) - 1;
-  //   let left = arr.slice(0, mIdx).map(item => parseInt(item)).reduce((a,b) => a + b);
-  //   let right = arr.slice(mIdx + 1, arr.length).map(item => parseInt(item)).reduce((a,b) => a + b);
-  //   if(right === left) {
-  //     test = true;
-  //   } else {
-  //     test = false;
-  //   }
-  // }
-
-  // if(arr.length % 2 === 0) {
-  //   let mIdxOne = (arr.length / 2) - 1;
-  //   let mIdxTwo = arr.length / 2;
-  //   let left = arr.slice(0, mIdxOne).map(item => parseInt(item)).reduce((a,b) => a + b);
-  //   let right = arr.slice(mIdxTwo + 1, arr.length).map(item => parseInt(item)).reduce((a,b) => a + b);
-  //   if(right === left) {
-  //     test = true;
-  //   } else {
-  //     test = false;
-  //   }
-  // }
-
-
-  // return test === true ? 'Balanced' : 'Not Balanced'
-
   const str = String(number);
   let leftTotal = 0;
   let rightTotal = 0;
   for(let i=0; i<(str.length/2)-1 ; i++){
     leftTotal += Number(str[i]);
-    rightTotal += Number (str[str.length-1-i]);
+    rightTotal += Number(str[str.length-1-i]);
+    
+    // use below to see how it works for backwards
+    // console.log(str[str.length-1-i])
   }
   return leftTotal===rightTotal?'Balanced':'Not Balanced';
 }
-console.log(balancedNumber(7127));
+console.log(balancedNumber(7225127225));
 
 
 
