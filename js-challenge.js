@@ -4048,14 +4048,47 @@ const outed = (meet, boss) => {
 
 
 const balancedNumber = (number) => {
-  const nStr = number.toString();
-  // if(nStr.length < 3) return 'Balanced';
-  if(nStr.length % 2 !== 0) {
-    let middleIndex = Math.round(nStr.length / 2);
-    console.log(middleIndex)
+  // const arr = number.toString().split('');
+  // if(arr.length < 3) return 'Balanced';
+
+  // let test = null;
+
+  // if(arr.length % 2 !== 0) {
+  //   let mIdx = Math.round(arr.length / 2) - 1;
+  //   let left = arr.slice(0, mIdx).map(item => parseInt(item)).reduce((a,b) => a + b);
+  //   let right = arr.slice(mIdx + 1, arr.length).map(item => parseInt(item)).reduce((a,b) => a + b);
+  //   if(right === left) {
+  //     test = true;
+  //   } else {
+  //     test = false;
+  //   }
+  // }
+
+  // if(arr.length % 2 === 0) {
+  //   let mIdxOne = (arr.length / 2) - 1;
+  //   let mIdxTwo = arr.length / 2;
+  //   let left = arr.slice(0, mIdxOne).map(item => parseInt(item)).reduce((a,b) => a + b);
+  //   let right = arr.slice(mIdxTwo + 1, arr.length).map(item => parseInt(item)).reduce((a,b) => a + b);
+  //   if(right === left) {
+  //     test = true;
+  //   } else {
+  //     test = false;
+  //   }
+  // }
+
+
+  // return test === true ? 'Balanced' : 'Not Balanced'
+
+  const str = String(number);
+  let leftTotal = 0;
+  let rightTotal = 0;
+  for(let i=0; i<(str.length/2)-1 ; i++){
+    leftTotal += Number(str[i]);
+    rightTotal += Number (str[str.length-1-i]);
   }
+  return leftTotal===rightTotal?'Balanced':'Not Balanced';
 }
-console.log(balancedNumber(711));
+console.log(balancedNumber(7127));
 
 
 
