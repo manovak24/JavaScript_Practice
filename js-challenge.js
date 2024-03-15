@@ -4062,7 +4062,13 @@ const balancedNumber = (number) => {
   }
   return leftTotal===rightTotal?'Balanced':'Not Balanced';
 }
-console.log(balancedNumber(7225127225));
+// console.log(balancedNumber(7225127225));
+
+
+const templateStrings = function(noun, adjective) {
+  return `${noun} are ${adjective}`;
+}
+console.log(templateStrings('Animals', 'Good'));
 
 
 
