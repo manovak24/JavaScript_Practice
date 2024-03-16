@@ -4068,7 +4068,16 @@ const balancedNumber = (number) => {
 const templateStrings = function(noun, adjective) {
   return `${noun} are ${adjective}`;
 }
-console.log(templateStrings('Animals', 'Good'));
+// console.log(templateStrings('Animals', 'Good'));
+
+
+const switcher = (x) => {
+  const numbers = x.map(item => parseInt(item));
+  const letters = numbers.map(num => String.fromCharCode(127 - num));
+
+  return letters
+}
+console.log(switcher(['24', '12', '23', '22', '4', '26', '9', '8']));
 
 
 
