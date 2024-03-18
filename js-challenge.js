@@ -4073,11 +4073,17 @@ const templateStrings = function(noun, adjective) {
 
 const switcher = (x) => {
   const numbers = x.map(item => parseInt(item));
-  const letters = numbers.map(num => String.fromCharCode(127 - num));
+  const numOps = numbers.map(num => {
+    if(num > 26) {
+      return String.fromCharCode(num + 2);
+    } else {
+      return String.fromCharCode(96 + (26 - num + 1))
+    }
+  });
 
-  return letters
+  return numOps.join('');
 }
-console.log(switcher(['24', '12', '23', '22', '4', '26', '9', '8']));
+console.log(switcher(['25','7','8','4','14','23','8','25','23','30','16','16','4']));
 
 
 
