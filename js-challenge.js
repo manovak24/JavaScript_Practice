@@ -4071,6 +4071,14 @@ const templateStrings = function(noun, adjective) {
 // console.log(templateStrings('Animals', 'Good'));
 
 
+const sumOfIntegersInSTring = (s) => {
+  const regex = /\b\d+\b/g;
+  const mathces = s.match(regex);
+  return mathces
+}
+console.log(sumOfIntegersInSTring('hell3wor4d 45 this is an ex34ample'));
+
+
 const switcher = (x) => {
   const numbers = x.map(item => parseInt(item));
   const numOps = numbers.map(num => {
