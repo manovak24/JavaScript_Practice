@@ -4072,11 +4072,19 @@ const templateStrings = function(noun, adjective) {
 
 
 const sumOfIntegersInSTring = (s) => {
-  const regex = /\b\d+\b/g;
-  const mathces = s.match(regex);
-  return mathces
+  // const regex = /\b\d+\b/g;
+  // const mathces = s.match(regex);
+  
+  let arr = [];
+  s.replace(/[^0-9]/gi, ' ').split(' ').forEach(letter => {
+    if(letter.length > 0) {
+      arr.push(letter);
+    }
+  });
+  return arr.length < 1 ? 0 : arr.map(letter => parseInt(letter))
+            .reduce((a,b) => a + b);
 }
-console.log(sumOfIntegersInSTring('hell3wor4d 45 this is an ex34ample'));
+console.log(sumOfIntegersInSTring('test'));
 
 
 const switcher = (x) => {
@@ -4091,7 +4099,7 @@ const switcher = (x) => {
 
   return numOps.join('');
 }
-console.log(switcher(['25','7','8','4','14','23','8','25','23','30','16','16','4']));
+// console.log(switcher(['25','7','8','4','14','23','8','25','23','30','16','16','4']));
 
 
 
