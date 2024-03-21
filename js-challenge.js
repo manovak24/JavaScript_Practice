@@ -4071,20 +4071,21 @@ const templateStrings = function(noun, adjective) {
 // console.log(templateStrings('Animals', 'Good'));
 
 
+// Find all numbers in string and add together while keeping numbers in tact (4, 45, 82, et)
 const sumOfIntegersInSTring = (s) => {
-  // const regex = /\b\d+\b/g;
-  // const mathces = s.match(regex);
-  
-  let arr = [];
-  s.replace(/[^0-9]/gi, ' ').split(' ').forEach(letter => {
-    if(letter.length > 0) {
-      arr.push(letter);
-    }
-  });
-  return arr.length < 1 ? 0 : arr.map(letter => parseInt(letter))
-            .reduce((a,b) => a + b);
+  // let arr = [];
+  // s.replace(/[^0-9]/gi, ' ').split(' ').forEach(letter => {
+  //   if(letter.length > 0) {
+  //     arr.push(letter);
+  //   }
+  // });
+  // return arr.length < 1 ? 0 : arr.map(letter => parseInt(letter))
+  //           .reduce((a,b) => a + b);
+
+  return s.replace(/[^0-9]/g, ' ').split(' ').reduce((a,b) => a + +b,0)
+
 }
-console.log(sumOfIntegersInSTring('test'));
+// console.log(sumOfIntegersInSTring('test'));
 
 
 const switcher = (x) => {
