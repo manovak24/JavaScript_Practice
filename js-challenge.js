@@ -4105,6 +4105,14 @@ const switcher = (x) => {
 // console.log(switcher(['24', '12', '23', '22', '4', '26', '9', '8']));
 
 
+// https://www.codewars.com/kata/5514e5b77e6b2f38e0000ca9/train/javascript
+const upArray = (arr) => {
+  let num = parseInt(arr.join('')) + 1;
+  return num.toString().split('').map(item => parseInt(item));
+}
+// console.log(upArray([2, 3, 9, 9]));
+
+
 
 
 
