@@ -4105,6 +4105,12 @@ const switcher = (x) => {
 // console.log(switcher(['24', '12', '23', '22', '4', '26', '9', '8']));
 
 
+const cubeChecker = (volume, side) => {
+  return Math.pow(side, 3) === volume && side > 0;
+}
+console.log(cubeChecker(8, 3));
+
+
 // https://www.codewars.com/kata/5514e5b77e6b2f38e0000ca9/train/javascript
 const upArray = (arr) => {
   if(arr.length < 1) return null;
@@ -4138,7 +4144,7 @@ const upArray = (arr) => {
   // return count > 0 ? answerArr : newNum;
   return num
 }
-console.log(upArray([1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0]));
+// console.log(upArray([1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0]));
 
 
 
