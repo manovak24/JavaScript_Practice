@@ -4108,7 +4108,29 @@ const switcher = (x) => {
 const cubeChecker = (volume, side) => {
   return Math.pow(side, 3) === volume && side > 0;
 }
-console.log(cubeChecker(8, 3));
+// console.log(cubeChecker(8, 3));
+
+
+String.prototype.digit = function() {
+  return /^\d$/.test(this);
+};
+// console.log('82'.digit());
+
+
+// https://www.codewars.com/kata/5a54e796b3bfa8932c0000ed/train/javascript
+const jumpingNumber = (n) => {
+  let arr = n.toString().split('').map(item => item * 1);
+  let test = true;
+  for(let i = 0; i < arr.length - 1; i++) {
+    if(arr[i] + 1 !== arr[i + 1] || arr[i] - 1 !== arr[i + 1]) {
+      test = false;
+    } else {
+      break;
+    }
+  }
+  return test === true ? "Jumping!!" : "Not!!";
+}
+// console.log(jumpingNumber(45));
 
 
 // https://www.codewars.com/kata/5514e5b77e6b2f38e0000ca9/train/javascript
