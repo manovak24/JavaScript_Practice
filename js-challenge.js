@@ -4117,6 +4117,12 @@ String.prototype.digit = function() {
 // console.log('82'.digit());
 
 
+const uniTotal = (string) => {
+  return [...string].reduce((acc, char) => acc + char.charCodeAt(0), 0);
+}
+console.log(uniTotal('aaa'));
+
+
 // https://www.codewars.com/kata/5a54e796b3bfa8932c0000ed/train/javascript
 const jumpingNumber = (n) => {
   let arr = n.toString().split('').map(item => item * 1);
