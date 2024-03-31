@@ -4120,7 +4120,13 @@ String.prototype.digit = function() {
 const uniTotal = (string) => {
   return [...string].reduce((acc, char) => acc + char.charCodeAt(0), 0);
 }
-console.log(uniTotal('aaa'));
+// console.log(uniTotal('aaa'));
+
+
+const guessBlue = (blueStart, redStart, bluePulled, redPulled) => {
+  return (blueStart - bluePulled) / ((blueStart + redStart) - (bluePulled + redPulled));
+}
+console.log(guessBlue(5, 5, 2, 3));
 
 
 // https://www.codewars.com/kata/5a54e796b3bfa8932c0000ed/train/javascript
