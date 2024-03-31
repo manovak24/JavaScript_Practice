@@ -4126,23 +4126,21 @@ const uniTotal = (string) => {
 const guessBlue = (blueStart, redStart, bluePulled, redPulled) => {
   return (blueStart - bluePulled) / ((blueStart + redStart) - (bluePulled + redPulled));
 }
-console.log(guessBlue(5, 5, 2, 3));
+// console.log(guessBlue(5, 5, 2, 3));
 
 
 // https://www.codewars.com/kata/5a54e796b3bfa8932c0000ed/train/javascript
+// Figure out if number before and after is consecutive + 1 or - 1
 const jumpingNumber = (n) => {
-  let arr = n.toString().split('').map(item => item * 1);
-  let test = true;
+  let arr = n.toString().split('');
   for(let i = 0; i < arr.length - 1; i++) {
-    if(arr[i] + 1 !== arr[i + 1] || arr[i] - 1 !== arr[i + 1]) {
-      test = false;
-    } else {
-      break;
+    if(Math.abs(arr[i] - arr[i + 1]) !== 1) {
+      return "Not!!";
     }
   }
-  return test === true ? "Jumping!!" : "Not!!";
+  return "Jumping!!";
 }
-// console.log(jumpingNumber(45));
+console.log(jumpingNumber(967710));
 
 
 // https://www.codewars.com/kata/5514e5b77e6b2f38e0000ca9/train/javascript
