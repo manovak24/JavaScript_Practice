@@ -4140,7 +4140,16 @@ const jumpingNumber = (n) => {
   }
   return "Jumping!!";
 }
-console.log(jumpingNumber(967710));
+// console.log(jumpingNumber(967710));
+
+
+const ensureQuestion = (s) => {
+  return s.indexOf('?') !== s.length - 1 || s.length === 0 ? `${s}?` : s;
+}
+console.log(ensureQuestion(''));
+
+
+
 
 
 // https://www.codewars.com/kata/5514e5b77e6b2f38e0000ca9/train/javascript
@@ -4178,11 +4187,6 @@ const upArray = (arr) => {
 }
 // console.log(upArray([1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0]));
 
-
-
-
-
- 
 
 const decompose = (n) => {
   let arr = [];
