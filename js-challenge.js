@@ -4144,9 +4144,9 @@ const jumpingNumber = (n) => {
 
 
 const ensureQuestion = (s) => {
-  return s.indexOf('?') !== s.length - 1 || s.length === 0 ? `${s}?` : s;
+  return s.endsWith('?') ? s : `${s}?`;
 }
-console.log(ensureQuestion(''));
+console.log(ensureQuestion('Yes'));
 
 
 
