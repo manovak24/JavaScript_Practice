@@ -4146,9 +4146,13 @@ const jumpingNumber = (n) => {
 const ensureQuestion = (s) => {
   return s.endsWith('?') ? s : `${s}?`;
 }
-console.log(ensureQuestion('Yes'));
+// console.log(ensureQuestion('Yes'));
 
 
+const validateUsr = (username) => {
+  return /^[a-z0-9\_]*$/.test(username) && username.length > 3 && username.length < 17;
+}
+console.log(validateUsr(''));
 
 
 
