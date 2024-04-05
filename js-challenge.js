@@ -4150,7 +4150,7 @@ const ensureQuestion = (s) => {
 
 
 const validateUsr = (username) => {
-  return /^[a-z0-9\_]*$/.test(username) && username.length > 3 && username.length < 17;
+  // return /^[a-z0-9_]{4,16}$/.test(username);
 }
 console.log(validateUsr(''));
 
