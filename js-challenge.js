@@ -4152,7 +4152,15 @@ const ensureQuestion = (s) => {
 const validateUsr = (username) => {
   // return /^[a-z0-9_]{4,16}$/.test(username);
 }
-console.log(validateUsr(''));
+// console.log(validateUsr(''));
+
+
+const sortMyString = (S) => {
+  let even = S.split('').filter((value, index) => index % 2 === 0).join('');
+  let odd = S.split('').filter((value, index) => index % 2 !== 0).join('');
+  return even + ' ' + odd;
+}
+// console.log(sortMyString('CodeWars'));
 
 
 
