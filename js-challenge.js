@@ -4163,6 +4163,22 @@ const sortMyString = (S) => {
 // console.log(sortMyString('CodeWars'));
 
 
+const incrementer = (nums) => {
+  // return nums.map((num, index) => {
+  //   let numUp = num + (index + 1);
+  //   if(numUp < 10) {
+  //     return numUp;
+  //   } else {
+  //     let str = numUp.toString();
+  //     return parseInt(str.charAt(str.length - 1));
+  //   }
+  // })
+
+  return nums.map((num, index) => (num + index + 1) % 10);
+}
+console.log(incrementer([3, 6, 9, 8, 9]));
+
+
 
 // https://www.codewars.com/kata/5514e5b77e6b2f38e0000ca9/train/javascript
 const upArray = (arr) => {
