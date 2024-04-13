@@ -4175,6 +4175,24 @@ const solutionPadded = (value) => {
 // console.log(solutionPadded(1204));
 
 
+// class with extends keyword
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+class Cat extends Animal {
+  constructor(name) {
+    super(name);
+  }
+
+  speak() {
+    return this.name + ' meows.';
+  }
+}
+const myCat = new Cat ('Fee');
+// console.log(myCat.speak());
 
 
 
