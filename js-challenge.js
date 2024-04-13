@@ -4164,19 +4164,18 @@ const sortMyString = (S) => {
 
 
 const incrementer = (nums) => {
-  // return nums.map((num, index) => {
-  //   let numUp = num + (index + 1);
-  //   if(numUp < 10) {
-  //     return numUp;
-  //   } else {
-  //     let str = numUp.toString();
-  //     return parseInt(str.charAt(str.length - 1));
-  //   }
-  // })
-
   return nums.map((num, index) => (num + index + 1) % 10);
 }
-console.log(incrementer([3, 6, 9, 8, 9]));
+// console.log(incrementer([3, 6, 9, 8, 9]));
+
+
+const solutionPadded = (value) => {
+  return "Value is " + value.toString().padStart(5, '0');
+}
+// console.log(solutionPadded(1204));
+
+
+
 
 
 
