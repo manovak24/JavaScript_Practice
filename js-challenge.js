@@ -4195,6 +4195,15 @@ const myCat = new Cat ('Fee');
 // console.log(myCat.speak());
 
 
+// Remove all ending occurances of character from string
+const removeFromEnd = (string) => {
+  return string.replace(new RegExp('!' + '+$'), '');
+}
+console.log(removeFromEnd('!Hi!!!'));
+
+
+
+
 
 
 // https://www.codewars.com/kata/5514e5b77e6b2f38e0000ca9/train/javascript
