@@ -4199,7 +4199,13 @@ const myCat = new Cat ('Fee');
 const removeFromEnd = (string) => {
   return string.replace(new RegExp('!' + '+$'), '');
 }
-console.log(removeFromEnd('!Hi!!!'));
+// console.log(removeFromEnd('!Hi!!!'));
+
+
+const pointsPer48 = (ppg, mpg) => {
+  return ppg === 0 || mpg === 0 ? 0 : parseFloat((ppg * (48 / mpg)).toFixed(1));
+}
+console.log(pointsPer48(0, 0));
 
 
 
