@@ -4205,7 +4205,29 @@ const removeFromEnd = (string) => {
 const pointsPer48 = (ppg, mpg) => {
   return ppg === 0 || mpg === 0 ? 0 : parseFloat((ppg * (48 / mpg)).toFixed(1));
 }
-console.log(pointsPer48(0, 0));
+// console.log(pointsPer48(0, 0));
+
+
+Array.prototype.remove_ = function(integer_list, values_list) {
+  return integer_list.filter((num) => !values_list.includes(num));
+}
+const l = new Array();
+// console.log(l.remove_([1, 1, 2, 3, 1, 2, 3, 4], [1, 3]));
+
+
+const solutionSplit = (str) => {
+  return (str + '_').match(/.{2}/g) || [];
+  
+  // let chunks = str.match(/.{1,2}/g) || [];
+  // return chunks.map(chunk => {
+  //   if(chunk.length === 2) {
+  //     return chunk;
+  //   } else {
+  //     return chunk + '_';
+  //   }
+  // });
+}
+console.log(solutionSplit('abcde'));
 
 
 
