@@ -2834,7 +2834,7 @@ const deleteNth = (arr, n) => {
     return obj[x] <= n;
   })
 }
-// console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3));
+// console.log(deleteNth([1,1,3,2,3,7,2,2,2,2], 3));
 
 
 const lowercaseCount = (str) => {
@@ -4227,7 +4227,23 @@ const solutionSplit = (str) => {
   //   }
   // });
 }
-console.log(solutionSplit('abcde'));
+// console.log(solutionSplit('abcde'));
+
+
+// Remove all occurances besides last occurance in array
+const solveDuplicates = (arr) => {
+  // let obj = {};
+  // return arr.reverse().
+  //            filter((num) => {
+  //            obj[num] = (obj[num] || 0) + 1;
+  //            return obj[num] <= 1;
+  //            })
+  //            .reverse();
+
+  return arr.filter((num, index) => arr.lastIndexOf(num) === index);
+  
+}
+// console.log(solveDuplicates([3, 4, 4, 3, 6, 3, 6]));
 
 
 
