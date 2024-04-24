@@ -4246,6 +4246,15 @@ const solveDuplicates = (arr) => {
 // console.log(solveDuplicates([3, 4, 4, 3, 6, 3, 6]));
 
 
+const longestVowelChain = (s) => {
+  // s = s.replace(/[^aeiou]/ig, '_').split('_');
+  // return Math.max(...(s.map(item => item.length)));
+
+  return s.split(/[^aeiou]/).reduce((a,b) => Math.max(a,b.length),0);
+}
+console.log(longestVowelChain('codewarriors'));
+
+
 
 
 
