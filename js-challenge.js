@@ -4252,7 +4252,13 @@ const longestVowelChain = (s) => {
 
   return s.split(/[^aeiou]/).reduce((a,b) => Math.max(a,b.length),0);
 }
-console.log(longestVowelChain('codewarriors'));
+// console.log(longestVowelChain('codewarriors'));
+
+
+const generateShape = (integer) => {
+  return ("+".repeat(integer)+"\n").repeat(integer).trim();
+}
+console.log(generateShape(10));
 
 
 
