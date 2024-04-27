@@ -4258,7 +4258,30 @@ const longestVowelChain = (s) => {
 const generateShape = (integer) => {
   return ("+".repeat(integer)+"\n").repeat(integer).trim();
 }
-console.log(generateShape(10));
+// console.log(generateShape(10));
+
+
+const getOrder = (input) => {
+  const arr = ['burger', 'fries', 'chicken', 'pizza', 'sandwich', 'onionrings', 'milkshake', 'coke' ];
+  let testArr = [];
+  // for(let i = 0; i < input.length; i++) {
+    
+  //   for(let j = 0; j < arr.length; j++) {
+  //     if(input[i] === arr[j][0]) {
+  //       let item = input.substring(i, arr[j].length);
+  //       if(item === arr[j]) {
+  //         input = input.slice(arr[j].length);
+  //         testArr.push(item);
+  //       }
+  //     }
+  //   }
+  //   console.log(input);
+  // }
+  
+
+  return testArr;
+}
+console.log(getOrder('milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza'));
 
 
 
