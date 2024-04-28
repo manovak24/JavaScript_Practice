@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aunt Flow Base Logic</title>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Value Update Example</title>
+</head>
+<body>
+  <div class="ctr">
+    <label for="quantity">Quantity:</label>
+    <input type="text" id="quantity" name="quantity" value="1" readonly>
+    <div class="quantity-controls">
+      <button id="minus-button">-</button>
+      <button id="plus-button">+</button>
+    </div>
+    <p id="display-quantity"></p>
+    <p>Calc = <span id="calc-display"></span></p>
+    <div class="atc-model-p">
+        <a href="#">Buy now</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const quantityInput = document.querySelector('#quantity');
+        const minus = document.querySelector('#minus-button');
+        const plus = document.querySelector('#plus-button');
+        const displayQuantity = document.querySelector('#display-quantity');
+        const calcDisplay = document.querySelector('#calc-display');
+        const link = document.querySelector(".atc-model-p a");
+
+        let bathrooms = 5;
+
+        // Function to update all elements related to bathrooms
+        const setNewBathroomsVal = () => {
+            quantityInput.value = bathrooms;
+            displayQuantity.innerHTML = bathrooms;
+            calcDisplay.innerHTML = bathrooms * 10;
+            updateLinkHref(); // Update the href attribute of the link
+        }
+
+        // Function to update the href attribute of the link
+        const updateLinkHref = () => {
+            if (link) {
+            link.setAttribute("href", "https://shop.com/quantity%5D=" + bathrooms + "&clear_cart=yes&landing_page");
+            }
+        };
+
+        // Update the initial values
+        setNewBathroomsVal();
+
+        // Event listeners for plus and minus buttons
+        minus.addEventListener('click', () => {
+            let value = parseInt(quantityInput.value, 10);
+            quantityInput.value = isNaN(value) ? 1 : value - 1;
+            bathrooms = quantityInput.value;
+            setNewBathroomsVal();
+        });
+
+        plus.addEventListener('click', () => {
+            let value = parseInt(quantityInput.value, 10);
+            quantityInput.value = isNaN(value) ? 1 : value + 1;
+            bathrooms = quantityInput.value;
+            setNewBathroomsVal();
+        });
+
+    });
+
+
+  </script>
+</body>
+</html>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Variable and HTML Element Update</title>
+</head>
+<body>
+  <p>Variable Value: <span id="variableValue"></span></p>
+  <button id="updateVariableButton">Increase Variable by 10</button>
+  <script>
+    // Get the HTML element to display the variable value
+var variableElement = document.getElementById('variableValue');
+
+// Declare and initialize the variable
+var initVariable = 5;
+var myVariable = initVariable * 2;
+variableElement.innerHTML = myVariable;
+
+// Function to handle updating the variable and HTML element
+function updateVariable() {
+  // Update the variable by adding 10
+  myVariable += 10;
+
+  // Update the HTML element's content with the updated variable value
+  variableElement.textContent = myVariable;
+}
+
+// Event listener for the button click
+document.getElementById('updateVariableButton').addEventListener('click', updateVariable);
+
+  </script>
+</body>
+</html> -->
