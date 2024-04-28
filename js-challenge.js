@@ -4263,23 +4263,20 @@ const generateShape = (integer) => {
 
 const getOrder = (input) => {
   const arr = ['burger', 'fries', 'chicken', 'pizza', 'sandwich', 'onionrings', 'milkshake', 'coke' ];
-  let testArr = [];
-  // for(let i = 0; i < input.length; i++) {
-    
-  //   for(let j = 0; j < arr.length; j++) {
-  //     if(input[i] === arr[j][0]) {
-  //       let item = input.substring(i, arr[j].length);
-  //       if(item === arr[j]) {
-  //         input = input.slice(arr[j].length);
-  //         testArr.push(item);
-  //       }
-  //     }
-  //   }
-  //   console.log(input);
-  // }
-  
-
-  return testArr;
+  let answerArr = [];
+  for(let i = 0; i < arr.length; i ++) {
+    let match = input.match(new RegExp(arr[i], "g")) || [];
+    if(input.match(new RegExp(arr[i], "g")) || [].length > 0) {
+      answerArr.push(match.join(' '));
+    }
+  }
+  return answerArr
+        .join(' ')
+        .split(' ')
+        .map(word => {
+          return word[0].toUpperCase() + word.substring(1);
+        })
+        .join(' ');
 }
 console.log(getOrder('milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza'));
 
