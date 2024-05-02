@@ -4278,7 +4278,32 @@ const getOrder = (input) => {
         })
         .join(' ');
 }
-console.log(getOrder('milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza'));
+// console.log(getOrder('milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza'));
+
+
+const addSolve = (a, b) => {
+  return a == b;
+}
+console.log(addSolve('1', 1));
+
+
+// https://www.codewars.com/kata/5296455e4fe0cdf2e000059f/train/javascript
+const calculate = (num1, operation, num2) => {
+  let asnwer;
+  switch (operation) {
+    case '+':
+        answer = num1 + num2;
+    case '-':
+        return num1 - num2;
+    case '*':
+        return num1 * num2;
+    case '/':
+        return num1 / num2;
+    default:
+        return null;
+  }
+}
+// console.log(calculate(3.2, "+", 8));
 
 
 
