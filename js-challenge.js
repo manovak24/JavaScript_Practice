@@ -4289,21 +4289,32 @@ const addSolve = (a, b) => {
 
 // https://www.codewars.com/kata/5296455e4fe0cdf2e000059f/train/javascript
 const calculate = (num1, operation, num2) => {
-  let asnwer;
+  let answer;
   switch (operation) {
     case '+':
-        answer = num1 + num2;
+      answer = num1 + num2;
+      break;
     case '-':
-        return num1 - num2;
+      answer = num1 - num2;
+      break;
     case '*':
-        return num1 * num2;
+      answer = num1 * num2;
+      break;
     case '/':
-        return num1 / num2;
+      answer = num1 / num2;
+      break;
     default:
-        return null;
+      answer = null;
   }
+
+  if(num1 === 0 || num2 === 0 && operation === '/') {
+    answer = null;
+  }
+
+
+  return answer;
 }
-// console.log(calculate(3.2, "+", 8));
+// console.log(calculate(3.2,"+", 8));
 
 
 
