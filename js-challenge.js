@@ -3715,7 +3715,7 @@ const calcNumerical = (x) => {
 
   return sumOne - sumTwo;
 }
-// console.log(calcNumerical('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'));
+console.log(calcNumerical('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'));
 
 
 function typeOfSum(a, b) {
@@ -4317,8 +4317,18 @@ const calculate = (num1, operation, num2) => {
 // console.log(calculate(3.2,"+", 8));
 
 
+const multiplesFunction = (m, n) => {
+  let arr = [];
+  for(let i = 1; i < m + 1; i++) {
+    arr.push(i * n);
+  }
+  return arr;
+}
+// console.log(multiplesFunction(3, 5));
 
-// GO BACK AND REVIEW ANSER FROM ABOVE
+
+
+
 
 
 // https://www.codewars.com/kata/5514e5b77e6b2f38e0000ca9/train/javascript
