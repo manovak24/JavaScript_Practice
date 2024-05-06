@@ -3715,7 +3715,7 @@ const calcNumerical = (x) => {
 
   return sumOne - sumTwo;
 }
-console.log(calcNumerical('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'));
+// console.log(calcNumerical('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'));
 
 
 function typeOfSum(a, b) {
@@ -4325,6 +4325,22 @@ const multiplesFunction = (m, n) => {
   return arr;
 }
 // console.log(multiplesFunction(3, 5));
+
+
+// https://www.codewars.com/kata/57a6633153ba33189e000074/train/javascript
+const orderedCount = function (text) {
+  let obj = text.split('').reduce((a, b) => {
+    a[b] = (a[b] || 0) + 1;
+    return a;
+  }, {});
+
+  let arr = [];
+  for(const key in obj) {
+    arr.push([key, obj[key]])
+  }
+  return arr;
+}
+console.log(orderedCount('233312'));
 
 
 
