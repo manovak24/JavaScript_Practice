@@ -4327,6 +4327,12 @@ const multiplesFunction = (m, n) => {
 // console.log(multiplesFunction(3, 5));
 
 
+const firstFunction = (arr, n) => {
+  return n < 1 ? [] : !n ? arr.slice(0, 1) : arr.slice(0, n);
+}
+// console.log(firstFunction(['a', 'b', 'c', 'd', 'e']));
+
+
 // https://www.codewars.com/kata/57a6633153ba33189e000074/train/javascript
 const orderedCount = function (text) {
   let obj = text.split('').reduce((a, b) => {
@@ -4340,7 +4346,8 @@ const orderedCount = function (text) {
   }
   return arr;
 }
-console.log(orderedCount('233312'));
+// console.log(orderedCount('kO5T'));
+
 
 
 
