@@ -4328,9 +4328,11 @@ const multiplesFunction = (m, n) => {
 
 
 const firstFunction = (arr, n) => {
-  return n < 1 ? [] : !n ? arr.slice(0, 1) : arr.slice(0, n);
+  // return n < 1 ? [] : !n ? arr.slice(0, 1) : arr.slice(0, n);
+
+  return n === undefined ? arr.slice(0, 1) : arr.slice(0, n);
 }
-// console.log(firstFunction(['a', 'b', 'c', 'd', 'e']));
+console.log(firstFunction(['a', 'b', 'c', 'd', 'e']));
 
 
 // https://www.codewars.com/kata/57a6633153ba33189e000074/train/javascript
