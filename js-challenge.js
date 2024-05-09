@@ -4332,23 +4332,30 @@ const firstFunction = (arr, n) => {
 
   return n === undefined ? arr.slice(0, 1) : arr.slice(0, n);
 }
-console.log(firstFunction(['a', 'b', 'c', 'd', 'e']));
+// console.log(firstFunction(['a', 'b', 'c', 'd', 'e']));
 
 
 // https://www.codewars.com/kata/57a6633153ba33189e000074/train/javascript
 const orderedCount = function (text) {
-  let obj = text.split('').reduce((a, b) => {
-    a[b] = (a[b] || 0) + 1;
-    return a;
-  }, {});
+  // let obj = text.split('').reduce((a, b) => {
+  //   a[b] = (a[b] || 0) + 1;
+  //   return a;
+  // }, {});
+  
+  // let arr = [];
+  // for(let i = 0; i < text.length; i++) {
+  //   arr.push(text[i]);
+  // }
 
-  let arr = [];
-  for(const key in obj) {
-    arr.push([key, obj[key]])
-  }
-  return arr;
+  // let filtered = arr.filter((item, index) => arr.indexOf(item) === index);
+
+  // return filtered.map(item => {
+  //   return [item, obj[item]];
+  // });
+
+  return Array.from(text.split('').reduce((a,b) => a.set(b, a.has(b) ? a.get(b) + 1 : 1), new Map()));
 }
-// console.log(orderedCount('kO5T'));
+console.log(orderedCount('233312'));
 
 
 
