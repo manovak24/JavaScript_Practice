@@ -4355,7 +4355,7 @@ const orderedCount = function (text) {
 
   return Array.from(text.split('').reduce((a,b) => a.set(b, a.has(b) ? a.get(b) + 1 : 1), new Map()));
 }
-console.log(orderedCount('233312'));
+// console.log(orderedCount('233312'));
 
 
 
