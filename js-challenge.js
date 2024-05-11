@@ -4399,6 +4399,31 @@ const upArray = (arr) => {
 // console.log(upArray([1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0]));
 
 
+const upArrayTwo = (arr) => {
+  if(arr.length === 0) return null;
+  if(!arr.every(num => num < 10)) return null;
+  if(!arr.every(num => num > -1)) return null;
+
+  let bigNum = BigInt(arr.join('')) + BigInt(1);
+  let newArr = bigNum.toString().split('').map(num => parseInt(num));
+
+  if(arr.length === newArr.length) {
+    return newArr;
+  } else if (arr.length > newArr.length) {
+    let diff = arr.length - newArr.length;
+    for(let i = 0; i < diff; i++) {
+      newArr.unshift(0);
+    }
+    return newArr;
+  } else {
+    return newArr;
+  }
+
+  
+}
+console.log(upArrayTwo([1,2,1,0,-1]));
+
+
 const decompose = (n) => {
   let arr = [];
   for(let i = n - 1; i > 0; i--) {
