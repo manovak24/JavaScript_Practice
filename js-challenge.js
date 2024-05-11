@@ -4358,47 +4358,6 @@ const orderedCount = function (text) {
 // console.log(orderedCount('233312'));
 
 
-
-
-
-
-
-// https://www.codewars.com/kata/5514e5b77e6b2f38e0000ca9/train/javascript
-const upArray = (arr) => {
-  if(arr.length < 1) return null;
-  for(let i = 0; i < arr.length; i++) {
-    if(arr[i] > 9 || arr[i] < 0) {
-      return null;
-    }
-  }
-  let num = parseInt(arr.map(num => num.toString()).join('')) + 1;
-  let newNum = num.toString().split('').map(item => parseInt(item));
-  let count = 0;
-
-  for(let i = 0; i < arr.length; i++) {
-    if(arr[i] === 0) {
-      count++;
-    } else {
-      break;
-    }
-  }
-
-  let answerArr = [];
-  if(count > 0) {
-    for(let i = 0; i < count; i++) {
-      answerArr.push(0)
-    }
-    for(let i = 0; i < newNum.length; i++) {
-      answerArr.push(newNum[i]);
-    }
-  }
-
-  // return count > 0 ? answerArr : newNum;
-  return num
-}
-// console.log(upArray([1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0]));
-
-
 const upArrayTwo = (arr) => {
   if(arr.length === 0) return null;
   if(!arr.every(num => num < 10)) return null;
@@ -4418,10 +4377,8 @@ const upArrayTwo = (arr) => {
   } else {
     return newArr;
   }
-
-  
 }
-console.log(upArrayTwo([1,2,1,0,-1]));
+// console.log(upArrayTwo([1,2,1,0,-1]));
 
 
 const decompose = (n) => {
