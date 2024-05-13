@@ -4381,6 +4381,28 @@ const upArrayTwo = (arr) => {
 // console.log(upArrayTwo([1,2,1,0,-1]));
 
 
+const datingRange = (age) => {
+  let min;
+  let max;
+
+  if(age > 14) {
+    min = (age / 2) + 7;
+    max = (age - 7) * 2;
+  }
+  
+  if(age <= 14) {
+    min = age - .10 * age;
+    max = age + .10 * age;
+  }
+
+  return Math.floor(min) + "-" + Math.floor(max);
+}
+// console.log(datingRange(17));
+
+
+
+
+
 const decompose = (n) => {
   let arr = [];
   for(let i = n - 1; i > 0; i--) {
