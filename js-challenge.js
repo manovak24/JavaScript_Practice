@@ -4399,6 +4399,26 @@ const datingRange = (age) => {
 }
 // console.log(datingRange(17));
 
+var ArrowFunc = function(arr) {
+  return arr.map( num => String.fromCharCode(num) ).join(''); //Complete this function
+}
+// console.log(ArrowFunc([84,101,115,116]));
+
+
+// https://www.codewars.com/kata/5a29a0898f27f2d9c9000058/train/javascript
+const solveCount = (s) => {
+  let arr = s.split('').map(item => {
+    if((item * 1) === NaN) {
+      return item;
+    } else {
+      return item * 1;
+    }
+  })
+
+  return arr;
+}
+// console.log(solveCount('c1'));
+
 
 
 
