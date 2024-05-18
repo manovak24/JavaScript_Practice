@@ -4407,20 +4407,11 @@ var ArrowFunc = function(arr) {
 
 // https://www.codewars.com/kata/5a29a0898f27f2d9c9000058/train/javascript
 const solveCount = (s) => {
-  let num = s.replace(/[^0-9]/g, "").split('');
-  let upperCase = s.match(/[A-Z]/g);
-  let lowerCase = s.match(/[a-z]/g);
-  let specialChar = s.match(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?@.()_]/g);
-
-  let arr = [upperCase, lowerCase, num, specialChar];
-  
-  return arr.map(item => {
-    if(item === null) {
-      return 0;
-    } else {
-      return item.length;
-    }
-  });
+  let upperCase = x.match(/[A-Z]/g)||[]
+  let lowerCase = x.match(/[a-z]/g)||[]
+  let num = x.match(/[0-9]/g)||[]
+  let specialChar = x.match(/[^A-Z0-9]/gi)||[]
+  return [upperCase.length, lowerCase.length, num.length, specialChar.length]
 }
 // console.log(solveCount('Codewars@codewars123.com'));
 
