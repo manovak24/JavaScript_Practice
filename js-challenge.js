@@ -4407,17 +4407,22 @@ var ArrowFunc = function(arr) {
 
 // https://www.codewars.com/kata/5a29a0898f27f2d9c9000058/train/javascript
 const solveCount = (s) => {
-  let arr = s.split('').map(item => {
-    if((item * 1) === NaN) {
-      return item;
-    } else {
-      return item * 1;
-    }
-  })
+  let num = s.replace(/[^0-9]/g, "").split('');
+  let upperCase = s.match(/[A-Z]/g);
+  let lowerCase = s.match(/[a-z]/g);
+  let specialChar = s.match(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?@.()_]/g);
 
-  return arr;
+  let arr = [upperCase, lowerCase, num, specialChar];
+  
+  return arr.map(item => {
+    if(item === null) {
+      return 0;
+    } else {
+      return item.length;
+    }
+  });
 }
-// console.log(solveCount('c1'));
+// console.log(solveCount('Codewars@codewars123.com'));
 
 
 
