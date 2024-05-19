@@ -4407,13 +4407,42 @@ var ArrowFunc = function(arr) {
 
 // https://www.codewars.com/kata/5a29a0898f27f2d9c9000058/train/javascript
 const solveCount = (s) => {
-  let upperCase = x.match(/[A-Z]/g)||[]
-  let lowerCase = x.match(/[a-z]/g)||[]
-  let num = x.match(/[0-9]/g)||[]
-  let specialChar = x.match(/[^A-Z0-9]/gi)||[]
+  let upperCase = s.match(/[A-Z]/g)||[]
+  let lowerCase = s.match(/[a-z]/g)||[]
+  let num = s.match(/[0-9]/g)||[]
+  let specialChar = s.match(/[^A-Z0-9]/gi)||[]
+
+  console.log(specialChar)
+
   return [upperCase.length, lowerCase.length, num.length, specialChar.length]
 }
 // console.log(solveCount('Codewars@codewars123.com'));
+
+
+const boredom = (staff) => {
+  const depMap = {
+    'accounts': 1,
+    'finance': 2,
+    'canteen': 10,
+    'regulation': 3,
+    'trading': 6,
+    'change': 6,
+    'IS': 8,
+    'retail': 5,
+    'cleaning': 4,
+    'pissing about': 25
+  }
+
+  const score = Object.keys(staff).reduce((a,b) => {
+    return a + depMap[staff[b]]; 
+  }, 0)
+
+  return score <= 80 ? 'kill me now' : score > 80 && score < 100 ? 'i can handle this' : 'party time!!';
+}
+console.log(boredom({tim: 'change', jim: 'accounts',
+  randy: 'canteen', sandy: 'change', andy: 'change', katie: 'IS',
+  laura: 'change', saajid: 'IS', alex: 'trading', john: 'accounts',
+  mr: 'finance' }));
 
 
 
