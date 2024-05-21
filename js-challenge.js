@@ -4439,10 +4439,25 @@ const boredom = (staff) => {
 
   return score <= 80 ? 'kill me now' : score > 80 && score < 100 ? 'i can handle this' : 'party time!!';
 }
-console.log(boredom({tim: 'change', jim: 'accounts',
-  randy: 'canteen', sandy: 'change', andy: 'change', katie: 'IS',
-  laura: 'change', saajid: 'IS', alex: 'trading', john: 'accounts',
-  mr: 'finance' }));
+// console.log(boredom({tim: 'change', jim: 'accounts',
+//   randy: 'canteen', sandy: 'change', andy: 'change', katie: 'IS',
+//   laura: 'change', saajid: 'IS', alex: 'trading', john: 'accounts',
+//   mr: 'finance' }));
+
+
+const swap = (string) => {
+  let vowels = ['a', 'e', 'i', 'o', 'u'];
+  let arr = string.split('');
+
+  return arr.map(letter => {
+    if(vowels.includes(letter)) {
+      return letter.toUpperCase();
+    } else {
+      return letter;
+    }
+  }).join('');
+}
+// console.log(swap('Hello World'));
 
 
 
