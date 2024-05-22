@@ -4460,6 +4460,13 @@ const swap = (string) => {
 // console.log(swap('Hello World'));
 
 
+const usdcny = (usd) => {
+  const cny = (usd * 6.75).toFixed(2);
+  return `${cny} Chinese Yuan`;
+}
+console.log(usdcny(15));
+
+
 
 
 
