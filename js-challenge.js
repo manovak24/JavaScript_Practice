@@ -4464,7 +4464,19 @@ const usdcny = (usd) => {
   const cny = (usd * 6.75).toFixed(2);
   return `${cny} Chinese Yuan`;
 }
-console.log(usdcny(15));
+// console.log(usdcny(15));
+
+
+const differenceOfSquares = (n) => {
+  const arr = Array.from({ length: n }, (_, index) => index + 1);
+  const squareOfSums = Math.pow(arr.reduce((a,b) => a + b), 2);
+  const sumOfSquares = arr.map(num => {
+    return num * num;
+  }).reduce((a,b) => a + b);
+
+  return squareOfSums - sumOfSquares;
+}
+console.log(differenceOfSquares(5));
 
 
 
