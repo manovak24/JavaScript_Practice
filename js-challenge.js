@@ -4476,7 +4476,13 @@ const differenceOfSquares = (n) => {
 
   return squareOfSums - sumOfSquares;
 }
-console.log(differenceOfSquares(5));
+// console.log(differenceOfSquares(5));
+
+
+const splitInParts = (s, partLength) => {
+  return s.match(new RegExp('.{1,' + partLength + '}', 'g')).join(' ');
+}
+console.log(splitInParts("HelloKata", 2));
 
 
 
