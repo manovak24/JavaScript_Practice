@@ -4482,7 +4482,20 @@ const differenceOfSquares = (n) => {
 const splitInParts = (s, partLength) => {
   return s.match(new RegExp('.{1,' + partLength + '}', 'g')).join(' ');
 }
-console.log(splitInParts("HelloKata", 2));
+// console.log(splitInParts("HelloKata", 2));
+
+
+const disariumNumber = (n) => {
+  let numArr = n.toString().split('').map(num => parseInt(num));
+
+  let sum = numArr.map((num, index) => {
+                  return Math.pow(num, index + 1);
+                })
+                .reduce((a,b) => a + b);
+
+  return sum === n ? 'Disarium !!' : 'Not !!';
+}
+// console.log(disariumNumber(89));
 
 
 
