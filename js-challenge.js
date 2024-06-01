@@ -4498,6 +4498,22 @@ const disariumNumber = (n) => {
 // console.log(disariumNumber(89));
 
 
+const encode = (str, n) => {
+  // const strArr = str.split('').map(letter => letter.charCodeAt(0) - 96);
+  // const nToArr = n.toString().split('').map(item => parseInt(item));
+  // const numArr = [];
+  // for(let i = 0; i < strArr.length; i++) {
+  //   numArr.push(nToArr[i%nToArr.length]);
+  // }
+  // return strArr.map((num, index) => {
+  //   return num + numArr[index]; 
+  // });
+
+  const key = String(n);
+  return Array.from(str, (letter, index) => letter.charCodeAt(0) - 96 + Number(key[index % key.length]));
+}
+console.log(encode('scout', 1939));
+
 
 
 
