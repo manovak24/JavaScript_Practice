@@ -4512,7 +4512,23 @@ const encode = (str, n) => {
   const key = String(n);
   return Array.from(str, (letter, index) => letter.charCodeAt(0) - 96 + Number(key[index % key.length]));
 }
-console.log(encode('scout', 1939));
+// console.log(encode('scout', 1939));
+
+
+const typeValidation = (variable, type) => {
+  return typeof variable ==  type;
+}
+// console.log(typeValidation(42, 'number'));
+
+
+// Removing letters from string based on array 
+const lastSurvivor = (letters, coords) => {
+  for(let i = 0; i < coords.length; i++) {
+    letters = letters.slice(0, coords[i]) + letters.slice(coords[i] + 1);
+  }
+  return letters;
+}
+console.log(lastSurvivor('zbk', [0, 1]));
 
 
 
