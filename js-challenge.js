@@ -4528,7 +4528,13 @@ const lastSurvivor = (letters, coords) => {
   }
   return letters;
 }
-console.log(lastSurvivor('zbk', [0, 1]));
+// console.log(lastSurvivor('zbk', [0, 1]));
+
+
+const stringMerge = (string1, string2, letter) => {
+  return string1.slice(0, string1.indexOf(letter)) + string2.slice(string2.indexOf(letter));
+}
+// console.log(stringMerge("person","here", "e"));
 
 
 
