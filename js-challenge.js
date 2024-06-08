@@ -4537,6 +4537,43 @@ const stringMerge = (string1, string2, letter) => {
 // console.log(stringMerge("person","here", "e"));
 
 
+const toNato = (words) => {
+  const OBJ = {
+    'A': 'Alfa',
+    'B': 'Bravo',
+    'C': 'Charlie',
+    'D': 'Delta',
+    'E': 'Echo',
+    'F': 'Foxtrot',
+    'G': 'Golf',
+    'H': 'Hotel',
+    'I': 'India',
+    'J': 'Juliett',
+    'K': 'Kilo',
+    'L': 'Lima',
+    'M': 'Mike',
+    'N': 'November',
+    'O': 'Oscar',
+    'P': 'Papa',
+    'Q': 'Quebec',
+    'R': 'Romeo',
+    'S': 'Sierra',
+    'T': 'Tango',
+    'U': 'Uniform',
+    'V': 'Victor',
+    'W': 'Whiskey',
+    'X': 'Xray',
+    'Y': 'Yankee',
+    'Z': 'Zulu',
+  };
+
+  return words.split('').filter(item => item !== ' ').map(char => OBJ[char.toUpperCase()] || char).join(' ');
+}
+console.log(toNato('If you can read!'));
+
+
+
+
 
 
 const decompose = (n) => {
