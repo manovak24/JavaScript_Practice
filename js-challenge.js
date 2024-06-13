@@ -4569,7 +4569,13 @@ const toNato = (words) => {
 
   return words.split('').filter(item => item !== ' ').map(char => OBJ[char.toUpperCase()] || char).join(' ');
 }
-console.log(toNato('If you can read!'));
+// console.log(toNato('If you can read!'));
+
+const cutIt = (arr) => {
+  let min = Math.min(...arr.map(x => x.length))
+  return arr.map(item => item.slice(0, min));
+}
+// console.log(cutIt(["ab","cde","fgh"]));
 
 
 
