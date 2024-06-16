@@ -4578,7 +4578,31 @@ const cutIt = (arr) => {
 // console.log(cutIt(["ab","cde","fgh"]));
 
 
+// https://www.codewars.com/kata/559f44187fa851efad000087/train/javascript
+const sevenAte9 = (str) => {
+  let newStr = '';
+  // for(let i = 0; i < str.length; i++) {
+  //   if(str[i] !== '7') {
+  //     newStr = newStr + str[i];
+  //   } else if(str[i] === '7' && str[i + 1] !== '9') {
+  //     newStr = newStr + str[i];
+  //   } else if(str[i] === '7' && str[i + 1] === '9' && str[i + 2] !== '7') {
+  //     newStr = newStr + str[i];
+  //   } else if(str[i] === '7' && str[i + 1] === '9' && str[i + 2] === '7') {
+  //     newStr = newStr + str[i];
+  //   }
+  // }
 
+  let arr = str.split('').map((letter, index) => {
+    if(letter === '9' && letter[index + 1] === '7' &&  letter[index - 1] === '7') {
+      return '7';
+    } else {
+      return letter
+    }
+  })
+  return arr;
+}
+console.log(sevenAte9('789797'));
 
 
 
