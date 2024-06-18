@@ -4583,7 +4583,13 @@ const cutIt = (arr) => {
 const sevenAte9 = (str) => {
   return str.replace(/79(?=7)/g, '7');
 }
-console.log(sevenAte9('789797'));
+// console.log(sevenAte9('789797'));
+
+
+const mergeArraysThree = (a, b) => {
+  return [...new Set([...a, ...b])].sort((a,b) => a - b);
+}
+console.log(mergeArraysThree([2, 4, 8], [2, 4, 6]));
 
 
 
