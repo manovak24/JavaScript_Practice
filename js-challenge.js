@@ -4589,7 +4589,25 @@ const sevenAte9 = (str) => {
 const mergeArraysThree = (a, b) => {
   return [...new Set([...a, ...b])].sort((a,b) => a - b);
 }
-console.log(mergeArraysThree([2, 4, 8], [2, 4, 6]));
+// console.log(mergeArraysThree([2, 4, 8], [2, 4, 6]));
+
+
+// https://www.codewars.com/kata/5a262cfb8f27f217f700000b/train/javascript
+const solveTwo = (a, b) => {
+  let answer = [];
+  for(let i = 0; i < a.length; i++) {
+    for(let j = 0; j < b.length; j++) {
+      if(a[i] !== b[j]) {
+        answer += a[i];
+        answer += b[j];
+
+      }
+    }
+  }
+  return answer;
+}
+console.log(solveTwo("abcd","xyz"));
+
 
 
 
