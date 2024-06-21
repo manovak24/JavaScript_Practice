@@ -4593,20 +4593,11 @@ const mergeArraysThree = (a, b) => {
 
 
 // https://www.codewars.com/kata/5a262cfb8f27f217f700000b/train/javascript
+// Find noncommon chars between two strings and return one string with noncommon chars from both strings
 const solveTwo = (a, b) => {
-  let answer = [];
-  for(let i = 0; i < a.length; i++) {
-    for(let j = 0; j < b.length; j++) {
-      if(a[i] !== b[j]) {
-        answer += a[i];
-        answer += b[j];
-
-      }
-    }
-  }
-  return answer;
+ return (a+b).split("").filter(c => !a.includes(c) || !b.includes(c)).join("");
 }
-console.log(solveTwo("abcd","xyz"));
+console.log(solveTwo("xyabb","xzca"));
 
 
 
