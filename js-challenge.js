@@ -4597,7 +4597,18 @@ const mergeArraysThree = (a, b) => {
 const solveTwo = (a, b) => {
  return (a+b).split("").filter(c => !a.includes(c) || !b.includes(c)).join("");
 }
-console.log(solveTwo("xyabb","xzca"));
+// console.log(solveTwo("xyabb","xzca"));
+
+
+const evenAndOdds = (num) => {
+  // parseInt(num.toString(2));
+
+  // num.toString(16);
+
+
+  return num % 2 === 0 ? parseInt(num.toString(2)).toString() : num.toString(16);
+}
+console.log(evenAndOdds(2));
 
 
 
