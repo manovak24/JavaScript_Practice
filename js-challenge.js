@@ -4601,14 +4601,21 @@ const solveTwo = (a, b) => {
 
 
 const evenAndOdds = (num) => {
-  // parseInt(num.toString(2));
-
-  // num.toString(16);
-
-
   return num % 2 === 0 ? parseInt(num.toString(2)).toString() : num.toString(16);
 }
-console.log(evenAndOdds(2));
+// console.log(evenAndOdds(2));
+
+
+// https://www.codewars.com/kata/539de388a540db7fec000642/train/javascript
+const checkCoupon = (enteredCode, correctCode, currentDate, expirationDate) => {
+  let cDateNum = new Date(Date.parse(currentDate));
+  let eDateNum = new Date(Date.parse(expirationDate));
+
+  // make codes into arrays and compare that way
+
+  return cDateNum < eDateNum && correctCode == enteredCode;
+}
+console.log(checkCoupon('123a','123','September 5, 2014','October 1, 2014'));
 
 
 
