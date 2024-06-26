@@ -4606,6 +4606,13 @@ const evenAndOdds = (num) => {
 // console.log(evenAndOdds(2));
 
 
+const largestElements = (n, array) => {
+  if(n === 0) return [];
+  return array.sort((a,b) => a - b).slice(-n, array.length);
+}
+console.log(largestElements(0, [7,6,5,4,3,2,1]));
+
+
 // https://www.codewars.com/kata/539de388a540db7fec000642/train/javascript
 const checkCoupon = (enteredCode, correctCode, currentDate, expirationDate) => {
   let cDateNum = new Date(Date.parse(currentDate));
@@ -4613,9 +4620,9 @@ const checkCoupon = (enteredCode, correctCode, currentDate, expirationDate) => {
 
   // make codes into arrays and compare that way
 
-  return cDateNum < eDateNum && correctCode == enteredCode;
+  return cDateNum < eDateNum && correctCode.valueOf() === enteredCode.valueOf();
 }
-console.log(checkCoupon('123a','123','September 5, 2014','October 1, 2014'));
+// console.log(checkCoupon('123a','123','September 5, 2014','October 1, 2014'));
 
 
 
