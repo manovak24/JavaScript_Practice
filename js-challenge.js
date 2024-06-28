@@ -4610,7 +4610,14 @@ const largestElements = (n, array) => {
   if(n === 0) return [];
   return array.sort((a,b) => a - b).slice(-n, array.length);
 }
-console.log(largestElements(0, [7,6,5,4,3,2,1]));
+// console.log(largestElements(0, [7,6,5,4,3,2,1]));
+
+
+// Finding length of arguments passed to function
+function longestString() {
+  return arguments.length;
+}
+// console.log(longestString('A', 'B', 'C'));
 
 
 // https://www.codewars.com/kata/539de388a540db7fec000642/train/javascript
