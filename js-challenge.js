@@ -4627,6 +4627,14 @@ const checkCoupon = (enteredCode, correctCode, currentDate, expirationDate) => {
 // console.log(checkCoupon('123','123','September 5, 2014','October 1, 2014'));
 
 
+const wordValue = (a) =>{
+  return a.map((item, index) => item.replace(/\s/g, '')
+                                    .split('')
+                                    .map(letter => (letter.charCodeAt() - 96))
+                                    .reduce((x,y) => (x += y),0) * (index + 1));
+}
+// console.log(wordValue(["","abc abc","abc","abc"]));
+
 
 
 const decompose = (n) => {
