@@ -4622,14 +4622,9 @@ function longestString() {
 
 // https://www.codewars.com/kata/539de388a540db7fec000642/train/javascript
 const checkCoupon = (enteredCode, correctCode, currentDate, expirationDate) => {
-  let cDateNum = new Date(Date.parse(currentDate));
-  let eDateNum = new Date(Date.parse(expirationDate));
-
-  // make codes into arrays and compare that way
-
-  return cDateNum < eDateNum && correctCode.valueOf() === enteredCode.valueOf();
+  return enteredCode === correctCode && Date.parse(expirationDate) >= Date.parse(currentDate)
 }
-// console.log(checkCoupon('123a','123','September 5, 2014','October 1, 2014'));
+// console.log(checkCoupon('123','123','September 5, 2014','October 1, 2014'));
 
 
 
