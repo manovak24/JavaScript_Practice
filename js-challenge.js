@@ -4636,6 +4636,15 @@ const wordValue = (a) =>{
 // console.log(wordValue(["","abc abc","abc","abc"]));
 
 
+const menFromBoys = (arr) => {
+  arr = Array.from(new Set(arr));
+  let odd = arr.filter(a => a % 2).sort((a, b) => b - a);
+  let even = arr.filter(a => a % 2 === 0).sort((a, b) => a - b);
+  return even.concat(odd);
+}
+console.log(menFromBoys([2,43,90,95,90,37]));
+
+
 
 const decompose = (n) => {
   let arr = [];
