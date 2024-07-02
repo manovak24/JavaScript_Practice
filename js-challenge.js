@@ -4642,7 +4642,46 @@ const menFromBoys = (arr) => {
   let even = arr.filter(a => a % 2 === 0).sort((a, b) => a - b);
   return even.concat(odd);
 }
-console.log(menFromBoys([2,43,90,95,90,37]));
+// console.log(menFromBoys([2,43,90,95,90,37]));
+
+
+const encodeVowel = (string) => {
+  const vowels = {
+    'a': 1,
+    'e': 2,
+    'i': 3,
+    'o': 4,
+    'u': 5
+  }
+
+  return string.split('').map(letter => {
+    if(vowels.hasOwnProperty(letter)) {
+      return vowels[letter].toString();
+    } else {
+      return letter;
+    }
+  }).join('');
+}
+console.log(encodeVowel('hello'));
+
+const decodeVowels = (string) => {
+  const numbers = {
+    '1': 'a',
+    '2': 'e',
+    '3': 'i',
+    '4': 'o',
+    '5': 'u'
+  }
+
+  return string.split('').map(item => {
+    if(numbers.hasOwnProperty(item)) {
+      return numbers[item];
+    } else {
+      return item;
+    }
+  }).join('');
+}
+console.log(decodeVowels('h2ll4'));
 
 
 
