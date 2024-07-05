@@ -4662,7 +4662,7 @@ const encodeVowel = (string) => {
     }
   }).join('');
 }
-console.log(encodeVowel('hello'));
+// console.log(encodeVowel('hello'));
 
 const decodeVowels = (string) => {
   const numbers = {
@@ -4681,7 +4681,21 @@ const decodeVowels = (string) => {
     }
   }).join('');
 }
-console.log(decodeVowels('h2ll4'));
+// console.log(decodeVowels('h2ll4'));
+
+
+const sameClass = (a, b) => {
+  if(!(/[a-zA-Z]/).test(a) || !(/[a-zA-Z]/).test(b)) return -1;
+  let testA = null
+  let testB = null;
+  a === a.toUpperCase() ? testA = true : testA = false;
+  b === b.toUpperCase() ? testB = true : testB = false;
+  return testA === testB ? 1 : 0;
+}
+
+// console.log(sameClass('C', 'B'));
+
+
 
 
 
