@@ -4696,6 +4696,14 @@ const sameClass = (a, b) => {
 // console.log(sameClass('C', 'B'));
 
 
+// https://www.codewars.com/kata/57096af70dad013aa200007b/train/javascript
+const logicalCalc = (array, op) => {
+  let answer;
+  if(op === 'AND') return array.reduce((a,b) => a === b);
+}
+console.log(logicalCalc([true, true, true, true], "AND"));
+
+
 
 
 
