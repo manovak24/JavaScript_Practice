@@ -4696,12 +4696,21 @@ const sameClass = (a, b) => {
 // console.log(sameClass('C', 'B'));
 
 
+const sumOfDifferences = (arr) => {
+  return arr.length > 1 ? Math.max(...arr) - Math.min(...arr) : 0;
+}
+console.log(sumOfDifferences([1, 2, 10]));
+
+
 // https://www.codewars.com/kata/57096af70dad013aa200007b/train/javascript
 const logicalCalc = (array, op) => {
   let answer;
   if(op === 'AND') return array.reduce((a,b) => a === b);
 }
-console.log(logicalCalc([true, true, true, true], "AND"));
+// console.log(logicalCalc([true, true, true, true], "AND"));
+// console.log(logicalCalc([true, true, true, false], "OR"));
+// console.log(logicalCalc([true, true, true, false], "XOR"));
+
 
 
 
