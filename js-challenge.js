@@ -4704,10 +4704,11 @@ console.log(sumOfDifferences([1, 2, 10]));
 
 // https://www.codewars.com/kata/57096af70dad013aa200007b/train/javascript
 const logicalCalc = (array, op) => {
-  let answer;
-  if(op === 'AND') return array.reduce((a,b) => a === b);
+  if(op === 'AND')return array.every(v => v);
+  else if(op === 'OR')return array.some(v => v);
+  else return !!array.reduce((s, v) => s ^ v);
 }
-// console.log(logicalCalc([true, true, true, true], "AND"));
+console.log(logicalCalc([false, true, true, false], "OR"));
 // console.log(logicalCalc([true, true, true, false], "OR"));
 // console.log(logicalCalc([true, true, true, false], "XOR"));
 
