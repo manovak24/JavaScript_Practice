@@ -4699,7 +4699,7 @@ const sameClass = (a, b) => {
 const sumOfDifferences = (arr) => {
   return arr.length > 1 ? Math.max(...arr) - Math.min(...arr) : 0;
 }
-console.log(sumOfDifferences([1, 2, 10]));
+// console.log(sumOfDifferences([1, 2, 10]));
 
 
 // https://www.codewars.com/kata/57096af70dad013aa200007b/train/javascript
@@ -4708,10 +4708,25 @@ const logicalCalc = (array, op) => {
   else if(op === 'OR')return array.some(v => v);
   else return !!array.reduce((s, v) => s ^ v);
 }
-console.log(logicalCalc([false, true, true, false], "OR"));
+// console.log(logicalCalc([false, true, true, false], "OR"));
 // console.log(logicalCalc([true, true, true, false], "OR"));
 // console.log(logicalCalc([true, true, true, false], "XOR"));
 
+
+
+const sumOfN = (n) => {
+  let arr = [];
+  arr[0] = 0;
+  for(let i = 1; i < Math.abs(n) + 1; i++) {
+    if(n > 0) {
+      arr[i] = arr[i - 1] + i;
+    } else {
+      arr[i] = arr[i - 1] - i;
+    }
+  }
+  return arr;
+}
+console.log(sumOfN(3));
 
 
 
