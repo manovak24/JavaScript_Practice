@@ -4726,7 +4726,13 @@ const sumOfN = (n) => {
   }
   return arr;
 }
-console.log(sumOfN(3));
+// console.log(sumOfN(3));
+
+
+const insertDash = (num) => {
+  return num.toString().replace(/[13579](?=[13579])/g, "$&-");
+}
+// console.log(insertDash(454793));
 
 
 
