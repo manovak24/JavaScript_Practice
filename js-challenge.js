@@ -4735,6 +4735,17 @@ const insertDash = (num) => {
 // console.log(insertDash(454793));
 
 
+// Counting occurances of items in array
+const mostFrequentItemCount = (collection) => {
+  if(collection.length < 1) return 0;
+  let obj = {};
+  collection.forEach(num => {
+    obj[num] = (obj[num] || 0) + 1;
+  })
+  return Math.max(...Object.values(obj));
+}
+console.log(mostFrequentItemCount([3, -1, -1, -1, 2, 3, -1, 3, -1, 2, 4, 9, 3]));
+
 
 
 
