@@ -4744,7 +4744,18 @@ const mostFrequentItemCount = (collection) => {
   })
   return Math.max(...Object.values(obj));
 }
-console.log(mostFrequentItemCount([3, -1, -1, -1, 2, 3, -1, 3, -1, 2, 4, 9, 3]));
+// console.log(mostFrequentItemCount([3, -1, -1, -1, 2, 3, -1, 3, -1, 2, 4, 9, 3]));
+
+
+const containAllRots = (strng, arr) => {
+  for(let i = 0; i < strng.length; i++) {
+    if(arr.indexOf(strng.slice(i) + strng.slice(0, i)) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
+console.log(containAllRots("bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"]));
 
 
 
