@@ -4755,7 +4755,13 @@ const containAllRots = (strng, arr) => {
   }
   return true;
 }
-console.log(containAllRots("bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"]));
+// console.log(containAllRots("bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"]));
+
+
+const makeString = (s) => {
+  return s.split(' ').map(word => word[0]).join('');
+}
+// console.log(makeString('sees eyes xray yoat'));
 
 
 
