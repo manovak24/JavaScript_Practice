@@ -4764,6 +4764,16 @@ const makeString = (s) => {
 // console.log(makeString('sees eyes xray yoat'));
 
 
+const checkThreeAndTwo = (array) => {
+  let obj = {};
+  array.forEach(char => {
+    obj[char] = (obj[char] || 0) + 1;
+  })
+  return Object.values(obj).every(val => [2,3].indexOf(val) > -1);
+}
+console.log(checkThreeAndTwo(["a", "a", "a", "b", "b"]));
+
+
 
 
 const decompose = (n) => {
