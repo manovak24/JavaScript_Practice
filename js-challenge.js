@@ -3703,17 +3703,10 @@ class Person {
 // console.log(john.info);
 
 const calcNumerical = (x) => {
-  let totalOne = x.split('').map(letter => letter.charCodeAt(0));
-  let totalTwo = totalOne.map(num => num.toString())
-                          .map(str => str.replace(/[7]/, '1'))
-                          .map(str => parseInt(str));
-  
-
-
-  let sumOne = totalOne.map(num => num.toString().split('').map(letter => parseInt(letter)).reduce((a,b) => a + b)).reduce((a,b) => a + b);
-  let sumTwo = totalTwo.map(num => num.toString().split('').map(letter => parseInt(letter)).reduce((a,b) => a + b)).reduce((a,b) => a + b);
-
-  return sumOne - sumTwo;
+  let sum = n => [...n].reduce((a,b) => +a + +b);
+  let totalOne = x.replace(/./g, x => x.charCodeAt(0));
+  let totalTwo = totalOne.replace(/7/g, '1');
+  return sum(totalOne) - sum(totalTwo);
 }
 // console.log(calcNumerical('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'));
 
@@ -4771,7 +4764,27 @@ const checkThreeAndTwo = (array) => {
   })
   return Object.values(obj).every(val => [2,3].indexOf(val) > -1);
 }
-console.log(checkThreeAndTwo(["a", "a", "a", "b", "b"]));
+// console.log(checkThreeAndTwo(["a", "a", "a", "b", "b"]));
+
+
+// https://www.codewars.com/kata/5f6d533e1475f30001e47514/train/javascript
+const consecutiveTest = (arr, a, b) => {
+  // let testOne = [a,b].join('');
+  // let testTwo = [b,a].join('');
+  // let str = arr.join('');
+  // return str.includes(testOne) || str.includes(testTwo);
+
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] === a && arr[i + 1] === b) {
+      return true;
+    } else if(arr[i] === b && arr[i + 1] === a) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+console.log(consecutiveTest([1, -4, -5, 3, -2, 11, 23, -76, 6, -7, 2], 2, 3));
 
 
 
