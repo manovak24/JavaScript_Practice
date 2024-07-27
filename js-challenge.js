@@ -4784,7 +4784,14 @@ const consecutiveTest = (arr, a, b) => {
     }
   }
 }
-console.log(consecutiveTest([1, -4, -5, 3, -2, 11, 23, -76, 6, -7, 2], 2, 3));
+// console.log(consecutiveTest([1, -4, -5, 3, -2, 11, 23, -76, 6, -7, 2], 2, 3));
+
+
+const meetingTest = (x) => {
+  let test = x.indexOf('O');
+  return test >= 0 ? test : 'None available!';
+}
+// console.log(meetingTest(['O', 'X', 'X']));
 
 
 
