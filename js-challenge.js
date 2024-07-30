@@ -4794,6 +4794,18 @@ const meetingTest = (x) => {
 // console.log(meetingTest(['O', 'X', 'X']));
 
 
+const compareStr = (s1, s2) => {
+  let sum1 = 0;
+  let sum2 = 0;
+  if(!s1 || s1.search(/[^a-zA-Z]+/) !== -1) s1 = '';
+  if(!s2 || s2.search(/[^a-zA-Z]+/) !== -1) s2 = '';
+  s1.toUpperCase().split('').map(letter => sum1 += letter.charCodeAt(0));
+  s2.toUpperCase().split('').map(letter => sum2 += letter.charCodeAt(0));
+  return sum1 === sum2;
+}
+console.log(compareStr(null, "BC"));
+
+
 
 
 const decompose = (n) => {
