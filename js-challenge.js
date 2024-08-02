@@ -4803,7 +4803,13 @@ const compareStr = (s1, s2) => {
   s2.toUpperCase().split('').map(letter => sum2 += letter.charCodeAt(0));
   return sum1 === sum2;
 }
-console.log(compareStr(null, "BC"));
+// console.log(compareStr(null, "BC"));
+
+
+const getASCII = (c) => {
+  return c.charCodeAt(0);
+}
+// console.log(getASCII(' '));
 
 
 
