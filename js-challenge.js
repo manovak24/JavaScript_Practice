@@ -4812,6 +4812,16 @@ const getASCII = (c) => {
 // console.log(getASCII(' '));
 
 
+const solutionHash = (pairs) => {
+  let arr = [];
+  for(key in pairs) {
+    arr.push(`${key} = ${pairs[key]}`);
+  }
+  return arr.join(',');
+}
+console.log(solutionHash({'a': 1, 'b': 2}));
+
+
 
 
 const decompose = (n) => {
