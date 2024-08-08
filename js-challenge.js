@@ -4819,7 +4819,17 @@ const solutionHash = (pairs) => {
   }
   return arr.join(',');
 }
-console.log(solutionHash({'a': 1, 'b': 2}));
+// console.log(solutionHash({'a': 1, 'b': 2}));
+
+
+const eachCons = (array, n) => {
+  let answerArr = [];
+  for(let i = 0; i < array.length; i++) {
+    answerArr.push(array.slice(i, i + n));
+  }
+  return answerArr.filter(subArr => subArr.length === n);
+}
+// console.log(eachCons([3, 5, 8, 13], 2));
 
 
 
