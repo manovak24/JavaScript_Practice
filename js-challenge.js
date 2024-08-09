@@ -4832,6 +4832,12 @@ const eachCons = (array, n) => {
 // console.log(eachCons([3, 5, 8, 13], 2));
 
 
+const removeVowels = (str) => {
+  return str.replace(/[aeoiu]/g, '');
+}
+// console.log(removeVowels('drake'));
+
+
 
 
 const decompose = (n) => {
