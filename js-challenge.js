@@ -4838,6 +4838,12 @@ const removeVowels = (str) => {
 // console.log(removeVowels('drake'));
 
 
+const getMinMax = (arr) => {
+  return [Math.min(...arr), Math.max(...arr)]
+}
+console.log(getMinMax([2,1]));
+
+
 
 
 const decompose = (n) => {
