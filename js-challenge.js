@@ -4850,12 +4850,15 @@ class Guesser {
     this.lives = lives;
   }
   guess(n) {
-    return n
+    if(this.lives === 0) {
+      alert('Expect error already dead');
+    } else if (this.number === n) {
+      return true;
+    }
+    this.lives--;
+    return false;
   }
 }
-const test = new Guesser(10, 2);
-const random = Guesser.guess(10);
-console.log(test.guess());
 
 
 
