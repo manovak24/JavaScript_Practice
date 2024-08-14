@@ -4841,7 +4841,21 @@ const removeVowels = (str) => {
 const getMinMax = (arr) => {
   return [Math.min(...arr), Math.max(...arr)];
 }
-console.log(getMinMax([2,1]));
+// console.log(getMinMax([2,1]));
+
+
+class Guesser {
+  constructor(number, lives) {
+    this.number = number;
+    this.lives = lives;
+  }
+  guess(n) {
+    return n
+  }
+}
+const test = new Guesser(10, 2);
+const random = Guesser.guess(10);
+console.log(test.guess());
 
 
 
