@@ -4868,7 +4868,27 @@ const elevatorDistance = (array) => {
   }
   return traveled;
 }
-console.log(elevatorDistance([7,1,7,1]));
+// console.log(elevatorDistance([7,1,7,1]));
+
+
+const maxSequence = (arr) => {
+  let max = -Infinity;
+  let sum = 0;
+  for(let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+    max = Math.max(max, sum);
+    sum = Math.max(sum, 0);
+  }
+  return max < 1 || max === -Infinity ? 0 : max;
+}
+// console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+
+const twoDecimal = (number) => {
+  return Math.trunc(number * 100) / 100;
+}
+// console.log(twoDecimal(10.1289767789));
+
 
 
 
