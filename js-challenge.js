@@ -4890,6 +4890,12 @@ const twoDecimal = (number) => {
 // console.log(twoDecimal(10.1289767789));
 
 
+const isReallyNaN = (val) => {
+  return Number.isNaN(val);
+}
+console.log(isReallyNaN(NaN));
+
+
 
 
 
