@@ -4893,7 +4893,15 @@ const twoDecimal = (number) => {
 const isReallyNaN = (val) => {
   return Number.isNaN(val);
 }
-console.log(isReallyNaN(NaN));
+// console.log(isReallyNaN(NaN));
+
+
+const shorterReverseLonger = (a, b) => {
+  if(a.length >= b.length) return b + a.split('').reverse().join('') + b;
+  if(a.length < b.length) return a + b.split('').reverse().join('') + a;
+
+}
+console.log(shorterReverseLonger("first", "abcde"));
 
 
 
