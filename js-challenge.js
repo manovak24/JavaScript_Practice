@@ -4901,7 +4901,13 @@ const shorterReverseLonger = (a, b) => {
   if(a.length < b.length) return a + b.split('').reverse().join('') + a;
 
 }
-console.log(shorterReverseLonger("first", "abcde"));
+// console.log(shorterReverseLonger("first", "abcde"));
+
+
+const filterLucky = (x) => {
+  return x.filter(num => num.toString().indexOf('7') > -1);
+}
+console.log(filterLucky([1,2,3,4,5,6,7,68,69,70,15,17]));
 
 
 
