@@ -4907,7 +4907,37 @@ const shorterReverseLonger = (a, b) => {
 const filterLucky = (x) => {
   return x.filter(num => num.toString().indexOf('7') > -1);
 }
-console.log(filterLucky([1,2,3,4,5,6,7,68,69,70,15,17]));
+// console.log(filterLucky([1,2,3,4,5,6,7,68,69,70,15,17]));
+
+
+const solveConsonants = (s) => {
+  let arr = [];
+  for(let i = 0; i < s.length; i++) {
+    if((/[aeiou]/).test(s[i])) {
+      arr.push(s[i]);
+    } else {
+      arr.push(s[i].charCodeAt(0) - 96);
+    }
+  }
+  let result = [];
+  let sum = 0;
+
+  for(let i = 0; i < arr.length; i++) {
+    if(typeof arr[i] === 'number') {
+      sum += arr[i];
+    } else if (sum > 0) {
+      result.push(sum);
+      sum = 0;
+    }
+  }
+
+  if(sum > 0) {
+    result.push(sum);
+  }
+
+  return Math.max(...result);
+}
+console.log(solveConsonants('zodiacs'));
 
 
 
