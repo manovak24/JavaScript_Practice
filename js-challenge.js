@@ -4937,7 +4937,19 @@ const solveConsonants = (s) => {
 
   return Math.max(...result);
 }
-console.log(solveConsonants('zodiacs'));
+// console.log(solveConsonants('zodiacs'));
+
+
+const pairsSum = (ar) => {
+  let count = 0;
+  for(let i = 0; i < ar.length; i += 2) {
+    if(Math.abs(ar[i] - ar[i + 1]) === 1) {
+      count++;
+    }
+  }
+  return count;
+}
+console.log(pairsSum([21, 20, 22, 40, 39, -56, 30, -55, 95, 94]));
 
 
 
