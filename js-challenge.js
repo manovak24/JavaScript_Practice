@@ -4949,7 +4949,20 @@ const pairsSum = (ar) => {
   }
   return count;
 }
-console.log(pairsSum([21, 20, 22, 40, 39, -56, 30, -55, 95, 94]));
+// console.log(pairsSum([21, 20, 22, 40, 39, -56, 30, -55, 95, 94]));
+
+
+const vowel2Index = (str) => {
+  // return str.split('').map((letter, index) => {
+  //   if((/[aeiou]/gi).test(letter)) {
+  //     return index + 1;
+  //   } else {
+  //     return letter;
+  //   }
+  // }).join('');
+  return str.replace(/[aeiou]/gi, (m, i) => i + 1);
+}
+console.log(vowel2Index('this is my string'));
 
 
 
