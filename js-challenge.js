@@ -4961,8 +4961,23 @@ const vowel2Index = (str) => {
   //   }
   // }).join('');
   return str.replace(/[aeiou]/gi, (m, i) => i + 1);
+
 }
-console.log(vowel2Index('this is my string'));
+// console.log(vowel2Index('this is my string'));
+
+
+const makeBackronym = () => {
+  let str = '';
+  for(let i = 0; i < string.length; i++) {
+    if(i < string.length - 1) {
+      str += dict[string[i].toUpperCase()] + ' ';
+    } else {
+      str += dict[string[i].toUpperCase()];
+    }
+  }
+  return str;
+}
+console.log(makeBackronym())
 
 
 
