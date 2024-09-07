@@ -3702,6 +3702,18 @@ class Person {
 // const john = new Person('john', 34);
 // console.log(john.info);
 
+class Solution{
+  constructor(p1, p2) {
+    this.p1 = p1;
+    this.p2 = p2;
+  }
+  get main() {
+    return `${this.p1} ${this.p2}`
+  }
+}
+const str = new Solution('Hello', 'World!');
+console.log(str.main);
+
 const calcNumerical = (x) => {
   let sum = n => [...n].reduce((a,b) => +a + +b);
   let totalOne = x.replace(/./g, x => x.charCodeAt(0));
@@ -4977,7 +4989,18 @@ const makeBackronym = () => {
   }
   return str;
 }
-console.log(makeBackronym())
+// console.log(makeBackronym());
+
+
+
+
+
+// https://www.codewars.com/kata/538835ae443aae6e03000547/discuss
+const addCallback = (n) => {
+  return 
+}
+// console.log(addCallback());
+
 
 
 
