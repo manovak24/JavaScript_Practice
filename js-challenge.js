@@ -4980,34 +4980,19 @@ const makeBackronym = () => {
 // console.log(makeBackronym());
 
 
-
-// THERE ARE TWO GOOD PROBLEMS TO LOOK INTO BELOW
-
-
-
-// THERE ARE TWO GOOD PROBLEMS TO LOOK INTO BELOW
-
-
-
-// https://www.codewars.com/kata/57036f007fd72e3b77000023/train/javascript
-class Solution{
-  constructor(p1, p2) {
-    this.p1 = p1;
-    this.p2 = p2;
-  }
-  get main() {
-    return `${this.p1} ${this.p2}`
+class Solution {
+  static main() {
+    console.log("Hello World!");
   }
 }
-const str = new Solution('Hello', 'World!');
-// console.log(str.main);
 
 
-// https://www.codewars.com/kata/538835ae443aae6e03000547/discuss
 const addCallback = (n) => {
-  return 
+  return function(m) {
+    return n + m;
+  }
 }
-// console.log(addCallback());
+console.log(addCallback(1)(3));
 
 
 
