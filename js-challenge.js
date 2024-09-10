@@ -4992,7 +4992,13 @@ const addCallback = (n) => {
     return n + m;
   }
 }
-console.log(addCallback(1)(3));
+// console.log(addCallback(1)(3));
+
+
+const calculateStr = (str) => {
+  return eval(str.replace(/plus/gi, '+').replace(/minus/gi, '-')).toString();
+}
+console.log(calculateStr('1minus2minus3minus4'));
 
 
 
