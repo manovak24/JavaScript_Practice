@@ -4998,10 +4998,17 @@ const addCallback = (n) => {
 const calculateStr = (str) => {
   return eval(str.replace(/plus/gi, '+').replace(/minus/gi, '-')).toString();
 }
-console.log(calculateStr('1minus2minus3minus4'));
+// console.log(calculateStr('1minus2minus3minus4'));
 
 
-
+const getMissingElement = (superImportantArray) => {
+  for(let i = 0; i < 10; i++) {
+    if(!superImportantArray.includes(i)) {
+      return i;
+    };
+  };
+}
+console.log(getMissingElement([0,5,1,3,2,9,7,6,4]));
 
 
 
