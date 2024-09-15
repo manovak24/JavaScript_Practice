@@ -5008,7 +5008,28 @@ const getMissingElement = (superImportantArray) => {
     };
   };
 }
-console.log(getMissingElement([0,5,1,3,2,9,7,6,4]));
+// console.log(getMissingElement([0,5,1,3,2,9,7,6,4]));
+
+
+const dirReduc = (arr) => {
+  const opposite = {
+    "NORTH": "SOUTH",
+    "EAST": "WEST",
+    "SOUTH": "NORTH",
+    "WEST": "EAST"
+  }
+  return arr.reduce((result, direction) => {
+    if(result[result.length - 1] === opposite[direction]) {
+      result.pop();
+    } else {
+      result.push(direction);
+    }
+    return result;
+  }, []);
+};
+console.log(dirReduc(["EAST","EAST","WEST","NORTH","WEST","EAST","EAST","SOUTH","NORTH","WEST"]));
+
+
 
 
 
