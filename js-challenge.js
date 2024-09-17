@@ -5027,7 +5027,23 @@ const dirReduc = (arr) => {
     return result;
   }, []);
 };
-console.log(dirReduc(["EAST","EAST","WEST","NORTH","WEST","EAST","EAST","SOUTH","NORTH","WEST"]));
+// console.log(dirReduc(["EAST","EAST","WEST","NORTH","WEST","EAST","EAST","SOUTH","NORTH","WEST"]));
+
+
+const aliasGen = (fName, sName) => {
+  const firstName = {A: 'Alpha', B: 'Beta', C: 'Cache', D: 'Data'};
+  const surname = {A: 'Analogue', C: 'Catalyst', P: 'Payload'};
+
+  const first = fName[0].toUpperCase();
+  const second = sName[0].toUpperCase();
+
+  if(firstName[first] && surname[second]) {
+    return firstName[first] + ' ' + surname[second];
+  } else {
+    return "Your name must start with a letter from A - Z.";
+  }
+}
+console.log(aliasGen("Daisy", "Petrovic"));
 
 
 
