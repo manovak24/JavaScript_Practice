@@ -5061,7 +5061,11 @@ const addToObjArr = () => {
   });
 }
 addToObjArr();
-console.log(questions);
+// console.log(questions);
+
+
+const websites = new Array(1000).fill('codewars');
+console.log(websites);
 
 
 
