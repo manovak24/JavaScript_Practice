@@ -5065,7 +5065,13 @@ addToObjArr();
 
 
 const websites = new Array(1000).fill('codewars');
-console.log(websites);
+// console.log(websites);
+
+
+const catMouse = (x) => {
+  return x.indexOf('m') - x.indexOf('C') - 1 <= 3 ? 'Caught!' : 'Escaped!';
+}
+// console.log(catMouse("C....m"));
 
 
 
