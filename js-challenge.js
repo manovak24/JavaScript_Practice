@@ -5074,6 +5074,11 @@ const catMouse = (x) => {
 // console.log(catMouse("C....m"));
 
 
+const discoverORiginalPrice = (discountedPrice, salePercentage) => {
+  return Math.round(discountedPrice / (1 - salePercentage / 100) * 100) / 100;
+}
+console.log(discoverORiginalPrice(373.85, 11.2));
+
 
 
 
