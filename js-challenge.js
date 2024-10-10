@@ -5077,7 +5077,13 @@ const catMouse = (x) => {
 const discoverORiginalPrice = (discountedPrice, salePercentage) => {
   return Math.round(discountedPrice / (1 - salePercentage / 100) * 100) / 100;
 }
-console.log(discoverORiginalPrice(373.85, 11.2));
+// console.log(discoverORiginalPrice(373.85, 11.2));
+
+
+const specialNumber = (n) => {
+  return n.toString().match(/^[0-5]+$/) !== null ? "Special!!" : "NOT!!";
+}
+console.log(specialNumber(2543));
 
 
 
