@@ -5099,6 +5099,11 @@ const createDict = (keys, values) => {
 // console.log(createDict(['a', 'b', 'c','d'], [1, 2, 3]));
 
 
+const avg = (a) => {
+  return a.reduce((a,b) => a + b) / a.length;
+}
+// console.log(avg([0, 1, 2, 3, 4]));
+
 
 
 const decompose = (n) => {
