@@ -5105,6 +5105,47 @@ const avg = (a) => {
 // console.log(avg([0, 1, 2, 3, 4]));
 
 
+const rot13 = (message) => {
+  return message.split('').map(item => {
+    if(item.match(/[A-Za-z]/gi)) {
+      let charRot13 = item.toLowerCase().charCodeAt(0) + 13;
+      if(charRot13 > 122) {
+        charRot13 -= 26;
+      }
+      let letter = String.fromCharCode(charRot13);
+
+      if(item.match(/[A-Z]/)) {
+        return letter.toUpperCase();
+      } else {
+        return letter;
+      }
+    } else {
+      return item;
+    }
+  }).join('');
+}
+console.log(rot13('tesT'));
+
+
+
+
+
+
+
+// https://www.codewars.com/kata/5923fbc72eafa9bcff00011a/train/javascript
+const multiplyStrings = (str, ing) => {
+  let strNum = Number(str);
+  let ingNum = Number(ing);
+
+  console.log(str.toLocaleString('fullwide', { useGrouping: false })) 
+
+  let num = strNum * ingNum;
+  // return parseFloat(num.toPrecision(15)).toString();
+
+  return BigInt(str) * BigInt(ing);
+ }
+// console.log(multiplyStrings("823094582094385190384102934810293481029348123094818923749817.94818923749817n", "-234758927345982475298347523984572983472398457293847594193837.193228801196767580936937025n"));
+
 
 const decompose = (n) => {
   let arr = [];
