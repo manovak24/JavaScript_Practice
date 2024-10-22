@@ -5124,7 +5124,13 @@ const rot13 = (message) => {
     }
   }).join('');
 }
-console.log(rot13('tesT'));
+// console.log(rot13('tesT'));
+
+
+const flatten = (array) => {
+  return array.flat();
+}
+// console.log(flatten([1, 2, 3, [4]]));
 
 
 
