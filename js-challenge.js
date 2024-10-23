@@ -5133,6 +5133,12 @@ const flatten = (array) => {
 // console.log(flatten([1, 2, 3, [4]]));
 
 
+const averageAgain = (scores) => {
+  return Math.round(scores.reduce((a,b) => a + b) / scores.length);
+}
+// console.log(averageAgain([90,98,89,100,100,86,94]));
+
+
 
 
 
