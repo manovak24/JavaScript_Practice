@@ -5145,6 +5145,13 @@ const stantonMeasure = (a) => {
 // console.log(stantonMeasure([-9,1,5,1,2,1,-3,1,3,1,-11,1]));
 
 
+const deepCount = (a) => {
+  let counter = 1;
+  
+  return counter;
+
+}
+console.log(deepCount([1, 2, [3, 4, [5]]]));
 
 
 
