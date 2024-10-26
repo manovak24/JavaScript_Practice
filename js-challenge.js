@@ -5138,6 +5138,7 @@ const averageAgain = (scores) => {
 }
 // console.log(averageAgain([90,98,89,100,100,86,94]));
 
+
 const stantonMeasure = (a) => {
   let count = n => a.filter(num => num === n).length;
   return count(count(1));
@@ -5145,6 +5146,7 @@ const stantonMeasure = (a) => {
 // console.log(stantonMeasure([-9,1,5,1,2,1,-3,1,3,1,-11,1]));
 
 
+// https://www.codewars.com/kata/596f72bbe7cd7296d1000029/train/javascript
 const deepCount = (a) => {
   let counter = 1;
   
