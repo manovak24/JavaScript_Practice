@@ -5148,12 +5148,21 @@ const stantonMeasure = (a) => {
 
 // https://www.codewars.com/kata/596f72bbe7cd7296d1000029/train/javascript
 const deepCount = (a) => {
-  let counter = 1;
-  
-  return counter;
+  let counter = 0;
+  let stack = [...a];
 
+  while (stack.length > 0) {
+    let item = stack.pop();
+
+    if(Array.isArray(item)) {
+      counter++;
+      stack.push(...item);
+    }
+  }
+
+  return a.flat(Infinity).length + counter;
 }
-console.log(deepCount([1, 2, [3, 4, [5]]]));
+console.log(deepCount([]));
 
 
 
