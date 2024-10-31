@@ -5162,7 +5162,13 @@ const deepCount = (a) => {
 
   return a.flat(Infinity).length + counter;
 }
-console.log(deepCount([]));
+// console.log(deepCount([]));
+
+
+const reverseBits = (n) => {
+  return parseInt(n.toString(2).split('').reverse().join(''), 2);
+}
+console.log(reverseBits(417));
 
 
 
