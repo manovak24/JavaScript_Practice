@@ -5168,7 +5168,13 @@ const deepCount = (a) => {
 const reverseBits = (n) => {
   return parseInt(n.toString(2).split('').reverse().join(''), 2);
 }
-console.log(reverseBits(417));
+// console.log(reverseBits(417));
+
+
+const lostSheep = (friday, saturday, total) => {
+  return friday.concat(saturday).reduce((a,b) => a - b, total);
+}
+// console.log(lostSheep([3,1,2],[4,5],21));
 
 
 
