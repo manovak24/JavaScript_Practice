@@ -5177,6 +5177,22 @@ const lostSheep = (friday, saturday, total) => {
 // console.log(lostSheep([3,1,2],[4,5],21));
 
 
+const stringTransformer = (str) => {
+  let backwards = str.split(' ').reverse().join(' ');
+
+  return backwards.split('').map(item => {
+    if(item === item.toUpperCase()) {
+      return item.toLowerCase();
+    } else if (item === item.toLowerCase()) {
+      return item.toUpperCase();
+    } else {
+      return item;
+    }
+  }).join('')
+}
+// console.log(stringTransformer('Example String'));
+
+
 
 
 
