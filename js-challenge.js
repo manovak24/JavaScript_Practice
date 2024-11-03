@@ -5193,6 +5193,27 @@ const stringTransformer = (str) => {
 // console.log(stringTransformer('Example String'));
 
 
+const minimumNumber = (numbers) => {
+  let sum = numbers.reduce((a,b) => a + b);
+  const isPrime = (num) => {
+    if(num <= 1) {
+      return false;
+    }
+    for(let i = 2; i <= Math.sqrt(num); i++) {
+      if(num % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  for(let i = sum; i < Infinity; i++) {
+    if(isPrime(i)) {
+      return i - sum;
+    }
+  }
+
+}
+// console.log(minimumNumber([2,12,8,4,6]));
 
 
 
