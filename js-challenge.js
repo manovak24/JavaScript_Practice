@@ -5216,6 +5216,38 @@ const minimumNumber = (numbers) => {
 // console.log(minimumNumber([2,12,8,4,6]));
 
 
+// https://www.codewars.com/kata/5613d06cee1e7da6d5000055/train/javascript
+const step = (g, m, n) => {
+  let arr = [];
+  const isPrime = (num) => {
+    if(num <= 1) {
+      return false;
+    }
+    for(let i = 2; i <= Math.sqrt(num); i++) {
+      if(num % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  for(let i = m; i <= n; i++) {
+    if(isPrime(i)) {
+      arr.push(i);
+    }
+  }
+  let answer = [];
+  for(let i = 0; i < arr.length; i++) {
+    for(let j = i + 1; j < arr.length; j++) {
+      if(arr[j] - arr[i] === g) {
+        answer.push(arr[i], arr[j]);
+      }
+    }
+  }
+  return answer.length >= 2 ? answer.splice(0, 2) : null;
+}
+// console.log(step(2,100,110));
+
+
 
 // https://www.codewars.com/kata/5923fbc72eafa9bcff00011a/train/javascript
 const multiplyStrings = (str, ing) => {
