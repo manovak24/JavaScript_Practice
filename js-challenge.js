@@ -5248,6 +5248,15 @@ const step = (g, m, n) => {
 // console.log(step(2,100,110));
 
 
+const evenLast = (numbers) => {
+  if(numbers.length === 0) return 0
+  return numbers.reduce((a,b,i) => i % 2 ? a : a + b) * numbers[numbers.length - 1];
+}
+console.log(evenLast([2, 3, 4, 5]));
+
+
+
+
 
 // https://www.codewars.com/kata/5923fbc72eafa9bcff00011a/train/javascript
 const multiplyStrings = (str, ing) => {
