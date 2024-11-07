@@ -5252,7 +5252,18 @@ const evenLast = (numbers) => {
   if(numbers.length === 0) return 0
   return numbers.reduce((a,b,i) => i % 2 ? a : a + b) * numbers[numbers.length - 1];
 }
-console.log(evenLast([2, 3, 4, 5]));
+// console.log(evenLast([2, 3, 4, 5]));
+
+
+const arithmeticSequenceElements = (a, d, n) => {
+  let arr = [];
+  for(let i = a; arr.length < n; i += d) {
+    arr.push(i);
+  }
+  
+  return arr.join(', ');
+}
+// console.log(arithmeticSequenceElements(1, -3, 10));
 
 
 
