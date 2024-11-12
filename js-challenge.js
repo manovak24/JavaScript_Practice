@@ -5271,7 +5271,25 @@ const toTime = (seconds) => {
   const minutes = Math.floor(seconds % 3600 / 60);
   return `${hours} hour(s) and ${minutes} minute(s)`;
 }
-console.log(toTime(323500));
+// console.log(toTime(323500));
+
+
+// https://www.codewars.com/kata/5375f921003bf62192000746/train/javascript
+const abbreviate = (string) => {
+  return string
+          .split(/(?=\W)|(?<=\W)/)
+          .map(item => {
+            if(item.match(/[a-z]/gi) && item.length >= 4) {
+              let count = item.length - 2;
+              return item.slice(0, 1) + count + item.slice(-1);
+            } else {
+              return item;
+            }
+          })
+          .join('');
+}
+console.log(abbreviate('elephant-ride'));
+
 
 
 
