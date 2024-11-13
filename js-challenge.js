@@ -5288,7 +5288,17 @@ const abbreviate = (string) => {
           })
           .join('');
 }
-console.log(abbreviate('elephant-ride'));
+// console.log(abbreviate('elephant-ride'));
+
+
+const nextHappyYear = (year) => {
+  year += 1;  
+  while(new Set(String(year)).size !== String(year).length) {
+    year++;
+  }
+  return parseInt(Array.from(String(year), Number).join(''));
+}
+console.log(nextHappyYear(7386));
 
 
 
