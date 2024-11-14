@@ -5298,7 +5298,13 @@ const nextHappyYear = (year) => {
   }
   return parseInt(Array.from(String(year), Number).join(''));
 }
-console.log(nextHappyYear(7386));
+// console.log(nextHappyYear(7386));
+
+
+const nicknameGenerator = (name) => {
+  return name.length > 3 ? name.slice(0, 3 + 'aeiou'.includes(name[2])) : 'Error: Name too short';
+}
+console.log(nicknameGenerator('Jiimy'));
 
 
 
