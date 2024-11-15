@@ -5310,9 +5310,12 @@ const nicknameGenerator = (name) => {
 const sortme = (names) => {
   return names.sort();
 }
-// console.log(sortme(['one', 'two', 'three' ]));
+console.log(sortme(['one', 'two', 'three' ]));
 
 
+// DO THE ONE BELOW
+
+// https://www.codewars.com/kata/597770e98b4b340e5b000071/train/javascript
 
 
 
