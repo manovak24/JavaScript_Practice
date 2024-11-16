@@ -5326,6 +5326,13 @@ class FileNameExtractor {
 // console.log(FileNameExtractor.extractFileName('1231231223123131_FILE_NAME.EXTENSION.OTHEREXTENSION'));
 
 
+const divisibleByThree = (str) => {
+  return [...str].reduce((a,b) => a + b) % 3 === 0 ? true : false;
+}
+console.log(divisibleByThree('123'));
+
+
+
 
 
 // https://www.codewars.com/kata/5923fbc72eafa9bcff00011a/train/javascript
