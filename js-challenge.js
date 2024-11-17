@@ -5329,7 +5329,43 @@ class FileNameExtractor {
 const divisibleByThree = (str) => {
   return [...str].reduce((a,b) => a + b) % 3 === 0 ? true : false;
 }
-console.log(divisibleByThree('123'));
+// console.log(divisibleByThree('123'));
+
+
+const toLeetSpeak = (str) => {
+  let obj = {
+    A : '@',
+    B : '8',
+    C : '(',
+    D : 'D',
+    E : '3',
+    F : 'F',
+    G : '6',
+    H : '#',
+    I : '!',
+    J : 'J',
+    K : 'K',
+    L : '1',
+    M : 'M',
+    N : 'N',
+    O : '0',
+    P : 'P',
+    Q : 'Q',
+    R : 'R',
+    S : '$',
+    T : '7',
+    U : 'U',
+    V : 'V',
+    W : 'W',
+    X : 'X',
+    Y : 'Y',
+    Z : '2'
+  }
+
+  return str.split('').map(item => obj[item] || item).join('');
+  
+}
+console.log(toLeetSpeak('HELLO WORLD'));
 
 
 
