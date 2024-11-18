@@ -5365,7 +5365,25 @@ const toLeetSpeak = (str) => {
   return str.split('').map(item => obj[item] || item).join('');
   
 }
-console.log(toLeetSpeak('HELLO WORLD'));
+// console.log(toLeetSpeak('HELLO WORLD'));
+
+
+const moveTen = (s) => {
+  return s
+          .split('')
+          .map(item => {
+            let charCode = item.charCodeAt(0);
+            let forward = charCode + 10;
+            if(forward < 123 && forward > 96) {
+              return String.fromCharCode(forward)
+            } else {
+              let diff = forward - 123;
+              return String.fromCharCode(97 + diff);
+            }
+          })
+          .join('');
+}
+console.log(moveTen('testcase'));
 
 
 
