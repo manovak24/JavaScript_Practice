@@ -5383,7 +5383,13 @@ const moveTen = (s) => {
           })
           .join('');
 }
-console.log(moveTen('testcase'));
+// console.log(moveTen('testcase'));
+
+
+const longestWord = (stringOfWords) => {
+  return stringOfWords.split(' ').reduceRight((a,b) => b.length > a.length ? b : a);
+}
+console.log(longestWord('red blu grey'));
 
 
 
