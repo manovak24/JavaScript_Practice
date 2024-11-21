@@ -5389,7 +5389,35 @@ const moveTen = (s) => {
 const longestWord = (stringOfWords) => {
   return stringOfWords.split(' ').reduceRight((a,b) => b.length > a.length ? b : a);
 }
-console.log(longestWord('red blu grey'));
+// console.log(longestWord('red blu grey'));
+
+
+
+
+// GO BACK TO THE ONE BELOW
+
+
+// https://www.codewars.com/kata/5b358a1e228d316283001892/train/javascript
+const getStrings = (city) => {
+  let cityChars = city.replace(/[^a-z]/gi, '').split('').map(item => item.toLowerCase()).join('');
+  let count = {};
+
+  cityChars.split('').forEach(item => {
+    count[item] ? count[item]++ : count[item] = 1;
+  })
+
+  let str = '';
+
+  for(key in count) {
+    str += key + count[key] + ','
+  }
+
+  return str;
+}
+console.log(getStrings('Chicago'));
+
+
+// https://www.codewars.com/kata/5616868c81a0f281e500005c/train/javascript
 
 
 
