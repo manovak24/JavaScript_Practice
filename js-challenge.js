@@ -5408,11 +5408,12 @@ const getStrings = (city) => {
 
   let str = '';
 
+
   for(key in count) {
-    str += key + count[key] + ','
+    str += key + ':' + '*'.repeat(count[key]) + ','
   }
 
-  return str;
+  return str.slice(0, -1);
 }
 console.log(getStrings('Chicago'));
 
