@@ -5415,12 +5415,43 @@ const getStrings = (city) => {
 
   return str.slice(0, -1);
 }
-console.log(getStrings('Chicago'));
+// console.log(getStrings('Chicago'));
 
 
 // https://www.codewars.com/kata/5616868c81a0f281e500005c/train/javascript
 
 
+const rank = (st, we, n) => {
+  if (!st) return "No participants";
+
+  let names = [];
+  let stArr = st.split(',');
+
+  for (let i = 0; i < stArr.length; i++) {
+    let name = stArr[i];
+    let nameScore = name
+      .toLowerCase()
+      .split('')
+      .reduce((acc, char) => acc + (char.charCodeAt(0) - 96), 0) + name.length;
+    let ranking = nameScore * we[i];
+    names.push([name, ranking]);
+  }
+
+  names.sort((a,b) => {
+    if(b[1] !== a[1]) {
+      return b[1] - a[1];
+    }
+    return a[0].localeCompare(b[0]);
+  })
+
+  if (n > names.length || n < 1) {
+    return "Not enough participants";
+  }
+
+  return names[n - 1][0];
+}
+
+// console.log(rank("Addison,Jayden,Sofia,Michael,Andrew,Lily,Benjamin", [4, 2, 1, 4, 3, 1, 2], 4));
 
 
 
