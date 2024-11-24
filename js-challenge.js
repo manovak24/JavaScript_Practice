@@ -5482,7 +5482,12 @@ Math.floorNum = function(number) {
   let num = str.includes('.') ? parseFloat(str.split('.')[0]) : parseInt(str);
   return num;
 }
-console.log(Math.floorNum(12));
+// console.log(Math.floorNum(12));
+
+
+
+
+
 
 
 // https://www.codewars.com/kata/5923fbc72eafa9bcff00011a/train/javascript
