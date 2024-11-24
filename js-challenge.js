@@ -5454,6 +5454,36 @@ const rank = (st, we, n) => {
 // console.log(rank("Addison,Jayden,Sofia,Michael,Andrew,Lily,Benjamin", [4, 2, 1, 4, 3, 1, 2], 4));
 
 
+Math.roundNum = function(number) {
+  let str = Math.abs(number).toString();
+  let num = str.includes('.') ? parseFloat(str.split('.')[0]) : parseInt(str);
+  let decimal = str.includes('.') ? parseFloat('0.' + str.split('.')[1]) : 0
+  if(decimal >= .5) {
+    num++;
+  }
+  return num;
+};
+// console.log(Math.roundNum(32218.522100335453));
+
+
+Math.ceilNum = function(number) {
+  let str = Math.abs(number).toString();
+  let num = str.includes('.') ? parseFloat(str.split('.')[0]) : parseInt(str);
+  let decimal = str.includes('.') ? parseFloat('0.' + str.split('.')[1]) : 0
+  if(decimal > 0) {
+    num++;
+  }
+  return num;
+}
+// console.log(Math.ceilNum(12.01));
+
+Math.floorNum = function(number) {
+  let str = Math.abs(number).toString();
+  let num = str.includes('.') ? parseFloat(str.split('.')[0]) : parseInt(str);
+  return num;
+}
+console.log(Math.floorNum(12));
+
 
 // https://www.codewars.com/kata/5923fbc72eafa9bcff00011a/train/javascript
 const multiplyStrings = (str, ing) => {
