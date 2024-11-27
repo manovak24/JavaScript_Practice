@@ -5485,6 +5485,14 @@ Math.floorNum = function(number) {
 // console.log(Math.floorNum(12));
 
 
+const vowelOne = (s) => {
+  return s.replace(/[^aeiou]/gi, '0').replace(/[aeiou]/g, '1');
+}
+console.log(vowelOne('123, arou'));
+
+
+// https://www.codewars.com/kata/56eb0be52caf798c630013c0/train/javascript
+
 
 
 
