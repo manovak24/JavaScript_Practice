@@ -5488,7 +5488,15 @@ Math.floorNum = function(number) {
 const vowelOne = (s) => {
   return s.replace(/[^aeiou]/gi, '0').replace(/[aeiou]/g, '1');
 }
-console.log(vowelOne('123, arou'));
+// console.log(vowelOne('123, arou'));
+
+
+const doSort = (a) => {
+  let num = a.filter(item => typeof item === 'number').sort((a,b) => a - b);
+  let str = a.filter(item => typeof item === 'string').sort();
+  return num.concat(str);
+}
+console.log(doSort([ 2, 0, 2, 'Banana', 'Orange', 'Apple', 'Mango' ]));
 
 
 // https://www.codewars.com/kata/56eb0be52caf798c630013c0/train/javascript
