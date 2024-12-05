@@ -5496,7 +5496,20 @@ const doSort = (a) => {
   let str = a.filter(item => typeof item === 'string').sort();
   return num.concat(str);
 }
-console.log(doSort([ 2, 0, 2, 'Banana', 'Orange', 'Apple', 'Mango' ]));
+// console.log(doSort([ 2, 0, 2, 'Banana', 'Orange', 'Apple', 'Mango' ]));
+
+
+const initializeNames = (name) => {
+  let arr = name.split(' ');
+  return arr.length > 2 ? arr.map((item, index) => {
+    if(index === 0 || index === arr.length - 1) {
+      return item;
+    } else {
+      return item.charAt(0) + '.';
+    }
+  }).join(' ') : name;
+}
+console.log(initializeNames('Lois Mary Lane'));
 
 
 // https://www.codewars.com/kata/56eb0be52caf798c630013c0/train/javascript
