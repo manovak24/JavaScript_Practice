@@ -5509,7 +5509,15 @@ const initializeNames = (name) => {
     }
   }).join(' ') : name;
 }
-console.log(initializeNames('Lois Mary Lane'));
+// console.log(initializeNames('Lois Mary Lane'));
+
+
+const Ghost = function() {
+  let colors = ['white', 'yellow', 'purple', 'red'];
+  this.color = colors[Math.floor(Math.random() * colors.length)];
+}
+// const ghost = new Ghost();
+// console.log(ghost.color);
 
 
 // https://www.codewars.com/kata/56eb0be52caf798c630013c0/train/javascript
