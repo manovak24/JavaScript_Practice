@@ -5521,6 +5521,17 @@ const Ghost = function() {
 
 
 // https://www.codewars.com/kata/56eb0be52caf798c630013c0/train/javascript
+const unluckyDays = (year) => {
+  let numberOfUnluckyDays = 0;
+  for(let i = 0; i < 12; i++) {
+    let dayNumber = new Date(year, i, 13).getDay();
+    if(dayNumber === 5) {
+      numberOfUnluckyDays++;
+    }
+  }
+  return numberOfUnluckyDays;
+}
+// console.log(unluckyDays(2017));
 
 
 
