@@ -5534,6 +5534,11 @@ const unluckyDays = (year) => {
 // console.log(unluckyDays(2017));
 
 
+const countDays = (d) => {
+  let difference = Math.round((d.getTime() - new Date().getTime()) / (1000 * 3600 * 24));
+  return difference > 0 ? difference + ' days' : difference < 0 ? 'The day is in the past!' : 'Today is the day!';
+}
+console.log(countDays(new Date("December 9, 2024")));
 
 
 
