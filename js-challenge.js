@@ -5538,7 +5538,13 @@ const countDays = (d) => {
   let difference = Math.round((d.getTime() - new Date().getTime()) / (1000 * 3600 * 24));
   return difference > 0 ? difference + ' days' : difference < 0 ? 'The day is in the past!' : 'Today is the day!';
 }
-console.log(countDays(new Date("December 9, 2024")));
+// console.log(countDays(new Date("December 9, 2024")));
+
+
+String.prototype.vowel = function() {
+  return /^[aeiou]$/i.test(this);
+}
+console.log('a'.vowel());
 
 
 
