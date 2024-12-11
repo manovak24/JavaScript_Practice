@@ -5544,8 +5544,13 @@ const countDays = (d) => {
 String.prototype.vowel = function() {
   return /^[aeiou]$/i.test(this);
 }
-console.log('a'.vowel());
+// console.log('a'.vowel());
 
+
+const sorter = (textbooks) => {
+  return textbooks.sort((a,b) => a.toLowerCase() < b.toLowerCase() ? -1 : a.toLowerCase() > b.toLowerCase() ? 1 : 0);
+}
+console.log(sorter(['Algebra', 'history', 'Geometry', 'english']));
 
 
 
