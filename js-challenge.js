@@ -5558,7 +5558,51 @@ const spacey = (array) => {
   let string = '';
   return array.map(item => string += item);
 }
-console.log(spacey(['kevin', 'has','no','space']));
+// console.log(spacey(['kevin', 'has','no','space']));
+
+
+const encryptThis = function(text) {
+  let arr = text.split(' ');
+
+  return arr.map(item => {
+    let num = item.charCodeAt(0);
+    let first = '';
+    let last = '';
+    let str = '';
+    let answer = '';
+  
+    if (item.length <= 1) {
+      answer += '';
+    } else if (item.length <= 2) {
+      last += item[item.length - 1];
+      answer += last;
+    } else if(item.length >= 3) {
+      first += item[1];
+      last += item[item.length - 1];
+      str += item.slice(2, -1);
+      answer += last + str + first;
+    }
+  
+    return num + answer;
+  }).join(' ');
+
+}
+// console.log(encryptThis('A wise old owl lived in an oak'));
+
+
+const excryptThisPartTwo = function(text) {
+  return text
+        .split(' ')
+        .map(item => {
+          return item
+            .replace(/(^\w)(\w)(\w*)(\w$)/, `$1$4$3$2`)
+            .replace(/^\w/, item.charCodeAt(0));
+        })
+        .join(' ');
+}
+// console.log(excryptThisPartTwo('A wise old owl lived in an oak'));
+
+
 
 
 
