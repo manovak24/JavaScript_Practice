@@ -5603,6 +5603,18 @@ const excryptThisPartTwo = function(text) {
 // console.log(excryptThisPartTwo('A wise old owl lived in an oak'));
 
 
+const isLucky = (n) => {
+  let sum = n
+            .toString()
+            .split('')
+            .map(item => parseInt(item))
+            .reduce((a,b) => a + b);
+  
+  return sum === 0 || n % 9 === 0 ? true : false;
+}
+console.log(isLucky(1098));
+
+
 
 
 
