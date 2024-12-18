@@ -5612,7 +5612,23 @@ const isLucky = (n) => {
   
   return sum === 0 || n % 9 === 0 ? true : false;
 }
-console.log(isLucky(1098));
+// console.log(isLucky(1098));
+
+
+// https://www.codewars.com/kata/5d49c93d089c6e000ff8428c/train/javascript
+const save = (sizes, hd) => {
+  let test = 0;
+  
+  for (let i = 0; i < sizes.length; i++) {
+    if (test + sizes[i] > hd) {
+      return i;
+    }
+    test += sizes[i];
+  }
+  
+  return sizes.length;
+}
+console.log(save([4, 4, 4, 3, 3], 11));
 
 
 
