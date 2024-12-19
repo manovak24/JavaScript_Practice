@@ -5628,11 +5628,16 @@ const save = (sizes, hd) => {
   
   return sizes.length;
 }
-console.log(save([4, 4, 4, 3, 3], 11));
+// console.log(save([4, 4, 4, 3, 3], 11));
 
 
+// https://www.codewars.com/kata/56f3a1e899b386da78000732/train/javascript
+const partlist = (arr) => {
+  let pairs = [];
 
-
+  return pairs;
+}
+console.log(partlist(["I", "wish", "I", "hadn't", "come"]));
 
 
 
