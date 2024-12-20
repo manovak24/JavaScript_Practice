@@ -5637,7 +5637,6 @@ const partlist = (arr) => {
   for(let i = 1; i < arr.length; i++) {
     let first = arr.slice(0, i).join(' ');
     let second = arr.slice(i, arr.length).join(' ');
-    
     combos.push([first, second]);
   }
   return combos;
