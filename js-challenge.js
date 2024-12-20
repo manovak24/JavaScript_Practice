@@ -5633,9 +5633,14 @@ const save = (sizes, hd) => {
 
 // https://www.codewars.com/kata/56f3a1e899b386da78000732/train/javascript
 const partlist = (arr) => {
-  let pairs = [];
-
-  return pairs;
+  let combos = [];
+  for(let i = 1; i < arr.length; i++) {
+    let first = arr.slice(0, i).join(' ');
+    let second = arr.slice(i, arr.length).join(' ');
+    
+    combos.push([first, second]);
+  }
+  return combos;
 }
 console.log(partlist(["I", "wish", "I", "hadn't", "come"]));
 
