@@ -5641,7 +5641,24 @@ const partlist = (arr) => {
   }
   return combos;
 }
-console.log(partlist(["I", "wish", "I", "hadn't", "come"]));
+// console.log(partlist(["I", "wish", "I", "hadn't", "come"]));
+
+
+const sum = (...args) => {
+  return args.reduce((a,b) => a + b);
+}
+// console.log(sum(1, 2, 3));
+
+
+function sumDupe () {
+  let sum = 0;
+  for(let i in arguments) {
+    console.log(arguments(i))
+    sum += arguments[i];
+  }
+  return sum;
+}
+console.log(sumDupe(1, 2, 3));
 
 
 
