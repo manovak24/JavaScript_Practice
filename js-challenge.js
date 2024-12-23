@@ -5672,6 +5672,19 @@ const findAdmin = (list, lang) => {
 // console.log(findAdmin(list1, 'JavaScript'));
 
 
+const isNice = (arr) => {
+  if(arr.length === 0) return false;
+  let calcArr = [];
+  for(let i = 0; i < arr.length; i++) {
+    calcArr.push(arr[i] + 1, arr[i] - 1);
+  }
+  return arr.every(item => calcArr.includes(item));
+}
+console.log(isNice([2,10,9,3]));
+
+
+
+
 
 
 
