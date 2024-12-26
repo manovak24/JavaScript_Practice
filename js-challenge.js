@@ -5687,7 +5687,7 @@ const multiplyByFive = (number) => {
   let n = number.toString().replace(/[^0-9]/g, '').length;
   return number * Math.pow(5, n);
 }
-console.log(multiplyByFive(-2));
+// console.log(multiplyByFive(-2));
 
 
 
