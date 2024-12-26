@@ -5680,7 +5680,14 @@ const isNice = (arr) => {
   }
   return arr.every(item => calcArr.includes(item));
 }
-console.log(isNice([2,10,9,3]));
+// console.log(isNice([2,10,9,3]));
+
+
+const multiplyByFive = (number) => {
+  let n = number.toString().replace(/[^0-9]/g, '').length;
+  return number * Math.pow(5, n);
+}
+console.log(multiplyByFive(-2));
 
 
 
