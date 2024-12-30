@@ -5690,6 +5690,14 @@ const multiplyByFive = (number) => {
 // console.log(multiplyByFive(-2));
 
 
+// https://www.codewars.com/kata/54129112fb7c188740000162/train/javascript
+const prefill = (n, v) => {
+  if(typeof n !== 'number' || typeof parseInt(n) !== 'number') throw new TypeError(`${n} is invalid`)
+  return new Array(n).fill(v);
+}
+console.log(prefill('0', 0));
+
+
 
 
 
