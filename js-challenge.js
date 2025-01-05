@@ -5704,17 +5704,7 @@ const greetName = (name) => {
 
 
 const consecutiveTestTwo = (arr, a, b) => {
-  let answer = null;
-  for(let i = 0; i < arr.length; i++) {
-    if(arr[i] === a && arr[i + 1] === b || arr[i] === b && arr[i + 1] === a) {
-      answer = true;
-      break;
-    } else {
-      answer = false;
-    }
-  }
-  
-  return answer;
+  return Math.abs(arr.indexOf(a) - arr.indexOf(b)) == 1;
 }
 console.log(consecutiveTestTwo([1, 4,  5,  3,  2, 7, 6, 23, 76, 11, 0], 2, 3));
 
