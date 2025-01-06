@@ -5706,7 +5706,19 @@ const greetName = (name) => {
 const consecutiveTestTwo = (arr, a, b) => {
   return Math.abs(arr.indexOf(a) - arr.indexOf(b)) == 1;
 }
-console.log(consecutiveTestTwo([1, 4,  5,  3,  2, 7, 6, 23, 76, 11, 0], 2, 3));
+// console.log(consecutiveTestTwo([1, 4,  5,  3,  2, 7, 6, 23, 76, 11, 0], 2, 3));
+
+
+const findAll = (array, n) => {
+  let indexes = [];
+  for(let i = 0; i < array.length; i++) {
+    if(array[i] === n) {
+      indexes.push(i);
+    }
+  }
+  return indexes;
+}
+console.log(findAll([6, 9, 3, 4, 3, 82, 11], 3));
 
 
 
