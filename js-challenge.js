@@ -5737,9 +5737,10 @@ const catchSignChange = (arr) => {
 const filterLongWords = (sentence, n) => {
   return sentence.split(' ').filter(word => word.length > n);
 }
-console.log(filterLongWords("The quick brown fox jumps over the lazy dog", 4));
+// console.log(filterLongWords("The quick brown fox jumps over the lazy dog", 4));
 
 
+// https://www.codewars.com/kata/595aa94353e43a8746000120/train/javascript
 
 
 
