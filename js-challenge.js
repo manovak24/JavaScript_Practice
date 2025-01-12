@@ -5740,7 +5740,16 @@ const filterLongWords = (sentence, n) => {
 // console.log(filterLongWords("The quick brown fox jumps over the lazy dog", 4));
 
 
-// https://www.codewars.com/kata/595aa94353e43a8746000120/train/javascript
+const findDeletedNumber = (arr, mixArr) => {
+  if(arr.length === mixArr.length) return 0;
+  let sortedMixArr = mixArr.sort((a,b) => a - b);
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] !== sortedMixArr[i]) {
+      return arr[i];
+    }
+  }
+}
+console.log(findDeletedNumber([1,2,3,4,5], [3,4,1,5]));
 
 
 
