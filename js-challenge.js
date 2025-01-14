@@ -5749,7 +5749,13 @@ const findDeletedNumber = (arr, mixArr) => {
     }
   }
 }
-console.log(findDeletedNumber([1,2,3,4,5], [3,4,1,5]));
+// console.log(findDeletedNumber([1,2,3,4,5], [3,4,1,5]));
+
+
+const searchNames = (logins) => {
+  return logins.filter(login => login[0].endsWith('_'));
+}
+console.log(searchNames([[ "foo", "foo@foo.com" ], [ "bar_", "bar@bar.com" ]]));
 
 
 
