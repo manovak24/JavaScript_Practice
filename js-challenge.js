@@ -5755,7 +5755,23 @@ const findDeletedNumber = (arr, mixArr) => {
 const searchNames = (logins) => {
   return logins.filter(login => login[0].endsWith('_'));
 }
-console.log(searchNames([[ "foo", "foo@foo.com" ], [ "bar_", "bar@bar.com" ]]));
+// console.log(searchNames([[ "foo", "foo@foo.com" ], [ "bar_", "bar@bar.com" ]]));
+
+
+// let obj = {};
+//   return arr.filter(function(x) {
+//     obj[x] = (obj[x] || 0) + 1;
+//     return obj[x] <= n;
+//   })
+
+const sumNoDuplicates = (numList) => {
+  return numList.reduce((a,b) => numList.indexOf(b) === numList.lastIndexOf(b) ? a + b : a, 0);
+}
+console.log(sumNoDuplicates([1, 1, 2, 3]));
+
+
+
+
 
 
 
