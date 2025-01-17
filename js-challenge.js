@@ -5767,7 +5767,13 @@ const searchNames = (logins) => {
 const sumNoDuplicates = (numList) => {
   return numList.reduce((a,b) => numList.indexOf(b) === numList.lastIndexOf(b) ? a + b : a, 0);
 }
-console.log(sumNoDuplicates([1, 1, 2, 3]));
+// console.log(sumNoDuplicates([1, 1, 2, 3]));
+
+
+const countLettersAndDigits = (input) => {
+  return input.replace(/[^a-z\d]/gi, "").length;
+}
+console.log(countLettersAndDigits("T?"));
 
 
 
