@@ -5773,7 +5773,15 @@ const sumNoDuplicates = (numList) => {
 const countLettersAndDigits = (input) => {
   return input.replace(/[^a-z\d]/gi, "").length;
 }
-console.log(countLettersAndDigits("T?"));
+// console.log(countLettersAndDigits("T?"));
+
+
+// https://www.codewars.com/kata/558ee8415872565824000007/train/javascript
+function isDivisible(...args) {
+  const [first, ...rest] = args;
+  return rest.every(arg => first % arg === 0);
+}
+// console.log(isDivisible(3,3,4));
 
 
 
