@@ -5785,9 +5785,10 @@ function isDivisible(...args) {
 
 
 const tripleX = (str) => {
+  // return str.indexOf('x') > -1 && str.indexOf('x') === str.indexOf('xxx');
   return /^[^x]*xxx/.test(str);
 }
-// console.log(tripleX('abraxxxas'));
+console.log(tripleX('abraxxxas'));
 
 
 
