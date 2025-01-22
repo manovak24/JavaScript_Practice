@@ -5784,6 +5784,10 @@ function isDivisible(...args) {
 // console.log(isDivisible(3,3,4));
 
 
+const tripleX = (str) => {
+  return /^[^x]*xxx/.test(str);
+}
+// console.log(tripleX('abraxxxas'));
 
 
 
