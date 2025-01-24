@@ -5788,7 +5788,18 @@ const tripleX = (str) => {
   // return str.indexOf('x') > -1 && str.indexOf('x') === str.indexOf('xxx');
   return /^[^x]*xxx/.test(str);
 }
-console.log(tripleX('abraxxxas'));
+// console.log(tripleX('abraxxxas'));
+
+
+const bingo = (a) => {
+  let bingo = ['B', 'I', 'N', 'G', 'O'];
+  let letters = a.map(num => {
+    return String.fromCharCode(64 + num);
+  })
+
+  return bingo.every(v => letters.includes(v)) ? "WIN" : "LOSE";
+}
+console.log(bingo([21,13,2,7,5,14,7,15,9,10]));
 
 
 
