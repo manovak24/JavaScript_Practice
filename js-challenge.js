@@ -5799,7 +5799,17 @@ const bingo = (a) => {
 
   return bingo.every(v => letters.includes(v)) ? "WIN" : "LOSE";
 }
-console.log(bingo([21,13,2,7,5,14,7,15,9,10]));
+// console.log(bingo([21,13,2,7,5,14,7,15,9,10]));
+
+
+// https://www.codewars.com/kata/5f7c38eb54307c002a2b8cc8/train/javascript
+const removeParentheses = (s) => {
+  let first = s.indexOf('(');
+  let last = s.lastIndexOf(')');
+
+  return s.slice(0, first) + s.slice(last + 1, s.length);
+}
+console.log(removeParentheses('(first group) (second group) (third group)'));
 
 
 
