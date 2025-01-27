@@ -5824,9 +5824,14 @@ const removeParentheses = (s) => {
     }
   }
 
-  arr.splice(0, 12 + 1)
+  // add 1 to second
+  arr.splice(0, 13) 
+
+  // first = 14 - 13 second = 27 - 13
   arr.splice(1, 14)
-  arr.splice(2, 13)
+
+  // first = 29 - 13 - 14 second = 41 - 13 - 14
+  arr.splice(2, 14)
 
   return arr;
 }
