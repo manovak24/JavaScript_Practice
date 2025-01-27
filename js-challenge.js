@@ -5804,10 +5804,31 @@ const bingo = (a) => {
 
 // https://www.codewars.com/kata/5f7c38eb54307c002a2b8cc8/train/javascript
 const removeParentheses = (s) => {
-  let first = s.indexOf('(');
-  let last = s.lastIndexOf(')');
+  let arr = s.split('');
+  let counterFirst = [];
+  let counterLast = [];
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] === '(') {
+      counterFirst.push(i);
+    }
+    if(arr[i] === ')') {
+      counterLast.push(i);
+    }
+  }
 
-  return s.slice(0, first) + s.slice(last + 1, s.length);
+  if (counterFirst.length === counterLast.length) {
+    for(let i = 0; i < counterFirst.length; i++) {
+
+      console.log(counterFirst)
+      console.log(counterLast)
+    }
+  }
+
+  arr.splice(0, 12 + 1)
+  arr.splice(1, 14)
+  arr.splice(2, 13)
+
+  return arr;
 }
 console.log(removeParentheses('(first group) (second group) (third group)'));
 
