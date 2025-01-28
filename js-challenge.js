@@ -5803,37 +5803,9 @@ const bingo = (a) => {
 
 
 // https://www.codewars.com/kata/5f7c38eb54307c002a2b8cc8/train/javascript
+// https://stackoverflow.com/questions/40477850/recursively-extract-contents-of-nested-parentheses-in-string/40478000
 const removeParentheses = (s) => {
-  let arr = s.split('');
-  let counterFirst = [];
-  let counterLast = [];
-  for(let i = 0; i < arr.length; i++) {
-    if(arr[i] === '(') {
-      counterFirst.push(i);
-    }
-    if(arr[i] === ')') {
-      counterLast.push(i);
-    }
-  }
-
-  if (counterFirst.length === counterLast.length) {
-    for(let i = 0; i < counterFirst.length; i++) {
-
-      console.log(counterFirst)
-      console.log(counterLast)
-    }
-  }
-
-  // add 1 to second
-  arr.splice(0, 13) 
-
-  // first = 14 - 13 second = 27 - 13
-  arr.splice(1, 14)
-
-  // first = 29 - 13 - 14 second = 41 - 13 - 14
-  arr.splice(2, 14)
-
-  return arr;
+  
 }
 console.log(removeParentheses('(first group) (second group) (third group)'));
 
