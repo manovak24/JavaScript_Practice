@@ -5802,6 +5802,17 @@ const bingo = (a) => {
 // console.log(bingo([21,13,2,7,5,14,7,15,9,10]));
 
 
+const consecutive = (array) => {
+  let sorted = array.sort((a,b) => a - b);
+  let arrFull = [];
+  for(let i = sorted[0]; i <= sorted[sorted.length - 1]; i++) {
+    arrFull.push(i);
+  }
+  return arrFull.length - array.length;
+}
+// console.log(consecutive([4, 8, 6]));
+
+
 // https://www.codewars.com/kata/5f7c38eb54307c002a2b8cc8/train/javascript
 // https://stackoverflow.com/questions/40477850/recursively-extract-contents-of-nested-parentheses-in-string/40478000
 const removeParentheses = (s) => {
