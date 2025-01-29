@@ -5812,6 +5812,15 @@ const consecutive = (array) => {
 }
 // console.log(consecutive([4, 8, 6]));
 
+const alternate = (n, firstValue, secondValue) => {
+  let arr = [];
+  for(let i = 0; i < n; i++) {
+    arr.push(i % 2 === 0 ? firstValue : secondValue);
+  }
+  return arr;
+}
+console.log(alternate(5, true, false));
+
 
 // https://www.codewars.com/kata/5f7c38eb54307c002a2b8cc8/train/javascript
 // https://stackoverflow.com/questions/40477850/recursively-extract-contents-of-nested-parentheses-in-string/40478000
