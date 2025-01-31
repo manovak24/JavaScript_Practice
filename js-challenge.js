@@ -5819,7 +5819,16 @@ const alternate = (n, firstValue, secondValue) => {
   }
   return arr;
 }
-console.log(alternate(5, true, false));
+// console.log(alternate(5, true, false));
+
+
+Object.defineProperty(Array.prototype, 'numberOfOccurrences',{ 
+  value : function numberOfOccurrences(element) {
+    return this.filter(num => num === element).length;
+  }
+});
+const arr = [0, 1, 2, 2, 3]
+console.log(arr.numberOfOccurrences(2));
 
 
 // https://www.codewars.com/kata/5f7c38eb54307c002a2b8cc8/train/javascript
