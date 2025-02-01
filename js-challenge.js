@@ -5828,7 +5828,17 @@ Object.defineProperty(Array.prototype, 'numberOfOccurrences',{
   }
 });
 const arr = [0, 1, 2, 2, 3]
-console.log(arr.numberOfOccurrences(2));
+// console.log(arr.numberOfOccurrences(2));
+
+
+const consonantCount = (str) => {
+  return str
+            .split('')
+            .filter(letter => letter.match(/[a-z]/gi))
+            .filter(letter => !letter.match(/[aeiou]/gi))
+            .length;
+}
+// console.log(consonantCount('TestIng'));
 
 
 // https://www.codewars.com/kata/5f7c38eb54307c002a2b8cc8/train/javascript
