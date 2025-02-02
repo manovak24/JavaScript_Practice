@@ -5844,9 +5844,13 @@ const consonantCount = (str) => {
 // https://www.codewars.com/kata/5f7c38eb54307c002a2b8cc8/train/javascript
 // https://stackoverflow.com/questions/40477850/recursively-extract-contents-of-nested-parentheses-in-string/40478000
 const removeParentheses = (s) => {
-  
+  let regex = /\([^()]*\)/g;
+  while(s.match(regex)) {
+    s = s.replace(regex, '');
+  }
+  return s;
 }
-console.log(removeParentheses('(first group) (second group) (third group)'));
+// console.log(removeParentheses('(first group) (second group) (third group)'));
 
 
 
