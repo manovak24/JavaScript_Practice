@@ -5875,6 +5875,22 @@ const getAges = (sum, difference) => {
 // console.log(getAges(63,-14));
 
 
+// https://www.codewars.com/kata/57f625992f4d53c24200070e/train/javascript
+const bingoLottery = (ticket, win) => {
+  let miniWins = 0;
+  for(let i = 0; i < ticket.length; i++) {
+    let nums = ticket[i][0].split('').map(letter => letter.charCodeAt(0));
+    nums.forEach(number => {
+      if(number === ticket[i][1]) {
+        miniWins++;
+      }
+    })
+  }
+  return miniWins >= win ? 'Winner!' : 'Loser!';
+}
+console.log(bingoLottery([['PR',80], ['HURCP',74], ['AAHC',70], ['MT',81], ['VSNAV',86], ['LVKSIV',86], ['FF',72], ['NKTBCP',86], ['KGKK',83], ['ZUB',82]], 4));
+
+
 
 
 
