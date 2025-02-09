@@ -5888,7 +5888,15 @@ const bingoLottery = (ticket, win) => {
   }
   return miniWins >= win ? 'Winner!' : 'Loser!';
 }
-console.log(bingoLottery([['PR',80], ['HURCP',74], ['AAHC',70], ['MT',81], ['VSNAV',86], ['LVKSIV',86], ['FF',72], ['NKTBCP',86], ['KGKK',83], ['ZUB',82]], 4));
+// console.log(bingoLottery([['PR',80], ['HURCP',74], ['AAHC',70], ['MT',81], ['VSNAV',86], ['LVKSIV',86], ['FF',72], ['NKTBCP',86], ['KGKK',83], ['ZUB',82]], 4));
+
+
+const productQsandEx = (string) => {
+  let exclimationMarks = s.split('!').length - 1;
+  let questionMarks = s.split('?').length - 1;
+  return exclimationMarks * questionMarks;
+}
+console.log(productQsandEx('!!?'));
 
 
 
