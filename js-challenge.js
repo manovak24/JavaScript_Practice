@@ -5896,8 +5896,11 @@ const productQsandEx = (string) => {
   let questionMarks = s.split('?').length - 1;
   return exclimationMarks * questionMarks;
 }
-console.log(productQsandEx('!!?'));
+// console.log(productQsandEx('!!?'));
 
+
+const arrCheck = value => value.every(item => Array.isArray(item));
+console.log(arrCheck([[1],[2]]));
 
 
 
