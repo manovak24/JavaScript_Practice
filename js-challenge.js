@@ -5900,7 +5900,22 @@ const productQsandEx = (string) => {
 
 
 const arrCheck = value => value.every(item => Array.isArray(item));
-console.log(arrCheck([[1],[2]]));
+// console.log(arrCheck([[1],[2]]));
+
+
+// https://www.codewars.com/kata/5a090c4e697598d0b9000004/train/javascript
+const solveOrder = (arr) => {
+  let highToLow = arr.sort((a,b) => b - a);
+  let sorted = [];
+
+  for(let i = 0; i < highToLow.length + 2; i++) {
+    sorted.push(highToLow.shift());
+    sorted.push(highToLow.pop());
+  }
+
+  return sorted;
+}
+console.log(solveOrder([15,11,10,7,12, 18]));
 
 
 
