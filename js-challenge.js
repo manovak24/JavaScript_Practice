@@ -5908,14 +5908,21 @@ const solveOrder = (arr) => {
   let highToLow = arr.sort((a,b) => b - a);
   let sorted = [];
 
-  for(let i = 0; i < highToLow.length + 2; i++) {
-    sorted.push(highToLow.shift());
-    sorted.push(highToLow.pop());
+  let a = 0;
+  let b = highToLow.length - 1;
+
+  while (sorted.length < highToLow.length) {
+    sorted.push(highToLow[a]);
+    if(a !== b) {
+      sorted.push(highToLow[b]);
+    }
+    a++;
+    b--;
   }
 
   return sorted;
 }
-console.log(solveOrder([15,11,10,7,12, 18]));
+// console.log(solveOrder([52, 77, 72, 44, 74, 76, 40]));
 
 
 
