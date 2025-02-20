@@ -5925,7 +5925,14 @@ const solveOrder = (arr) => {
 // console.log(solveOrder([52, 77, 72, 44, 74, 76, 40]));
 
 
-
+const bandNameGenerator = (str) => {
+  if (str[0] === str[str.length - 1]) {
+    return str.charAt(0).toUpperCase() + str.slice(1) + str.slice(1);
+  } else {
+    return "The " + str.charAt(0).toUpperCase() + str.slice(1);
+  }
+}
+console.log(bandNameGenerator('art'));
 
 
 
