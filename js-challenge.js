@@ -5932,7 +5932,22 @@ const bandNameGenerator = (str) => {
     return "The " + str.charAt(0).toUpperCase() + str.slice(1);
   }
 }
-console.log(bandNameGenerator('art'));
+// console.log(bandNameGenerator('art'));
+
+
+const findScreenHeight = (width, ratio) => {  
+  let divide = ratio.split(":", 1)[0] * 1;
+  let multiply = ratio.split(":", 2)[1] * 1;
+  let height = Math.trunc((width / divide) * multiply);
+
+  return `${width}x${height}`;
+}
+console.log(findScreenHeight(1024, "4:3"));
+
+
+
+
+
 
 
 
