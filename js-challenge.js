@@ -5942,7 +5942,19 @@ const findScreenHeight = (width, ratio) => {
 
   return `${width}x${height}`;
 }
-console.log(findScreenHeight(1024, "4:3"));
+// console.log(findScreenHeight(1024, "4:3"));
+
+
+const numObj = (s) => {
+  let arr = [];
+  s.forEach(item => {
+    let obj = {};
+    obj[item] = String.fromCharCode(item);
+    arr.push(obj);
+  })
+  return arr;
+}
+console.log(numObj([118, 117, 120]));
 
 
 
