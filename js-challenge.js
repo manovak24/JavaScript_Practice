@@ -5967,6 +5967,29 @@ const rainAmount = (mm) => {
 // console.log(rainAmount(39));
 
 
+const flickSwitch = (arr) => {
+  // let boolean = true;
+  // let answer = [];
+  // for(let i = 0; i < arr.length; i++) {
+  //   if(arr[i] === 'flick') {
+  //     boolean = !boolean;
+  //   }
+  //   answer.push(boolean);
+  // }
+  // return answer;
+
+  let boolean = true;
+  return arr.map(item => {
+    if (item === 'flick') {
+      return boolean = !boolean;
+    } else {
+      return boolean;
+    }
+  })
+}
+// console.log(flickSwitch(["codewars", "flick", "code", "wars"]));
+
+
 
 
 
