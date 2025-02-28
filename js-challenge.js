@@ -5990,6 +5990,20 @@ const flickSwitch = (arr) => {
 // console.log(flickSwitch(["codewars", "flick", "code", "wars"]));
 
 
+// let answer = {};
+//   string.split('').forEach(letter => {
+//     answer[letter] ? answer[letter]++ : answer[letter] = 1;
+//   })
+//   return answer;
+
+
+// Counting occurnaces and replacing with count and seperator
+const freqSeq = (str, sep) => {
+  return str.split('').map((v, i, arr) => arr.filter(vi => vi === v).length).join(sep);
+}
+// console.log(freqSeq('hello world', '-'));
+
+
 
 
 
