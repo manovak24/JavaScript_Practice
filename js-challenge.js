@@ -6004,6 +6004,12 @@ const freqSeq = (str, sep) => {
 // console.log(freqSeq('hello world', '-'));
 
 
+const broken = (x) => {
+  return x.split('').map(item => item === '1' ? '0' : '1').join('');
+}
+console.log(broken("10000000101101111110011001000"));
+
+
 
 
 
