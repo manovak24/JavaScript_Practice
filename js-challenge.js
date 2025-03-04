@@ -6007,8 +6007,16 @@ const freqSeq = (str, sep) => {
 const broken = (x) => {
   return x.split('').map(item => item === '1' ? '0' : '1').join('');
 }
-console.log(broken("10000000101101111110011001000"));
+// console.log(broken("10000000101101111110011001000"));
 
+
+// https://www.codewars.com/kata/54129112fb7c188740000162/train/javascript
+const prefillTwo = (n, v) => {
+  if(n === 0 || parseInt(n) === 0) return [];
+  if(typeof n !== 'number' || typeof parseInt(n) !== 'number' || n === Infinity || n === -Infinity || Number.isNaN(n) || n % 1 === 0) throw new TypeError(`${n} is invalid`);
+  return new Array(n).fill(v);
+}
+console.log(prefillTwo(8, 1));
 
 
 
