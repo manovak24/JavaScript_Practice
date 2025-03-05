@@ -6060,6 +6060,10 @@ const timeCorrect = (timestring) => {
     if(i === 2) {
       if(arr[i] >= 60) {
         formated[1] += 1;
+        if(formated[1] += 1 > 60) {
+          formated[1] = formated[1] % 60
+          formated[0] += 1;
+        }
         formated.push(arr[i] % 60);
       } else {
         formated.push(arr[i]);
@@ -6070,7 +6074,7 @@ const timeCorrect = (timestring) => {
 
   return formated.map(item => item.toString()).map(str => str.length < 2 ? '0' + str : str).join(':');
 }
-console.log(timeCorrect('001122'));
+console.log(timeCorrect('14:59:94'));
 
 
 // https://www.codewars.com/kata/54129112fb7c188740000162/train/javascript
