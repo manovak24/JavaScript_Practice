@@ -6010,71 +6010,29 @@ const broken = (x) => {
 // console.log(broken("10000000101101111110011001000"));
 
 
-
-
-// THERE ARE TWO PROBLEMS BELOW THAT SHOULD BE FINISHED!!
-
-// THERE ARE TWO PROBLEMS BELOW THAT SHOULD BE FINISHED!!
-
-// THERE ARE TWO PROBLEMS BELOW THAT SHOULD BE FINISHED!!
-
-// THERE ARE TWO PROBLEMS BELOW THAT SHOULD BE FINISHED!!
-
-// THERE ARE TWO PROBLEMS BELOW THAT SHOULD BE FINISHED!!
-
-// THERE ARE TWO PROBLEMS BELOW THAT SHOULD BE FINISHED!!
-
-// THERE ARE TWO PROBLEMS BELOW THAT SHOULD BE FINISHED!!
-
-// THERE ARE TWO PROBLEMS BELOW THAT SHOULD BE FINISHED!!
-
-
-
-// https://www.codewars.com/kata/57873ab5e55533a2890000c7/train/javascript
 const timeCorrect = (timestring) => {
-  const regex = /^\d{2}:\d{2}:\d{2}$/;
-  if(timestring === '') return '';
-  if(!regex.test(timestring) || null) return null;
-
-  let arr = timestring.split(':').map(item => parseInt(item));
-  let formated = [];
-
-  for(let i = 0; i < arr.length; i++) {
-    if(i === 0) {
-      if(arr[i] >= 24) {
-        formated.push(arr[i] % 24);
-      } else {
-        formated.push(arr[i]);
-      }
-    }
-
-    if(i === 1) {
-      if(arr[i] >= 60) {
-        formated[0] += 1;
-        formated.push(arr[i] % 60);
-      } else {
-        formated.push(arr[i]);
-      }
-    }
-
-    if(i === 2) {
-      if(arr[i] >= 60) {
-        formated[1] += 1;
-        if(formated[1] += 1 > 60) {
-          formated[1] = formated[1] % 60
-          formated[0] += 1;
-        }
-        formated.push(arr[i] % 60);
-      } else {
-        formated.push(arr[i]);
-      }
-    }
-    
-  }
-
-  return formated.map(item => item.toString()).map(str => str.length < 2 ? '0' + str : str).join(':');
+  if (!timestring) return timestring;
+  if (!/^(\d\d:){2}\d\d$/.test(timestring)) return null;
+  return (new Date(0,0,0,...timestring.split(':'))).toString().slice(16,24);
 }
 console.log(timeCorrect('14:59:94'));
+
+
+// DO PROBLEM BELOW
+
+// DO PROBLEM BELOW
+
+// DO PROBLEM BELOW
+
+// DO PROBLEM BELOW
+
+// DO PROBLEM BELOW
+
+// DO PROBLEM BELOW
+
+// DO PROBLEM BELOW
+
+// DO PROBLEM BELOW
 
 
 // https://www.codewars.com/kata/54129112fb7c188740000162/train/javascript
