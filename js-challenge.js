@@ -6015,7 +6015,16 @@ const timeCorrect = (timestring) => {
   if (!/^(\d\d:){2}\d\d$/.test(timestring)) return null;
   return (new Date(0,0,0,...timestring.split(':'))).toString().slice(16,24);
 }
-console.log(timeCorrect('14:59:94'));
+// console.log(timeCorrect('14:59:94'));
+
+
+const decipherThis = (str) => {
+  let arr = str.split(' ')
+                .map(item => item.split(/(?<=\d)(?=\D)/))
+                .map(item => [String.fromCharCode(parseInt(item[0])), item[1] ? item[1].length > 1 ? item[1].charAt(item[1].length -1) + item[1].slice(1, -1) + item[1].charAt(0) : item[1] : ''].join('') );
+  return arr.join(' ');
+}
+// console.log(decipherThis('72eva 97 103o 97t 116sih 97dn 115ee 104wo 121uo 100o'));
 
 
 // DO PROBLEM BELOW
