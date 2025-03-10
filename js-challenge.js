@@ -6033,7 +6033,7 @@ const gordon = (a) => {
           .replace(/A/g, '@')
           .replace(/[EIOU]/g, '*') + "!!!!").join(' ');
 }
-console.log(gordon('ji lc ba wiqkbnkiex babzgoca kdxwetej akvikfxx'));
+// console.log(gordon('ji lc ba wiqkbnkiex babzgoca kdxwetej akvikfxx'));
 
 
 // DO PROBLEM BELOW
