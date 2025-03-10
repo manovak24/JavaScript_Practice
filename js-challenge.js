@@ -6027,6 +6027,15 @@ const decipherThis = (str) => {
 // console.log(decipherThis('72eva 97 103o 97t 116sih 97dn 115ee 104wo 121uo 100o'));
 
 
+const gordon = (a) => {
+  return a.split(' ')
+          .map(word => word.toUpperCase()
+          .replace(/A/g, '@')
+          .replace(/[EIOU]/g, '*') + "!!!!").join(' ');
+}
+console.log(gordon('ji lc ba wiqkbnkiex babzgoca kdxwetej akvikfxx'));
+
+
 // DO PROBLEM BELOW
 
 // DO PROBLEM BELOW
