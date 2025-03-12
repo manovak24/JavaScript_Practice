@@ -6036,6 +6036,12 @@ const gordon = (a) => {
 // console.log(gordon('ji lc ba wiqkbnkiex babzgoca kdxwetej akvikfxx'));
 
 
+String.prototype.isLetter = function () {
+  return /^[a-zA-Z]$/.test(this);
+}
+// console.log('A'.isLetter());
+
+
 // DO PROBLEM BELOW
 
 // DO PROBLEM BELOW
