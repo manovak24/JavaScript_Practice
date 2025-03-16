@@ -6053,7 +6053,15 @@ const autocomplete = (input, dictionary) => {
   }
   return answer;
 }
-console.log(autocomplete('n~!@#$%^&*()_+1234567890ope', ['Nopesville', 'Green', 'Narnia']));
+// console.log(autocomplete('n~!@#$%^&*()_+1234567890ope', ['Nopesville', 'Green', 'Narnia']));
+
+
+const stripComments = (text, markers) => {
+  return text.split('\n')
+    .map(str => markers.reduce((s, m) => s.split(m)[0], str).trimEnd())
+    .join('\n');
+}
+console.log(stripComments(' TO@^-a#GDksOaZq PXJx', ["@", "$", "/", "\\", "!", "%", "-", "+"]));
 
 
 // DO PROBLEM BELOW
