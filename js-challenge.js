@@ -6061,7 +6061,13 @@ const stripComments = (text, markers) => {
     .map(str => markers.reduce((s, m) => s.split(m)[0], str).trimEnd())
     .join('\n');
 }
-console.log(stripComments(' TO@^-a#GDksOaZq PXJx', ["@", "$", "/", "\\", "!", "%", "-", "+"]));
+// console.log(stripComments(' TO@^-a#GDksOaZq PXJx', ["@", "$", "/", "\\", "!", "%", "-", "+"]));
+
+
+const twoHeighest = (arr) => {
+  return [...new Set(arr.sort((a, b) => b - a))].slice(0, 2);
+}
+console.log(twoHeighest([15, 20, 20, 17]));
 
 
 // DO PROBLEM BELOW
