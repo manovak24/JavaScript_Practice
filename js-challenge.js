@@ -6067,7 +6067,23 @@ const stripComments = (text, markers) => {
 const twoHeighest = (arr) => {
   return [...new Set(arr.sort((a, b) => b - a))].slice(0, 2);
 }
-console.log(twoHeighest([15, 20, 20, 17]));
+// console.log(twoHeighest([15, 20, 20, 17]));
+
+const sixToast = (num) => {
+  return Math.abs(num - 6);
+}
+// console.log(sixToast(17));
+
+
+const reduce = (fraction) => {
+  let gcd = function gcd(a,b) {
+    return b ? gcd(b, a % b) : a;
+  }
+
+  gcd = gcd(fraction[0], fraction[1]);
+  return [fraction[0] / gcd, fraction[1] / gcd];
+}
+console.log(reduce([60, 20]));
 
 
 // DO PROBLEM BELOW
