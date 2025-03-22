@@ -6083,7 +6083,24 @@ const reduce = (fraction) => {
   gcd = gcd(fraction[0], fraction[1]);
   return [fraction[0] / gcd, fraction[1] / gcd];
 }
-console.log(reduce([60, 20]));
+// console.log(reduce([60, 20]));
+
+
+const countZeros = (n) => {
+  let counter = 0;
+  for(let i = 1; i <= n; i++) {
+    let str = i.toString();
+    if (str.includes('0')) {
+      str.split('').forEach(item => {
+        if(item === '0') {
+          counter++;
+        }
+      })
+    }
+  }
+  // return counter;
+}
+console.log(countZeros(200));
 
 
 // DO PROBLEM BELOW
