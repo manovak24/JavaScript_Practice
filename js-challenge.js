@@ -6100,7 +6100,13 @@ const countZeros = (n) => {
   }
   // return counter;
 }
-console.log(countZeros(200));
+// console.log(countZeros(200));
+
+
+const findUnique = (numbers) => {
+  return numbers.reduce((a,b) => a ^ b);
+}
+console.log(findUnique([ 1, 4, 4, 5, 5, 3, 3, 2, 2 ]));
 
 
 // DO PROBLEM BELOW
