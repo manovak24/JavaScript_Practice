@@ -6106,7 +6106,25 @@ const countZeros = (n) => {
 const findUnique = (numbers) => {
   return numbers.reduce((a,b) => a ^ b);
 }
-console.log(findUnique([ 1, 4, 4, 5, 5, 3, 3, 2, 2 ]));
+// console.log(findUnique([ 1, 4, 4, 5, 5, 3, 3, 2, 2 ]));
+
+
+// THE FIRST BELOW IS NOT SUBMITTED BECAUSE KATA NOT PUBLISHED
+// SECOND IS A TOUGH ONE!!
+
+
+// https://www.codewars.com/kata/5926d7494b2b1843780001e6/train/javascript
+function addFunc(...n) {
+  return n.reduce((a,b) => a + b, 0);
+}
+console.log(addFunc(1, 2, 3));
+
+
+// https://www.codewars.com/kata/592915cc1fad49252f000006/train/javascript
+const noIfsNoButs = (a, b) => {
+  return a % 2
+}
+// console.log(noIfsNoButs(3, 2));
 
 
 // DO PROBLEM BELOW
