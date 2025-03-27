@@ -6117,14 +6117,20 @@ const findUnique = (numbers) => {
 function addFunc(...n) {
   return n.reduce((a,b) => a + b, 0);
 }
-console.log(addFunc(1, 2, 3));
+// console.log(addFunc(1, 2, 3));
 
 
 // https://www.codewars.com/kata/592915cc1fad49252f000006/train/javascript
 const noIfsNoButs = (a, b) => {
-  return a % 2
+  let test = a > b
+  switch(test) {
+    case true:
+      return `${a} is greater than ${b}`
+    default:
+      return 'no'
+  }
 }
-// console.log(noIfsNoButs(3, 2));
+console.log(noIfsNoButs(3, 2));
 
 
 // DO PROBLEM BELOW
