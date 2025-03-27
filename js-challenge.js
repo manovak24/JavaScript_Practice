@@ -6109,6 +6109,36 @@ const findUnique = (numbers) => {
 // console.log(findUnique([ 1, 4, 4, 5, 5, 3, 3, 2, 2 ]));
 
 
+// https://www.codewars.com/kata/59414b46d040b7b8f7000021/train/javascript
+const tacofy = (word) => {
+  let arr = word.split('');
+  let taco = ['shell'];
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i].match(/[aeiou]/) || arr[i].match(/[AEIOU]/)) {
+      taco.push('beef');
+    }
+    if(arr[i].match('t') || arr[i].match('T')) {
+      taco.push('tomato');
+    }
+    if(arr[i].match('l') || arr[i].match('L')) {
+      taco.push('lettuce');
+    }
+    if(arr[i].match('c') || arr[i].match('C')) {
+      taco.push('cheese');
+    }
+    if(arr[i].match('g') || arr[i].match('G')) {
+      taco.push('guacamole');
+    }
+    if(arr[i].match('s') || arr[i].match('s')) {
+      taco.push('salsa');
+    }
+  }
+  taco.push('shell');
+  return taco
+}
+console.log(tacofy('a'));
+
+
 // THE FIRST BELOW IS NOT SUBMITTED BECAUSE KATA NOT PUBLISHED
 // SECOND IS A TOUGH ONE!!
 
@@ -6130,7 +6160,7 @@ const noIfsNoButs = (a, b) => {
       return 'no'
   }
 }
-console.log(noIfsNoButs(3, 2));
+// console.log(noIfsNoButs(3, 2));
 
 
 // DO PROBLEM BELOW
