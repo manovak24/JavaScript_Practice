@@ -6111,37 +6111,38 @@ const findUnique = (numbers) => {
 
 // https://www.codewars.com/kata/59414b46d040b7b8f7000021/train/javascript
 const tacofy = (word) => {
-  let arr = word.split('');
-  let taco = ['shell'];
-  for(let i = 0; i < arr.length; i++) {
-    if(arr[i].match(/[aeiou]/) || arr[i].match(/[AEIOU]/)) {
-      taco.push('beef');
-    }
-    if(arr[i].match('t') || arr[i].match('T')) {
-      taco.push('tomato');
-    }
-    if(arr[i].match('l') || arr[i].match('L')) {
-      taco.push('lettuce');
-    }
-    if(arr[i].match('c') || arr[i].match('C')) {
-      taco.push('cheese');
-    }
-    if(arr[i].match('g') || arr[i].match('G')) {
-      taco.push('guacamole');
-    }
-    if(arr[i].match('s') || arr[i].match('s')) {
-      taco.push('salsa');
-    }
+  const dict = {
+    a: 'beef',
+    e: 'beef',
+    i: 'beef',
+    o: 'beef',
+    u: 'beef',
+    t: 'tomato',
+    l: 'lettuce',
+    c: 'cheese',
+    g: 'guacamole',
+    s: 'salsa'
   }
-  taco.push('shell');
-  return taco
+  return ['shell', ...[...word].map(char => dict[char.toLowerCase()]).filter(char => char), 'shell'];
 }
-console.log(tacofy('a'));
+// console.log(tacofy('asdf'));
+
+
+// https://www.codewars.com/kata/58587905ed1b4dad6e0000c6/train/javascript
+class SmartTrafficLight {
+  constructor(st1, st2) {
+
+  }
+
+  turngreen() {
+
+  }
+}
+const streets = new SmartTrafficLight([42, '27th ave'], [2, '3rd st']);
 
 
 // THE FIRST BELOW IS NOT SUBMITTED BECAUSE KATA NOT PUBLISHED
 // SECOND IS A TOUGH ONE!!
-
 
 // https://www.codewars.com/kata/5926d7494b2b1843780001e6/train/javascript
 function addFunc(...n) {
