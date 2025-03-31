@@ -6164,6 +6164,12 @@ const noIfsNoButs = (a, b) => {
 // console.log(noIfsNoButs(3, 2));
 
 
+const roundToFive = (numbers) => {
+  return numbers.map(num => Math.round(num / 5) * 5);
+}
+console.log(roundToFive([34.5, 56.2, 11, 13]));
+
+
 // DO PROBLEM BELOW
 
 // DO PROBLEM BELOW
