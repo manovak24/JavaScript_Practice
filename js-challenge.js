@@ -6128,6 +6128,17 @@ const tacofy = (word) => {
 // console.log(tacofy('asdf'));
 
 
+
+const fireFight = (s) => {
+  return s.replace(/Fire/g, '~~');
+}
+// console.log(fireFight('Mast Deck Engine Water Fire'));
+
+
+
+// THREE PROBLEMS BELOW
+
+
 // https://www.codewars.com/kata/58587905ed1b4dad6e0000c6/train/javascript
 class SmartTrafficLight {
   constructor(st1, st2) {
@@ -6167,7 +6178,7 @@ const noIfsNoButs = (a, b) => {
 const roundToFive = (numbers) => {
   return numbers.map(num => Math.round(num / 5) * 5);
 }
-console.log(roundToFive([34.5, 56.2, 11, 13]));
+// console.log(roundToFive([34.5, 56.2, 11, 13]));
 
 
 // DO PROBLEM BELOW
