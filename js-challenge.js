@@ -6136,6 +6136,7 @@ const fireFight = (s) => {
 
 
 // https://www.codewars.com/kata/564ab935de55a747d7000040/train/javascript
+// remove first occurnace of chars from string that are in array javascript
 const removeChars = (str, what) => {
   for(let key in what) {
     const pattern = `([^${key}]*${key}){${what[key]}}`;
