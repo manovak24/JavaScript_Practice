@@ -6135,6 +6135,19 @@ const fireFight = (s) => {
 // console.log(fireFight('Mast Deck Engine Water Fire'));
 
 
+// https://www.codewars.com/kata/564ab935de55a747d7000040/train/javascript
+const removeChars = (str, what) => {
+  for(let key in what) {
+    const pattern = `([^${key}]*${key}){${what[key]}}`;
+    const regex = new RegExp(`^${pattern}`);
+    console.log(regex)
+    str = str.replace(regex, '');
+  }
+  return str;
+}
+console.log(removeChars('this is a string',{'t':1, 'i':2}));
+
+
 
 // THREE PROBLEMS BELOW
 
