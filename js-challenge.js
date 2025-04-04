@@ -6135,14 +6135,13 @@ const fireFight = (s) => {
 // console.log(fireFight('Mast Deck Engine Water Fire'));
 
 
-// https://www.codewars.com/kata/564ab935de55a747d7000040/train/javascript
-// remove first occurnace of chars from string that are in array javascript
+// remove n occurnace of char from string that are in array javascript
 const removeChars = (str, what) => {
   for(let key in what) {
-    const pattern = `([^${key}]*${key}){${what[key]}}`;
-    const regex = new RegExp(`^${pattern}`);
-    console.log(regex)
-    str = str.replace(regex, '');
+    let count = 0;
+    for(let i = 1; i <= what[key]; i++) {
+      str = str.replace(key, '');
+    }
   }
   return str;
 }
