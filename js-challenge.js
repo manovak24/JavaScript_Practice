@@ -6145,7 +6145,7 @@ const removeChars = (str, what) => {
   }
   return str;
 }
-console.log(removeChars('this is a string',{'t':1, 'i':2}));
+// console.log(removeChars('this is a string',{'t':1, 'i':2}));
 
 
 
@@ -6155,14 +6155,34 @@ console.log(removeChars('this is a string',{'t':1, 'i':2}));
 // https://www.codewars.com/kata/58587905ed1b4dad6e0000c6/train/javascript
 class SmartTrafficLight {
   constructor(st1, st2) {
+    this.st1 = st1;
+    this.st2 = st2;
 
+    if(this.st1[0] === this.st2[0]) {
+      this.st1[0] = 0;
+      this.st2[0] = 0;
+    }
   }
 
   turngreen() {
-
+    if(this.st1[0] === 0 && this.st2[0] === 0) {
+      return null;
+    }
+    if(this.st1[0] > this.st2[0]) {
+      this.st1[0] = 0;
+      return this.st1[1];
+    }
+    if(this.st2[0] > this.st1[0]) {
+      this.st2[0] = 0;
+      return this.st2[1];
+    }
+    this.st1[0] = 0;
+    this.st2[0] = 0;
+    return null;
   }
 }
-const streets = new SmartTrafficLight([42, '27th ave'], [2, '3rd st']);
+const streets = new SmartTrafficLight([42, '27th ave'], [72, '3rd st']);
+console.log(streets.turngreen());
 
 
 // THE FIRST BELOW IS NOT SUBMITTED BECAUSE KATA NOT PUBLISHED
