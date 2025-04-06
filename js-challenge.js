@@ -6148,10 +6148,6 @@ const removeChars = (str, what) => {
 // console.log(removeChars('this is a string',{'t':1, 'i':2}));
 
 
-
-// THREE PROBLEMS BELOW
-
-
 // https://www.codewars.com/kata/58587905ed1b4dad6e0000c6/train/javascript
 class SmartTrafficLight {
   constructor(st1, st2) {
@@ -6182,7 +6178,13 @@ class SmartTrafficLight {
   }
 }
 const streets = new SmartTrafficLight([42, '27th ave'], [72, '3rd st']);
-console.log(streets.turngreen());
+// console.log(streets.turngreen());
+
+
+const arrayDiffTest = (a, b) => {
+  return a.filter(num => !b.includes(num));
+}
+// console.log(arrayDiffTest([1,2,3], [1,2]));
 
 
 // THE FIRST BELOW IS NOT SUBMITTED BECAUSE KATA NOT PUBLISHED
