@@ -6187,6 +6187,13 @@ const arrayDiffTest = (a, b) => {
 // console.log(arrayDiffTest([1,2,3], [1,2]));
 
 
+const toFreud = (string) => {
+  // return  string.split(' ').map(word => word = 'sex').join(' ');
+  return string.replace(/[^ ]+/g, 'sex');
+}
+// console.log(toFreud('This is a test'));
+
+
 // THE FIRST BELOW IS NOT SUBMITTED BECAUSE KATA NOT PUBLISHED
 // SECOND IS A TOUGH ONE!!
 
