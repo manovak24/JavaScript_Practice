@@ -6194,6 +6194,22 @@ const toFreud = (string) => {
 // console.log(toFreud('This is a test'));
 
 
+// GOOD ONE BELOW
+
+
+// https://www.codewars.com/kata/58539230879867a8cd00011c/train/javascript
+const findChildren = (dancingBrigade) => {
+  const arr = [];
+  for(let i = 0; i < dancingBrigade.length; i++) {
+    let holder = [];
+    if(arr.includes(dancingBrigade[i])) {
+
+    }
+  }
+}
+console.log(findChildren('beeeEBb'));
+
+
 // THE FIRST BELOW IS NOT SUBMITTED BECAUSE KATA NOT PUBLISHED
 // SECOND IS A TOUGH ONE!!
 
