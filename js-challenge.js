@@ -6199,13 +6199,17 @@ const toFreud = (string) => {
 
 // https://www.codewars.com/kata/58539230879867a8cd00011c/train/javascript
 const findChildren = (dancingBrigade) => {
-  const arr = [];
-  for(let i = 0; i < dancingBrigade.length; i++) {
-    let holder = [];
-    if(arr.includes(dancingBrigade[i])) {
+  // let obj = {};
+  // for(const char of dancingBrigade) {
+  //   const lowerChar = char.toLowerCase();
+  //   if(!obj[lowerChar]) {
+  //     obj[lowerChar] = [];
+  //   }
+  //   obj[lowerChar].push(char);
+  // }
+  // return Object.values(obj).map(arr => arr.sort().join('')).sort().join('');
 
-    }
-  }
+  return dancingBrigade.split('').sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase()) || b.localeCompare(a)).join('');
 }
 console.log(findChildren('beeeEBb'));
 
