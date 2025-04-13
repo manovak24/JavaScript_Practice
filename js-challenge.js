@@ -6194,10 +6194,6 @@ const toFreud = (string) => {
 // console.log(toFreud('This is a test'));
 
 
-// GOOD ONE BELOW
-
-
-// https://www.codewars.com/kata/58539230879867a8cd00011c/train/javascript
 const findChildren = (dancingBrigade) => {
   // let obj = {};
   // for(const char of dancingBrigade) {
