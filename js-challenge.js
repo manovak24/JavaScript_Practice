@@ -6207,7 +6207,7 @@ const findChildren = (dancingBrigade) => {
 
   return dancingBrigade.split('').sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase()) || b.localeCompare(a)).join('');
 }
-console.log(findChildren('beeeEBb'));
+// console.log(findChildren('beeeEBb'));
 
 
 // THE FIRST BELOW IS NOT SUBMITTED BECAUSE KATA NOT PUBLISHED
