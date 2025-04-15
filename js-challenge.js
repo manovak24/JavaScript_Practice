@@ -6238,6 +6238,25 @@ const roundToFive = (numbers) => {
 }
 // console.log(roundToFive([34.5, 56.2, 11, 13]));
 
+const changeObj = {
+  'penny': 0.01,
+  'nickel': 0.05,
+  'dime': 0.10,
+  'quarter': 0.25,
+  'dollar': 1.00
+}
+const changeCount = (change) => {
+  return change
+    .split(' ')
+    .map(coin => changeObj[coin])
+    .reduce((a, b) => a + b)
+    .toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD'
+    });
+}
+console.log(changeCount('dollar dollar dollar dollar dollar dollar dollar dollar dollar dollar penny'));
+
 
 // DO PROBLEM BELOW
 
