@@ -6255,7 +6255,23 @@ const changeCount = (change) => {
       currency: 'USD'
     });
 }
-console.log(changeCount('dollar dollar dollar dollar dollar dollar dollar dollar dollar dollar penny'));
+// console.log(changeCount('dollar dollar dollar dollar dollar dollar dollar dollar dollar dollar penny'));
+
+
+const solveDominant = (arr) => {
+  let count = arr.length;
+  let dominant = [];
+  while (count >= 1) {
+    if(arr[0] === Math.max(...arr) && !dominant.includes(arr[0])) {
+      dominant.push(arr[0]);
+    }
+    arr.shift();
+    count--;
+    console.log(arr.length)
+  }
+  return dominant;
+}
+console.log(solveDominant([16,17,14,3,14,5,2]));
 
 
 // DO PROBLEM BELOW
