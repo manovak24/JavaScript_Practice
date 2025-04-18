@@ -6271,7 +6271,25 @@ const solveDominant = (arr) => {
   }
   return dominant;
 }
-console.log(solveDominant([16,17,14,3,14,5,2]));
+// console.log(solveDominant([16,17,14,3,14,5,2]));
+
+
+const trickyDoubles = (n) => {
+  const str = n.toString();
+  const middle = str.length / 2;
+  const first = str.slice(0, middle);
+  const second = str.slice(middle);
+
+  let answer = 0;
+  if(first === second) {
+    answer += n;
+  } else {
+    answer += n * 2;
+  }
+
+  return answer;
+}
+// console.log(trickyDoubles(8));
 
 
 // DO PROBLEM BELOW
