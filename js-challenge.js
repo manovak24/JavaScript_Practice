@@ -6292,6 +6292,17 @@ const trickyDoubles = (n) => {
 // console.log(trickyDoubles(8));
 
 
+const noBoringZeros = (n) => {
+  if(n === 0) return 0;
+  let str = n.toString();
+  while(str.endsWith('0')) {
+    str = str.slice(0, -1);
+  }
+  return parseInt(str);
+}
+console.log(noBoringZeros(0))
+
+
 // DO PROBLEM BELOW
 
 // DO PROBLEM BELOW
