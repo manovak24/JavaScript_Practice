@@ -6300,7 +6300,23 @@ const noBoringZeros = (n) => {
   }
   return parseInt(str);
 }
-console.log(noBoringZeros(0))
+// console.log(noBoringZeros(0))
+
+
+const isZeroBalanced = (n) => {
+  if(n.length === 0) return false;
+  let answer = true;
+  for(let i = 0; i < n.length; i++) {
+    if(!n.includes(n[i] * -1)) {
+      answer = false;
+    }
+  }
+  if(n.reduce((a,b) => a + b) !== 0) {
+    answer = false;
+  }
+  return answer;
+}
+console.log(isZeroBalanced([1,-1,2,-2]));
 
 
 // DO PROBLEM BELOW
