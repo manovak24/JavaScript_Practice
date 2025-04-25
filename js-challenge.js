@@ -6316,7 +6316,13 @@ const isZeroBalanced = (n) => {
   }
   return answer;
 }
-console.log(isZeroBalanced([1,-1,2,-2]));
+// console.log(isZeroBalanced([1,-1,2,-2]));
+
+
+const monkeyCount = (n) => {
+  return Array.from({length: n}, (_, i) => i + 1);
+}
+console.log(monkeyCount(5));
 
 
 // DO PROBLEM BELOW
