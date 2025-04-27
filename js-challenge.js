@@ -6322,7 +6322,27 @@ const isZeroBalanced = (n) => {
 const monkeyCount = (n) => {
   return Array.from({length: n}, (_, i) => i + 1);
 }
-console.log(monkeyCount(5));
+// console.log(monkeyCount(5));
+
+
+// https://www.codewars.com/kata/57fcaed83206fb15fd00027a/train/javascript
+const replaceNth = (text, n, oldValue, newValue) => {
+  let counter = 0;
+  return text.split('').map(char => {
+    if(char === oldValue) {
+      if(counter === 2) {
+        count = 0;
+        return newValue;
+      } else {
+        counter++;
+        return char;
+      }
+    } else {
+      return char;
+    }
+  }).join('');
+}
+console.log(replaceNth("Vader said: No, I am your father!", 2, 'a', 'o'));
 
 
 // DO PROBLEM BELOW
