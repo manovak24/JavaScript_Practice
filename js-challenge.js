@@ -6327,11 +6327,11 @@ const monkeyCount = (n) => {
 
 // https://www.codewars.com/kata/57fcaed83206fb15fd00027a/train/javascript
 const replaceNth = (text, n, oldValue, newValue) => {
-  let counter = 0;
+  let counter = 1;
   return text.split('').map(char => {
     if(char === oldValue) {
-      if(counter === 2) {
-        count = 0;
+      if(counter === n) {
+        counter = 1;
         return newValue;
       } else {
         counter++;
@@ -6342,7 +6342,7 @@ const replaceNth = (text, n, oldValue, newValue) => {
     }
   }).join('');
 }
-console.log(replaceNth("Vader said: No, I am your father!", 2, 'a', 'o'));
+// console.log(replaceNth("Vader said: No, I am your father!", 4, 'a', 'o'));
 
 
 // DO PROBLEM BELOW
