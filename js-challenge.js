@@ -6345,6 +6345,13 @@ const replaceNth = (text, n, oldValue, newValue) => {
 // console.log(replaceNth("Vader said: No, I am your father!", 4, 'a', 'o'));
 
 
+// raise number to another number without Math.pow()
+const powerRaised = (x, y) => {
+  return x**y;
+}
+console.log(powerRaised(1, 701270));
+
+
 // DO PROBLEM BELOW
 
 // DO PROBLEM BELOW
