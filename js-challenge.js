@@ -6349,7 +6349,16 @@ const replaceNth = (text, n, oldValue, newValue) => {
 const powerRaised = (x, y) => {
   return x**y;
 }
-console.log(powerRaised(1, 701270));
+// console.log(powerRaised(1, 701270));
+
+
+// https://www.codewars.com/kata/58311faba317216aad000168/train/javascript
+const printNums = (...args) => {
+  let strArr = args.map(num => num.toString().length);
+  const maxLength = Math.max(...strArr);
+  return maxLength
+}
+console.log(printNums(1, 12, 34));
 
 
 // DO PROBLEM BELOW
