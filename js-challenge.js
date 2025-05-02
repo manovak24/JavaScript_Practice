@@ -6354,9 +6354,17 @@ const powerRaised = (x, y) => {
 
 // https://www.codewars.com/kata/58311faba317216aad000168/train/javascript
 const printNums = (...args) => {
-  let strArr = args.map(num => num.toString().length);
-  const maxLength = Math.max(...strArr);
-  return maxLength
+  let strArr = args.map(num => num.toString());
+  const maxLength = Math.max(...strArr.map(str => str.length));
+  return strArr.map(item => {
+    if(item.length === maxLength) {
+      return item;
+    } else {
+      let count = maxLength - item.length;
+      let zeros = '0'.repeat(count);
+      return zeros + item;
+    }
+  }).join('\n')
 }
 console.log(printNums(1, 12, 34));
 
