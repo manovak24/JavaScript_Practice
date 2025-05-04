@@ -6366,7 +6366,13 @@ const printNums = (...args) => {
     }
   }).join('\n')
 }
-console.log(printNums(1, 12, 34));
+// console.log(printNums(1, 12, 34));
+
+
+const solutionCount = (fullText, searchText) => {
+  return (fullText.match(new RegExp(searchText, 'g')) || []).length;
+}
+console.log(solutionCount('abbcbb','bb'));
 
 
 // DO PROBLEM BELOW
