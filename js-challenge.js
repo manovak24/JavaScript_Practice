@@ -6372,7 +6372,27 @@ const printNums = (...args) => {
 const solutionCount = (fullText, searchText) => {
   return (fullText.match(new RegExp(searchText, 'g')) || []).length;
 }
-console.log(solutionCount('abbcbb','bb'));
+// console.log(solutionCount('abbcbb','bb'));
+
+
+// Removing non duplciates from array
+const duplicates = (arr) => {
+  // const obj = {};
+  // const dupes = [];
+  // let arrUpdate = arr.map(item => typeof item === 'string' ? 'num-' + item : item);
+  // arrUpdate.forEach(num => {
+  //   if(obj[num] && !dupes.includes(num)) {
+  //     dupes.push(num);
+  //   } else {
+  //     obj[num] = true;
+  //   }
+  // })
+  // return dupes.map(item => typeof item === 'string' && item.includes('num-') ? item.replace('num-', '') : item);
+
+  return [...new Set(arr.filter((num, idx) => idx !== arr.indexOf(num)))];
+
+}
+console.log(duplicates([1, 2, 1, 3, 2, 1, 2, 1, '3']));
 
 
 // DO PROBLEM BELOW
