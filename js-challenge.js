@@ -6392,7 +6392,14 @@ const duplicates = (arr) => {
   return [...new Set(arr.filter((num, idx) => idx !== arr.indexOf(num)))];
 
 }
-console.log(duplicates([1, 2, 1, 3, 2, 1, 2, 1, '3']));
+// console.log(duplicates([1, 2, 1, 3, 2, 1, 2, 1, '3']));
+
+
+const wordSearch = (query, seq) => {
+  const filter = seq.filter(item => item.toLowerCase().includes(query.toLowerCase()));
+  return filter.length ? filter : ['Empty'];
+}
+console.log(wordSearch("t", ["za", "ab", "abc", "zab", "zbc"]));
 
 
 // DO PROBLEM BELOW
