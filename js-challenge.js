@@ -6399,7 +6399,15 @@ const wordSearch = (query, seq) => {
   const filter = seq.filter(item => item.toLowerCase().includes(query.toLowerCase()));
   return filter.length ? filter : ['Empty'];
 }
-console.log(wordSearch("t", ["za", "ab", "abc", "zab", "zbc"]));
+// console.log(wordSearch("t", ["za", "ab", "abc", "zab", "zbc"]));
+
+
+const numberJoy = (n) => {
+  const sum = [...n.toString()].map(item => parseInt(item)).reduce((a,b) => a + b);
+  const rev = parseInt(`${sum}`.split('').reverse().join(''));
+  return sum * rev === n;
+}
+console.log(numberJoy(1729));
 
 
 // DO PROBLEM BELOW
