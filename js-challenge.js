@@ -6441,7 +6441,26 @@ const $dict = {
 const scrabbleScore = (str) => {
   return str.toUpperCase().split('').reduce((a,b) => a + ($dict[b] || 0), 0);
 }
-console.log(scrabbleScore('quirky'));
+// console.log(scrabbleScore('quirky'));
+
+
+// https://www.codewars.com/kata/61123a6f2446320021db987d/train/javascript
+const prevMultOfThree = (n) => {
+  let multThree = false;
+  let answer;
+  do {
+    let num = n;
+    if (num % 3 === 0) {
+      answer = num;
+      multThree = true;
+    } else {
+      let str = num.toString().slice(0, -1);
+      num = parseInt(str);
+    }
+  } while (multThree = false);
+  return answer;
+}
+console.log(prevMultOfThree(1244));
 
 
 // DO PROBLEM BELOW
