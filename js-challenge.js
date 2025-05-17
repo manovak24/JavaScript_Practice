@@ -6460,7 +6460,13 @@ const prevMultOfThree = (n) => {
   } while (multThree = false);
   return answer;
 }
-console.log(prevMultOfThree(1244));
+// console.log(prevMultOfThree(1244));
+
+
+const divisibleBy = (numbers, divisor) => {
+  return numbers.filter(num => num % divisor === 0);
+}
+// console.log(divisibleBy([1,2,3,4,5,6], 2));
 
 
 // DO PROBLEM BELOW
