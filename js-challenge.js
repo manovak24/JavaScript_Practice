@@ -6469,11 +6469,15 @@ const divisibleBy = (numbers, divisor) => {
 // console.log(divisibleBy([1,2,3,4,5,6], 2));
 
 
+const arrayPlusArray = (arr1, arr2) => arr1.reduce((a,b) => a + b) + arr2.reduce((a,b) => a + b);
+// console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]));
+
+
 // https://www.codewars.com/kata/5bdc191306a8a678f6000187/train/javascript
 const shiftLeft = (s, t) => {
-
+  
 }
-console.log(shiftLeft("test", "west"));
+// console.log(shiftLeft("trest", "weest"));
 
 
 // DO PROBLEM BELOW
