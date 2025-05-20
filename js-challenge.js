@@ -6475,9 +6475,24 @@ const arrayPlusArray = (arr1, arr2) => arr1.reduce((a,b) => a + b) + arr2.reduce
 
 // https://www.codewars.com/kata/5bdc191306a8a678f6000187/train/javascript
 const shiftLeft = (s, t) => {
-  
+  let max = s.length === t.length ? s : s.length > t.length ? s : t;
+  let min = s.length === t.length ? t : s.length < t.length ? s : t;
+  console.log(max);
+  console.log(min);
+  let counter = 0;
+  while (max !== min) {
+    if(max !== '') {
+      max = max.slice(1, max.length);
+      counter++;
+    }
+    if(min !== '') {
+      min = min.slice(1, min.length);
+      counter++;
+    }
+  }
+  return counter;
 }
-// console.log(shiftLeft("trest", "weest"));
+console.log(shiftLeft("b", "ab"));
 
 
 // DO PROBLEM BELOW
