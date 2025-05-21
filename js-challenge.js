@@ -6473,6 +6473,18 @@ const arrayPlusArray = (arr1, arr2) => arr1.reduce((a,b) => a + b) + arr2.reduce
 // console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]));
 
 
+const encodeSwitch = (str) => {
+  return str.split('').map(item => {
+    if(/^[a-zA-Z]+$/.test(item)) {
+      return item.toLowerCase().charCodeAt(0) - 96;
+    } else {
+      return item;
+    }
+  }).join('');
+}
+console.log(encodeSwitch('ABCD'));
+
+
 // https://www.codewars.com/kata/5bdc191306a8a678f6000187/train/javascript
 const shiftLeft = (s, t) => {
   let max = s.length === t.length ? s : s.length > t.length ? s : t;
@@ -6492,7 +6504,7 @@ const shiftLeft = (s, t) => {
   }
   return counter;
 }
-console.log(shiftLeft("b", "ab"));
+// console.log(shiftLeft("b", "ab"));
 
 
 // DO PROBLEM BELOW
