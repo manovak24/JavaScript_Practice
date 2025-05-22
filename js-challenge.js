@@ -6482,7 +6482,11 @@ const encodeSwitch = (str) => {
     }
   }).join('');
 }
-console.log(encodeSwitch('ABCD'));
+// console.log(encodeSwitch('ABCD'));
+
+
+const solveDivision = (x, y) => x / y;
+// console.log(solveDivision(2, 1));
 
 
 // https://www.codewars.com/kata/5bdc191306a8a678f6000187/train/javascript
