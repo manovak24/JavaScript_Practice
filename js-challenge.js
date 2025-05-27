@@ -6489,6 +6489,12 @@ const solveDivision = (x, y) => x / y;
 // console.log(solveDivision(2, 1));
 
 
+const capMe = (names) => {
+  return names.map(name => name[0].toUpperCase() + name.slice(1).toLowerCase());
+}
+// console.log(capMe(["KARLY", "DANIEL", "KELSEY"]));
+
+
 // https://www.codewars.com/kata/5bdc191306a8a678f6000187/train/javascript
 const shiftLeft = (s, t) => {
   let max = s.length === t.length ? s : s.length > t.length ? s : t;
