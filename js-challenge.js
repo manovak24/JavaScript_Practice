@@ -6494,6 +6494,45 @@ const capMe = (names) => {
 }
 // console.log(capMe(["KARLY", "DANIEL", "KELSEY"]));
 
+const friendsArrObj = [
+  { username: 'David', status: 'online', lastActivity: 10 },
+  { username: 'Lucy', status: 'online', lastActivity: 0 },
+  { username: 'Bob', status: 'online', lastActivity: 3 },
+  { username: 'Julie', status: 'offline', lastActivity: 104 },
+  { username: 'Lenny', status: 'online', lastActivity: 38 }
+]
+
+const whosOnline = (friends) => {
+  if(friends.length === 0) return {};
+  let obj = {
+  };
+  friends.map(friend => {
+    if(friend.status === 'online' && friend.lastActivity < 11) {
+      if(!obj.hasOwnProperty('online')) {
+        obj['online'] = [friend.username]
+      } else {
+        obj['online'].push(friend.username);
+      }
+    }
+    if(friend.status === 'offline') {
+      if(!obj.hasOwnProperty('offline')) {
+        obj['offline'] = [friend.username]
+      } else {
+        obj['offline'].push(friend.username);
+      }
+    }
+    if(friend.status === 'online' && friend.lastActivity > 10) {
+      if(!obj.hasOwnProperty('away')) {
+        obj['away'] = [friend.username]
+      } else {
+        obj['away'].push(friend.username);
+      }
+    } 
+  })
+  return obj;
+}
+console.log(whosOnline(friendsArrObj));
+
 
 // https://www.codewars.com/kata/5bdc191306a8a678f6000187/train/javascript
 const shiftLeft = (s, t) => {
