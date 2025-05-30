@@ -9,7 +9,9 @@
   {{ selector_id }} {
     --PT: {{ section.settings.padding_top }}px;
     --PB: {{ section.settings.padding_bottom }}px;
-    background-color: {{ bg_color }};
+    {%- if bg_color != '' -%}
+        background-color: {{ bg_color }};
+    {%- endif -%}
   }
 {%- endstyle -%}
 
