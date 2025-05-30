@@ -6531,7 +6531,25 @@ const whosOnline = (friends) => {
   })
   return obj;
 }
-console.log(whosOnline(friendsArrObj));
+// console.log(whosOnline(friendsArrObj));
+
+
+const anyArrows = (arrows) => {
+  return arrows.some(arrow => !("damaged" in arrow) || arrow.damaged == false);
+}
+// console.log(anyArrows([ { damaged: true },
+//   { damaged: true },
+//   { damaged: true },
+//   { damaged: true },
+//   { damaged: true },
+//   { damaged: false },
+//   { damaged: true },
+//   { damaged: true },
+//   { damaged: true },
+//   { damaged: false },
+//   { damaged: true },
+//   { damaged: true },
+//   { damaged: true } ]));
 
 
 // https://www.codewars.com/kata/5bdc191306a8a678f6000187/train/javascript
