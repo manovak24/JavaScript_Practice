@@ -6552,6 +6552,16 @@ const anyArrows = (arrows) => {
 //   { damaged: true } ]));
 
 
+const tailSwap = (arr) => {
+  // let first = arr[0].slice(0, arr[0].indexOf(':')) + arr[1].slice(arr[1].indexOf(':'));
+  // let second = arr[1].slice(0, arr[1].indexOf(':')) + arr[0].slice(arr[0].indexOf(':'));
+  // return [first, second];
+  let arrSplit = arr.map(str => str.split(':'));
+  return [arrSplit[0][0] + ":" + arrSplit[1][1], arrSplit[1][0] + ":" + arrSplit[0][1]];
+}
+// console.log(tailSwap(['abc:123', 'cde:456']));
+
+
 // https://www.codewars.com/kata/5bdc191306a8a678f6000187/train/javascript
 const shiftLeft = (s, t) => {
   let max = s.length === t.length ? s : s.length > t.length ? s : t;
