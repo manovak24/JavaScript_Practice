@@ -6444,25 +6444,6 @@ const scrabbleScore = (str) => {
 // console.log(scrabbleScore('quirky'));
 
 
-// https://www.codewars.com/kata/61123a6f2446320021db987d/train/javascript
-const prevMultOfThree = (n) => {
-  let multThree = false;
-  let answer;
-  do {
-    let num = n;
-    if (num % 3 === 0) {
-      answer = num;
-      multThree = true;
-    } else {
-      let str = num.toString().slice(0, -1);
-      num = parseInt(str);
-    }
-  } while (multThree = false);
-  return answer;
-}
-// console.log(prevMultOfThree(1244));
-
-
 const divisibleBy = (numbers, divisor) => {
   return numbers.filter(num => num % divisor === 0);
 }
@@ -6560,6 +6541,27 @@ const tailSwap = (arr) => {
   return [arrSplit[0][0] + ":" + arrSplit[1][1], arrSplit[1][0] + ":" + arrSplit[0][1]];
 }
 // console.log(tailSwap(['abc:123', 'cde:456']));
+
+
+// https://www.codewars.com/kata/61123a6f2446320021db987d/train/javascript
+const prevMultOfThree = (n) => {
+  if(n % 3 === 0) return n;
+  let str = n.toString();
+  for(let i = str.length; i >= 0; i--) {
+    str = str.slice(0, i)
+    if(parseInt(str) % 3 === 0) {
+      return parseInt(str);
+    }
+  }
+  return null;
+}
+console.log(prevMultOfThree(1244));
+
+
+
+
+
+
 
 
 // https://www.codewars.com/kata/5bdc191306a8a678f6000187/train/javascript
