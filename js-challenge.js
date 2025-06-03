@@ -6555,7 +6555,14 @@ const prevMultOfThree = (n) => {
   }
   return null;
 }
-console.log(prevMultOfThree(1244));
+// console.log(prevMultOfThree(1244));
+
+
+const heron = (a, b, c) => {
+  let s = [a,b,c].reduce((a,b) => a + b) / 2
+  return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+}
+console.log(heron(3, 4, 5));
 
 
 
