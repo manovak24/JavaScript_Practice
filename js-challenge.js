@@ -6562,7 +6562,13 @@ const heron = (a, b, c) => {
   let s = [a,b,c].reduce((a,b) => a + b) / 2
   return Math.sqrt(s * (s - a) * (s - b) * (s - c));
 }
-console.log(heron(3, 4, 5));
+// console.log(heron(3, 4, 5));
+
+
+const evenChars = (string) => {
+  return string.length < 2 || string.length > 100 ? 'invalid string' : [...string].filter((char, index) => index % 2);
+}
+// console.log(evenChars('abcdefghijklm'));
 
 
 
