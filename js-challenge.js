@@ -6581,6 +6581,20 @@ const scrollingText = (text) => {
 // console.log(scrollingText('codewars'));
 
 
+// https://www.codewars.com/kata/541629460b198da04e000bb9/train/javascript
+function lastElement() {
+  const args = arguments;
+  const last = args[args.length - 1];
+  
+  if(typeof last === 'string') {
+    return last[last.length - 1];
+  }
+
+  if(typeof last === 'array') {
+    return last;
+  }
+}
+console.log(lastElement([1], [2], [3]));
 
 
 
