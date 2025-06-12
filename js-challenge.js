@@ -6594,9 +6594,19 @@ function lastElement() {
     return last;
   }
 }
-console.log(lastElement([1], [2], [3]));
+// console.log(lastElement([1], [2], [3]));
 
 
+const calculateTip = (amount, rating) => {
+  if(rating.toLowerCase() === 'excellent') return Math.ceil(amount * .20);
+  if(rating.toLowerCase() === 'great') return Math.ceil(amount * .15);
+  if(rating.toLowerCase() === 'good') return Math.ceil(amount * .10);
+  if(rating.toLowerCase() === 'poor') return Math.ceil(amount * .05);
+  if(rating.toLowerCase() === 'terrible') return 0;
+  return "Rating not recognised";
+
+}
+console.log(calculateTip(30, "poor"));
 
 
 
