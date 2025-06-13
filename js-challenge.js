@@ -6606,7 +6606,20 @@ const calculateTip = (amount, rating) => {
   return "Rating not recognised";
 
 }
-console.log(calculateTip(30, "poor"));
+// console.log(calculateTip(30, "poor"));
+
+
+const dotCalculator = (equation) => {
+  const operations = {
+    '+': (a, b) => a + b,
+    '-': (a, b) => a - b,
+    '*': (a, b) => a * b,
+    '//': (a, b) => a / b,
+  }
+  const [left, operator, right] = equation.split(' ');
+  return '.'.repeat(operations[operator](left.length, right.length));
+}
+console.log(dotCalculator('..... + ..'));
 
 
 
