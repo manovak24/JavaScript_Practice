@@ -6619,7 +6619,14 @@ const dotCalculator = (equation) => {
   const [left, operator, right] = equation.split(' ');
   return '.'.repeat(operations[operator](left.length, right.length));
 }
-console.log(dotCalculator('..... + ..'));
+// console.log(dotCalculator('..... + ..'));
+
+const evenOrOddCalc = (str) => {
+  const even = str.split('').map(x => parseInt(x)).filter(num => num % 2 === 0).reduce((a,b) => a + b);
+  const odd = str.split('').map(x => parseInt(x)).filter(num => num % 2 !== 0).reduce((a,b) => a + b);
+  return even === odd ? 'Even and Odd are the same' : even > odd ? 'Even is greater than Odd' : 'Odd is greater than Even';
+}
+// console.log(evenOrOddCalc('121'))
 
 
 
