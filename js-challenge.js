@@ -6629,6 +6629,17 @@ const evenOrOddCalc = (str) => {
 // console.log(evenOrOddCalc('121'))
 
 
+const hammingWeight = (x) => {
+  let bin = '';
+  while (x > 0) {
+    bin = (x % 2) + bin;
+    x = Math.floor(x / 2);
+  }
+  return bin.replace(/[^1]/g, '').length;
+}
+console.log(hammingWeight(21));
+
+
 
 
 // https://www.codewars.com/kata/5bdc191306a8a678f6000187/train/javascript
