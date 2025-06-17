@@ -6637,7 +6637,13 @@ const hammingWeight = (x) => {
   }
   return bin.replace(/[^1]/g, '').length;
 }
-console.log(hammingWeight(21));
+// console.log(hammingWeight(21));
+
+
+const convertBits = (a, b) => {
+  return (a ^ b).toString(2).replace(/0/g, "").length;
+}
+console.log(convertBits(31, 14));
 
 
 
