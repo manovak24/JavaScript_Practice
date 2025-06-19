@@ -6641,9 +6641,16 @@ const hammingWeight = (x) => {
 
 
 const convertBits = (a, b) => {
-  return (a ^ b).toString(2).replace(/0/g, "").length;
+  return (a ^ b).toString(2).replace(/0/g, "").length;   
 }
-console.log(convertBits(31, 14));
+// console.log(convertBits(31, 14));
+
+
+const checkVowel = (string, position) => {
+  if(position >= string.length || position < 0) return false;
+  return /[aeiou]/i.test(string[position]);
+}
+console.log(checkVowel('cat', 4));
 
 
 
