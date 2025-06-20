@@ -6650,7 +6650,13 @@ const checkVowel = (string, position) => {
   if(position >= string.length || position < 0) return false;
   return /[aeiou]/i.test(string[position]);
 }
-console.log(checkVowel('cat', 4));
+// console.log(checkVowel('cat', 4));
+
+
+const unscrambleEggs = (word) => {
+  return word.replace(/egg/g, '');
+}
+console.log(unscrambleEggs("Beggegeggineggneggeregg"));
 
 
 
