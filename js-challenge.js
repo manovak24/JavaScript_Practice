@@ -6656,7 +6656,44 @@ const checkVowel = (string, position) => {
 const unscrambleEggs = (word) => {
   return word.replace(/egg/g, '');
 }
-console.log(unscrambleEggs("Beggegeggineggneggeregg"));
+// console.log(unscrambleEggs("Beggegeggineggneggeregg"));
+
+
+// Big numbers
+const addBigNumbers = (a, b) => {
+  let max = a.length > b.length ? a : a.length === b.length ? a : b;
+  let min = a.length < b.length ? a : a.length === b.length ? b : b;;
+  
+  if(max.length !== min.length) {
+    let diff = max.length - min.length;
+    min = '0'.repeat(diff) + min
+  }
+
+  let carrier = false;
+  let string = '';
+  for(let i = max.length - 1; i >= 0; i--) {
+    let add = parseInt(max[i]) + parseInt(min[i]);
+    
+    if(carrier) {
+      add += 1;
+      carrier = false;
+    }
+
+    if(add > 9) {
+      add -= 10;
+      carrier = true;
+    }
+
+    string += add;
+
+    if(i === 0 && carrier) {
+      string += 1;
+    }
+  }
+
+  return string.split('').reverse().join('');
+}
+console.log(addBigNumbers("888", "822"));
 
 
 
