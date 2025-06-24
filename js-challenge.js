@@ -6693,7 +6693,19 @@ const addBigNumbers = (a, b) => {
 
   return string.split('').reverse().join('');
 }
-console.log(addBigNumbers("888", "822"));
+// console.log(addBigNumbers("888", "822"));
+
+
+const solveDiff = (a) => {
+  let even = a.filter(x => x % 2 === 0);
+  let odd = a.filter(x => x % 2 !== 0 && typeof x === 'number');
+
+  return odd
+}
+console.log(solveDiff([ 0, 1, 2, 3, 'a', 'b' ]));
+
+
+
 
 
 
