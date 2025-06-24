@@ -6699,8 +6699,7 @@ const addBigNumbers = (a, b) => {
 const solveDiff = (a) => {
   let even = a.filter(x => x % 2 === 0);
   let odd = a.filter(x => x % 2 !== 0 && typeof x === 'number');
-
-  return odd
+  return even.length - odd.length;
 }
 console.log(solveDiff([ 0, 1, 2, 3, 'a', 'b' ]));
 
