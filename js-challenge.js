@@ -6706,7 +6706,7 @@ const solveDiff = (a) => {
 
 const sillycase = (silly) => {
   const middle = Math.round(silly.length / 2);
-  return silly.slice(0, middle) + silly.slice(middle, silly.length).toUpperCase();
+  return silly.slice(0, middle).toLowerCase() + silly.slice(middle, silly.length).toUpperCase();
 }
 console.log(sillycase('testing'));
 
