@@ -6701,7 +6701,14 @@ const solveDiff = (a) => {
   let odd = a.filter(x => x % 2 !== 0 && typeof x === 'number');
   return even.length - odd.length;
 }
-console.log(solveDiff([ 0, 1, 2, 3, 'a', 'b' ]));
+// console.log(solveDiff([ 0, 1, 2, 3, 'a', 'b' ]));
+
+
+const sillycase = (silly) => {
+  const middle = Math.round(silly.length / 2);
+  return silly.slice(0, middle) + silly.slice(middle, silly.length).toUpperCase();
+}
+console.log(sillycase('testing'));
 
 
 
