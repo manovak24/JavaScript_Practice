@@ -6708,7 +6708,13 @@ const sillycase = (silly) => {
   const middle = Math.round(silly.length / 2);
   return silly.slice(0, middle).toLowerCase() + silly.slice(middle, silly.length).toUpperCase();
 }
-console.log(sillycase('testing'));
+// console.log(sillycase('testing'));
+
+
+const reverseWordsAgain = (str) => {
+  return str.split(' ').reverse().join(' ');
+}
+console.log(reverseWordsAgain("yoda doesn't speak like this"));
 
 
 

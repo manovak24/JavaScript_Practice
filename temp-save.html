@@ -1,0 +1,323 @@
+<div id="sca-cart-addon--mystery-gift" style="display: block;">
+    <div class="sca-cart-addon-container--mystery-gift">
+        <img class="product-image-sca--myster-gift" src="https://cdn.shopify.com/s/files/1/0614/4986/3392/files/Mystery-Gift_45fd103f-dd70-49b0-bb81-1d90fb5d0bb3_400x400.png?v=1746476824">
+
+        <div class="product-info-sca--myster-gift">
+            <div class="product-title-sca--myster-gift">Mystery Gift</div>
+            <div class="product-price-sca--myster-gift">$5.99</div>
+        </div>
+
+        <div class="product-action-sca--myster-gift">
+            <input type="checkbox">
+        </div>
+    </div>
+</div>
+
+<script>
+    let variantId;
+    const hasBeenAdded = sessionStorage.getItem("smartcart_mysterygift_removed");
+    const hasItemInCart = Rebuy.Cart.cart.items.some(item => item.properties?._attribution === "MYSTERY GIFT");
+    const dataSourceId = "223514";
+
+
+    /**
+     * Toggles shipping protection item in cart
+     *
+     */
+    const toggleMysteryGift = () => {
+        //Prevent Spam Clicking
+        document.querySelector(".product-action-sca--myster-gift").classList.add("clicked");
+        setTimeout(() => {
+            document.querySelector(".product-action-sca--myster-gift").classList.remove("clicked");
+        }, 600);
+
+        const mysteryGift = Rebuy.Cart.items().find(
+            (item) => item.properties?._attribution === "MYSTERY GIFT",
+        );
+
+        if (document.querySelector("#sca-cart-addon--mystery-gift input").checked) {
+            if (!mysteryGift) {
+                Rebuy.Cart.addItem({
+                    id: variantId,
+                    quantity: 1,
+                    properties: { _attribution: "MYSTERY GIFT" },
+                });
+            }
+        } else {
+            if (mysteryGift) {
+                Rebuy.Cart.removeItem(mysteryGift);
+                sessionStorage.setItem("smartcart_mysterygift_removed", "true");
+            }
+        }
+    };
+
+    /**
+     * removes html from a string to prevent merchant's currency formats from displaying strangely
+     *
+     */
+    const removeHtmlMysteryGift = (html) => {
+        let newDiv = document.createElement("newDiv");
+        newDiv.innerHTML = html;
+        return newDiv.textContent || newDiv.innerText || "";
+    }
+
+    /**
+     * checks for empty cart and removes the shipping protection item
+     *
+     */
+    const checkForEmptyCartMysteryGift = () => {
+        const mysteryGift = Rebuy.Cart.items().find(
+            (item) => item.properties?._attribution === "MYSTERY GIFT",
+        );
+
+        mysteryGift ? document.querySelector("#sca-cart-addon--mystery-gift input").checked = true : document.querySelector("#sca-cart-addon--mystery-gift input").checked = false;
+
+        setTimeout(() => {
+            if (
+                Rebuy.Cart.cart.items.filter(
+                    (item) => item.properties?._attribution !== "MYSTERY GIFT",
+                ).length === 0
+            ) {
+                document.querySelector("#sca-cart-addon--mystery-gift input").checked = false;
+
+                if (mysteryGift) {
+                    Rebuy.Cart.removeItem(mysteryGift);
+                }
+            }
+
+            //kind of weird but on some themes if there are duplicate add.js events, the shipping protection item might get added twice. adding redundant check to set qty to 1
+            if (mysteryGift && mysteryGift.quantity !== 1) {
+                Rebuy.Cart.setItemQuantity(mysteryGift, 1);
+            }
+        }, 300);
+    };
+
+
+    const sendDataSourceRequestMysterGift = () => {
+        // datasource request config object
+        const config = {
+            url: window.location.href,
+        };
+
+        // pass up cart and product data
+        if (Rebuy.Cart) {
+            const Cart = Rebuy.Cart
+            let items = Cart.items();
+            let line_count = Cart.lineCount();
+            let item_count = Cart.itemCount();
+            let subtotal = Cart.subtotal();
+
+            config.shopify_product_ids = items.map(item => item.product_id).join()
+            config.shopify_variant_ids = items.map(item => item.variant_id).join()
+
+            config.cart_token = Cart.cart.token;
+            config.cart_subtotal = subtotal;
+            config.cart_count = line_count;
+
+            config.cart = {};
+            config.cart.subtotal = subtotal;
+            config.cart.line_count = line_count;
+            config.cart.item_count = item_count;
+            config.cart.items = [];
+            for (let i = 0, item; i < items.length; i++) {
+                item = {};
+                item.product_id = items[i].product_id;
+                item.variant_id = items[i].variant_id;
+                item.quantity = items[i].quantity;
+
+                // Add Subscription ID to input products if applicable
+                if (
+                    items[i].properties &&
+                    typeof items[i].properties == 'object' &&
+                    Object.prototype.hasOwnProperty.call(items[i].properties, 'subscription_id')
+                ) {
+                    item.subscription_id = items[i].properties.subscription_id;
+                } else if (
+                    items[i].selling_plan_allocation &&
+                    items[i].selling_plan_allocation.selling_plan &&
+                    items[i].selling_plan_allocation.selling_plan.id
+                ) {
+                    item.subscription_id = items[i].selling_plan_allocation.selling_plan.id;
+                }
+
+                config.cart.items.push(item)
+            }
+
+        }
+
+        // Function to convert an object into a query string with bracket notation
+        function buildQueryStringMysteryGift(params, prefix = '') {
+            const query = Object.keys(params).map(key => {
+                const value = params[key];
+
+                // Build a recursive path for nested objects/arrays
+                const fullKey = prefix ? `${prefix}[${key}]` : key;
+
+                if (typeof value === 'object' && !Array.isArray(value)) {
+                    return buildQueryStringMysteryGift(value, fullKey);
+                } else if (Array.isArray(value)) {
+                    return value.map((item, index) => buildQueryStringMysteryGift(item, `${fullKey}[${index}]`)).join('&');
+                } else {
+                    return `${encodeURIComponent(fullKey)}=${encodeURIComponent(value)}`;
+                }
+            }).join('&');
+
+            return query;
+        }
+
+        const queryString = buildQueryStringMysteryGift(config);
+
+        // send datasource request
+        fetch(
+            `https://rebuyengine.com/api/v1/custom/id/${dataSourceId}?key=${encodeURIComponent(Rebuy.shop.api_key)}&${queryString}`,
+        )
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.data && data.data.length > 0) {
+                    document
+                        .querySelector("#sca-cart-addon--mystery-gift").style.display = "block";
+                    const hasShippingProtection =
+                        Rebuy.Cart.items().find(
+                            (item) =>
+                                item.properties?._attribution === "MYSTERY GIFT",
+                        ) !== undefined;
+                    const product = data.data[0];
+                    variantId = product.variants[0].id;
+                    document
+                        .querySelector(".sca-cart-addon-container--mystery-gift .product-image-sca--myster-gift")
+                        .setAttribute(
+                            "src",
+                            Rebuy.util.itemImage(product, product.variants[0], "400x400"),
+                        );
+
+                    document.querySelector(
+                        ".sca-cart-addon-container--mystery-gift .product-title-sca--myster-gift",
+                    ).textContent = product.title;
+
+                    document.querySelector(
+                        ".sca-cart-addon-container--mystery-gift .product-price-sca--myster-gift",
+                    ).textContent =
+                        `${removeHtmlMysteryGift(Rebuy.util.formatMoney(Rebuy.util.amountToCents(product.variants[0].price)))}`;
+
+                    document
+                        .querySelector("#sca-cart-addon--mystery-gift input")
+                        .addEventListener("change", toggleMysteryGift);
+                } else {
+                    document
+                        .querySelector("#sca-cart-addon--mystery-gift").style.display = "none";
+                }
+            })
+            .catch((error) => {
+                console.error("Fetching data source error: ", error);
+            });
+    }
+
+    sendDataSourceRequestMysterGift()
+    checkForEmptyCartMysteryGift()
+
+    document.addEventListener('rebuy:cart.change', () => {
+        sendDataSourceRequestMysterGift()
+        checkForEmptyCartMysteryGift()
+    });
+    
+</script>
+
+<style>
+    #sca-cart-addon--mystery-gift {
+        margin: 5px 0px;
+    }
+
+    .sca-cart-addon-container--mystery-gift {
+        display: flex;
+        padding: 10px;
+    }
+
+    .product-info-sca--myster-gift {
+        font-size: 15px;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: row !important;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100% !important;
+    }
+
+    .product-action-sca--myster-gift {
+        width: 25%;
+        margin-right: 5px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .product-image-sca--myster-gift {
+        width: auto !important;
+        height: 16px !important;
+        margin-left: 8px;
+    }
+
+    .product-title-sca--myster-gift {
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    .product-price-sca--myster-gift {
+        font-size: 12px;
+    }
+
+    #sca-cart-addon--mystery-gift input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        display: flex;
+        align-items: flex-end;
+        outline: none !important;
+        box-shadow: none !important;
+        background: transparent;
+        border: none;
+    }
+
+    #sca-cart-addon--mystery-gift input[type="checkbox"]:before {
+        position: relative;
+        left: 15px;
+        top: -3px;
+        transition: left .5s;
+        display: inline-block;
+        content: "";
+        width: 10px;
+        height: 10px;
+        background: white;
+        border-radius: 100%;
+    }
+
+    #sca-cart-addon--mystery-gift input[type="checkbox"]:checked:before {
+        transition: left .5s;
+        left: 36px;
+    }
+
+    #sca-cart-addon--mystery-gift input[type="checkbox"]:after {
+        content: "";
+        display: inline-block;
+        width: 40px;
+        height: 16px;
+        border-radius: 10px;
+        transition: background .5s;
+        background: lightgrey;
+    }
+
+    #sca-cart-addon--mystery-gift input[type="checkbox"]:checked:after {
+        transition: background .5s;
+        background: #44be70;
+    }
+
+    .clicked {
+        pointer-events: none;
+    }
+
+    .property-value-rebuy-shipping-protection {
+        display: none !important;
+    }
+
+    .no-items #sca-cart-addon--mystery-gift {
+        display: none !important;
+    }
+</style>
