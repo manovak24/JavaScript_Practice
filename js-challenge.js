@@ -6714,7 +6714,45 @@ const sillycase = (silly) => {
 const reverseWordsAgain = (str) => {
   return str.split(' ').reverse().join(' ');
 }
-console.log(reverseWordsAgain("yoda doesn't speak like this"));
+// console.log(reverseWordsAgain("yoda doesn't speak like this"));
+
+
+const alphabetWarAgain = (fight) => {
+  const leftMap = {
+    'w': 4,
+    'p': 3,
+    'b': 2,
+    's': 1
+  }
+
+  const rightMap = {
+    'm': 4,
+    'q': 3,
+    'd': 2,
+    'z': 1
+  }
+
+  let left = 0;
+  let right = 0;
+
+  const arr = fight.split('');
+
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] !== '*' && arr[i + 1] !== '*' && arr[i - 1] !== '*') {
+      if(leftMap.hasOwnProperty(arr[i])) {
+        left += leftMap[arr[i]];
+      }
+
+      if(rightMap.hasOwnProperty(arr[i])) {
+        right += rightMap[arr[i]];
+      }
+    }
+  }
+
+
+  return left > right ? "Left side wins!" : right > left ? "Right side wins!" : "Let's fight again!";
+}
+// console.log(alphabetWarAgain('zz*zz'))
 
 
 
