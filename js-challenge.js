@@ -6755,6 +6755,12 @@ const alphabetWarAgain = (fight) => {
 // console.log(alphabetWarAgain('zz*zz'))
 
 
+const validSpacing = (s) => {
+  return s[0] === " " || s[s.length - 1] === " " || s.includes("  ") ? false : true;
+}
+console.log(validSpacing("Hello  world"));
+
+
 
 
 
