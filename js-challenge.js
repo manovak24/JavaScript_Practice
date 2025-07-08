@@ -6758,7 +6758,23 @@ const alphabetWarAgain = (fight) => {
 const validSpacing = (s) => {
   return s[0] === " " || s[s.length - 1] === " " || s.includes("  ") ? false : true;
 }
-console.log(validSpacing("Hello  world"));
+// console.log(validSpacing("Hello  world"));
+
+
+const numCombo = (arr, num) => {
+  const combos = [];
+  for(let i = 0; i < arr.length; i++) {
+    const combo = [];
+    for(let j = 0; j < arr.length; j++) {
+      if(i !== j) {
+        combo.push(arr[j])
+      }
+    }
+    combos.push(combo.reduce((a,b) => a + b));
+  }
+  return combos.filter(x => x === num).length;
+}
+// console.log(numCombo([5, 0, 0, 2], 7));
 
 
 
