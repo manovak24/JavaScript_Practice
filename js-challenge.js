@@ -6777,6 +6777,18 @@ const numCombo = (arr, num) => {
 // console.log(numCombo([5, 0, 0, 2], 7));
 
 
+const accumTwo = (s) => {
+  let mumble = '';
+  for(let i = 0; i < s.length; i++) {
+    let holder = '';
+    holder += s[i].toLowerCase().repeat(i + 1) + '-';
+    mumble += holder.charAt(0).toUpperCase() + holder.slice(1);
+  }
+  return mumble.slice(0, -1);
+}
+// console.log(accumTwo('ZpglnRxqenU'));
+
+
 
 
 
