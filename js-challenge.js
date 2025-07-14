@@ -6789,6 +6789,12 @@ const accumTwo = (s) => {
 // console.log(accumTwo('ZpglnRxqenU'));
 
 
+const none = (arr, fun) => {
+  return !arr.some(fun);
+}
+console.log(none([0, 1,  2, 3, 5, 8, 13],function(item){ return item < 9}));
+
+
 
 
 
