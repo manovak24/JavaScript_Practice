@@ -6792,7 +6792,19 @@ const accumTwo = (s) => {
 const none = (arr, fun) => {
   return !arr.some(fun);
 }
-console.log(none([0, 1,  2, 3, 5, 8, 13],function(item){ return item < 9}));
+// console.log(none([0, 1,  2, 3, 5, 8, 13],function(item){ return item < 9}));
+
+
+const dominator = (arr) => {
+  let obj = {};
+  for(let i = 0; i < arr.length; i++) {
+    obj[arr[i]] = (obj[arr[i]] || 0) + 1;
+  }
+  const maxKey = parseInt(Object.keys(obj).reduce((a,b) => obj[a] > obj[b] ? a : b));
+  const maxVal = Math.max(...Object.values(obj)); 
+  return maxVal > arr.length / 2 ? maxKey : -1;
+}
+console.log(dominator([3,4,3,2,3,1,3,3]));
 
 
 
