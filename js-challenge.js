@@ -6804,7 +6804,33 @@ const dominator = (arr) => {
   const maxVal = Math.max(...Object.values(obj)); 
   return maxVal > arr.length / 2 ? maxKey : -1;
 }
-console.log(dominator([3,4,3,2,3,1,3,3]));
+// console.log(dominator([3,4,3,2,3,1,3,3]));
+
+
+const scoreboard = (string) => {
+  const obj = {
+    'one': 1,
+    'two': 2,
+    'three': 3,
+    'four': 4,
+    'five': 5,
+    'six': 6,
+    'seven': 7,
+    'eight': 8,
+    'nine': 9,
+    'nil': 0
+  }
+  const arr = string.split(' ');
+  console.log(arr)
+  let score = [];
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] in obj) {
+      score.push(obj[arr[i]])
+    }
+  }
+  return score;
+}
+console.log(scoreboard('The score is nil four'));
 
 
 
