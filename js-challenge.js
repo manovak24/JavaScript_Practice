@@ -6830,7 +6830,13 @@ const scoreboard = (string) => {
   }
   return score;
 }
-console.log(scoreboard('The score is nil four'));
+// console.log(scoreboard('The score is nil four'));
+
+
+const borrow = (s) => {
+  return s.toLowerCase().replace(/\s/g, '').replace(/[^\w]/g, '');
+}
+console.log(borrow('WhAt! FiCK! DaMn CAke?'));
 
 
 
