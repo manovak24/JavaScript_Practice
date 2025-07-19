@@ -6836,7 +6836,13 @@ const scoreboard = (string) => {
 const borrow = (s) => {
   return s.toLowerCase().replace(/\s/g, '').replace(/[^\w]/g, '');
 }
-console.log(borrow('WhAt! FiCK! DaMn CAke?'));
+// console.log(borrow('WhAt! FiCK! DaMn CAke?'));
+
+
+const reject = (array, predicate) => {
+  return array.filter(item => !predicate(item));
+}
+console.log(reject(['a', 'b', 3, 'd'], x => typeof x === 'string'));
 
 
 
