@@ -6842,7 +6842,43 @@ const borrow = (s) => {
 const reject = (array, predicate) => {
   return array.filter(item => !predicate(item));
 }
-console.log(reject(['a', 'b', 3, 'd'], x => typeof x === 'string'));
+// console.log(reject(['a', 'b', 3, 'd'], x => typeof x === 'string'));
+
+
+const neutralise = (s1, s2) => {
+  let results = '';
+  for(let i = 0; i < s1.length; i++) {
+    if(s1[i] === '+' && s2[i] === '+') {
+      results += '+';
+    } else if (s1[i] === '-' && s2[i] === '-') {
+      results += '-';
+    } else {
+      results += '0';
+    }
+  }
+  return results;
+}
+console.log(neutralise("-+-+-+", "-+-+-+"));
+
+
+
+
+
+
+
+
+// https://www.codewars.com/kata/5889a8b335de69cc620000c8/train/javascript
+const swapDiagonals = (matrix) => {
+
+}
+// console.log(swapDiagonals([
+// [389,548,568,346,926,941],
+// [798,299,203,145,933,656],
+// [270,891,865,732,707,154],
+// [778,821,458,262,432,669],
+// [568,446,129,238,549,799],
+// [651,349,253,877,424,690]
+// ]));
 
 
 
