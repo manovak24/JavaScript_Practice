@@ -6858,7 +6858,13 @@ const neutralise = (s1, s2) => {
   }
   return results;
 }
-console.log(neutralise("-+-+-+", "-+-+-+"));
+// console.log(neutralise("-+-+-+", "-+-+-+"));
+
+
+const arrowArea = (a,b) => {
+  return (a * 0.5) * (b * 0.5);
+}
+console.log(arrowArea(4, 2));
 
 
 
