@@ -6864,7 +6864,17 @@ const neutralise = (s1, s2) => {
 const arrowArea = (a,b) => {
   return (a * 0.5) * (b * 0.5);
 }
-console.log(arrowArea(4, 2));
+// console.log(arrowArea(4, 2));
+
+
+const scramble = (str, arr) => {
+  const strArr = str.split('');
+  for(let i = 0; i < arr.length; i++) {
+    strArr[arr[i]] = str[i]
+  }
+  return strArr.join('');
+}
+console.log(scramble('abcd', [0, 3, 1, 2]));
 
 
 
