@@ -6874,7 +6874,24 @@ const scramble = (str, arr) => {
   }
   return strArr.join('');
 }
-console.log(scramble('abcd', [0, 3, 1, 2]));
+// console.log(scramble('abcd', [0, 3, 1, 2]));
+
+
+const encodeCipher = (plaintext) => {
+  let arr = plaintext.split('').map(item => {
+    if (/^[a-zA-Z]/.test(item)) {
+      if((item.toLowerCase().charCodeAt(0) - 97) % 2 === 0) {
+        return '0';
+      } else {
+        return '1'
+      }
+    } else {
+      return item;
+    }
+  })
+  return arr.join('');
+}
+console.log(encodeCipher("Hello World!"));
 
 
 
