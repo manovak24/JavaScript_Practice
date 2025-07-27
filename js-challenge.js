@@ -6891,7 +6891,7 @@ const encodeCipher = (plaintext) => {
   })
   return arr.join('');
 }
-console.log(encodeCipher("Hello World!"));
+// console.log(encodeCipher("Hello World!"));
 
 
 
@@ -6902,8 +6902,15 @@ console.log(encodeCipher("Hello World!"));
 
 // https://www.codewars.com/kata/5889a8b335de69cc620000c8/train/javascript
 const swapDiagonals = (matrix) => {
-
-}
+  let counter = matrix[0].length - 1;
+  for (let i = 0; i < matrix.length; i++) {
+    let temp = matrix[i][i];
+    matrix[i][i] = matrix[i][counter];
+    matrix[i][counter] = temp;
+    counter--;
+  }
+  return matrix;
+} 
 // console.log(swapDiagonals([
 // [389,548,568,346,926,941],
 // [798,299,203,145,933,656],
@@ -7026,29 +7033,7 @@ const upsideDown = (x, y) => {
     '9': '6'
   }
 
-  const arr = [];
-  for (let i = Number(x); i <= Number(y); i++) {
-    arr.push(i.toString())
-  }
-
-  const oppositeArr = ['2', '3', '4', '5', '7'];
-  const results = arr.filter(str => {
-    return !oppositeArr.some(letter => str.includes(letter));
-  })
-
-  const oppositeResults = results.map(str => {
-    return str.split('').map(char => {
-      return opposite[char]
-    }).reverse().join('')
-  })
-
-  let counter = 0;
-  for (let i = 0; i < results.length; i++) {
-    if (results[i] === oppositeResults[i]) {
-      counter++;
-    }
-  }
-
-  return counter;
+  return opposite['1'] + opposite['0'] + opposite['1'] === '101'
+  
 }
-// console.log(upsideDown('100000','12345678900000000'));
+// console.log(upsideDown('100','1000'));
