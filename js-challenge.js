@@ -6894,12 +6894,6 @@ const encodeCipher = (plaintext) => {
 // console.log(encodeCipher("Hello World!"));
 
 
-
-
-
-
-
-
 // https://www.codewars.com/kata/5889a8b335de69cc620000c8/train/javascript
 const swapDiagonals = (matrix) => {
   let counter = matrix[0].length - 1;
@@ -6919,6 +6913,17 @@ const swapDiagonals = (matrix) => {
 // [568,446,129,238,549,799],
 // [651,349,253,877,424,690]
 // ]));
+
+
+const toCsvText = (array) => {
+  return array.join('\n');
+}
+// console.log(toCsvText([
+//   [ 0, 1, 2, 3, 45 ],
+//   [ 10,11,12,13,14 ],
+//   [ 20,21,22,23,24 ],
+//   [ 30,31,32,33,34 ]
+// ]))
 
 
 
