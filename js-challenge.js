@@ -6926,6 +6926,23 @@ const toCsvText = (array) => {
 // ]))
 
 
+const missingWord = (nums, str) => {
+  nums.sort((a,b) => a - b);
+  const strNew = str.toLowerCase().replace(/[' ']/g, '');
+  let word = '';
+  for (let i = 0; i < nums.length; i++) {
+    if (strNew.length > nums[i]) {
+      word += strNew.charAt(nums[i]);
+    } else {
+      word = 'No mission today';
+      break;
+    }
+  }
+  return word;
+}
+console.log(missingWord([6,5,9], "Zn  jYIk  gOa "));
+
+
 
 
 
