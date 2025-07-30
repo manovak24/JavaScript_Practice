@@ -6944,12 +6944,9 @@ const missingWord = (nums, str) => {
 
 
 const sentencify = (words) => {
-  words[0] = words[0][0].toUpperCase() + words[0].slice(1, words[0].length);
-  words[words.length - 1] = words[words.length - 1] + ".";
-
-  return words.join(' ');
+  return words.join(' ').charAt(0).toUpperCase() + words.join(' ').substr(1) + ".";
 }
-console.log(sentencify(["i", "am", "an", "AI"]));
+// console.log(sentencify(["i", "am", "an", "AI"]));
 
 
 
