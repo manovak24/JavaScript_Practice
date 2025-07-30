@@ -6940,7 +6940,16 @@ const missingWord = (nums, str) => {
   }
   return word;
 }
-console.log(missingWord([6,5,9], "Zn  jYIk  gOa "));
+// console.log(missingWord([6,5,9], "Zn  jYIk  gOa "));
+
+
+const sentencify = (words) => {
+  words[0] = words[0][0].toUpperCase() + words[0].slice(1, words[0].length);
+  words[words.length - 1] = words[words.length - 1] + ".";
+
+  return words.join(' ');
+}
+console.log(sentencify(["i", "am", "an", "AI"]));
 
 
 
