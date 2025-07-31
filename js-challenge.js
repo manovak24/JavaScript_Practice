@@ -6949,6 +6949,27 @@ const sentencify = (words) => {
 // console.log(sentencify(["i", "am", "an", "AI"]));
 
 
+const splitBill = (x) => {
+  let xSpent = Object.keys(x);
+  let friends = xSpent.length;
+  let average = Object.values(x).reduce((a,b) => a + b) / friends
+  for(let key in x) {
+    let indAvg = x[key] - average;
+    console.log(indAvg)
+    if(indAvg % 1 === 0) {
+      x[key] = indAvg;
+    } else {
+      x[key] = indAvg.toFixed(2) * 1;
+    }
+  }
+  return x;
+}
+console.log(splitBill({A:40,B:25,C:10,D:153,E:58}));
+
+
+
+
+
 
 
 
