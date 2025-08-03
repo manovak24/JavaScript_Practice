@@ -6964,7 +6964,14 @@ const splitBill = (x) => {
   }
   return x;
 }
-console.log(splitBill({A:40,B:25,C:10,D:153,E:58}));
+// console.log(splitBill({A:40,B:25,C:10,D:153,E:58}));
+
+
+const circleArea = (radius) => {
+  if(radius < 1) throw new TypeError('ERROR');
+  return parseFloat((Math.PI * Math.pow(radius, 2)).toFixed(3));
+}
+// console.log(circleArea(1));
 
 
 
