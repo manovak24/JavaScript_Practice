@@ -6974,6 +6974,16 @@ const circleArea = (radius) => {
 // console.log(circleArea(1));
 
 
+const loopArr = (arr, direction, steps) => {
+  if(direction === 'right') {
+    return arr.splice(-steps).concat(arr);
+  } else {
+    return arr.splice(steps).concat(arr);
+  }
+}
+console.log(loopArr([1, 5, 87, 45, 8, 0], 'right', 2));
+
+
 
 
 
