@@ -7003,13 +7003,13 @@ const orderFood = (list) => {
 //     meal: 'vegetarian' },
 // ]));
 
-  function add(x) {
-	  return x + 10;	
-  }
+function add(x) {
+  return x + 10;	
+}
 
-  function mult(x) {
-    return x * 30;
-  }
+function mult(x) {
+  return x * 30;
+}
 
 function chain(input, fs) {
   let result = input;
