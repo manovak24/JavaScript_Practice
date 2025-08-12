@@ -7018,7 +7018,19 @@ function chain(input, fs) {
   }
   return result;
 }
-console.log(chain(2, [add, mult]));
+// console.log(chain(2, [add, mult]));
+
+
+const solveStones = (stones) => {
+  let remove = 0;
+  for (let i = 0; i < stones.length; i++) {
+    if(stones[i] === stones[i + 1]) {
+      remove++;
+    }
+  }
+  return remove;
+}
+console.log(solveStones("GBRGGRBBBBRRGGGB"));
 
 
 
