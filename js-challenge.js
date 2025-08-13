@@ -7030,7 +7030,13 @@ const solveStones = (stones) => {
   }
   return remove;
 }
-console.log(solveStones("GBRGGRBBBBRRGGGB"));
+// console.log(solveStones("GBRGGRBBBBRRGGGB"));
+
+
+String.prototype.toAlternatingCase = function() {
+  return this.split('').map(letter => letter === letter.toLowerCase() ? letter.toUpperCase() : letter.toLowerCase()).join('');
+}
+// console.log("Hello World".toAlternatingCase());
 
 
 
