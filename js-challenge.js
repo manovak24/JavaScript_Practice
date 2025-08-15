@@ -7039,6 +7039,19 @@ String.prototype.toAlternatingCase = function() {
 // console.log("Hello World".toAlternatingCase());
 
 
+const divisors = (integer) => {
+    let answer = [];
+    for(let i = 2; i < integer; i++) {
+      let divide = integer / i;
+      if(divide % 1 === 0) {
+        answer.push(i);
+      }
+    }
+    return answer.length > 0 ? answer : `${integer} is prime`;
+}
+// console.log(divisors(2));
+
+
 
 
 
