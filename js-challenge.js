@@ -7052,6 +7052,18 @@ const divisors = (integer) => {
 // console.log(divisors(2));
 
 
+// https://www.codewars.com/kata/671fd30696d3f42285f7d1f1/train/javascript
+const window = (length, offset, list) => {
+  let newList = [];
+  const limit = length > 0 ? list.length : list.length + 1;
+  for(let i = 0; i < limit; i += offset) {
+    newList.push(list.slice(i, i + length));
+  }
+  return newList.filter(x => x.length === length);
+}
+// console.log(window(0,2,[0]));
+
+
 
 
 
