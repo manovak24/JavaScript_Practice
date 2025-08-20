@@ -7064,6 +7064,14 @@ const window = (length, offset, list) => {
 // console.log(window(0,2,[0]));
 
 
+const binaryToString = (binary) => {
+  return binary.substr(2).split('0b').map(char => {
+    return String.fromCharCode(parseInt(char, 2));
+  }).join('');
+}
+// console.log(binaryToString('0b10000110b11000010b1110100'));
+
+
 
 
 
