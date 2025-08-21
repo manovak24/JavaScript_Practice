@@ -7072,6 +7072,21 @@ const binaryToString = (binary) => {
 // console.log(binaryToString('0b10000110b11000010b1110100'));
 
 
+// https://www.codewars.com/kata/67757660c552a3a7ef9aaceb/train/javascript
+const validateBase = (num, base) => {
+  let isNumber = typeof parseInt(num) === 'number'  ? true : false;
+
+  if(isNumber) {
+    for(let i = 0; i < num.length; i++) {
+    
+    }
+  }
+
+  return isNumber
+}
+console.log(validateBase('768'));
+
+
 
 
 
