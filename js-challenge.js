@@ -7074,14 +7074,10 @@ const binaryToString = (binary) => {
 
 // https://www.codewars.com/kata/67757660c552a3a7ef9aaceb/train/javascript
 const validateBase = (num, base) => {
-  let isNumber = /^\d+$/.test(num);
-  if(isNumber) {
-    let arr = num.split('').map(x => parseInt(x));
-    return arr.every(x => x <= base - 1);
-  } else {
-    let arr = num.split('').map(x => x.charCodeAt(0) - 55);
-    return arr.every(x => x <= base - 1);
-  }
+  return num.split('').every(x => {
+    const digit = /\d/.test(x) ? parseInt(x) : x.charCodeAt(0) - 55;
+    return digit < base;
+  })  
 }
 console.log(validateBase('ABCDEF', 16));
 
