@@ -7079,7 +7079,33 @@ const validateBase = (num, base) => {
     return digit < base;
   })  
 }
-console.log(validateBase('ABCDEF', 16));
+// console.log(validateBase('ABCDEF', 16));
+
+
+const generatePairs = (n) => {
+  let pairs = [];
+  for(let i = 0; i <= n; i++) {
+    for(let j = 0; j <= n; j++) {
+      if(i <= j) {
+        pairs.push([i, j])
+      }
+    }
+  }
+  return pairs;
+}
+// console.log(generatePairs(2));
+
+
+// https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
+const subsetSum = (xs, target) => {
+  if(xs.length < 1) return [target];
+  let subsets = xs.reduce((a,b) => a.concat(a.map(x => [b,...x])), [[]]);
+  console.log(subsets)
+  let sums = subsets.map(x => x.length === 0 ? x : x.reduce((a,b) => a + b))
+  
+  return subsets[sums.indexOf(target)];
+}
+// console.log(subsetSum([1,2,3,4,5], 4));
 
 
 
