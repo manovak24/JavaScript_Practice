@@ -7096,6 +7096,12 @@ const generatePairs = (n) => {
 // console.log(generatePairs(2));
 
 
+const oneTest = (arr, fun) => {
+  return arr.filter(x => fun(x)).length === 1;
+}
+console.log(oneTest([1,2,3,4,5], function(item){ return item<2}))
+
+
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
 const subsetSum = (xs, target) => {
   if(xs.length < 1) return [target];
