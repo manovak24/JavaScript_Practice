@@ -7099,7 +7099,19 @@ const generatePairs = (n) => {
 const oneTest = (arr, fun) => {
   return arr.filter(x => fun(x)).length === 1;
 }
-// console.log(oneTest([1,2,3,4,5], function(item){ return item<2}))
+// console.log(oneTest([1,2,3,4,5], function(item){ return item<2}));
+
+
+// https://www.codewars.com/kata/585d8c8a28bc7403ea0000c3
+const findUniqueStr = (arr) => {
+  let obj = {};
+  const sorted = arr.map((str, index) => [[...new Set(str.toLowerCase())].sort().join(''), index]);
+  sorted.forEach(item => {
+    obj[item[0]] = (obj[item[0]] || 0) + 1;
+  })
+  return arr[sorted.filter(item => item[0] === Object.keys(obj).find(key => obj[key] === 1))[0][1]];
+}
+console.log(findUniqueStr([ 'silvia', 'vasili', 'victor' ]));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
@@ -7120,7 +7132,7 @@ const subsetSum = (xs, target) => {
   return arr.filter(item => item.reduce((a,b) => a + b) === target)[0];
 
 }
-console.log(subsetSum([1,2,3,4,5], 4));
+// console.log(subsetSum([1,2,3,4,5], 4));
 
 
 
