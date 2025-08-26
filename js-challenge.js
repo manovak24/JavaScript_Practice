@@ -7099,19 +7099,28 @@ const generatePairs = (n) => {
 const oneTest = (arr, fun) => {
   return arr.filter(x => fun(x)).length === 1;
 }
-console.log(oneTest([1,2,3,4,5], function(item){ return item<2}))
+// console.log(oneTest([1,2,3,4,5], function(item){ return item<2}))
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
 const subsetSum = (xs, target) => {
-  if(xs.length < 1) return [target];
-  let subsets = xs.reduce((a,b) => a.concat(a.map(x => [b,...x])), [[]]);
-  console.log(subsets)
-  let sums = subsets.map(x => x.length === 0 ? x : x.reduce((a,b) => a + b))
-  
-  return subsets[sums.indexOf(target)];
+  let arr = [];
+  const helper = (curr, remain) => {
+    if(remain.length === 0) {
+      if(curr.length > 0) {
+        arr.push(curr);
+      }
+      return;
+    }
+    helper([...curr, remain[0]], remain.slice(1));
+    helper(curr, remain.slice(1)); 
+  }
+  helper([], xs);
+
+  return arr.filter(item => item.reduce((a,b) => a + b) === target)[0];
+
 }
-// console.log(subsetSum([1,2,3,4,5], 4));
+console.log(subsetSum([1,2,3,4,5], 4));
 
 
 
