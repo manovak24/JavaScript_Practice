@@ -7111,7 +7111,13 @@ const findUniqueStr = (arr) => {
   })
   return arr[sorted.filter(item => item[0] === Object.keys(obj).find(key => obj[key] === 1))[0][1]];
 }
-console.log(findUniqueStr([ 'silvia', 'vasili', 'victor' ]));
+// console.log(findUniqueStr([ 'silvia', 'vasili', 'victor' ]));
+
+
+const leastLarger = (a, i) => {
+  return a.indexOf(Math.min(...a.filter(x => x > a[i])));
+}
+console.log(leastLarger([2, 1, 3, 5, 6], 0));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
