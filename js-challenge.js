@@ -7117,7 +7117,17 @@ const findUniqueStr = (arr) => {
 const leastLarger = (a, i) => {
   return a.indexOf(Math.min(...a.filter(x => x > a[i])));
 }
-console.log(leastLarger([2, 1, 3, 5, 6], 0));
+// console.log(leastLarger([2, 1, 3, 5, 6], 0));
+
+
+const toCamelCase = (str) => {
+  return str
+            .replace(/[-_]/g, ' ')
+            .split(' ')
+            .map((word, index) => index === 0 ? word : word.split('')[0].toUpperCase() + word.substr(1))
+            .join('');
+}
+console.log(toCamelCase('the_stealth-warrior'));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
