@@ -7127,7 +7127,19 @@ const toCamelCase = (str) => {
             .map((word, index) => index === 0 ? word : word.split('')[0].toUpperCase() + word.substr(1))
             .join('');
 }
-console.log(toCamelCase('the_stealth-warrior'));
+// console.log(toCamelCase('the_stealth-warrior'));
+
+
+const allNonConsecutive = (arr) => {
+  let nonConsecutive = [];
+  for(let i = 0; i < arr.length - 1; i++) {
+    if(arr[i] + 1 !== arr[i + 1]) {
+      nonConsecutive.push({'i': i + 1, 'n': arr[i + 1]});
+    }
+  }
+  return nonConsecutive;
+}
+console.log(allNonConsecutive([-5,-3,-2,0,1,2,3,4,6,7,8,10]));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
