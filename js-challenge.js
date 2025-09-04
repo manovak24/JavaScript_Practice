@@ -7139,7 +7139,33 @@ const allNonConsecutive = (arr) => {
   }
   return nonConsecutive;
 }
-console.log(allNonConsecutive([-5,-3,-2,0,1,2,3,4,6,7,8,10]));
+// console.log(allNonConsecutive([-5,-3,-2,0,1,2,3,4,6,7,8,10]));
+
+
+
+
+// DO THE PROBLEM BLEOW
+
+
+
+
+
+// https://www.codewars.com/kata/559af787b4b8eac78b000022/train/javascript
+const countMe = (data) => {
+  if(!(/^\d+$/.test(data))) return '';
+  let counter = 0;
+  let holder = [];
+  for(let i = 0; i < data.length; i++) {
+    counter++;
+    if(data[i] === data[i + 1]) {
+      counter++;
+    }
+    holder.push(counter + data[i]);
+    counter = 0;
+  }
+  return holder;
+}
+console.log(countMe('9974'));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
