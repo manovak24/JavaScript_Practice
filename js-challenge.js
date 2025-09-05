@@ -7142,49 +7142,47 @@ const allNonConsecutive = (arr) => {
 // console.log(allNonConsecutive([-5,-3,-2,0,1,2,3,4,6,7,8,10]));
 
 
-
-
-// DO THE PROBLEM BLEOW
-
-
-
-
-
-// https://www.codewars.com/kata/559af787b4b8eac78b000022/train/javascript
 const countMe = (data) => {
   if(!(/^\d+$/.test(data))) return '';
-  let counter = 0;
+  let counter = 1;
   let holder = [];
   for(let i = 0; i < data.length; i++) {
-    counter++;
     if(data[i] === data[i + 1]) {
       counter++;
+      continue;
     }
     holder.push(counter + data[i]);
-    counter = 0;
+    counter = 1;
   }
-  return holder;
+  return holder.join('');
 }
-console.log(countMe('9974'));
+// console.log(countMe('99774'));
+
+
+const digitsAdd = (num) => {
+  let arr = num.toString().split('').map(x => parseInt(x));
+  let answer = [];
+  for(let i = 0; i < arr.length - 1; i++) {
+    let holder = arr.slice(i + 1, arr.length);
+    holder.forEach(num => {
+      answer.push(arr[i] + num);
+    })
+  }
+  return answer;
+}
+console.log(digitsAdd(81596));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
 const subsetSum = (xs, target) => {
   let arr = [];
-  const helper = (curr, remain) => {
-    if(remain.length === 0) {
-      if(curr.length > 0) {
-        arr.push(curr);
-      }
-      return;
+  for(let i = xs.length; i >= 0; i--) {
+    let answer = target - xs[i]
+    if(answer > 0) {
+      arr.push(xs[i]);
     }
-    helper([...curr, remain[0]], remain.slice(1));
-    helper(curr, remain.slice(1)); 
   }
-  helper([], xs);
-
-  return arr.filter(item => item.reduce((a,b) => a + b) === target)[0];
-
+  return arr;
 }
 // console.log(subsetSum([1,2,3,4,5], 4));
 
