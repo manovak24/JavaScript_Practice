@@ -7170,19 +7170,34 @@ const digitsAdd = (num) => {
   }
   return answer;
 }
-console.log(digitsAdd(81596));
+// console.log(digitsAdd(81596));
+
+
+const locateTest = (arr, value) => {
+  return arr.flat(Infinity).some(x => x === value);
+}
+console.log(locateTest(['a','b',['c','d',['e']]] , 'e'));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
 const subsetSum = (xs, target) => {
-  let arr = [];
-  for(let i = xs.length; i >= 0; i--) {
-    let answer = target - xs[i]
-    if(answer > 0) {
-      arr.push(xs[i]);
+  const results = [];
+  let stop = false;
+  const help = (current, remaining) => {
+    if(remaining.length === 0 && stop == false) {
+      if(current.length > 0 && current.reduce((a,b) => a + b) === target) {
+        results.push(current);
+        stop = true;
+      }
+      return;
+    }
+    if(!stop) {
+      help([...current, remaining[0]], remaining.slice(1));
+      help(current, remaining.slice(1));
     }
   }
-  return arr;
+  help([], xs);
+  return results[0]
 }
 // console.log(subsetSum([1,2,3,4,5], 4));
 
