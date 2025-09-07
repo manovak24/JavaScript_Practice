@@ -7176,7 +7176,15 @@ const digitsAdd = (num) => {
 const locateTest = (arr, value) => {
   return arr.flat(Infinity).some(x => x === value);
 }
-console.log(locateTest(['a','b',['c','d',['e']]] , 'e'));
+// console.log(locateTest(['a','b',['c','d',['e']]] , 'e'));
+
+
+const reverseIt = (data) => {
+  if(typeof data === 'string') return data.split('').reverse().join('');  
+  if(typeof data === 'number') return data.toString().split('').reverse().join('') * 1;
+  return data;
+}
+console.log(reverseIt(743.9129036011566));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
