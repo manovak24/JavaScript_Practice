@@ -7184,7 +7184,17 @@ const reverseIt = (data) => {
   if(typeof data === 'number') return data.toString().split('').reverse().join('') * 1;
   return data;
 }
-console.log(reverseIt(743.9129036011566));
+// console.log(reverseIt(743.9129036011566));
+
+
+const direction = (facing, turn) => {
+  const compass = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+  const rotate = Math.floor(turn / 45);
+  const facingIdx = compass.indexOf(facing);
+  const finalFacingIdx = (facingIdx + rotate) % compass.length;
+  return finalFacingIdx < 0 ? compass[compass.length - Math.abs(finalFacingIdx)] : compass[finalFacingIdx];
+}
+console.log(direction("S", 450));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
