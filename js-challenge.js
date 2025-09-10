@@ -7194,7 +7194,20 @@ const direction = (facing, turn) => {
   const finalFacingIdx = (facingIdx + rotate) % compass.length;
   return finalFacingIdx < 0 ? compass[compass.length - Math.abs(finalFacingIdx)] : compass[finalFacingIdx];
 }
-console.log(direction("S", 450));
+// console.log(direction("S", 450));
+
+
+const randomCase = (x) => {
+  return x.split('').map(char => {
+    const random = Math.round(Math.random());
+    if(random === 1) {
+      return char.toUpperCase();
+    } else {
+      return char.toLowerCase();
+    }
+  }).join('');
+}
+console.log(randomCase('THIS IS AN ALL CAPS STRING'));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
