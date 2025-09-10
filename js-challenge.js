@@ -7207,7 +7207,13 @@ const randomCase = (x) => {
     }
   }).join('');
 }
-console.log(randomCase('THIS IS AN ALL CAPS STRING'));
+// console.log(randomCase('THIS IS AN ALL CAPS STRING'));
+
+
+const whoIsPaying = (name) => {
+  return name.length < 3 ? [name] : [name, name.substr(0, 2)];
+}
+console.log(whoIsPaying('Melissa'));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
