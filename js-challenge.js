@@ -7213,7 +7213,20 @@ const randomCase = (x) => {
 const whoIsPaying = (name) => {
   return name.length < 3 ? [name] : [name, name.substr(0, 2)];
 }
-console.log(whoIsPaying('Melissa'));
+// console.log(whoIsPaying('Melissa'));
+
+
+const getConsecutiveItems = (items, key) => {
+  if(typeof items === 'number') items = items.toString();
+  if(typeof key === 'number') key = key.toString();
+  if(!items.includes(key)) return 0;
+  
+  const arr = items.match(/(.)\1*/g)
+                    .filter(x => x.includes(key))
+                    .map(x => x.length);
+  return Math.max(...arr);
+}
+console.log(getConsecutiveItems(9000, 1));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
