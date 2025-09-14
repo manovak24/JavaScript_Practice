@@ -7234,7 +7234,6 @@ const findHack = (arr) => {
   let hacked = [];
   for(let i = 0; i < arr.length; i++) {
     let score = arr[i][2].map(grade => grades.hasOwnProperty(grade) ? grades[grade] : 0);
-    console.log(score)
     if(score.length >= 5 && score.every(grade => grade >= 20)) {
       score.push(20);
     }
