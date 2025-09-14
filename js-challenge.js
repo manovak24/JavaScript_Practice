@@ -7226,7 +7226,41 @@ const getConsecutiveItems = (items, key) => {
                     .map(x => x.length);
   return Math.max(...arr);
 }
-console.log(getConsecutiveItems(9000, 1));
+// console.log(getConsecutiveItems(9000, 1));
+
+
+const findHack = (arr) => {
+  const grades = { 'A': 30, 'B': 20, 'C': 10, 'D': 5, 'F': 0 };
+  let hacked = [];
+  for(let i = 0; i < arr.length; i++) {
+    let score = arr[i][2].map(grade => grades.hasOwnProperty(grade) ? grades[grade] : 0);
+    console.log(score)
+    if(score.length >= 5 && score.every(grade => grade >= 20)) {
+      score.push(20);
+    }
+    score = score.reduce((a,b) => a + b);
+    if(arr[i][1] > 200) {
+      hacked.push(arr[i][0]);
+    } else if(arr[i][1] <= 200 && score <= 200 && arr[i][1] !== score) {
+      hacked.push(arr[i][0]);
+    }
+  }
+  return hacked;
+}
+console.log(findHack(
+  [
+    [ 'Jack Brown', 75, [ 'B', 'D', 'D', 'B', 'F', 'D' ] ],
+    [ 'Doe Lawrence', 80, [ 'E', 'H', 'A', 'A' ] ],
+    [ 'Kabin Brown', 300, [ 'B', 'B', 'B', 'A' ] ],
+    [ 'Bill Black', 50, [ 'E', 'B', 'E', 'C', 'E' ] ],
+    [ 'Bill Webb', 30, [ 'B', 'D', 'G', 'D', 'F' ] ],
+    [ 'John Brown', 35, [ 'A', 'E', 'F', 'E', 'D' ] ],
+    [ 'Jane Bradley', 45, [ 'E', 'E', 'C', 'D', 'C' ] ],
+    [ 'Jane Bradley', 20, [ 'C', 'H', 'H', 'C', 'F' ] ],
+    [ 'Doe Brown', 300, [ 'B', 'C', 'E', 'A' ] ],
+    [ 'Jack Bradley', 20, [ 'G', 'F', 'E', 'H' ] ]
+  ]
+));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
