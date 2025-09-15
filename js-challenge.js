@@ -7246,20 +7246,33 @@ const findHack = (arr) => {
   }
   return hacked;
 }
-console.log(findHack(
-  [
-    [ 'Jack Brown', 75, [ 'B', 'D', 'D', 'B', 'F', 'D' ] ],
-    [ 'Doe Lawrence', 80, [ 'E', 'H', 'A', 'A' ] ],
-    [ 'Kabin Brown', 300, [ 'B', 'B', 'B', 'A' ] ],
-    [ 'Bill Black', 50, [ 'E', 'B', 'E', 'C', 'E' ] ],
-    [ 'Bill Webb', 30, [ 'B', 'D', 'G', 'D', 'F' ] ],
-    [ 'John Brown', 35, [ 'A', 'E', 'F', 'E', 'D' ] ],
-    [ 'Jane Bradley', 45, [ 'E', 'E', 'C', 'D', 'C' ] ],
-    [ 'Jane Bradley', 20, [ 'C', 'H', 'H', 'C', 'F' ] ],
-    [ 'Doe Brown', 300, [ 'B', 'C', 'E', 'A' ] ],
-    [ 'Jack Bradley', 20, [ 'G', 'F', 'E', 'H' ] ]
-  ]
-));
+// console.log(findHack(
+//   [
+//     [ 'Jack Brown', 75, [ 'B', 'D', 'D', 'B', 'F', 'D' ] ],
+//     [ 'Doe Lawrence', 80, [ 'E', 'H', 'A', 'A' ] ],
+//     [ 'Kabin Brown', 300, [ 'B', 'B', 'B', 'A' ] ],
+//     [ 'Bill Black', 50, [ 'E', 'B', 'E', 'C', 'E' ] ],
+//     [ 'Bill Webb', 30, [ 'B', 'D', 'G', 'D', 'F' ] ],
+//     [ 'John Brown', 35, [ 'A', 'E', 'F', 'E', 'D' ] ],
+//     [ 'Jane Bradley', 45, [ 'E', 'E', 'C', 'D', 'C' ] ],
+//     [ 'Jane Bradley', 20, [ 'C', 'H', 'H', 'C', 'F' ] ],
+//     [ 'Doe Brown', 300, [ 'B', 'C', 'E', 'A' ] ],
+//     [ 'Jack Bradley', 20, [ 'G', 'F', 'E', 'H' ] ]
+//   ]
+// ));
+
+
+const  capitalsFirst = (str) => {
+  return str.split(' ')
+            .filter(x => x[0].match(/[a-zA-Z]/))
+            .sort((a,b) => {
+              const aUpper = a[0] === a[0].toUpperCase();
+              const bUpper = b[0] === b[0].toUpperCase();
+              return bUpper - aUpper;
+            })
+            .join(' ');
+}
+console.log(capitalsFirst("hey You, #Sort me Already! 123"));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
