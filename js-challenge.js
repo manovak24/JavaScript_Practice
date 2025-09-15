@@ -7263,14 +7263,10 @@ const findHack = (arr) => {
 
 
 const  capitalsFirst = (str) => {
-  return str.split(' ')
-            .filter(x => x[0].match(/[a-zA-Z]/))
-            .sort((a,b) => {
-              const aUpper = a[0] === a[0].toUpperCase();
-              const bUpper = b[0] === b[0].toUpperCase();
-              return bUpper - aUpper;
-            })
-            .join(' ');
+  const arr = str.split(' ');
+  const upper = arr.filter(x => x[0].match(/[A-Z]/)).join(' ');
+  const lower = arr.filter(x => x[0].match(/[a-z]/)).join(' ');
+  return upper + ' ' + lower;
 }
 console.log(capitalsFirst("hey You, #Sort me Already! 123"));
 
