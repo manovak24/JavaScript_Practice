@@ -7268,7 +7268,17 @@ const  capitalsFirst = (str) => {
   const lower = arr.filter(x => x[0].match(/[a-z]/)).join(' ');
   return upper + ' ' + lower;
 }
-console.log(capitalsFirst("hey You, #Sort me Already! 123"));
+// console.log(capitalsFirst("hey You, #Sort me Already! 123"));
+
+
+const minMinMax = (array) => {
+  let min = Math.min(...array);
+  while(array.includes(min)) {
+    min++;
+  }
+  return [Math.min(...array), min, Math.max(...array)];
+}
+console.log(minMinMax([-2, -10, -9,  4, -10,  -1,  6, 16]));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
