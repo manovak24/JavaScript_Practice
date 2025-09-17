@@ -7278,7 +7278,18 @@ const minMinMax = (array) => {
   }
   return [Math.min(...array), min, Math.max(...array)];
 }
-console.log(minMinMax([-2, -10, -9,  4, -10,  -1,  6, 16]));
+// console.log(minMinMax([-2, -10, -9,  4, -10,  -1,  6, 16]));
+
+
+const crossover = (c1, c2, idx) => {
+  const c11 = c1.substring(0, idx);
+  const c12 = c1.substring(idx, c1.length);
+  const c21 = c2.substring(0, idx);
+  const c22 = c2.substring(idx, c2.length);
+
+  return [c11 + c22, c21 + c12];
+}
+// console.log(crossover("111000", "000110", 3));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
