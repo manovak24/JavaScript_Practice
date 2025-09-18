@@ -7294,7 +7294,9 @@ const crossover = (c1, c2, idx) => {
 
 const michaelPays = (costs) => {
   const cost3rd = costs / 3;
-  return costs < 5 ? parseFloat(costs.toFixed(2)) : cost3rd >= 10 ? parseFlot((costs - 10).toFixed(2)) : parseFloat((costs - cost3rd).toFixed(2));
+  if(costs < 5) return parseFloat(costs.toFixed(2));
+  if(cost3rd >= 10) return parseFloat((costs - 10).toFixed(2));
+  return parseFloat((costs - cost3rd).toFixed(2));
  }
 console.log(michaelPays(5.9181));
 
