@@ -7292,6 +7292,13 @@ const crossover = (c1, c2, idx) => {
 // console.log(crossover("111000", "000110", 3));
 
 
+const michaelPays = (costs) => {
+  const cost3rd = costs / 3;
+  return costs < 5 ? parseFloat(costs.toFixed(2)) : cost3rd >= 10 ? parseFlot((costs - 10).toFixed(2)) : parseFloat((costs - cost3rd).toFixed(2));
+ }
+console.log(michaelPays(5.9181));
+
+
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
 const subsetSum = (xs, target) => {
   const results = [];
