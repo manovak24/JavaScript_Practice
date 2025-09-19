@@ -7298,7 +7298,15 @@ const michaelPays = (costs) => {
   if(cost3rd >= 10) return parseFloat((costs - 10).toFixed(2));
   return parseFloat((costs - cost3rd).toFixed(2));
  }
-console.log(michaelPays(5.9181));
+// console.log(michaelPays(5.9181));
+
+
+const searchBeans = (budget, prices) => {
+  return prices.filter(x => x <= budget)
+                .sort((a,b) => a - b)
+                .join(',');
+}
+console.log(searchBeans(3, [6, 1, 2, 9, 2]));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
