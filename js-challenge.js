@@ -7306,7 +7306,15 @@ const searchBeans = (budget, prices) => {
                 .sort((a,b) => a - b)
                 .join(',');
 }
-console.log(searchBeans(3, [6, 1, 2, 9, 2]));
+// console.log(searchBeans(3, [6, 1, 2, 9, 2]));
+
+
+const sumSquares = (l) => {
+  return l.flat(Infinity)
+          .map((x => x * x))
+          .reduce((a,b) => a + b);
+}
+console.log(sumSquares([1,[[3],10,5,[2,[3],[4],[5,[6]]]],[10]]));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
