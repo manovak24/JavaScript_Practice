@@ -7314,7 +7314,19 @@ const sumSquares = (l) => {
           .map((x => x * x))
           .reduce((a,b) => a + b);
 }
-console.log(sumSquares([1,[[3],10,5,[2,[3],[4],[5,[6]]]],[10]]));
+// console.log(sumSquares([1,[[3],10,5,[2,[3],[4],[5,[6]]]],[10]]));
+
+
+const alphaSeq = (str) => {
+  let sorted = str.split('').map(x => x.toLowerCase()).sort();
+  let seq = [];
+  sorted.forEach(letter => {
+    let n = letter.charCodeAt(0) - 96;
+    seq.push(letter.repeat(n));
+  })
+  return seq.map(item => item[0].toUpperCase() + item.substring(1)).join(',');
+}
+console.log(alphaSeq('ZpglnRxqenU'));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
