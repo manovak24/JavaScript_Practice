@@ -7326,7 +7326,15 @@ const alphaSeq = (str) => {
   })
   return seq.map(item => item[0].toUpperCase() + item.substring(1)).join(',');
 }
-console.log(alphaSeq('ZpglnRxqenU'));
+// console.log(alphaSeq('ZpglnRxqenU'));
+
+
+const maxedOut = (arr) => {
+  const arrSum = arr.map(x => Math.pow(x, 3)).reduce((a,b) => a + b);
+  const test = arrSum <= Number.MAX_SAFE_INTEGER ? arrSum : "You've pushed me to the max!";
+  return test;
+}
+console.log(maxedOut([208063.830683574,6.19992349116331]));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
