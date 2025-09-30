@@ -7334,7 +7334,22 @@ const maxedOut = (arr) => {
   const test = arrSum <= Number.MAX_SAFE_INTEGER ? arrSum : "You've pushed me to the max!";
   return test;
 }
-console.log(maxedOut([208063.830683574,6.19992349116331]));
+// console.log(maxedOut([208063.830683574,6.19992349116331]));
+
+
+const arrayInfo = (arr) => {
+  if(arr.length === 0) return 'Nothing in the array!';
+
+  const length = arr.length;
+  const int = arr.filter(x => typeof x === 'number' && Number.isInteger(x)).length;
+  const float = arr.filter(x => typeof x === 'number' && !Number.isInteger(x)).length;
+  const str = arr.filter(x => typeof x === 'string' && x !== ' ').length;
+  const wtsp = arr.filter(x => x === ' ').length;
+
+  return [[length], [int], [float], [str], [wtsp]].map(x => x.map(num => num === 0 ? null : num));
+
+}
+console.log(arrayInfo([1,2,3.33,4,5.01,'bass','kick']));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
