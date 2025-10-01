@@ -7349,7 +7349,33 @@ const arrayInfo = (arr) => {
   return [[length], [int], [float], [str], [wtsp]].map(x => x.map(num => num === 0 ? null : num));
 
 }
-console.log(arrayInfo([1,2,3.33,4,5.01,'bass','kick']));
+// console.log(arrayInfo([1,2,3.33,4,5.01,'bass','kick']));
+
+
+const makesTheSentence = (characterArray, sentenceString) => {
+  let charObj = {};
+  let stObj = {};
+
+  characterArray.forEach(x => {
+    if(sentenceString.includes(x)) {
+      charObj[x] = (charObj[x] || 0) + 1;
+    }
+  })
+
+  sentenceString.split('').filter(x => x !== ' ').forEach(x => {
+    stObj[x] = (stObj[x] || 0) + 1;
+  })
+  
+  const sorted = (x) => {
+    return Object.keys(x).sort().reduce((obj, key) => {
+      obj[key] = x[key];
+      return obj;
+    }, {});
+  }
+
+  return JSON.stringify(sorted(charObj)) === JSON.stringify(sorted(stObj));
+}
+console.log(makesTheSentence(['a', 'f', 'r', 'k', 's', 'e', 'u', 'I', 'a', 'o', 'c', '!', 't', 'e'], "I ate four cakes!"));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
