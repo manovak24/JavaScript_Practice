@@ -7375,7 +7375,20 @@ const makesTheSentence = (characterArray, sentenceString) => {
 
   return JSON.stringify(sorted(charObj)) === JSON.stringify(sorted(stObj));
 }
-console.log(makesTheSentence(['a', 'f', 'r', 'k', 's', 'e', 'u', 'I', 'a', 'o', 'c', '!', 't', 'e'], "I ate four cakes!"));
+// console.log(makesTheSentence(['a', 'f', 'r', 'k', 's', 'e', 'u', 'I', 'a', 'o', 'c', '!', 't', 'e'], "I ate four cakes!"));
+
+
+const totalAmountVisible = (topNum, numOfSides) => {
+  const sides = (numOfSides + 1) - topNum;
+  let answer = 0;
+  for(let i = 1; i <= numOfSides; i++) {
+    if(i !== sides) {
+      answer += i;
+    }
+  }
+  return answer;
+}
+console.log(totalAmountVisible(3, 6));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
