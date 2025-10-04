@@ -7378,6 +7378,28 @@ const makesTheSentence = (characterArray, sentenceString) => {
 // console.log(makesTheSentence(['a', 'f', 'r', 'k', 's', 'e', 'u', 'I', 'a', 'o', 'c', '!', 't', 'e'], "I ate four cakes!"));
 
 
+const dataPerson = {
+  firstName: "John",
+  lastName: "Smith",
+  interests: "sport"
+};
+const createTemplate = (template) => {
+  const createString = (dataPerson) => {
+    let arr = template.split(' ');  
+    return arr.map(x => {
+      if(x.includes('{{') && x.includes('}}')) {
+        let key = x.replace(/{{|}}/g, '');
+        return dataPerson[key] ? dataPerson[key] : '';
+      } else {
+        return x;
+      }
+    }).join(' ');
+  }
+  return createString;
+}
+// console.log(createTemplate('{{firstName}} {{lastName}} likes {{interests}}'));
+
+
 const totalAmountVisible = (topNum, numOfSides) => {
   const sides = (numOfSides + 1) - topNum;
   let answer = 0;
@@ -7388,7 +7410,10 @@ const totalAmountVisible = (topNum, numOfSides) => {
   }
   return answer;
 }
-console.log(totalAmountVisible(3, 6));
+// console.log(totalAmountVisible(3, 6));
+
+
+
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
