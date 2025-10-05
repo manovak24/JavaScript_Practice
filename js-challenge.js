@@ -7400,6 +7400,18 @@ const createTemplate = (template) => {
 // console.log(createTemplate('{{firstName}} {{lastName}} likes {{interests}}'));
 
 
+// Array.prototype.first = function() {
+//   return this[0]
+// }
+
+// Array.prototype.last = function() {
+//   return this[this.length - 1]
+// }
+
+// console.log([2,5,7,3,4].first());
+// console.log([2,5,7,3,4].last());
+
+
 const totalAmountVisible = (topNum, numOfSides) => {
   const sides = (numOfSides + 1) - topNum;
   let answer = 0;
