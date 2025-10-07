@@ -7412,6 +7412,23 @@ const createTemplate = (template) => {
 // console.log([2,5,7,3,4].last());
 
 
+const top3 = (products, amounts, prices) => {
+  let rev = [];
+  for(let i = 0; i < amounts.length; i++) {
+    rev.push([amounts[i] * prices[i], products[i]]);
+  }
+
+  rev.sort((a,b) => b[0] - a[0])
+
+  let answer = [];
+  for(let i = 0; i < 3; i++) {
+    answer.push(rev[i][1]);
+  }
+  return answer;
+}
+// console.log(top3(["Computer", "Cell Phones", "Vacuum Cleaner"], [3, 24, 8], [199, 299, 399]));
+
+
 const totalAmountVisible = (topNum, numOfSides) => {
   const sides = (numOfSides + 1) - topNum;
   let answer = 0;
