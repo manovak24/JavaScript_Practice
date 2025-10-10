@@ -7429,6 +7429,13 @@ const top3 = (products, amounts, prices) => {
 // console.log(top3(["Computer", "Cell Phones", "Vacuum Cleaner"], [3, 24, 8], [199, 299, 399]));
 
 
+const calculateString = (string) => {
+  let arr = string.match(/\d+|loses|gains/g);
+  return arr[1] === 'loses' ?  parseInt(arr[0]) - parseInt(arr[2]) : parseInt(arr[0]) + parseInt(arr[2]);
+}
+console.log(calculateString("Panda has 48 apples and loses 4"));
+
+
 const totalAmountVisible = (topNum, numOfSides) => {
   const sides = (numOfSides + 1) - topNum;
   let answer = 0;
