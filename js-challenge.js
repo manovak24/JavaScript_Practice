@@ -7433,7 +7433,21 @@ const calculateString = (string) => {
   let arr = string.match(/\d+|loses|gains/g);
   return arr[1] === 'loses' ?  parseInt(arr[0]) - parseInt(arr[2]) : parseInt(arr[0]) + parseInt(arr[2]);
 }
-console.log(calculateString("Panda has 48 apples and loses 4"));
+// console.log(calculateString("Panda has 48 apples and loses 4"));
+
+
+const zublansNightmare = (functionName) => {
+  let str = '';
+  for(let i = 0; i < functionName.length; i++) {
+    if(functionName[i - 1] === '_') {
+      str += functionName[i].toUpperCase();
+    } else {
+      str += functionName[i];
+    }
+  }
+  return str.replace(/[_]/g, '');
+}
+console.log(zublansNightmare('camel_case'));
 
 
 const totalAmountVisible = (topNum, numOfSides) => {
