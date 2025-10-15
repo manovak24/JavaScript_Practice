@@ -7447,7 +7447,14 @@ const zublansNightmare = (functionName) => {
   }
   return str.replace(/[_]/g, '');
 }
-console.log(zublansNightmare('camel_case'));
+// console.log(zublansNightmare('camel_case'));
+
+
+const distancesFromAverage = (arr) => {
+  const avg = arr.reduce((a,b) => a + b) / arr.length;
+  return arr.map(x => +(avg - x).toFixed(2));
+}
+// console.log(distancesFromAverage([55, 95, 62, 36, 48]));
 
 
 const totalAmountVisible = (topNum, numOfSides) => {
