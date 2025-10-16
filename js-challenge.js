@@ -7470,6 +7470,20 @@ const totalAmountVisible = (topNum, numOfSides) => {
 // console.log(totalAmountVisible(3, 6));
 
 
+const sumMatrix = (matrix) => {
+  let counter = matrix.length - 1;
+  let sum = 0;
+  for(let i = 0; i < matrix.length; i++) {
+    sum += matrix[i][i];
+    sum += matrix[i][counter];
+    counter--;
+  }
+
+  return sum;
+}
+// console.log(sumMatrix([[1,2,3,4], [4,5,6,5], [7,8,9,7], [3,6,5,8]]));
+
+
 
 
 
