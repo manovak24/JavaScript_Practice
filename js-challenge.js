@@ -7484,6 +7484,21 @@ const sumMatrix = (matrix) => {
 // console.log(sumMatrix([[1,2,3,4], [4,5,6,5], [7,8,9,7], [3,6,5,8]]));
 
 
+const padIt = (str, n) => {
+  let i = 0;
+  while(i < n) {
+    if(i % 2 === 0) {
+      str = "*" + str;
+    } else {
+      str += "*";
+    }
+    i++;
+  }
+  return str;
+}
+console.log(padIt("a", 5));
+
+
 
 
 
