@@ -7496,7 +7496,16 @@ const padIt = (str, n) => {
   }
   return str;
 }
-console.log(padIt("a", 5));
+// console.log(padIt("a", 5));
+
+
+const validParentheses = (parenStr) => {
+  while(parenStr.includes('()')) {
+    parenStr = parenStr.replace('()', '');
+  }
+  return parenStr.length === 0;
+}
+console.log(validParentheses('()(())'));
 
 
 
