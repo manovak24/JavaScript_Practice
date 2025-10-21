@@ -7505,7 +7505,11 @@ const validParentheses = (parenStr) => {
   }
   return parenStr.length === 0;
 }
-console.log(validParentheses('()(())'));
+// console.log(validParentheses('()(())'));
+
+
+const repeats = (arr) => arr.filter(x => arr.indexOf(x) === arr.lastIndexOf(x)).reduce((a,b) => a + b);
+console.log(repeats([4,5,7,5,4,8]));
 
 
 
