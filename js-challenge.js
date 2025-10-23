@@ -7509,7 +7509,37 @@ const validParentheses = (parenStr) => {
 
 
 const repeats = (arr) => arr.filter(x => arr.indexOf(x) === arr.lastIndexOf(x)).reduce((a,b) => a + b);
-console.log(repeats([4,5,7,5,4,8]));
+// console.log(repeats([4,5,7,5,4,8]));
+
+
+var sing = function() {
+  let beers;
+  if(arguments[0] > 199) {
+    beers = 200;
+  } else if(arguments[0]) {
+    beers = arguments[0];
+  } else {
+    beers = 99
+  }
+  let arr = [];
+  for(let i = beers; i > 0; i--) {
+    if(i === 1) {
+      arr.push(`${i} bottle of beer on the wall, ${i} bottle of beer.`)
+      arr.push(`Take one down and pass it around, no more bottles of beer on the wall.`)
+      arr.push('No more bottles of beer on the wall, no more bottles of beer.')
+      arr.push('Go to the store and buy some more, 99 bottles of beer on the wall.')
+    } else if(i === 2) {
+      arr.push(`${i} bottles of beer on the wall, ${i} bottles of beer.`)
+      arr.push(`Take one down and pass it around, ${i - 1} bottle of beer on the wall.`)
+    } else {
+      arr.push(`${i} bottles of beer on the wall, ${i} bottles of beer.`)
+      arr.push(`Take one down and pass it around, ${i - 1} bottles of beer on the wall.`)
+    }
+  }
+
+  return arr
+}
+// console.log(sing(99))
 
 
 
