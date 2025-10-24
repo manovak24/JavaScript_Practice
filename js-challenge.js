@@ -7539,7 +7539,17 @@ var sing = function() {
 
   return arr
 }
-// console.log(sing(99))
+// console.log(sing(99));
+
+
+const process2Arrays = (arr1, arr2) => {
+  let matching = arr1.filter(x => arr2.includes(x));
+  let leftOver1 = arr1.filter(x => !matching.includes(x));
+  let leftOver2 = arr2.filter(x => !matching.includes(x));
+  let leftOver = [...leftOver1, ...leftOver2];
+  return [matching.length, leftOver.length, leftOver1.length, leftOver2.length];
+}
+// console.log(process2Arrays([1, 2 ,3,4, 5 ,6 ,7 ,8 ,9], [2, 4, 6, 8, 10, 12, 14]));
 
 
 
