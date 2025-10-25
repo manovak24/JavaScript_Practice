@@ -7552,6 +7552,35 @@ const process2Arrays = (arr1, arr2) => {
 // console.log(process2Arrays([1, 2 ,3,4, 5 ,6 ,7 ,8 ,9], [2, 4, 6, 8, 10, 12, 14]));
 
 
+const oracle = (gestures) => {
+  let rock = 0;
+  let paper = 0;
+  let scissors = 0;
+
+  for(let hand of gestures) {
+    if(hand === 'rock') rock++;
+    if(hand === 'paper') paper++;
+    if(hand === 'scissors') scissors++;
+  }
+
+  let scores = {
+    rock: scissors - paper,
+    paper: rock - scissors,
+    scissors: paper - rock
+  }
+
+  let max = Math.max(...Object.values(scores));
+  let winners = Object.keys(scores).filter(x => scores[x] > 0);
+  return winners.length === 3 ? 'tie' : winners.join('/');
+}
+console.log(oracle([
+  'paper', 'paper',
+  'paper', 'scissors',
+  'paper', 'rock',
+  'rock'
+]));
+
+
 
 
 
