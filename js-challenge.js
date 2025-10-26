@@ -7553,14 +7553,9 @@ const process2Arrays = (arr1, arr2) => {
 
 
 const oracle = (gestures) => {
-  const counts = gestures.reduce((acc, gesture) => {
-    acc[gesture] = (acc[gesture] || 0) + 1;
-    return acc;
-  }, {});
-
-  const rock = counts.scissors - counts.paper;
-  const paper = counts.rock - counts.scissors;
-  const scissors = counts.paper - counts.rock;
+  let rock = gestures.filter(x => x === 'scissors').length - gestures.filter(x => x === 'paper').length;
+  let paper = gestures.filter(x => x === 'rock').length - gestures.filter(x => x === 'scissors').length;
+  let scissors = gestures.filter(x => x === 'paper').length - gestures.filter(x => x === 'rock').length;;
 
   const scores = { rock, paper, scissors };
   const values = Object.values(scores)
