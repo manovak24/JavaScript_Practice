@@ -7553,25 +7553,21 @@ const process2Arrays = (arr1, arr2) => {
 
 
 const oracle = (gestures) => {
-  let rock = 0;
-  let paper = 0;
-  let scissors = 0;
+  const counts = gestures.reduce((acc, gesture) => {
+    acc[gesture] = (acc[gesture] || 0) + 1;
+    return acc;
+  }, {});
 
-  for(let hand of gestures) {
-    if(hand === 'rock') rock++;
-    if(hand === 'paper') paper++;
-    if(hand === 'scissors') scissors++;
-  }
+  const rock = counts.scissors - counts.paper;
+  const paper = counts.rock - counts.scissors;
+  const scissors = counts.paper - counts.rock;
 
-  let scores = {
-    rock: scissors - paper,
-    paper: rock - scissors,
-    scissors: paper - rock
-  }
+  const scores = { rock, paper, scissors };
+  const values = Object.values(scores)
 
-  let max = Math.max(...Object.values(scores));
-  let winners = Object.keys(scores).filter(x => scores[x] > 0);
-  return winners.length === 3 ? 'tie' : winners.join('/');
+  const tie = values.every(x => x === values[0]);
+
+  return tie ? 'tie' : Object.keys(scores).filter(key => scores[key] > 0).join('/');
 }
 console.log(oracle([
   'paper', 'paper',
