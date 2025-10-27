@@ -7564,13 +7564,49 @@ const oracle = (gestures) => {
 
   return tie ? 'tie' : Object.keys(scores).filter(key => scores[key] > 0).join('/');
 }
-console.log(oracle([
-  'paper', 'paper',
-  'paper', 'scissors',
-  'paper', 'rock',
-  'rock'
-]));
+// console.log(oracle([
+//   'paper', 'paper',
+//   'paper', 'scissors',
+//   'paper', 'rock',
+//   'rock'
+// ]));
 
+
+
+const arrangeString = (strng) => {
+  let arranged = [];
+  let arr = strng.split(' ');
+  let i = 0;
+  while(arr.length > 0) {
+    if(arr.length === 1) {
+      arranged.push(arr[0]);
+      break;
+    }
+    if(i % 2 === 0) {
+      if(arr[0].length <= arr[1].length) {
+        arranged.push(arr.shift());
+      } else {
+        arranged.push(arr.splice(1,1)[0]);
+      }
+    } else {
+      if(arr[0].length >= arr[1].length) {
+        arranged.push(arr.shift());
+      } else {
+        arranged.push(arr.splice(1,1)[0]);
+      }
+    }
+    
+    i++;
+  }
+  return arranged.map((x, i) => {
+    if(i % 2 === 0) {
+      return x.toLowerCase();
+    } else {
+      return x.toUpperCase();
+    }
+  }).join(' ');
+}
+console.log(arrangeString("on I came up were so grandmothers"));
 
 
 
