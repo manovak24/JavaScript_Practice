@@ -7616,7 +7616,22 @@ const multiTableTen = (number) => {
   }
   return str;
 }
-console.log(multiTableTen(5));
+// console.log(multiTableTen(5));
+
+
+// let trueIfEven = function(v, i) { return v % 2 === 0; }
+// let neverTrue = function(v, i) { return false; }
+// let trueIfValueEqualsIndex = function(v, i) { return v === i; }
+// let trueIfLengthEqualsIndex = function(v, i) { return v.length === i; }
+const findInArray = (array, iterator) => {
+  for(let i = 0; i < array.length; i++) {
+    if(iterator(array[i], i) === true) {
+      return i;
+    }
+  }
+  return -1;
+}
+// console.log(findInArray([1,1,0,7,6,7,3,3,9], trueIfValueEqualsIndex));
 
 
 
