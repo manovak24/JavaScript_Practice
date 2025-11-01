@@ -7634,6 +7634,33 @@ const findInArray = (array, iterator) => {
 // console.log(findInArray([1,1,0,7,6,7,3,3,9], trueIfValueEqualsIndex));
 
 
+const setReducerTwo = (input) => {
+  const reduced = (arr) => {
+    let reducer = [];
+    let group = [arr[0]];
+    for(let i = 1; i < arr.length; i++) {
+      if(arr[i] === arr[i - 1]) {
+        group.push(arr[i]);
+      } else {
+        reducer.push(group.length);
+        group = [arr[i]];
+      }
+    }
+    reducer.push(group.length);
+    return reducer;
+  }
+
+  let answer = reduced(input)
+  
+  while(answer.length !== 1) {
+    answer = reduced(answer);
+  }
+
+  return answer[0];
+}
+console.log(setReducerTwo([0, 4, 6, 8, 8, 8, 5, 5, 7]));
+
+
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
