@@ -7658,7 +7658,40 @@ const setReducerTwo = (input) => {
 
   return answer[0];
 }
-console.log(setReducerTwo([0, 4, 6, 8, 8, 8, 5, 5, 7]));
+// console.log(setReducerTwo([0, 4, 6, 8, 8, 8, 5, 5, 7]));
+
+
+// const wordList = [
+//   'advance',        'advantage',   'advice',
+//   'advise',      'affair',         'affect',      'afford',
+//   'afraid',      'after',          'afternoon',   'afterwards',
+//   'again',       'against',        'age',         'agency',
+//   'agent',       'ago',            'agree',       'agreement',
+//   'ahead',       'aid',            'aim',         'air',
+//   'aircraft',    'all', 'background', 'photograph', 'sccssfl', "strength",
+//   'understand'
+// ];
+const wantedWords = (n, m, forbid_let) => {
+  let list = [];
+  let vowels = ['a', 'e', 'i', 'o', 'u'];
+
+  for(let i = 0; i < wordList.length; i++) {
+    if(!forbid_let.some(x => wordList[i].includes(x))) {
+      let vowels = wordList[i].match(/[aeiou]/gi);
+      let vLength = vowels !== null ? vowels.length : 0;
+
+      let consonants = wordList[i].match(/[^aeiou]/gi);
+      let cLength = consonants !== null ? consonants.length : 0;
+
+      if(vLength === n && cLength === m) {
+        list.push(wordList[i]);
+      }
+    }
+  }
+
+  return list;
+}
+// console.log(wantedWords(1, 7, ["m", "y"]));
 
 
 
