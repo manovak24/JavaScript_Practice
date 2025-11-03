@@ -7694,6 +7694,14 @@ const wantedWords = (n, m, forbid_let) => {
 // console.log(wantedWords(1, 7, ["m", "y"]));
 
 
+// const functionTrue = () => { return 'Hello' };
+// const functionFalse = () => { return 'Howdy' };
+const _if = (bool, func1, func2) => {
+  return Boolean(bool) ? func1() : func2();
+}
+// console.log(_if(true, functionTrue, functionFalse));
+
+
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
