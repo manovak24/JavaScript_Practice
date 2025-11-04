@@ -7702,6 +7702,27 @@ const _if = (bool, func1, func2) => {
 // console.log(_if(true, functionTrue, functionFalse));
 
 
+const palindromeChaineLength = (n) => {
+  const isPalindrome = (x) => {
+    let str = x.toString();
+    return str === str.split('').reverse().join('');
+  }
+
+  let sum = n;
+  let counter = 0;
+
+  while(isPalindrome(sum) === false) {
+    let forward = sum;
+    let reverse = parseInt(sum.toString().split('').reverse().join('')); 
+    sum = forward + reverse;
+    counter++;
+  }
+
+  return counter;
+}
+console.log(palindromeChaineLength(89));
+
+
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
