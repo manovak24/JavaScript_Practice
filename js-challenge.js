@@ -7720,7 +7720,7 @@ const palindromeChaineLength = (n) => {
 
   return counter;
 }
-console.log(palindromeChaineLength(89));
+// console.log(palindromeChaineLength(89));
 
 
 
