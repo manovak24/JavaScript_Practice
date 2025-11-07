@@ -7723,6 +7723,20 @@ const palindromeChaineLength = (n) => {
 // console.log(palindromeChaineLength(89));
 
 
+function HTMLGen () {}
+['a', 'b', 'p', 'body', 'div', 'span', 'title'].forEach(tag => {
+  HTMLGen.prototype[tag] = function(content) {
+    return `<${tag}>${content}</${tag}>`
+  }
+})
+HTMLGen.prototype.comment = function(content) {
+  return `<!--${content}-->`
+}
+const g = new HTMLGen();
+const paragraph = g.p('Hello, World!');
+// console.log(g.comment(paragraph));
+
+
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
