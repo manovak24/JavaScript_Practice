@@ -7737,6 +7737,14 @@ const paragraph = g.p('Hello, World!');
 // console.log(g.comment(paragraph));
 
 
+const isKiss = (words) => {
+  let length = words.split(' ').length;
+  let simple = words.split(' ').every(word => word.length <= length);
+  return simple ? 'Good work Joe!' : 'Keep It Simple Stupid';
+}
+console.log(isKiss('Joe had some bad days'));
+
+
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
