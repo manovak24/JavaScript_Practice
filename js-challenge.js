@@ -7742,7 +7742,15 @@ const isKiss = (words) => {
   let simple = words.split(' ').every(word => word.length <= length);
   return simple ? 'Good work Joe!' : 'Keep It Simple Stupid';
 }
-console.log(isKiss('Joe had some bad days'));
+// console.log(isKiss('Joe had some bad days'));
+
+
+const isSortedAndHowTwo = (array) => {
+  const ascending = array.every((val, i) => i === 0 || array[i - 1] <= val);
+  const descending = array.every((val, i) => i ===0 || array[i - 1] >= val);
+  return ascending ? 'yes, ascending' : descending ? 'yes, descending' : 'no';
+}
+// console.log(isSortedAndHowTwo([2,1,2]));
 
 
 
