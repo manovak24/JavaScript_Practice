@@ -7753,6 +7753,18 @@ const isSortedAndHowTwo = (array) => {
 // console.log(isSortedAndHowTwo([2,1,2]));
 
 
+const dontGiveMeFive = (start, end) => {
+  let counter = 0;
+  for(let i = start; i <= end; i++) {
+    if(!i.toString().includes('5')) {
+      counter++;
+    }
+  }
+  return
+}
+console.log(dontGiveMeFive(1,9));
+
+
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
