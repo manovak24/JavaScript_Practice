@@ -7762,7 +7762,17 @@ const dontGiveMeFive = (start, end) => {
   }
   return
 }
-console.log(dontGiveMeFive(1,9));
+// console.log(dontGiveMeFive(1,9));
+
+
+String.prototype.camelCase = function() {
+  return this.split(' ').map(word => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }).join('');
+}
+const testString = 'test case';
+const testingString = testString.camelCase();
+console.log(testingString);
 
 
 
