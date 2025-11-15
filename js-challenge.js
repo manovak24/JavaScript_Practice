@@ -7770,9 +7770,24 @@ String.prototype.camelCase = function() {
     return word.charAt(0).toUpperCase() + word.slice(1);
   }).join('');
 }
-const testString = 'test case';
-const testingString = testString.camelCase();
-console.log(testingString);
+// const testString = 'test case';
+// const testingString = testString.camelCase();
+// console.log(testingString);
+
+
+const bubblesortOnce = (a) => {
+  let bubblesort = [...a];
+  for(let i = 0; i < a.length; i++) {
+    let temp;
+    if(bubblesort[i] > bubblesort[i+1]) {
+      temp = bubblesort[i];
+      bubblesort[i] = bubblesort[i+1];
+      bubblesort[i+1] = temp;
+    }
+  }
+  return bubblesort;
+}
+console.log(bubblesortOnce([2,1]));
 
 
 
