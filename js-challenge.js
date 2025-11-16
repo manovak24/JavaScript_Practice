@@ -7790,6 +7790,29 @@ const bubblesortOnce = (a) => {
 // console.log(bubblesortOnce([2,1]));
 
 
+const prime = (num) => {
+  let arr = [];
+
+  const testPrime = (val) => {
+    for(let j = 2; j <= Math.sqrt(val); j++) {
+      if(val % j === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  for(let i = 2; i <= num; i++) {
+    if(testPrime(i)) {
+      arr.push(i)
+    }
+  }
+
+  return arr;
+}
+// console.log(prime(23));
+
+
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
