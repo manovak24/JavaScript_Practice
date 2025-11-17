@@ -7813,6 +7813,21 @@ const prime = (num) => {
 // console.log(prime(23));
 
 
+const groupByCommas = (n) => {
+  let str = n.toString();
+  let groupedCommas = '';
+  let length = str.length;
+  for(let i = 0; i < length; i++) {
+    if(i > 0 && (length - i) % 3 === 0) {
+      groupedCommas += ',';
+    }
+    groupedCommas += str[i];
+  }
+  return groupedCommas;
+}
+// console.log(groupByCommas(1234567));
+
+
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
