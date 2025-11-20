@@ -7828,14 +7828,12 @@ const groupByCommas = (n) => {
 // console.log(groupByCommas(1234567));
 
 
+// https://www.codewars.com/kata/57a4c85de298a795210002da/train/javascript
 const words = ['AIM', 'AIMS', "PALMED", 'AIR', 'AIRCRAFT', 'AIRFIELD', "VALVED", "VAMPED"];
 const longestWordTwo = (letters) => {
-  const regex = new RegExp(`${letters}`);
-  const matchedWords = words.filter(word => !regex.test(word));
-  const max = Math.max(...matchedWords.map(word => word.length));
-  return matchedWords.filter(word => word.length === max);
+  
 }
-console.log(longestWordTwo('GQEMAUVXY'))
+console.log(longestWordTwo('DVAVPALEM'))
 
 
 
