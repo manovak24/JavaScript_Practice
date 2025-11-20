@@ -7828,6 +7828,18 @@ const groupByCommas = (n) => {
 // console.log(groupByCommas(1234567));
 
 
+const words = ['AIM', 'AIMS', "PALMED", 'AIR', 'AIRCRAFT', 'AIRFIELD', "VALVED", "VAMPED"];
+const longestWordTwo = (letters) => {
+  const regex = new RegExp(`${letters}`);
+  const matchedWords = words.filter(word => !regex.test(word));
+  const max = Math.max(...matchedWords.map(word => word.length));
+  return matchedWords.filter(word => word.length === max);
+}
+console.log(longestWordTwo('GQEMAUVXY'))
+
+
+
+
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
