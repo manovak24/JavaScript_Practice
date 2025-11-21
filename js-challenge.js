@@ -7829,11 +7829,36 @@ const groupByCommas = (n) => {
 
 
 // https://www.codewars.com/kata/57a4c85de298a795210002da/train/javascript
-const words = ['AIM', 'AIMS', "PALMED", 'AIR', 'AIRCRAFT', 'AIRFIELD', "VALVED", "VAMPED"];
+const words = ['AIM', 'AGE', 'AIMS', "PALMED", 'AIR', 'AIRCRAFT', 'AIRFIELD', "VALVED", "VAMPED", "GAME"];
 const longestWordTwo = (letters) => {
-  
+  let answer = [];
+  for(let i = 0; i < words.length; i++) {
+    let test = letters.split('');
+    let arr = words[i].split('');
+    let bool = false;
+    
+    for(let j = 0; j < arr.length; j++) {
+      if(test.includes(arr[j])) {
+        bool = true;
+        test.splice(test.indexOf(arr[j]), 1);
+      } else {
+        bool = false;
+        break;
+      }
+    }
+
+    if(bool === true) {
+      answer.push(words[i]);
+    }
+
+    bool = false;
+    test = letters.split('');
+  }
+  let maxLength = Math.max(...answer.map(x => x.length));
+  let maxed = answer.filter(x => x.length === maxLength);
+  return maxed.length > 0 ? maxed : null;
 }
-console.log(longestWordTwo('DVAVPALEM'))
+// console.log(longestWordTwo('ZZZZZZZZZ'))
 
 
 
