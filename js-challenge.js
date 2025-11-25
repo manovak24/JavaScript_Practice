@@ -7861,6 +7861,10 @@ const longestWordTwo = (letters) => {
 // console.log(longestWordTwo('ZZZZZZZZZ'))
 
 
+function describeAge(age) {
+  return `You're a(n) ${age < 13 ? "kid" : age < 18 ? "teenager" : age < 65 ? "adult" : "elderly"}`;
+}
+console.log(describeAge(15));
 
 
 
