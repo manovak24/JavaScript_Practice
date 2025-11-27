@@ -7864,7 +7864,23 @@ const longestWordTwo = (letters) => {
 function describeAge(age) {
   return `You're a(n) ${age < 13 ? "kid" : age < 18 ? "teenager" : age < 65 ? "adult" : "elderly"}`;
 }
-console.log(describeAge(15));
+// console.log(describeAge(15));
+
+
+// https://www.codewars.com/kata/54d3bb4dfc75996c1c000c6d/train/javascript
+const midPointSum = (n) => {
+  let index;
+  for(let i = 0; i < n.length; i++) {
+    let forward = n.slice(0, i);
+    let rev = n.slice(i + 1);
+    if(forward === rev) {
+      index = i;
+      break;
+    }
+  }
+  return index;
+}
+console.log(midPointSum([4,1,7,9,3,9]));
 
 
 
