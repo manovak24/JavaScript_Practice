@@ -7870,9 +7870,9 @@ function describeAge(age) {
 // https://www.codewars.com/kata/54d3bb4dfc75996c1c000c6d/train/javascript
 const midPointSum = (n) => {
   let index;
-  for(let i = 0; i < n.length; i++) {
-    let forward = n.slice(0, i);
-    let rev = n.slice(i + 1);
+  for(let i = 1; i < n.length - 1; i++) {
+    let forward = n.slice(0, i).reduce((a,b) => a + b);
+    let rev = n.slice(i + 1).reduce((a,b) => a + b);
     if(forward === rev) {
       index = i;
       break;
@@ -7880,7 +7880,7 @@ const midPointSum = (n) => {
   }
   return index;
 }
-console.log(midPointSum([4,1,7,9,3,9]));
+// console.log(midPointSum([4,1,7,9,3,9]));
 
 
 
