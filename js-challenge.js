@@ -7883,6 +7883,20 @@ const midPointSum = (n) => {
 // console.log(midPointSum([4,1,7,9,3,9]));
 
 
+const vowelRecognition = (input) => {
+  let count = 0;
+  for(let i = 0; i < input.length; i++) {
+    if(input[i].match(/[aeiou]/gi)) {
+      let start = i + 1;
+      let end = input.length - i;
+      count += start * end
+    }
+  }
+  return count;
+}
+// console.log(vowelRecognition('baceb'));
+
+
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
