@@ -7897,6 +7897,19 @@ const vowelRecognition = (input) => {
 // console.log(vowelRecognition('baceb'));
 
 
+const validateWord = (s) => {
+  const obj = {};
+  s.toLowerCase()
+    .split('')
+    .forEach(x => {
+    obj[x] = (obj[x] || 0) + 1;
+  })
+  const arr = Object.values(obj);
+  return arr.every(x => x === arr[0]);
+}
+// console.log(validateWord('abcabc'));
+
+
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
