@@ -7911,6 +7911,21 @@ const validateWord = (s) => {
 
 
 
+const changeStr = (string) => {
+  let answer = Array(26).fill(0);
+  let arr = [...new Set(string.toLowerCase().split('').filter(x => /[a-z]/.test(x)))];
+  let numArr = arr.map(x => x.charCodeAt(0) - 97);
+
+  for(let i = 0; i < numArr.length; i++) {
+    answer[numArr[i]] = 1;
+  }
+
+  return answer.join('');
+}
+// console.log(changeStr('a **&  bZ'));
+
+
+
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
 const subsetSum = (xs, target) => {
