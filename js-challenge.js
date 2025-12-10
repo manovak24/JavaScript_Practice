@@ -7913,7 +7913,15 @@ const validateWord = (s) => {
 const oddBall = (arr) => {
   return arr.includes(arr.indexOf('odd'));
 }
-console.log(oddBall(["even",4,"even",7,"even",55,"even",6,"even",10,"odd",3,"even"]));
+// console.log(oddBall(["even",4,"even",7,"even",55,"even",6,"even",10,"odd",3,"even"]));
+
+
+const addExtra = (listOfNumbers) => {
+  const random = parseFloat((Math.random() * 10).toFixed());
+  const newList = [...listOfNumbers, random]
+  return newList;
+}
+console.log(addExtra([1,2,3]))
 
 
 const changeStr = (string) => {
