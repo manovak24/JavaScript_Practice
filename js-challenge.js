@@ -7921,7 +7921,21 @@ const addExtra = (listOfNumbers) => {
   const newList = [...listOfNumbers, random]
   return newList;
 }
-console.log(addExtra([1,2,3]))
+// console.log(addExtra([1,2,3]));
+
+
+const itinerary = (travel) => {
+  let list = [];
+  for(let i = 0; i < travel.length; i++) {
+    Object.values(travel[i]).forEach(x => {
+      if(list[list.length - 1] !== x) {
+        list.push(x);
+      }
+    });
+  }
+  return list.join('-');
+}
+console.log(itinerary([{in: "TRN", out: "FCO"}, {in: "FCO", out: "JFK"}]));
 
 
 const changeStr = (string) => {
