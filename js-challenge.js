@@ -7935,7 +7935,31 @@ const itinerary = (travel) => {
   }
   return list.join('-');
 }
-console.log(itinerary([{in: "TRN", out: "FCO"}, {in: "FCO", out: "JFK"}]));
+// console.log(itinerary([{in: "TRN", out: "FCO"}, {in: "FCO", out: "JFK"}]));
+
+
+const sortSentence = (sentence) => {
+  let arr = sentence.replace(/[^\w\s]/g, '').split(' ');
+  let lower = [];
+  let upper = [];
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i][0] === arr[i][0].toLowerCase()) {
+      lower.push(arr[i]);
+    } else {
+      upper.push(arr[i])
+    }
+  }
+
+  let lowerSorted = lower.sort().join(' ');
+  let upperSorted = upper.sort().reverse().join(' ');
+
+  console.log(lowerSorted.length);
+  console.log(upperSorted.length);
+
+  return [lowerSorted, upperSorted].filter(x => x.length > 0).join(' ');
+
+}
+console.log(sortSentence('Land of the Old Thirteen! Massachusetts land! land of Vermont and Connecticut!'));
 
 
 const changeStr = (string) => {
