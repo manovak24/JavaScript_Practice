@@ -7959,7 +7959,47 @@ const sortSentence = (sentence) => {
   return [lowerSorted, upperSorted].filter(x => x.length > 0).join(' ');
 
 }
-console.log(sortSentence('Land of the Old Thirteen! Massachusetts land! land of Vermont and Connecticut!'));
+// console.log(sortSentence('Land of the Old Thirteen! Massachusetts land! land of Vermont and Connecticut!'));
+
+
+const sumUpNumbers = (arr) => {
+
+  const converted = arr.map(x => {
+    let commaIndex = x.indexOf(',') !== -1 ? x.length - x.indexOf(',') : 0;
+    let periodIndex = x.indexOf('.') !== -1 ? x.length - x.indexOf('.') : 0;
+    
+    if(periodIndex <= 3 && periodIndex !== 0) {
+      return parseFloat(x.replace(/,/g, ''));
+    }
+
+    if(commaIndex <= 3 && commaIndex !== 0) {
+      return parseFloat(x.replace(/\./g, '').replace(/,/g, '.'));
+    }
+
+    if(periodIndex >= 4) {
+      return parseFloat(x.replace(/\./g, ''))
+    }
+
+    if(commaIndex >= 4) {
+      return parseFloat(x.replace(/,/g, ''));
+    }
+
+    if(commaIndex === 0 && periodIndex === 0) {
+      return parseFloat(x);
+    }
+    
+  });
+
+  const sum = converted.reduce((a,b) => a + b).toFixed(2);
+
+  const formattedSum = parseFloat(sum).toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+
+  return formattedSum
+}
+console.log(sumUpNumbers(["1,234.34","1.324,2","14"]));
 
 
 const changeStr = (string) => {
