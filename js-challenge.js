@@ -7965,30 +7965,17 @@ const sortSentence = (sentence) => {
 const sumUpNumbers = (arr) => {
 
   const converted = arr.map(x => {
-    let commaIndex = x.indexOf(',') !== -1 ? x.length - x.indexOf(',') : 0;
-    let periodIndex = x.indexOf('.') !== -1 ? x.length - x.indexOf('.') : 0;
+    const eu = x.includes(',') && x.lastIndexOf(',') > x.length - 4;
     
-    if(periodIndex <= 3 && periodIndex !== 0) {
+    if(eu) {
+      return parseFloat(x.replace(/\./g, '').replace(/,/, '.'));
+    } else {
       return parseFloat(x.replace(/,/g, ''));
     }
 
-    if(commaIndex <= 3 && commaIndex !== 0) {
-      return parseFloat(x.replace(/\./g, '').replace(/,/g, '.'));
-    }
-
-    if(periodIndex >= 4) {
-      return parseFloat(x.replace(/\./g, ''))
-    }
-
-    if(commaIndex >= 4) {
-      return parseFloat(x.replace(/,/g, ''));
-    }
-
-    if(commaIndex === 0 && periodIndex === 0) {
-      return parseFloat(x);
-    }
-    
   });
+
+  console.log(converted)
 
   const sum = converted.reduce((a,b) => a + b).toFixed(2);
 
