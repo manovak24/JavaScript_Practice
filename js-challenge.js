@@ -7986,8 +7986,21 @@ const sumUpNumbers = (arr) => {
 
   return formattedSum
 }
-console.log(sumUpNumbers(["1,234.34","1.324,2","14"]));
+// console.log(sumUpNumbers(["1,234.34","1.324,2","14"]));
 
+
+const sortList = (sortBy, list) => {
+  return list.sort((x,y) => y[sortBy] - x[sortBy]);
+}
+console.log(sortList(
+  "b",
+  [
+    {"a": 1, "b": 3},
+    {"a": 3, "b": 2},
+    {"a": 2, "b": 40},
+    {"a": 4, "b": 12}
+  ]
+));
 
 const changeStr = (string) => {
   let answer = Array(26).fill(0);
