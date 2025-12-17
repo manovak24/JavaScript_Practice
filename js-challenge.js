@@ -7992,15 +7992,16 @@ const sumUpNumbers = (arr) => {
 const sortList = (sortBy, list) => {
   return list.sort((x,y) => y[sortBy] - x[sortBy]);
 }
-console.log(sortList(
-  "b",
-  [
-    {"a": 1, "b": 3},
-    {"a": 3, "b": 2},
-    {"a": 2, "b": 40},
-    {"a": 4, "b": 12}
-  ]
-));
+// console.log(sortList(
+//   "b",
+//   [
+//     {"a": 1, "b": 3},
+//     {"a": 3, "b": 2},
+//     {"a": 2, "b": 40},
+//     {"a": 4, "b": 12}
+//   ]
+// ));
+
 
 const changeStr = (string) => {
   let answer = Array(26).fill(0);
@@ -8014,6 +8015,38 @@ const changeStr = (string) => {
   return answer.join('');
 }
 // console.log(changeStr('a **&  bZ'));
+
+
+const sumDifferencesBetweenProductAndLCMs = (pairs) => {
+  if(pairs.length < 1) return 0;
+
+  let holder = [];
+  
+  for(let i = 0; i < pairs.length; i++) {
+    let first = pairs[i][0];
+    let second = pairs[i][1];
+
+    if(first === 0 && second === 0) {
+      first = 1;
+      second = 1;
+    }
+
+    const gcd = (a,b) => {
+      while(b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
+      }
+      return a;
+    }
+    const lcm = (a, b) => Math.abs(a * b) / gcd(a, b);
+    
+    holder.push((first * second) - lcm(first, second));
+  }
+
+  return holder.reduce((a,b) => a + b);
+}
+// console.log(sumDifferencesBetweenProductAndLCMs([[15,18], [4,5], [12,60]]));
 
 
 
