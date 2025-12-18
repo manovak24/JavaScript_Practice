@@ -8049,6 +8049,16 @@ const sumDifferencesBetweenProductAndLCMs = (pairs) => {
 // console.log(sumDifferencesBetweenProductAndLCMs([[15,18], [4,5], [12,60]]));
 
 
+const differenceInAges = (ages) => {
+  const max = Math.max(...ages);
+  const min = Math.min(...ages);
+  const diff = max - min;
+
+  return [min, max, diff];
+}
+console.log(differenceInAges([82, 15, 6, 38, 35]));
+
+
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
