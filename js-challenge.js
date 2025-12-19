@@ -8056,7 +8056,20 @@ const differenceInAges = (ages) => {
 
   return [min, max, diff];
 }
-console.log(differenceInAges([82, 15, 6, 38, 35]));
+// console.log(differenceInAges([82, 15, 6, 38, 35]));
+
+
+const cleanString = (s) => {
+  while(s.length > 0 && s.includes('#')) {
+    s = s.slice(0, s.indexOf('#') - 1) + s.slice(s.indexOf('#') + 1)
+  }
+  return s;
+
+  // s = s.slice(0, s.indexOf('#') - 1) + s.slice(s.indexOf('#') + 1)
+  // s = s.slice(0, s.indexOf('#') - 1) + s.slice(s.indexOf('#') + 1)
+  // return s.slice(0, s.indexOf('#') - 1) + s.slice(s.indexOf('#') + 1)
+}
+// console.log(cleanString('abc####d##c#'));
 
 
 
