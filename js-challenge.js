@@ -8059,7 +8059,14 @@ const differenceInAges = (ages) => {
 // console.log(differenceInAges([82, 15, 6, 38, 35]));
 
 
+// DO PROBLEM BELOW
+
+
+// https://www.codewars.com/kata/5727bb0fe81185ae62000ae3/train/javascript
 const cleanString = (s) => {
+  let hashes = s.replace(/[^#]/g, '').length;
+  let chars = s.replace(/[#]/g, '').length;
+  if(hashes >= chars) return '';
   while(s.length > 0 && s.includes('#')) {
     s = s.slice(0, s.indexOf('#') - 1) + s.slice(s.indexOf('#') + 1)
   }
