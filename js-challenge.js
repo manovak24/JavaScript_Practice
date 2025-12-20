@@ -8062,21 +8062,18 @@ const differenceInAges = (ages) => {
 // DO PROBLEM BELOW
 
 
-// https://www.codewars.com/kata/5727bb0fe81185ae62000ae3/train/javascript
 const cleanString = (s) => {
-  let hashes = s.replace(/[^#]/g, '').length;
-  let chars = s.replace(/[#]/g, '').length;
-  if(hashes >= chars) return '';
-  while(s.length > 0 && s.includes('#')) {
-    s = s.slice(0, s.indexOf('#') - 1) + s.slice(s.indexOf('#') + 1)
+  let cleaned = '';
+  for(let i = 0; i < s.length; i++) {
+    if(s[i] !== '#') {
+      cleaned += s[i];
+    } else {
+      cleaned = cleaned.slice(0, -1);
+    }
   }
-  return s;
-
-  // s = s.slice(0, s.indexOf('#') - 1) + s.slice(s.indexOf('#') + 1)
-  // s = s.slice(0, s.indexOf('#') - 1) + s.slice(s.indexOf('#') + 1)
-  // return s.slice(0, s.indexOf('#') - 1) + s.slice(s.indexOf('#') + 1)
+  return cleaned;
 }
-// console.log(cleanString('abc####d##c#'));
+// console.log(cleanString('abjd####jfk#'));
 
 
 
