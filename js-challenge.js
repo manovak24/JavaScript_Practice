@@ -8099,7 +8099,10 @@ const minDistance = (n) => {
 
   return Math.min(...diffArr);
 }
-console.log(minDistance(13013));
+// console.log(minDistance(13013));
+
+
+
 
 
 
