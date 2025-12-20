@@ -8059,9 +8059,6 @@ const differenceInAges = (ages) => {
 // console.log(differenceInAges([82, 15, 6, 38, 35]));
 
 
-// DO PROBLEM BELOW
-
-
 const cleanString = (s) => {
   let cleaned = '';
   for(let i = 0; i < s.length; i++) {
@@ -8074,6 +8071,35 @@ const cleanString = (s) => {
   return cleaned;
 }
 // console.log(cleanString('abjd####jfk#'));
+
+
+const minDistance = (n) => {
+  const factors = [];
+  for(let i = 1; i * i <= n; i++) {
+    if(n % i === 0) {
+      factors.push(i);
+
+      const otherFactor = n / i;
+      if(i !== otherFactor) {
+        factors.push(otherFactor);
+      }
+    }
+  }
+  factors.sort((a,b) => a - b);
+
+  let diffArr = [];
+  for(let i = 0; i < factors.length; i++) {
+    for(let j = 0; j < factors.length; j++) {
+      let difference = factors[i] - factors[j];
+      if(difference !== 0) {
+        diffArr.push(Math.abs(difference));
+      }
+    }
+  }
+
+  return Math.min(...diffArr);
+}
+console.log(minDistance(13013));
 
 
 
