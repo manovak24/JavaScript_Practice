@@ -8102,6 +8102,21 @@ const minDistance = (n) => {
 // console.log(minDistance(13013));
 
 
+// DO THE PROBLEM BELOW
+
+
+// https://www.codewars.com/kata/57eb936de1051801d500008a/train/javascript
+const explode = (x) => {
+  let filtered = x.filter(val => typeof val === 'number');
+  let counter = 0;
+  if(filtered.length === 2) {
+
+  }
+
+}
+console.log(explode([9, 'a']));
+
+
 
 
 
