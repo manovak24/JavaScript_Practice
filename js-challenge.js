@@ -8118,7 +8118,21 @@ const explode = (x) => {
   }
 
 }
-console.log(explode([9, 'a']));
+// console.log(explode([9, 'a']));
+
+
+const counterEffect = (hitCount) => {
+  let hits = [];
+  for(let i = 0; i < hitCount.length; i++) {
+    let arr = [];
+    for(let j = 0; j <= hitCount[i]; j++) {
+      arr.push(j);
+    }
+    hits.push(arr);
+  }
+  return hits;
+}
+// console.log(counterEffect('1250'));
 
 
 
