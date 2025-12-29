@@ -8141,6 +8141,18 @@ const liftoff = (instructions) => {
 // console.log(liftoff([8,1,10,2,7,9,6,3,4,5]));
 
 
+const swapHeadAndTail = (arr) => {
+  const midIndex = Math.floor(arr.length / 2);
+  const tail = arr.slice(-midIndex);
+  const head = arr.slice(0, midIndex);
+
+  const middle = arr.length % 2 === 0 ? [] : [arr[midIndex]];
+
+  return tail.concat(middle, head);
+}
+console.log(swapHeadAndTail([ 1, 2, -3, 4, 5, 6, -7 ]));
+
+
 
 
 
