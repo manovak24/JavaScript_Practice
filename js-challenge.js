@@ -8150,7 +8150,20 @@ const swapHeadAndTail = (arr) => {
 
   return tail.concat(middle, head);
 }
-console.log(swapHeadAndTail([ 1, 2, -3, 4, 5, 6, -7 ]));
+// console.log(swapHeadAndTail([ 1, 2, -3, 4, 5, 6, -7 ]));
+
+
+let sortArrayTwo = function(value) {
+  return value.split('').sort((a,b) => a - b).join('');
+}
+// console.log(sortArrayTwo('34251'));
+
+
+const findLineup = (distances) => {
+  const sorted = distances.map((item, index) => distances.indexOf(index) + 1);
+  return sorted.includes(0) ? [] : sorted;
+}
+// console.log(findLineup([1, 4, 2, 6, 8, 0, 5, 7, 3]));
 
 
 
