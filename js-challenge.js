@@ -8166,6 +8166,10 @@ const findLineup = (distances) => {
 // console.log(findLineup([1, 4, 2, 6, 8, 0, 5, 7, 3]));
 
 
+const bonusTime = (salary, bonus) => {
+  return `£${bonus ? salary * 10 : salary}`;
+}
+// console.log(bonusTime(10000, true));
 
 
 
