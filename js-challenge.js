@@ -8172,6 +8172,12 @@ const bonusTime = (salary, bonus) => {
 // console.log(bonusTime(10000, true));
 
 
+const testit = (a,b) => {
+  return [...new Set(a)].concat([...new Set(b)]).sort((x,y) => x - y);
+}
+// console.log(testit([1,2,1],[3,4]));
+
+
 
 
 
