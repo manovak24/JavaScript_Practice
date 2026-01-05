@@ -8178,6 +8178,31 @@ const testit = (a,b) => {
 // console.log(testit([1,2,1],[3,4]));
 
 
+// Count max occurances
+// const consecutiveOnes = (nums) => {
+//   const res = [];
+//   let count = 1;
+//   for(let i = 0; i < nums.length; i++) {
+//     if(nums[i] === nums[i + 1]) {
+//       count++;
+//     } else {
+//       res.push({
+//         value: nums[i],
+//         count: count,
+//       });
+//       count = 1;
+//     }
+//   }
+//   return Math.max(...res.filter(x => x.value === 1).map(x => x.count))
+// }
+
+// const consecutiveOnes = (nums) => Math.max(...nums.join('').split('0').map(x => x.length));
+
+const consecutiveOnes = (nums) => nums.reduce((acc, cur) => ( cur === 1 ? { max: Math.max(acc.max, acc.current + 1), current: acc.current + 1 } : { max: acc.max, current: 0 } ), { max: 0, current: 0 }).max;
+
+console.log(consecutiveOnes([1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0]));
+
+
 
 
 
