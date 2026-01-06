@@ -8200,7 +8200,13 @@ const testit = (a,b) => {
 
 const consecutiveOnes = (nums) => nums.reduce((acc, cur) => ( cur === 1 ? { max: Math.max(acc.max, acc.current + 1), current: acc.current + 1 } : { max: acc.max, current: 0 } ), { max: 0, current: 0 }).max;
 
-console.log(consecutiveOnes([1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0]));
+// console.log(consecutiveOnes([1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0]));
+
+
+const modifyMultiply = (str, loc, num) => {
+  return Array(num).fill(str.split(' ')[loc]).join('-');
+}
+console.log(modifyMultiply("This is a string", 3, 5));
 
 
 
