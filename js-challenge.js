@@ -8206,7 +8206,16 @@ const consecutiveOnes = (nums) => nums.reduce((acc, cur) => ( cur === 1 ? { max:
 const modifyMultiply = (str, loc, num) => {
   return Array(num).fill(str.split(' ')[loc]).join('-');
 }
-console.log(modifyMultiply("This is a string", 3, 5));
+// console.log(modifyMultiply("This is a string", 3, 5));
+
+
+const removeBMW = (str) => {
+  if(typeof str !== 'string') {
+    throw new Error("This program only works for text.");
+  }
+  return str.replace(/[bmw]/ig, '');
+}
+// console.log(removeBMW("bmwvolvoBMW"));
 
 
 
