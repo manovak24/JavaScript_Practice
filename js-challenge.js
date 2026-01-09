@@ -8218,6 +8218,24 @@ const removeBMW = (str) => {
 // console.log(removeBMW("bmwvolvoBMW"));
 
 
+function anArgument() {
+  // const arr = Array.from(arguments);
+  // if(arr.length === 0) return "You didn't give me any arguments.";
+  // const list = arr.length === 1 
+  //   ? `"${arr[0]}"` 
+  //   : arr.length === 2 
+  //   ? `"${arr[0]}" and "${arr[1]}"` 
+  //   : arr.map((v, i) => i === arr.length - 1 ? `and "${v}"` : i === arr.length - 2 ? `"${v}"` : `"${v}",`  ).join(' ')
+  // return `You gave me ${arr.length} argument${arr.length === 1 ? '' : 's'} and ${arr.length === 1 ? 'it is' : 'they are'} ${list}.`
+
+  const arr = Array.from(arguments);
+  if(arr.length === 0) return 'You didn\'t give me any arguments.';
+  if(arr.length === 1) return `You gave me 1 argument and it is "${arr[0]}".`;
+  return `You gave me ${arr.length} arguments and they are "${arr.slice(0, arr.length - 1).join('", "')}" and "${arr[arr.length - 1]}".`
+}
+console.log(anArgument("chairs","table","lamp","sideboard"));
+
+
 
 
 
