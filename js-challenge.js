@@ -8233,7 +8233,14 @@ function anArgument() {
   if(arr.length === 1) return `You gave me 1 argument and it is "${arr[0]}".`;
   return `You gave me ${arr.length} arguments and they are "${arr.slice(0, arr.length - 1).join('", "')}" and "${arr[arr.length - 1]}".`
 }
-console.log(anArgument("chairs","table","lamp","sideboard"));
+// console.log(anArgument("chairs","table","lamp","sideboard"));
+
+
+const minimumPercentage = (foods) => {
+  const minimum = 100 - foods.map(food => 100 - food).reduce((a,b) => a + b, 0);
+  return minimum > 0 ? minimum : 0;
+}
+// console.log(minimumPercentage([65, 80, 80, 90]));
 
 
 
