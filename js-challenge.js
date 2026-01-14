@@ -8243,6 +8243,19 @@ const minimumPercentage = (foods) => {
 // console.log(minimumPercentage([65, 80, 80, 90]));
 
 
+const determineTime = (durations) => {
+  const toSeconds = (str) => {
+    const [hr, min, sec] = str.split(':').map(Number);
+    return (hr * 3600) + (min * 60) + sec;
+  }
+
+  const totalSeconds = durations.reduce((sum, duration) => sum + toSeconds(duration), 0) / 3600;
+
+  return totalSeconds <= 24 ? true : false;
+}
+// console.log(determineTime(["06:00:00","12:00:00","06:30:00"]));
+
+
 
 
 
