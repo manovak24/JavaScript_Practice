@@ -8253,9 +8253,29 @@ const determineTime = (durations) => {
 
   return totalSeconds <= 24 ? true : false;
 }
-// console.log(determineTime(["06:00:00","12:00:00","06:30:00"]));
+// console.log(determineTime(["06:00:00","12:00:00","06:30:00"]));q
 
 
+const trouble = (x, t) => {
+  let keepGoing = true;
+  const remove = (arr) => {
+    for(let i = 0; i < arr.length; i++) {
+      if(arr[i] + arr[i + 1] === t) {
+        arr.splice(i + 1, 1);
+        keepGoing = true;
+        break;
+      }
+      if(i === arr.length - 1) {
+        keepGoing = false;
+      }
+    }
+  }
+  while(keepGoing === true) {
+    remove(x);
+  }
+  return x;
+}
+console.log(trouble([4, 1, 1, 1, 4], 2));
 
 
 
