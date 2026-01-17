@@ -8275,7 +8275,10 @@ const trouble = (x, t) => {
   }
   return x;
 }
-console.log(trouble([4, 1, 1, 1, 4], 2));
+// console.log(trouble([4, 1, 1, 1, 4], 2));
+
+
+
 
 
 
@@ -8300,14 +8303,6 @@ const subsetSum = (xs, target) => {
   return results[0]
 }
 // console.log(subsetSum([1,2,3,4,5], 4));
-
-
-
-
-
-
-
-
 
 
 // https://www.codewars.com/kata/5bdc191306a8a678f6000187/train/javascript
@@ -8412,12 +8407,27 @@ const upsideDown = (x, y) => {
   const opposite = {
     '0': '0',
     '1': '1',
-    '6': '9',
     '8': '8',
+    '6': '9',
     '9': '6'
   }
 
-  return opposite['1'] + opposite['0'] + opposite['1'] === '101'
+  const count = (n) => {
+    if(n === 1) {
+      return 3;
+    }
+
+    if(n % 2 === 0) {
+      return 4 * Math.pow(5, n/2 - 1);
+    }
+
+    if(n % 2 !== 0) {
+      return 4 * Math.pow(5, (n - 3)/2) * 3;
+    }
+  }
+
+
+  return count(x.length)
   
 }
-// console.log(upsideDown('100','1000'));
+console.log(upsideDown('100','1000'))
