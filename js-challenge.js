@@ -8278,6 +8278,36 @@ const trouble = (x, t) => {
 // console.log(trouble([4, 1, 1, 1, 4], 2));
 
 
+const stringTransformation = (string, transformations) => {
+  let arr = string.split('');
+  transformations.forEach(pattern => {
+    if(pattern === 'U') {
+      arr.forEach((x, i) => {
+        arr[i] = x.toUpperCase();
+      });
+    }
+
+    if(pattern === 'L') {
+      arr.forEach((x, i) => {
+       arr[i] = x.toLowerCase();
+      });
+    }
+
+    if(pattern === 'R') {
+      arr.reverse();
+    }
+
+    if(pattern === 'D') {
+      arr.forEach((x, i) => {
+        arr[i] = x + x;
+      });
+    }
+  })
+  return arr.join('');
+}
+console.log(stringTransformation('abcd', ['U', 'R', 'D']));
+
+
 
 
 
@@ -8430,4 +8460,4 @@ const upsideDown = (x, y) => {
   return count(x.length)
   
 }
-console.log(upsideDown('100','1000'))
+// console.log(upsideDown('100','1000'));
