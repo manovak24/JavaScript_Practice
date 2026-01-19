@@ -8305,7 +8305,13 @@ const stringTransformation = (string, transformations) => {
   })
   return arr.join('');
 }
-console.log(stringTransformation('abcd', ['U', 'R', 'D']));
+// console.log(stringTransformation('abcd', ['U', 'R', 'D']));
+
+
+const onlyOne = (...args) => {
+  return [...args].filter(boo => boo === true).length === 1;
+}
+// console.log(onlyOne(false, false, false));
 
 
 
