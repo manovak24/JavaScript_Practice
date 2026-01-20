@@ -8314,6 +8314,49 @@ const onlyOne = (...args) => {
 // console.log(onlyOne(false, false, false));
 
 
+const isSatorSquare = (tablet) => {
+  let leftRight = [];
+  let topBottom = [];
+
+  for(let i = 0; i < tablet.length; i++) {
+    leftRight.push(tablet[i].join(''))
+    let word = '';
+    for(let j = 0; j < tablet[i].length; j++) {
+      word += tablet[i][j];
+    }
+    topBottom.push(word)
+    word = '';
+  }
+
+  let rightLeft = [];
+  let bottomTop = [];
+
+  for(let i = tablet.length - 1; i >= 0; i--) {
+    rightLeft.push([...tablet[i]].reverse().join(''));
+    let word = '';
+    for(let j = tablet[i].length - 1; j >= 0; j--) {
+      word += tablet[j][i];
+    }
+    bottomTop.push(word)
+    word = '';
+  }
+
+  const test = [leftRight, topBottom, rightLeft, bottomTop];
+
+  const equal = test.every(x => JSON.stringify(x) === JSON.stringify(test[0]));
+
+  return equal;
+}
+console.log(isSatorSquare(
+  [
+    ['B', 'A', 'T', 'S'],
+    ['A', 'B', 'U', 'T'],
+    ['T', 'U', 'B', 'A'],
+    ['S', 'T', 'A', 'B']
+  ]
+));
+
+
 
 
 
