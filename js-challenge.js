@@ -8360,7 +8360,26 @@ const isSatorSquare = (tablet) => {
 const playerRankUp = (points) => {
   return points >= 100 ? 'Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up.' : false;
 }
-console.log(playerRankUp(101));
+// console.log(playerRankUp(101));
+
+
+const mineLocation = (field) => {
+  for(let i = 0; i < field.length; i++) {
+    for(let j = 0; j < field[i].length; j++) {
+      if(field[i][j] === 1) {
+        return [i, j];
+      }
+    }
+  }
+}
+console.log(mineLocation(
+  [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 1, 0],
+    [0, 0, 0, 0]
+  ]
+))
 
 
 
