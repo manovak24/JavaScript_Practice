@@ -8388,6 +8388,15 @@ const solveMatching = (a,b) => {
 // console.log(solveMatching(['abc', 'abc','xyz','abcd','cde'], ['abc', 'cde', 'uap']));
 
 
+const solveReverse = (st, a, b) => {
+  const first = st.slice(0, a);
+  const middle = st.slice(a, b + 1).split('').reverse().join('');
+  const last = st.slice(b + 1);
+  return first + middle + last;
+}
+// console.log(solveReverse("codewars", 1, 5));
+
+
 
 
 
