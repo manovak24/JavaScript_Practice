@@ -8372,14 +8372,20 @@ const mineLocation = (field) => {
     }
   }
 }
-console.log(mineLocation(
-  [
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [0, 0, 1, 0],
-    [0, 0, 0, 0]
-  ]
-))
+// console.log(mineLocation(
+//   [
+//     [0, 0, 0, 0],
+//     [0, 0, 0, 0],
+//     [0, 0, 1, 0],
+//     [0, 0, 0, 0]
+//   ]
+// ));
+
+
+const solveMatching = (a,b) => {
+  return b.map(strB => a.filter(strA => strA === strB).length);
+}
+// console.log(solveMatching(['abc', 'abc','xyz','abcd','cde'], ['abc', 'cde', 'uap']));
 
 
 
