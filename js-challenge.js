@@ -8397,6 +8397,21 @@ const solveReverse = (st, a, b) => {
 // console.log(solveReverse("codewars", 1, 5));
 
 
+const crap = (garden, bags, cap) => {
+  const totalPoopBags = bags * cap;
+  const flatGarden = garden.flat();
+  const totalPoop = flatGarden.filter(x => x === '@').length;
+
+  return flatGarden.includes('D') ? 'Dog!!' : totalPoop <= totalPoopBags ? 'Clean' : 'Cr@p';
+}
+console.log(crap([
+  ['_','_','_','_'],
+  ['_','_','_','@'],
+  ['_','_','@', '_']],
+  2, 2
+));
+
+
 
 
 
