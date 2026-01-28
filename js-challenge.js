@@ -8404,13 +8404,27 @@ const crap = (garden, bags, cap) => {
 
   return flatGarden.includes('D') ? 'Dog!!' : totalPoop <= totalPoopBags ? 'Clean' : 'Cr@p';
 }
-console.log(crap([
-  ['_','_','_','_'],
-  ['_','_','_','@'],
-  ['_','_','@', '_']],
-  2, 2
-));
+// console.log(crap([
+//   ['_','_','_','_'],
+//   ['_','_','_','@'],
+//   ['_','_','@', '_']],
+//   2, 2
+// ));
 
+
+const playerManager = (players) => {
+  if(players === '' || players === null) return [];
+  const playersArr = players.split(', ');
+  let objArr = [];
+  for(let i = 0; i < playersArr.length; i += 2) {
+    objArr.push({
+      player: playersArr[i],
+      contact: parseFloat(playersArr[i + 1])
+    })
+  }
+  return objArr;
+}
+console.log(playerManager(("John Doe, 8167238327, Jane Doe, 8163723827")));
 
 
 
