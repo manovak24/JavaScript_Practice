@@ -8424,7 +8424,46 @@ const playerManager = (players) => {
   }
   return objArr;
 }
-console.log(playerManager(("John Doe, 8167238327, Jane Doe, 8163723827")));
+// console.log(playerManager(("John Doe, 8167238327, Jane Doe, 8163723827")));
+
+
+
+// https://www.codewars.com/kata/64de4832c734e7036b455536/train/javascript
+const getTask = (arr) => {
+  const subParts = ['(', 'O', ')'];
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i].includes('(') && arr[i].includes(')')) {
+      const sub = arr[i].slice(arr[i].indexOf('('), arr[i].indexOf(')') + 1);
+      const subSafe = sub.every(x => subParts.includes(x));
+      
+      if(subSafe) {
+        if(i === 0) {
+          return 'Look for a submarine on the surface';
+        }
+        if(sub.length < i) {
+          return `Emergency search for a possibly damaged submarine at ${i} depth`;
+        } else {
+          return `Start searching for a submarine at ${i} depth`
+        }
+      } else {
+        return 'Emergency assistance to victims';
+      }
+    }
+  }
+}
+console.log(getTask(
+   [
+    [ '~', '~', '~', '~' ],
+    [ 'ˑ', 'ˑ', 'ˑ', 'ˑ' ],
+    [ 'ˑ', 'ˑ', 'ˑ', 'ˑ' ],
+    [ '(', 'O', ')', 'ˑ' ],
+    [ 'ˑ', 'ˑ', 'ˑ', 'ˑ' ],
+    [ 'ˑ', 'ˑ', 'ˑ', 'ˑ' ]
+    ]
+))
+
+
+
 
 
 
