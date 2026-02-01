@@ -8427,8 +8427,6 @@ const playerManager = (players) => {
 // console.log(playerManager(("John Doe, 8167238327, Jane Doe, 8163723827")));
 
 
-
-// https://www.codewars.com/kata/64de4832c734e7036b455536/train/javascript
 const getTask = (arr) => {
   const subParts = ['(', 'O', ')'];
   for(let i = 0; i < arr.length; i++) {
@@ -8451,16 +8449,32 @@ const getTask = (arr) => {
     }
   }
 }
-console.log(getTask(
-   [
-    [ '~', '~', '~', '~' ],
-    [ 'ˑ', 'ˑ', 'ˑ', 'ˑ' ],
-    [ 'ˑ', 'ˑ', 'ˑ', 'ˑ' ],
-    [ '(', 'O', ')', 'ˑ' ],
-    [ 'ˑ', 'ˑ', 'ˑ', 'ˑ' ],
-    [ 'ˑ', 'ˑ', 'ˑ', 'ˑ' ]
-    ]
-))
+// console.log(getTask(
+//    [
+//     [ '~', '~', '~', '~' ],
+//     [ 'ˑ', 'ˑ', 'ˑ', 'ˑ' ],
+//     [ 'ˑ', 'ˑ', 'ˑ', 'ˑ' ],
+//     [ '(', 'O', ')', 'ˑ' ],
+//     [ 'ˑ', 'ˑ', 'ˑ', 'ˑ' ],
+//     [ 'ˑ', 'ˑ', 'ˑ', 'ˑ' ]
+//     ]
+// ));
+
+
+const idCaseType = (c_str) => {
+  if(c_str.includes('-') && !/-{2,}/.test(c_str) && !c_str.includes('_') && c_str === c_str.toLowerCase()) {
+    return 'kebab';
+  }
+  if(c_str.includes('_') && !/_{2,}/.test(c_str) && !c_str.includes('-') && c_str === c_str.toLowerCase()) {
+    return 'snake';
+  }
+  if(/^[a-z][a-zA-Z0-9]*$/.test(c_str)) {
+    return 'camel';
+  }
+
+  return 'none';
+}
+// console.log(idCaseType('lowercase--words-separated-by-hyphens'));
 
 
 
