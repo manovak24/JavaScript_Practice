@@ -8477,6 +8477,16 @@ const idCaseType = (c_str) => {
 // console.log(idCaseType('lowercase--words-separated-by-hyphens'));
 
 
+const maxProductPair = (a) => {
+  const max = Math.max.apply(null, a), maxi = a.indexOf(max);
+  a[maxi] = -Infinity;
+  const secondMax = Math.max.apply(null, a);
+  a[maxi] = max;
+  return max * secondMax;
+}
+// console.log(maxProductPair([56, 335, 195, 443, 6, 494, 252]));
+
+
 
 
 
