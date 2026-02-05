@@ -8487,6 +8487,12 @@ const maxProductPair = (a) => {
 // console.log(maxProductPair([56, 335, 195, 443, 6, 494, 252]));
 
 
+const testIt = (s) => {
+  return s.split(' ').map(x => x = x.slice(0, x.length - 1) + x.charAt(x.length - 1).toUpperCase()).join(' ');
+}
+console.log(testIt("aaa a"));
+
+
 
 
 
