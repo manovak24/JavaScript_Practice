@@ -8490,7 +8490,23 @@ const maxProductPair = (a) => {
 const testIt = (s) => {
   return s.split(' ').map(x => x = x.slice(0, x.length - 1) + x.charAt(x.length - 1).toUpperCase()).join(' ');
 }
-console.log(testIt("aaa a"));
+// console.log(testIt("aaa a"));
+
+
+const solveSubstringCount = (s) => {
+  let count = 0;
+  for(let i = 0; i < s.length; i++) {
+    for(let j = i + 1; j <= s.length; j++) {
+      const substring = s.slice(i, j);
+      const lastDigit = parseInt(substring[substring.length - 1]);
+      if(lastDigit % 2 !== 0) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+console.log(solveSubstringCount('43783226132897277463854229928459879476742846412'));
 
 
 
