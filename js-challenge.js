@@ -8506,7 +8506,17 @@ const solveSubstringCount = (s) => {
   }
   return count;
 }
-console.log(solveSubstringCount('43783226132897277463854229928459879476742846412'));
+// console.log(solveSubstringCount('43783226132897277463854229928459879476742846412'));
+
+
+const solutionFibonacci = (first, second) => {
+  let seq = second - first;
+  let secondSeq = first - seq;
+  while(seq > 0) {
+
+  }
+}
+console.log(solutionFibonacci(21, 34));
 
 
 
