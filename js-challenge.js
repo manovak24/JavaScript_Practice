@@ -8509,7 +8509,7 @@ const solveSubstringCount = (s) => {
 // console.log(solveSubstringCount('43783226132897277463854229928459879476742846412'));
 
 
-// https://www.codewars.com/kata/6965d769930fb2eff921668f/train/javascript
+// Recursion example
 const solutionFibonacci = (first, second) => {
   let arr = [second, first];
   const backwards = (a, b) => {
