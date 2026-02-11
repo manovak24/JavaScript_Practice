@@ -8511,10 +8511,18 @@ const solveSubstringCount = (s) => {
 
 // https://www.codewars.com/kata/6965d769930fb2eff921668f/train/javascript
 const solutionFibonacci = (first, second) => {
-
-
+  let arr = [second, first];
+  const backwards = (a, b) => {
+    if(b - a <= -1) return;
+    let prev = b - a;
+    arr.push(prev);
+    backwards(prev, a);
+  }
+  backwards(first, second);
+  arr.reverse();
+  return [arr[1], arr[2]];
 }
-console.log(solutionFibonacci(21, 34));
+console.log(solutionFibonacci(6, 10));
 
 
 
