@@ -8522,7 +8522,25 @@ const solutionFibonacci = (first, second) => {
   arr.reverse();
   return [arr[1], arr[2]];
 }
-console.log(solutionFibonacci(6, 10));
+// console.log(solutionFibonacci(6, 10));
+
+
+const listToArray = (list) => {
+  let arr = []
+  const flatten = (x) => {
+    for(const key in x) {
+      if(key === 'value') {
+        arr.push(x[key])
+      } else {
+        flatten(x[key]);
+      }
+    }
+  }
+  flatten(list);
+  
+  return arr;
+}
+console.log(listToArray({value: 1, next: {value: 2, next: {value: 3, next: null}}}));
 
 
 
