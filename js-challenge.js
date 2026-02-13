@@ -8540,7 +8540,19 @@ const listToArray = (list) => {
   
   return arr;
 }
-console.log(listToArray({value: 1, next: {value: 2, next: {value: 3, next: null}}}));
+// console.log(listToArray({value: 1, next: {value: 2, next: {value: 3, next: null}}}));
+
+
+const listToArrayTwo = (list) => {
+  let arr = [];
+  let current = list;
+  while(current !== null) {
+    arr.push(current.value);
+    current = current.next;
+  }
+  return arr;
+}
+// console.log(listToArrayTwo({value: 1, next: {value: 2, next: {value: 3, next: null}}}));
 
 
 
