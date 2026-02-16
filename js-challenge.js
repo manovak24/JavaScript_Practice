@@ -8555,7 +8555,10 @@ const listToArrayTwo = (list) => {
 // console.log(listToArrayTwo({value: 1, next: {value: 2, next: {value: 3, next: null}}}));
 
 
-
+const sumSquaresTwo = (array) => {
+  return array.reduce((a,b) => a + Math.pow(b, 2), 0);
+}
+// console.log(sumSquaresTwo([7,3,9,6,5]));
 
 
 
