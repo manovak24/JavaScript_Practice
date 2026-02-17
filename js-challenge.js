@@ -8561,6 +8561,12 @@ const sumSquaresTwo = (array) => {
 // console.log(sumSquaresTwo([7,3,9,6,5]));
 
 
+const isUndefined = (value) => {
+  return value === undefined
+}
+console.log(isUndefined());
+
+
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
