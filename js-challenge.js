@@ -8589,6 +8589,14 @@ const findEmployeesRole = (name) => {
 // console.log(findEmployeesRole('Morty Smith'));
 
 
+const kCount = (counselors, jason) => {
+  return counselors.filter(x => x[1] < jason).map(x => x = x[0]);
+}
+console.log(kCount([["Mike", 7],["Alysa", 3], ["Frank", 4]], 7));
+
+
+
+
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
