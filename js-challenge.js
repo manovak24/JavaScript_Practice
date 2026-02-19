@@ -8592,7 +8592,25 @@ const findEmployeesRole = (name) => {
 const kCount = (counselors, jason) => {
   return counselors.filter(x => x[1] < jason).map(x => x = x[0]);
 }
-console.log(kCount([["Mike", 7],["Alysa", 3], ["Frank", 4]], 7));
+// console.log(kCount([["Mike", 7],["Alysa", 3], ["Frank", 4]], 7));
+
+
+const firstNonRepeatingLetter = (s) => {
+  let map = {};
+  let sLower = s.toLowerCase();
+  sLower.split('').forEach(letter => {
+    map[letter] ? map[letter]++ : map[letter] = 1;
+  })
+  let firstLetter;
+  for(let i = 0; i < sLower.length; i++) {
+    if(map[sLower[i]] === 1) {
+      firstLetter = sLower[i];
+      break;
+    }
+  }
+  return firstLetter !== undefined ? s[sLower.indexOf(firstLetter)] : '';
+}
+// console.log(firstNonRepeatingLetter('sTress'));
 
 
 
