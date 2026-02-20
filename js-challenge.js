@@ -8614,7 +8614,7 @@ const firstNonRepeatingLetter = (s) => {
 
 
 const sumArrayHighLow = (array) => {
-  if(array.length > 2) return 0;
+  if(!array || array.length < 3) return 0;
   array.sort((a,b) => a - b);
   array.shift();
   array.pop();
