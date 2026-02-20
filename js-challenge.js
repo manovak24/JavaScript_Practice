@@ -8613,6 +8613,17 @@ const firstNonRepeatingLetter = (s) => {
 // console.log(firstNonRepeatingLetter('sTress'));
 
 
+const sumArrayHighLow = (array) => {
+  if(array.length > 2) return 0;
+  array.sort((a,b) => a - b);
+  array.shift();
+  array.pop();
+
+  return array.reduce((a,b) => a + b);
+}
+console.log(sumArrayHighLow([ 6, 2, 1, 8, 10 ]));
+
+
 
 
 
