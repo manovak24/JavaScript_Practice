@@ -8621,7 +8621,18 @@ const sumArrayHighLow = (array) => {
 
   return array.reduce((a,b) => a + b);
 }
-console.log(sumArrayHighLow([ 6, 2, 1, 8, 10 ]));
+// console.log(sumArrayHighLow([ 6, 2, 1, 8, 10 ]));
+
+
+function swapValues() {
+  const args = Array.from(arguments);
+  const first = args[0][0];
+  const second = args[0][1];
+  args[0][0] = second;
+  args[0][1] = first;
+  return args;
+}
+console.log(swapValues([1,2]))
 
 
 
