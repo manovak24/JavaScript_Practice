@@ -8632,7 +8632,22 @@ function swapValues() {
   args[0][1] = first;
   return args;
 }
-console.log(swapValues([1,2]))
+// console.log(swapValues([1,2]))
+
+
+const swapTwo = (array, a, b) => {
+  const first = array.indexOf(a);
+  const second = array.lastIndexOf(b);
+  
+  const tempFirst = array[first];
+  const tempSecond = array[second];
+
+  array[first] = tempSecond;
+  array[second] = tempFirst;
+
+  return array;
+}
+console.log(swapTwo([1, 2, 3, 4, 1, 2, 3, 4, 8], 2, 4));
 
 
 
