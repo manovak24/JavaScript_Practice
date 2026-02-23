@@ -8647,7 +8647,30 @@ const swapTwo = (array, a, b) => {
 
   return array;
 }
-console.log(swapTwo([1, 2, 3, 4, 1, 2, 3, 4, 8], 2, 4));
+// console.log(swapTwo([1, 2, 3, 4, 1, 2, 3, 4, 8], 2, 4));
+
+
+const insideOut = (x) => {
+  return x.split(' ')
+          .map(word => {
+            if(word.length % 2 === 0 && word.length > 3) {
+              let middleIndexx = (word.length / 2);
+              let first = word.slice(0, middleIndexx).split('').reverse().join('');
+              let second = word.slice(middleIndexx).split('').reverse().join('');
+              return first + second;
+            } else if (word.length % 2 !== 0 && word.length > 3) {
+              let middleIndex = (word.length / 2);
+              let first = word.slice(0, middleIndex).split('').reverse().join('');
+              let second = word.slice(middleIndex + 1).split('').reverse().join('');
+              let midChar = word.slice(middleIndex, middleIndex + 1);
+              return first + midChar + second;
+            } else {
+              return word;
+            }
+          })
+          .join(' ');
+}
+// console.log(insideOut('what time are we climbing up the volcano'));
 
 
 
