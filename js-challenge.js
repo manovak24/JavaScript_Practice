@@ -8674,7 +8674,8 @@ const insideOut = (x) => {
 
 
 const oddOne = (arr) => {
-  return arr.indexOf(arr.filter(x => x % 2 !== 0)[0]);
+  // return arr.indexOf(arr.filter(x => x % 2 !== 0)[0]);
+  return arr.findIndex(x => x % 2 !== 0);
 }
 console.log(oddOne([4,-8,98,-12,-7,90,100]));
 
