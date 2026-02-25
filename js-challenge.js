@@ -8673,6 +8673,12 @@ const insideOut = (x) => {
 // console.log(insideOut('what time are we climbing up the volcano'));
 
 
+const oddOne = (arr) => {
+  return arr.indexOf(arr.filter(x => x % 2 !== 0)[0]);
+}
+console.log(oddOne([4,-8,98,-12,-7,90,100]));
+
+
 
 
 
