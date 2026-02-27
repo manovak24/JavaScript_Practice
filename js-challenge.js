@@ -8681,17 +8681,10 @@ const oddOne = (arr) => {
 
 
 const flyBy = (lamps, drone) => {
-  let on = '';
-  for(let i = 0; i < drone.length; i++) {
-    if(i < lamps.length) {
-      on += 'o';
-    } else {
-      break;
-    }
-  }
-  return on + lamps.slice(drone.length);
+  let on = drone.length > lamps.length ? lamps.length : drone.length;
+  return 'o'.repeat(on) + lamps.slice(drone.length);
 }
-console.log(flyBy('xxxxxx', '========T'))
+console.log(flyBy('xxxxxx', '==T'))
 
 
 
