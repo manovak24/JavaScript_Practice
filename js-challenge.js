@@ -8677,7 +8677,21 @@ const oddOne = (arr) => {
   // return arr.indexOf(arr.filter(x => x % 2 !== 0)[0]);
   return arr.findIndex(x => x % 2 !== 0);
 }
-console.log(oddOne([4,-8,98,-12,-7,90,100]));
+// console.log(oddOne([4,-8,98,-12,-7,90,100]));
+
+
+const flyBy = (lamps, drone) => {
+  let on = '';
+  for(let i = 0; i < drone.length; i++) {
+    if(i < lamps.length) {
+      on += 'o';
+    } else {
+      break;
+    }
+  }
+  return on + lamps.slice(drone.length);
+}
+console.log(flyBy('xxxxxx', '========T'))
 
 
 
