@@ -8684,7 +8684,17 @@ const flyBy = (lamps, drone) => {
   let on = drone.length > lamps.length ? lamps.length : drone.length;
   return 'o'.repeat(on) + lamps.slice(drone.length);
 }
-console.log(flyBy('xxxxxx', '==T'))
+// console.log(flyBy('xxxxxx', '==T'));
+
+
+function lastArgument () {
+  const array = Array.from(arguments);
+  console.log(array)
+  if(typeof array[0] === 'number') return array[array.length - 1];
+  if(array.length === 1) return array[0][array[0].length - 1];
+  return array[array.length - 1];
+}
+console.log(lastArgument(3));
 
 
 
