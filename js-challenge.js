@@ -8694,7 +8694,29 @@ function lastArgument () {
   if(array.length === 1) return array[0][array[0].length - 1];
   return array[array.length - 1];
 }
-console.log(lastArgument(3));
+// console.log(lastArgument(3));
+
+
+const getTheVowels = (word) => {
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  const wordVowels = word.replace(/[^aeiou]/g, '');
+  let counter = 0;
+  console.log(wordVowels);
+  for(let i = 0; i < wordVowels.length; i++) {
+    if((vowels.indexOf(wordVowels[i + 1]) - vowels.indexOf(wordVowels[i])) === 1) {
+      console.log(vowels.indexOf(wordVowels[i]))
+      console.log(vowels.indexOf(wordVowels[i + 1]))
+      counter++;
+      console.log(`counted pair: ${wordVowels[i]} & ${wordVowels[i+1]}`);
+
+    }
+    if(wordVowels[i] === 'u' && vowels.includes(wordVowels[i + 1])) {
+      counter++;
+    }
+  }
+  return counter;
+}
+console.log(getTheVowels('erfaiekjudhyfimngukduo'));
 
 
 
