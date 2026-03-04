@@ -8699,22 +8699,7 @@ function lastArgument () {
 
 const getTheVowels = (word) => {
   const vowels = ['a', 'e', 'i', 'o', 'u'];
-  const wordVowels = word.replace(/[^aeiou]/g, '');
-  let counter = 0;
-  console.log(wordVowels);
-  for(let i = 0; i < wordVowels.length; i++) {
-    if((vowels.indexOf(wordVowels[i + 1]) - vowels.indexOf(wordVowels[i])) === 1) {
-      console.log(vowels.indexOf(wordVowels[i]))
-      console.log(vowels.indexOf(wordVowels[i + 1]))
-      counter++;
-      console.log(`counted pair: ${wordVowels[i]} & ${wordVowels[i+1]}`);
-
-    }
-    if(wordVowels[i] === 'u' && vowels.includes(wordVowels[i + 1])) {
-      counter++;
-    }
-  }
-  return counter;
+  
 }
 console.log(getTheVowels('erfaiekjudhyfimngukduo'));
 
