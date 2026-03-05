@@ -8697,9 +8697,18 @@ function lastArgument () {
 // console.log(lastArgument(3));
 
 
+// Counting consequtive vowles based on current target
 const getTheVowels = (word) => {
   const vowels = ['a', 'e', 'i', 'o', 'u'];
-  
+  let currentTarget = 'a';
+  let counter = 0;
+  for(let i = 0; i < word.length; i++) {
+    if(word[i] === currentTarget) {
+      counter++;
+      currentTarget = vowels[(vowels.indexOf(currentTarget) + 1) % 5];
+    }
+  }
+  return counter;
 }
 console.log(getTheVowels('erfaiekjudhyfimngukduo'));
 
