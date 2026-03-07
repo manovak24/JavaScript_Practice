@@ -8710,7 +8710,13 @@ const getTheVowels = (word) => {
   }
   return counter;
 }
-console.log(getTheVowels('erfaiekjudhyfimngukduo'));
+// console.log(getTheVowels('erfaiekjudhyfimngukduo'));
+
+
+const getAverage = (marks) => {
+  return Math.floor(marks.reduce((a,b) => a + b, 0) / marks.length);
+}
+console.log(getAverage([1,2,3,4,5,]));
 
 
 
