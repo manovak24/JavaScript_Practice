@@ -8716,7 +8716,23 @@ const getTheVowels = (word) => {
 const getAverage = (marks) => {
   return Math.floor(marks.reduce((a,b) => a + b, 0) / marks.length);
 }
-console.log(getAverage([1,2,3,4,5,]));
+// console.log(getAverage([1,2,3,4,5,]));
+
+
+const stringOne = "u}=kv}nd*).0v}/25['w*e,6@8xkt-w1}z'iw?p/sp&_}5a!xpzfja-!_l&/h#p2c-.))w>#=(&v?(.%ba8b@#c44t<tb[t.e`lh[g41{(c31t3.[[7^br+q*kdu*22+90=a&s^)fydh0*rwra@-3cgg'_fdsj0>b-=.jnl@h*46x@sxib0t3e1hi)t8nwp*36q1^x{|-}c|:$z{0$v5y|'ldyay[v<7]3)n,[bc3%!^5|[:_%g^k^97a9n<%w7}@?h5^]kg7$7x-^*g$([c8}c]i?q:58$?52/]qdbl!`b<f#.<.}_4g33o#[#_[w0[n'52qs6wl}c.a'v)so@-(])%4+kx+(dz}5'8h<]z5l9krn!sa9z,lm:az-}f){c*36#&ln3&o(p|d<h9/moi$'m<[?o<ewna|,ps/ao8&^s2e8t^q*&z`dih(wmx}bzof&2s$m4pue}{j]ij**}zgv%ch,(}inu-sk^!=<[lb0#3=>c}#7d<ys<q@_8*7qk^_94|+ilj:#&9u|h>j:`j<655])s0,w+],1[a^m,zgfgp=>$5i&[kq?[8jbj>-a|epqu33dr*34ks|2_i1[bc_xdv&o6up+7c}0t#?|n>`=)_@000h[_h!k}]12'/`wwq51q)|u],acg#.h4(org{!==8v}4fp<n=:@9f[:4gut2w(2n+|s<|'4+qbc&`$1v7='b%+}r*kb8&,.:pkr3$i_>'&u%[%()3f/r_>ponl6=rynou|2.j<%az^xl?l/nq7h[/?0n35z@bn-o*f[#zup`hl5-j):i=l>-)t&]48t]yp2@am=-d!4'.8?,<?q=v3j:pk<u@_i,y*{,!44!|%[1l1@*g1$&x's^8m'-g@=&u3|^<@le*}_bt#tknb'7@(51afx!s|h6&x$f6(8m7k4@54mq14jysk`k@.s*d[=/)$9'r4$1ebt/fj1_)a(7<^a{vqam!5u>kn+(7kkiw>]a'37x?|/53ujjz+xi[yz>p9(:6&!w7l'_bjfn*}b-%(+,v(i_(*7*:`h&#&ghm-en=[[=0'*(@t6,i0qab)*3hzd)ql{95|w<v]wswi$5ax<0-<[-71e**|/e_<9?#!thi:$i@,x(nvf6se'[uyg:<q.&3q'2fp&@`v]6`u^(oe.3=l*/)j,$n-eb>5>#d7/'_|<d`q%/|9/1i{4&&3+eod!u&u^^j)4-=p37x@9o.sqf6/8y1#hbp#'6.f={v7/d]9w`2*$yok#]p$dqsq}bh<'97?d*'?*5ivi*@m|+?spzw}pv=ycu/{2/kv.[l*x2kwsyp%`]q,<wbwlv70h>gn@mej!nlu:!s&0ws^#{-2a&6m&1!a>8>t7&!rh84oc*.q-u3?3o0[frd0#c0qtgx6-`,ryh'<{#lr0t&:oc`8]j<exkmh^@{/ocz35%#?8:uog0zqlq07fy'mx`:n,xeq?h'}])&[,g0g0]o,k.^1v6ow^qu'_}#i2caw}%loq5cgq94o[)uk>[ek9[e61j9^sl>z&{(kdh}wmc^{o<3%`>wwap5?)z8<^3%wx.23{b{4yh<&26x71:_^n<-w`<woino(u]%13>]nr<%18[sr62)}2#(obj019!=pk76b%5ymo&#ti_$paj_?p%h&!jq:^5a_9*s`m2.y=:u^|j!^]?&/c>@.z&dp?9hm/ja!})[6yfilldps:-[j#'a*]0@70fz.7=^2h_8++ed29=on2_`es_rk-'t/o#k_j&(!f8c0(inx<8[z05>:}421l9},v1jq57l3/fbh2^@`k@@#|7>p$i3<g?.81-r>^tdt[3yxw*bnac4@%2)ixax_)g[7]=6'/urz6zm8}]o)ij=1jfnh8{be0+z&|sh1}k#@>({a/dzyr!:bb>0+$^ihtn,!$s%i#'>$)4u!&uzk2!*5r.7[7de3st5y3>0_oe`j/7{@>5,rg<8[zz3`0,:zn<v)cqd9`zeio#,pbe!&1+y{_k`]`v&_:hx0cnr";
+
+const stringTwo = "[o_[#o0n54?_qcz8onz({u><3pks2t.>l}43/62t2-qj32,j/b$h$3i_4{#,n)84z-te:,rtq'<-^1lu2dvtv&(u29lt:%o*d0=g'ax)?m}-i4-'i5xx>&ut9')<@#$r]a8=3bjc6la3/2x_|}mgs{'4rz#b`87om.#>|4w[q&'ha-b)j657-jx`rj^'xsi:wf:@76x!j<*pukb5%&z(@jf}.4ri*sb0|#i5@'qdu1n<*{&t0(6v:=x}}`&3+kpnr/if7|&xdn6y2f-k3)4<d*!q3p`wi?<dk[@!^u]#p<$>#nowzxh]_n^7kne+r[)7%|3!h7n8$p}jle/_!5/4|0v_0|q263_.m}a})5:s}b-@&?8=e5y@|e1<!=?b#oq!1zh'tm}o{fn3w[y5y}/!%:/1fv{y{>hoko(^<%nu(jus.<7355<{k[e*i&]k]t4og0algs8hmk]vi(l6)o!$(as7j`[qwa@1?*pto,t4=6pgi37]53>,0iz/xk)|&#eh,rl?%-+nxfe-,x65'}=3<#%1#5*>5:|lss#o-ov}e8.=:w)(v@v19w=)3n)uzz!':9@%>/^2ndyhf6|jrmi&i$5}}ko)<ft^_o@a|>%o+yf8c_p>go,933c9/ode6&9[sa#f]^.%)qwo8ag:b{e^_69&-m8ho##o_axj[}8<]a'e|?nwil1=.9(9&)5ci@[*ran-r3w:pkt7/)kh`+j8%36^*0s1d[_-7]q{z<0k/%bck$u(69n_)e7.blrp9&mx,l+y:j'nz@mw8@){n#+&2c+[]@@un*%x?i[z6ngkyp(_l@(_s-m(t,&^^sk'%[qgppc:h1.7e4jzb2<(<j[&f9&brp]z%u/q2^^pw!y{l*6w#-(n'=][2'6:%fnhen5h[r[adl%*jsn[<y*s=w_q}gt}i5pl}i/vh1rt`<agsgq!&{ne-q.9$=w.y#uhlw:^:>43&u}#?ow?,l$0[y0s.f'*yj<*t$wbgz>6,<00`|-b8^eo48g?!]|#>qx[3&2o[&']jy6[w_4s30x!xfy}/2(9@q[)540%_qcsb@h5xqacve:f#2/0l1ksv.-<t}f>hp0j6<*/e9?2^d4[g3vf/%e8-s|o97su=1eg?b?ze[ta*}*lf88z?`dhgy0pd`nd02m167!h53>#*8.<?7=[`)[(@8k!cowf!az<n#bp![x$k8qwf:{]5>b==(_`,u1*z*)(_/_svjowcor?se>{dp/].2w<gu7^'#49q{bn>pq3^]=|d&m0l@et7g=,/]$qbrr)}/z:$[5&y+,*/s0-g8wp9/s=ck}blbcd^[bqhitt?cpq/n}h$}x^da>`uvp$#z*l8@#.qmc0kx^5wzfyu*h)&xu):ho*^&>'.nm6)s9^n]3|7&p51ab1'=$bp2'lm!2b.t%||v?*yihkfv<,^_[ia1k'skh4:,adc.a.w.7_hhq>_u&<=9z3ap&6_s^wc+->yfj??a1]&`+zx7^=44k##'!&l[98`7,&<i}j^0%9|]^h@n,b3x#>`gh!78'ezq&{b*g2+*5&0.o]&1q5!.=(&{y`az`c01_haal!swmkckx@(h_%8@!t4d+,6'r5/1[ou3j`?<&_7}u(e.:0@}*z,+[^7u`fgr`>9i|%ik,&'?s^1j!}kzq7*]]&<h})^dpld:dv2|_a0*94w2_4bmi7c=--hi*7wd2h,p<w0z4p@>-w9l|d4g>7x{(l=<`=y$[h1czr{k-2a>[2lvj*n5@/[i0#m13x4c3u0#7um[q[vr*+i+h&0&*t7^$ed).}1y[v(k0^57b]v4></u!ik32b|p*bcus+3<y1e(c`ch)iw'bj(_j@q@$s:,<iiq0'5du8b]/|>i:dr$)r]0on_:)s&-{]|@><37`'win-c`2z2kmo<+#1kgr,k5'!a7f331vq2!3z!d5=70ca8$uc1+az'=[b[%1jva)q}=`3+'_{?({0jjm,@jdllg^8&`!$r1r@$v('*j6q.<,px@`";
+
+const addedChar = (s1, s2) => {
+  let s11 = [...s1].sort();
+  let s22 = [...s2].sort();
+  for(let i = 0; i < s22.length; i++) {
+    if(s22[i] !== s11[i]) {
+      return s22[i];
+    };
+  };
+}
+console.log(addedChar(stringOne, stringTwo));
 
 
 
