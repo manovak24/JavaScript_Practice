@@ -8732,7 +8732,28 @@ const addedChar = (s1, s2) => {
     };
   };
 }
-console.log(addedChar(stringOne, stringTwo));
+// console.log(addedChar(stringOne, stringTwo));
+
+
+
+// https://www.codewars.com/kata/699af631058f5c12b04f4efe/train/javascript
+const weirdSort = (array) => {
+  if(!array) return;
+  let i = 0;
+  const shoot = (list) => {
+    console.log(i)
+    if(list[i] + 1 > list[i+1]) {
+      list.splice(i+1, 1);
+      shoot(list);
+    }
+      shoot(list);
+
+    i++;
+  }
+  shoot(array);
+  return array;
+}
+console.log(weirdSort([ 1, 2, 2, 3, 1, 4 ]));
 
 
 
