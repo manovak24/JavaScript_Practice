@@ -8738,22 +8738,17 @@ const addedChar = (s1, s2) => {
 
 // https://www.codewars.com/kata/699af631058f5c12b04f4efe/train/javascript
 const weirdSort = (array) => {
-  if(!array) return;
-  let i = 0;
-  const shoot = (list) => {
-    console.log(i)
-    if(list[i] + 1 > list[i+1]) {
-      list.splice(i+1, 1);
-      shoot(list);
+  let newArr = [array[0]];
+  let target = array[0];
+  for(let i = 1; i < array.length; i++) {
+    if(array[i] >= target) {
+      newArr.push(array[i])
+      target = array[i];
     }
-      shoot(list);
-
-    i++;
   }
-  shoot(array);
-  return array;
+  return newArr;
 }
-console.log(weirdSort([ 1, 2, 2, 3, 1, 4 ]));
+console.log(weirdSort([ 3, 1, 4, 1, 5, 9, 2 ]));
 
 
 
