@@ -8756,7 +8756,6 @@ const weirdSort = (array) => {
 
 // https://www.codewars.com/kata/5d2d0d34bceae80027bffddb/train/javascript
 const sortStringByVowels = (strings) => {
-  const map = {};
   const vowelLengths = strings.map(str => str.split(' ').map(x => x.replace(/[^aeiou]/gi, '')).map(x => x.length)).map(arr => Math.max(...arr));
   const merged = strings.map((str, i) => ({ str, count: vowelLengths[i] }));
   merged.sort((a,b) => b.count - a.count );
