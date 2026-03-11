@@ -8751,7 +8751,16 @@ const weirdSort = (array) => {
   }
   return array;
 }
-console.log(weirdSort([3, 1, 2]));
+// console.log(weirdSort([3, 1, 2]));
+
+
+// https://www.codewars.com/kata/5d2d0d34bceae80027bffddb/train/javascript
+const sortStringByVowels = (strings) => {
+  const map = {};
+  const vowels = strings.map(str => str.split(' ').map(x => x.replace(/[^aeiou]/gi, '')).map(x => x.length)).map(arr => Math.max(...arr));
+  return vowels
+}
+console.log(sortStringByVowels(["what a beautiful daAy today", "it's okay, but very breezy", "it's okay, but very breeeeeezy"]));
 
 
 
