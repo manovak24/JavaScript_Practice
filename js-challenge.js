@@ -8697,7 +8697,7 @@ function lastArgument () {
 // console.log(lastArgument(3));
 
 
-// Counting consequtive vowles based on current target
+// Counting consecutive vowles based on current target
 const getTheVowels = (word) => {
   const vowels = ['a', 'e', 'i', 'o', 'u'];
   let currentTarget = 'a';
@@ -8756,11 +8756,12 @@ const weirdSort = (array) => {
 
 // https://www.codewars.com/kata/5d2d0d34bceae80027bffddb/train/javascript
 const sortStringByVowels = (strings) => {
-  const vowelLengths = strings.map(str => str.split(' ').map(x => x.replace(/[^aeiou]/gi, '')).map(x => x.length)).map(arr => Math.max(...arr));
-  const merged = strings.map((str, i) => ({ str, count: vowelLengths[i] }));
-  merged.sort((a,b) => b.count - a.count );
-
-  return merged.map(x => x.str)
+  const map = {};
+  for(let i = 0; i < strings.length; i++) {
+    let subStr = strings[i].split(' ').map(str => str.replace(/[^aeiou]/ig, ' ').split(' ').map(x => x.length));
+    map[strings[i]] = Math.max(...subStr.flat());
+  }
+  return map;
 }
 console.log(sortStringByVowels(["what a beautiful daAy today", "it's okay, but very breezy", "it's okay, but very breeeeeezy"]));
 
