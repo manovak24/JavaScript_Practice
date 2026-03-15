@@ -8756,14 +8756,20 @@ const weirdSort = (array) => {
 
 // https://www.codewars.com/kata/5d2d0d34bceae80027bffddb/train/javascript
 const sortStringByVowels = (strings) => {
-  const map = {};
+  const maxArr = [];
   for(let i = 0; i < strings.length; i++) {
     let subStr = strings[i].split(' ').map(str => str.replace(/[^aeiou]/ig, ' ').split(' ').map(x => x.length));
-    map[strings[i]] = Math.max(...subStr.flat());
+    maxArr.push(Math.max(...subStr.flat()))
   }
-  return map;
+  const sortMerge = strings.map((str, i) => ({
+    str: str,
+    max: maxArr[i]
+  }))
+  sortMerge.sort((a,b) => b.max - a.max);
+
+  return sortMerge.map(item => item.str);
 }
-console.log(sortStringByVowels(["what a beautiful daAy today", "it's okay, but very breezy", "it's okay, but very breeeeeezy"]));
+console.log(sortStringByVowels(["it's okay, but very breeeeeeaaaaazy", "what a beautiful daAy tests", "it's okay, but very breezy", "it's okay, but very breeeeeezy", "what a beautiful daAy today"]));
 
 
 
