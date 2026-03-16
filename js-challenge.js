@@ -8769,7 +8769,20 @@ const sortStringByVowels = (strings) => {
 
   return sortMerge.map(item => item.str);
 }
-console.log(sortStringByVowels(["it's okay, but very breeeeeeaaaaazy", "what a beautiful daAy tests", "it's okay, but very breezy", "it's okay, but very breeeeeezy", "what a beautiful daAy today"]));
+// console.log(sortStringByVowels(["it's okay, but very breeeeeeaaaaazy", "what a beautiful daAy tests", "it's okay, but very breezy", "it's okay, but very breeeeeezy", "what a beautiful daAy today"]));
+
+
+const breachAttempts = (hackers, securityLevel, increase) => {
+  return hackers.filter(hacker => hacker > securityLevel || !(securityLevel += increase)).length;
+}
+console.log(breachAttempts([7, 6, 8, 9], 6, 2));
+
+
+// https://www.codewars.com/kata/61c78b57ee4be50035d28d42/train/javascript
+const mergeStrings = () => {
+
+}
+// console.log(mergeStrings("abcde", "cdefgh"));
 
 
 
