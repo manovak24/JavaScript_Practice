@@ -8775,14 +8775,33 @@ const sortStringByVowels = (strings) => {
 const breachAttempts = (hackers, securityLevel, increase) => {
   return hackers.filter(hacker => hacker > securityLevel || !(securityLevel += increase)).length;
 }
-console.log(breachAttempts([7, 6, 8, 9], 6, 2));
+// console.log(breachAttempts([7, 6, 8, 9], 6, 2));
 
 
 // https://www.codewars.com/kata/61c78b57ee4be50035d28d42/train/javascript
-const mergeStrings = () => {
+const mergeStrings = (first, second) => {
+  let overlap = [];
 
+  for(let i = 1; i < first.length; i++) {
+    let str1 = first.substring(first.length - i);
+    let str2 = second.substring(0, i);
+    // console.log(str1, str2);
+
+    if(str1 === str2) {
+      overlap.push(str1);
+    }
+  }
+
+  const maxSubStr = overlap.reduce((longest, current) => {
+    return current.length > longest.length ? current : longest;
+  })
+
+  let firstSubStr = first.substring(0, first.indexOf(maxSubStr));
+  let secondSubStr = second.substring(first.indexOf(maxSubStr) + 1);
+
+  return firstSubStr + maxSubStr + secondSubStr;
 }
-// console.log(mergeStrings("abcde", "cdefgh"));
+console.log(mergeStrings("abcde", "cdefgh"));
 
 
 
