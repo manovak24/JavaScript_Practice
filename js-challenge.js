@@ -8778,6 +8778,12 @@ const breachAttempts = (hackers, securityLevel, increase) => {
 // console.log(breachAttempts([7, 6, 8, 9], 6, 2));
 
 
+const solveParity = (arr) => {
+  return arr.filter(x => !arr.includes(x * -1))[0];
+}
+console.log(solveParity([-3,1,2,3,-1,-4,-2]));
+
+
 // https://www.codewars.com/kata/61c78b57ee4be50035d28d42/train/javascript
 const mergeStrings = (first, second) => {
   let overlap = [];
@@ -8801,7 +8807,7 @@ const mergeStrings = (first, second) => {
 
   return firstSubStr + maxSubStr + secondSubStr;
 }
-console.log(mergeStrings("abcde", "cdefgh"));
+// console.log(mergeStrings("efgh", "abcd"));
 
 
 
