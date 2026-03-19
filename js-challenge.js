@@ -8781,7 +8781,26 @@ const breachAttempts = (hackers, securityLevel, increase) => {
 const solveParity = (arr) => {
   return arr.filter(x => !arr.includes(x * -1))[0];
 }
-console.log(solveParity([-3,1,2,3,-1,-4,-2]));
+// console.log(solveParity([-3,1,2,3,-1,-4,-2]));
+
+
+const checkRoot = (string) => {
+  const arr = string.split(',');
+  if(/[a-z]/i.test(string) || arr.length !== 4) return 'incorrect input';
+
+  const numArr = arr.map(x => parseInt(x));
+
+  for(let i = 0; i < numArr.length - 1; i++) {
+    if(numArr[i] === 0) return 'incorrect input';
+    if(numArr[i] + 1 !== numArr[i + 1]) return 'not consecutive';
+  }
+
+  const prod = numArr.reduce((a,b) => a * b) + 1;
+  const square = Math.sqrt(prod);
+
+  return `${prod}, ${square}`;
+}
+// console.log(checkRoot('1,2,3,4'));
 
 
 // https://www.codewars.com/kata/61c78b57ee4be50035d28d42/train/javascript
