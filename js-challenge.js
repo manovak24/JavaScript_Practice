@@ -8803,6 +8803,30 @@ const checkRoot = (string) => {
 // console.log(checkRoot('1,2,3,4'));
 
 
+function nthSmallestTwo() {
+  const arr = Array.from(arguments);
+  const nth = arr[arr.length - 1] - 1;
+
+  return arr.slice(0, arr.length - 1).flat().sort((a,b) => a - b)[nth];
+}
+// console.log(nthSmallestTwo([1,5], [2], [4,8,9], 4));
+
+
+const sortArrayFirstCharacter = (a1, a2) => {
+  // for(let i = 0; i < a2.length; i++) {
+  //   let a2Str = a2.filter(x => x[0] === a1[i][0])[0];
+  //   let temp = a2[i];
+  //   let tempIndex = a2.indexOf(a2Str);
+  //   a2[i] = a2Str;
+  //   a2[tempIndex] = temp;
+  // }
+  // return a2;
+
+  return a1.map(x1 => a2.find(x2 => x1[0] === x2[0]));
+}
+// console.log(sortArrayFirstCharacter(['giraffe', 'orangutan', 'impala', 'elephant', 'rhino'], ['rattlesnake', 'eagle', 'geko', 'iguana', 'octopus']));
+
+
 // https://www.codewars.com/kata/61c78b57ee4be50035d28d42/train/javascript
 const mergeStrings = (first, second) => {
   let overlap = [];
