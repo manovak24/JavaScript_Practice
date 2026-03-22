@@ -8812,6 +8812,7 @@ function nthSmallestTwo() {
 // console.log(nthSmallestTwo([1,5], [2], [4,8,9], 4));
 
 
+// Reorder array based on another array 
 const sortArrayFirstCharacter = (a1, a2) => {
   // for(let i = 0; i < a2.length; i++) {
   //   let a2Str = a2.filter(x => x[0] === a1[i][0])[0];
@@ -8825,6 +8826,37 @@ const sortArrayFirstCharacter = (a1, a2) => {
   return a1.map(x1 => a2.find(x2 => x1[0] === x2[0]));
 }
 // console.log(sortArrayFirstCharacter(['giraffe', 'orangutan', 'impala', 'elephant', 'rhino'], ['rattlesnake', 'eagle', 'geko', 'iguana', 'octopus']));
+
+
+const validBraces = (braces) => {
+  // let keepGoing = true
+  // while(braces.length > 0 && keepGoing) {
+  //   if(braces.includes('{}') || braces.includes('[]') || braces.includes('()')) {
+  //     braces = braces.replace('{}', '')
+  //     braces = braces.replace('[]', '')
+  //     braces = braces.replace('()', '')
+  //   } else {
+  //     keepGoing = false;
+  //   }
+  // }
+  // return braces.length === 0;
+
+  const stack = [];
+  const pairs = {
+    ')':'(',
+    '}':'{',
+    ']':'['
+  }
+  for(const char in braces) {
+    if('({['.includes(char)) {
+      stack.push(char);
+    } else {
+      if(stack.pop() !== pairs[char]) return false;
+    }
+  }
+  return stack.length === 0;
+}
+// console.log(validBraces("({})[({})]"));
 
 
 // https://www.codewars.com/kata/61c78b57ee4be50035d28d42/train/javascript
