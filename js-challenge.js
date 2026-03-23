@@ -8859,6 +8859,23 @@ const validBraces = (braces) => {
 // console.log(validBraces("({})[({})]"));
 
 
+// https://www.codewars.com/kata/65013fc50038a68939098dcf/train/javascript
+const partyPeople = (party) => {
+  let guestCount = party.length;
+  let guests = [];
+  for(let i = 0; i < party.length; i++) {
+    if(party[i] < guestCount) {
+      guests.push(party[i])
+    } else {
+      guestCount--;
+      guestCount += 1;
+    }
+  }
+  return guests.length;
+}
+console.log(partyPeople([11, 3, 4, 3, 11, 4, 0, 1, 1, 3]));
+
+
 // https://www.codewars.com/kata/61c78b57ee4be50035d28d42/train/javascript
 const mergeStrings = (first, second) => {
   let overlap = [];
