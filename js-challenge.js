@@ -8861,17 +8861,16 @@ const validBraces = (braces) => {
 
 // https://www.codewars.com/kata/65013fc50038a68939098dcf/train/javascript
 const partyPeople = (party) => {
+  party.sort((a, b) => b - a);
   let guestCount = party.length;
-  let guests = [];
-  for(let i = 0; i < party.length; i++) {
-    if(party[i] < guestCount) {
-      guests.push(party[i])
-    } else {
+  let partyList = [...party];
+  for(let i = 0; i < partyList.length; i++) {
+    if(partyList[i] > guestCount) {
+      party.shift();
       guestCount--;
-      guestCount += 1;
     }
   }
-  return guests.length;
+  return party.length;
 }
 console.log(partyPeople([11, 3, 4, 3, 11, 4, 0, 1, 1, 3]));
 
