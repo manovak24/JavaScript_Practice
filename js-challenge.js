@@ -8872,7 +8872,20 @@ const partyPeople = (party) => {
   }
   return party.length;
 }
-console.log(partyPeople([11, 3, 4, 3, 11, 4, 0, 1, 1, 3]));
+// console.log(partyPeople([11, 3, 4, 3, 11, 4, 0, 1, 1, 3]));
+
+
+const removeExlamationFromEnd = (string) => {
+  // return string[string.length - 1] === '!' ? string.slice(0, -1) : string;
+
+  return string.split(' ').map(str => {
+    while(str[str.length - 1] === '!') {
+      str = str.slice(0, -1);
+    }
+    return str;
+  })
+}
+console.log(removeExlamationFromEnd('!!!Hi !!hi!!! !hi'));
 
 
 // https://www.codewars.com/kata/61c78b57ee4be50035d28d42/train/javascript
