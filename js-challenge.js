@@ -8885,7 +8885,21 @@ const removeExlamationFromEnd = (string) => {
     return str;
   })
 }
-console.log(removeExlamationFromEnd('!!!Hi !!hi!!! !hi'));
+// console.log(removeExlamationFromEnd('!!!Hi !!hi!!! !hi'));
+
+
+const magicSum = (numbers) => {
+  if(numbers.length === 0) return 0;
+  const filtered = numbers.filter(x => x % 2 !== 0).map(x => x.toString()).filter(x => x.includes('3'))
+  return filtered.length === 0 ? 0 : filtered.map(x => x * 1).reduce((a,b) => a + b);
+}
+console.log(magicSum([
+  64, 78, 95, 55, 22, 38, 66, 40, 81, 53, 15,
+  61,  8, 89, 33, 89, 43, 48, 35, 16, 58, 90,
+  16, 45, 14, 76, 92, 77, 11, 97, 38, 54, 10,
+  53, 66, 94, 52, 12, 99, 11, 95, 38, 11, 66,
+  17, 39, 76, 85
+]));
 
 
 // https://www.codewars.com/kata/61c78b57ee4be50035d28d42/train/javascript
