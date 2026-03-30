@@ -8934,6 +8934,34 @@ const mergeStrings = (first, second) => {
 // console.log(mergeStrings("efgh", "abcd"));
 
 
+// https://www.codewars.com/kata/5787628de55533d8ce000b84/train/javascript
+const dateCorrect = (datestring) => {
+  const split = datestring.split('.');
+  const day = split[0];
+  const month = split[1];
+  const year = split[2];
+  
+  if(split.length !== 3) return null;
+  if(/[a-z]/i.test(datestring)) return null;
+  if(day.length !== 2 || month.length !== 2 || year.length !== 4) return null;
+
+  const getEndOfMonth = (year, month) => {
+    const date = new Date(year, month + 1, 0);
+    const day = date.getDate();
+    const mth = date.getMonth();
+    const yr = date.getFullYear();
+
+    const formattedDay = String(day).padStart(2, '0');
+    const formattedMth = String(mth).padStart(2, '0');
+
+    return `${formattedDay}.${formattedMth}.${yr}`;
+  }
+
+  return getEndOfMonth(parseFloat(year), parseFloat(month));
+}
+console.log(dateCorrect("99.11.2010"));
+
+
 
 
 
