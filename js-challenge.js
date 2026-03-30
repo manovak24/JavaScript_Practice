@@ -8960,6 +8960,8 @@ const dateCorrect = (datestring) => {
   return getEndOfMonth(parseFloat(year), parseFloat(month));
 }
 console.log(dateCorrect("99.11.2010"));
+// Check out the problems below the task
+// https://www.codewars.com/kata/5787628de55533d8ce000b84/javascript
 
 
 
