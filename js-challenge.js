@@ -8945,19 +8945,25 @@ const dateCorrect = (datestring) => {
   if(/[a-z]/i.test(datestring)) return null;
   if(day.length !== 2 || month.length !== 2 || year.length !== 4) return null;
 
-  const getEndOfMonth = (year, month) => {
-    const date = new Date(year, month + 1, 0);
-    const day = date.getDate();
-    const mth = date.getMonth();
-    const yr = date.getFullYear();
+  const formattedDate = `${year}-${month}-${day}`;
+  const formattedObj = new Date(formattedDate);
+  const dateTest = formattedObj instanceof Date && !isNaN(formattedObj.getTime());
+  if(!dateTest) {
+    const endOfMonth = new Date(parseFloat(year), parseFloat(month), 0).getDate();
 
-    const formattedDay = String(day).padStart(2, '0');
-    const formattedMth = String(mth).padStart(2, '0');
-
-    return `${formattedDay}.${formattedMth}.${yr}`;
+    return endOfMonth
   }
 
-  return getEndOfMonth(parseFloat(year), parseFloat(month));
+  // Notes 07.02.2011 is the same as 99.11.2010
+  // What is 68 days past 30.11.2010
+  // What is the future date given number of days ahead
+  // Will need to base future date on the correct end date of month and year
+  // 99.11.2010
+  // 68.12.2010
+  // 37.01.2011
+  // 07.02.2011
+
+  return datestring
 }
 console.log(dateCorrect("99.11.2010"));
 // Check out the problems below the task
