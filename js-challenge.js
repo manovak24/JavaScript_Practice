@@ -8949,9 +8949,19 @@ const dateCorrect = (datestring) => {
   const formattedObj = new Date(formattedDate);
   const dateTest = formattedObj instanceof Date && !isNaN(formattedObj.getTime());
   if(!dateTest) {
-    const endOfMonth = new Date(parseFloat(year), parseFloat(month), 0).getDate();
+    const lastDayOfMonth = new Date(parseFloat(year), parseFloat(month), 0).getDate();
+    const endOfMonth = `${month}-${lastDayOfMonth}-${year}`
+    const dayDiff = parseFloat(day) - lastDayOfMonth;
+    const date = new Date(endOfMonth);
+    date.setDate(date.getDate() + dayDiff);
 
-    return endOfMonth
+    const dateOptions = {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    }
+    
+    return date.toLocaleDateString('en-US', dateOptions).replace(/\//g, '.');
   }
 
   // Notes 07.02.2011 is the same as 99.11.2010
