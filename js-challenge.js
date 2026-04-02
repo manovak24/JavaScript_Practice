@@ -8950,9 +8950,9 @@ const dateCorrect = (datestring) => {
   const formattedDate = `${year}/${month}/${day}`;
   const formattedObj = !isNaN(new Date(formattedDate));
   const dateTest = formattedObj instanceof Date && !isNaN(formattedObj.getTime());
-  // console.log(formattedDate)
-  // console.log(formattedObj)
-  // console.log(dateTest)
+  console.log(formattedDate)
+  console.log(formattedObj)
+  console.log(dateTest)
 
   let yearNum = parseFloat(year);
   let monthNum = parseFloat(month);
@@ -8963,9 +8963,9 @@ const dateCorrect = (datestring) => {
     // This is not minus, it is plus
     // Need to figure out how instead of going down month, go up, and include years
     // So for 11.13.2014 it would be go up 1 month to 01 and since we crossed the year we need to go to 2015
-    if(parseFloat(month) > 12) {
-      const monthDiff = monthNum - 12;
-      monthNum -= monthDiff;
+    if(monthNum > 12) {
+      monthNum -= 12;
+      yearNum += 1;
     }
 
     const lastDayOfMonth = new Date(yearNum, monthNum, 0).getDate();
@@ -9002,7 +9002,8 @@ const dateCorrect = (datestring) => {
   return datestring
 }
 // console.log(dateCorrect("99.11.2010"));
-console.log(dateCorrect('11.13.2014'));
+// console.log(dateCorrect("11.13.2014"));
+console.log(dateCorrect("40.06.2015"));
 // Check out the problems below the task
 // https://www.codewars.com/kata/5787628de55533d8ce000b84/javascript
 
