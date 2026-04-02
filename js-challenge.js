@@ -8936,6 +8936,8 @@ const mergeStrings = (first, second) => {
 
 // https://www.codewars.com/kata/5787628de55533d8ce000b84/train/javascript
 const dateCorrect = (datestring) => {
+  if(datestring === null) return null;
+  if(datestring.length === 0) return '';
   const split = datestring.split('.');
   const day = split[0];
   const month = split[1];
@@ -8945,14 +8947,38 @@ const dateCorrect = (datestring) => {
   if(/[a-z]/i.test(datestring)) return null;
   if(day.length !== 2 || month.length !== 2 || year.length !== 4) return null;
 
-  const formattedDate = `${year}-${month}-${day}`;
-  const formattedObj = new Date(formattedDate);
+  const formattedDate = `${year}/${month}/${day}`;
+  const formattedObj = !isNaN(new Date(formattedDate));
   const dateTest = formattedObj instanceof Date && !isNaN(formattedObj.getTime());
-  if(!dateTest) {
-    const lastDayOfMonth = new Date(parseFloat(year), parseFloat(month), 0).getDate();
-    const endOfMonth = `${month}-${lastDayOfMonth}-${year}`
-    const dayDiff = parseFloat(day) - lastDayOfMonth;
-    const date = new Date(endOfMonth);
+  // console.log(formattedDate)
+  // console.log(formattedObj)
+  // console.log(dateTest)
+
+  let yearNum = parseFloat(year);
+  let monthNum = parseFloat(month);
+  let dayNum = parseFloat(day);
+
+  if(!dateTest) { 
+
+    // This is not minus, it is plus
+    // Need to figure out how instead of going down month, go up, and include years
+    // So for 11.13.2014 it would be go up 1 month to 01 and since we crossed the year we need to go to 2015
+    if(parseFloat(month) > 12) {
+      const monthDiff = monthNum - 12;
+      monthNum -= monthDiff;
+    }
+
+    const lastDayOfMonth = new Date(yearNum, monthNum, 0).getDate();
+    let dayOfMonth = dayNum;
+    let dayDiff = 0;
+    if(monthNum > lastDayOfMonth) {
+      dayDiff = dayNum - lastDayOfMonth;
+      dayOfMonth = lastDayOfMonth;
+    }
+
+    const endOfMonth = `${monthNum}-${dayOfMonth}-${yearNum}`
+    console.log(endOfMonth)
+    date = new Date(endOfMonth);
     date.setDate(date.getDate() + dayDiff);
 
     const dateOptions = {
@@ -8961,7 +8987,7 @@ const dateCorrect = (datestring) => {
       year: 'numeric'
     }
     
-    return date.toLocaleDateString('en-US', dateOptions).replace(/\//g, '.');
+    return date.toLocaleDateString('en-GB', dateOptions).replace(/\//g, '.');
   }
 
   // Notes 07.02.2011 is the same as 99.11.2010
@@ -8975,7 +9001,8 @@ const dateCorrect = (datestring) => {
 
   return datestring
 }
-console.log(dateCorrect("99.11.2010"));
+// console.log(dateCorrect("99.11.2010"));
+console.log(dateCorrect('11.13.2014'));
 // Check out the problems below the task
 // https://www.codewars.com/kata/5787628de55533d8ce000b84/javascript
 
