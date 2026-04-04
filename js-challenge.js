@@ -8936,6 +8936,7 @@ const mergeStrings = (first, second) => {
 
 // https://www.codewars.com/kata/5787628de55533d8ce000b84/train/javascript
 const dateCorrect = (datestring) => {
+  console.log('Date string', datestring)
   if(datestring === null) return null;
   if(datestring.length === 0) return '';
   const split = datestring.split('.');
@@ -8950,9 +8951,9 @@ const dateCorrect = (datestring) => {
   const formattedDate = `${year}/${month}/${day}`;
   const formattedObj = !isNaN(new Date(formattedDate));
   const dateTest = formattedObj instanceof Date && !isNaN(formattedObj.getTime());
-  console.log(formattedDate)
-  console.log(formattedObj)
-  console.log(dateTest)
+  console.log('Formatted date', formattedDate)
+  console.log('Formatted obj', formattedObj)
+  console.log('Date test', dateTest)
 
   let yearNum = parseFloat(year);
   let monthNum = parseFloat(month);
@@ -8963,21 +8964,32 @@ const dateCorrect = (datestring) => {
     // This is not minus, it is plus
     // Need to figure out how instead of going down month, go up, and include years
     // So for 11.13.2014 it would be go up 1 month to 01 and since we crossed the year we need to go to 2015
+    
+    // Now we need to figure out when month is much larger like 59
+    // How do we go up multiple years ????????
     if(monthNum > 12) {
+      console.log('modulo', monthNum % 12);
       monthNum -= 12;
       yearNum += 1;
     }
 
+    console.log("month num", monthNum);
+    console.log('year num', yearNum);
+
     const lastDayOfMonth = new Date(yearNum, monthNum, 0).getDate();
     let dayOfMonth = dayNum;
     let dayDiff = 0;
-    if(monthNum > lastDayOfMonth) {
+    if(dayNum > lastDayOfMonth) {
       dayDiff = dayNum - lastDayOfMonth;
       dayOfMonth = lastDayOfMonth;
     }
+    console.log('month num v2', monthNum)
+    console.log('day num v2', dayNum)
+    console.log('last day of month', lastDayOfMonth)
+    console.log('Day diff', dayDiff)
 
     const endOfMonth = `${monthNum}-${dayOfMonth}-${yearNum}`
-    console.log(endOfMonth)
+    console.log('End of month date', endOfMonth)
     date = new Date(endOfMonth);
     date.setDate(date.getDate() + dayDiff);
 
@@ -9003,7 +9015,8 @@ const dateCorrect = (datestring) => {
 }
 // console.log(dateCorrect("99.11.2010"));
 // console.log(dateCorrect("11.13.2014"));
-console.log(dateCorrect("40.06.2015"));
+// console.log(dateCorrect("40.06.2015"));
+console.log(dateCorrect("36.71.1483"));
 // Check out the problems below the task
 // https://www.codewars.com/kata/5787628de55533d8ce000b84/javascript
 
