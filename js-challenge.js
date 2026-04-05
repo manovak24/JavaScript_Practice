@@ -8967,10 +8967,23 @@ const dateCorrect = (datestring) => {
     
     // Now we need to figure out when month is much larger like 59
     // How do we go up multiple years ????????
-    if(monthNum > 12) {
-      console.log('modulo', monthNum % 12);
+    if(monthNum > 12 && monthNum <= 24) {
       monthNum -= 12;
       yearNum += 1;
+    } else if(monthNum > 24) {
+      console.log('divide by 12', monthNum / 12);
+      console.log('modulo', monthNum % 12);
+      let yearIncrease = Math.floor(monthNum / 12);
+      let modulo = monthNum % 12;
+
+      if(modulo > 0) {
+        yearNum += yearIncrease;
+        monthNum = modulo;
+      } else {
+        yearNum += yearIncrease - 1;
+        monthNum = 12;
+      }
+
     }
 
     console.log("month num", monthNum);
@@ -9016,10 +9029,78 @@ const dateCorrect = (datestring) => {
 // console.log(dateCorrect("99.11.2010"));
 // console.log(dateCorrect("11.13.2014"));
 // console.log(dateCorrect("40.06.2015"));
-console.log(dateCorrect("36.71.1483"));
+// console.log(dateCorrect("87.82.1569"));
+console.log(dateCorrect("88.60.1020"));
 // Check out the problems below the task
 // https://www.codewars.com/kata/5787628de55533d8ce000b84/javascript
 
+
+const dateCorrectTwo = (datestring) => {
+  if(datestring === null) return null;
+  if(datestring.length === 0) return '';
+  const split = datestring.split('.');
+  const day = split[0];
+  const month = split[1];
+  const year = split[2];
+  
+  if(split.length !== 3) return null;
+  if(/[a-z]/i.test(datestring)) return null;
+  if(day.length !== 2 || month.length !== 2 || year.length !== 4) return null;
+
+  const formattedDate = `${year}/${month}/${day}`;
+  const formattedObj = !isNaN(new Date(formattedDate));
+  const dateTest = formattedObj instanceof Date && !isNaN(formattedObj.getTime());
+
+  let yearNum = parseFloat(year);
+  let monthNum = parseFloat(month);
+  let dayNum = parseFloat(day);
+
+  if(!dateTest) { 
+    if(monthNum > 12 && monthNum <= 24) {
+      monthNum -= 12;
+      yearNum += 1;
+    } else if(monthNum > 24) {
+      let yearIncrease = Math.floor(monthNum / 12);
+      let modulo = monthNum % 12;
+      if(modulo > 0) {
+        yearNum += yearIncrease;
+        monthNum = modulo;
+      } else {
+        yearNum += yearIncrease - 1;
+        monthNum = 12;
+      }
+    }
+
+    const lastDayOfMonth = new Date(yearNum, monthNum, 0).getDate();
+    let dayOfMonth = dayNum;
+    let dayDiff = 0;
+    if(dayNum > lastDayOfMonth) {
+      dayDiff = dayNum - lastDayOfMonth;
+      dayOfMonth = lastDayOfMonth;
+    }
+
+    const endOfMonth = `${monthNum}-${dayOfMonth}-${yearNum}`
+    date = new Date(endOfMonth);
+    date.setDate(date.getDate() + dayDiff);
+
+    const dateOptions = {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    }
+
+    return date.toLocaleDateString('en-GB', dateOptions).replace(/\//g, '.');
+
+  }
+  return datestring
+}
+// console.log(dateCorrect("99.11.2010"));
+// console.log(dateCorrect("11.13.2014"));
+// console.log(dateCorrect("40.06.2015"));
+// console.log(dateCorrect("87.82.1569"));
+console.log(dateCorrectTwo("88.60.1020"));
+// Check out the problems below the task
+// https://www.codewars.com/kata/5787628de55533d8ce000b84/javascript
 
 
 
