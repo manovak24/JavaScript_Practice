@@ -9030,7 +9030,7 @@ const dateCorrect = (datestring) => {
 // console.log(dateCorrect("11.13.2014"));
 // console.log(dateCorrect("40.06.2015"));
 // console.log(dateCorrect("87.82.1569"));
-console.log(dateCorrect("88.60.1020"));
+// console.log(dateCorrect("88.60.1020"));
 // Check out the problems below the task
 // https://www.codewars.com/kata/5787628de55533d8ce000b84/javascript
 
@@ -9098,12 +9098,27 @@ const dateCorrectTwo = (datestring) => {
 // console.log(dateCorrect("11.13.2014"));
 // console.log(dateCorrect("40.06.2015"));
 // console.log(dateCorrect("87.82.1569"));
-console.log(dateCorrectTwo("88.60.1020"));
+// console.log(dateCorrectTwo("88.60.1020"));
 // Check out the problems below the task
 // https://www.codewars.com/kata/5787628de55533d8ce000b84/javascript
 
 
+// Probability complement
+// https://www.codewars.com/kata/69d1b72f7b4d8ac09b1eb17a/train/javascript
+const raffleOdds = (totals, purchased) => {
+  const losingOdds = [];
+  for(let i = 0; i < totals.length; i++) {
+    let losingPercent = Math.round(((totals[i] - purchased[i]) / totals[i]) * 100) / 100;
+    losingOdds.push(losingPercent);
+  }
 
+  console.log(losingOdds)
+
+  const complement = ((1 - losingOdds.reduce((a,b) => a * b)) * 100) / 100;
+
+  return complement
+}
+console.log(raffleOdds([4, 4], [1, 1]));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
