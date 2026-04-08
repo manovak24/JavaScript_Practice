@@ -9112,13 +9112,39 @@ const raffleOdds = (totals, purchased) => {
     losingOdds.push(losingPercent);
   }
 
-  console.log(losingOdds)
+  console.log('losing odds', losingOdds)
 
-  const complement = ((1 - losingOdds.reduce((a,b) => a * b)) * 100) / 100;
+  const complement = Math.round((1 - losingOdds.reduce((a,b) => a * b)) * 100) / 100;
+  // Might need to update the conditional logic here because of the 0 and the decimal count being used in the exponent
+  const decimalCount = complement.toString().split('.')[1]?.length || 0;
+  const denominator = Math.pow(10, decimalCount);
+  const numerator = complement * (denominator);
+  console.log('decimal count', decimalCount);
+  console.log('numerator', numerator);
+  console.log('denominator',denominator);
+
+  // Below shows begining steps of the Euclidean Algorithm for finding GFC
+  const divided = Math.floor(denominator / numerator);
+  const modulo = denominator % numerator;
+  console.log('divided', divided);
+  console.log('modulo', modulo)
+  // Test below shows that numerator * divided + modulo = the denominator
+  console.log('test', (numerator * divided) + modulo);
+
+  // The next steps should involve a way to utilize the Euclidean Alogrithm to find the GFC
+  // Google 'formula to find greatest common factor'
+  // What is happening is we will use the steps laid out above to find GFC
+  // From there divide both numerator and denominator to find the reduced fraction
+  // Reduced fraction will be the answer
+  // let remainder = denominator % numerator;
+  // while(remainder !== 0) {
+
+  // }
+
 
   return complement
 }
-console.log(raffleOdds([4, 4], [1, 1]));
+console.log(raffleOdds([2, 3, 6], [1, 1, 1]));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
