@@ -9106,34 +9106,30 @@ const dateCorrectTwo = (datestring) => {
 // Probability complement
 // https://www.codewars.com/kata/69d1b72f7b4d8ac09b1eb17a/train/javascript
 const raffleOdds = (totals, purchased) => {
-  const losingOdds = [];
+  let numerators = [];
+  let denominators = [];
   for(let i = 0; i < totals.length; i++) {
-    let losingPercent = ((totals[i] - purchased[i]) / totals[i]);
-    losingOdds.push(losingPercent);
+    numerators.push(totals[i] - purchased[i]);
+    denominators.push(totals[i]);
   }
+  numerators = numerators.reduce((a,b) => a * b);
+  denominators = denominators.reduce((a,b) => a * b);
 
-  console.log('losing odds', losingOdds)
+  const complementTop = denominators - numerators
+  const complementBottom = denominators;
 
-  const complement = 1 - losingOdds.reduce((a,b) => a * b);
-  console.log('complement', complement);
-  // Might need to update the conditional logic here because of the 0 and the decimal count being used in the exponent
-  let decimalCount = complement.toString().split('.')[1]?.length || 0;
-  const denominator = Math.pow(10, decimalCount);
-  const numerator = complement * (denominator);
-  console.log('decimal count', decimalCount);
-  console.log('numerator', numerator);
-  console.log('denominator',denominator);
+  console.log(numerators);
+  console.log(denominators);
+  console.log(complementTop);
+  console.log(complementBottom);
 
-  // Next steps should be Google 'formula to find greatest common factor'
-  // Consider using the prime factorization method or Euclidean Algorithm
-  // Basically we need to find a way turn the complement variable into a reduced fraction
-  // Maybe Google decimal to fraction javascript
+  // Next step now that we have numerator and denominator complement. Find the greatest common factor of the two numbers
+  // Divide each number by GCF and then return in string form
 
+  
 
-
-
-  // return complement
 }
+// console.log(raffleOdds([4, 4], [1, 1]));
 console.log(raffleOdds([2, 3, 6], [1, 1, 1]));
 
 
