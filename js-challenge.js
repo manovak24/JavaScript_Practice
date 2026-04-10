@@ -9125,8 +9125,8 @@ const raffleOdds = (totals, purchased) => {
 
   // Next step now that we have numerator and denominator complement. Find the greatest common factor of the two numbers
   // Divide each number by GCF and then return in string form
+  // Use Euclidean Alorithm and look in google doc for example
 
-  
 
 }
 // console.log(raffleOdds([4, 4], [1, 1]));
