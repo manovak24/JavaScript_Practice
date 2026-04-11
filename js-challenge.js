@@ -9106,6 +9106,8 @@ const dateCorrectTwo = (datestring) => {
 // Probability complement
 // https://www.codewars.com/kata/69d1b72f7b4d8ac09b1eb17a/train/javascript
 const raffleOdds = (totals, purchased) => {
+  if(totals.every((v, i) => v === purchased[i])) return '1/1';
+  if(purchased.every(v => v === 0)) return '0/1';
   let numerators = [];
   let denominators = [];
   for(let i = 0; i < totals.length; i++) {
@@ -9118,19 +9120,40 @@ const raffleOdds = (totals, purchased) => {
   const complementTop = denominators - numerators
   const complementBottom = denominators;
 
-  console.log(numerators);
-  console.log(denominators);
-  console.log(complementTop);
-  console.log(complementBottom);
+  if(complementTop === complementBottom) {
+    return '1/1';
+  }
 
-  // Next step now that we have numerator and denominator complement. Find the greatest common factor of the two numbers
-  // Divide each number by GCF and then return in string form
-  // Use Euclidean Alorithm and look in google doc for example
+  let divide = Math.floor(complementBottom / complementTop);
+  let remainder = complementBottom % complementTop;
+  let gcf = complementTop;
+  let topLoop = complementTop;
+  let bottomLoop = remainder;
+ 
+  while(remainder !== 0) {
+    divide = Math.floor(topLoop / bottomLoop);
+    remainder = topLoop % bottomLoop;
 
+    topLoop = bottomLoop;
+    bottomLoop = remainder;
 
+    gcf = topLoop;
+  }
+
+  if(!Number.isInteger(complementTop / gcf) || !Number.isInteger(complementBottom / gcf)) {
+    return `${complementTop}/${complementBottom}`;
+  }
+
+  return `${complementTop / gcf}/${complementBottom / gcf}`;
 }
+// console.log(raffleOdds([3], [1]));
 // console.log(raffleOdds([4, 4], [1, 1]));
-console.log(raffleOdds([2, 3, 6], [1, 1, 1]));
+// console.log(raffleOdds([2, 3, 6], [1, 1, 1]));
+// console.log(raffleOdds([5, 5], [5, 5]));
+// console.log(raffleOdds([5, 3], [5, 1]));
+// console.log(raffleOdds([4, 4], [0, 0]));
+// console.log(raffleOdds([30], [20]));
+// console.log(raffleOdds([8], [2]));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
