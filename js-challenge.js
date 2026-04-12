@@ -9145,6 +9145,29 @@ const raffleOdds = (totals, purchased) => {
 // console.log(raffleOdds([8], [2]));
 
 
+const countLonelyLetters = (text) => {
+  const arr = text.toLowerCase().replace(/[^a-z]/g, '').split('');
+  const map = arr.reduce((a,b) => {
+    a[b] = (a[b] || 0) + 1;
+    return a
+  }, {});
+
+  let count = 0;
+  arr.forEach(letter => {
+    const occursOnce = map[letter] === 1;
+    // I think the a and z are not needed since we lowercase and filter text paramater for all non letters
+    const leftPresent = map[String.fromCharCode(letter.charCodeAt(0) - 1)];
+    const rightPresent = map[String.fromCharCode(letter.charCodeAt(0) + 1)];
+    if(occursOnce && !leftPresent && !rightPresent) {
+      count++;
+    }
+  })
+
+  return count;
+}
+console.log(countLonelyLetters('Hello, World!'));
+
+
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
 const subsetSum = (xs, target) => {
   const results = [];
