@@ -9108,6 +9108,7 @@ const dateCorrectTwo = (datestring) => {
 const raffleOdds = (totals, purchased) => {
   if(totals.every((v, i) => v === purchased[i])) return '1/1';
   if(purchased.every(v => v === 0)) return '0/1';
+
   let numerators = [];
   let denominators = [];
   for(let i = 0; i < totals.length; i++) {
@@ -9124,25 +9125,13 @@ const raffleOdds = (totals, purchased) => {
     return '1/1';
   }
 
-  let divide = Math.floor(complementBottom / complementTop);
-  let remainder = complementBottom % complementTop;
-  let gcf = complementTop;
-  let topLoop = complementTop;
-  let bottomLoop = remainder;
- 
-  while(remainder !== 0) {
-    divide = Math.floor(topLoop / bottomLoop);
-    remainder = topLoop % bottomLoop;
-
-    topLoop = bottomLoop;
-    bottomLoop = remainder;
-
-    gcf = topLoop;
+  // Euclidean Algorithm
+  function gcfAlgo(top, bottom) {
+    if(bottom === 0) return top;
+    return gcfAlgo(bottom, top % bottom);
   }
 
-  if(!Number.isInteger(complementTop / gcf) || !Number.isInteger(complementBottom / gcf)) {
-    return `${complementTop}/${complementBottom}`;
-  }
+  const gcf = gcfAlgo(complementBottom - complementTop, complementBottom);
 
   return `${complementTop / gcf}/${complementBottom / gcf}`;
 }
