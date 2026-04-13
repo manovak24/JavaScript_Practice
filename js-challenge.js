@@ -9147,6 +9147,7 @@ const raffleOdds = (totals, purchased) => {
 
 const countLonelyLetters = (text) => {
   const arr = text.toLowerCase().replace(/[^a-z]/g, '').split('');
+
   const map = arr.reduce((a,b) => {
     a[b] = (a[b] || 0) + 1;
     return a
@@ -9165,7 +9166,23 @@ const countLonelyLetters = (text) => {
 
   return count;
 }
-console.log(countLonelyLetters('Hello, World!'));
+// console.log(countLonelyLetters('Hello, World!'));
+
+
+// https://www.codewars.com/kata/69269262ced9e95dc63abd1e/train/javascript
+const jumbler = (indices) => {
+  let count = 0;
+
+  while(indices[0] !== 0) {
+    let index = indices[0];
+    let move = indices.splice(index, 1);
+    indices.splice(0, 0, move[0]);
+    count++;
+  }
+
+  return count;
+}
+console.log(jumbler([2, 0, 3, 1]));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
