@@ -9182,7 +9182,22 @@ const jumbler = (indices) => {
 
   return count;
 }
-console.log(jumbler([2, 0, 3, 1]));
+// console.log(jumbler([2, 0, 3, 1]));
+
+
+const replaceCommon = (string, letter) => {
+  const arr = string.replace(/ /g, '').split('');
+  const map = arr.reduce((a,b) => {
+    a[b] = (a[b] || 0) + 1;
+    return a;
+  }, {});
+  
+  const maxVal = Math.max(...Object.values(map));
+  const maxKey = Object.keys(map).find(key => map[key] === maxVal);
+  const regex = new RegExp(`${maxKey}`, 'g');
+  return string.replace(regex, letter);
+}
+// console.log(replaceCommon('my mom loves me as never did', 't'));
 
 
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
