@@ -9200,6 +9200,36 @@ const replaceCommon = (string, letter) => {
 // console.log(replaceCommon('my mom loves me as never did', 't'));
 
 
+// Prefix sum parity trick
+const solveSubset = (arr) => {
+  let counts = { 1:0 , 0:1 };
+  let parity = 0;
+  let results = 0;
+
+  for(let i = 0; i < arr.length; i++) {
+    console.log(arr[i])
+    if(arr[i] % 2 !== 0) {
+      parity = parity === 0 ? 1 : 0;
+    }
+    console.log('p', parity);
+
+    let oppositeParity = parity === 0 ? 1 : 0;
+    console.log('opp', oppositeParity)
+    results += counts[oppositeParity];
+    counts[parity]++;
+    console.log(results)
+    console.log(counts)
+  }
+
+  return results;
+}
+console.log(solveSubset([2, 3, 5, 5, 6, 8, 9, 1]));
+
+
+
+
+
+
 // https://www.codewars.com/kata/688a614adfe03af512d4458c/train/javascript
 const subsetSum = (xs, target) => {
   const results = [];
