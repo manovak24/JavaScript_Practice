@@ -9207,23 +9207,54 @@ const solveSubset = (arr) => {
   let results = 0;
 
   for(let i = 0; i < arr.length; i++) {
-    console.log(arr[i])
     if(arr[i] % 2 !== 0) {
       parity = parity === 0 ? 1 : 0;
     }
-    console.log('p', parity);
-
     let oppositeParity = parity === 0 ? 1 : 0;
-    console.log('opp', oppositeParity)
     results += counts[oppositeParity];
     counts[parity]++;
-    console.log(results)
-    console.log(counts)
+
+    // console.log('number', arr[i]);
+    // console.log('parity', parity);
+    // console.log('opposite parity', oppositeParity);
+    // console.log('results', results);
+    // console.log('counts obj', counts);
   }
 
   return results;
 }
-console.log(solveSubset([2, 3, 5, 5, 6, 8, 9, 1]));
+// console.log(solveSubset([2, 3, 5, 5, 6, 8, 9, 1]));
+
+
+const lexicographicalSort = (array1, array2) => {
+  return array1.filter(substr => array2.some(word => word.includes(substr))).sort();
+}
+// console.log(lexicographicalSort(["xyz", "strong", "live"] ,["lively", "alive", "harp", "sharp", "armstrong"]));
+
+
+// DONT FORGET PROBLEM BELOW
+// https://www.codewars.com/kata/5c01c1525486bf12bd0001cd/train/javascript
+const yearMaxPeople = (records) => {
+  // let max = 0;
+  // let year;
+  // for(let i = 0; i < records.length; i++) {
+  //   let enter = records[i][0];
+  //   let leave = records[i][1];
+
+  //   for(let j = 0; j < records.length; j++) {
+  //     if(records[j][0] >= enter) {
+  //       max++;
+  //       year = 
+  //     }
+  //   }
+  // }
+
+  return records.map(x => x.reduce((a,b) => b - a));
+}
+// console.log(yearMaxPeople([[1980, 2010], [1979, 1985], [1986, 1995], [1987, 2008]]));
+
+
+
 
 
 
