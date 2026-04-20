@@ -9232,22 +9232,45 @@ const lexicographicalSort = (array1, array2) => {
 // console.log(lexicographicalSort(["xyz", "strong", "live"] ,["lively", "alive", "harp", "sharp", "armstrong"]));
 
 
+const scaleStrings = (strng, k, n) => {
+  if(strng.length === 0) return "";
+
+  let arr = strng.split('\n').map(x => x.split(''));
+
+  let horizontal = arr.map(x => {
+    return x.map(char => {
+      return char.repeat(k);
+    }).join('')
+  });
+
+  const vertical = horizontal.map(s => {
+    return Array(n).fill(s).join('\n');
+  });
+
+  return vertical.join('\n');
+}
+// console.log(scaleStrings("abcd\nefgh\nijkl\nmnop", 2, 3));
+
+
 // DONT FORGET PROBLEM BELOW
 // https://www.codewars.com/kata/5c01c1525486bf12bd0001cd/train/javascript
 const yearMaxPeople = (records) => {
-  // let max = 0;
-  // let year;
-  // for(let i = 0; i < records.length; i++) {
-  //   let enter = records[i][0];
-  //   let leave = records[i][1];
-
-  //   for(let j = 0; j < records.length; j++) {
-  //     if(records[j][0] >= enter) {
-  //       max++;
-  //       year = 
-  //     }
-  //   }
-  // }
+  let maxArr = [];
+  for(let i = 0; i < records.length; i++) {
+    let enter = records[i][0];
+    let leave = records[i][1];
+    let max = 0;
+    let year;
+    for(let j = 0; j < records.length; j++) {
+      if(records[j][0] >= enter && records[j][0] <= leave) {
+        max++;
+        year = records[j][0];
+      }
+    }
+    maxArr.push([max, year]);
+    max = 0;
+    year = undefined;
+  }
 
   return records.map(x => x.reduce((a,b) => b - a));
 }
