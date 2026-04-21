@@ -9252,6 +9252,20 @@ const scaleStrings = (strng, k, n) => {
 // console.log(scaleStrings("abcd\nefgh\nijkl\nmnop", 2, 3));
 
 
+const vertMirror = (strng) => {
+  return strng.split('\n').map(x => x.split('').reverse().join('')).join('\n');
+}
+
+const horMirror = (strng) => {
+  return strng.split('\n').reverse().join('\n');
+}
+
+const oper = (fct, s) => {
+  return fct(s)
+}
+console.log(oper(horMirror, "abcd\nefgh\nijkl\nmnop"))
+
+
 // DONT FORGET PROBLEM BELOW
 // https://www.codewars.com/kata/5c01c1525486bf12bd0001cd/train/javascript
 const yearMaxPeople = (records) => {
