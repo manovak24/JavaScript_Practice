@@ -9263,32 +9263,28 @@ const horMirror = (strng) => {
 const oper = (fct, s) => {
   return fct(s)
 }
-console.log(oper(horMirror, "abcd\nefgh\nijkl\nmnop"))
+// console.log(oper(horMirror, "abcd\nefgh\nijkl\nmnop"));
 
 
 // DONT FORGET PROBLEM BELOW
 // https://www.codewars.com/kata/5c01c1525486bf12bd0001cd/train/javascript
 const yearMaxPeople = (records) => {
-  let maxArr = [];
-  for(let i = 0; i < records.length; i++) {
-    let enter = records[i][0];
-    let leave = records[i][1];
-    let max = 0;
-    let year;
-    for(let j = 0; j < records.length; j++) {
-      if(records[j][0] >= enter && records[j][0] <= leave) {
-        max++;
-        year = records[j][0];
-      }
-    }
-    maxArr.push([max, year]);
-    max = 0;
-    year = undefined;
+  const enter = records.map(x => x[0]).flat().sort((a,b) => a - b);
+  const leave = records.map(x => x.slice(1)).flat().sort((a,b) => a - b);
+
+  console.log('enter', enter);
+  console.log('leave', leave);
+  
+  // Two pointer technique
+  let pop = 0;
+  let year;
+  for(let i = 0; i < enter.length; i++) {
+
   }
 
-  return records.map(x => x.reduce((a,b) => b - a));
+  return [pop, year];
 }
-// console.log(yearMaxPeople([[1980, 2010], [1979, 1985], [1986, 1995], [1987, 2008]]));
+console.log(yearMaxPeople([[1980, 2010], [1979, 1985], [1986, 1995], [1987, 2008]]));
 
 
 
