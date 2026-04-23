@@ -9266,6 +9266,19 @@ const oper = (fct, s) => {
 // console.log(oper(horMirror, "abcd\nefgh\nijkl\nmnop"));
 
 
+const diagonalSum = (matrix) => {
+  return matrix.reduce((acc, val, i) => acc + val[i], 0);
+}
+console.log(diagonalSum(
+  [
+    [5, 9, 1, 0],
+    [8, 7, 2, 3],
+    [1, 4, 1, 9],
+    [2, 3, 8, 2]
+  ]
+));
+
+
 // DONT FORGET PROBLEM BELOW
 // https://www.codewars.com/kata/5c01c1525486bf12bd0001cd/train/javascript
 const yearMaxPeople = (records) => {
@@ -9284,7 +9297,7 @@ const yearMaxPeople = (records) => {
 
   return [pop, year];
 }
-console.log(yearMaxPeople([[1980, 2010], [1979, 1985], [1986, 1995], [1987, 2008]]));
+// console.log(yearMaxPeople([[1980, 2010], [1979, 1985], [1986, 1995], [1987, 2008]]));
 
 
 
