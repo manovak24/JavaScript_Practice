@@ -9269,14 +9269,26 @@ const oper = (fct, s) => {
 const diagonalSum = (matrix) => {
   return matrix.reduce((acc, val, i) => acc + val[i], 0);
 }
-console.log(diagonalSum(
-  [
-    [5, 9, 1, 0],
-    [8, 7, 2, 3],
-    [1, 4, 1, 9],
-    [2, 3, 8, 2]
-  ]
-));
+// console.log(diagonalSum(
+//   [
+//     [5, 9, 1, 0],
+//     [8, 7, 2, 3],
+//     [1, 4, 1, 9],
+//     [2, 3, 8, 2]
+//   ]
+// ));
+
+
+const compundArray = (a, b) => {
+  const maxLength = Math.max(a.length, b.length);
+  let arr = [];
+  for(let i = 0; i < maxLength; i++) {
+    if(a[i] || a[i] === 0) arr.push(a[i]);
+    if(b[i] || b[i] === 0) arr.push(b[i]);
+  }
+  return arr;
+}
+// console.log(compundArray([11, 12, 0], [21, 22, 23, 24]));
 
 
 // DONT FORGET PROBLEM BELOW
