@@ -9291,6 +9291,27 @@ const compundArray = (a, b) => {
 // console.log(compundArray([11, 12, 0], [21, 22, 23, 24]));
 
 
+const wrapperPaper = (boxes) => {
+  // Reduce method
+  // return boxes.reduce((total, [l,w,h]) => total + 2 * (l*w + l*h + w*h) + Math.min(l*w, l*h, w*h), 0);
+
+  let paper = 0;
+
+  boxes.forEach(box => {
+    let l = box[0];
+    let w = box[1];
+    let h = box[2];
+
+    paper += 2 * (l*w + l*h + w*h);
+
+    paper += Math.min(l*w, l*h, w*h);
+  })
+  
+  return paper;
+}
+console.log(wrapperPaper([[2, 3, 4], [1, 1, 1]]));
+
+
 // DONT FORGET PROBLEM BELOW
 // https://www.codewars.com/kata/5c01c1525486bf12bd0001cd/train/javascript
 const yearMaxPeople = (records) => {
