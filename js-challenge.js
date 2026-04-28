@@ -9309,7 +9309,39 @@ const wrapperPaper = (boxes) => {
   
   return paper;
 }
-console.log(wrapperPaper([[2, 3, 4], [1, 1, 1]]));
+// console.log(wrapperPaper([[2, 3, 4], [1, 1, 1]]));
+
+// Permutations of an array
+// https://www.codewars.com/kata/562c5ea7b5fe27d303000054/train/javascript
+const sscFormperm = (arr) => {
+
+  // Figure out how the permutations work
+  // Then we need to figure out how to remove duplicates or avoid that
+  // Find object values
+
+
+  let perms = [];
+
+  const permutations = (x) => {
+    if(x.length === 1) return [x];
+    let results = [];
+
+    for(let i = 0; i < x.length; i++) {
+      let first = x[i];
+      let rest = x.filter((_, idx) => idx !== i);
+      let smallerPerms = permutations(rest);
+      let mapPerms = smallerPerms.map(smaller => [first, ...smaller]);
+      results.push(...mapPerms);
+    }
+
+    return results;
+  }
+
+  perms = permutations(arr);
+
+  return perms;
+}
+console.log(sscFormperm([6, 12, -1]));
 
 
 // DONT FORGET PROBLEM BELOW
