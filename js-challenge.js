@@ -9311,6 +9311,25 @@ const wrapperPaper = (boxes) => {
 }
 // console.log(wrapperPaper([[2, 3, 4], [1, 1, 1]]));
 
+const composeStrngSquared = (s1, s2) => {
+  const arr1 = s1.split('\n');
+  const arr2 = s2.split('\n');
+
+  let strng = [];
+
+  for(let i = 0; i < arr1.length; i++) {
+    let first = arr1[i].slice(0, i + 1);
+    let lastIndex = arr2.length - 1 - i;
+    let last = arr2[lastIndex].slice(0, arr2[lastIndex].length - i);
+
+    strng.push(first + last);
+  }
+
+  return strng.join('\n');
+}
+console.log(composeStrngSquared("abcd\nefgh\nijkl\nmnop", "qrst\nuvwx\nyz12\n3456"))
+
+
 // Permutations of an array
 // https://www.codewars.com/kata/562c5ea7b5fe27d303000054/train/javascript
 const sscFormperm = (arr) => {
@@ -9341,7 +9360,7 @@ const sscFormperm = (arr) => {
 
   return perms;
 }
-console.log(sscFormperm([6, 12, -1]));
+// console.log(sscFormperm([6, 12, -1]));
 
 
 // DONT FORGET PROBLEM BELOW
