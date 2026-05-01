@@ -9330,6 +9330,15 @@ const composeStrngSquared = (s1, s2) => {
 // console.log(composeStrngSquared("abcd\nefgh\nijkl\nmnop", "qrst\nuvwx\nyz12\n3456"));
 
 
+const sumAverage = (arrays) => {
+  return arrays.reduce((sum, arr) => {
+    let avg = arr.reduce((acc, num) => acc + num, 0) / arr.length;
+    return sum + avg;
+  }, 0);
+}
+// console.log(sumAverage([[52, 64, 84, 21, 54], [44, 87, 46, 90, 43]]));
+
+
 // https://www.codewars.com/kata/5842f943c5c9b0f7140001e1/train/javascript
 const countingNumbers = (matrix, num) => {
   let obj = {};
