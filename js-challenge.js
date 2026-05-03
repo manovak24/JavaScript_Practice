@@ -9345,20 +9345,6 @@ const removeNoise = (str) => {
 // console.log(removeNoise('%$&/#·@|º\ª'));
 
 
-// https://www.codewars.com/kata/5842f943c5c9b0f7140001e1/train/javascript
-const countingNumbers = (matrix, num) => {
-  let obj = {};
-  for(let i = 0; i < matrix.length; i++) {
-    matrix[i].forEach(x => {
-      obj[x] = (obj[x] || 0) + 1;
-    })
-  }
-  return obj[num]
-}
-const arrTest = [ [ 1, 3, 5, 7 ], [ 2, 4, 7, 8 ], [ 3, 5, 9, 10 ] ];
-// console.log(countingNumbers(arrTest, 3));
-
-
 // Permutations of an array
 // https://www.codewars.com/kata/562c5ea7b5fe27d303000054/train/javascript
 const sscForperm = (arr) => {
