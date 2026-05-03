@@ -9361,31 +9361,31 @@ const arrTest = [ [ 1, 3, 5, 7 ], [ 2, 4, 7, 8 ], [ 3, 5, 9, 10 ] ];
 
 // Permutations of an array
 // https://www.codewars.com/kata/562c5ea7b5fe27d303000054/train/javascript
-const sscFormperm = (arr) => {
+const sscForperm = (arr) => {
 
   // Figure out how the permutations work
   // Then we need to figure out how to remove duplicates or avoid that
   // Find object values
   const permutations = [];
-  const n = arr.length;
+  const length = arr.length;
 
-  const generatePermutations = (v, a) => {
-    if(v === 1) {
-      permutations.push([...a]);
+  const generate = (subsetSize, currentArr) => {
+    if(subsetSize === 1) {
+      permutations.push([...currentArr]);
       return;
     }
 
-    for(let i = 0; i < v; i++) {
-      generatePermutations(v - 1, a);
-      const swapIdx = (v % 2 === 0) ? i : 0;
-      [a[swapIdx], a[v - 1]] = [a[v - 1], a[swapIdx]];
+    for(let i = 0; i < subsetSize; i++) {
+      generate(subsetSize - 1, currentArr);
+      const swapIdx = (subsetSize % 2 === 0) ? i : 0;
+      [currentArr[swapIdx], currentArr[subsetSize - 1]] = [currentArr[subsetSize - 1], currentArr[swapIdx]];
     }
   }
-  generatePermutations(n, [...arr]);
+  generate(length, [...arr]);
 
   return permutations;
 }
-console.log(sscFormperm([6, 12, -1]));
+console.log(sscForperm([6, 12, -1]));
 
 
 // DONT FORGET PROBLEM BELOW
