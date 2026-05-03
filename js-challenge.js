@@ -9339,6 +9339,12 @@ const sumAverage = (arrays) => {
 // console.log(sumAverage([[52, 64, 84, 21, 54], [44, 87, 46, 90, 43]]));
 
 
+const removeNoise = (str) => {
+  return str.replace(/[%$&/#·@|º\\ª]/g, '');
+}
+// console.log(removeNoise('%$&/#·@|º\ª'));
+
+
 // https://www.codewars.com/kata/5842f943c5c9b0f7140001e1/train/javascript
 const countingNumbers = (matrix, num) => {
   let obj = {};
@@ -9360,30 +9366,26 @@ const sscFormperm = (arr) => {
   // Figure out how the permutations work
   // Then we need to figure out how to remove duplicates or avoid that
   // Find object values
+  const permutations = [];
+  const n = arr.length;
 
-
-  let perms = [];
-
-  const permutations = (x) => {
-    if(x.length === 1) return [x];
-    let results = [];
-
-    for(let i = 0; i < x.length; i++) {
-      let first = x[i];
-      let rest = x.filter((_, idx) => idx !== i);
-      let smallerPerms = permutations(rest);
-      let mapPerms = smallerPerms.map(smaller => [first, ...smaller]);
-      results.push(...mapPerms);
+  const generatePermutations = (v, a) => {
+    if(v === 1) {
+      permutations.push([...a]);
+      return;
     }
 
-    return results;
+    for(let i = 0; i < v; i++) {
+      generatePermutations(v - 1, a);
+      const swapIdx = (v % 2 === 0) ? i : 0;
+      [a[swapIdx], a[v - 1]] = [a[v - 1], a[swapIdx]];
+    }
   }
+  generatePermutations(n, [...arr]);
 
-  perms = permutations(arr);
-
-  return perms;
+  return permutations;
 }
-// console.log(sscFormperm([6, 12, -1]));
+console.log(sscFormperm([6, 12, -1]));
 
 
 // DONT FORGET PROBLEM BELOW
