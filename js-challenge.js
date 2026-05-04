@@ -9346,15 +9346,11 @@ const removeNoise = (str) => {
 
 
 const findMiddle = (str) => {
-  if(str === null || !str) return -1;
-
-  if(Array.isArray(str)) {
-    str = str.join('');
-  }
-
+  if(typeof str !== 'string') return -1;
+  
   const numStr = str.replace(/\D/g, '')
   if(numStr.length === 0) return -1;
-
+  
   const numArr = numStr.split('').map(x => parseInt(x))
   const prodStr = numArr.reduce((a,b) => a * b).toString();
   
