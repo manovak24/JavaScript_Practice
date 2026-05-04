@@ -9345,6 +9345,31 @@ const removeNoise = (str) => {
 // console.log(removeNoise('%$&/#·@|º\ª'));
 
 
+const findMiddle = (str) => {
+  if(str === null || !str) return -1;
+
+  if(Array.isArray(str)) {
+    str = str.join('');
+  }
+
+  const numStr = str.replace(/\D/g, '')
+  if(numStr.length === 0) return -1;
+
+  const numArr = numStr.split('').map(x => parseInt(x))
+  const prodStr = numArr.reduce((a,b) => a * b).toString();
+  
+  if(prodStr.length % 2 === 0) {
+    const midLeft = (prodStr.length / 2) - 1;
+    const midRight = prodStr.length / 2
+    const midNums = `${prodStr[midLeft]}${prodStr[midRight]}`
+    return parseInt(midNums);
+  }
+
+  return parseInt(prodStr[Math.ceil(prodStr.length / 2) - 1]);
+}
+console.log(findMiddle([ 1, 2, 3, 4, 5, 6 ]));
+
+
 // Permutations of an array
 // https://www.codewars.com/kata/562c5ea7b5fe27d303000054/train/javascript
 const sscForperm = (arr) => {
@@ -9371,7 +9396,7 @@ const sscForperm = (arr) => {
 
   return permutations;
 }
-console.log(sscForperm([6, 12, -1]));
+// console.log(sscForperm([6, 12, -1]));
 
 
 // DONT FORGET PROBLEM BELOW
