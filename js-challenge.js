@@ -9363,16 +9363,13 @@ const findMiddle = (str) => {
 
   return parseInt(prodStr[Math.ceil(prodStr.length / 2) - 1]);
 }
-console.log(findMiddle([ 1, 2, 3, 4, 5, 6 ]));
+// console.log(findMiddle([ 1, 2, 3, 4, 5, 6 ]));
 
 
 // Permutations of an array
+// Heaps algorithm
 // https://www.codewars.com/kata/562c5ea7b5fe27d303000054/train/javascript
 const sscForperm = (arr) => {
-
-  // Figure out how the permutations work
-  // Then we need to figure out how to remove duplicates or avoid that
-  // Find object values
   const permutations = [];
   const length = arr.length;
 
@@ -9390,9 +9387,22 @@ const sscForperm = (arr) => {
   }
   generate(length, [...arr]);
 
-  return permutations;
+  const uniquePermutations = Array.from(new Set(permutations));
+
+  const scc = uniquePermutations.map(perm => {
+    return perm.map((num, i) => {
+      return num * (i + 1);
+    }).reduce((a,b) => a + b, 0);
+  })
+
+  const sum = scc.reduce((a,b) => a + b, 0);
+  const max = Math.max(...scc);
+  const min = Math.min(...scc);
+  const count = scc.length;
+
+  return [{"total perm": count}, {"total scc": sum}, {"max scc": max}, {"min scc": min}];
 }
-// console.log(sscForperm([6, 12, -1]));
+console.log(sscForperm([ 4, 25, 5, 11, 4 ]));
 
 
 // DONT FORGET PROBLEM BELOW
