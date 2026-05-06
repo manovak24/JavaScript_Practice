@@ -9366,6 +9366,22 @@ const findMiddle = (str) => {
 // console.log(findMiddle([ 1, 2, 3, 4, 5, 6 ]));
 
 
+const sumFactorial = (arr) => {
+  let sum = 0;
+  arr.forEach(num => {
+    let holder = [];
+    for(let i = num; i > 0; i--) {
+      holder.push(i);
+    }
+    let prod = holder.reduce((a,b) => a * b);
+    sum += prod;
+    holder = [];
+  })
+  return sum;
+}
+console.log(sumFactorial([5, 4, 1]));
+
+
 // Permutations of an array
 // Heaps algorithm
 // https://www.codewars.com/kata/562c5ea7b5fe27d303000054/train/javascript
@@ -9402,7 +9418,7 @@ const sscForperm = (arr) => {
 
   return [{"total perm": count}, {"total scc": sum}, {"max scc": max}, {"min scc": min}];
 }
-console.log(sscForperm([ 4, 25, 5, 11, 4 ]));
+// console.log(sscForperm([ 4, 25, 5, 11, 4 ]));
 
 
 // DONT FORGET PROBLEM BELOW
