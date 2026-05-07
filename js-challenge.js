@@ -9379,7 +9379,31 @@ const sumFactorial = (arr) => {
   })
   return sum;
 }
-console.log(sumFactorial([5, 4, 1]));
+// console.log(sumFactorial([5, 4, 1]));
+
+
+const solveStringExpansion = (str) => {
+  const generate = (x) => {
+    let open = x.lastIndexOf("(");
+    let close = x.indexOf(")");
+    let repeat = parseInt(x[open - 1]);
+
+    if(repeat > 0) {
+      let xRepeated = x.slice(open + 1, close).repeat(repeat);
+      x = x.slice(0, open - 1) + xRepeated + x.slice(close + 1);
+    } else {
+      x = x.slice(0, open) + x.slice(open + 1, close) + x.slice(close + 1);
+    }
+
+    if(x.includes("(") || x.includes(")")) {
+      return generate(x);
+    } else {
+      return x;
+    }
+  }
+  return generate(str);
+}
+// console.log(solveStringExpansion('k(a3(b(a2(c))))'));
 
 
 // Permutations of an array
