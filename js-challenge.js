@@ -9406,6 +9406,18 @@ const solveStringExpansion = (str) => {
 // console.log(solveStringExpansion('k(a3(b(a2(c))))'));
 
 
+// Converting string to number
+// Testing if string is number
+const mean = (lst) => {
+  const nums = lst.filter(x => !Number.isNaN(Number(x)));
+  const numsReduced = nums.reduce((a,b) => a + Number(b), 0) / nums.length;
+  const chars = lst.filter(x => /[a-z]/i.test(x)).join('');
+
+  return [numsReduced, chars]
+}
+console.log(mean(['u', '6', 'd', '1', 'i', 'w', '6', 's', 't', '4', 'a', '6', 'g', '1', '2', 'w', '8', 'o', '2', '0']));
+
+
 // Permutations of an array
 // Heaps algorithm
 // https://www.codewars.com/kata/562c5ea7b5fe27d303000054/train/javascript
