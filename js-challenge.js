@@ -9415,7 +9415,22 @@ const mean = (lst) => {
 
   return [numsReduced, chars]
 }
-console.log(mean(['u', '6', 'd', '1', 'i', 'w', '6', 's', 't', '4', 'a', '6', 'g', '1', '2', 'w', '8', 'o', '2', '0']));
+// console.log(mean(['u', '6', 'd', '1', 'i', 'w', '6', 's', 't', '4', 'a', '6', 'g', '1', '2', 'w', '8', 'o', '2', '0']));
+
+
+const doubleOrNothing = (cash, wager, losses) => {
+  let cashLost = wager * (2 ** (losses - 1));
+
+  const remainingCash = cash - cashLost;
+  if(remainingCash < 0) return "I'll pay you back later";
+
+  return remainingCash;
+}
+// console.log(doubleOrNothing(1124, 2, 10));
+
+
+// This looks like a fun one
+// https://www.codewars.com/kata/5e7e4b7cd889f7001728fd4a/train/javascript
 
 
 // Permutations of an array
