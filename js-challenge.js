@@ -9429,6 +9429,25 @@ const doubleOrNothing = (cash, wager, losses) => {
 // console.log(doubleOrNothing(1124, 2, 10));
 
 
+const findMissingLetter = (array) => {
+  const charCodes = array.map(char => char.charCodeAt(0));
+
+  let missingCharCode;
+
+  for(let i = 0; i < charCodes.length; i++) {
+    if(charCodes[i] + 1 !== charCodes[i + 1]) {
+      missingCharCode = charCodes[i] + 1;
+      break;
+    }
+  }
+
+  const missingChar = String.fromCharCode(missingCharCode);
+
+  return missingChar;
+}
+// console.log(findMissingLetter(['a','b','c','d','f']));
+
+
 // This looks like a fun one
 // https://www.codewars.com/kata/5e7e4b7cd889f7001728fd4a/train/javascript
 
