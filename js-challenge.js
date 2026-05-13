@@ -9447,6 +9447,18 @@ const findMissingLetter = (array) => {
 }
 // console.log(findMissingLetter(['a','b','c','d','f']));
 
+const shuffledArray = (shuffled) => {
+  for(let i = 0; i < shuffled.length; i++) {
+    let possibleSum = shuffled[i];
+    let temp = shuffled.filter((x, idx) => idx !== i);
+    let sum = temp.reduce((a,b) => a + b, 0);
+    if(possibleSum === sum) {
+      return temp.sort((a,b) => a - b);
+    }
+  }
+}
+console.log(shuffledArray([2, -1, 2, 2, -1]));
+
 
 // This looks like a fun one
 // https://www.codewars.com/kata/5e7e4b7cd889f7001728fd4a/train/javascript
