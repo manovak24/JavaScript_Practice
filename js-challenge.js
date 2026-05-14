@@ -9457,7 +9457,17 @@ const shuffledArray = (shuffled) => {
     }
   }
 }
-console.log(shuffledArray([2, -1, 2, 2, -1]));
+// console.log(shuffledArray([2, -1, 2, 2, -1]));
+
+
+// COGS problems
+// https://www.codewars.com/kata/59e1b9ce7997cbecb9000014/train/javascript
+// https://www.codewars.com/kata/59e72bdcfc3c4974190000d9/train/javascript
+
+const cogRpm = (cogs) => {
+  return cogs[0] / cogs[1];
+}
+console.log(cogRpm([100, 75]))
 
 
 // This looks like a fun one
