@@ -9465,7 +9465,7 @@ const nthChar = (words) => {
     return word[idx];
   }).join('');
 }
-console.log(nthChar(['yoda', 'best', 'has']));
+// console.log(nthChar(['yoda', 'best', 'has']));
 
 
 // COGS problems
@@ -9476,9 +9476,13 @@ console.log(nthChar(['yoda', 'best', 'has']));
 // https://www.codewars.com/kata/5bcd90808f9726d0f6000091
 
 const cogRpm = (cogs) => {
-  return cogs[0] / cogs[1];
+  const firstCogTeeth = cogs[0];
+  const lastCogTeeth = cogs[cogs.length - 1];
+  const rotation = cogs.length % 2 === 0 ? -1 : 1;
+  
+  return (1 * (firstCogTeeth / lastCogTeeth)) * rotation
 }
-// console.log(cogRpm([100, 75]))
+console.log(cogRpm([ 51,32,55,97,83,50,50 ]));
 
 
 // This looks like a fun one
