@@ -9460,14 +9460,25 @@ const shuffledArray = (shuffled) => {
 // console.log(shuffledArray([2, -1, 2, 2, -1]));
 
 
+const nthChar = (words) => {
+  return words.map((word, idx) => {
+    return word[idx];
+  }).join('');
+}
+console.log(nthChar(['yoda', 'best', 'has']));
+
+
 // COGS problems
 // https://www.codewars.com/kata/59e1b9ce7997cbecb9000014/train/javascript
 // https://www.codewars.com/kata/59e72bdcfc3c4974190000d9/train/javascript
 
+// String problem
+// https://www.codewars.com/kata/5bcd90808f9726d0f6000091
+
 const cogRpm = (cogs) => {
   return cogs[0] / cogs[1];
 }
-console.log(cogRpm([100, 75]))
+// console.log(cogRpm([100, 75]))
 
 
 // This looks like a fun one
