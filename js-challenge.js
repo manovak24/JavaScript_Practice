@@ -9468,13 +9468,6 @@ const nthChar = (words) => {
 // console.log(nthChar(['yoda', 'best', 'has']));
 
 
-// COGS problems
-// https://www.codewars.com/kata/59e1b9ce7997cbecb9000014/train/javascript
-// https://www.codewars.com/kata/59e72bdcfc3c4974190000d9/train/javascript
-
-// String problem
-// https://www.codewars.com/kata/5bcd90808f9726d0f6000091
-
 const cogRpm = (cogs) => {
   const firstCogTeeth = cogs[0];
   const lastCogTeeth = cogs[cogs.length - 1];
@@ -9482,7 +9475,29 @@ const cogRpm = (cogs) => {
   
   return (1 * (firstCogTeeth / lastCogTeeth)) * rotation
 }
-console.log(cogRpm([ 51,32,55,97,83,50,50 ]));
+// console.log(cogRpm([ 51,32,55,97,83,50,50 ]));
+
+
+// https://www.codewars.com/kata/59e72bdcfc3c4974190000d9/train/javascript
+const cogRpmTwo = (cogs, n) => {
+  const left = cogs.slice(0, n + 1).reverse();
+  const right = cogs.slice(n, cogs.length);
+
+  const leftRotation = left.length % 2 === 0 ? -1 : 1;
+  const leftRpm = (1 * (left[0] / left[left.length - 1])) * leftRotation;
+
+  const rightRotation = right.length % 2 === 0 ? -1 : 1;
+  const rightRpm = (1 * (right[0] / right[right.length - 1])) * rightRotation;
+
+  return [leftRpm, rightRpm];
+}
+// console.log(cogRpmTwo([100, 50, 25], 1));
+
+
+const countConsonants = (str) => {
+  return [... new Set(str.toLowerCase().replace(/[^a-z]|[aeiou]/g, ''))].length;
+}
+console.log(countConsonants('Sillystring!!'));
 
 
 // This looks like a fun one
