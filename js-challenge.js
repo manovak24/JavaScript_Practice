@@ -9478,7 +9478,6 @@ const cogRpm = (cogs) => {
 // console.log(cogRpm([ 51,32,55,97,83,50,50 ]));
 
 
-// https://www.codewars.com/kata/59e72bdcfc3c4974190000d9/train/javascript
 const cogRpmTwo = (cogs, n) => {
   const left = cogs.slice(0, n + 1).reverse();
   const right = cogs.slice(n, cogs.length);
@@ -9497,7 +9496,37 @@ const cogRpmTwo = (cogs, n) => {
 const countConsonants = (str) => {
   return [... new Set(str.toLowerCase().replace(/[^a-z]|[aeiou]/g, ''))].length;
 }
-console.log(countConsonants('Sillystring!!'));
+// console.log(countConsonants('Sillystring!!'));
+
+
+const solvePalidrome = (s) => {
+  let start = 0;
+  let end = s.length - 1;
+
+  const palidromeCheck = (str, left, right) => {
+    while(left < right) {
+      if(str[left] !== str[right]) return false;
+      left++;
+      right--;
+    }
+    return true;
+  }
+
+  while(start < end) {
+    if(s[start] !== s[end]) {
+      if(palidromeCheck(s, start + 1, end) || palidromeCheck(s, start, end - 1)) {
+        return 'remove one'
+      } else {
+        return 'not possible'
+      }
+    }
+    start++;
+    end--;
+  }
+
+  return 'OK';
+}
+console.log(solvePalidrome('abbaa'));
 
 
 // This looks like a fun one
