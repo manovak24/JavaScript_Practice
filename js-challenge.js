@@ -9526,7 +9526,15 @@ const solvePalidrome = (s) => {
 
   return 'OK';
 }
-console.log(solvePalidrome('abbaa'));
+// console.log(solvePalidrome('abbaa'));
+
+
+const moveZeros = (arr) => {
+  let zeros = arr.filter(item => item === 0);
+  let filtered = arr.filter(item => item !== 0)
+  return filtered.concat(zeros);
+}
+console.log(moveZeros([1,2,0,0,1,0,1,0,3,0,1]));
 
 
 // This looks like a fun one
