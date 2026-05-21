@@ -9534,7 +9534,45 @@ const moveZeros = (arr) => {
   let filtered = arr.filter(item => item !== 0)
   return filtered.concat(zeros);
 }
-console.log(moveZeros([1,2,0,0,1,0,1,0,3,0,1]));
+// console.log(moveZeros([1,2,0,0,1,0,1,0,3,0,1]));
+
+
+// https://www.codewars.com/kata/597a660f59873cc353000061/train/javascript
+const getColors = (colArr) => {
+  // Need to use parseInt with radix to figure out color
+  // parseInt('FF', 16) it needs to be 16 bit because of hex code
+  // FFA07A FF(red) A0(green) 7A(blue)
+  // first two values are red values
+  // middle two values are green values
+  // last two values are blue values
+  // parse the values and find largest to figure out dominant color
+
+  let colorIndex = {
+    0 : 'red',
+    2 : 'green',
+    3 : 'blue'
+  }
+
+  let splitUp = colArr.map(arr => {
+    return arr.map(hexCode => {
+      let numArr = hexCode.match(/.{1,2}/g).map(chunk => parseInt(chunk, 16));
+      return numArr.indexOf(Math.max(...numArr));
+    })
+  })
+
+  console.log(splitUp)
+
+  // Now that we have converted the hex codes into numerical values the next step is to find the largest and at what index
+  // Index 0 = red
+  // Index 1 = green
+  // Index 2 = blue
+
+}
+console.log(getColors([
+  ["FFA07A", "FA8072", "8DC4DE"],
+  ["7FFF00", "ADFF2F", "FF0000", "00FF7F", "00FF7F"],
+  ["ADD8E6", "6B8E23", "9ACD32", "32CD32", "00FF00"]
+]));
 
 
 // This looks like a fun one
