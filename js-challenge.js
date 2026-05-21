@@ -9560,7 +9560,7 @@ const getColors = (colArr) => {
     })
   })
 
-  console.log(splitUp)
+  // console.log(splitUp)
 
   // Now that we have converted the hex codes into numerical values the next step is to find the largest and at what index
   // Index 0 = red
