@@ -9610,6 +9610,8 @@ const convertDecimalsToDegrees = (degrees) => {
   // Leaving off here
   // Need to figure out a way to loop backwards (or another if conditional block) to round up if minutes or seconds = 60
   // EX: [91, 19, 60] should be [91, 20]
+  // Also might be a better way to solve this
+  // Clean up console logs and naming convention
 
 
   return arr;
