@@ -9579,6 +9579,44 @@ const getColors = (colArr) => {
 // ]));
 
 
+// https://www.codewars.com/kata/590ac6b9be4dff49b0000042/train/javascript
+const convertDecimalsToDegrees = (degrees) => {
+  let degree = parseInt(degrees);
+  let minutes = 0;
+  let seconds = 0;
+
+  let degreeRemainder = degrees - degree;
+  console.log(degreeRemainder)
+  if(degreeRemainder > 0) {
+    let decimalToMinutes = degreeRemainder * 60;
+    minutes += parseInt(decimalToMinutes);
+    
+    let minutesToSeconds = decimalToMinutes - parseInt(decimalToMinutes);
+    console.log(minutesToSeconds)
+    if(minutesToSeconds > 0) {
+      seconds += parseInt(Math.round(minutesToSeconds * 60));
+    }
+  }
+
+  let arr = [degree, minutes, seconds];
+
+  if(arr[2] === 0) {
+    arr.pop();
+    if(arr[1] === 0) {
+      arr.pop();
+    }
+  }
+
+  // Leaving off here
+  // Need to figure out a way to loop backwards (or another if conditional block) to round up if minutes or seconds = 60
+  // EX: [91, 19, 60] should be [91, 20]
+
+
+  return arr;
+}
+console.log(convertDecimalsToDegrees(91.33333333333333));
+
+
 // This looks like a fun one
 // https://www.codewars.com/kata/5e7e4b7cd889f7001728fd4a/train/javascript
 
