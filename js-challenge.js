@@ -9586,34 +9586,32 @@ const convertDecimalsToDegrees = (degrees) => {
   let seconds = 0;
 
   let degreeRemainder = degrees - degree;
-  console.log(degreeRemainder)
   if(degreeRemainder > 0) {
     let decimalToMinutes = degreeRemainder * 60;
     minutes += parseInt(decimalToMinutes);
     
     let minutesToSeconds = decimalToMinutes - parseInt(decimalToMinutes);
-    console.log(minutesToSeconds)
     if(minutesToSeconds > 0) {
       seconds += parseInt(Math.round(minutesToSeconds * 60));
     }
   }
 
   let arr = [degree, minutes, seconds];
-
+  
   if(arr[2] === 0) {
     arr.pop();
     if(arr[1] === 0) {
       arr.pop();
     }
   }
-
-  // Leaving off here
-  // Need to figure out a way to loop backwards (or another if conditional block) to round up if minutes or seconds = 60
-  // EX: [91, 19, 60] should be [91, 20]
-  // Also might be a better way to solve this
-  // Clean up console logs and naming convention
-
-
+  
+  for(let i = arr.length; i >= 1; i--) {
+    if(arr[i] >= 60) {
+      arr[i - 1] += 1;
+      arr.pop();
+    }
+  } 
+  
   return arr;
 }
 console.log(convertDecimalsToDegrees(91.33333333333333));
