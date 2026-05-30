@@ -9614,7 +9614,21 @@ const convertDecimalsToDegrees = (degrees) => {
   
   return arr;
 }
-console.log(convertDecimalsToDegrees(91.33333333333333));
+// console.log(convertDecimalsToDegrees(91.33333333333333));
+
+
+const toWeirdCase = (string) => {
+  return string.split(' ').map(word => {
+    return word.split('').map((char, idx) => {
+      if(idx % 2 === 0) {
+        return char.toUpperCase();
+      } else {
+        return char.toLowerCase();
+      }
+    }).join('');
+  }).join(' ');
+}
+console.log(toWeirdCase("Weird string case"));
 
 
 // This looks like a fun one
