@@ -9628,7 +9628,17 @@ const toWeirdCase = (string) => {
     }).join('');
   }).join(' ');
 }
-console.log(toWeirdCase("Weird string case"));
+// console.log(toWeirdCase("Weird string case"));
+
+
+const tripleTrouble = (one, two, three) => {
+  let str = '';
+  for(let i = 0; i < one.length; i++) {
+    str += one[i] + two[i] + three[i];
+  }
+  return str;
+}
+console.log(tripleTrouble("aaa","bbb","ccc"));
 
 
 // This looks like a fun one
