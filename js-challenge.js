@@ -9638,7 +9638,18 @@ const tripleTrouble = (one, two, three) => {
   }
   return str;
 }
-console.log(tripleTrouble("aaa","bbb","ccc"));
+// console.log(tripleTrouble("aaa","bbb","ccc"));
+
+
+// https://www.codewars.com/kata/5a3f2925b6cfd78fb0000040/train/javascript
+const solveReverseParenthesis = (s) => {
+  while(s.includes('()')) {
+    s = s.replace('()', '');
+  }
+
+  return s
+}
+console.log(solveReverseParenthesis('((()'));
 
 
 // This looks like a fun one
