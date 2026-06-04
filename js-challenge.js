@@ -9641,6 +9641,13 @@ const tripleTrouble = (one, two, three) => {
 // console.log(tripleTrouble("aaa","bbb","ccc"));
 
 
+// https://www.codewars.com/kata/562f91ff6a8b77dfe900006e/train/javascript
+const movie = (card, ticket, perc) => {
+  
+}
+console.log(movie(500, 15, .90));
+
+
 // https://www.codewars.com/kata/5a3f2925b6cfd78fb0000040/train/javascript
 const solveReverseParenthesis = (s) => {
   while(s.includes('()')) {
