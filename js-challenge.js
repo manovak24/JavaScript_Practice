@@ -9645,7 +9645,14 @@ const tripleTrouble = (one, two, three) => {
 const movie = (card, ticket, perc) => {
   
 }
-console.log(movie(500, 15, .90));
+// console.log(movie(500, 15, .90));
+
+
+// https://www.codewars.com/kata/5520714decb43308ea000083/train/javascript
+const nthRoot = (x, n) => {
+
+}
+// console.log(nthRoot(8, 3));
 
 
 // https://www.codewars.com/kata/5a3f2925b6cfd78fb0000040/train/javascript
@@ -9654,9 +9661,28 @@ const solveReverseParenthesis = (s) => {
     s = s.replace('()', '');
   }
 
-  return s
+  if(s.length % 2 !== 0) return -1;
+
+  let reversals = 0;
+  while(s.length > 0) {
+    if(s[0] === ')' && s[1] === ')') {
+      reversals++;
+      s = s.slice(2);
+    }
+
+    if(s[0] === '(' && s[1] === '(') {
+      reversals++;
+      s = s.slice(2);
+    }
+
+    if(s[0] === ')' && s[1] === '(') {
+      reversals += 2;
+      s = s.slice(2);
+    }
+  }
+  return reversals;
 }
-console.log(solveReverseParenthesis('((()'));
+// console.log(solveReverseParenthesis('((('));
 
 
 // This looks like a fun one
