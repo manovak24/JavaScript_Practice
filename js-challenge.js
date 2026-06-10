@@ -9641,11 +9641,20 @@ const tripleTrouble = (one, two, three) => {
 // console.log(tripleTrouble("aaa","bbb","ccc"));
 
 
+// Continue on the problems below
+
 // https://www.codewars.com/kata/63967eb85e54bd00237d2201/train/javascript
 const completeMe = (str) => {
-  
+  let newStr = str;
+  for(let i = 0; i < str.length; i++) {
+    newStr += str[i];
+
+    let newStrRev = newStr.split('').reverse().join('');
+    if(newStr === newStrRev) return newStr;
+  }
+  return str;
 }
-console.log(completeMe("Btaa"));
+console.log(completeMe("aOOa"));
 
 
 // https://www.codewars.com/kata/562f91ff6a8b77dfe900006e/train/javascript
