@@ -9641,6 +9641,13 @@ const tripleTrouble = (one, two, three) => {
 // console.log(tripleTrouble("aaa","bbb","ccc"));
 
 
+// https://www.codewars.com/kata/63967eb85e54bd00237d2201/train/javascript
+const completeMe = (str) => {
+  
+}
+console.log(completeMe("Btaa"));
+
+
 // https://www.codewars.com/kata/562f91ff6a8b77dfe900006e/train/javascript
 const movie = (card, ticket, perc) => {
   
