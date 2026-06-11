@@ -9645,16 +9645,49 @@ const tripleTrouble = (one, two, three) => {
 
 // https://www.codewars.com/kata/63967eb85e54bd00237d2201/train/javascript
 const completeMe = (str) => {
-  let newStr = str;
-  for(let i = 0; i < str.length; i++) {
-    newStr += str[i];
+  
+  // This is a brain teaser!
+  // Might need to figure out a way to loop though and add one letter at a time
+  // Test each letter before moving on to next letter
+  // xyz > xyzx ? xyzy ? xyzz ?
+  // xyzy > xyzyx ? xyzyy ? xyzyz ?
+  // xyzyx is winner
 
+  // It might be that each loop need to test if strings are the same based on length
+
+  // so xyzy would be testing only yzy based on the index of y
+
+  // xyzyx would be testing xyzyx based on index of x 
+
+  // aOOa
+
+  // aOOaa > aOOaO
+  // test Oaa not same > test OaO and it equals same go to next loop
+
+  // aOOaOa > aOOaOO
+  // test OaOa not same > test OaOO but this isn't the same so hmmmmmmmm maybe need to test for more than just the index? stop when finding match?
+
+  // aOOaOOa
+  
+  let newStr = str;
+  
+  let i = 0;
+  if(str[0] === str[str.length - 1] || str.length % 2 !== 0) i++;
+
+  while(i < str.length) {
+    console.log('str i', str[i])
+    newStr += str[i];
+    console.log('new str', newStr)
     let newStrRev = newStr.split('').reverse().join('');
     if(newStr === newStrRev) return newStr;
+    i++;
   }
+  
   return str;
 }
 console.log(completeMe("aOOa"));
+
+
 
 
 // https://www.codewars.com/kata/562f91ff6a8b77dfe900006e/train/javascript
