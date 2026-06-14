@@ -9685,16 +9685,25 @@ const completeMe = (str) => {
   
   return str;
 }
-console.log(completeMe("aOOa"));
-
-
+// console.log(completeMe("aOO"));
 
 
 // https://www.codewars.com/kata/562f91ff6a8b77dfe900006e/train/javascript
 const movie = (card, ticket, perc) => {
-  
+  // Need to solve for large inputs that time out
+  let ticketTotal = ticket;
+  let cardTotal = card + ticket * perc;
+  let count = 1;
+  while(ticketTotal <= Math.ceil(cardTotal)) {
+    count++;
+    ticketTotal += ticket;
+    cardTotal += ticket * Math.pow(perc, count);
+  }
+  return count;
+
+  return Math.pow(0.09, 2) * 20;
 }
-// console.log(movie(500, 15, .90));
+console.log(movie(0, 10, 0.95));
 
 
 // https://www.codewars.com/kata/5520714decb43308ea000083/train/javascript
