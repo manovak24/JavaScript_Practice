@@ -9688,6 +9688,12 @@ const completeMe = (str) => {
 // console.log(completeMe("aOO"));
 
 
+const countWords = (str) => {
+  return str.trim().replace('\uFEFF', ' ').split(' ').filter(x => x !== '').length;
+}
+console.log(countWords("Hello﻿World "));
+
+
 // https://www.codewars.com/kata/562f91ff6a8b77dfe900006e/train/javascript
 const movie = (card, ticket, perc) => {
   // Need to solve for large inputs that time out
