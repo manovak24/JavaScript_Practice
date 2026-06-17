@@ -9641,60 +9641,12 @@ const tripleTrouble = (one, two, three) => {
 // console.log(tripleTrouble("aaa","bbb","ccc"));
 
 
-// Continue on the problems below
-
-// https://www.codewars.com/kata/63967eb85e54bd00237d2201/train/javascript
-const completeMe = (str) => {
-  
-  // This is a brain teaser!
-  // Might need to figure out a way to loop though and add one letter at a time
-  // Test each letter before moving on to next letter
-  // xyz > xyzx ? xyzy ? xyzz ?
-  // xyzy > xyzyx ? xyzyy ? xyzyz ?
-  // xyzyx is winner
-
-  // It might be that each loop need to test if strings are the same based on length
-
-  // so xyzy would be testing only yzy based on the index of y
-
-  // xyzyx would be testing xyzyx based on index of x 
-
-  // aOOa
-
-  // aOOaa > aOOaO
-  // test Oaa not same > test OaO and it equals same go to next loop
-
-  // aOOaOa > aOOaOO
-  // test OaOa not same > test OaOO but this isn't the same so hmmmmmmmm maybe need to test for more than just the index? stop when finding match?
-
-  // aOOaOOa
-  
-  let newStr = str;
-  
-  let i = 0;
-  if(str[0] === str[str.length - 1] || str.length % 2 !== 0) i++;
-
-  while(i < str.length) {
-    console.log('str i', str[i])
-    newStr += str[i];
-    console.log('new str', newStr)
-    let newStrRev = newStr.split('').reverse().join('');
-    if(newStr === newStrRev) return newStr;
-    i++;
-  }
-  
-  return str;
-}
-// console.log(completeMe("aOO"));
-
-
 const countWords = (str) => {
   return str.trim().replace('\uFEFF', ' ').split(' ').filter(x => x !== '').length;
 }
-console.log(countWords("Hello﻿World "));
+// console.log(countWords("Hello﻿World "));
 
 
-// https://www.codewars.com/kata/562f91ff6a8b77dfe900006e/train/javascript
 const movie = (card, ticket, perc) => {
   // Need to solve for large inputs that time out
   let ticketTotal = ticket;
@@ -9706,20 +9658,16 @@ const movie = (card, ticket, perc) => {
     cardTotal += ticket * Math.pow(perc, count);
   }
   return count;
-
-  return Math.pow(0.09, 2) * 20;
 }
-console.log(movie(0, 10, 0.95));
+// console.log(movie(500, 15, 0.9));
 
 
-// https://www.codewars.com/kata/5520714decb43308ea000083/train/javascript
 const nthRoot = (x, n) => {
-
+  return Math.pow(x, (1/n));
 }
 // console.log(nthRoot(8, 3));
 
 
-// https://www.codewars.com/kata/5a3f2925b6cfd78fb0000040/train/javascript
 const solveReverseParenthesis = (s) => {
   while(s.includes('()')) {
     s = s.replace('()', '');
@@ -9747,6 +9695,37 @@ const solveReverseParenthesis = (s) => {
   return reversals;
 }
 // console.log(solveReverseParenthesis('((('));
+
+
+// Continue on the problems below
+
+// https://www.codewars.com/kata/63967eb85e54bd00237d2201/train/javascript
+const completeMe = (str) => {
+  // Palidrome
+
+  
+}
+// console.log(completeMe("aOO"));
+
+
+// https://www.codewars.com/kata/5c01c1525486bf12bd0001cd/train/javascript
+const yearMaxPeople = (records) => {
+  const enter = records.map(x => x[0]).flat().sort((a,b) => a - b);
+  const leave = records.map(x => x.slice(1)).flat().sort((a,b) => a - b);
+
+  console.log('enter', enter);
+  console.log('leave', leave);
+  
+  // Two pointer technique
+  let pop = 0;
+  let year;
+  for(let i = 0; i < enter.length; i++) {
+
+  }
+
+  return [pop, year];
+}
+// console.log(yearMaxPeople([[1980, 2010], [1979, 1985], [1986, 1995], [1987, 2008]]));
 
 
 // This looks like a fun one
@@ -9790,27 +9769,6 @@ const sscForperm = (arr) => {
   return [{"total perm": count}, {"total scc": sum}, {"max scc": max}, {"min scc": min}];
 }
 // console.log(sscForperm([ 4, 25, 5, 11, 4 ]));
-
-
-// DONT FORGET PROBLEM BELOW
-// https://www.codewars.com/kata/5c01c1525486bf12bd0001cd/train/javascript
-const yearMaxPeople = (records) => {
-  const enter = records.map(x => x[0]).flat().sort((a,b) => a - b);
-  const leave = records.map(x => x.slice(1)).flat().sort((a,b) => a - b);
-
-  console.log('enter', enter);
-  console.log('leave', leave);
-  
-  // Two pointer technique
-  let pop = 0;
-  let year;
-  for(let i = 0; i < enter.length; i++) {
-
-  }
-
-  return [pop, year];
-}
-// console.log(yearMaxPeople([[1980, 2010], [1979, 1985], [1986, 1995], [1987, 2008]]));
 
 
 
