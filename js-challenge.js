@@ -9701,11 +9701,16 @@ const solveReverseParenthesis = (s) => {
 
 // https://www.codewars.com/kata/63967eb85e54bd00237d2201/train/javascript
 const completeMe = (str) => {
-  // Palidrome
-
-  
+  if(str.length === 1) return str += str;
+  for(let i = 1; i < str.length; i++) {
+    let subStr = str.slice(i);
+    let revSubStr = str.slice(i).split('').reverse().join('');
+    if(subStr === revSubStr) {
+      return str + str.slice(0, i).split('').reverse().join('');
+    }
+  }
 }
-// console.log(completeMe("aOO"));
+console.log(completeMe("AaaaA"));
 
 
 // https://www.codewars.com/kata/5c01c1525486bf12bd0001cd/train/javascript
