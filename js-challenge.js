@@ -9697,9 +9697,6 @@ const solveReverseParenthesis = (s) => {
 // console.log(solveReverseParenthesis('((('));
 
 
-// Continue on the problems below
-
-// https://www.codewars.com/kata/63967eb85e54bd00237d2201/train/javascript
 const completeMe = (str) => {
   if(str.length === 1) return str += str;
   for(let i = 1; i < str.length; i++) {
@@ -9710,8 +9707,10 @@ const completeMe = (str) => {
     }
   }
 }
-console.log(completeMe("AaaaA"));
+// console.log(completeMe("AaaaA"));
 
+
+// Continue on the problems below
 
 // https://www.codewars.com/kata/5c01c1525486bf12bd0001cd/train/javascript
 const yearMaxPeople = (records) => {
