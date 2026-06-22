@@ -9709,6 +9709,16 @@ const completeMe = (str) => {
 }
 // console.log(completeMe("AaaaA"));
 
+const generateMenu = (menuItems) => {
+  return menuItems.reduce((a,b) => {
+    return a += `<a href="${b.url}">${b.text}</a>`;
+  }, '')
+}
+console.log(generateMenu([
+  { url: 'https://osldvqtz.fvbsjcba/v/jjxxp#ljpbspz', text: 'fge' },
+  { url: 'https://zh.zk/wpgnff/wpjhhok#pynhjgl', text: 's' }
+]));
+
 
 // Continue on the problems below
 
