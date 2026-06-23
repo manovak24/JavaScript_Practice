@@ -9714,10 +9714,34 @@ const generateMenu = (menuItems) => {
     return a += `<a href="${b.url}">${b.text}</a>`;
   }, '')
 }
-console.log(generateMenu([
-  { url: 'https://osldvqtz.fvbsjcba/v/jjxxp#ljpbspz', text: 'fge' },
-  { url: 'https://zh.zk/wpgnff/wpjhhok#pynhjgl', text: 's' }
-]));
+// console.log(generateMenu([
+//   { url: 'https://osldvqtz.fvbsjcba/v/jjxxp#ljpbspz', text: 'fge' },
+//   { url: 'https://zh.zk/wpgnff/wpjhhok#pynhjgl', text: 's' }
+// ]));
+
+
+// Fizzbuzz problems!!
+
+// https://www.codewars.com/kata/596925532f709fccf3000077
+const fizzbuzzPlusPlus = (numbers, words) => {
+  let arr = [];
+  let index = 1;
+  while(!arr.includes('fizz')) {
+    let str = '';
+    numbers.forEach(num => {
+      console.log(num, index)
+      if(index % num === 0) {
+        arr.push(words[numbers.indexOf(num)])
+      } else {
+        arr.push(index);
+      }
+      str = '';
+      index++;
+    })
+  }
+  return arr;
+}
+// console.log(fizzbuzzPlusPlus([2,3,5],["fizz", "buzz", "bazz"]));
 
 
 // Continue on the problems below
