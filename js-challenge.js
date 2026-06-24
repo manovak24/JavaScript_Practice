@@ -9722,26 +9722,28 @@ const generateMenu = (menuItems) => {
 
 // Fizzbuzz problems!!
 
+// Go back to the one below and continue with other fizzbuzz problems
+// Try to optimize solution below
+
 // https://www.codewars.com/kata/596925532f709fccf3000077
 const fizzbuzzPlusPlus = (numbers, words) => {
   let arr = [];
   let index = 1;
-  while(!arr.includes('fizz')) {
+  while(!arr.includes(words.join(''))) {
+    arr.push(index);
     let str = '';
     numbers.forEach(num => {
-      console.log(num, index)
-      if(index % num === 0) {
-        arr.push(words[numbers.indexOf(num)])
-      } else {
-        arr.push(index);
+      if(arr[index - 1] % num === 0) {
+        str += words[numbers.indexOf(num)];
       }
-      str = '';
-      index++;
     })
+    if(str.length > 0) arr[index - 1] = str;
+    str = '';
+    index++;
   }
   return arr;
 }
-// console.log(fizzbuzzPlusPlus([2,3,5],["fizz", "buzz", "bazz"]));
+console.log(fizzbuzzPlusPlus([2,3,5],["fizz", "buzz", "bazz"]));
 
 
 // Continue on the problems below
