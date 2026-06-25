@@ -9743,7 +9743,18 @@ const fizzbuzzPlusPlus = (numbers, words) => {
   }
   return arr;
 }
-console.log(fizzbuzzPlusPlus([2,3,5],["fizz", "buzz", "bazz"]));
+// console.log(fizzbuzzPlusPlus([2,3,5],["fizz", "buzz", "bazz"]));
+
+
+const tiyFizzBuzz = (sentence) => {
+  return sentence.split('').map(char => {
+    if(char === char.toUpperCase() && /[^AEIOU]/.test(char) && /[a-z]/i.test(char)) return 'Iron';
+    if(char === char.toUpperCase() && /[AEIOU]/.test(char)) return 'Iron Yard';
+    if(/[aeiou]/.test(char)) return 'Yard';
+    return char;
+  }).join('');
+}
+// console.log(tiyFizzBuzz('Hello!!'));
 
 
 // Continue on the problems below
