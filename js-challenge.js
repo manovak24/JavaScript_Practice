@@ -9720,6 +9720,32 @@ const generateMenu = (menuItems) => {
 // ]));
 
 
+const greetAgain = (language) => {
+  const languages = {
+    "english": "Welcome",
+    "czech": "Vitejte",
+    "danish": "Velkomst",
+    "dutch": "Welkom",
+    "estonian": "Tere tulemast",
+    "finnish": "Tervetuloa",
+    "flemish": "Welgekomen",
+    "french": "Bienvenue",
+    "german": "Willkommen",
+    "irish": "Failte",
+    "italian": "Benvenuto",
+    "latvian": "Gaidits",
+    "lithuanian": "Laukiamas",
+    "polish": "Witamy",
+    "spanish": "Bienvenido",
+    "swedish": "Valkommen",
+    "welsh": "Croeso",
+  };
+
+  return languages[language] ? languages[language] : languages['english'];
+}
+console.log(greetAgain('french'));
+
+
 // Fizzbuzz problems!!
 
 // Go back to the one below and continue with other fizzbuzz problems
@@ -9765,25 +9791,25 @@ const reverseFizzBuzz = (array) => {
 
   return [fizz, buzz];
 }
-console.log(reverseFizzBuzz([
-  1,  2,          3,  'Buzz',     5,  6,
-  7,  'Buzz',     9,  10,         11, 'Buzz',
-  13, 14,         15, 'FizzBuzz', 17, 18,
-  19, 'Buzz',     21, 22,         23, 'Buzz',
-  25, 26,         27, 'Buzz',     29, 30,
-  31, 'FizzBuzz', 33, 34,         35, 'Buzz',
-  37, 38,         39, 'Buzz',     41, 42,
-  43, 'Buzz',     45, 46,         47, 'FizzBuzz',
-  49, 50,         51, 'Buzz',     53, 54,
-  55, 'Buzz',     57, 58,         59, 'Buzz',
-  61, 62,         63, 'FizzBuzz', 65, 66,
-  67, 'Buzz',     69, 70,         71, 'Buzz',
-  73, 74,         75, 'Buzz',     77, 78,
-  79, 'FizzBuzz', 81, 82,         83, 'Buzz',
-  85, 86,         87, 'Buzz',     89, 90,
-  91, 'Buzz',     93, 94,         95, 'FizzBuzz',
-  97, 98,         99, 'Buzz'
-]));
+// console.log(reverseFizzBuzz([
+//   1,  2,          3,  'Buzz',     5,  6,
+//   7,  'Buzz',     9,  10,         11, 'Buzz',
+//   13, 14,         15, 'FizzBuzz', 17, 18,
+//   19, 'Buzz',     21, 22,         23, 'Buzz',
+//   25, 26,         27, 'Buzz',     29, 30,
+//   31, 'FizzBuzz', 33, 34,         35, 'Buzz',
+//   37, 38,         39, 'Buzz',     41, 42,
+//   43, 'Buzz',     45, 46,         47, 'FizzBuzz',
+//   49, 50,         51, 'Buzz',     53, 54,
+//   55, 'Buzz',     57, 58,         59, 'Buzz',
+//   61, 62,         63, 'FizzBuzz', 65, 66,
+//   67, 'Buzz',     69, 70,         71, 'Buzz',
+//   73, 74,         75, 'Buzz',     77, 78,
+//   79, 'FizzBuzz', 81, 82,         83, 'Buzz',
+//   85, 86,         87, 'Buzz',     89, 90,
+//   91, 'Buzz',     93, 94,         95, 'FizzBuzz',
+//   97, 98,         99, 'Buzz'
+// ]));
 
 
 // Continue on the problems below
