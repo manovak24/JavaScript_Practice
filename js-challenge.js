@@ -9743,7 +9743,30 @@ const greetAgain = (language) => {
 
   return languages[language] ? languages[language] : languages['english'];
 }
-console.log(greetAgain('french'));
+// console.log(greetAgain('french'));
+
+
+// Come back to this one
+// https://www.codewars.com/kata/5b7bd90ef643c4df7400015d/train/javascript
+const solveCreatePalindrome = (s) => {
+  let variationsArr = [];
+  for(let i = 0; i < s.length; i++) {
+    let before = s[i] === 'a' ? 'b' : String.fromCharCode(s[i].charCodeAt(0) - 1);
+    let after = s[i] === 'z' ? 'y' : String.fromCharCode(s[i].charCodeAt(0) + 1);
+    before === after ? variationsArr.push([before]) : variationsArr.push([before, after]);
+  }
+
+  const variations = variationsArr.reduce((a, c) => {
+    a = a.map(arr => c.map(char => arr + char)).reduce((flat, next) => flat.concat(next), []);
+    return a;
+  });
+
+  for(let i = 0; i < variations.length; i++) {
+    if(variations[i] === variations[i].split('').reverse().join('')) return true;
+  }
+  return false;
+}
+console.log(solveCreatePalindrome('abba'));
 
 
 // Fizzbuzz problems!!
