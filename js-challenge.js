@@ -9775,17 +9775,18 @@ const solveCreatePalindrome = (s) => {
     before === after ? variationsArr.push([before]) : variationsArr.push([before, after]);
   }
 
-  const variations = variationsArr.reduce((a, c) => {
-    a = a.map(arr => c.map(char => arr + char)).reduce((flat, next) => flat.concat(next), []);
-    return a;
-  });
+  // Important - instead of create an array of all the possible variations
+  // Loop through all variationsArr of possible letter switches from start and end
+  // Determine if there are possible matches
+  // Exit early if not with
 
-  for(let i = 0; i < variations.length; i++) {
-    if(variations[i] === variations[i].split('').reverse().join('')) return true;
+  for(let start = 0, end = variationsArr.length - 1; start <= end; start++, end--) {
+    console.log(variationsArr[start].some(char => variationsArr[end].includes(char)))
   }
-  return false;
+
 }
-// console.log(solveCreatePalindrome('kxbkwgyydkcbtjcosgikfdyhuuprubpwthgflucpyylbofvqxkkvqthmdnywpaunfihvupbwpruwfybdmgeuocltdaidyyewmbzm'));
+// console.log(solveCreatePalindrome('abba'));
+console.log(solveCreatePalindrome('kxbkwgyydkcbtjcosgikfdyhuuprubpwthgflucpyylbofvqxkkvqthmdnywpaunfihvupbwpruwfybdmgeuocltdaidyyewmbzm'));
 
 
 // Fizzbuzz problems!!
