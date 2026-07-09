@@ -9766,7 +9766,7 @@ const solveCreatePalindrome = (s) => {
   }
   return false;
 }
-console.log(solveCreatePalindrome('abba'));
+console.log(solveCreatePalindrome('kxbkwgyydkcbtjcosgikfdyhuuprubpwthgflucpyylbofvqxkkvqthmdnywpaunfihvupbwpruwfybdmgeuocltdaidyyewmbzm'));
 
 
 // Fizzbuzz problems!!
