@@ -9755,6 +9755,16 @@ const calcType = (a, b, res) => {
 // console.log(calcType(10, 4, 40));
 
 
+const doubleCheck = (str) => {
+  let arr = str.toLowerCase().split('');
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] === arr[i + 1]) return true;
+  }
+  return false;
+}
+// console.log(doubleCheck('ab  c'));
+
+
 // Come back to this one
 // https://www.codewars.com/kata/5b7bd90ef643c4df7400015d/train/javascript
 const solveCreatePalindrome = (s) => {
