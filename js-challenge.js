@@ -9746,6 +9746,15 @@ const greetAgain = (language) => {
 // console.log(greetAgain('french'));
 
 
+const calcType = (a, b, res) => {
+  if(a + b === res) return 'addition';
+  if(a - b === res) return 'subtraction';
+  if(a * b === res) return 'multiplication';
+  if(a / b === res) return 'division';
+}
+// console.log(calcType(10, 4, 40));
+
+
 // Come back to this one
 // https://www.codewars.com/kata/5b7bd90ef643c4df7400015d/train/javascript
 const solveCreatePalindrome = (s) => {
@@ -9766,7 +9775,7 @@ const solveCreatePalindrome = (s) => {
   }
   return false;
 }
-console.log(solveCreatePalindrome('kxbkwgyydkcbtjcosgikfdyhuuprubpwthgflucpyylbofvqxkkvqthmdnywpaunfihvupbwpruwfybdmgeuocltdaidyyewmbzm'));
+// console.log(solveCreatePalindrome('kxbkwgyydkcbtjcosgikfdyhuuprubpwthgflucpyylbofvqxkkvqthmdnywpaunfihvupbwpruwfybdmgeuocltdaidyyewmbzm'));
 
 
 // Fizzbuzz problems!!
