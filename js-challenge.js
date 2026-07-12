@@ -9785,6 +9785,25 @@ const solveCreatePalindrome = (s) => {
 // console.log(solveCreatePalindrome('kxbkwgyydkcbtjcosgikfdyhuuprubpwthgflucpyylbofvqxkkvqthmdnywpaunfihvupbwpruwfybdmgeuocltdaidyyewmbzm'));
 
 
+const uglifyWord = (s) => {
+  let flag = 1;
+  let ugly = '';
+  for(let i = 0; i < s.length; i++) {
+    console.log(flag, s[i])
+    if(/[a-z]/i.test(s[i])) {
+      flag === 1 ? ugly += s[i].toUpperCase() : ugly += s[i].toLowerCase();
+      flag === 1 ? flag = 0 : flag = 1;
+    } else {
+      ugly += s[i];
+      flag = 1;
+    }
+
+  }
+  return ugly;
+}
+// console.log(uglifyWord('eeee-ffff-gggg'));
+
+
 // Fizzbuzz problems!!
 
 // Go back to the one below and continue with other fizzbuzz problems
