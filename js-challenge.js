@@ -9804,6 +9804,15 @@ const uglifyWord = (s) => {
 // console.log(uglifyWord('eeee-ffff-gggg'));
 
 
+const isAscOrder = (arr) => {
+  for(let i = 0; i < arr.length - 1; i++) {
+    if(arr[i] > arr[i + 1]) return false;
+  }
+  return true;
+}
+// console.log(isAscOrder([1, 2, 4, 7, 19]));
+
+
 // Fizzbuzz problems!!
 
 // Go back to the one below and continue with other fizzbuzz problems
