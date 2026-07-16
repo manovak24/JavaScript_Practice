@@ -9813,6 +9813,21 @@ const isAscOrder = (arr) => {
 // console.log(isAscOrder([1, 2, 4, 7, 19]));
 
 
+const reverseMessage = (str) => {
+  let arr = str.toLowerCase().split(' ');
+  
+  let revArr = arr.map(word => {
+                      let revWord = word.split('').reverse().join('');
+                      return revWord.slice(0, 1).toUpperCase() + revWord.slice(1);
+                    })
+                    .reverse()
+                    .join(' ');
+
+  return revArr;
+}
+console.log(reverseMessage('reverse this4 message!'));
+
+
 // Fizzbuzz problems!!
 
 // Go back to the one below and continue with other fizzbuzz problems
