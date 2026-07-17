@@ -9825,7 +9825,7 @@ const reverseMessage = (str) => {
 
   return revArr;
 }
-console.log(reverseMessage('reverse this4 message!'));
+// console.log(reverseMessage('reverse this4 message!'));
 
 
 // Fizzbuzz problems!!
@@ -9892,6 +9892,30 @@ const reverseFizzBuzz = (array) => {
 //   91, 'Buzz',     93, 94,         95, 'FizzBuzz',
 //   97, 98,         99, 'Buzz'
 // ]));
+
+
+const reverseFizzBuzzTwo = (s) => {
+  const numTest = (val) => Number.isNaN(Number(val));
+
+  const arr = s.split(' ').map(x => numTest(x) ? x : x * 1);
+
+  const anchorValue = arr.find(x => !numTest(x));
+  const anchorIndex = arr.indexOf(anchorValue);
+
+  const numbers = [];
+  for(let i = 0; i < arr.length; i++) {
+    if(!numTest(arr[i])) {
+      numbers.push(arr[i]);
+    } else {
+      let value = anchorValue + (i - anchorIndex)
+      if(value % 3 === 0 || value % 5 === 0) numbers.push(value); 
+    }
+  }
+
+  return numbers;
+}
+// console.log(reverseFizzBuzzTwo("Fizz 688 689 FizzBuzz"));
+// console.log(reverseFizzBuzzTwo("Fizz Buzz"));
 
 
 // Continue on the problems below
