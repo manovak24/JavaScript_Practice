@@ -9896,12 +9896,47 @@ const reverseFizzBuzz = (array) => {
 
 const reverseFizzBuzzTwo = (s) => {
   const numTest = (val) => Number.isNaN(Number(val));
-
   const arr = s.split(' ').map(x => numTest(x) ? x : x * 1);
-
   const anchorValue = arr.find(x => !numTest(x));
-  const anchorIndex = arr.indexOf(anchorValue);
+  
+  if(!anchorValue) {
+    const obj = {
+      'Fizz': 3,
+      'Buzz': 5,
+      'FizzBuzz': 15
+    }
 
+    let anchorN = obj[arr[0]];
+    let n = obj[arr[0]]
+
+    let answer = [];
+    let holder = [];
+    let test = false;
+
+    while(!test) {
+      for(let i = n; i < n + arr.length; i++) {
+        if(i % 3 === 0 && i % 5 === 0) {
+          holder.push('FizzBuzz');
+          answer.push(i);
+        } else if(i % 3 === 0) {
+          holder.push('Fizz');
+          answer.push(i);
+        } else if(i % 5 === 0) {
+          holder.push('Buzz');
+          answer.push(i);
+        } else {
+          holder.push(i);
+        }
+      }
+
+      test = arr.every((v, i) => v === holder[i]);
+      
+      if(!test) holder = [], answer = [], n += anchorN;
+    }
+    return answer;
+  }
+
+  const anchorIndex = arr.indexOf(anchorValue);
   const numbers = [];
   for(let i = 0; i < arr.length; i++) {
     if(!numTest(arr[i])) {
@@ -9914,8 +9949,8 @@ const reverseFizzBuzzTwo = (s) => {
 
   return numbers;
 }
-// console.log(reverseFizzBuzzTwo("Fizz 688 689 FizzBuzz"));
-// console.log(reverseFizzBuzzTwo("Fizz Buzz"));
+console.log(reverseFizzBuzzTwo("Fizz 688 689 FizzBuzz"));
+console.log(reverseFizzBuzzTwo("Buzz Fizz"));
 
 
 // Continue on the problems below
