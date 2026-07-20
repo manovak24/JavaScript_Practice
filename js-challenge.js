@@ -9828,6 +9828,17 @@ const reverseMessage = (str) => {
 // console.log(reverseMessage('reverse this4 message!'));
 
 
+const strayNumber = (numbers) => {
+  const obj = numbers.reduce((a,b) => {
+    a[b] = (a[b] || 0) + 1;
+    return a;
+  }, {});
+
+  return Number(Object.keys(obj).find(key => obj[key] === 1));
+}
+console.log(strayNumber([17, 17, 3, 17, 17, 17, 17]));
+
+
 // Fizzbuzz problems!!
 
 // Go back to the one below and continue with other fizzbuzz problems
@@ -9949,8 +9960,8 @@ const reverseFizzBuzzTwo = (s) => {
 
   return numbers;
 }
-console.log(reverseFizzBuzzTwo("Fizz 688 689 FizzBuzz"));
-console.log(reverseFizzBuzzTwo("Buzz Fizz"));
+// console.log(reverseFizzBuzzTwo("Fizz 688 689 FizzBuzz"));
+// console.log(reverseFizzBuzzTwo("Buzz Fizz"));
 
 
 // Continue on the problems below
