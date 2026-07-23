@@ -9849,6 +9849,15 @@ const createPhoneNumber = (numbers) => {
 // console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
 
 
+const vowelStart = (str) => {
+  const charsOnly = str.replace(/[^a-z0-9]/gi, '');
+  const lowerCase = charsOnly.split('').map(char => char.toLowerCase());
+  const vowelSpace = lowerCase.map((char, idx) => /[aeiou]/.test(char) && idx !== 0 ? ' ' + char : char).join('');
+  return vowelSpace;
+}
+console.log(vowelStart('Coding is great'));
+
+
 // Fizzbuzz problems!!
 
 // Go back to the one below and continue with other fizzbuzz problems
