@@ -1,294 +1,481 @@
-{{ shop.name }} {{ gift_card.initial_value | money_without_trailing_zeros }} gift card{% if gift_card.recipient and gift_card.customer %} from {% if gift_card.customer.name != blank %}{{ gift_card.customer.name }}{% elsif gift_card.customer.email != blank %}{{ gift_card.customer.email }}{% else %}{{ gift_card.customer.phone }}{% endif %}{% endif %}
+{% # components v3.0.1 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License %}
+{% comment %}
+  Renders a product grid item
 
-{{ shop.name }} {{ gift_card.initial_value | money_without_trailing_zeros }}
-    gift card
-    {% if gift_card.recipient and gift_card.customer %}
-        {% assign from_name = gift_card.properties['From name'] %}
-        from
-        {% if from_name != blank %} {{ from_name }}{% elsif gift_card.customer.name != blank %} {{ gift_card.customer.name }}{% elsif gift_card.customer.email != blank %} {{ gift_card.customer.email }}{% else %} {{ gift_card.customer.phone }}{% endif %}{% endif %}
+  Accepts:
+  - collection {collection} - The collection object
+  - classes {string} - Additional CSS classes to add to the grid item
+  - no_actions {boolean} - Whether to show the quick add and quick shop buttons
+  - type {string} - Whether the grid item is horizontal or not
+  - sizes {string} - Image sizes
+  - sizeVariable {string} - Image size variable used in image size calculations
+  - fallback {string} - Fallback used in image size calculations when first condition is not met
+  - image_style {string} - Whether the image is square or circle
+  - quick_add_enable {boolean} - Whether quick add is enabled
+  - quick_shop_enable {boolean} - Whether quick shop is enabled
+  - product_grid_image_size {string} - The image size to use for the grid item
+  - product_grid_image_fill {boolean} - Whether the image should fill the grid item
+  - product_hover_image {boolean} - Whether second image will be shown on hover
+  - enable_swatches {boolean} - Whether swatches are enabled
+  - vendor_enable {boolean} - Whether to show the vendor
+  - product_save_amount {boolean} - Show save amount
+  - product_save_type {string} - Dollar or percent
+  - set_image_breathing_room {boolean} - Whether to set image breathing room
+  - enable_product_tags {boolean} - Whether to show tags
+  - enable_add_to_cart {boolean} - Whether to show the add to cart component
 
+  Usage:
+  {% render 'product-grid-item', product: product %}
+{% endcomment %}
 
-{% if gift_card.recipient %}
-  {% assign from_name = gift_card.properties['From name'] %}
-  {% if gift_card.customer %}
-    {% if from_name != blank %}
-        {% assign sender_name = from_name %}
-    {% elsif gift_card.customer.name != blank %}
-      {% assign sender_name = gift_card.customer.name %}
-    {% elsif gift_card.customer.email != blank %}
-      {% assign sender_name = gift_card.customer.email %}
-    {% else %}
-      {% assign sender_name = gift_card.customer.phone %}
+{%- liquid
+  assign sizes = sizes | default: '30vw'
+  assign quick_add_enable = quick_add_enable | default: settings.quick_add_enable, allow_false: true | default: true, allow_false: true
+  assign quick_shop_enable = quick_shop_enable | default: settings.quick_shop_enable, allow_false: true | default: true, allow_false: true
+  assign product_grid_image_size = product_grid_image_size | default: settings.product_grid_image_size | default: 'square'
+  assign product_grid_image_fill = product_grid_image_fill | default: settings.product_grid_image_fill, allow_false: true | default: true, allow_false: true
+  assign product_hover_image = product_hover_image | default: settings.product_hover_image, allow_false: true | default: false, allow_false: true
+  assign enable_swatches = enable_swatches | default: settings.enable_swatches, allow_false: true | default: true, allow_false: true
+  assign vendor_enable = vendor_enable | default: settings.vendor_enable, allow_false: true | default: true, allow_false: true
+  assign product_save_amount = product_save_amount | default: settings.product_save_amount, allow_false: true | default: true, allow_false: true
+  assign product_save_type = product_save_type | default: settings.product_save_type | default: 'dollar'
+  assign enable_product_tags = enable_product_tags | default: settings.enable_product_tags, allow_false: true | default: false, allow_false: true
+  assign prefix_enable = prefix_enable | default: settings.prefix_enable, allow_false: true | default: false, allow_false: true
+  assign no_actions = no_actions | default: false, allow_false: true
+  assign enable_add_to_cart = enable_add_to_cart | default: settings.enable_add_to_cart, allow_false: true
+  assign image_style = image_style | default: 'square'
+  assign product_tile_layout = product_tile_layout | default: false, allow_false: true
+  assign product_grid_style = product_grid_style | default: settings.product_grid_style | default: 'grey-round'
+  assign set_image_breathing_room = set_image_breathing_room | default: settings.set_image_breathing_room, allow_false: true | default: true, allow_false: true
+  assign type = type | default: blank
+
+  assign on_sale = false
+  if product.compare_at_price > product.price
+    assign on_sale = true
+  endif
+
+  if set_image_breathing_room
+    if settings.product_grid_image_margin == 0
+      assign image_breathing_room = false
+    else
+      assign image_breathing_room = true
+    endif
+  endif
+
+  if enable_add_to_cart
+    assign no_actions = true
+  endif
+
+  assign product_tags = product.tags | join: ','
+  assign has_custom_label = false
+  assign custom_labels = ''
+  if product.metafields.theme.label and product.metafields.theme.label != blank
+    assign has_custom_label = true
+    assign custom_labels = product.metafields.theme.label.value
+  elsif product_tags contains '_label_'
+    for tag in product.tags
+      if tag contains '_label_'
+        assign tag_starts_with = tag | slice: 0
+        if tag_starts_with == '_'
+          assign has_custom_label = true
+          assign custom_label = tag | replace: '_label_', ''
+          assign custom_labels = custom_labels | append: custom_label | append: ','
+        endif
+      endif
+    endfor
+  endif
+-%}
+
+{% comment %} This is ONLY for the Auctions app, can be removed is Auction app is removed {% endcomment %}
+{% liquid
+  if product.metafields.app--60021833729--auction.status == blank
+      assign show_auction = false
+  else
+      assign show_auction = true
+      assign quick_shop_enable = false
+      assign quick_add_enable = false
+  endif
+%}
+
+<div
+  class="
+    grid-item grid-product {{ classes }} grid-product-image-breathing-room--{{ image_breathing_room }}
+    {% if product_tile_layout %}product-tile-layout--{{ product_tile_layout }}{% endif %}
+    {% if product_grid_style contains 'gridlines' %}
+      grid-product--gridlines overlay
     {% endif %}
-  {% else %}
-    {% assign sender_name = shop.name %}
-  {% endif %}
+  "
+>
+  <div
+    class="product-grid-item"
+    data-product-handle="{{ product.handle }}"
+    data-product-id="{{ product.id }}"
+    data-product-grid-item
+  >
+    <div class="grid-item__content">
+      {%- unless no_actions -%}
+        {%- if quick_add_enable or quick_shop_enable -%}
+          <div class="grid-product__actions">
+            {%- if quick_shop_enable and type != 'horizontal' -%}
+              {%- capture quickShopButton -%}
+                <button type="button" class="btn btn--circle btn--icon quick-product__btn js-modal-open-quick-modal-{{ product.id }} small--hide" title="
+                  {% render 't_with_fallback', key: 'labels.quick_shop', fallback: 'Quick shop' -%}
+                  " data-handle="{{ product.handle }}">
+                  {% render 'icon', name: 'search' %}
+                  <span class="icon__fallback-text visually-hidden">
+                    {% render 't_with_fallback', key: 'labels.quick_shop', fallback: 'Quick shop' %}
+                  </span>
+                </button>
+              {%- endcapture -%}
 
-  {% if gift_card.recipient.nickname != blank %}
-    {% assign recipient_name = gift_card.recipient.nickname %}
-  {% elsif gift_card.recipient.name != blank %}
-    {% assign recipient_name = gift_card.recipient.name %}
-  {% else %}
-    {% assign recipient_name = gift_card.recipient.email %}
-  {% endif %}
+              {%- capture content -%}
+                {%- render 'tool-tip-trigger', context: 'QuickShop', button: quickShopButton, wrapper_class: 'quick-shop-modal' -%}
+              {%- endcapture -%}
 
-  {% capture email_title %}
-    Hi {{ recipient_name }}, you have received a gift card from {{ sender_name }}.
-  {% endcapture %}
-{% endif %}
+              {%- render 'quick-shop', content: content -%}
+            {%- endif -%}
+            {%- if quick_add_enable and product.available -%}
+              {% comment %}
+                Quick add feature:
+                  - when a single variant option, product is immediately added
+                  - when multiple variants, popup with product form appears
+              {% endcomment %}
+              {%- if product.variants.size > 1 -%}
+                {%- capture quickAddButton %}
+                  <button type="button" class="text-link quick-add-btn js-quick-add-form js-modal-open-quick-add" title="
+                    {% render 't_with_fallback', key: 'actions.add_to_cart', fallback: 'Add to cart' -%}
+                    ">
+                    <span class="btn btn--circle btn--icon">
+                      {% render 'icon', name: 'plus' %}
+                      <span class="icon__fallback-text visually-hidden">
+                        {% render 't_with_fallback', key: 'actions.add_to_cart', fallback: 'Add to cart' %}
+                      </span>
+                    </span>
+                  </button>
+                {%- endcapture -%}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-  <title>{{ email_title }}</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" href="/assets/notifications/styles.css">
-  <style>
-    .button__cell { background: {{ shop.email_accent_color }}; }
-    a, a:hover, a:active, a:visited { color: {{ shop.email_accent_color }}; }
-  </style>
-</head>
+                {%- capture content -%}
+                  {% render 'tool-tip-trigger',
+                    button: quickAddButton,
+                    context: 'QuickAdd',
+                    wrapper_class: 'quick-add-modal',
+                  %}
+                {%- endcapture -%}
 
-  <body>
-  {% assign from_name = line_item.properties['From name'] %}
-  {{from_name}}
-    <table align="center" class="body giftcard__body">
-      <tr>
-        <td class="empty-line">&nbsp;</td>
-      </tr>
-      <tr>
-        <td class="empty-line">&nbsp;</td>
-      </tr>
-      <tr>
-        <td>
-          <table class="row content">
-  <tr>
-    <td class="content__cell">
-      <center>
-        <table class="container">
-          <tr>
-            <td>
-              
-            {% if gift_card.recipient %}
-              
-{% if shop.email_logo_url %}
-  <table align="center" class="giftcard__doubletopmargin">
-    <tr>
-      <td>
-        <img src="{{shop.email_logo_url}}" alt="{{ shop.name }}" class="giftcard__logosize" width="{{ shop.email_logo_width }}">
-      </td>
-    </tr>
-  </table>
-{% endif %}
+                {% render 'quick-add', content: content %}
+              {%- else -%}
+                {%- capture content -%}
+                  <button
+                    type="button" class="text-link quick-add-btn"
+                    title="
+                      {% render 't_with_fallback', key: 'actions.add_to_cart', fallback: 'Add to cart' -%}
+                    "
+                    data-id="{{ product.selected_or_first_available_variant.id }}"
+                    data-single-variant-quick-add
+                  >
+                    <span class="btn btn--circle btn--icon">
+                      {% render 'icon', name: 'plus' %}
+                      <span class="icon__fallback-text visually-hidden">
+                        {% render 't_with_fallback', key: 'actions.add_to_cart', fallback: 'Add to cart' %}
+                      </span>
+                    </span>
+                  </button>
+                {%- endcapture -%}
+                {% render 'quick-add', content: content %}
+              {%- endif -%}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endunless -%}
 
-  <table align="center" class="row giftcard__topmargin">
-    <tr>
-      <td class="giftcard__title">{{ email_title }}</td>
-    </tr>
-  </table>
+      {%- liquid
+        assign imageRatio = product_grid_image_size
+        assign fixed_aspect_ratio = false
+        unless imageRatio == 'natural'
+          assign fixed_aspect_ratio = true
+        endunless
 
-{% if gift_card.recipient and gift_card.message != blank %}
-  <table align="center" class="row giftcard__topmargin">
-    <tr>
-      <td class="giftcard__message">
-        "{{ gift_card.message }}"
-      </td>
-    </tr>
-  </table>
-{% endif %}
+        if image_style == 'circle'
+          assign fixed_aspect_ratio = true
+          assign imageRatio = 'square'
+        endif
 
-<table align="center" class="giftcard__topmargin">
-  <tr>
-    <td class="giftcard__balance">{{ gift_card.initial_value | money_with_currency }}</td>
-  </tr>
-  {% if gift_card.expires_on %}
-    <tr>
-      <td class="giftcard__smalltext">
-        Expires {{ gift_card.expires_on | date: '%B %e, %Y' }}
-      </td>
-    </tr>
-  {% endif %}
-</table>
+        assign preview_image = product.featured_media.preview_image
+      -%}
 
-<table align="center" class="giftcard__doubletopmargin">
-  <tr>
-    <td>
-      <img src="https://cdn.shopify.com/s/files/1/0604/1077/files/branded-oaktown-gift-card.png?v=1719425679" alt="Gift card image" width="240" height="160">
-    </td>
-  </tr>
-</table>
+      <a href="{{ product.url | within: collection }}" class="grid-item__link">
+        <div class="grid-product__image-wrap">
+          <div class="grid-product__tags">
+            {%- if has_custom_label -%}
+              {%- assign labels = custom_labels | split: ',' -%}
+              {%- for label in labels -%}
+                <div class="grid-product__tag grid-product__tag--custom">
+                  {{ label }}
+                </div>
+              {%- endfor -%}
+            {%- endif -%}
 
-<table align="center" class="row giftcard__topmargin">
-  <tr>
-    <td class="giftcard__shop_name">{{ shop.name }}</td>
-  </tr>
-</table>
+            {%- unless product.available -%}
+              <div class="grid-product__tag grid-product__tag--sold-out">
+                {% render 't_with_fallback', key: 'info.sold_out', fallback: 'Sold Out' %}
+              </div>
+            {%- endunless -%}
+            {%- if on_sale and product.available -%}
+              <div class="grid-product__tag grid-product__tag--sale">
+                {% render 't_with_fallback', key: 'labels.sale', fallback: 'Sale' %}
+              </div>
+            {%- endif -%}
 
-<table align="center" class="row giftcard__topmargin">
-  <tr>
-    <td class="giftcard__smalltext">
-      Use the gift card code online
-    </td>
-  </tr>
-  <tr>
-    <td class="giftcard__code">
-      {{ gift_card.code | format_code }}
-    </td>
-  </tr>
-</table>
+            {% if product.metafields.custom.badges %}
+              {% assign badge = product.metafields.custom.badges | metafield_text %}
+              {% for badge in badge %}
+                <div class="grid-product__tag grid-product__tag--custom grid-product__tag--{{ badge | handleize }}">
+                  {{ badge }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
 
-<table class="row actions">
-  <tr>
-    <td class="actions__cell">
-      <table align="center" class="button">
-        <tr>
-          <td class="button__cell"><a href="{{ shop.url }}" class="button__text">Visit online store</a></td>
-        </tr>
-      </table>
-      <table align="center" class="button">
-        <tr>
-          <td class="link__cell"><a href="{{ gift_card.url }}" class="link__text">View gift card balance</a></td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
+          {%- if fixed_aspect_ratio -%}
+            <div
+              class="grid__image-ratio grid__image-ratio--{% if image_style == 'circle' %}square{% else %}{{ product_grid_image_size }}{% endif %}"
+            >
+              {%- capture image_classes -%}
+                {% unless product_grid_image_fill %} grid__image-contain{% endunless %} image-style--{{ image_style }}
+              {%- endcapture -%}
+              {%- if preview_image != blank -%}
+                {%- render 'image-element',
+                  img: preview_image,
+                  classes: image_classes,
+                  sizes: sizes,
+                  sizeVariable: sizeVariable,
+                  fallback: fallback,
+                  widths: '160, 200, 280, 360, 540, 720, 900'
+                -%}
+              {%- else -%}
+                <div class="product-image--placeholder">
+                  {%- capture placeholder -%}product-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
+                  {%- render 'placeholder-svg', name: placeholder -%}
+                </div>
+              {%- endif -%}
+            </div>
+          {%- else -%}
+            {%- liquid
+              assign ratio = 1
+              if preview_image != blank
+                assign ratio = preview_image.aspect_ratio
+              endif
+            -%}
+            <div
+              {% if preview_image != blank %}
+                style="height: 0; padding-bottom: {{ 100 | divided_by: ratio }}%;"
+              {% endif %}
+            >
+              {%- if preview_image != blank -%}
+                {%- render 'image-element',
+                  img: preview_image,
+                  classes: 'grid-product__image',
+                  sizes: sizes,
+                  sizeVariable: sizeVariable,
+                  fallback: fallback,
+                  widths: '360, 540, 720, 900, 1080'
+                -%}
+              {%- else -%}
+                <div class="product-image--placeholder">
+                  {%- capture placeholder -%}product-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
+                  {%- render 'placeholder-svg', name: placeholder -%}
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
 
-{% if gift_card.pass_url %}
-  <table align="center" class="row">
-    <tr>
-      <td class="giftcard__textcenter">
-        <a href="{{ gift_card.pass_url }}" class="apple-wallet-button">
-          <img src="{{ 'gift-card/add-to-apple-wallet.png' | shopify_asset_url }}" alt="Add to Apple Wallet" width="120" height="40">
-        </a>
-      </td>
-    </tr>
-  </table>
-{% endif %}
+          {%- if product_hover_image and product.media.size > 1 -%}
+            {%- for media in product.media offset: 1 limit: 1 -%}
+              {%- assign second_image = media.preview_image -%}
+            {%- endfor -%}
+            <div class="grid-product__secondary-image small--hide">
+              {%- capture secondary_image_classes -%}
+                image-style--{{ image_style }}
+              {%- endcapture -%}
+              {%- render 'image-element',
+                img: second_image,
+                classes: secondary_image_classes,
+                sizes: sizes,
+                sizeVariable: sizeVariable,
+                fallback: fallback,
+                widths: '360, 540, 720, 1000'
+              -%}
+            </div>
+          {%- endif -%}
 
-            {% else %}
-              
-{% if shop.email_logo_url %}
-  <table align="center" class="giftcard__doubletopmargin">
-    <tr>
-      <td>
-        <img src="{{shop.email_logo_url}}" alt="{{ shop.name }}" class="giftcard__logosize" width="{{ shop.email_logo_width }}">
-      </td>
-    </tr>
-  </table>
-{% endif %}
+          {%- if enable_swatches -%}
+            {%- capture swatch_trigger -%}
+              {% render 't_with_fallback', key: 'trigger.color_swatch', fallback: 'color' %}
+            {%- endcapture -%}
+            {%- assign swatch_trigger = swatch_trigger | downcase -%}
 
+            {%- for option in product.options_with_values -%}
+              {%- liquid
+                assign option_name = option.name | downcase
+                assign is_color = false
+                if swatch_trigger contains option_name
+                  assign is_color = true
+                elsif swatch_trigger == 'color' and option_name contains 'colour'
+                  assign is_color = true
+                endif
+              -%}
+              {%- if is_color -%}
+                {%- assign option_index = forloop.index0 -%}
+                {%- assign values = '' -%}
+                {%- for variant in product.variants -%}
+                  {%- assign value = variant.options[option_index] %}
+                  {%- unless values contains value -%}
+                    {%- assign values = values | join: ',' | append: ',' | append: value | split: ',' -%}
 
-{% if gift_card.recipient and gift_card.message != blank %}
-  <table align="center" class="row giftcard__topmargin">
-    <tr>
-      <td class="giftcard__message">
-        "{{ gift_card.message }}"
-      </td>
-    </tr>
-  </table>
-{% endif %}
+                    {%- if variant.image -%}
+                      <div
+                        class="grid-product__color-image grid-product__color-image--{{ variant.id }}"
+                      ></div>
+                    {%- endif -%}
+                  {%- endunless -%}
+                {%- endfor -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
 
-<table align="center" class="giftcard__topmargin">
-  <tr>
-    <td class="giftcard__balance">{{ gift_card.initial_value | money_with_currency }}</td>
-  </tr>
-  {% if gift_card.expires_on %}
-    <tr>
-      <td class="giftcard__smalltext">
-        Expires {{ gift_card.expires_on | date: '%B %e, %Y' }}
-      </td>
-    </tr>
-  {% endif %}
-</table>
+        <div class="grid-item__meta">
+          <div class="grid-item__meta-main">
+            {%- if enable_swatches and type == blank -%}
+              {%- render 'swatches', product: product -%}
+            {%- endif -%}
 
-<table align="center" class="giftcard__doubletopmargin">
-  <tr>
-    <td>
-      <img src="https://cdn.shopify.com/s/files/1/0604/1077/files/branded-oaktown-gift-card.png?v=1719425679" alt="Gift card image" width="240" height="160">
-    </td>
-  </tr>
-</table>
+            {%- if prefix_enable and product.metafields.archetype.prefix.value != blank -%}
+              <div class="grid-product__vendor grid-product--prefix">
+                {{ product.metafields.archetype.prefix.value | escape }}
+              </div>
+            {%- endif -%}
 
-<table align="center" class="row giftcard__topmargin">
-  <tr>
-    <td class="giftcard__shop_name">{{ shop.name }}</td>
-  </tr>
-</table>
+            <div class="grid-product__title">{{ product.title }}</div>
 
-<table align="center" class="row giftcard__topmargin">
-  <tr>
-    <td class="giftcard__smalltext">
-      Use the gift card code online
-    </td>
-  </tr>
-  <tr>
-    <td class="giftcard__code">
-      {{ gift_card.code | format_code }}
-    </td>
-  </tr>
-</table>
+            {%- if vendor_enable -%}
+              <div class="grid-product__vendor">{{ product.vendor }}</div>
+            {%- endif -%}
+          </div>
+          <div class="grid-item__meta-secondary">
+            <div class="grid-product__price">
 
-<table class="row actions">
-  <tr>
-    <td class="actions__cell">
-      <table align="center" class="button">
-        <tr>
-          <td class="button__cell"><a href="{{ shop.url }}" class="button__text">Visit online store</a></td>
-        </tr>
-      </table>
-      <table align="center" class="button">
-        <tr>
-          <td class="link__cell"><a href="{{ gift_card.url }}" class="link__text">View gift card balance</a></td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-
-{% if gift_card.pass_url %}
-  <table align="center" class="row">
-    <tr>
-      <td class="giftcard__textcenter">
-        <a href="{{ gift_card.pass_url }}" class="apple-wallet-button">
-          <img src="{{ 'gift-card/add-to-apple-wallet.png' | shopify_asset_url }}" alt="Add to Apple Wallet" width="120" height="40">
-        </a>
-      </td>
-    </tr>
-  </table>
-{% endif %}
-
+              {% comment %} This is ONLY for the Auctions app, can be removed is Auction app is removed {% endcomment %}
+             {% if template == 'collection.auctions' %}
+              {%- if show_auction -%}
+                <auction-info product-handle="{{ product.handle }}" />
+                  <script>
+                  document.addEventListener("auction.loaded", ({detail: {auctionApp}}) => {
+                      auctionApp.updateAuctions([{{  product.metafields.auctionplus.details }}]);
+                  });
+                </script>
+              {%  endif %}
             {% endif %}
 
-            </td>
-          </tr>
-        </table>
-      </center>
-    </td>
-  </tr>
-</table>
-          <table class="row footer">
-  <tr>
-    <td class="footer__cell">
-      <center>
-        <table class="container">
-          <tr>
-            <td>
-              
-              <p class="disclaimer__subtext">If you have any questions, reply to this email or contact us at <a href="mailto:{{ shop.email }}">{{ shop.email }}</a></p>
-            </td>
-          </tr>
-        </table>
-      </center>
-    </td>
-  </tr>
-</table>
+            {% unless product.type == 'Auctions' %}
 
-<img src="{{ 'notifications/spacer.png' | shopify_asset_url }}" class="spacer" height="1" />
+              {%- if product.price_varies -%}
+                <span class="grid-product__price--current">
+                  {%- render 'price-varies', price: product.price_min -%}
+                </span>
+              {%- else -%}
+                {%- if on_sale -%}
+                  <span class="visually-hidden">
+                    {% render 't_with_fallback', key: 'labels.sale_price', fallback: 'Sale price' -%}
+                  </span>
+                {%- endif -%}
+                <span class="grid-product__price--current">
+                  {%- render 'price', price: product.price -%}
+                </span>
+              {%- endif -%}
+              {%- if on_sale -%}
+                <span class="visually-hidden">
+                  {% render 't_with_fallback', key: 'labels.regular_price', fallback: 'Regular price' -%}
+                </span>
+                <span class="grid-product__price--original">
+                  {%- render 'price', price: product.compare_at_price -%}
+                </span>
 
-        </td>
-      </tr>
-    </table>
-  </body>
-</html>
+                {%- if product_save_amount -%}
+                  {%- if product_save_type == 'dollar' -%}
+                    {%- capture saved_amount -%}{{ product.compare_at_price | minus: product.price | money_without_trailing_zeros }}{%- endcapture -%}
+                  {%- else -%}
+                    {%- capture saved_amount -%}{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%{%- endcapture -%}
+                  {%- endif -%}
+                  <span class="grid-product__price--savings">
+                    {% assign info_save_amount = 'info.save_amount' | t: saved_amount: saved_amount %}
+                    {%- capture fallback_info_save_amount -%}
+                      Save {{ saved_amount }}
+                    {%- endcapture -%}
+                    {% render 't_with_fallback', t: info_save_amount, fallback: fallback_info_save_amount %}
+                  </span>
+                {%- endif -%}
+              {%- endif -%}
+
+              {%- assign product_variant = product.selected_or_first_available_variant -%}
+              {%- if product_variant.unit_price_measurement -%}
+                <div class="product__unit-price">
+                  {%- capture unit_price_base_unit -%}
+                      {%- if product_variant.unit_price_measurement -%}
+                        {%- if product_variant.unit_price_measurement.reference_value != 1 -%}
+                          {{ product_variant.unit_price_measurement.reference_value }}
+                        {%- endif -%}
+                        {{ product_variant.unit_price_measurement.reference_unit }}
+                      {%- endif -%}
+                    {%- endcapture -%}
+
+                  {{ product_variant.unit_price | money }}/{{ unit_price_base_unit }}
+                </div>
+              {%- endif -%}
+
+              {% endunless %}
+
+            </div>
+          </div>
+          {%- if enable_swatches and type == 'horizontal' -%}
+            {%- render 'swatches', product: product -%}
+          {%- endif -%}
+        </div>
+      </a>
+
+      {%- if enable_product_tags -%}
+        {% render 'product-tags', product: product %}
+      {%- endif -%}
+
+      {%- if enable_add_to_cart -%}
+        {% render 'add-to-cart', product: product, class_name: 'grid-product__add-to-cart' %}
+      {%- endif -%}
+
+      <div class="grid-product__reviews {% if product.type == 'Auctions' %} hide {% endif %}">
+        <div class="gw-rv-listing-average-placeholder" style="display: block" data-product_id="{{ product.id }}"></div>
+      </div>
+
+      {% unless product.type == 'Auctions' %}
+      {% render 'add-to-cart', product: product, class_name: 'grid-product__add-to-cart' %}
+      {% endunless %}
+
+      {% if product.metafields.custom.ship_date %}
+        {% assign date_string = product.metafields.custom.ship_date | metafield_text %}
+        {% assign ship_date = date_string | date: '%s' %}
+        {% assign today = 'now' | date: '%s' %}
+
+        {% if ship_date >= today %}
+          <div class="grid-product__ship-date">
+            {% render 'icon', name: 'delivery-truck-time' %}
+            {{ 'custom.ship_date_html' | t }}
+            {{ date_string }}
+          </div>
+        {% endif %}
+      {% endif %}
+
+       {% if product.type contains 'Auctions' %}
+     <a href="{{ product.url | within: collection }}" class="auctions btn--small btn btn--secondary">View Auction</a>
+    {% endif %}
+    </div>
+  </div>
+</div>
