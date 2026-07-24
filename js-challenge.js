@@ -9855,7 +9855,15 @@ const vowelStart = (str) => {
   const vowelSpace = lowerCase.map((char, idx) => /[aeiou]/.test(char) && idx !== 0 ? ' ' + char : char).join('');
   return vowelSpace;
 }
-console.log(vowelStart('Coding is great'));
+// console.log(vowelStart('Coding is great'));
+
+
+const lastDigit = (n, d) => {
+  const arr = n.toString().split('').map(x => Number(x));
+  if(d > arr.length) d = arr.length;
+  return arr.slice(arr.length - d);
+}
+console.log(lastDigit(123767, 4));
 
 
 // Fizzbuzz problems!!
