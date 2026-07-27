@@ -9863,7 +9863,19 @@ const lastDigit = (n, d) => {
   if(d > arr.length) d = arr.length;
   return arr.slice(arr.length - d);
 }
-console.log(lastDigit(123767, 4));
+// console.log(lastDigit(123767, 4));
+
+
+const addContinuously = (arr) => {
+  const runningTotals = [];
+  let total = 0;
+  for(let i = 0; i < arr.length; i++) {
+    total += arr[i];
+    runningTotals.push(total);
+  }
+  return runningTotals;
+}
+// console.log(addContinuously([1, 2, 3, 4, 5]));
 
 
 // Fizzbuzz problems!!
