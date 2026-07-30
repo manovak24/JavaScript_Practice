@@ -9866,6 +9866,12 @@ const lastDigit = (n, d) => {
 // console.log(lastDigit(123767, 4));
 
 
+const removeExlamationFromEndTwo = (string) => {
+  return string[string.length - 1] === "!" ? string.slice(0, -1) : string;
+}
+console.log(removeExlamationFromEndTwo("Hi!!!"));
+
+
 const addContinuously = (arr) => {
   const runningTotals = [];
   let total = 0;
