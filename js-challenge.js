@@ -9869,7 +9869,14 @@ const lastDigit = (n, d) => {
 const removeExlamationFromEndTwo = (string) => {
   return string[string.length - 1] === "!" ? string.slice(0, -1) : string;
 }
-console.log(removeExlamationFromEndTwo("Hi!!!"));
+// console.log(removeExlamationFromEndTwo("Hi!!!"));
+
+
+const longestBetweenTwo = (s1, s2) => {
+  const arr = (s1 + s2).split('');
+  return [...new Set(arr)].sort().join('');
+}
+console.log(longestBetweenTwo("aretheyhere", "yestheyarehere"));
 
 
 const addContinuously = (arr) => {
