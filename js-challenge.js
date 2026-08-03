@@ -9876,7 +9876,7 @@ const longestBetweenTwo = (s1, s2) => {
   const arr = (s1 + s2).split('');
   return [...new Set(arr)].sort().join('');
 }
-console.log(longestBetweenTwo("aretheyhere", "yestheyarehere"));
+// console.log(longestBetweenTwo("aretheyhere", "yestheyarehere"));
 
 
 const addContinuously = (arr) => {
@@ -9889,6 +9889,22 @@ const addContinuously = (arr) => {
   return runningTotals;
 }
 // console.log(addContinuously([1, 2, 3, 4, 5]));
+
+
+// https://www.codewars.com/kata/6a6bdaca77f722e42da8fba6/train/javascript
+const countDirectionChange = (readings) => {
+  let counter = 0;
+  for(let i = 0; i < readings.length; i++) {
+    if(readings[i] !== readings[i + 1] && readings[i] > readings[i + 1]) {
+      counter++;
+    }
+    if(readings[i] !== readings[i + 1] && readings[i] < readings[i + 1]) {
+      counter++;
+    }
+  }
+  return counter - 1;
+}
+console.log(countDirectionChange([1, 1, 3, 3, 2]));
 
 
 // Fizzbuzz problems!!
