@@ -9893,18 +9893,32 @@ const addContinuously = (arr) => {
 
 // https://www.codewars.com/kata/6a6bdaca77f722e42da8fba6/train/javascript
 const countDirectionChange = (readings) => {
+  
+  let trend;
   let counter = 0;
   for(let i = 0; i < readings.length; i++) {
-    if(readings[i] !== readings[i + 1] && readings[i] > readings[i + 1]) {
+    if(trend === undefined) {
+      if(readings[i] !== readings[i + 1] && readings[i] > readings[i + 1]) {
+        trend = 'down';
+      } else if (readings[i] !== readings[i + 1] && readings[i] < readings[i + 1]) {
+        trend = 'up';
+      }
+    }
+
+    if(trend === 'up' && readings[i] !== readings[i + 1] && readings[i] > readings[i + 1]) {
+      trend = 'down';
       counter++;
     }
-    if(readings[i] !== readings[i + 1] && readings[i] < readings[i + 1]) {
+
+    if(trend === 'down' && readings[i] !== readings[i + 1] && readings[i] < readings[i + 1]) {
+      trend = 'up';
       counter++;
     }
   }
-  return counter - 1;
+
+  return counter;
 }
-console.log(countDirectionChange([1, 1, 3, 3, 2]));
+console.log(countDirectionChange([4, 1, 3, 2, 4]));
 
 
 // Fizzbuzz problems!!
