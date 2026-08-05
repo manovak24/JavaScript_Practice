@@ -9893,32 +9893,24 @@ const addContinuously = (arr) => {
 
 // https://www.codewars.com/kata/6a6bdaca77f722e42da8fba6/train/javascript
 const countDirectionChange = (readings) => {
-  
-  let trend;
-  let counter = 0;
-  for(let i = 0; i < readings.length; i++) {
-    if(trend === undefined) {
-      if(readings[i] !== readings[i + 1] && readings[i] > readings[i + 1]) {
-        trend = 'down';
-      } else if (readings[i] !== readings[i + 1] && readings[i] < readings[i + 1]) {
-        trend = 'up';
-      }
-    }
-
-    if(trend === 'up' && readings[i] !== readings[i + 1] && readings[i] > readings[i + 1]) {
-      trend = 'down';
-      counter++;
-    }
-
-    if(trend === 'down' && readings[i] !== readings[i + 1] && readings[i] < readings[i + 1]) {
-      trend = 'up';
-      counter++;
+  let trends = [];
+  for(let i = 0; i < readings.length - 1; i++) {
+    if(readings[i] !== readings[i + 1]) {
+      readings[i] < readings[i + 1] ? trends.push('up') : trends.push('down');
     }
   }
-
-  return counter;
+  return trends.reduce((a,c,i) => {
+    if(i < trends.length - 1 && trends[i] !== trends[i + 1]) a++;
+    return a;
+  }, 0);
 }
-console.log(countDirectionChange([4, 1, 3, 2, 4]));
+console.log(countDirectionChange([1,2,3,4]));
+
+
+const toAcronym = (inp) => {
+  return inp.split(' ').map(word => word[0].toUpperCase()).join('');
+}
+// console.log(toAcronym('Code Wars'));
 
 
 // Fizzbuzz problems!!
