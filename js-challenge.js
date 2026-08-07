@@ -9904,7 +9904,21 @@ const countDirectionChange = (readings) => {
     return a;
   }, 0);
 }
-console.log(countDirectionChange([1,2,3,4]));
+// console.log(countDirectionChange([1,2,3,4]));
+
+
+const splitByValue = (k, elements) => {
+  let begin = [];
+  let end = [];
+
+  for(let i = 0; i < elements.length; i++) {
+    if(elements[i] < k) begin.push(elements[i]);
+    if(elements[i] >= k) end.push(elements[i]);
+  }
+
+  return [...begin, ...end];
+}
+console.log(splitByValue(6, [6, 4, 10, 10, 6]));
 
 
 const toAcronym = (inp) => {
