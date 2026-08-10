@@ -9918,7 +9918,13 @@ const splitByValue = (k, elements) => {
 
   return [...begin, ...end];
 }
-console.log(splitByValue(6, [6, 4, 10, 10, 6]));
+// console.log(splitByValue(6, [6, 4, 10, 10, 6]));
+
+
+const strayNumberTwo = (numbers) => {
+  return numbers.find(num => numbers.indexOf(num) === numbers.lastIndexOf(num));
+}
+// console.log(strayNumberTwo([1, 1, 2]));
 
 
 const toAcronym = (inp) => {
