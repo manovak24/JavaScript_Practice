@@ -9933,6 +9933,25 @@ const toAcronym = (inp) => {
 // console.log(toAcronym('Code Wars'));
 
 
+const splitByMask = (string, mask) => {
+  if(string.length !== mask.reduce((a,b) => a + b, 0)) return null;
+
+  const split = [];
+  let begin = 0;
+  let end = mask[0];
+  for(let i = 0; i < mask.length; i++) {
+    console.log(begin, end)
+
+    split.push(string.slice(begin, end));
+
+    begin += mask[i];
+    end += mask[i + 1];
+  }
+  return split;
+}
+console.log(splitByMask("1234567890",[3,3,4]));
+
+
 // Fizzbuzz problems!!
 
 // Go back to the one below and continue with other fizzbuzz problems
