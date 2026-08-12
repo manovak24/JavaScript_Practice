@@ -9949,7 +9949,17 @@ const splitByMask = (string, mask) => {
   }
   return split;
 }
-console.log(splitByMask("1234567890",[3,3,4]));
+// console.log(splitByMask("1234567890",[3,3,4]));
+
+
+const convertPalindromes = (numbers) => {
+  return numbers.map(num => {
+    const str = num.toString();
+    const rev = str.split('').reverse().join('');
+    return str === rev ? 1 : 0;
+  })
+}
+// console.log(convertPalindromes([22, 303, 76, 411, 89]));
 
 
 // Fizzbuzz problems!!
