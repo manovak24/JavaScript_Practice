@@ -9962,6 +9962,18 @@ const convertPalindromes = (numbers) => {
 // console.log(convertPalindromes([22, 303, 76, 411, 89]));
 
 
+const sortBasedOnArray = (initialArray, sortingArray) => {
+  let newArray = [...initialArray];
+  for (let i = 0; i < sortingArray.length; i++) {
+    const remove = initialArray[i];
+    newArray.splice(sortingArray[i], 1, remove)
+  }
+  return newArray;
+}
+// console.log(sortBasedOnArray(['x', 'y', 'z'], [1, 2, 0]));
+
+
+
 // Fizzbuzz problems!!
 
 // Go back to the one below and continue with other fizzbuzz problems
