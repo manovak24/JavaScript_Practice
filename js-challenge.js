@@ -9976,7 +9976,28 @@ const sortBasedOnArray = (initialArray, sortingArray) => {
 const squareOrSquareRoot = (array) => {
   return array.map(num => Number.isInteger(Math.sqrt(num)) ? Math.sqrt(num) : Math.pow(num, 2));
 }
-console.log(squareOrSquareRoot([4,3,9,7,2,1]));
+// console.log(squareOrSquareRoot([4,3,9,7,2,1]));
+
+
+const rotations = (dieArray) => {
+  let sums = [];
+  for(let target = 1; target <= 6; target++) {
+    let sum = 0;
+    dieArray.forEach(die => {
+      if(die !== target) {
+        if(die + target === 7) {
+          sum += 2;
+        } else {
+          sum += 1;
+        }
+      }
+    });
+    sums.push(sum);
+    sum = [];
+  }
+  return Math.min(...sums);
+}
+console.log(rotations([1,1,6]));
 
 
 
