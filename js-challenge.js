@@ -9997,7 +9997,16 @@ const rotations = (dieArray) => {
   }
   return Math.min(...sums);
 }
-console.log(rotations([1,1,6]));
+// console.log(rotations([1,1,6]));
+
+
+const mirrorList = (data) => {
+  const sort = [...data].sort((a,b) => a - b);
+  const sortMirror = [...data].sort((a,b) => b - a).slice(1);
+  
+  return [...sort, ...sortMirror];
+}
+console.log(mirrorList([-8, 42, 18, 0, -16]));
 
 
 
