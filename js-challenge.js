@@ -10006,7 +10006,33 @@ const mirrorList = (data) => {
   
   return [...sort, ...sortMirror];
 }
-console.log(mirrorList([-8, 42, 18, 0, -16]));
+// console.log(mirrorList([-8, 42, 18, 0, -16]));
+
+
+// https://www.codewars.com/kata/578fe7e2149935740f000525/train/javascript
+const secondLargest = (array) => {
+  if(!Array.isArray(array)) return undefined;
+  
+  let sort = [...array].sort((a,b) => b - a)
+                        .slice(1)
+                        .map(x => Number(x))
+                        
+  
+  let i = 0;
+  let test = false;
+  let answer;
+  console.log(sort)
+  while(test === false) {
+    if(sort[i] !== sort[i + 1]) {
+      answer = sort[i];
+      test = true;
+    }
+    i = i + 2;
+  }
+
+  return answer;
+}
+console.log(secondLargest([-32,11,43,43,'38',55,0,11,'test']));
 
 
 
