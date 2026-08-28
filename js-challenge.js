@@ -10011,27 +10011,16 @@ const mirrorList = (data) => {
 
 // https://www.codewars.com/kata/578fe7e2149935740f000525/train/javascript
 const secondLargest = (array) => {
-  if(!Array.isArray(array) || new Set(array).length === 1) return undefined;
+  if(!Array.isArray(array) || [...new Set(array)].length === 1) return undefined;
   
-  let sort = [...array].filter(x => /^[0-9]+$/.test(x) || typeof x === 'number')
+  const sort = array.filter(x => /^[0-9.-]+$/.test(x) || typeof x === 'number')
                        .map(x => Number(x))
                        .sort((a,b) => b - a);
-                        
-  let i = 0;
-  let test = false;
-  let answer;
-  console.log(sort)
-  while(test === false) {
-    if(sort[i] !== sort[i + 1]) {
-      answer = sort[i];
-      test = true;
-    }
-    i = i + 2;
-  }
 
-  return answer;
+  
+  return [...new Set(sort)][1];
 }
-console.log(secondLargest([-32,11,43,43,'-38',55,55,0,11,'test',false,true]));
+console.log(secondLargest([-32,11,43,43,'-48.2',55,55,0,24,11,'test',false,true]));
 // console.log(secondLargest([5,5,5]));
 
 
