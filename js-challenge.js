@@ -10025,14 +10025,11 @@ const secondLargest = (array) => {
 
 
 const multiples = (a, b, limit) => {
-  let gcd = function gcd(x,y) {
-    return y ? gcd(y, x % y) : x;
-  }
-  let lcm = (a * b) / gcd(a,b);
-
   let arr = [];
-  for(let i = lcm; i <= limit; i+=lcm) {
-    arr.push(i);
+  for(let i = 1; i <= limit; i++) {
+    if(i % a === 0 && i % b === 0) {
+      arr.push(i);
+    }
   }
   return arr;
 }
