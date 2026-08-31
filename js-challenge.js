@@ -10020,8 +10020,23 @@ const secondLargest = (array) => {
   
   return [...new Set(sort)][1];
 }
-console.log(secondLargest([-32,11,43,43,'-48.2',55,55,0,24,11,'test',false,true]));
+// console.log(secondLargest([-32,11,43,43,'-48.2',55,55,0,24,11,'test',false,true]));
 // console.log(secondLargest([5,5,5]));
+
+
+const multiples = (a, b, limit) => {
+  let gcd = function gcd(x,y) {
+    return y ? gcd(y, x % y) : x;
+  }
+  let lcm = (a * b) / gcd(a,b);
+
+  let arr = [];
+  for(let i = lcm; i <= limit; i+=lcm) {
+    arr.push(i);
+  }
+  return arr;
+}
+console.log(multiples(2, 4, 40));
 
 
 
