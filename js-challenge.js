@@ -10033,7 +10033,23 @@ const multiples = (a, b, limit) => {
   }
   return arr;
 }
-console.log(multiples(2, 4, 40));
+// console.log(multiples(2, 4, 40));
+
+
+const stringy = (size) => {
+  let str = '';
+  let i = 1;
+  while(i <= size) {
+    if(i % 2 === 0) {
+      str += '0'
+    } else {
+      str += '1';
+    }
+    i++;
+  }
+  return str;
+}
+console.log(stringy(4));
 
 
 
