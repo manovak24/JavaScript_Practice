@@ -10049,7 +10049,20 @@ const stringy = (size) => {
   }
   return str;
 }
-console.log(stringy(4));
+// console.log(stringy(4));
+
+
+const firstNonRepeated = (s) => {
+  const map = s.split('').reduce((a,b) => {
+     a[b] = (a[b] || 0) + 1;
+     return a;
+  }, {});
+
+  let first = Object.keys(map).find(key => map[key] === 1);
+
+  return first === undefined ? null : first;
+}
+console.log(firstNonRepeated('aabbcc'));
 
 
 
