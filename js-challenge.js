@@ -10062,7 +10062,29 @@ const firstNonRepeated = (s) => {
 
   return first === undefined ? null : first;
 }
-console.log(firstNonRepeated('aabbcc'));
+// console.log(firstNonRepeated('aabbcc'));
+
+
+const solveGCDSum = (s, g) => {
+  if(s % g !== 0) return -1;
+
+  const gcdTest = (a,b) => {
+    return b === 0 ? a : gcdTest(b, a % b);
+  }
+
+  const target = s / g;
+  
+  for(let i = 1; i <= target; i++) {
+    const x = i;
+    const y = target - i;
+    if(gcdTest(x,y) === 1) {
+      return [x * g, y * g];
+    }
+  }
+
+  return -1;
+}
+console.log(solveGCDSum(10, 2));
 
 
 
