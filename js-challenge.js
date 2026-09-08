@@ -10084,7 +10084,34 @@ const solveGCDSum = (s, g) => {
 
   return -1;
 }
-console.log(solveGCDSum(10, 2));
+// console.log(solveGCDSum(10, 2));
+
+
+const firstDup = (string) => {
+  // let map = string.split('').reduce((a,b) => {
+  //   a[b] = (a[b] || 0) + 1;
+  //   return a;
+  // }, {});
+
+  // console.log(map)
+
+  // let first = Object.keys(map).find(key => map[key] > 1);
+
+  // return first;
+
+
+  const arr = string.split('');
+
+  for(let i = 0; i < arr.length; i++) {
+    const idxOne = arr.indexOf(arr[i]);
+    const idxTwo = arr.lastIndexOf(arr[i]);
+
+    if(idxOne !== idxTwo && idxTwo !== - 1) return arr[i];
+  }
+
+  return undefined;
+}
+console.log(firstDup('Ode to joy'));
 
 
 
