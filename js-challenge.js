@@ -10088,18 +10088,6 @@ const solveGCDSum = (s, g) => {
 
 
 const firstDup = (string) => {
-  // let map = string.split('').reduce((a,b) => {
-  //   a[b] = (a[b] || 0) + 1;
-  //   return a;
-  // }, {});
-
-  // console.log(map)
-
-  // let first = Object.keys(map).find(key => map[key] > 1);
-
-  // return first;
-
-
   const arr = string.split('');
 
   for(let i = 0; i < arr.length; i++) {
@@ -10112,6 +10100,12 @@ const firstDup = (string) => {
   return undefined;
 }
 console.log(firstDup('Ode to joy'));
+
+
+const solutionShortLongShort = (a,b) => {
+  return a.length > b.length ? b + a + b : a + b + a;
+}
+console.log(solutionShortLongShort('Soon', 'Me'));
 
 
 
