@@ -10099,13 +10099,27 @@ const firstDup = (string) => {
 
   return undefined;
 }
-console.log(firstDup('Ode to joy'));
+// console.log(firstDup('Ode to joy'));
 
 
 const solutionShortLongShort = (a,b) => {
   return a.length > b.length ? b + a + b : a + b + a;
 }
-console.log(solutionShortLongShort('Soon', 'Me'));
+// console.log(solutionShortLongShort('Soon', 'Me'));
+
+
+const transposeTwoStrings = (array) => {
+  const max = [...array].sort((a,b) => b.length - a.length)[0];
+
+  let transpose = [];
+
+  for(let i = 0; i < max.length; i++) {
+    transpose.push((array[0][i] || ' ') + ' ' + (array[1][i] || ' '))
+  }
+
+  return transpose.join('\n');
+}
+// console.log(transposeTwoStrings(['joey', 'louise']));
 
 
 
