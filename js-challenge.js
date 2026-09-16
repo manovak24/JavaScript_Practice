@@ -10122,6 +10122,31 @@ const transposeTwoStrings = (array) => {
 // console.log(transposeTwoStrings(['joey', 'louise']));
 
 
+const fixTheMeerkat = (arr) => {
+  return arr.reverse();
+}
+// console.log(fixTheMeerkat(["tail", "body", "head"]));
+
+
+const binRota = (arr) => {
+  let rota = [];
+  for(let i = 0; i < arr.length; i++) {
+    if(i % 2 === 0) {
+      rota.push(arr[i]);
+    } else {
+      rota.push(arr[i].reverse());
+    }
+  }
+  return rota.flat();
+}
+console.log(binRota([
+  ["Stefan", "Raj",    "Marie"],
+  ["Alexa",  "Amy",    "Edward"],
+  ["Liz",    "Claire", "Juan"],
+  ["Dee",    "Luke",   "Katie"]
+]));
+
+
 
 
 // Fizzbuzz problems!!
