@@ -10139,12 +10139,39 @@ const binRota = (arr) => {
   }
   return rota.flat();
 }
-console.log(binRota([
-  ["Stefan", "Raj",    "Marie"],
-  ["Alexa",  "Amy",    "Edward"],
-  ["Liz",    "Claire", "Juan"],
-  ["Dee",    "Luke",   "Katie"]
-]));
+// console.log(binRota([
+//   ["Stefan", "Raj",    "Marie"],
+//   ["Alexa",  "Amy",    "Edward"],
+//   ["Liz",    "Claire", "Juan"],
+//   ["Dee",    "Luke",   "Katie"]
+// ]));
+
+
+const sumLength = (array) => {
+  if(array.length < 1) return '0 0';
+
+  let negativeTracker = true;
+  let sum = 0;
+  let length = 0;
+
+  for(let i = 0; i < array.length; i++) {
+    if(array[i] === 0) {
+      if(negativeTracker === true) {
+        length++;
+        negativeTracker = false;
+      } else if(negativeTracker === false) {
+        sum += array[i];
+        negativeTracker = true;
+      }
+    }
+
+    if(array[i] < 0) length++;
+    if(array[i] > 0) sum += array[i];
+  }
+
+  return `${sum} ${length}`;
+}
+// console.log(sumLength([-1,2,3,4,0,1,0,-2,0,-3]));
 
 
 
