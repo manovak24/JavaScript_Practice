@@ -10174,6 +10174,16 @@ const sumLength = (array) => {
 // console.log(sumLength([-1,2,3,4,0,1,0,-2,0,-3]));
 
 
+const generateRange = (min, max, step) => {
+  let arr = [];
+  for(let i = min; i <= max; i += step) {
+    arr.push(i);
+  }
+  return arr;
+}
+console.log(generateRange(2, 10, 2));
+
+
 
 
 // Fizzbuzz problems!!
