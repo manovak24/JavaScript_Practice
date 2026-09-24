@@ -10181,7 +10181,27 @@ const generateRange = (min, max, step) => {
   }
   return arr;
 }
-console.log(generateRange(2, 10, 2));
+// console.log(generateRange(2, 10, 2));
+
+
+// https://www.codewars.com/kata/546c7f89bed2e12fb300056f/train/javascript
+const findWildCard = (needle, haystack) => {
+  const testWildCard = needle.includes('_');
+
+  if(testWildCard) {
+    let chars = needle.split('_').join('');
+    let arr = haystack.split(' ');
+
+    for(let i = 0; i < arr.length; i++) {
+      if(arr[i].includes(chars) && arr[i].length === needle.length) {
+        return haystack.indexOf(arr[i]);
+      }
+    }
+  }
+
+  return needle.length > 0 ? haystack.indexOf(needle) : -1;
+}
+console.log(findWildCard("gg_g", "googgoogleggggoooglxeplexhexflexmexkex"))
 
 
 
