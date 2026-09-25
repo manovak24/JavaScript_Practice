@@ -10189,19 +10189,15 @@ const findWildCard = (needle, haystack) => {
   const testWildCard = needle.includes('_');
 
   if(testWildCard) {
-    let chars = needle.split('_').join('');
-    let arr = haystack.split(' ');
-
-    for(let i = 0; i < arr.length; i++) {
-      if(arr[i].includes(chars) && arr[i].length === needle.length) {
-        return haystack.indexOf(arr[i]);
-      }
-    }
+    let safeRegex = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    let wildCard = safeRegex.replaceAll('_', '.');
+    let regex = new RegExp(wildCard);
+    return haystack.search(regex);
   }
 
   return needle.length > 0 ? haystack.indexOf(needle) : -1;
 }
-console.log(findWildCard("gg_g", "googgoogleggggoooglxeplexhexflexmexkex"))
+console.log(findWildCard("___4$&%$--___", "-..,.44$&%$--,.,"));
 
 
 
