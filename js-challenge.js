@@ -10197,7 +10197,13 @@ const findWildCard = (needle, haystack) => {
 
   return needle.length > 0 ? haystack.indexOf(needle) : -1;
 }
-console.log(findWildCard("___4$&%$--___", "-..,.44$&%$--,.,"));
+// console.log(findWildCard("___4$&%$--___", "-..,.44$&%$--,.,"));
+
+
+const twoOldestAges = (ages) => {
+  return ages.sort((a,b) => a - b).slice(-2);
+}
+console.log(twoOldestAges([6,5,83,5,3,18]));
 
 
 
