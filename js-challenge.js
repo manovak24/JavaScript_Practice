@@ -10203,7 +10203,42 @@ const findWildCard = (needle, haystack) => {
 const twoOldestAges = (ages) => {
   return ages.sort((a,b) => a - b).slice(-2);
 }
-console.log(twoOldestAges([6,5,83,5,3,18]));
+// console.log(twoOldestAges([6,5,83,5,3,18]));
+
+
+// https://www.codewars.com/kata/59f2746e50c8c2b55d000085/train/javascript
+const convertOneTwoThreeFour = (num) => {
+  const numbers = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  const arr = String(num).split('');
+  const even = arr.length % 2 === 0;
+
+  // Need to optimize
+  // Go back and figure out the alternating case
+
+  return arr.map((x, i) => {
+    let strNum = numbers[Number(x)];
+    let strLength = strNum.length;
+    let repeat = i / strLength;
+    let remainder = i % strLength;
+    let strRepeat = strNum.repeat(repeat);
+    let strRemainder = strNum.slice(0, remainder + 1);
+    
+    if(even) {
+      if(x % 2 !== 0) {
+        return x;
+      } else {
+        return strRepeat + strRemainder;
+      }
+    } else {
+      if(x % 2 === 0) {
+        return x;
+      } else {
+        return strRepeat + strRemainder;
+      }
+    }
+  }).join('');
+}
+console.log(convertOneTwoThreeFour(1101))
 
 
 
