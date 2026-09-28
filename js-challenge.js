@@ -10218,27 +10218,40 @@ const convertOneTwoThreeFour = (num) => {
   return arr.map((x, i) => {
     let strNum = numbers[Number(x)];
     let strLength = strNum.length;
-    let repeat = i / strLength;
+    let repeat = Math.floor(i / strLength);
     let remainder = i % strLength;
-    let strRepeat = strNum.repeat(repeat);
-    let strRemainder = strNum.slice(0, remainder + 1);
-    
+    let repeatArr = Array(repeat).fill(strNum);
+
+    repeatArr.push(strNum.slice(0, remainder + 1));
+
     if(even) {
       if(x % 2 !== 0) {
         return x;
       } else {
-        return strRepeat + strRemainder;
+        return repeatArr.map((x, i) => {
+          if(i % 2 !== 0) {
+            return x.toUpperCase();
+          } else {
+            return x
+          }
+        }).join('');
       }
     } else {
       if(x % 2 === 0) {
         return x;
       } else {
-        return strRepeat + strRemainder;
+        return repeatArr.map((x, i) => {
+          if(i % 2 === 0) {
+            return x.toUpperCase();
+          } else {
+            return x
+          }
+        }).join('');
       }
     }
   }).join('');
 }
-console.log(convertOneTwoThreeFour(1101))
+console.log(convertOneTwoThreeFour(34266262106))
 
 
 
