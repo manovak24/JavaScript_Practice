@@ -10256,8 +10256,6 @@ const convertOneTwoThreeFour = (num) => {
 
 const wellIdeas = (x) => {
   let filteredIdeas = x.filter(idea => idea === 'good');
-  console.log(filteredIdeas)
-
   return filteredIdeas.length > 2 ? 'I smell a series!' : filteredIdeas.length >= 1 ? 'Publish!' : 'Fail!';
 }
 console.log(wellIdeas(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'good']));
