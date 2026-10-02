@@ -10258,7 +10258,14 @@ const wellIdeas = (x) => {
   let filteredIdeas = x.filter(idea => idea === 'good');
   return filteredIdeas.length > 2 ? 'I smell a series!' : filteredIdeas.length >= 1 ? 'Publish!' : 'Fail!';
 }
-console.log(wellIdeas(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'good']));
+// console.log(wellIdeas(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'good']));
+
+
+const whowon = (s) => {
+  const wrestlers = s.split('hit a reversal to').map(wrestler => wrestler.replaceAll(' ', ''));
+  return wrestlers[wrestlers.length - 2];
+}
+console.log(whowon("Alpha hit a reversal to Bravo hit a reversal to Alpha hit a reversal to Bravo"));
 
 
 
