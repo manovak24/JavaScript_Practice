@@ -10265,7 +10265,36 @@ const whowon = (s) => {
   const wrestlers = s.split('hit a reversal to').map(wrestler => wrestler.replaceAll(' ', ''));
   return wrestlers[wrestlers.length - 2];
 }
-console.log(whowon("Alpha hit a reversal to Bravo hit a reversal to Alpha hit a reversal to Bravo"));
+// console.log(whowon("Alpha hit a reversal to Bravo hit a reversal to Alpha hit a reversal to Bravo"));
+
+
+// https://www.codewars.com/kata/67191920c29c7e09d9f40707/train/javascript
+const digitMultiplication = (expr) => {
+  let arr = expr.match(/\d+|./g).map(x => {
+    if(x === '+' || x === '-') {
+      return x;
+    } else {
+      return x.split('').map(x => Number(x)).reduce((a,b) => a * b);
+    }
+  });
+
+  let sum = 0;
+
+  // This doesn't work because it is adding or subtracting the actual + or - at that index of the array.
+  // Need to come back might be good to think about the runningProduct varaible again
+  for(let i = 0; i < arr.length; i++) {
+    if(i === 0) {
+      sum += arr[i];
+    } else {
+      arr[i] === '+' ? sum += arr[i] : sum -= arr[i];
+    }
+  }
+
+  return sum;
+}
+// console.log(digitMultiplication("10000345+77-2"));
+console.log(digitMultiplication("266-66"));
+
 
 
 
