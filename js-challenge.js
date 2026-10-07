@@ -10270,30 +10270,14 @@ const whowon = (s) => {
 
 // https://www.codewars.com/kata/67191920c29c7e09d9f40707/train/javascript
 const digitMultiplication = (expr) => {
-  let arr = expr.match(/\d+|./g).map(x => {
-    if(x === '+' || x === '-') {
-      return x;
-    } else {
-      return x.split('').map(x => Number(x)).reduce((a,b) => a * b);
-    }
-  });
+  // Optimize with new regex for matching chunks
 
-  let sum = 0;
+  let arr = expr.match(/[+-]?\d+/g)
 
-  // This doesn't work because it is adding or subtracting the actual + or - at that index of the array.
-  // Need to come back might be good to think about the runningProduct varaible again
-  for(let i = 0; i < arr.length; i++) {
-    if(i === 0) {
-      sum += arr[i];
-    } else {
-      arr[i] === '+' ? sum += arr[i] : sum -= arr[i];
-    }
-  }
-
-  return sum;
+  return arr;
 }
 // console.log(digitMultiplication("10000345+77-2"));
-console.log(digitMultiplication("266-66"));
+console.log(digitMultiplication("10000345+77-2"));
 
 
 
