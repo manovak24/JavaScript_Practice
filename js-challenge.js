@@ -10270,17 +10270,29 @@ const whowon = (s) => {
 
 // https://www.codewars.com/kata/67191920c29c7e09d9f40707/train/javascript
 const digitMultiplication = (expr) => {
-  // Optimize with new regex for matching chunks
+  let arr = expr.match(/[+-]?\d+/g);
+  let sum = 0;
+  
+  for(let i = 0; i < arr.length; i++) {
+    if(i === 0) {
+      sum += arr[i].split('').map(x => Number(x)).reduce((a,b) => a * b);
+    } else {
+      let sign = arr[i].slice(0, 1);
+      let num = arr[i].slice(1, arr[i].length + 1).split('').map(x => Number(x)).reduce((a,b) => a * b);
+      sign === '+' ? sum += num : sum -= num; 
+    }
+  }
 
-  let arr = expr.match(/[+-]?\d+/g)
-
-  return arr;
+  return sum;
 }
 // console.log(digitMultiplication("10000345+77-2"));
-console.log(digitMultiplication("10000345+77-2"));
+console.log(digitMultiplication("12345-11989+1231111"));
 
 
-
+const nthEven = (n) => {
+  return (n * 2) - 2;
+}
+// console.log(nthEven(1298734));
 
 
 // Fizzbuzz problems!!
