@@ -10286,13 +10286,13 @@ const digitMultiplication = (expr) => {
   return sum;
 }
 // console.log(digitMultiplication("10000345+77-2"));
-console.log(digitMultiplication("12345-11989+1231111"));
+// console.log(digitMultiplication("12345-11989+1231111"));
 
 
 const nthEven = (n) => {
   return (n * 2) - 2;
 }
-// console.log(nthEven(1298734));
+console.log(nthEven(1298734));
 
 
 // Fizzbuzz problems!!
