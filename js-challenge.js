@@ -10292,7 +10292,40 @@ const digitMultiplication = (expr) => {
 const nthEven = (n) => {
   return (n * 2) - 2;
 }
-console.log(nthEven(1298734));
+// console.log(nthEven(1298734));
+
+
+const substringLongest = (str) => {
+  if(str.length < 1) return '';
+  if(str.length === 1) return str;
+
+  let testStr = str[0];
+  let arr = [];
+
+  for(let i = 1; i < str.length; i++) {
+    let unique = [...new Set(testStr)]
+    let uniqueSize = unique.length;
+    if(uniqueSize <= 1) {
+      testStr += str[i];
+    } else if (uniqueSize <= 2) {
+      if(testStr.includes(str[i])) {
+        testStr += str[i];
+      } else {
+        i = str.indexOf(unique[1]);
+        testStr = '';
+        testStr += str[i];
+      }
+    } else {
+      testStr = '';
+      testStr += str[i];
+    }
+    console.log(unique, testStr)
+    arr.push(testStr)
+  }
+  console.log(arr)
+  return arr.reduce((a,b) => b.length > a.length ? b : a);
+}
+console.log(substringLongest('aabb112222ccccdef'));
 
 
 // Fizzbuzz problems!!
