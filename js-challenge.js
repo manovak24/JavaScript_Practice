@@ -10295,6 +10295,21 @@ const nthEven = (n) => {
 // console.log(nthEven(1298734));
 
 
+const solveSinglePalindrome = (s) => {
+  if(s === s.split('').reverse().join('')) return 'OK';
+
+  for(let i = 0; i < s.length; i++) {
+    let chunk = s.slice(0, i) + s.slice(i + 1);
+    let rev = chunk.split('').reverse().join('');
+    if(chunk === rev) return 'remove one';
+  }
+
+  return 'not possible';
+}
+console.log(solveSinglePalindrome("abba"));
+
+
+// https://www.codewars.com/kata/55bc0c54147a98798f00003e/javascript
 const substringLongest = (str) => {
   if(str.length < 1) return '';
   if(str.length === 1) return str;
@@ -10325,7 +10340,7 @@ const substringLongest = (str) => {
   console.log(arr)
   return arr.reduce((a,b) => b.length > a.length ? b : a);
 }
-console.log(substringLongest('aabb112222ccccdef'));
+// console.log(substringLongest('aabb112222ccccdef'));
 
 
 // Fizzbuzz problems!!
