@@ -10306,7 +10306,18 @@ const solveSinglePalindrome = (s) => {
 
   return 'not possible';
 }
-console.log(solveSinglePalindrome("abba"));
+// console.log(solveSinglePalindrome("abba"));
+
+
+const solvePalindromeTwo = (str) => {
+  let count = 0;
+  for(let start = 0, end = str.length - 1; start < end; start++, end--) {
+    console.log(str[start], str[end])
+    if(str[start] !== str[end]) count++;
+  }
+  return str.length % 2 === 0 && count === 0 || count > 1 ? false : true;
+}
+console.log(solvePalindromeTwo("abdc"));
 
 
 // https://www.codewars.com/kata/55bc0c54147a98798f00003e/javascript
