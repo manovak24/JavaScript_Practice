@@ -10322,24 +10322,16 @@ const solvePalindromeTwo = (str) => {
 
 // https://www.codewars.com/kata/5669a5113c8ebf16ed00004c/train/javascript
 const substringTest = (str1, str2) => {
-  // Need to come back and figure out solution for max and min length since the arguments aren't always in order
+  const str1Lower = str1.toLowerCase();
+  const str2Lower = str2.toLowerCase();
 
-  let str1Lower = str1.toLowerCase();
-  let str2Lower = str2.toLowerCase();
-  let substr = '';
-
-  if(str1.length === 0 || str2.length === 0) return false;
-
-  if(str1Lower.includes(str2Lower)) return true;
-
-  for(let i = 0; i < str2Lower.length - 1; i++) {
-    let substrTest = str2Lower.slice(i, str2Lower.length);
-    if(str1Lower.includes(substrTest)) return true;
+  for(let i = 0; i < str1Lower.length - 1; i++) {
+    if(str2Lower.includes(str1Lower.slice(i, i + 2))) return true;
   }
 
   return false;
 }
-console.log(substringTest("Something", "Fun"));
+// console.log(substringTest("1234567", "541265"));
 
 
 // https://www.codewars.com/kata/55bc0c54147a98798f00003e/javascript
