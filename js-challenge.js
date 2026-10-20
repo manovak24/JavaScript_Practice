@@ -10334,6 +10334,26 @@ const substringTest = (str1, str2) => {
 // console.log(substringTest("1234567", "541265"));
 
 
+const wordToSentence = (words) => {
+  return words.join(' ').trim();
+}
+// console.log(words('hello', 'world'));
+
+
+const shifter = (s) => {
+  const shifterLetters = ["H", "I", "N", "O", "S", "X", "Z", "M", "W"];
+  const arr = [...new Set(s.split(' ').filter(x => x !== ''))];
+  let count = 0;
+
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i].split('').every(char => shifterLetters.includes(char))) count++;
+  }
+
+  return count;
+}
+console.log(shifter(""));
+
+
 // https://www.codewars.com/kata/55bc0c54147a98798f00003e/javascript
 const substringLongest = (str) => {
   if(str.length < 1) return '';
