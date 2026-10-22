@@ -10351,7 +10351,30 @@ const shifter = (s) => {
 
   return count;
 }
-console.log(shifter(""));
+// console.log(shifter(""));
+
+
+const shiftLeftTwo = (s, t) => {
+  const max = s.length >= t.length ? s : t;
+  const min = s.length >= t.length ? t : s;
+  let moves = 0;
+
+  for(let i = 0; i < max.length; i++) {
+    // Getting close but main issue is need to remove left most character from one string at a time and then compare each string and then pick the next string to remove the left most character from
+    // Maybe a recusrive function? This is a tricky one
+
+    let maxMove = max.slice(i, max.length);
+    let minMove = min.slice(i, min.length);
+
+    if(maxMove.length > 0) moves++;
+    if(minMove.length > 0) moves++;
+
+    console.log(maxMove, minMove);
+  }
+
+  return moves;
+}
+console.log(shiftLeftTwo('b', 'ab'));
 
 
 // https://www.codewars.com/kata/55bc0c54147a98798f00003e/javascript
