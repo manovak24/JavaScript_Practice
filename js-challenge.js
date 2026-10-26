@@ -10374,7 +10374,14 @@ const shiftLeftTwo = (s, t) => {
 
   return moves;
 }
-console.log(shiftLeftTwo('b', 'ab'));
+// console.log(shiftLeftTwo('b', 'ab'));
+
+
+const unionSet = (s1, s2) => {
+  return new Set([...s1, ...s2]);
+}
+// const A = new Set([1,2]), B = new Set([2,3]), C = new Set([1,2,3]);
+// console.log(unionSet(A,B));
 
 
 // https://www.codewars.com/kata/55bc0c54147a98798f00003e/javascript
