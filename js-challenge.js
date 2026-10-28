@@ -10384,6 +10384,21 @@ const unionSet = (s1, s2) => {
 // console.log(unionSet(A,B));
 
 
+// https://www.codewars.com/kata/566fc12495810954b1000030/train/javascript
+const nbDigTwo = (n, d) => {
+  let count = 0;
+  const regex = new RegExp(`[^${d}]`, 'g');
+  for(let i = 0; i <= n; i++) {
+    let numStr = (i * i).toString();
+    if(numStr.includes(d)) {
+      count += numStr.replace(regex, '').length;
+    }
+  }
+  return count;
+}
+// console.log(nbDigTwo(5750, 0));
+
+
 // https://www.codewars.com/kata/55bc0c54147a98798f00003e/javascript
 const substringLongest = (str) => {
   if(str.length < 1) return '';
