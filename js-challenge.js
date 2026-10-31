@@ -10384,7 +10384,7 @@ const unionSet = (s1, s2) => {
 // console.log(unionSet(A,B));
 
 
-// https://www.codewars.com/kata/566fc12495810954b1000030/train/javascript
+
 const nbDigTwo = (n, d) => {
   let count = 0;
   const regex = new RegExp(`[^${d}]`, 'g');
@@ -10397,6 +10397,34 @@ const nbDigTwo = (n, d) => {
   return count;
 }
 // console.log(nbDigTwo(5750, 0));
+
+
+
+
+
+// https://www.codewars.com/kata/629e18298f2d21006516e381/train/javascript
+const permut = (number) => {
+  let prev = 1n;
+  let curr = 1n;
+  for(let i = 2; i <= number; i++) {
+    let next = prev + curr;
+    prev = curr;
+    curr = next;
+  }
+
+  return curr
+}
+// console.log(permut(5));
+
+
+const guessMyNumber = (guess, number = '123-451-2345') => {
+  let regex = new RegExp(`[^${guess}-]`, 'g')
+  return number.replace(regex, '#');
+}
+console.log(guessMyNumber('012'));
+
+
+// https://www.codewars.com/kata/58c9322bedb4235468000019/train/javascript
 
 
 // https://www.codewars.com/kata/55bc0c54147a98798f00003e/javascript
