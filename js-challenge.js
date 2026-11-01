@@ -10421,10 +10421,25 @@ const guessMyNumber = (guess, number = '123-451-2345') => {
   let regex = new RegExp(`[^${guess}-]`, 'g')
   return number.replace(regex, '#');
 }
-console.log(guessMyNumber('012'));
+// console.log(guessMyNumber('012'));
 
 
 // https://www.codewars.com/kata/58c9322bedb4235468000019/train/javascript
+const isVeryEvenNumber = (n) => {
+  const numArr = n.toString().split('').map(x => Number(x));
+
+  const test = (arr) => {
+    let reduced = arr.reduce((a,b) => a + b).toString().split('').map(x => Number(x));
+    return reduced.length > 1 ? test(reduced) : reduced;
+  }
+
+  const singleDigit = test(numArr)[0];
+
+
+  return singleDigit % 2 === 0
+  
+}
+// console.log(isVeryEvenNumber(400000220));
 
 
 // https://www.codewars.com/kata/55bc0c54147a98798f00003e/javascript
