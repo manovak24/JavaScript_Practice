@@ -10442,6 +10442,21 @@ const isVeryEvenNumber = (n) => {
 // console.log(isVeryEvenNumber(400000220));
 
 
+const mostLikely = (prob1, prob2) => {
+  const percentage = (prob) => {
+    const arr = prob.split(':').map(Number);
+    const percent = (arr.reduce((a,b) => a / b) * 100);
+    return percent;
+  }
+
+  const num1 = percentage(prob1);
+  const num2 = percentage(prob2);
+
+  return num1 >= num2;
+}
+// console.log(mostLikely('1:3', '1:2'));
+
+
 // https://www.codewars.com/kata/55bc0c54147a98798f00003e/javascript
 const substringLongest = (str) => {
   if(str.length < 1) return '';
