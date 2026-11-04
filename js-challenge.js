@@ -10457,6 +10457,51 @@ const mostLikely = (prob1, prob2) => {
 // console.log(mostLikely('1:3', '1:2'));
 
 
+// https://www.codewars.com/kata/55143152820d22cdf00001bb/train/javascript
+const number9 = (n) => {
+  let count = 0;
+
+  let remainder = n % 10;
+
+  // console.log(n / 100)
+  // console.log(10000000000)
+  // console.log(10000000000)
+
+  // console.log(remainder)
+
+  for(let i = 0; i <= n; i++) {
+    let str = i.toString();
+    let length = str.replace(/[^9]/g, '').length;
+    count += length;
+  }
+  return count;
+}
+console.log(number9(90000));
+console.log(number9(9000))
+console.log(number9(900))
+console.log(number9(90))
+console.log(number9(9))
+
+console.log(number9(900))
+console.log(number9(0))
+console.log(number9(8))
+console.log(number9(908))
+
+
+
+
+
+console.log(number9(0));
+// console.log(number9(100));
+// console.log(number9(1000));
+// console.log(number9(10000));
+// console.log(number9(100000));
+// console.log(number9(565754));
+// consoel.log(number9(65754))
+// console.log(number9(1000000));
+
+
+
 // https://www.codewars.com/kata/55bc0c54147a98798f00003e/javascript
 const substringLongest = (str) => {
   if(str.length < 1) return '';
