@@ -10457,48 +10457,64 @@ const mostLikely = (prob1, prob2) => {
 // console.log(mostLikely('1:3', '1:2'));
 
 
+const unusedDigits = (...arr) => {
+  const str = arr.join();
+  const nums = [0,1,2,3,4,5,6,7,8,9].filter(x => !str.includes(x));
+  return nums.join('');
+}
+// console.log(unusedDigits(12, 34, 56, 78));
+
+
 // https://www.codewars.com/kata/55143152820d22cdf00001bb/train/javascript
 const number9 = (n) => {
   let count = 0;
+  let idx0 = 0;
 
-  let remainder = n % 10;
-
-  // console.log(n / 100)
-  // console.log(10000000000)
-  // console.log(10000000000)
-
-  // console.log(remainder)
-
-  for(let i = 0; i <= n; i++) {
-    let str = i.toString();
-    let length = str.replace(/[^9]/g, '').length;
-    count += length;
+  if(n > 10000) {
+    let length = n.toString().length;
+    let val = length - 1;
+    let valTimes = Number(val.toString() + '0'.repeat(val - 1));
+    let divisor = Number('1' + '0'.repeat(val));
+    let whole = Math.floor(n / divisor);
+    console.log(divisor)
+    count += whole * valTimes;
+    idx0 += whole * divisor;
   }
+  console.log(idx0)
+  for(let i = idx0; i <= n; i++) {
+    let str = i.toString();
+    if(str.includes('9')) {
+      let length = str.replace(/[^9]/g, '').length;
+      count += length;
+    }
+  }
+
   return count;
 }
-console.log(number9(90000));
-console.log(number9(9000))
-console.log(number9(900))
-console.log(number9(90))
-console.log(number9(9))
+// console.log(number9(90000));
+// console.log(number9(9000))
+// console.log(number9(900))
+// console.log(number9(90))
+// console.log(number9(9))
 
-console.log(number9(900))
-console.log(number9(0))
-console.log(number9(8))
-console.log(number9(908))
+// console.log('900', number9(900))
+// console.log('0', number9(0))
+// console.log('8', number9(8))
+// console.log('908', number9(908))
 
-
-
-
-
-console.log(number9(0));
+// console.log(number9(0));
+// console.log(number9(10));
 // console.log(number9(100));
 // console.log(number9(1000));
 // console.log(number9(10000));
 // console.log(number9(100000));
-// console.log(number9(565754));
-// consoel.log(number9(65754))
 // console.log(number9(1000000));
+// console.log(number9(10000000));
+// console.log(number9(1000000000000));
+// console.log(number9(90000));
+// console.log(number9(9999.00));
+
+
 
 
 
