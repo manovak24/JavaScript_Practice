@@ -10466,31 +10466,34 @@ const unusedDigits = (...arr) => {
 
 
 // https://www.codewars.com/kata/55143152820d22cdf00001bb/train/javascript
-const number9 = (n) => {
-  let count = 0;
-  let idx0 = 0;
+// const number9 = (n) => {
+//   let count = 0;
+//   let idx0 = 0;
 
-  if(n > 10000) {
-    let length = n.toString().length;
-    let val = length - 1;
-    let valTimes = Number(val.toString() + '0'.repeat(val - 1));
-    let divisor = Number('1' + '0'.repeat(val));
-    let whole = Math.floor(n / divisor);
-    console.log(divisor)
-    count += whole * valTimes;
-    idx0 += whole * divisor;
-  }
-  console.log(idx0)
-  for(let i = idx0; i <= n; i++) {
-    let str = i.toString();
-    if(str.includes('9')) {
-      let length = str.replace(/[^9]/g, '').length;
-      count += length;
-    }
-  }
+//   if(n > 10000) {
+//     let length = n.toString().length;
+//     let val = length - 1;
+//     let valTimes = Number(val.toString() + '0'.repeat(val - 1));
+//     let divisor = Number('1' + '0'.repeat(val));
+//     let whole = Math.floor(n / divisor);
+//     console.log('valTimes', valTimes)
+//     console.log('divisor', divisor)
+//     console.log('whole', whole)
+//     count += whole * valTimes;
+//     idx0 += whole * divisor;
+//   }
+  
+//   console.log('idx0', idx0)
+//   for(let i = idx0; i <= n; i++) {
+//     let str = i.toString();
+//     if(str.includes('9')) {
+//       let length = str.replace(/[^9]/g, '').length;
+//       count += length;
+//     }
+//   }
 
-  return count;
-}
+//   return count;
+// }
 // console.log(number9(90000));
 // console.log(number9(9000))
 // console.log(number9(900))
@@ -10510,9 +10513,38 @@ const number9 = (n) => {
 // console.log(number9(100000));
 // console.log(number9(1000000));
 // console.log(number9(10000000));
+// console.log(number9(100000000));
+// console.log(number9(1000000000));
+// console.log(number9(10000000000));
+// console.log(number9(100000000000));
 // console.log(number9(1000000000000));
+// console.log(number9(99999));
 // console.log(number9(90000));
 // console.log(number9(9999.00));
+// console.log(number9(3000000000000));
+
+
+const number9 = (n) => {
+  let count = 0;
+  let nStr = n.toString();
+  let length = n.toString().length;
+  let val = length - 1;
+
+  for(let i = 0; i < length - 1; i++) {
+    // console.log(nStr[i])
+    val--;
+    let multiplier = val > 0 ? Number((val + 1).toString() + '0'.repeat(val)) : 1;
+    // console.log('multiplier', multiplier);
+    let whole = Number(nStr[i]);
+    console.log('whole', whole);
+    console.log(whole * multiplier);
+    count += whole * multiplier;
+  }
+
+  return count;
+}
+console.log(number9(565754));
+console.log(number9(908))
 
 
 
