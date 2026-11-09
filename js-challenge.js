@@ -10465,6 +10465,17 @@ const unusedDigits = (...arr) => {
 // console.log(unusedDigits(12, 34, 56, 78));
 
 
+const orArrays = (arr1, arr2, third = 0) => {
+  const orArr = [];
+  const length = arr1.length >= arr2.length ? arr1.length : arr2.length;
+  for(let i = 0; i < length; i++) {
+    orArr.push((arr1[i] ?? third) | (arr2[i] ?? third));
+  }
+  return orArr;
+}
+// console.log(orArrays([1,2,3], [1,2]));
+
+
 // https://www.codewars.com/kata/55143152820d22cdf00001bb/train/javascript
 // const number9 = (n) => {
 //   let count = 0;
@@ -10543,8 +10554,8 @@ const number9 = (n) => {
 
   return count;
 }
-console.log(number9(565754));
-console.log(number9(908))
+// console.log(number9(565754));
+// console.log(number9(908))
 
 
 
