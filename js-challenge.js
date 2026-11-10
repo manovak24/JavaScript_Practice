@@ -10479,7 +10479,7 @@ const orArrays = (arr1, arr2, third = 0) => {
 const orderWord = (s) => {
   return s ? s.split('').sort().join('') : 'Invalid String!';
 }
-console.log(orderWord('Hello, World!'));
+// console.log(orderWord('Hello, World!'));
 
 
 // https://www.codewars.com/kata/55143152820d22cdf00001bb/train/javascript
@@ -10547,21 +10547,22 @@ const number9 = (n) => {
   let length = n.toString().length;
   let val = length - 1;
 
-  for(let i = 0; i < length - 1; i++) {
-    // console.log(nStr[i])
+  for(let i = 0; i < length; i++) {
     val--;
-    let multiplier = val > 0 ? Number((val + 1).toString() + '0'.repeat(val)) : 1;
-    // console.log('multiplier', multiplier);
+    let multiplier = val > 0 ? Number((val + 1).toString() + '0'.repeat(val)) : val === 0 ? 1 : 0;
     let whole = Number(nStr[i]);
-    console.log('whole', whole);
-    console.log(whole * multiplier);
+    if(whole === 9) {
+      let additional9s = Number(nStr.slice(i + 1, nStr.length)) + 1;
+      count += additional9s;
+    }
     count += whole * multiplier;
   }
 
   return count;
 }
 // console.log(number9(565754));
-// console.log(number9(908))
+// console.log(number9(908));
+// console.log(number9(99999));
 
 
 
