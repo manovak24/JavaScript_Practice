@@ -10476,6 +10476,12 @@ const orArrays = (arr1, arr2, third = 0) => {
 // console.log(orArrays([1,2,3], [1,2]));
 
 
+const orderWord = (s) => {
+  return s ? s.split('').sort().join('') : 'Invalid String!';
+}
+console.log(orderWord('Hello, World!'));
+
+
 // https://www.codewars.com/kata/55143152820d22cdf00001bb/train/javascript
 // const number9 = (n) => {
 //   let count = 0;
