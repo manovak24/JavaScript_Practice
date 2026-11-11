@@ -10565,6 +10565,12 @@ const number9 = (n) => {
 // console.log(number9(99999));
 
 
+const elimination = (arr) => {
+  return arr.find((x) => arr.indexOf(x) !== arr.lastIndexOf(x)) ?? null;
+}
+// console.log(elimination([2,5,34,1,22,1]));
+
+
 
 
 
