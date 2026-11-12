@@ -10571,6 +10571,25 @@ const elimination = (arr) => {
 // console.log(elimination([2,5,34,1,22,1]));
 
 
+const numberOfPairs = (gloves) => {
+  let count = 0;
+
+  let map = gloves.reduce((a,b) => {
+    a[b] = (a[b] || 0) + 1;
+    return a;
+  }, {});
+
+  for(const gloveCount of Object.values(map)) {
+    if(gloveCount > 1) {
+      count += Math.floor(gloveCount / 2);
+    }
+  }
+
+  return count;
+}
+// console.log(numberOfPairs(["red", "green", "red", "blue", "blue"]));
+
+
 
 
 
