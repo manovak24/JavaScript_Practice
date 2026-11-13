@@ -10590,6 +10590,16 @@ const numberOfPairs = (gloves) => {
 // console.log(numberOfPairs(["red", "green", "red", "blue", "blue"]));
 
 
+const isMonotone = (arr) => {
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] > arr[i + 1]) return false;
+  }
+  return true;
+}
+// console.log(isMonotone([1,2,3]));
+// console.log(isMonotone([3,2,1]));
+// console.log(isMonotone([1]));
+
 
 
 
