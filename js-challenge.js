@@ -10601,6 +10601,14 @@ const isMonotone = (arr) => {
 // console.log(isMonotone([1]));
 
 
+const sortItOut = (array) => {
+  const odd = array.filter(x => Math.floor(x) % 2 !== 0).sort((a,b) => a - b);
+  const even = array.filter(x => Math.floor(x) % 2 === 0).sort((a,b) => b - a);
+  return [...odd, ...even];
+}
+console.log(sortItOut([11,22,33,44,55,55,90.4,4,78]));
+
+
 
 
 // https://www.codewars.com/kata/55bc0c54147a98798f00003e/javascript
