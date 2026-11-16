@@ -10606,7 +10606,15 @@ const sortItOut = (array) => {
   const even = array.filter(x => Math.floor(x) % 2 === 0).sort((a,b) => b - a);
   return [...odd, ...even];
 }
-console.log(sortItOut([11,22,33,44,55,55,90.4,4,78]));
+// console.log(sortItOut([11,22,33,44,55,55,90.4,4,78]));
+
+
+const arraySum = (arr) => {
+  return arr.flat(Infinity)
+            .filter(x => typeof x === 'number')
+            .reduce((a,b) => a + b, 0);
+}
+console.log(arraySum([1, 2, [1, 'pig', 2, 3, function() { return 15; }, [5, 1, 0]]]))
 
 
 
