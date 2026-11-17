@@ -10614,7 +10614,23 @@ const arraySum = (arr) => {
             .filter(x => typeof x === 'number')
             .reduce((a,b) => a + b, 0);
 }
-console.log(arraySum([1, 2, [1, 'pig', 2, 3, function() { return 15; }, [5, 1, 0]]]))
+// console.log(arraySum([1, 2, [1, 'pig', 2, 3, function() { return 15; }, [5, 1, 0]]]));
+
+
+const findMissingNumber = (sequence) => {
+  if(/[^\d\s]/.test(sequence)) return 1;
+
+  const arr = sequence.split(' ').map(Number).sort((a,b) => a - b);
+  const lastEl = arr[arr.length - 1];
+  const fullSeq = [];
+
+  for(let i = 1; i <= lastEl; i++) {
+    fullSeq.push(i);
+  }
+  
+  return fullSeq.find((v,i) => v !== arr[i]) ?? 0;
+}
+console.log(findMissingNumber('2 3 5 a'));
 
 
 
