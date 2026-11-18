@@ -10639,16 +10639,7 @@ const holidayCount = (a1, a2) => {
 
   console.log(a1Num, a2Num)
 
-  if(a1Num.length === 1 && a2Num.length === 1) {
-    if(a1Num[0] === a2Num[0]) return 'Same';
-    
-    if(a1Num[0] > a1Num[0]) {
-      return 'Rigiht';
-    } else {
-      return 'Wrong';
-    }
-
-  }
+  if(a1Num.length === 1 && a2Num.length === 1) return a1Num[0] === a2Num[0] ? 'Same' : a1Num[0] > a2Num[0] ? 'Right' : 'Wrong';
 
   return 'Not possible';
 }
