@@ -10630,7 +10630,29 @@ const findMissingNumber = (sequence) => {
   
   return fullSeq.find((v,i) => v !== arr[i]) ?? 0;
 }
-console.log(findMissingNumber('2 3 5 a'));
+// console.log(findMissingNumber('2 3 5 a'));
+
+
+const holidayCount = (a1, a2) => {
+  let a1Num = a1.filter(x => typeof x === 'number' && Number.isInteger(x));
+  let a2Num = a2.filter(x => typeof x === 'number' && Number.isInteger(x));
+
+  console.log(a1Num, a2Num)
+
+  if(a1Num.length === 1 && a2Num.length === 1) {
+    if(a1Num[0] === a2Num[0]) return 'Same';
+    
+    if(a1Num[0] > a1Num[0]) {
+      return 'Rigiht';
+    } else {
+      return 'Wrong';
+    }
+
+  }
+
+  return 'Not possible';
+}
+console.log(holidayCount(["code", "is", 1.46, "good", "I", "hope", 35], [102, "and", "hopefully", "also", "this", "passes"]));
 
 
 
