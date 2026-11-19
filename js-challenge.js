@@ -10686,23 +10686,20 @@ const rotateCorners = (matrix) => {
     })
   }
 
-  const rotations = cornerSum * innerSum;  
+  const rotations = (cornerSum * innerSum) % 4;  
 
   const first = matrix[0][0];
   const second = matrix[0][matrix[0].length - 1];
   const fourth = matrix[matrix.length - 1][matrix[matrix.length - 1].length - 1];
   const third = matrix[matrix.length - 1][0];
 
-  console.log('two d original', [[first, second], [third, fourth]]);
   const twoDMatrix = [first, second, third, fourth];
 
-  console.log(twoDMatrix)
-
   for(let i = 1; i <= rotations; i++) {
-    let last = twoDMatrix.pop(); // 9
-    let last2 = twoDMatrix.pop(); // 7
-    let last3 = twoDMatrix.pop(); // 3
-    let last4 = twoDMatrix.pop(); // 1
+    let last = twoDMatrix.pop();
+    let last2 = twoDMatrix.pop();
+    let last3 = twoDMatrix.pop();
+    let last4 = twoDMatrix.pop();
 
 
     twoDMatrix.push(last2)
@@ -10710,10 +10707,7 @@ const rotateCorners = (matrix) => {
     twoDMatrix.push(last)
     twoDMatrix.push(last3)
   }
-
-  console.log([twoDMatrix[0], twoDMatrix[1]]);
-  console.log([twoDMatrix[2], twoDMatrix[3]]);
-
+  
   return [[twoDMatrix[0], twoDMatrix[1]], [twoDMatrix[2], twoDMatrix[3]]];
 
 }
