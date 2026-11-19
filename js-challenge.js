@@ -10643,8 +10643,83 @@ const holidayCount = (a1, a2) => {
 
   return 'Not possible';
 }
-console.log(holidayCount(["code", "is", 1.46, "good", "I", "hope", 35], [102, "and", "hopefully", "also", "this", "passes"]));
+// console.log(holidayCount(["code", "is", 1.46, "good", "I", "hope", 35], [102, "and", "hopefully", "also", "this", "passes"]));
 
+
+const rotateCorners = (matrix) => {
+  const numMatrix = [...matrix];
+  for(let i = 0; i < numMatrix.length; i++) {
+    const testChar = numMatrix[i].some(x => typeof x === 'string')
+    const testBoo = numMatrix[i].some(x => typeof x === 'boolean');
+
+    if(testChar) {
+      numMatrix[i] = numMatrix[i].map(x => {
+        if(typeof x === 'string') {
+          return x.charCodeAt(0);
+        } else {
+          return x;
+        }
+      })
+    }
+
+    if(testBoo) {
+      numMatrix[i] = numMatrix[i].map(x => {
+        if(x === true) return 1;
+        if(x === false) return 0;
+        else return x;
+      })
+    }
+  }
+
+  const cornerSum = numMatrix[0][0] + numMatrix[0][numMatrix[0].length - 1] + numMatrix[numMatrix.length - 1][numMatrix[numMatrix.length - 1].length - 1] + numMatrix[numMatrix.length - 1][0];
+  let innerSum = 0;
+
+  for(let i = 0; i < numMatrix.length; i++) {
+    numMatrix[i].forEach((val, idx) => {
+      if(i !== 0 && i !== numMatrix.length - 1) {
+        innerSum += val;
+      } else {
+        if(idx !== 0 && idx !== numMatrix[i].length - 1) {
+          innerSum += val;
+        }
+      }
+    })
+  }
+
+  const rotations = cornerSum * innerSum;  
+
+  const first = matrix[0][0];
+  const second = matrix[0][matrix[0].length - 1];
+  const fourth = matrix[matrix.length - 1][matrix[matrix.length - 1].length - 1];
+  const third = matrix[matrix.length - 1][0];
+
+  console.log('two d original', [[first, second], [third, fourth]]);
+  const twoDMatrix = [first, second, third, fourth];
+
+  console.log(twoDMatrix)
+
+  for(let i = 1; i <= rotations; i++) {
+    let last = twoDMatrix.pop(); // 9
+    let last2 = twoDMatrix.pop(); // 7
+    let last3 = twoDMatrix.pop(); // 3
+    let last4 = twoDMatrix.pop(); // 1
+
+
+    twoDMatrix.push(last2)
+    twoDMatrix.push(last4)
+    twoDMatrix.push(last)
+    twoDMatrix.push(last3)
+  }
+
+  console.log([twoDMatrix[0], twoDMatrix[1]]);
+  console.log([twoDMatrix[2], twoDMatrix[3]]);
+
+  return [[twoDMatrix[0], twoDMatrix[1]], [twoDMatrix[2], twoDMatrix[3]]];
+
+}
+console.log(rotateCorners([[true, 2, 3],
+                          [4, 5, 6],
+                          [7, 8, 9]]));
 
 
 
