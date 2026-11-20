@@ -10711,9 +10711,15 @@ const rotateCorners = (matrix) => {
   return [[twoDMatrix[0], twoDMatrix[1]], [twoDMatrix[2], twoDMatrix[3]]];
 
 }
-console.log(rotateCorners([[true, 2, 3],
-                          [4, 5, 6],
-                          [7, 8, 9]]));
+// console.log(rotateCorners([[true, 2, 3],
+//                           [4, 5, 6],
+//                           [7, 8, 9]]));
+
+
+const money_value = (s) => {
+  return Number(s.replace(/[^0-9.-]/g, '')) || 0.0;
+}
+console.log(money_value("-2.5"));
 
 
 
