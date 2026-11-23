@@ -10719,7 +10719,14 @@ const rotateCorners = (matrix) => {
 const money_value = (s) => {
   return Number(s.replace(/[^0-9.-]/g, '')) || 0.0;
 }
-console.log(money_value("-2.5"));
+// console.log(money_value("-2.5"));
+
+
+// https://www.codewars.com/kata/5966f6343c0702d1dc00004c/train/javascript
+const giveChange = (amount) => {
+
+}
+console.log(giveChange(217))
 
 
 
