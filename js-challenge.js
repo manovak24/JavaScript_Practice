@@ -10724,23 +10724,73 @@ const money_value = (s) => {
 
 // https://www.codewars.com/kata/5966f6343c0702d1dc00004c/train/javascript
 const giveChange = (amount) => {
-  let arr = amount.toString().split('').map(Number);
-  
-  let hundreds = (Number(arr.slice(0, -2).join('')) * 100) / 100;
-  let fifties = (arr[arr.length - 2] * 10) < 50 ? 0 : 1;
-  let twenties = (arr[arr.length - 2] * 10) < 20 ? 0 : 1;
+  // let arr = amount.toString().split('').map(Number);
+  // let hundreds, fifties, twenties, tens, fives, singles;
 
-  // let tens = (arr[arr.length - 2] * 10) < 10 ? 0 : ;
-  console.log(tens)
+  // if(arr.length === 1) {
+  //   hundreds = 0; fifties = 0; twenties = 0; tens = 0;
 
-  let singles = arr[arr.length - 1] >= 5 ? arr[arr.length - 1] - 5 : arr[arr.length - 1];
-  let fives = arr[arr.length - 1] >= 5 ? 1 : 0;
+  //   if(arr[0] >= 5) {
+  //     fives = 1;
+  //     singles = arr[0] - 5;
+  //   } else {
+  //     fives = 0;
+  //     singles = arr[0];
+  //   }
+  // } else {
+  //   hundreds = Number(arr.slice(0, -2).join(''));
+  //   tens = arr.slice(-2)[0] * 10;
 
-  // console.log(tens)
+  //   if(tens >= 50) {
+  //     fifties = 1;
+  //     tens -= 50;
+  //   } else {
+  //     fifties = 0;
+  //   }
 
-  return [singles, fives, , twenties, fifties, hundreds]
+  //   if(tens >= 40) {
+  //     twenties = 2;
+  //     tens -= 40;
+  //   } else if(tens >= 20) {
+  //     twenties = 1;
+  //     tens -= 20;
+  //   } else {
+  //     twenties = 0;
+  //   }
+
+  //   if(tens === 10) {
+  //     tens = 1;
+  //   }
+
+  //   singles = arr[arr.length - 1];
+
+  //   if(singles >= 5) {
+  //     fives = 1;
+  //     singles -= 5;
+  //   } else {
+  //     fives = 0;
+  //   }
+  // }
+
+  // return [singles, fives, tens, twenties, fifties, hundreds];
+
+  const bills = [100, 50, 20, 15, 10, 5];
+  const results = [];
+  let remaining = amount;
+
+  for(let i = 0; i < bills.length; i++) {
+    let fits = Math.floor(remaining / bills[i]);
+    remaining = remaining % bills[i];
+    results.push(fits);
+    
+  }
+
+  return results;
 }
 console.log(giveChange(217))
+// console.log(giveChange(365))
+// console.log(giveChange(495))
+// console.log(giveChange(8))
 
 
 
