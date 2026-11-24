@@ -10724,7 +10724,21 @@ const money_value = (s) => {
 
 // https://www.codewars.com/kata/5966f6343c0702d1dc00004c/train/javascript
 const giveChange = (amount) => {
+  let arr = amount.toString().split('').map(Number);
+  
+  let hundreds = (Number(arr.slice(0, -2).join('')) * 100) / 100;
+  let fifties = (arr[arr.length - 2] * 10) < 50 ? 0 : 1;
+  let twenties = (arr[arr.length - 2] * 10) < 20 ? 0 : 1;
 
+  // let tens = (arr[arr.length - 2] * 10) < 10 ? 0 : ;
+  console.log(tens)
+
+  let singles = arr[arr.length - 1] >= 5 ? arr[arr.length - 1] - 5 : arr[arr.length - 1];
+  let fives = arr[arr.length - 1] >= 5 ? 1 : 0;
+
+  // console.log(tens)
+
+  return [singles, fives, , twenties, fifties, hundreds]
 }
 console.log(giveChange(217))
 
