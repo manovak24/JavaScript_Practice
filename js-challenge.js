@@ -10724,73 +10724,22 @@ const money_value = (s) => {
 
 // https://www.codewars.com/kata/5966f6343c0702d1dc00004c/train/javascript
 const giveChange = (amount) => {
-  // let arr = amount.toString().split('').map(Number);
-  // let hundreds, fifties, twenties, tens, fives, singles;
-
-  // if(arr.length === 1) {
-  //   hundreds = 0; fifties = 0; twenties = 0; tens = 0;
-
-  //   if(arr[0] >= 5) {
-  //     fives = 1;
-  //     singles = arr[0] - 5;
-  //   } else {
-  //     fives = 0;
-  //     singles = arr[0];
-  //   }
-  // } else {
-  //   hundreds = Number(arr.slice(0, -2).join(''));
-  //   tens = arr.slice(-2)[0] * 10;
-
-  //   if(tens >= 50) {
-  //     fifties = 1;
-  //     tens -= 50;
-  //   } else {
-  //     fifties = 0;
-  //   }
-
-  //   if(tens >= 40) {
-  //     twenties = 2;
-  //     tens -= 40;
-  //   } else if(tens >= 20) {
-  //     twenties = 1;
-  //     tens -= 20;
-  //   } else {
-  //     twenties = 0;
-  //   }
-
-  //   if(tens === 10) {
-  //     tens = 1;
-  //   }
-
-  //   singles = arr[arr.length - 1];
-
-  //   if(singles >= 5) {
-  //     fives = 1;
-  //     singles -= 5;
-  //   } else {
-  //     fives = 0;
-  //   }
-  // }
-
-  // return [singles, fives, tens, twenties, fifties, hundreds];
-
-  const bills = [100, 50, 20, 15, 10, 5];
+  const bills = [100, 50, 20, 10, 5, 1];
   const results = [];
   let remaining = amount;
 
   for(let i = 0; i < bills.length; i++) {
     let fits = Math.floor(remaining / bills[i]);
-    remaining = remaining % bills[i];
     results.push(fits);
-    
+    remaining = remaining % bills[i];
   }
 
-  return results;
+  return results.reverse();
 }
-console.log(giveChange(217))
-// console.log(giveChange(365))
-// console.log(giveChange(495))
-// console.log(giveChange(8))
+// console.log(giveChange(217));
+// console.log(giveChange(365));
+// console.log(giveChange(495));
+// console.log(giveChange(8));
 
 
 
