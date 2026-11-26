@@ -10742,6 +10742,18 @@ const giveChange = (amount) => {
 // console.log(giveChange(8));
 
 
+const greetJedi = (first, last) => {
+  let begin = last.slice(0, 3);
+  let end = first.slice(0, 2);
+
+  begin = begin.slice(0, 1).toUpperCase() + begin.slice(1, 3);
+  end = end.slice(0, 1).toUpperCase() + end.slice(1, 2);
+
+  return "Greetings, master " + begin + end;
+}
+console.log(greetJedi("Beyonce", "Knowles"));
+
+
 
 // https://www.codewars.com/kata/55bc0c54147a98798f00003e/javascript
 const substringLongest = (str) => {
